@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>PartialOffloadAction</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>PartialOffloadAction</h1>
+         </div>
+
+<h2 class="pagehead">PartialOffloadAction</h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Partially offloads one or many fcurve action sources for a given range of frames. The action 
+source needs to have external storage in order to be able to execute this command. 
+<br /><br />
+Before offloading an action source, if the action is dirty it is exported. Once offloaded or 
+partially offloaded, an action source never exports the data again. When an action source is 
+partially offloaded, the Status parameter of the source becomes siActionStatusPartiallyLoaded
+(see <a href="#!/url=./si_om/siAssetStatus.html">siAssetStatus</a>).
+<br /><br />
+Note: This applies only to the <a href="#!/url=./si_om/FCurve.html">FCurve</a> action sources.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>PartialOffloadAction( [InputObjs], StartFrame, EndFrame, [Remember] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">InputObjs		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/listexpr.htm">List</a> of action sources to process. 			<p class="cell"><span class="hilite">Default Value: </span>
+Current selection			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">StartFrame		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+
+		The frame to start offloading the fcurve keys. If smaller than the AnimStart parameter 
+		on the action, the AnimStart value is used instead.
+			</td>
+	</tr>
+	<tr>
+		<td class="name">EndFrame		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+
+		The frame to end offloading the fcurve keys. If greater than the AnimEnd parameter on 
+		the action, the AnimEnd value is used instead.
+			</td>
+	</tr>
+	<tr>
+		<td class="name">Remember		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+
+		If true, the range of frames is appended to the parameter OffloadedRanges of 
+		the action, so when the scene is reloaded the partial offload will be processed. 
+		Otherwise, it is only temporarily offloaded.
+				<p class="cell"><span class="hilite">Default Value: </span>
+False			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example shows how to partially offload an animation source.
+*/
+// ----------------------------------------------------------------------------------
+// 
+// 	SETUP
+// Create an animation source of a sphere.
+NewScene( null, false );
+CreatePrim( "Cone", "MeshSurface", null, null );
+Translate( null, -7.85065649868519, 0.715575131336405, -7.15575131336405E-02, 
+	siRelative, siView, siObj, siXYZ, null, null, null, null, null, null, null, null, null );
+SaveKey( "cone.kine.local.posx,cone.kine.local.posy,cone.kine.local.posz", 1, null, null );
+SetValue( "PlayControl.Key", 10, null );
+SetValue( "PlayControl.Current", 10, null);
+Translate(null, 4.19500728937374, 7.06630442194682, -0.706630442194682, 
+	siRelative, siView, siObj, siXYZ, null, null, null, null, null, null, null, null, null );
+SaveKey( "cone.kine.local.posx,cone.kine.local.posy,cone.kine.local.posz", 10, null, null );
+SetValue( "PlayControl.Key", 20, null );
+SetValue( "PlayControl.Current", 20, null );
+Translate( null, 4.25493596493627, -7.84151081422792, 0.784151081422792, 
+	siRelative, siView, siObj, siXYZ, null, null, null, null, null, null, null, null, null );
+SaveKey( "cone.kine.local.posx,cone.kine.local.posy,cone.kine.local.posz", 20, null, null );
+SetValue( "PlayControl.Key", 30, null );
+SetValue( "PlayControl.Current", 30, null );
+Translate( null, 4.1350786138113, 7.57317013997673, -0.757317013997673, 
+	siRelative, siView, siObj, siXYZ, null, null, null, null, null, null, null, null, null );
+SaveKey( "cone.kine.local.posx,cone.kine.local.posy,cone.kine.local.posz", 30, null, null );
+SetValue( "PlayControl.Key", 40, null );
+SetValue( "PlayControl.Current", 40, null );
+Translate( null, 2.21736099581185, -7.48372324855972, 0.748372324855972, 
+	siRelative, siView, siObj, siXYZ, null, null, null, null, null, null, null, null, null );
+SaveKey( "cone.kine.local.posx,cone.kine.local.posy,cone.kine.local.posz", 40, null, null );
+CreateModel( null, null, null );
+SelectObj( "Model.Cone", null, null );
+StoreAction( "", "Model.Cone.kine.local.sclx,Model.Cone.kine.local.scly,"
+	+ "Model.Cone.kine.local.sclz,Model.Cone.kine.local.rotx,Model.Cone.kine.local.roty,"
+	+ "Model.Cone.kine.local.rotz,Model.Cone.kine.local.posx,Model.Cone.kine.local.posy,"
+	+ "Model.Cone.kine.local.posz,Model.Cone.kine.global.sclx,Model.Cone.kine.global.scly,"
+	+ "Model.Cone.kine.global.sclz,Model.Cone.kine.global.rotx,Model.Cone.kine.global.roty,"
+	+ "Model.Cone.kine.global.rotz,Model.Cone.kine.global.posx,Model.Cone.kine.global.posy,"
+	+ "Model.Cone.kine.global.posz", 2, "simplemove", true, 1, 40, false, false );
+// Add a clip of the source in the mixer
+SelectObj( "Model", null, null );
+AddTrack( "Model", "Model", 0, null, null );
+AddClip( "Model", "Sources.Animation.Model.simplemove", null, "Model.Mixer.Mixer_Anim_Track", 
+	1, null, null, null, null );
+SetValue( "PlayControl.Key", 20, null );
+SetValue( "PlayControl.Current", 20, null );
+// We need to set the external storage to external if we want to be able to offload the source
+SetValue( "Sources.Animation.Model.simplemove.storage", 3, null );
+var oAction = GetValue( "Sources.Animation.Model.simplemove" );
+// ----------------------------------------------------------------------------------
+// 
+// 	OFFLOAD
+// Note that this partial offload has not been added to the OffloadedRanges parameter 
+// of the source.
+PartialOffloadAction( "Sources.Animation.Model.simplemove", 10, 20, false );
+Application.LogMessage ( FindActionStatus(oAction.status.Value) );
+Application.LogMessage ( oAction.OffloadedRanges.Value );
+// ----------------------------------------------------------------------------------
+// 
+// 	RELOAD
+// Reloading the action will dispose the temporary offloaded ranges
+oAction.Reload();
+PartialOffloadAction( "Sources.Animation.Model.simplemove", 12, 22, true );
+Application.LogMessage ( FindActionStatus(oAction.status.Value) );
+Application.LogMessage ( oAction.OffloadedRanges.Value );
+// ----------------------------------------------------------------------------------
+// 
+// 	OUTPUT
+//INFO : The action source contains section that are offloaded.
+//INFO : 
+//INFO : The action source contains section that are offloaded.
+//INFO : 12,22
+// ----------------------------------------------------------------------------------
+// 
+// 	HELPER
+function FindActionStatus( in_Val ) 
+{
+	var results = "";
+	switch ( in_Val ) {
+		case siActionStatusOffloaded :
+			results = "The action source is offloaded on disk.";
+			break;
+		case siActionStatusPartiallyLoaded :
+			results = "The action source contains section that are offloaded.";
+			break;
+		case siActionStatusLoaded :
+			results = "The action source is loaded.";
+			break;
+		default :
+			results = "Unrecognized action status.";
+	}
+	return results;
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/OffloadAction.html">OffloadAction</a> <a href="#!/url=./si_om/ActionSource.Offload.html">ActionSource.Offload</a> <a href="#!/url=./si_om/ActionSource.PartialOffload.html">ActionSource.PartialOffload</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

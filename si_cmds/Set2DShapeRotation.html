@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Set2DShapeRotation</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Set2DShapeRotation</h1>
+         </div>
+
+<h2 class="pagehead">Set2DShapeRotation</h2>
+
+<h3>Introduced</h3>
+<div><p>v3.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Rotates the 2D shape (mask shape). This is the scripting equivalent of
+selecting the shape, clicking on the Rotate tool (in the ColorCorrect
+property editor), and then dragging any of the handles on its bounding box
+to make the object rotate. <br /><br />
+Note: You may want to change where the center, or pin, of the shape appears 
+before scaling it. For example, if you move the pin to the left of the shape 
+and then rotate it, the shape pivots from the left. To move the pin of the 
+shape, use the <a href="#!/url=./si_cmds/Move2DShapePin.html">Move2DShapePin</a> command.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>Set2DShapeRotation( [Shape], angle );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Shape		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/paramexpr.htm">Parameter path name</a> for the shape you are scaling.			<p class="cell"><span class="hilite">Default Value: </span>
+Current selection. <br /><br />Note: If the current selection is not a valid shape, an error occurs.			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">angle		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+Specifies the new angle of the rotation.		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example demonstrates how to set a garbage matte mask for a 
+' ColorCorrect operator in the FxTree, scale it, change the position
+' of its center and then rotate it around the new center.
+'
+' Create a new FxTree 
+set oTree = CreateFxTree()
+' Get the projects path for the current system
+sPath = InstallationPath( siProjectPath )
+set oClip = CreateImageClip( sPath &amp; "\Pictures\noIcon.pic", "NewClip" )
+' Use the clip to create a new image clip operator
+set oOperator = AddImageClipFxOp( oTree, oClip )
+' Add a Color Correct operator to the same tree
+set oCCOp = AddFxOp( oTree, "Color Correct" )
+' Connect the two operators
+ConnectFxOp oOperator, oCCOp, "1" 
+' Since the ConnectFxOp command does not return the new operator,
+' you need to get it from the OperatorCollection on the FxTree object
+for each oMember in oTree.FxOperators
+	if oMember.Name = "ColorCorrect" then
+		set oGBMatteOp = oMember
+		exit for
+	end if
+next
+' Adjust the HSV Offset and Gain levels so you can see the 
+' results of the color correction
+SetValue oGBMatteOp.FullName &amp; ".MasterHueShift," _
+		&amp; oGBMatteOp.FullName &amp; ".MasterOffset," _
+		&amp; oGBMatteOp.FullName &amp; ".MasterGain", _
+		Array(0, 0.820731514055631, 0.852844886888196)
+' Add the 2D shape (mask shape) to the GarbageMatte and reshape it so you can see
+' the shape when you open the Fx Viewer with the ColorCorrect operator selected
+set oRotospline = Add2DShape( oGBMatteOp &amp; ".GarbageShapes", "Polygon" )
+Move2DShapePin oRotospline, 114.75, 143
+Add2DShapePoint oRotospline, 44, 194
+Add2DShapePoint oRotospline, 65, 78
+Add2DShapePoint oRotospline, 116, 138
+Add2DShapePoint oRotospline, 169, 84
+Add2DShapePoint oRotospline, 180, 207
+Add2DShapePoint oRotospline, 153, 137
+Add2DShapePoint oRotospline, 114, 172
+Add2DShapePoint oRotospline, 77, 134
+' Make the shape a little smaller
+Scale2DShape oRotospline, 0.875486381322957, 0.784615384615384
+' Pivot the shape on its bottom right corner
+Move2DShapePin oRotospline, 154.75, 69
+Set2DShapeRotation oRotospline, -50.6836714968651</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/Add2DShape.html">Add2DShape</a> <a href="#!/url=./si_cmds/Move2DShape.html">Move2DShape</a> <a href="#!/url=./si_cmds/Scale2DShape.html">Scale2DShape</a> <a href="#!/url=./si_cmds/Move2DShapePin.html">Move2DShapePin</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

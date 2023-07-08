@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>siSEFilterMask</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>siSEFilterMask</h1>
+         </div>
+
+<h2 class="pagehead">siSEFilterMask</h2>
+
+<h3>Introduced</h3>
+<div><p>v5.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+The string constants to use to set the FilterMask on any scene explorer using the <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> 
+"FilterMask" property.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>StringModule.siSEFilterActionNodes                                          // Action
+StringModule.siSEFilterAllNodeTypes                                         // AllNodeTypes
+StringModule.siSEFilterAnimatableNodes                                      // Animatable
+StringModule.siSEFilterAnimatedNodes                                        // Animated
+StringModule.siSEFilterClusterNodes                                         // Cluster
+StringModule.siSEFilterGroupNodes                                           // Group
+StringModule.siSEFilterKeywordAll                                           // AllKeywords
+StringModule.siSEFilterKeywordAnimation                                     // Animation
+StringModule.siSEFilterKeywordCustom                                        // Custom
+StringModule.siSEFilterKeywordGeneral                                       // General
+StringModule.siSEFilterKeywordKinematics                                    // Kinematics
+StringModule.siSEFilterKeywordModeling                                      // Modeling
+StringModule.siSEFilterKeywordRendering                                     // Rendering
+StringModule.siSEFilterKeywordViewing                                       // Viewing
+StringModule.siSEFilterMaterialNodes                                        // Material
+StringModule.siSEFilterMiscellaneousNodes                                   // Miscellaneous
+StringModule.siSEFilterModelNodes                                           // Model
+StringModule.siSEFilterObjectNodes                                          // Object
+StringModule.siSEFilterOperatorNodes                                        // Operator
+StringModule.siSEFilterParameterNodes                                       // Parameter
+StringModule.siSEFilterPrimitiveNodes                                       // Primitive
+StringModule.siSEFilterPropertyNodes                                        // Property
+StringModule.siSEFilterSceneNodes                                           // Scene
+StringModule.siSEFilterShaderNodes                                          // Shader</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<div><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th>Constant		</th>		<th>Value		</th>		<th>Description		</th>	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterActionNodes"> </a>siSEFilterActionNodes		</td>
+		<td class="example">Action		</td>
+		<td>
+Show only Action nodes.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterAllNodeTypes"> </a>siSEFilterAllNodeTypes		</td>
+		<td class="example">AllNodeTypes		</td>
+		<td>
+Show All Node types.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterAnimatableNodes"> </a>siSEFilterAnimatableNodes		</td>
+		<td class="example">Animatable		</td>
+		<td>
+Show only Animatable parameter nodes.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterAnimatedNodes"> </a>siSEFilterAnimatedNodes		</td>
+		<td class="example">Animated		</td>
+		<td>
+Show only Animated parameter nodes.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterClusterNodes"> </a>siSEFilterClusterNodes		</td>
+		<td class="example">Cluster		</td>
+		<td>
+Show only Cluster nodes.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterGroupNodes"> </a>siSEFilterGroupNodes		</td>
+		<td class="example">Group		</td>
+		<td>
+Show only Group nodes.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterKeywordAll"> </a>siSEFilterKeywordAll		</td>
+		<td class="example">AllKeywords		</td>
+		<td>
+Show nodes with any keyword set.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterKeywordAnimation"> </a>siSEFilterKeywordAnimation		</td>
+		<td class="example">Animation		</td>
+		<td>
+Show nodes with Animation keyword set.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterKeywordCustom"> </a>siSEFilterKeywordCustom		</td>
+		<td class="example">Custom		</td>
+		<td>
+Show nodes with Custom keyword set.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterKeywordGeneral"> </a>siSEFilterKeywordGeneral		</td>
+		<td class="example">General		</td>
+		<td>
+Show nodes with General keyword set.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterKeywordKinematics"> </a>siSEFilterKeywordKinematics		</td>
+		<td class="example">Kinematics		</td>
+		<td>
+Show nodes with Kinematics keyword set.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterKeywordModeling"> </a>siSEFilterKeywordModeling		</td>
+		<td class="example">Modeling		</td>
+		<td>
+Show nodes with Modeling keyword set.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterKeywordRendering"> </a>siSEFilterKeywordRendering		</td>
+		<td class="example">Rendering		</td>
+		<td>
+Show nodes with Rendering keyword set.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterKeywordViewing"> </a>siSEFilterKeywordViewing		</td>
+		<td class="example">Viewing		</td>
+		<td>
+Show nodes with Viewing keyword set.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterMaterialNodes"> </a>siSEFilterMaterialNodes		</td>
+		<td class="example">Material		</td>
+		<td>
+Show only Material nodes.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterMiscellaneousNodes"> </a>siSEFilterMiscellaneousNodes		</td>
+		<td class="example">Miscellaneous		</td>
+		<td>
+Show only Miscellaneous nodes.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterModelNodes"> </a>siSEFilterModelNodes		</td>
+		<td class="example">Model		</td>
+		<td>
+Show only Model nodes.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterObjectNodes"> </a>siSEFilterObjectNodes		</td>
+		<td class="example">Object		</td>
+		<td>
+Show only Object nodes.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterOperatorNodes"> </a>siSEFilterOperatorNodes		</td>
+		<td class="example">Operator		</td>
+		<td>
+Show only Operator nodes.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterParameterNodes"> </a>siSEFilterParameterNodes		</td>
+		<td class="example">Parameter		</td>
+		<td>
+Show only regular Parameter (non-animatable) nodes.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterPrimitiveNodes"> </a>siSEFilterPrimitiveNodes		</td>
+		<td class="example">Primitive		</td>
+		<td>
+Show only Primitive nodes.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterPropertyNodes"> </a>siSEFilterPropertyNodes		</td>
+		<td class="example">Property		</td>
+		<td>
+Show only Property nodes.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterSceneNodes"> </a>siSEFilterSceneNodes		</td>
+		<td class="example">Scene		</td>
+		<td>
+Show only Scene nodes.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSEFilterShaderNodes"> </a>siSEFilterShaderNodes		</td>
+		<td class="example">Shader		</td>
+		<td>
+Show only Shader nodes.		</td>
+	</tr>
+</table>
+</div>
+
+<h3>Applies To</h3>
+<div><p><a href="#!/url=./si_cmds/ExplorerAttributes.html#">Explorer Attributes reference</a> <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> <a href="#!/url=./si_cpp/classXSI_1_1View.html#PutAttributeValue">View::PutAttributeValue</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

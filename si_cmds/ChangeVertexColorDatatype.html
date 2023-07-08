@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>ChangeVertexColorDatatype</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>ChangeVertexColorDatatype</h1>
+         </div>
+
+<h2 class="pagehead">ChangeVertexColorDatatype</h2>
+
+<h3>Introduced</h3>
+<div><p>v6.5</p></div>
+
+<h3>Description</h3>
+<div><p>
+Adds a <a href="http://softimage.wiki.softimage.com/sdkdocs/xsiparams/vertexcolorchangedatatype.html">Vertex Color Change Datatype</a> 
+operator on the specified <a href="http://softimage.wiki.softimage.com/sdkdocs/xsiparams/vertexcolor.html">VertexColor</a> 
+property. Vertex color properties now support two internal data representations for 
+colors: Short (8-bits colors) or Float (32-bits). RenderMaps can be set to bake 32-bit 
+colors into the CAVs, but the CAVs can also be changed after the fact to 8-bit or 32-bit 
+colors. This would allow, for example, a user to write and read 32-bit precision colors in 
+and from the CAV, using the SDK.
+<br /><br />
+The Vertex Color Change Datatype operator allows you to modify the "datatype" parameter which
+is normally read-only, and so cannot be changed via <a href="#!/url=./si_om/SetValue.html">SetValue</a>, 
+<a href="#!/url=./si_om/Parameter.Value.html">Parameter.Value</a>, or <a href="#!/url=./si_om/Parameter.PutValue2.html">Parameter.PutValue2</a>. The JScript example
+below demonstrates this principle.
+<br /><br />
+The DesiredDatatype input parameter is required. If the current VertexColor property already 
+uses the desired datatype, then a warning message is logged and no operator is installed.
+<br /><br />
+Typically, you call this command just once to apply the Vertex Color Change Datatype operator.
+Then, if you need to change the "datatype" setting again, you can just access the "desireddatatype"
+parameter on the operator, instead of applying another operator with this command. As the JScript
+example below demonstrates, if you have several operators applied on the same VertexColor property, 
+you need to be careful that you are modifying the "desireddatatype" parameter on the correct operator.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = ChangeVertexColorDatatype( [InputObj], DesiredDatatype, [OutputObjs] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>An <a href="#!/url=./si_om/XSICollection.html">XSICollection</a> containing the newly created <a href="#!/url=./si_om/Operator.html">Operator</a>.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">InputObj		</td>
+		<td><a href="#!/url=./files/objectexpr.htm">VertexColor by name</a>, 
+		<a href="#!/url=./si_om/ClusterProperty.html">ClusterProperty</a> or <a href="#!/url=./si_om/XSICollection.html">XSICollection</a>		</td>
+		<td>
+VertexColor property to change 			<p class="cell"><span class="hilite">Default Value: </span>
+Currently selected objects are used as the main group.			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">DesiredDatatype		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+ Specifies the desired datatype.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>short					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>float (32 bit)					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">OutputObjs		</td>
+		<td><a href="#!/url=./si_om/XSICollection.html">XSICollection</a> of <a href="#!/url=./si_om/Operator.html">Operator</a> object(s).		</td>
+		<td>
+Returns the new <a href="#!/url=./si_om/Operator.html">Operator</a> in an <a href="#!/url=./si_om/XSICollection.html">XSICollection</a>.		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example demonstrates how to set the read-only DataType on a VertexColor (CAV) property, including 
+	avoiding some of the pitfalls of applying more than one Vertex Color Change Datatype operator.
+*/
+NewScene( "", false );
+var obj = Application.ActiveSceneRoot.AddGeometry( "Cube", "MeshSurface" );
+var VtxColors = CreateVertexColorSupport( null, null, obj );
+// Get the datatype parameter (on the VertexColor property)
+var DataType = VtxColors(0).Parameters("datatype");
+Application.LogMessage( "Default DataType: " + DataType.Value );
+// The datatype parameter is readonly
+try {
+	// This will throw an error
+	DataType.Value = 1;
+} catch(e) {
+	Application.LogMessage( "Error on DataType.Value = 1: " + e.description, siWarning );
+	try {
+		// SetValue will also fail
+		SetValue( DataType, 1 );
+	} catch(f) {
+		Application.LogMessage( "Error on SetValue( DataType, 1 ): " + f.description, siWarning );
+	}
+}
+// Use the VertexColorChangeDatatype operator instead
+var DataChgOps1 = ChangeVertexColorDatatype( VtxColors, 1 );
+var DesiredDType1 = DataChgOps1(0).Parameters("desireddatatype");
+Application.LogMessage( "DataType after 1st operator: " + DataType.Value );
+// Now that you have the VertexColorChangeDatatype operator, you can 
+// use its DesiredDatatype parameter to toggle back and forth
+DesiredDType1.Value = 0;
+Application.LogMessage( "Back to default: " + DataType.Value );
+DesiredDType1.Value = 1;
+Application.LogMessage( "Switched to float again: " + DataType.Value );
+// However, if you try to apply another operator, only the last one 
+// applied will affect the actual data type
+var DataChgOps2 = ChangeVertexColorDatatype( VtxColors, 0 );
+var DesiredDType2 = DataChgOps2(0).Parameters("desireddatatype");
+Application.LogMessage( "DataType after 2nd operator: " + DataType.Value );
+DesiredDType1.Value = 1;
+Application.LogMessage( "Changed old operator: " + DataType.Value );
+DesiredDType2.Value = 1;
+Application.LogMessage( "Changed new operator: " + DataType.Value );
+// For the truly cautious, get the last operator applied
+var CAVProp = obj.ActivePrimitive.Geometry.VertexColors(0);
+var LastChgDataTypeOp;
+for ( var i=CAVProp.NestedObjects.Count-1; i&gt;=0; i++ ) {
+	if ( CAVProp.NestedObjects.Item(i).Type == "vertexcolorchangedatatype" ) {
+		LastChgDataTypeOp = CAVProp.NestedObjects.Item(i);
+		break;
+	}
+}
+Application.LogMessage( "LastChgDataTypeOp == DataChgOps1: " + LastChgDataTypeOp.IsEqualTo(DataChgOps1(0)) );
+Application.LogMessage( "LastChgDataTypeOp == DataChgOps2: " + LastChgDataTypeOp.IsEqualTo(DataChgOps2(0)) );
+var LastDesiredDType = LastChgDataTypeOp.Parameters("desireddatatype");
+LastDesiredDType.Value = 0;
+Application.LogMessage( "Changed final operator: " + DataType.Value );
+// Output:
+// INFO : Default DataType: 0
+// WARNING : 2011 - Error on DataType.Value = 1: Member not found
+// ERROR : 2011-EDIT-SetValue - Member not found
+// WARNING : Error on SetValue( DataType, 1 ): Object doesn't support this property or method
+// INFO : DataType after 1st operator: 1
+// INFO : Back to default: 0
+// INFO : Switched to float again: 1
+// INFO : DataType after 2nd operator: 0
+// INFO : Changed old operator: 0
+// INFO : Changed new operator: 1
+// INFO : LastChgDataTypeOp == DataChgOps1: false
+// INFO : LastChgDataTypeOp == DataChgOps2: true
+// INFO : Changed final operator: 0</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example creates a Vertex Color property (CAV) and plays with one of the colors 
+' to demonstrate how switching the datatype can affect the color values
+'
+dim CAVObjs, dtype, chgOp, aColors
+NewScene , false
+SetDisplayMode "Camera", "constant"
+CreatePrim "Sphere", "MeshSurface"
+' The VertexColor property is the first element in the returned collection
+set CAVObj = CreateVertexColorSupport()(0)
+set dtype = CAVObj.Parameters("datatype")
+' Print current datatype
+Application.LogMessage "CAV datatype = " &amp; dtype.Value
+' Change datatype to float and print new datatype
+set chgOp = ChangeVertexColorDatatype( CAVObj, 1 )(0)
+Application.LogMessage "CAV new datatype = " &amp; dtype.Value
+' Set Color 47 (facing front view) to be RGBA ( 0.1 , 0.2 , 0.3, 0.4 )
+aColors = CAVObj.Elements.Array
+aColors(0,47) = 0.1
+aColors(1,47) = 0.2
+aColors(2,47) = 0.3
+aColors(3,47) = 0.4
+CAVObj.Elements.Array = aColors
+' Retrieve the color and print it
+aColors = CAVObj.Elements.Array
+Application.LogMessage "Color 47 is (" &amp; aColors(0,47) &amp; ", " &amp; aColors(1,47) &amp; ", " &amp; aColors(2,47) &amp; ", " &amp; aColors(3,47) &amp; ")" 
+' Now switch to short datatype and print it
+chgOp.Parameters("desireddatatype").Value = 0		' == SetValue chgOp &amp; ".desireddatatype", 0
+Application.LogMessage "CAV last datatype = " &amp; dtype.Value
+' Retrieve the color and print it
+aColors = CAVObj.Elements.Array
+Application.LogMessage "Color 47 is (" &amp; aColors(0,47) &amp; ", " &amp; aColors(1,47) &amp; ", " &amp; aColors(2,47) &amp; ", " &amp; aColors(3,47) &amp; ")" 
+'Output
+' INFO : CAV datatype = 0
+' INFO : CAV new datatype = 1
+' INFO : Color 47 is (0.100000001490116, 0.200000002980232, 0.300000011920929, 0.400000005960464)
+' INFO : CAV last datatype = 0
+' INFO : Color 47 is (9.80392172932625E-02, 0.200000002980232, 0.298039227724075, 0.400000005960464)</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/ApplyOp.html">ApplyOp</a> <a href="#!/url=./si_om/Operator.html">Operator</a> <a href="#!/url=./si_cmds/CreateVertexColorSupport.html">CreateVertexColorSupport</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

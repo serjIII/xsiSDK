@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Model.AddActionSource</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Model.AddActionSource</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/Model.html">Model</a>.AddActionSource</h2>
+
+<h3>Description</h3>
+<div><p> Creates and adds an <a href="#!/url=./si_om/ActionSource.html">ActionSource</a> to the model's 
+collection of sources.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>ActionSource Model.AddActionSource( String in_vName, Object in_vTargetArray, Object in_vSourceArray, Object in_vActiveArray );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = Model.AddActionSource( [Name], [TargetArray], [SourceArray], [ActiveArray] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p><a href="#!/url=./si_om/ActionSource.html">ActionSource</a></p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Name		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Name of the new action source		</td>
+	</tr>
+	<tr>
+		<td class="name">TargetArray		</td>
+		<td><a href="#!/url=./files/Array.htm">Array</a>		</td>
+		<td>
+Array of source item target paths.		</td>
+	</tr>
+	<tr>
+		<td class="name">SourceArray		</td>
+		<td><a href="#!/url=./files/Array.htm">Array</a>		</td>
+		<td>
+
+		Array of source item sources. For now only <a href="#!/url=./si_om/FCurve.html">FCurve</a>,
+		<a href="#!/url=./si_om/StaticSource.html">StaticSource</a> or <a href="#!/url=./files/Double.htm">Double</a> values 
+		representing static values are valid sources.
+			</td>
+	</tr>
+	<tr>
+		<td class="name">ActiveArray		</td>
+		<td><a href="#!/url=./files/Array.htm">Array</a>		</td>
+		<td>
+Array of source item active flags.		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example illustrates how to create an ActionSource 
+' from FCurve information.
+'
+set oRoot = Application.ActiveProject.ActiveScene.Root
+if Application.Selection.Count &lt;&gt; 0 then
+	set oObject = Application.Selection(0)
+else
+	' Create sample scene
+	set oNull = oRoot.AddNull
+	set oObject = oNull.AddNull()
+	oObject.posx.AddFCurve2( Array(1, -10, 50, 0, 100, 10) )
+	oObject.posy.AddFCurve2( Array(1, 10, 50, 0, 100, 10) )
+end if
+CreateActionSourceFromLocalFCurves oObject
+sub CreateActionSourceFromLocalFCurves( in_object )
+	strTitle = "Create ActionSource from Local FCurves"
+	if IsObject(in_object) &lt;&gt; True then
+		MsgBox "Please select an object", vbExclamation, strTitle
+		exit sub
+	end if
+	if InStr(in_object.Families, "3D Object") = 0 then
+		MsgBox "Please select a 3D object", vbExclamation, strTitle
+		exit sub
+	end if
+	set k = in_object.Kinematics
+	' ... assuming all animation is on local transform
+	set oAnimatedParams = k.AnimatedParameters(siFCurveSource)
+	if oAnimatedParams.Count = 0 then
+		MsgBox "Please select an object with animation", vbExclamation, strTitle
+		exit sub
+	end if
+	' Find local parameters		
+	set oLocalParams = CreateObject("XSI.Collection")
+	for each oAnimatedParam in oAnimatedParams
+		' Poor man's test for local parameters 
+		if InStr( oAnimatedParam.FullName, ".local." ) &lt;&gt; 0 then
+			' Only support fcurves for now.
+			if TypeName(oAnimatedParam.Source) = "FCurve" then
+				oLocalParams.Add oAnimatedParam 
+			end if
+		end if	
+	next
+	if oLocalParams.Count = 0 then
+		exit sub
+	end if
+	Dim aTarget, aSource, aActive
+	ReDim aTarget(oLocalParams.Count-1)
+	ReDim aSource(oLocalParams.Count-1)
+	ReDim aActive(oLocalParams.Count-1)
+	i=0
+	for each oLocalParam in oLocalParams
+		aTarget(i) = oLocalParam.FullName
+		set aSource(i) = oLocalParam.Source
+		aActive(i) = True
+		i = i + 1
+	next
+	set oActionSource = oRoot.AddActionSource( in_object.Name &amp; "-localfcurves", _
+		aTarget, aSource, aActive )
+	LogMessage "Created new ActionSource " &amp; oActionSource.FullName
+end sub</pre></td></tr>
+</table>
+</div></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

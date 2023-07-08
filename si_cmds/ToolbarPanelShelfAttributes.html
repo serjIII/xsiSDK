@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Toolbar Panel and Shelf Attributes</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Toolbar Panel and Shelf Attributes</h1>
+         </div>
+
+<h2 class="pagehead">Toolbar Panel and Shelf Attributes</h2>
+
+<h3>Introduced</h3>
+<div><p>v5.0</p></div>
+
+<div>
+	<p>View attributes for the <a href="http://softimage.wiki.softimage.com/xsidocs/toolbars_shelves_AboutToolbarsAndShelves.htm">Toolbar Panel and Shelf</a>. Some of these attributes are available for <a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> but some are only available for <a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a>. Check the third column in the table.</p>
+<div class="tip">
+<table cellpadding="5" cellspacing="5">
+	<tr>
+		<td class="label">Note</td>
+		<td class="emph">See <a href="#!/url=./si_cmds/ViewAttributes.html#">ViewAttributes</a> for a complete list of types of attributes that you can use when customizing your Relational Views.</td>
+	</tr>
+</table>
+</div>
+</div>
+
+<div><table class="values">
+	<tr>
+		<th>Attribute Name</th>
+		<th>Description</th>
+		<th>Supports</th>
+	</tr>
+	<tr>
+		<td class="example">activetab</td>
+		<td>
+Specifies which tab should become the current active tab (the one being displayed).			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;tab index number&gt;</td>
+					<td>The string representation of the index number of the tab to make active or that is already active (available for getting and setting).					</td>
+				</tr>
+				<tr>
+					<td class="name">&lt;tab name&gt;</td>
+					<td>The name of the tab to make active (available for setting only).					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">dictionary</td>
+		<td>
+By default all labels and other visible strings (if the shelf is a toolbar type) are automatically translated if that string is found in the XSIXSI string dictionary. To turn off all translation set this attribute to "None". To specify a different dictionary set this attribute to the name of the dictionary.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;name of dictionary&gt;</td>
+					<td>without the .dict extension (See XSIUtils.Translate).					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">displaymode</td>
+		<td>
+Specifies how the shelf contents are displayed:			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">thumbnail only</td>
+					<td>Thumbnail Only.					</td>
+				</tr>
+				<tr>
+					<td class="name">text only</td>
+					<td>Text Only.					</td>
+				</tr>
+				<tr>
+					<td class="name">thumbnail + text</td>
+					<td>Thumbnail and Text.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> only.</td>
+	</tr>
+	<tr>
+		<td class="example">filepath</td>
+		<td>
+The path of a directory whose contents are to be displayed (if the shelf is a folder type). This overrides the default setting in the shelf itself. 			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;any valid filepath&gt;</td>
+					<td>The path and filename of an existing folder to display. You can use the values of environment variables in the path (for example, "$mytextures"). You can also use <a href="#!/url=./files/UNCPath.htm">UNC</a> paths (for example, "\\sysadmin\public\ready").					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">filetype</td>
+		<td>
+The file extensions of the file types to display (if the shelf is a folder type). Use semicolons to separate multiple extensions, for example, "*.mdl; *.emdl".			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;any file extension&gt;</td>
+					<td>When you set this attribute, the contents of your folder tab will be filtered to only include files with the specified folder type(s).					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">showtabs</td>
+		<td>
+Controls whether tabs are displayed or not in the pane.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">'true'</td>
+					<td>Organized on tabs. Note: Use the string "true", not the boolean true.					</td>
+				</tr>
+				<tr>
+					<td class="name">'false'</td>
+					<td>Display as groups. Note: Use the string "false", not the boolean false.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> only.</td>
+	</tr>
+	<tr>
+		<td class="example">targetcontent</td>
+		<td>
+If the view is driven by a relationship (tab type = "driven"), you can specify a list of elements to display in the shelf when it is first opened. <br /><br />This content can be replaced dynamically.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;list of elements&gt;</td>
+					<td>A comma-delimited list of elements.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> only.</td>
+	</tr>
+</table>
+<br />
+
+</div>
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>siPPGControlType</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>siPPGControlType</h1>
+         </div>
+
+<h2 class="pagehead">siPPGControlType</h2>
+
+<h3>Description</h3>
+<div><p>Specifies the different types of controls (i.e. widgets) supported on a Softimage Property Page.
+Controls on a Property Page usually display and control the value of a <a href="#!/url=./si_om/Parameter.html">Parameter</a> on an
+inspected object.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>StringModule.siControlBitmap                                                // BitmapWidget
+StringModule.siControlBoolean                                               // Boolean
+StringModule.siControlButton                                                // commandbutton
+StringModule.siControlCheck                                                 // Check
+StringModule.siControlCombo                                                 // Combo
+StringModule.siControlEdit                                                  // edit
+StringModule.siControlFCurve                                                // FCurveWidget
+StringModule.siControlFilePath                                              // FilePath
+StringModule.siControlFolder                                                // Folder
+StringModule.siControlGradient                                              // gradient
+StringModule.siControlGrid                                                  // GridWidget
+StringModule.siControlIconList                                              // IconList
+StringModule.siControlImageClip                                             // ImageClipWidget
+StringModule.siControlListBox                                               // ListBox
+StringModule.siControlNumber                                                // Number
+StringModule.siControlRadio                                                 // Radio
+StringModule.siControlRGB                                                   // RGB
+StringModule.siControlRGBA                                                  // RGBA
+StringModule.siControlStatic                                                // Static
+StringModule.siControlString                                                // String
+StringModule.siControlSynoptic                                              // SynopticWidget
+StringModule.siControlTextEditor                                            // TextEditorWidget
+StringModule.siControlTextureSpace                                          // TextureSpaceItem.TextureSpaceItem.1</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<div><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th>Constant		</th>		<th>Value		</th>		<th>Description		</th>	</tr>
+	<tr>
+		<td class="name"><a name="siControlBitmap"> </a>siControlBitmap		</td>
+		<td class="example">BitmapWidget		</td>
+		<td>
+A static bitmap control.  The control needs to be associated with a 
+		real parameter on the inspected object, but the value is neither read nor changed.  This control is often used 
+		for displaying a logo. The path is specified using <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIFilePath">siUIFilePath</a>. For more 
+		information, see the <a href="#!/url=./files/cus_ppg_BitmapWidget.htm">Bitmap Widget</a> 
+		topic.
+		<br /><br />
+		For Image Clip control, use the <a href="#!/url=./si_om/siPPGControlType.html#siControlImageClip">siControlImageClip</a> control.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlBoolean"> </a>siControlBoolean		</td>
+		<td class="example">Boolean		</td>
+		<td>
+A simple check box.  This is the default control for <a href="#!/url=./files/Boolean.htm">Boolean</a> 
+		parameters. For more information, see the <a href="#!/url=./files/cus_ppg_CheckBox.htm">Check Box</a> 
+		topic.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlButton"> </a>siControlButton		</td>
+		<td class="example">commandbutton		</td>
+		<td>
+A button is a special kind of control which is not associated with any 
+		parameter of the inspected object. See <a href="#!/url=./si_om/PPGLayout.AddButton.html">PPGLayout.AddButton</a>. 
+		<br /><br />
+		Supported attributes are <a href="#!/url=./si_om/siPPGItemAttribute.html#siUICX">siUICX</a> and 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUICY">siUICY</a>. For more information, see the 
+		<a href="#!/url=./files/cus_ppg_CommandButton.htm">Command Button</a> topic.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlCheck"> </a>siControlCheck		</td>
+		<td class="example">Check		</td>
+		<td>
+Bitfield control, showing separate check boxes for each item in the 
+		<a href="#!/url=./si_om/PPGItem.UIItems.html">PPGItem.UIItems</a> list.  The value of the parameter will be equal to the sum of all the 
+		checked items.  This control is useful for packing many flags into a single integer while still having a 
+		convenient user interface to set or view which flags have been set. For more information, see the 
+		<a href="#!/url=./files/cus_ppg_Bitfield.htm">Bitfield</a> topic.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlCombo"> </a>siControlCombo		</td>
+		<td class="example">Combo		</td>
+		<td>
+A read-only edit control, with a drop down menu showing items out of the 
+		<a href="#!/url=./si_om/PPGItem.UIItems.html">PPGItem.UIItems</a> list. 
+		<br /><br />
+		Supported attributes are <a href="#!/url=./si_om/siPPGItemAttribute.html#siUICX">siUICX</a> and 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUICY">siUICY</a>. For more information, see the 
+		<a href="#!/url=./files/cus_ppg_ComboDropDownBox.htm">Combo/Drop-Down Box</a> 
+		topic.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlEdit"> </a>siControlEdit		</td>
+		<td class="example">Edit		</td>
+		<td>
+An edit box control.  It is similar to <a href="#!/url=./si_om/siPPGControlType.html#siControlString">siControlString</a>, 
+		however it supports the <a href="#!/url=./si_om/siPPGItemAttribute.html#siUICX">siUICX</a>, <a href="#!/url=./si_om/siPPGItemAttribute.html#siUICY">siUICY</a> and 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIStyle">siUIStyle</a> attributes and is used as a multi-line string edit box. For more 
+		information, see the 
+		<a href="#!/url=./files/cus_ppg_MultilineText.htm">Multi-line Text</a> 
+		topic.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlFCurve"> </a>siControlFCurve		</td>
+		<td class="example">FCurveWidget		</td>
+		<td>
+A control for displaying an <a href="#!/url=./si_om/FCurve.html">FCurve</a> (see 
+		<a href="#!/url=./si_om/PPGLayout.AddFCurve.html">PPGLayout.AddFCurve</a>). 
+		<br /><br />
+		Supported optional attributes are <a href="#!/url=./si_om/siPPGItemAttribute.html#siUICX">siUICX</a>, 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUICY">siUICY</a>, <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIFCurveLabelX">siUIFCurveLabelX</a>, 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIFCurveLabelY">siUIFCurveLabelY</a>, <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIFCurveViewMinX">siUIFCurveViewMinX</a>, 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIFCurveViewMaxX">siUIFCurveViewMaxX</a>, <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIFCurveViewMinY">siUIFCurveViewMinY</a>, 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIFCurveViewMaxY">siUIFCurveViewMaxY</a>, <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIFCurveGridSpaceX">siUIFCurveGridSpaceX</a>, 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIFCurveGridSpaceY">siUIFCurveGridSpaceY</a>, <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIFCurveNoGrid">siUIFCurveNoGrid</a>, 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIFCurveNoRulerX">siUIFCurveNoRulerX</a>, and <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIFCurveNoRulerY">siUIFCurveNoRulerY</a>. 
+		For more information, see the <a href="#!/url=./files/cus_ppg_FCurveWidget.htm">FCurve Widget</a> 
+		topic.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlFilePath"> </a>siControlFilePath		</td>
+		<td class="example">FilePath		</td>
+		<td>
+A control for driving a string Parameter containing a file name. The control 
+		provides an edit box and a button that launches a file browser (similar to <a href="#!/url=./si_om/XSIUIToolkit.FileBrowser.html">XSIUIToolkit.FileBrowser</a>).  
+		<br /><br />
+		Supported attributes are <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIFileFilter">siUIFileFilter</a>, <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIInitialDir">siUIInitialDir</a>, 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUISubFolder">siUISubFolder</a>, <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIAudioFile">siUIAudioFile</a>,
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIImageFile">siUIImageFile</a>, <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIOpenFile">siUIOpenFile</a>, 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIFileMustExist">siUIFileMustExist</a>, <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIStyle">siUIStyle</a>. For more 
+		information, see the 
+		<a href="#!/url=./files/cus_ppg_FileBrowserWidget.htm">File Browser Widget</a> 
+		topic.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlFolder"> </a>siControlFolder		</td>
+		<td class="example">Folder		</td>
+		<td>
+A control for driving a string Parameter with an edit box and a button that 
+		launches a directory picker.  
+		<br /><br />
+		Supported attributes are <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIInitialDir">siUIInitialDir</a> 
+		and <a href="#!/url=./si_om/siPPGItemAttribute.html#siUISubFolder">siUISubFolder</a>. For more information, see the 
+		<a href="#!/url=./files/cus_ppg_FolderWidget.htm">Folder Widget</a> 
+		topic.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlGradient"> </a>siControlGradient		</td>
+		<td class="example">gradient		</td>
+		<td>
+A control that shows a fully featured gradient editor.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlGrid"> </a>siControlGrid		</td>
+		<td class="example">GridWidget		</td>
+		<td>
+A control of type <a href="#!/url=./si_om/GridWidget.html">GridWidget</a> which displays the data from 
+		a <a href="#!/url=./si_om/GridData.html">GridData</a> object. It shows a multi-column list control, similar to a spreadsheet.  See 
+		<a href="#!/url=./si_om/CustomProperty.AddGridParameter.html">CustomProperty.AddGridParameter</a>. 
+		<br /><br />
+		Supported optional attributes are <a href="#!/url=./si_om/siPPGItemAttribute.html#siUICX">siUICX</a>, <a href="#!/url=./si_om/siPPGItemAttribute.html#siUICY">siUICY</a>, 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIGridColumnWidths">siUIGridColumnWidths</a>, <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIGridLockColumnHeader">siUIGridLockColumnHeader</a>, 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIGridLockRowHeader">siUIGridLockRowHeader</a>, <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIGridHideColumnHeader">siUIGridHideColumnHeader</a>, 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIGridReadOnlyColumns">siUIGridReadOnlyColumns</a>, <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIGridHideRowHeader">siUIGridHideRowHeader</a> 
+		and <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIGridSelectionMode">siUIGridSelectionMode</a>. For more information, see the 
+		<a href="#!/url=./files/cus_ppg_GridDataWidget.htm">GridData Widget</a> topic.  
+		<br /><br />
+		Note: This control has no relationship to the <a href="#!/url=./si_cmds/GeometryPrimitives.html#">geometric shape</a> called 
+		a "Grid".		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlIconList"> </a>siControlIconList		</td>
+		<td class="example">IconList		</td>
+		<td>
+Similar to a <a href="#!/url=./si_om/siPPGControlType.html#siControlRadio">siControlRadio</a>, except each 
+		item is represented by a bitmap on the screen rather than by a text label.  Only .bmp files are supported, and the 
+		filenames of these files are specified in the <a href="#!/url=./si_om/PPGItem.UIItems.html">PPGItem.UIItems</a> list. 
+		<br /><br />
+		Supported attributes are <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIColumnCnt">siUIColumnCnt</a>, <a href="#!/url=./si_om/siPPGItemAttribute.html#siUILineCnt">siUILineCnt</a>, 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIColumnGap">siUIColumnGap</a>, <a href="#!/url=./si_om/siPPGItemAttribute.html#siUILineGap">siUILineGap</a>, 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUISelectionColor">siUISelectionColor</a>, and 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIUseSelectionIcon">siUIUseSelectionIcon</a>. For more information, see the 
+		<a href="#!/url=./files/cus_ppg_IconButtons.htm">Icon Buttons</a> 
+		topic.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlImageClip"> </a>siControlImageClip		</td>
+		<td class="example">ImageClipWidget		</td>
+		<td>
+ A control that shows an Image Clip. You use this control with a 
+		string parameter whose value is the Image Clip full name.
+		<br /><br />
+		Supported attribute is <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIShowClip">siUIShowClip</a>. 
+		<br /><br />
+		For static bitmap control, use the <a href="#!/url=./si_om/siPPGControlType.html#siControlBitmap">siControlBitmap</a> control.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlListBox"> </a>siControlListBox		</td>
+		<td class="example">ListBox		</td>
+		<td>
+This control is functionally similar to 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlRadio">siControlRadio</a> and <a href="#!/url=./si_om/siPPGControlType.html#siControlCombo">siControlCombo</a> in that it 
+		shows a list of possible items. However, unlike those other controls, you have the option to use the ListBox in a 
+		multi-selection mode by using the attribute <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIMultiSelectionListBox">siUIMultiSelectionListBox</a>. 
+		<br /><br />
+		The <a href="#!/url=./si_om/siPPGItemAttribute.html#siUICX">siUICX</a> and <a href="#!/url=./si_om/siPPGItemAttribute.html#siUICY">siUICY</a> attributes can be set 
+		to change the size. If no <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIStyle">siUIStyle</a> attribute is assigned and the list is too 
+		large to fit, the ListBox will display a vertical scroll bar. For more information, see the 
+		<a href="#!/url=./files/cus_ppg_ListBox.htm">List Box</a> topic.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlNumber"> </a>siControlNumber		</td>
+		<td class="example">Number		</td>
+		<td>
+A numeric control, normally with both an edit control and a slider. This is the 
+		default control for all numeric parameters. 
+		<br /><br />
+		Supported attributes are <a href="#!/url=./si_om/siPPGItemAttribute.html#siUICX">siUICX</a>, <a href="#!/url=./si_om/siPPGItemAttribute.html#siUICY">siUICY</a>, 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUISyncSlider">siUISyncSlider</a>, <a href="#!/url=./si_om/siPPGItemAttribute.html#siUILogarithmic">siUILogarithmic</a>, 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIDecimals">siUIDecimals</a>, <a href="#!/url=./si_om/siPPGItemAttribute.html#siUINoSlider">siUINoSlider</a>, 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUITreadmill">siUITreadmill</a> and <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIThumbWheel">siUIThumbWheel</a>. 
+		For more information, see the 
+		<a href="#!/url=./files/cus_ppg_NumericEditBoxWithSlider.htm">Numeric Edit Box with Slider</a> 
+		topic.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlRadio"> </a>siControlRadio		</td>
+		<td class="example">Radio		</td>
+		<td>
+Radio control, allowing you to select a single item out of the 
+		<a href="#!/url=./si_om/PPGItem.UIItems.html">PPGItem.UIItems</a> list.  This is the same behavior as the <a href="#!/url=./si_om/siPPGControlType.html#siControlCombo">siControlCombo</a>
+		control, except that all the options are displayed on the screen.  Hence a Combo box is best suited for large lists 
+		of items. For more information, see the 
+		<a href="#!/url=./files/cus_ppg_RadioButtons.htm">Radio Buttons</a> 
+		topic.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlRGB"> </a>siControlRGB		</td>
+		<td class="example">RBG		</td>
+		<td>
+A Color control with no "Alpha" channel.  This control is associated with three 
+		parameters in the underlying object.  See <a href="#!/url=./si_om/PPGLayout.AddColor.html">PPGLayout.AddColor</a>. For more information, see the 
+		<a href="#!/url=./files/cus_ppg_RGBColorControl.htm">RGB Color Control</a> 
+		topic.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlRGBA"> </a>siControlRGBA		</td>
+		<td class="example">RBGA		</td>
+		<td>
+A Color control that includes the "Alpha" channel.  This control is associated 
+		with four parameters in the underlying object.  See <a href="#!/url=./si_om/PPGLayout.AddColor.html">PPGLayout.AddColor</a>. For more information, see the 
+		<a href="#!/url=./files/cus_ppg_RGBAColorControl.htm">RGBA Color Control</a> 
+		topic.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlStatic"> </a>siControlStatic		</td>
+		<td class="example">Static		</td>
+		<td>
+Static text on the property page, see <a href="#!/url=./si_om/PPGLayout.AddStaticText.html">PPGLayout.AddStaticText</a>.
+		If the <a href="#!/url=./si_om/PPGItem.Name.html">PPGItem.Name</a> of the associated item is "Static" the <a href="#!/url=./si_om/PPGItem.Label.html">PPGItem.Label</a> will be 
+		displayed as the static text.  Otherwise the name is assumed to refer to an actual string <a href="#!/url=./si_om/Parameter.html">Parameter</a> 
+		and its value is shown.
+		<br /><br /> 
+		Tip: To break the text onto multiple lines, include line return characters in the text (vbCrLf in vbscript and "\n" in 
+		JScript). 
+		<br /><br />
+		Supported attributes are <a href="#!/url=./si_om/siPPGItemAttribute.html#siUICX">siUICX</a> and 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUICY">siUICY</a>. For more information, see the 
+		<a href="#!/url=./files/cus_ppg_StaticText.htm">Static Text</a> topic.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlString"> </a>siControlString		</td>
+		<td class="example">String		</td>
+		<td>
+A single line edit box for displaying text. This is the default control for 
+		<a href="#!/url=./files/String.htm">String</a> parameters. 
+		<br /><br />
+		Supported attributes are <a href="#!/url=./si_om/siPPGItemAttribute.html#siUICX">siUICX</a> and 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUICY">siUICY</a>.  For multi-line strings use the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlEdit">siControlEdit</a> instead. For more information, see the 
+		<a href="#!/url=./files/cus_ppg_SingleLineText.htm">Single-line Text</a> 
+		topic.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlSynoptic"> </a>siControlSynoptic		</td>
+		<td class="example">SynopticWidget		</td>
+		<td>
+A control that shows a synoptic view. You use this control with a 
+		string parameter whose value is the full path to the synoptic file. The size of the synoptic view determines the 
+		size of the control. For an example of the synoptic control, see the 
+		<a href="#!/url=./examples/Addons/PPGDemos/netview_PPGDemos.htm">PPGDemos</a> example. For more information, see 
+		the <a href="#!/url=./files/cus_ppg_SynopticWidget.htm">Synoptic Widget</a> topic.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlTextEditor"> </a>siControlTextEditor		</td>
+		<td class="example">TextEditorWidget		</td>
+		<td>
+A control that shows a full-featured text editor. You use this control with a 
+		string parameter whose value will be set to the text in the editor. For more information, see the 
+		<a href="#!/url=./files/cus_ppg_TextEditorWidget.htm">Text Editor Widget</a> 
+		topic.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlTextureSpace"> </a>siControlTextureSpace		</td>
+		<td class="example">TextureSpaceItem.TextureSpaceItem.1		</td>
+		<td>
+A control that shows a texture space combo box.		</td>
+	</tr>
+</table>
+</div>
+
+<h3>Applies To</h3>
+<div><p><a href="#!/url=./si_om/PPGItem.Type.html">PPGItem.Type</a> <a href="#!/url=./si_om/PPGLayout.AddEnumControl.html">PPGLayout.AddEnumControl</a> <a href="#!/url=./si_om/PPGLayout.AddItem.html">PPGLayout.AddItem</a> <a href="#!/url=./si_cpp/classXSI_1_1PPGItem.html#GetType">PPGItem::GetType</a> <a href="#!/url=./si_cpp/classXSI_1_1PPGItem.html#PutType">PPGItem::PutType</a> <a href="#!/url=./si_cpp/classXSI_1_1PPGLayout.html#AddEnumControl">PPGLayout::AddEnumControl</a> <a href="#!/url=./si_cpp/classXSI_1_1PPGLayout.html#AddItem">PPGLayout::AddItem</a></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/PPGLayout.html">PPGLayout</a> <a href="#!/url=./si_om/siPPGItemAttribute.html">siPPGItemAttribute</a> <a href="#!/url=./files/cus_ppg_PropertyPageControls.htm">Property Page Controls</a> <a href="#!/url=./files/cus_ppg_SettingControlAttributes.htm">Setting Control Attributes</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Geometry.GetClosestLocationsWithinRadius</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Geometry.GetClosestLocationsWithinRadius</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/Geometry.html">Geometry</a>.GetClosestLocationsWithinRadius <img src="images/operator.gif" alt="operator" /></h2>
+
+<h3>Introduced</h3>
+<div><p>v5.0</p></div>
+
+<h3>Description</h3>
+<div><p> Returns a <a href="#!/url=./si_om/PointLocatorData.html">PointLocatorData</a> containing closest surface locations
+from the input position within a search sphere of a specific radius. By default, 
+the input positions have to be defined in the object's local space reference. Optionally, 
+the search can be restricted to return a maximum number of locations. In order to 
+avoid volumetric restrictions, simply specify a very large radius.
+<br /><br />
+Some aspects of the closest locations's computation such as the reference pose
+or the method (closest surface, closest vertex or knot, ...) can be set up
+using <a href="#!/url=./si_om/Geometry.SetupPointLocatorQueries.html">Geometry.SetupPointLocatorQueries</a>. This setup will
+affect all subsequent calls to GetClosestLocationsWithinRadius and to 
+<a href="#!/url=./si_om/Geometry.GetClosestLocations.html">Geometry.GetClosestLocations</a>.
+<br /><br />
+If the search was set up with <a href="#!/url=./si_om/Geometry.SetupPointLocatorQueries.html">Geometry.SetupPointLocatorQueries</a>
+to be a closest surface or smoothed closest surface search, then it returns 
+one point locator per connected island for <a href="#!/url=./si_om/PolygonMesh.html">PolygonMesh</a>es.
+Such connected islands are defined so that you cannot walk between 2 returned point 
+locators without leaving the search radius (this walking is through polygon adjacency,
+not vertex adjacency). For <a href="#!/url=./si_om/NurbsSurfaceMesh.html">NurbsSurfaceMesh</a>es, it 
+returns at most one point locator.
+<br /><br />
+When you call this method an acceleration cache is automatically created.
+See <a href="#!/url=./si_om/Geometry.SetupPointLocatorQueries.html">Geometry.SetupPointLocatorQueries</a> for more information.
+<br /><br />
+Notice that the "closest distance" relationship may change relative to the spatial 
+reference of the geometry and the input positions. See
+<a href="#!/url=./si_om/Geometry.SetupPointLocatorQueries.html">Geometry.SetupPointLocatorQueries</a> for more information. 
+<br /><br />
+Notice that the returned point locators can be evaluated on any Geometry
+instance having the same topology.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>PointLocatorData Geometry.GetClosestLocationsWithinRadius( Object in_PositionToSearchFrom, Double in_dRadius, Int32 in_lNbToSearch );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = Geometry.GetClosestLocationsWithinRadius( Position, Radius, [MaxNbToFind] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p><a href="#!/url=./si_om/PointLocatorData.html">PointLocatorData</a></p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Position		</td>
+		<td>1D <a href="#!/url=./files/Array.htm">Array</a> or <a href="#!/url=./si_om/SIVector3.html">SIVector3</a>		</td>
+		<td>
+The position to search from, either a vector or an XYZ array.		</td>
+	</tr>
+	<tr>
+		<td class="name">Radius		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+Radius defining a spherical restriction volume for the search.		</td>
+	</tr>
+	<tr>
+		<td class="name">MaxNbToFind		</td>
+		<td><a href="#!/url=./files/Long.htm">Long</a>		</td>
+		<td>
+Maximum point locations to find (no limit if value is -1).			<p class="cell"><span class="hilite">Default Value: </span>
+-1			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example uses PointLocatorData to find closest vertices on a polygon mesh
+' within a specific radius, and then creates a cluster on these points.
+'
+NewScene , false
+set root = Application.ActiveSceneRoot
+set GridObj = root.AddGeometry("Grid", "MeshSurface")
+set GridGeom = GridObj.ActivePrimitive.Geometry
+Translate GridObj, 0, 0, -2.0, siRelative, siView, siObj, siXYZ
+' Set up to closest vertex search
+GridGeom.SetupPointLocatorQueries siClosestVertexOrKnot, GridObj.Kinematics.Global.Transform, null, -1
+' Get all vertices within a radius of 2 units relatively to the world center
+set PositionToQuery = XSIMath.CreateVector3()
+PositionToQuery.Set 0,0,0
+set PointLocatorsWithinTwoUnits = GridGeom.GetClosestLocationsWithinRadius(PositionToQuery, 2.0)
+VerticesString = " "
+Dim PtLocIndexToQuery(0)
+Dim ClosestVerticesArray()
+ReDim ClosestVerticesArray(PointLocatorsWithinTwoUnits.Count-1)
+for i = 0 to PointLocatorsWithinTwoUnits.Count-1
+	' Even though the point locators have be defined to exactly match the vertex 
+	' positions, the search data is returned as a position on a specific triangle, 
+	' just as any other use of the Point Locator.  However the vertex that matches 
+	' can be determined because it will be weighted at 100%.
+	PtLocIndexToQuery(0) = i
+	SubTriangleVertices = GridGeom.GetTriangleVertexIndexArray(PointLocatorsWithinTwoUnits, PtLocIndexToQuery)
+	SubTriangleWeights = GridGeom.GetTriangleWeightArray(PointLocatorsWithinTwoUnits, PtLocIndexToQuery)
+	for ctr = 0 to UBound(SubTriangleVertices,2)
+		VtxIdx = SubTriangleVertices(0,ctr)
+		if SubTriangleWeights(1,ctr) &gt; SubTriangleWeights(0,ctr) &amp; SubTriangleWeights(1,ctr) &gt; SubTriangleWeights(2,ctr) then
+			VtxIdx = SubTriangleVertices(1,ctr)
+		elseif SubTriangleWeights(2,ctr) &gt; SubTriangleWeights(0,ctr) &amp; SubTriangleWeights(2,ctr) &gt; SubTriangleWeights(1,ctr) then 
+			VtxIdx = SubTriangleVertices(2,ctr)
+		end if
+		ClosestVerticesArray(i) = VtxIdx
+		VerticesString = VerticesString &amp; VtxIdx
+		if i &lt;&gt; PointLocatorsWithinTwoUnits.Count - 1 then
+			VerticesString = VerticesString &amp; ", "
+		end if
+	next
+next
+' Create a cluster on these vertices
+GridGeom.AddCluster siVertexCluster, "ClosestVertices", ClosestVerticesArray
+Application.LogMessage "There are " &amp; PointLocatorsWithinTwoUnits.Count &amp; " grid vertices in the 2 unit sphere located at the world center."
+Application.LogMessage "These vertices are (ordered by proximity):"
+Application.LogMessage VerticesString
+' Expected results:
+'INFO : There are 13 grid vertices in the 2 unit sphere located at the world center.
+'INFO : These vertices are (ordered by proximity):
+'INFO :  42, 51, 41, 33, 43, 52, 32, 50, 34, 24, 60, 40, 44</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/PointLocatorData.html">PointLocatorData</a> <a href="#!/url=./si_om/Geometry.html">Geometry</a> <a href="#!/url=./si_om/Geometry.GetClosestLocations.html">Geometry.GetClosestLocations</a> <a href="#!/url=./si_om/Geometry.GetRaycastIntersections.html">Geometry.GetRaycastIntersections</a> <a href="#!/url=./si_om/Geometry.SetupPointLocatorQueries.html">Geometry.SetupPointLocatorQueries</a> <a href="#!/url=./si_om/Geometry.GetSurfacePointLocatorsFromPoints.html">Geometry.GetSurfacePointLocatorsFromPoints</a> <a href="#!/url=./si_om/Geometry.EvaluatePositions.html">Geometry.EvaluatePositions</a> <a href="#!/url=./si_om/Geometry.EvaluateNormals.html">Geometry.EvaluateNormals</a> <a href="#!/url=./si_om/Geometry.EvaluateClusterProperty.html">Geometry.EvaluateClusterProperty</a> <a href="#!/url=./si_om/PolygonMesh.GetPolygonIndexArray.html">PolygonMesh.GetPolygonIndexArray</a> <a href="#!/url=./si_om/PolygonMesh.GetTriangleVertexIndexArray.html">PolygonMesh.GetTriangleVertexIndexArray</a> <a href="#!/url=./si_om/PolygonMesh.GetTriangleNodeIndexArray.html">PolygonMesh.GetTriangleNodeIndexArray</a> <a href="#!/url=./si_om/PolygonMesh.GetTriangleWeightArray.html">PolygonMesh.GetTriangleWeightArray</a> <a href="#!/url=./si_om/PolygonMesh.ConstructPointLocators.html">PolygonMesh.ConstructPointLocators</a> <a href="#!/url=./si_om/NurbsSurfaceMesh.GetSubSurfaceIndexArray.html">NurbsSurfaceMesh.GetSubSurfaceIndexArray</a> <a href="#!/url=./si_om/NurbsSurfaceMesh.GetNormalizedUVArray.html">NurbsSurfaceMesh.GetNormalizedUVArray</a> <a href="#!/url=./si_om/NurbsSurfaceMesh.ConstructPointLocators.html">NurbsSurfaceMesh.ConstructPointLocators</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

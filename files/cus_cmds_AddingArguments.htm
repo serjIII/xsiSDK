@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-35B07BE7-976F-4003-AE26-5B10F8A90CEF" />
+      <meta name="indexterm" content="custom commands: arguments in the Init callback" />
+      <meta name="indexterm" content="arguments: custom commands (Init callback)" />
+      <meta name="indexterm" content="Init callbacks: custom commands" />
+      <meta name="indexterm" content="ArgumentCollection.AddWithHandler method (using)" />
+      <meta name="indexterm" content="custom commands: argument handlers (while adding arguments)" />
+      <meta name="indexterm" content="argument handlers (while adding arguments)" />
+      <meta name="indexterm" content="Adding Simple-Type Arguments" />
+      <meta name="indexterm" content="ArgumentCollection.Add method (using)" />
+      <meta name="indexterm" content="Adding Array and Object Arguments" />
+      <meta name="indexterm" content="Using Argument Handlers" />
+      <meta name="indexterm" content="custom commands: argument handlers (using)" />
+      <meta name="indexterm" content="argument handlers (using)" />
+      <meta name="indexterm" content="Adding Arguments to C++ Commands" />
+      <meta name="topic-type" content="concept" />
+      <title>Adding Arguments</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ reflinkdata.push(["type", "si_cpp/group__RenderMapDefine.html#ga7117e14e60390664f1862525dd6acaf6", "C++ API Reference", "../"]); 
+</script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-35B07BE7-976F-4003-AE26-5B10F8A90CEF"></a></span><div class="head">
+            <h1>Adding Arguments</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-B1AE1052-CB57-4C9F-BDE8-CE0325FE3C56"></a></span> The <a href="#!/url=./si_cmds/cb_Command_Init.html">Init</a> callback is where you add arguments to a custom command. For example, the following
+               <span class="code" translate="no">Init</span> callback adds two arguments:
+            </p>
+            <ul>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-DFD5DCB8-53AE-4B92-B28B-EC8A2B229024"></a></span> <span class="code" translate="no">Arg0</span> uses an argument handler named "Collection". This argument handler converts strings
+                     like "Cube*,sphere*" or "*#model" into collections of objects, and provides the current
+                     selection as the default argument value.
+                  </p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-FD3CE1EB-C2FD-4BD4-8913-5753E31F461C"></a></span> <span class="code" translate="no">Arg1</span> is a boolean flag that is false by default. The <a href="#!/url=./si_om/ArgumentCollection.Add.html">ArgumentCollection.Add</a> or ArgumentArray::Add method has an optional fourth parameter that specifies that
+                     data type, but Softimage is able to determine the data type of most arguments on their
+                     default values.
+                  </p> 
+               </li>
+            </ul>
+            <div class="codeBlock"><pre class="prettyprint">
+// [ JScript ]
+function MyCommand_Init( ctxt )
+{
+	// Get the Command object from the callback context
+	var oCmd;
+	oCmd = ctxt.Source;
+
+	// Get the ArgumentCollection
+	var oArgs;
+	oArgs = oCmd.Arguments;
+
+	// Arg0 is a collection of Softimage objects
+	// By default, Softimage passes in the current selection
+	oArgs.AddWithHandler(<em class="strong">"Arg0"</em>,"Collection");
+
+	// Arg1 is a boolean flag that is false by default
+	oArgs.Add( <em class="strong">"Arg1"</em>, siArgumentInput, false );
+	return true;
+}</pre></div>
+            <p><span class="anchor_wrapper"><a name="GUID-B7F7A71E-5900-4729-84D9-A4C7FC9AF214"></a></span>The <a href="#!/url=./si_cmds/cb_Command_Execute.html">Execute</a> callback has the same arguments as the command. When you add a new argument to a
+               command, you have to update the <span class="code" translate="no">Execute</span> callback signature.
+            </p>
+            <div class="codeBlock"><pre class="prettyprint">
+// [ JScript ]
+function MyCommand_Execute( <em class="strong">Arg0, Arg1</em> )
+{
+	// ...
+}</pre></div>
+            <p><span class="anchor_wrapper"><a name="GUID-E900EC2C-BCE2-4ACE-B3F9-D11570EDB9EA"></a></span>Using argument handlers and default values make custom commands behave like built-in
+               commands:
+            </p>
+            <div class="codeBlock"><pre class="prettyprint">
+// [ JScript ]
+MyCommand();// same as MyCommand( Application.Selection, false )
+MyCommand( null, true );// same as MyCommand( Application.Selection, true )
+MyCommand( "*" );// Arg0=all objects; Arg1=false
+MyCommand( "#3dobject*", true );// Arg0=3d objects only, no models; Arg1=true</pre></div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSD74ADB6ECD122649867B3D8C4DDB866E-002E"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-8ABF883B-03F5-49A7-8801-95C1529DDF64"></a></span> Adding Simple-Type Arguments
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-9C4F8064-B0D5-45CA-A3ED-CF26DA1F193D"></a></span>To add boolean, string, and number arguments, you can use the <a href="#!/url=./si_om/ArgumentCollection.Add.html">ArgumentCollection.Add</a> or ArgumentArray::Add method and specify a default value. Softimage can determine
+                  the data type from the default value, so you can omit the final parameter to <span class="code" translate="no">Add</span>.
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+// [ JScript ]
+oArgs.Add( "bFlag", siArgumentInput, false );		// boolean
+oArgs.Add( "bFlag", siArgumentInput, false, siBool );// Same as above
+
+oArgs.Add( "sName", siArgumentInput, "Custom" );// string
+oArgs.Add( "nParam", siArgumentInput, 4 );// number</pre></div> 
+               <p><span class="anchor_wrapper"><a name="GUID-E2387B44-191E-4CCC-AEAC-4B57C6293DC6"></a></span>When Softimage knows the argument type, it tries to convert argument values to the
+                  specified type. If you do not specify a default value or argument type when you add
+                  an argument, then the command will accept any type of value as an argument.
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+// [ C++ ]
+XSIPLUGINCALLBACK CStatus MyCommand_Init( CRef&amp; in_ctxt )
+{
+	Context ctxt( in_ctxt );
+	Command oCmd;
+	oCmd = ctxt.GetSource();
+	...
+	ArgumentArray oArgs; 
+	oArgs = oCmd.GetArguments();
+	oArgs.Add(L"Arg0");// No default value 
+
+	return CStatus::OK;
+}
+// Arg0 can be any <a href="javascript:void(0)" data="type" class="a_multireflink">type</a> of value.
+// JScript examples:
+//	MyCommand( "arg" );
+//	MyCommand( true );
+//	MyCommand( 35 );
+//
+// var a3 = new Array(10, "Hello", Date());
+//	MyCommand( a3 );</pre></div> 
+               <p><span class="anchor_wrapper"><a name="GUID-11AC38ED-81CE-4EA3-BF47-F6ABBB433DDE"></a></span>For a C++ command, you'll have to check the type of the argument value in the <a href="#!/url=./si_cmds/cb_Command_Execute.html">Execute</a> callback:
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+// [ C++ ]
+XSIPLUGINCALLBACK CStatus MyCommand_Execute( CRef&amp; in_ctxt )
+{
+	Context ctxt( in_ctxt );
+	CValueArray args = ctxt.GetAttribute(L"Arguments");
+	CValue Arg0 = args[0];
+
+	if( args[0].m_t == CValue::siBool )
+	...
+}</pre></div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSD74ADB6ECD122649867B3D8C4DDB866E-002F"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-5902981D-D836-4364-AFA2-78D588BCC66E"></a></span> Adding Array and Object Arguments
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-55E07A71-1E2C-4C80-B43D-3189BBD5A3C6"></a></span>For array arguments, how you add the argument depends on how you intend to use the
+                  command. If you want to call the command from other scripting languages or from C++,
+                  you need to let Softimage convert the array argument to a safe array. In the <a href="#!/url=./si_cmds/cb_Command_Execute.html">Execute</a> callback, you'll have to convert the safe array to a JScript array.
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+oArgs.Add( "safeArray", siArgumentInput );// safe array
+</pre></div> 
+               <p><span class="anchor_wrapper"><a name="GUID-809D5275-8EB1-4EE2-A0F6-B1497CA674E9"></a></span>If you intend to use the command only from JScript code, you can get better performance
+                  by specifying <a href="#!/url=./si_om/siVariantType.html">siDispatch</a> as the argument type. This prevents Softimage from converting the input array to
+                  a safe array.
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+oArgs.Add( "jsArray", siArgumentInput, 0, siDispatch );// JScript array</pre></div> 
+               <p><span class="anchor_wrapper"><a name="WSD74ADB6ECD122649867B3D8C4DDB866E-0030"></a></span> To be able to pass JScript objects to a command, specify <span class="code" translate="no">siDispatch</span> as the argument type (to prevent Softimage from converting the argument to a safe
+                  array).
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+oArgs.Add( "jsObject", siArgumentInput, 0, siDispatch );	// JScript object</pre></div> 
+               <p><span class="anchor_wrapper"><a name="GUID-28DC5C82-B3C4-4965-8231-4F74AAC2EC26"></a></span>See the <a href="#!/url=./si_om/ArgumentCollection.Add.html">ArgumentCollection.Add</a> reference page for an example.
+               </p> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSD74ADB6ECD122649867B3D8C4DDB866E-0031"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-BB88ED7A-33E8-4B44-B575-082997F560EA"></a></span> Using Argument Handlers
+               </h2>    
+               <p><span class="anchor_wrapper"><a name="GUID-60F03F31-8F25-48A7-9508-7C5FD152D14E"></a></span>Argument handlers make it easy to write custom commands that get collections, objects,
+                  and marked parameters as arguments. You can also use argument handlers to get the
+                  current frame number, or the frame rate, as arguments.
+               </p> 
+               <p><span class="anchor_wrapper"><a name="GUID-DED2AA99-68D5-464E-901A-224419E6139E"></a></span>Argument handlers take care of validating argument values, converting strings such
+                  as "*" to object lists, and supplying default values.
+               </p> 
+               <div class="section"><span class="anchor_wrapper"><a name="WSD74ADB6ECD122649867B3D8C4DDB866E-0032"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-02A84F08-D70D-4021-AAF9-94291B5B1262"></a></span>To get a collection of objects, or the current selection:
+                  </h3> 
+                  <div class="codeBlock"><pre class="prettyprint">
+// [ JScript ]
+oArgs.AddWithHandler("Arg",<em class="strong">"Collection"</em>);
+
+// Examples
+MyCommand();	// Same as MyCommand( Application.Selection );
+MyCommand( "cone,cube,sphere" )
+MyCommand( "#model" );	// All models, incl. Scene_Root</pre></div> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WSD74ADB6ECD122649867B3D8C4DDB866E-0033"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-FA103025-6DC6-4831-8938-F75B45AEE838"></a></span>To get a collection of subcomponents, or the current selection of subcomponents:
+                  </h3> 
+                  <div class="codeBlock"><pre class="prettyprint">
+// [ JScript ]
+oArgs.AddWithHandler("Arg",<em class="strong">"Collection"</em>);
+// Examples
+MyCommand();	// Same as MyCommand( Application.Selection );
+MyCommand( "sphere.pnt[1,7,8,13-15" )</pre></div> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WSD74ADB6ECD122649867B3D8C4DDB866E-0034"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-32817649-2784-49CE-BB1D-D9D3FFB0024F"></a></span>To get an object:
+                  </h3> 
+                  <div class="codeBlock"><pre class="prettyprint">
+// [ JScript ]
+oArgs.AddWithHandler( "Arg", <em class="strong">"SingleObj"</em> );
+
+// Shortcut adding args with the SingleObj argument handler
+oArgs.AddObjectArgument( "Arg" );
+
+// Examples
+MyCommand( Application.Selection.Item(0) );
+MyCommand( "cone" );
+MyCommand();	// Same as MyCommand(null)</pre></div> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WSD74ADB6ECD122649867B3D8C4DDB866E-0035"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-EB66565C-F2A1-4F81-9A26-E9A601E0EE4C"></a></span>To get the current frame number and the frame rate:
+                  </h3> 
+                  <div class="codeBlock"><pre class="prettyprint">
+// [ JScript ]
+oArgs.AddWithHandler("currentFrame",<em class="strong">"Frame"</em>);
+oArgs.AddWithHandler("frameRate",<em class="strong">"FrameRate"</em>);</pre></div> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WSD74ADB6ECD122649867B3D8C4DDB866E-0036"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-3648E21A-94E4-4FFA-A746-6AC16AAB6705"></a></span>To get the marked parameters on the currently selected objects:
+                  </h3> 
+                  <div class="codeBlock"><pre class="prettyprint">
+// [ JScript ]
+// All marked parameters, both animatable and non-animatable
+oArgs.AddWithHandler("Arg5",<em class="strong">"MarkedParameters"</em>);
+
+// Only the animatable marked parameters
+oArgs.AddWithHandler("Arg0",<em class="strong">"AnimatableParameters"</em>);</pre></div> 
+               </div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSD74ADB6ECD122649867B3D8C4DDB866E-0037"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-CDF3FD91-8F0B-4BBE-BC35-88C39BEAA192"></a></span> Adding Arguments to C++ Commands
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-733BEADD-30B3-4C8A-AAF5-50264E46A6EA"></a></span>Adding arguments in C++ is pretty much the same as in scripting. You can add simple-type
+                  arguments like booleans or strings or arrays using <a href="#!/url=./si_cpp/classXSI_1_1ArgumentArray.html#Add">ArgumentArray::Add</a>, or add arguments with specialized handlers using <a href="#!/url=./si_cpp/classXSI_1_1ArgumentArray.html#AddWithHandler">ArgumentArray::AddWithHandler</a>.
+               </p> 
+               <p><span class="anchor_wrapper"><a name="GUID-ACFF8ECA-43E3-44C1-9BBC-3B1F9B2EDD3E"></a></span>One difference is that the C++ <span class="code" translate="no">Add</span> method has two parameters only: the name of the argument and a default value. There
+                  is no parameter for specifying the type of the argument value.
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+// [ C++ ]
+XSIPLUGINCALLBACK CStatus MyCommand_Init( CRef&amp; in_ctxt )
+{
+	Context ctxt( in_ctxt );
+	Command oCmd;
+	oCmd = ctxt.GetSource();
+	oCmd.EnableReturnValue(true);
+	ArgumentArray oArgs;
+	oArgs = oCmd.GetArguments();
+
+	// Add some simple-<a href="javascript:void(0)" data="type" class="a_multireflink">type</a> args. 
+	oArgs.Add( L"bFlag", false );		// siBool
+	oArgs.Add( L"sString", L"someString" );	// siString
+	oArgs.Add( L"nNumber", 0l );		// siInt4
+	oArgs.Add( L"Float", 0.0f );	// siFloat
+	oArgs.Add( L"Arg" );		// No default value, so can be any <a href="javascript:void(0)" data="type" class="a_multireflink">type</a>
+
+	// Default value is the current selection
+	oArgs.AddWithHandler( L"cloObjects", L"Collection" );
+
+	// Default value is the all marked animatable parameters
+	oArgs.AddWithHandler( L"Arg0", L"AnimatableParameters" );
+	return CStatus::OK;
+}</pre></div> 
+            </div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

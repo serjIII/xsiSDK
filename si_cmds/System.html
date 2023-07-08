@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>System</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>System</h1>
+         </div>
+
+<h2 class="pagehead">System</h2>
+
+<h3>Introduced</h3>
+<div><p>v1.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+System allows you to run operating system commands, programs or batch files. It is usually used along with 
+the <a href="#!/url=./si_om/XSIApplication.Platform.html">XSIApplication.Platform</a> property in order to achieve maximum portability.  
+<a href="#!/url=./si_om/XSIApplication.InstallationPath.html">XSIApplication.InstallationPath</a> can also be used to minimize usage of hard coded paths. <br /><br />
+Your programs and batch files can use the standard exit command to return a value (for example, 'exit(1)' in C/C++, 
+'exit 1' in shell programing (Unix) or 'exit /b 1' on Windows XP batch files).<br /><br />
+Operating system commands usually return 0 for success or any other value for errors. Please consult your OS 
+vendor's documentation for more details.
+<br /><br />
+Note: This command uses <a href="#!/url=./files/OutArgDefined.htm">output arguments</a>. C# and some 
+scripting languages (such as JScript, PerlScript and Python) don't support arguments passed by reference. However, 
+the return value also provides the output argument.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oDouble = System( Pathname, [Value] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>
+The return value of the executed command, program or batch file as a <a href="#!/url=./files/Double.htm">Double</a>.  This value can be used 
+as a means to transmit information from your batch files or custom built applications to Softimage.
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Pathname		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Command to be executed. 			<p class="cell"><span class="hilite">Default Value: </span>
+none			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Value		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+This optional parameter is equivalent to the return value. It is provided for backward-compatibility only.		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' Creates a text file with the content of the project directory
+Dim cmdResult		' result of the command line operation
+Dim cmd				' command to execute
+Dim destinationPath	' destination path for the created file
+Dim sourcePath		' path of the directory used to create the file
+' source = project path
+sourcePath = Application.InstallationPath( siProjectPath )
+' output in the user path
+destinationPath = Application.InstallationPath( siUserPath )
+' create the command line depending on the current platform
+Select Case Application.Platform
+	' Windows
+	Case "Win32"	
+		cmd = "dir " &amp; sourcePath &amp; " &gt; " &amp; destinationPath &amp; "\content.log"
+	' Linux
+	Case Else 		
+		cmd = "ls " &amp; sourcePath &amp; " &gt; " &amp; destinationPath &amp; "/content.log"
+End Select
+' run the constructed command
+cmdResult = system( cmd )
+' Check if everything went fine
+If cmdResult = 0 Then
+	LogMessage "Success"
+Else
+	LogMessage "Failure"
+End If</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' Running an application through Softimage
+Dim customApplication		' the application or batch file to run
+Dim customApplicationParam	' parameters to pass to your application
+Dim appResult			' the return code of your application
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' Set the custom application to run.  Put your application
+' path here.  You could use the Application.InstallationPath
+' property along with the Application.Platform property to make
+' your code work on any possible user configurations.
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+customApplication = "notepad.exe"
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' Set the parameters to pass to your custom application.  This can
+' be nothing if none are required.
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+ApplicationParam = "c:/content.log"
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' execute the application
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+appResult = System( customApplication &amp; " " &amp; ApplicationParam )
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' Perform actions according to the return value of the application
+' The values below must be customised according to the application
+' or the batch file that ran.
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Select Case appResult
+	Case 0 LogMessage "Wonderful!"
+	Case 1 LogMessage "Error case when 1 is returned"
+	Case 2 LogMessage "Error case when 2 is returned"
+	Case Else LogMessage "Any other error case"
+End Select</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/XSIUtils.LaunchProcess.html">XSIUtils.LaunchProcess</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

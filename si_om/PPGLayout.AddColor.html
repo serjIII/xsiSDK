@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>PPGLayout.AddColor</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>PPGLayout.AddColor</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/PPGLayout.html">PPGLayout</a>.AddColor <img src="images/operator.gif" alt="operator" /></h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p> This method is similar to <a href="#!/url=./si_om/PPGLayout.AddItem.html">PPGLayout.AddItem</a> but it helps add
+a color widget to a layout.  There are two variations of the Color widget, 
+siControlRGBA and siControlRGB.  Rather than a single parameter, this control
+reads and writes a separate parameter for each "channel" of the color.
+<br /><br />
+To successfully create an RGBA color control on a <a href="#!/url=./si_om/CustomProperty.html">CustomProperty</a>, first
+add four siDouble or siFloat parameters to the control, for example "MyR", "MyG", "MyB", and "MyA".
+The naming scheme is not important but the parameters must be consecutive.  This parameters
+should have a UI Range of 0 to 1 because the values are stored in normalized format.  However
+you can have a larger actual Range if you want to support colors outside the normal color space.  
+(See <a href="#!/url=./si_om/Parameter.SuggestedMax.html">Parameter.SuggestedMax</a> and <a href="#!/url=./si_om/Parameter.Max.html">Parameter.Max</a>).
+<br /><br />
+The default control for a siDouble parameter is siControlNumber, but the color widget
+can be displayed instead by calling this method and specifying the name of the first parameter, for example
+"MyR".  To read the color value through the object model, just refer to the values of the four
+parameters, for example "MyG" will contain the normalized green component of the color.
+<br /><br />
+Note: Shaders support colors directly as a native "strong" type.  So rather than having multiple
+parameters of type siDouble or siFloat, they use a single parameter of type "Color".
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>PPGItem PPGLayout.AddColor( String in_RedComponentParamName, String in_opt_Label, Boolean in_opt_Alpha );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = PPGLayout.AddColor( RedComponentParamName, [Label], [Alpha] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p><a href="#!/url=./si_om/PPGItem.html">PPGItem</a></p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">RedComponentParamName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		Script Name of the <a href="#!/url=./si_om/Parameter.html">Parameter</a> that represents the Red
+		component of the color.  The names of the Green, Blue and optional Alpha parameters
+		do not need to be specified because Softimage uses the parameters that are consecutive after
+		the Red component.
+			</td>
+	</tr>
+	<tr>
+		<td class="name">Label		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		Specify the text which appears to the left of the Color Widget.  
+		If not specified here, the name of the parameter
+		(see <a href="#!/url=./si_om/SIObject.Name.html">SIObject.Name</a>) or <a href="#!/url=./si_om/Parameter.ScriptName.html">Parameter.ScriptName</a> of the
+		red component parameter appears instead.
+			</td>
+	</tr>
+	<tr>
+		<td class="name">Alpha		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+
+		Specifies whether the color should include an Alpha channel.  This
+		argument decides whether a siControlRGBA or siControlRBG is created.
+				<p class="cell"><span class="hilite">Default Value: </span>
+false			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	Proxy Parameters are an useful way to centralize parameters from
+	different objects on the same property, or even to build a simplified
+	version of a property page.
+	This example demonstrates creation of a custom property set
+	that only shows a few items of the Shader that it controls,
+	but maintains a pleasing layout.
+*/
+NewScene( null, false ) ;
+var oSphere = ActiveSceneRoot.AddGeometry( "Sphere", "MeshSurface" ) ;
+oSphere.AddMaterial( "Phong"  );
+var oPhongShader = oSphere.Material.Shaders(0) ;
+// This is a Boolean for enabling diffuse
+var oDiffuseEnable = oPhongShader.Parameters( "diffuse_inuse" ) ;
+// These are CompoundParameters, each with R,G,B sub-parameters
+var oAmbientParam = oPhongShader.Parameters( "ambient" ) ;
+var oDiffuseParam = oPhongShader.Parameters( "diffuse" ) ;
+var oCustomProperty = oSphere.AddProperty("CustomProperty",false,"Proxies");
+// We specify a name to avoid having a long one like "sphere_Material_Phong_diffuse_inuse"
+oCustomProperty.AddProxyParameter( oDiffuseEnable, "Enable", "Enable" );
+oCustomProperty.AddProxyParameter( oDiffuseParam.Parameters("red"), "Diffuse", "Diffuse" );
+oCustomProperty.AddProxyParameter( oDiffuseParam.Parameters("green"));
+oCustomProperty.AddProxyParameter( oDiffuseParam.Parameters("blue"));
+oCustomProperty.AddProxyParameter( oAmbientParam.Parameters("red"), "Ambient", "Ambient" );
+oCustomProperty.AddProxyParameter( oAmbientParam.Parameters("green"));
+oCustomProperty.AddProxyParameter( oAmbientParam.Parameters("blue"));
+// If we inspect the object now we would see 6 separate sliders,
+// each controlling a different component of the colors
+// We can create a custom layout to clean up the display
+var oLayout = oCustomProperty.PPGLayout
+oLayout.AddGroup( "Phong Diffuse" )
+	oLayout.AddItem( "Enable" ) ;
+	// Just for fun, show the ambient before the diffuse, which
+	// is the opposite of the normal Phong Property Page
+	oLayout.AddColor( "Ambient", "Ambient", false ) ;
+	oLayout.AddColor( "Diffuse", "Diffuse", false ) ;
+oLayout.EndGroup() ;
+oLayout.Logic = Enable_OnChanged.toString() ;
+oLayout.Language = "JScript" ;
+// Show both dialogs.  You will see that both items
+// are identical.
+InspectObj ( oCustomProperty, null, null, siLock ) ;
+InspectObj ( oPhongShader, null, null, siLock ) ;
+function Enable_OnChanged()
+{
+	// A little Property Page event code to properly
+	// grey out the color controls if the Disable checkbox is
+	// clicked
+	bEnable = PPG.Enable.Value ;
+	// To disable the color control we just disable the proxy
+	// parameter representing the "red" component
+	PPG.Ambient.Enable( bEnable ) ;
+	PPG.Diffuse.Enable( bEnable ) ;	
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/PPGLayout.AddItem.html">PPGLayout.AddItem</a> <a href="#!/url=./si_om/PPGItem.Label.html">PPGItem.Label</a> <a href="#!/url=./si_om/Parameter.ScriptName.html">Parameter.ScriptName</a> <a href="#!/url=./si_om/siPPGControlType.html">siPPGControlType</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

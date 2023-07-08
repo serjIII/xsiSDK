@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-9F32AFDB-30F4-44C2-A0F1-5CD0A51FA3CA" />
+      <meta name="indexterm" content="wizards: creating ICE nodes" />
+      <meta name="topic-type" content="concept" />
+      <meta name="keywords" content="<userpath&gt;" />
+      <meta name="keyword" content="<userpath&gt;" />
+      <title>Custom ICENode Wizard</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-9F32AFDB-30F4-44C2-A0F1-5CD0A51FA3CA"></a></span><div class="head">
+            <h1>Custom ICENode Wizard</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-A84B6C16-967F-4323-9966-1013132127F6"></a></span> The Custom ICENode Wizard is used to generate a fully functioning custom <a href="#!/url=./si_cpp/classXSI_1_1ICENode.html">ICENode</a> plug-in code, including:
+            </p>
+            <ul>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-5CC8857D-399A-4D25-AD2D-EF5C72943C9D"></a></span>the project file (for both Windows or Linux platorms)
+                  </p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-751229B7-6907-4C47-BBD1-0C577F12FF77"></a></span>the required registration code based on the port definition
+                  </p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-47BFEB84-6872-4C00-B961-9B35F27B7637"></a></span>skeleton callback code
+                  </p> 
+               </li>
+            </ul>
+            <p><span class="anchor_wrapper"><a name="GUID-AC87CF13-3059-4506-AA89-85E16959D914"></a></span>The implementation of the evaluation algorithm is left to the ICENode developer.
+            </p>
+            <div><span class="anchor_wrapper"><a name="GUID-5C9C79AB-8079-461C-8E8C-504084C05ABC"></a></span><div class="note-tip"><span class="label">TIP:</span> 
+                  <p><span class="anchor_wrapper"><a name="GUID-F18B8134-F231-408D-A0F7-6138321356EC"></a></span>You can get your Custom ICENode to appear in the Preset Manager with a special icon
+                     (thumbnail). See <span class="char_link"><a href="#!/url=./files/cus_icenodes_CustomizingIconsForCustomICENodes.htm">Customizing Icons for Custom ICENodes</a></span> for more information.
+                  </p> 
+               </div>
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSB2B58C11414F714EB9B26CD8E647E1E1-003D"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-BEAC2000-D163-4C41-9CBE-A16AE8CBAB26"></a></span>To create a custom ICENode using the SDK ICENode Wizard
+               </h2> <span class="anchor_wrapper"><a name="GUID-FC0332AC-812F-40A8-AD59-F9EED4731078"></a></span><ol type="1" start="1">
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-3D1A9A8C-B424-4CA5-81E1-DB6A960BC228"></a></span>Click <span class="MenuCascade" id="GUID-15244B63-F730-4214-8AEE-B23E04E812FD">File</span><img src="../images/ac.menuaro.gif" /><span class="MenuCascade" id="GUID-5B1684DB-5931-4B7A-99AA-AA36D906C947">Plug-ins</span> to open the Plug-in Manager. (In the Tools Development Environment layout, you can
+                        click the Plug-ins tab to switch to the Plug-in Manager view)
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-92D1398A-EBEA-41DD-ACBE-8EE2ADBDEDBC"></a></span>Do one of the following:
+                     </p> 
+                     <ul>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-6F092600-33A0-4AC3-8CD6-C478DBE3D1F8"></a></span>To create the ICENode in the User location, click <span class="MenuCascade" id="GUID-496D7302-8396-4682-A1D0-CB36C6C91755">File</span><img src="../images/ac.menuaro.gif" /><span class="MenuCascade" id="GUID-C74F33D7-E769-4306-B381-736C33CC82A8">New</span><img src="../images/ac.menuaro.gif" /><span class="MenuCascade" id="GUID-EA67D510-D4DD-4467-AE79-443DC680E863">ICENode</span>.
+                           </p> 
+                        </li>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-8C454A3C-CB6A-41E2-99F5-B49211755D35"></a></span>To create the ICENode in a different location (such as a workgroup or an Add-on directory),
+                              expand the location in the Plug-in Tree, right-click the Plugins folder and click
+                              <span class="MenuCascade" id="GUID-6C355EFA-71F8-422A-90E4-0B67EA46EDB0">New</span><img src="../images/ac.menuaro.gif" /><span class="MenuCascade" id="GUID-91E80219-8713-4A1D-A70E-2BC33CAB2A27">ICENode</span>.
+                           </p> 
+                        </li>
+                     </ul> 
+                     <p><span class="anchor_wrapper"><a name="GUID-2A79AEF4-DA90-4A89-8B69-3AFC83D86510"></a></span>The ICENode wizard appears.
+                     </p> <img src="../images/GUID-E2D9DC36-52C7-479F-9706-A530F06CC253-low.png" /> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-F7BFC581-FCF1-4370-954B-7A1AE2D83A82"></a></span>In the <span class="MenuCascade" id="GUID-AD850028-52EE-4295-B070-4B4070382DA5">Type</span> box, type a name for the node.
+                     </p> 
+                     <p><span class="anchor_wrapper"><a name="GUID-9E6A2FC4-6553-4651-881B-70C91BF05251"></a></span>The first character in an ICENode name should be a letter. Subsequent characters can
+                        be letters, numbers, or underscore (_) characters.
+                     </p> 
+                     <p><span class="anchor_wrapper"><a name="GUID-60C73369-DE52-4244-B2BB-B32E576D2E75"></a></span>The wizard automatically replaces spaces with underscores but leaves the spaces in
+                        the <span class="MenuCascade" id="GUID-B4B57117-4B4D-445C-8105-801A979FFEC0">UI Name</span> box.
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-31A01025-0DEA-436E-AA39-2BC0CB7D92B3"></a></span>If you want to use a different display name in the UI for your custom ICENode, type
+                        the display name in the the <span class="MenuCascade" id="GUID-0CD0CFBC-5D9D-4C99-80DA-D7123ECC14F9">UI Name</span> box.
+                     </p> 
+                     <p><span class="anchor_wrapper"><a name="GUID-67C616C2-2F12-44CE-802E-2FE582E08B03"></a></span>By default, the UI name is the same as your ICENode name (type) but with spaces instead
+                        of underscores.
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-297D9B42-5C7E-4DB2-A8F7-5EF33C65AB40"></a></span>Type a category of your ICENode in the <span class="MenuCascade" id="GUID-C27410CD-9812-40F7-B187-790944833AC2">Category</span> textbox. The category is used to classify and list the new ICENode in the Softimage
+                        UI. For example, if you type <span class="code" translate="no">Debugging</span>, your ICENode will appear with the native Log Values node in the ICE Tree preset
+                        manager.
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-59E3E302-26D6-4285-9ED1-685C968FC14B"></a></span>Select the processing mode to use from the Processing Mode drop-down list. By default,
+                        the <a href="#!/url=./si_om/siICENodeThreadingModel.html">siICENodeMultiThreading</a> (<span class="char_link"><a href="#!/url=./files/cus_icenodes-2.htm">regular</a></span>) mode is specified, but you can change this to <a href="#!/url=./si_om/siICENodeThreadingModel.html">siICENodeSingleThreading</a> if you want to enable support for <span class="char_link"><a href="#!/url=./files/cus_icenodes_ICENodeProcessingSingleThread.htm">single-thread processing</a></span> or to <a href="#!/url=./si_om/siICENodeThreadingModel.html">siICENodeMultiEvaluationPhase</a> if you want to use <span class="char_link"><a href="#!/url=./files/cus_icenodes_MultiPhaseCustomICENode.htm">multiple evaluation phases</a></span>.
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-13ADD5E4-4212-41FF-9494-FCE9218B05E9"></a></span>You can use the <span class="MenuCascade" id="GUID-1BB78754-C15F-44A1-A06C-652E6A4ED40D">Color</span> slider to set the background color you want to appear in the UI for your new custom
+                        node.
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-5A298F7F-BC06-4A77-95C2-20EBA84D68B9"></a></span>You can optionally change the <span class="MenuCascade" id="GUID-9F436FB7-D45B-4275-A86B-8D900D70B90A">Output Directory</span> where the new plug-in will be generated.
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-00A1EC97-0774-4BE8-9653-210D9332B0AB"></a></span>Click the <span class="MenuCascade" id="GUID-0E90CF35-13EC-41C6-A8DE-B8D979687FF6">Input</span><span class="char_link"><a href="#!/url=./files/cus_icenodes_Ports_tab.htm">Ports</a></span> tab. Here you can specify the input port definitions.
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-31D27C88-A0E7-4B15-807D-142B71B47BBD"></a></span>Click the <span class="MenuCascade" id="GUID-E20AB379-20FA-41DA-BEE9-3E499B21FCD1">Output</span><span class="char_link"><a href="#!/url=./files/cus_icenodes_Ports_tab.htm">Ports</a></span> tab. Here you can specify the output port definitions.
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-3799923D-4C70-44B4-B8D0-327CEF40DE88"></a></span>Click the <span class="char_link"><a href="#!/url=./files/cus_icenodes_CustomTypes_tab.htm">
+                              Custom Types
+                              </a></span> tab. Here you can set up new custom data types to use when specifying node port connections.
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-EADE655C-95A3-4E42-AE3E-6BAA9A542F11"></a></span>Click the <span class="char_link"><a href="#!/url=./files/cus_icenodes_Options_tab.htm">
+                              Options
+                              </a></span> tab. Here you can set some options for how the data will be evaluated.
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-9C345430-BB90-49BA-AD55-4F73358BC23C"></a></span>Click the <span class="char_link"><a href="#!/url=./files/cus_icenodes_GenerateCode.htm">
+                              Code
+                              </a></span> tab. Here you can add optional callbacks or debug features.
+                     </p> 
+                  </li>
+               </ol> 
+            </div>
+         </div><span class="noindex">
+            <div class="topic-list">
+               <h4 class="related">Topics in this section</h4>
+               <ul class="jumplist">
+                  <li class="topiclist-litem"><a href="#!/url=./files/cus_icenodes_Ports_tab.htm">Ports</a></li>
+                  <li class="topiclist-litem"><a href="#!/url=./files/cus_icenodes_CustomTypes_tab.htm">Custom Types</a></li>
+                  <li class="topiclist-litem"><a href="#!/url=./files/cus_icenodes_Options_tab.htm">Options</a></li>
+                  <li class="topiclist-litem"><a href="#!/url=./files/cus_icenodes_GenerateCode.htm">Code</a></li>
+                  <li class="topiclist-litem"><a href="#!/url=./files/cus_icenodes_CustomizingIconsForCustomICENodes.htm">Customizing Icons for Custom ICENodes</a></li>
+               </ul>
+            </div></span><div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

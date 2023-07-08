@@ -1,0 +1,1150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>siPPGItemAttribute</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>siPPGItemAttribute</h1>
+         </div>
+
+<h2 class="pagehead">siPPGItemAttribute</h2>
+
+<h3>Description</h3>
+<div><p>
+Specifies the different attributes supported on <a href="#!/url=./si_om/PPGItem.html">PPGItem</a>s. Many of these attributes only apply to a specific 
+type of control, for example siUIColumnGap only applies to <a href="#!/url=./si_om/siPPGControlType.html#siControlIconList">siControlIconList</a>. Other attributes, 
+such as <a href="#!/url=./si_om/siPPGItemAttribute.html#siUINoLabel">siUINoLabel</a> and <a href="#!/url=./si_om/siPPGItemAttribute.html#siUICY">siUICY</a>, are supported on practically 
+every control.
+<br /><br />
+Some of the most common attributes are available more directly as properties of the PPGItem, for example <a href="#!/url=./si_om/PPGItem.UIItems.html">PPGItem.UIItems</a> 
+is a convenient way to set the <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIItems">siUIItems</a> attribute.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>StringModule.siUIAlignCenter                                                // AlignCenter
+StringModule.siUIAlignLeft                                                  // AlignLeft
+StringModule.siUIAlignRight                                                 // AlignRight
+StringModule.siUIAudioFile                                                  // AudioFile
+StringModule.siUIButtonDisable                                              // ButtonDisable
+StringModule.siUICaption                                                    // caption
+StringModule.siUIColumnCnt                                                  // nocol
+StringModule.siUIColumnGap                                                  // colgap
+StringModule.siUIContinue                                                   // Continue
+StringModule.siUICX                                                         // CX
+StringModule.siUICY                                                         // CY
+StringModule.siUIDecimals                                                   // decimals
+StringModule.siUIFCurveColorNonBijective                                    // ColorNonBijective
+StringModule.siUIFCurveGhosting                                             // Ghosting
+StringModule.siUIFCurveGridSpaceX                                           // GridSpaceX
+StringModule.siUIFCurveGridSpaceY                                           // GridSpaceY
+StringModule.siUIFCurveLabelX                                               // LabelX
+StringModule.siUIFCurveLabelY                                               // LabelY
+StringModule.siUIFCurveNoGrid                                               // NoGrid
+StringModule.siUIFCurveNoRulerX                                             // NoRulerX
+StringModule.siUIFCurveNoRulerY                                             // NoRulerY
+StringModule.siUIFCurveShowTimeCursor                                       // ShowTimeCursor
+StringModule.siUIFCurveSnapX                                                // SnapX
+StringModule.siUIFCurveSnapY                                                // SnapY
+StringModule.siUIFCurveViewMaxX                                             // ViewMaxX
+StringModule.siUIFCurveViewMaxY                                             // ViewMaxY
+StringModule.siUIFCurveViewMinX                                             // ViewMinX
+StringModule.siUIFCurveViewMinY                                             // ViewMinY
+StringModule.siUIFileFilter                                                 // FileFilter
+StringModule.siUIFileMustExist                                              // MustExist
+StringModule.siUIFilePath                                                   // path
+StringModule.siUIGradientConDivot                                           // ConDivot
+StringModule.siUIGradientMaxMarker                                          // MaxMarker
+StringModule.siUIGradientMidPoint                                           // MidPoint
+StringModule.siUIGradientType                                               // GradientType
+StringModule.siUIGridColumnWidths                                           // ColumnWidths
+StringModule.siUIGridHideColumnHeader                                       // HideColumnHeader
+StringModule.siUIGridHideRowHeader                                          // HideRowHeader
+StringModule.siUIGridLockColumnHeader                                       // LockColumnHeader
+StringModule.siUIGridLockColumnWidth                                        // LockColumnWidth
+StringModule.siUIGridLockRowHeader                                          // LockRowHeader
+StringModule.siUIGridLockRowHeight                                          // LockRowHeight
+StringModule.siUIGridReadOnlyColumns                                        // ReadOnlyColumns
+StringModule.siUIGridSelectionMode                                          // SelectionMode
+StringModule.siUIGridShowColumns                                            // ShowColumns
+StringModule.siUIGridThumbnailSize                                          // ThumbnailSize
+StringModule.siUIImageFile                                                  // ImageFile
+StringModule.siUIInitialDir                                                 // InitialDir
+StringModule.siUIItems                                                      // UIItems
+StringModule.siUILabel                                                      // label
+StringModule.siUILabelMinPixels                                             // LabelMinPixels
+StringModule.siUILabelPercentage                                            // LabelPercentage
+StringModule.siUILineCnt                                                    // noline
+StringModule.siUILineGap                                                    // linegap
+StringModule.siUILogarithmic                                                // log
+StringModule.siUIMultiSelectionListBox                                      // MultiSelectionListBox
+StringModule.siUINoLabel                                                    // NoLabel
+StringModule.siUINoSlider                                                   // NoSlider
+StringModule.siUIOpenFile                                                   // OpenFile
+StringModule.siUISelectionColor                                             // selcolor
+StringModule.siUIShowClip                                                   // showclip
+StringModule.siUIShowFrame                                                  // ShowFrame
+StringModule.siUIStyle                                                      // style
+StringModule.siUISubFolder                                                  // SubFolder
+StringModule.siUISyncSlider                                                 // SyncSlider
+StringModule.siUIThumbWheel                                                 // ThumbWheel
+StringModule.siUITreadmill                                                  // Treadmill
+StringModule.siUIType                                                       // UIType
+StringModule.siUIUseSelectionIcon                                           // useselicon
+StringModule.siUIValueOnly                                                  // ValueOnly
+StringModule.siUIWidthPercentage                                            // WidthPercentage
+StringModule.siUILineNumbering                                              // LineNumbering
+StringModule.siUIFolding                                                    // Folding
+StringModule.siUIBackgroundColor                                            // Background
+StringModule.siUIForegroundColor                                            // Foreground
+StringModule.siUIFont                                                       // Font
+StringModule.siUICommentColor                                               // CommentColor
+StringModule.siUIPreprocessorColor                                          // PreprocessorColor
+StringModule.siUIMarginWidth                                                // MarginWidth
+StringModule.siUICommentFont                                                // CommentFont
+StringModule.siUIFontSize                                                   // FontSize
+StringModule.siUIKeywords                                                   // Keywords
+StringModule.siUIHeight                                                     // Height
+StringModule.siUIHorizontalScroll                                           // HorizontalScroll
+StringModule.siUIVerticalScroll                                             // VerticalScroll
+StringModule.siUILineWrap                                                   // LineWrap
+StringModule.siUIKeywordFile                                                // KeywordFile
+StringModule.siUIAutoComplete                                               // AutoComplete
+StringModule.siUIToolbar                                                    // Toolbar
+StringModule.siUICapability                                                 // Capability
+StringModule.siUITabSize                                                    // TabSize
+StringModule.siUIUseSpacesForTab                                            // UseSpacesForTab
+StringModule.siUIShowIndentationGuides                                      // ShowIndentationGuides
+StringModule.siUIShowWhitespace                                             // ShowWhitespace</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<div><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th>Constant		</th>		<th>Value		</th>		<th>Description		</th>	</tr>
+	<tr>
+		<td class="name"><a name="siUIAlignCenter"> </a>siUIAlignCenter		</td>
+		<td class="example">AlignCenter		</td>
+		<td>
+NOT SUPPORTED (as of v5.0). A boolean attribute that applies to most controls.  (Default: false)
+		<br /><br />
+		True to align control to the center of the property page.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIAlignLeft"> </a>siUIAlignLeft		</td>
+		<td class="example">AlignLeft		</td>
+		<td>
+NOT SUPPORTED (as of v5.0). A boolean attribute that applies to most controls.  (Default: true)
+		<br /><br />
+		True to align control to the left side of the property page.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIAlignRight"> </a>siUIAlignRight		</td>
+		<td class="example">AlignRight		</td>
+		<td>
+NOT SUPPORTED (as of v5.0). A boolean attribute that applies to most controls.  (Default: false)
+		<br /><br />
+		True to align control to the right side of the property page.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIAudioFile"> </a>siUIAudioFile		</td>
+		<td class="example">AudioFile		</td>
+		<td>
+A boolean attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlFilePath">siControlFilePath</a> control.
+		<br /><br />
+		True to use all audio file formats as extensions for the name filters on the File Browser control.
+		<br /><br />
+		Note: This is a convenience to save you hardcoding a long list of supported audio file extensions into the 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIFileFilter">siUIFileFilter</a> attribute. 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIButtonDisable"> </a>siUIButtonDisable		</td>
+		<td class="example">ButtonDisable		</td>
+		<td>
+A boolean attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlButton">siControlButton</a> control.
+		<br /><br />
+		True to disable the button (see <a href="#!/url=./si_om/PPGLayout.AddButton.html">PPGLayout.AddButton</a> for an example).
+		<br /><br />
+		Note: A special attribute is required because there is no <a href="#!/url=./si_om/Parameter.html">Parameter</a> associated with a button, and hence 
+		no way to call <a href="#!/url=./si_om/Parameter.Enable.html">Parameter.Enable</a>.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUICaption"> </a>siUICaption		</td>
+		<td class="example">caption		</td>
+		<td>
+NOT SUPPORTED. A string attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlFilePath">siControlFilePath</a> control.
+		<br /><br />
+		This attribute is normally for internal use only; however, it can be used to specify additional arguments for the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlFilePath">siControlFilePath</a>.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIColumnCnt"> </a>siUIColumnCnt		</td>
+		<td class="example">nocol		</td>
+		<td>
+A LONG attribute that applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlIconList">siControlIconList</a>
+		control.
+		<br /><br />
+		Specifies the maximum number of icons that should appear on a single row for the Icon List type of control. For example, 
+		if there are 10 icons in the <a href="#!/url=./si_om/PPGItem.UIItems.html">PPGItem.UIItems</a> and this attribute is 5, then the icons will be displayed 
+		as two rows of five icons. By default, all icons appear on a single row. 
+		<br /><br />
+		Note: Usually you would use this attribute or <a href="#!/url=./si_om/siPPGItemAttribute.html#siUILineCnt">siUILineCnt</a>, but not both.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIColumnGap"> </a>siUIColumnGap		</td>
+		<td class="example">colgap		</td>
+		<td>
+A LONG attribute that applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlIconList">siControlIconList</a> control.
+		<br /><br />
+		Specifies the width of the gap in pixels between icons in the Icon List control.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIContinue"> </a>siUIContinue		</td>
+		<td class="example">Continue		</td>
+		<td>
+A boolean attribute that applies to most controls.  (Default: false)
+		<br /><br />
+		True to keep the next control on the same row as this control, rather than starting a new line. This allows you to 
+		draw multiple controls in a row and hence make more compact layouts for complex objects. To place two groups of 
+		controls side by side this attribute is applied to the first group (see 
+		<a href="#!/url=./files/cus_ppg_WrappingControlsRows.htm">Wrapping Controls (Rows)</a>).
+		<br /><br />
+		This is the internal representation and can be used directly, but the methods <a href="#!/url=./si_om/PPGLayout.AddRow.html">PPGLayout.AddRow</a> and 
+		<a href="#!/url=./si_om/PPGLayout.EndRow.html">PPGLayout.EndRow</a> are available for convenience.  		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUICX"> </a>siUICX		</td>
+		<td class="example">cx		</td>
+		<td>
+A LONG attribute that applies to most controls.
+		<br /><br />
+		Width in pixels for the control. When left blank, the control automatically resizes itself.  
+		<br /><br />
+		To achieve precise placement of multiple controls that are on the same row, use this in conjunction with 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUILabelMinPixels">siUILabelMinPixels</a>, <a href="#!/url=./si_om/siPPGItemAttribute.html#siUILabelPercentage">siUILabelPercentage</a> and 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIWidthPercentage">siUIWidthPercentage</a>.  
+		<br /><br />
+		Note: Often it is better to leave this undefined so that Softimage can use its own heuristic to resize the layout. 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUICY"> </a>siUICY		</td>
+		<td class="example">cy		</td>
+		<td>
+A LONG attribute that applies to most controls.
+		<br /><br />
+		Height in pixels for the control. This is useful when creating a multiline edit box for a string (see 
+		<a href="#!/url=./si_om/PPGLayout.AddString.html">PPGLayout.AddString</a>).
+		<br /><br />
+		Note: Often it is better to leave this undefined so that Softimage can use its own heuristic to resize the layout. 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIDecimals"> </a>siUIDecimals		</td>
+		<td class="example">decimals		</td>
+		<td>
+A LONG attribute that applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlNumber">siControlNumber</a>. 
+		(Default: 3)
+		<br /><br />
+		Number of decimals of precision to show in the edit box.  For example 0.123456 will show up as 0.1 if 
+		this attribute is set to 1.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIFCurveColorNonBijective"> </a>siUIFCurveColorNonBijective		</td>
+		<td class="example">ColorNonBijective		</td>
+		<td>
+A boolean attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlFCurve">siControlFCurve</a> control.
+		<br /><br />
+		True to color the <a href="#!/url=./si_om/FCurve.html">FCurve</a>
+		orange if any Y value is shared by more than one point on the X axis on an FCurve control. 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIFCurveGhosting"> </a>siUIFCurveGhosting		</td>
+		<td class="example">Ghosting		</td>
+		<td>
+A boolean attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlFCurve">siControlFCurve</a> control.
+		<br /><br />
+		True to show the original curve ghosted behind the modified curve on an <a href="#!/url=./si_om/FCurve.html">FCurve</a> control. 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIFCurveGridSpaceX"> </a>siUIFCurveGridSpaceX		</td>
+		<td class="example">GridSpaceX		</td>
+		<td>
+A double attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlFCurve">siControlFCurve</a> control.
+		<br /><br />
+		Specifies the spaces between the horizontal lines for the grid on the <a href="#!/url=./si_om/FCurve.html">FCurve</a> control. 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIFCurveGridSpaceY"> </a>siUIFCurveGridSpaceY		</td>
+		<td class="example">GridSpaceY		</td>
+		<td>
+A double attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlFCurve">siControlFCurve</a> control.
+		<br /><br />
+		Specifies the spaces between the vertical lines for the grid on the <a href="#!/url=./si_om/FCurve.html">FCurve</a> control. 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIFCurveLabelX"> </a>siUIFCurveLabelX		</td>
+		<td class="example">LabelX		</td>
+		<td>
+A string attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlFCurve">siControlFCurve</a> control.
+		<br /><br />
+		Specifies a label for the X-axis on the <a href="#!/url=./si_om/siPPGControlType.html#siControlFCurve">siControlFCurve</a> control.
+		<br /><br />
+		Note: Use this attribute in conjunction with the <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIFCurveLabelY">siUIFCurveLabelY</a> attribute for 
+		best results. 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIFCurveLabelY"> </a>siUIFCurveLabelY		</td>
+		<td class="example">LabelY		</td>
+		<td>
+A string attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlFCurve">siControlFCurve</a> control.
+		<br /><br />
+		Specifies a label for the Y-axis on the <a href="#!/url=./si_om/siPPGControlType.html#siControlFCurve">siControlFCurve</a> control.
+		<br /><br />
+		Note: This attribute is ignored unless the <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIFCurveLabelX">siUIFCurveLabelX</a> attribute is also 
+		specified. 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIFCurveNoGrid"> </a>siUIFCurveNoGrid		</td>
+		<td class="example">NoGrid		</td>
+		<td>
+A boolean attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlFCurve">siControlFCurve</a> control.
+		<br /><br />
+		True to hide the grid on the <a href="#!/url=./si_om/FCurve.html">FCurve</a> control.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIFCurveNoRulerX"> </a>siUIFCurveNoRulerX		</td>
+		<td class="example">NoRulerX		</td>
+		<td>
+A boolean attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlFCurve">siControlFCurve</a> control.
+		<br /><br />
+		True to hide the ruler for the X-axis on the <a href="#!/url=./si_om/FCurve.html">FCurve</a> control. 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIFCurveNoRulerY"> </a>siUIFCurveNoRulerY		</td>
+		<td class="example">NoRulerY		</td>
+		<td>
+A boolean attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlFCurve">siControlFCurve</a> control.
+		<br /><br />
+		True to hide the ruler for the Y-axis on the <a href="#!/url=./si_om/FCurve.html">FCurve</a> control. 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIFCurveShowTimeCursor"> </a>siUIFCurveShowTimeCursor		</td>
+		<td class="example">ShowTimeCursor		</td>
+		<td>
+A boolean attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlFCurve">siControlFCurve</a> control.
+		<br /><br />
+		True to display the time cursor on an <a href="#!/url=./si_om/FCurve.html">FCurve</a> control.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIFCurveSnapX"> </a>siUIFCurveSnapX		</td>
+		<td class="example">SnapX		</td>
+		<td>
+A double attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlFCurve">siControlFCurve</a> control.
+		<br /><br />
+		Specifies the spacing size to use for a snapping grid in the X-axis on an <a href="#!/url=./si_om/FCurve.html">FCurve</a> control. For example, 
+		if this attribute is set to 3.5 then users can only set keys at 0, 3.5, 7, 10.5 etc.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIFCurveSnapY"> </a>siUIFCurveSnapY		</td>
+		<td class="example">SnapY		</td>
+		<td>
+A double attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlFCurve">siControlFCurve</a> control.
+		<br /><br />
+		Specifies the spacing size to use for a snapping grid in the Y-axis on an <a href="#!/url=./si_om/FCurve.html">FCurve</a> control. For example, 
+		if this attribute is set to 1.5 then users can only set keys at 0, 1.5, 3, 4.5 etc. 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIFCurveViewMaxX"> </a>siUIFCurveViewMaxX		</td>
+		<td class="example">ViewMaxX		</td>
+		<td>
+A double attribute that applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlFCurve">siControlFCurve</a>.
+		<br /><br />
+		Specifies the maximum value for the range on the X-axis on the <a href="#!/url=./si_om/FCurve.html">FCurve</a> control.For example, the range 
+		could be from -1 to 1 in the X axis and 0 to 100 in the Y axis.
+		<br /><br />
+		Note: In order to set the range you need to specify a valid range in both axis. Otherwise the widget automatically sets 
+		the ranges such that it show all the keys of the fcurve. 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIFCurveViewMaxY"> </a>siUIFCurveViewMaxY		</td>
+		<td class="example">ViewMaxY		</td>
+		<td>
+A double attribute that applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlFCurve">siControlFCurve</a>.
+		<br /><br />
+		Specifies the maximum value for the range on the Y-axis on the <a href="#!/url=./si_om/FCurve.html">FCurve</a> control.For example, the range 
+		could be from -1 to 1 in the X axis and 0 to 100 in the Y axis.
+		<br /><br />
+		Note: In order to set the range you need to specify a valid range in both axis. Otherwise the widget automatically sets 
+		the ranges such that it show all the keys of the fcurve.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIFCurveViewMinX"> </a>siUIFCurveViewMinX		</td>
+		<td class="example">ViewMinX		</td>
+		<td>
+A double attribute that applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlFCurve">siControlFCurve</a>.
+		<br /><br />
+		Specifies the minimum value for the range on the X-axis on the <a href="#!/url=./si_om/FCurve.html">FCurve</a> control. For example, the range 
+		could be from -1 to 1 in the X axis and 0 to 100 in the Y axis.
+		<br /><br />
+		Note: In order to set the range you need to specify a valid range in both axis. Otherwise the widget automatically sets 
+		the ranges such that it show all the keys of the fcurve. 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIFCurveViewMinY"> </a>siUIFCurveViewMinY		</td>
+		<td class="example">ViewMinY		</td>
+		<td>
+A double attribute that applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlFCurve">siControlFCurve</a>.
+		<br /><br />
+		Specifies the minimum value for the range on the Y-axis on the <a href="#!/url=./si_om/FCurve.html">FCurve</a> control.For example, the range 
+		could be from -1 to 1 in the X axis and 0 to 100 in the Y axis.
+		<br /><br />
+		Note: In order to set the range you need to specify a valid range in both axis. Otherwise the widget automatically sets 
+		the ranges such that it show all the keys of the fcurve. 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIFileFilter"> </a>siUIFileFilter		</td>
+		<td class="example">FileFilter		</td>
+		<td>
+A string attribute that applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlFilePath">siControlFilePath</a> control.
+		<br /><br />
+		Specifies the extensions to use as name filters on the File Browser control. 
+		<br /><br />
+		For a shortcut to all audio file formats, set the siUIAudioFile attribute to true.
+		<br /><br />
+		For a shortcut to all image file formats, set the siUIImageFile attribute to true.
+		<br /><br />
+		Note: The syntax of this string is same as the standard Win32 syntax; see documentation for OPENFILENAME structure, 
+		(lpstrFilter member). There is one difference: when there are multiple file extensions for a single item, separate them 
+		with the colon character (:) instead of a semi-colon (;). For example:
+		<br /><br />
+		"Text files (*.txt *.text)|*.txt:*.text|All Files (*.*)|*.*||"
+				</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIFileMustExist"> </a>siUIFileMustExist		</td>
+		<td class="example">MustExist		</td>
+		<td>
+A boolean attribute that applies to 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlFilePath">siControlFilePath</a> control.
+		<br /><br />
+		True to force the user to pick an existing file to load. Normally this is used for the case of picking an existing 
+		file to load. 
+		<br /><br />
+		Note: Used in conjunction with <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIOpenFile">siUIOpenFile</a>. 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIFilePath"> </a>siUIFilePath		</td>
+		<td class="example">path		</td>
+		<td>
+A string attribute that applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlBitmap">siControlBitmap</a><br /><br />
+		Specifies the filename of the bitmap to use for the Bitmap widget.
+		<br /><br />
+		Note: The path is absolute (or, where applicable, relative to the SPDL file).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIGradientConDivot"> </a>siUIGradientConDivot		</td>
+		<td class="example">ConDivot		</td>
+		<td>
+A boolean attribute that 
+		applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlGradient">siControlGradient</a> control.
+		<br /><br />
+		True by default. False to hide the connection divot.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIGradientMaxMarker"> </a>siUIGradientMaxMarker		</td>
+		<td class="example">MaxMarker		</td>
+		<td>
+An integer attribute that 
+		applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlGradient">siControlGradient</a> control.
+		<br /><br />
+		Controls the maximal number of markers the gradient control can handle.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIGradientMidPoint"> </a>siUIGradientMidPoint		</td>
+		<td class="example">MidPoint		</td>
+		<td>
+A boolean attribute that 
+		applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlGradient">siControlGradient</a> control.
+		<br /><br />
+		True if gradient parameters supports mid points. False if not.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIGradientType"> </a>siUIGradientType		</td>
+		<td class="example">GradientType		</td>
+		<td>
+A string attribute that 
+		applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlGradient">siControlGradient</a> control.
+		<br /><br />
+		Specifies the gradient type with one of the following values: "RGBA", "RGBA", "RGB+A" and "Alpha".		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIGridColumnWidths"> </a>siUIGridColumnWidths		</td>
+		<td class="example">ColumnWidths		</td>
+		<td>
+An integer (or a colon-delimited array of integers) attribute that 
+		applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlGrid">siControlGrid</a> control.
+		<br /><br />
+		Specifies column width in pixels for the <a href="#!/url=./si_om/GridWidget.html">GridWidget</a> in one of two ways:
+		<br /><br />
+		(1) A single integer representing the total width for all columns (of equal widths).
+		<br /><br />
+		(2) An array of integers separated by a colon (:), each of which represents the width of a specific column in the 
+		grid from left to right. The first element specifies the width of the row label column, followed by the normal data 
+		columns.  For example, "100:50:50" specifies that the row labels have 100 pixels and the first and second column has 
+		50 pixels.  (This is true even if the row label column has been hidden with the 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIGridHideRowHeader">siUIGridHideRowHeader</a> attribute).
+		<br /><br />
+		Note: If not specified the GridWidget resizes its columns to fit the initial data. 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIGridHideColumnHeader"> </a>siUIGridHideColumnHeader		</td>
+		<td class="example">HideColumnHeader		</td>
+		<td>
+A boolean attribute that applies to the
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlGrid">siControlGrid</a> control.
+		<br /><br />
+		True to suppress the column labels from appearing on the <a href="#!/url=./si_om/GridWidget.html">GridWidget</a> (see 
+		<a href="#!/url=./si_om/GridData.SetColumnLabel.html">GridData.SetColumnLabel</a>).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIGridHideRowHeader"> </a>siUIGridHideRowHeader		</td>
+		<td class="example">HideRowHeader		</td>
+		<td>
+A boolean attribute that applies to the
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlGrid">siControlGrid</a> control.
+		<br /><br />
+		True to suppress the row labels from appearing on the <a href="#!/url=./si_om/GridWidget.html">GridWidget</a> (see 
+		<a href="#!/url=./si_om/GridData.SetRowLabel.html">GridData.SetRowLabel</a>).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIGridLockColumnHeader"> </a>siUIGridLockColumnHeader		</td>
+		<td class="example">LockColumnHeader		</td>
+		<td>
+A boolean attribute that applies to the
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlGrid">siControlGrid</a> control.
+		<br /><br />
+		True to freeze the column labels of the <a href="#!/url=./si_om/GridWidget.html">GridWidget</a> in place even when you scroll off to the 
+		right. 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIGridLockColumnWidth"> </a>siUIGridLockColumnWidth		</td>
+		<td class="example">LockColumnWidth		</td>
+		<td>
+An boolean attribute that applies to the
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlGrid">siControlGrid</a> control.
+		<br /><br />
+		True to prevent users from being able to adjust the column width.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIGridLockRowHeader"> </a>siUIGridLockRowHeader		</td>
+		<td class="example">LockRowHeader		</td>
+		<td>
+A boolean attribute that applies to the
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlGrid">siControlGrid</a> control.
+		<br /><br />
+		True to freeze the row labels of the <a href="#!/url=./si_om/GridWidget.html">GridWidget</a> in place even when you scroll off to the bottom.
+		<br /><br />
+		Note: This attribute only takes effect when the <a href="#!/url=./si_om/siPPGItemAttribute.html#siUICY">siUICY</a> attribute has been set 
+		to something smaller than the natural height of the GridWidget.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIGridLockRowHeight"> </a>siUIGridLockRowHeight		</td>
+		<td class="example">LockRowHeight		</td>
+		<td>
+An boolean attribute that applies to the
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlGrid">siControlGrid</a> control.
+		<br /><br />
+		True to prevent users from being able to adjust the row height.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIGridReadOnlyColumns"> </a>siUIGridReadOnlyColumns		</td>
+		<td class="example">ReadOnlyColumns		</td>
+		<td>
+An integer (or a colon-delimited array of integers) attribute 
+		that applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlGrid">siControlGrid</a> control.
+		<br /><br />
+		Specifies which columns are read-only and which are editable. Cells in a read-only column cannot be edited through 
+		the UI; however, they can still be changed via scripting. This attribute can be specified in one of two ways:
+		<br /><br />
+		(1) The single value "1" to make all columns read-only.
+		<br /><br />
+		(2) An array of values separated by a colon (:), each of which represents whether that column is read-only ("1") or 
+		edtable ("0"). For example "0:1:0:1" means that second and fourth columns are read-only.
+		<br /><br />
+		Note: Unlike the <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIGridColumnWidths">siUIGridColumnWidths</a> attribute, the first element in this 
+		string refers to the first data column, not the row label column (which is always read-only).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIGridSelectionMode"> </a>siUIGridSelectionMode		</td>
+		<td class="example">SelectionMode		</td>
+		<td>
+An <a href="#!/url=./si_om/siGridSelectionMode.html">siGridSelectionMode</a> attribute that applies to the
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlGrid">siControlGrid</a> control.
+		<br /><br />
+		Set this attribute to a value from the <a href="#!/url=./si_om/siGridSelectionMode.html">siGridSelectionMode</a> enum to change the cell selection behavior 
+		of the <a href="#!/url=./si_om/GridWidget.html">GridWidget</a>.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIGridShowColumns"> </a>siUIGridShowColumns		</td>
+		<td class="example">ShowColumns		</td>
+		<td>
+An integer (or a colon-delimited array of integers) attribute that applies 
+		to the <a href="#!/url=./si_om/siPPGControlType.html#siControlGrid">siControlGrid</a> control.
+		<br /><br />
+		Specifies which columns are shown and which are hidden in one of two ways:
+		<br /><br />
+		(1) The single value "1" to show all columns.
+		<br /><br />
+		(2) An array of values separated by a colon (:), each of which represents whether to display that column ("1") or not ("0").
+		For example "1:1:1:0" means that fourth columns is hidden and the first three are shown.
+		<br /><br />
+		Note: Unlike the <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIGridColumnWidths">siUIGridColumnWidths</a> attribute, the first element in this string refers 
+		to the first data column, not the row label column (which is shown or hidden with the 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIGridHideRowHeader">siUIGridHideRowHeader</a> attribute).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIGridThumbnailSize"> </a>siUIGridThumbnailSize		</td>
+		<td class="example">ThumbnailSize		</td>
+		<td>
+An integer attribute that applies to the
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlGrid">siControlGrid</a> control.
+		<br /><br />
+		Specifies the default thumbnail size in the GridControl.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIImageFile"> </a>siUIImageFile		</td>
+		<td class="example">ImageFile		</td>
+		<td>
+A boolean attribute that applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlFilePath">siControlFilePath</a> control.
+		<br /><br />
+		True to use all image file formats as extensions for the name filters on the File Browser control.
+		<br /><br />
+		Note: This is a convenience to save you hardcoding a long list of supported image file extensions into the 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIFileFilter">siUIFileFilter</a> attribute.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIInitialDir"> </a>siUIInitialDir		</td>
+		<td class="example">InitialDir		</td>
+		<td>
+A string attribute that applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlFilePath">siControlFilePath</a> 
+		and <a href="#!/url=./si_om/siPPGControlType.html#siControlFolder">siControlFolder</a><br /><br />
+		This specifies a default directory to start browsing if the string parameter is empty.  This can be an 
+		absolute path or the following special values: "workgroup", "factory", "user" or "project".		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIItems"> </a>siUIItems		</td>
+		<td class="example">uiitems		</td>
+		<td>
+A variant array attribute that applies to drop-down list (enumerator) controls such as 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlCombo">siControlCombo</a>, <a href="#!/url=./si_om/siPPGControlType.html#siControlCheck">siControlCheck</a>, 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlRadio">siControlRadio</a>, <a href="#!/url=./si_om/siPPGControlType.html#siControlListBox">siControlListBox</a> and 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlIconList">siControlIconList</a>.
+		<br /><br />
+		Specifies the label/value pairs for the enumerator controls (see <a href="#!/url=./si_om/PPGItem.UIItems.html">PPGItem.UIItems</a>).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUILabel"> </a>siUILabel		</td>
+		<td class="example">label		</td>
+		<td>
+A string attribute that applies to most controls.
+		<br /><br />
+		Specifies the label for the control. By default this is set to the <a href="#!/url=./si_om/SIObject.Name.html">SIObject.Name</a> or 
+		<a href="#!/url=./si_om/Parameter.ScriptName.html">Parameter.ScriptName</a> value (see <a href="#!/url=./si_om/PPGItem.Label.html">PPGItem.Label</a>). 
+		<br /><br />
+		Note: Labels are mandatory for <a href="#!/url=./files/cus_ppg_UsingMultiplePagesTabs.htm">Tab</a> 
+		controls but optional for <a href="#!/url=./files/cus_ppg_GroupingControls.htm">Group</a> and 
+		<a href="#!/url=./files/cus_ppg_CommandButton.htm">Command Button</a> controls.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUILabelMinPixels"> </a>siUILabelMinPixels		</td>
+		<td class="example">LabelMinPixels		</td>
+		<td>
+A LONG attribute that applies to most controls.
+		<br /><br />
+		Specifies the minimum width, in pixels, to use when drawing a label. A label gets split into multiple lines when there 
+		is not enough space on a single line (see <a href="#!/url=./si_om/PPGItem.LabelMinPixels.html">PPGItem.LabelMinPixels</a>).
+		<br /><br />
+		Note: Use in conjunction with <a href="#!/url=./si_om/siPPGItemAttribute.html#siUILabelPercentage">siUILabelPercentage</a>.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUILabelPercentage"> </a>siUILabelPercentage		</td>
+		<td class="example">LabelPercentage		</td>
+		<td>
+A LONG attribute that applies to most controls.
+		<br /><br />
+		Specifies the width of the label of a control, in terms of its percentage of the control's total width. Use in conjunction with siUILabelMinPixels (see <a href="#!/url=./si_om/PPGItem.LabelPercentage.html">PPGItem.LabelPercentage</a>).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUILineCnt"> </a>siUILineCnt		</td>
+		<td class="example">noline		</td>
+		<td>
+A LONG attribute that applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlIconList">siControlIconList</a> control.
+		<br /><br />
+		Specifies the number of rows to use for the Icon List control. This is the alternative to using 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIColumnCnt">siUIColumnCnt</a>.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUILineGap"> </a>siUILineGap		</td>
+		<td class="example">linegap		</td>
+		<td>
+A LONG attribute that applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlIconList">siControlIconList</a> control.
+		<br /><br />
+		Specifies the height of the gap in pixels between icons appearing on different rows in the Icon List control. Only comes 
+		into play if the icons are displayed on multiple lines.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUILogarithmic"> </a>siUILogarithmic		</td>
+		<td class="example">log		</td>
+		<td>
+A boolean attribute that applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlNumber">siControlNumber</a>. 
+		(Default: false)
+		<br /><br />
+		True to use logarithmic scaling for the slider. 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIMultiSelectionListBox"> </a>siUIMultiSelectionListBox		</td>
+		<td class="example">MultiSelectionListBox		</td>
+		<td>
+A boolean attribute that applies to 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlListBox">siControlListBox</a> controls which are bound to string parameters (otherwise this attribute 
+		is ignored).
+		<br /><br />
+		True to support multiple selection for this list box control. For multiple-selection list box controls, the value of 
+		the <a href="#!/url=./si_om/Parameter.html">Parameter</a> (the items selected) is returned as a semicolon-separated string. For an example
+		demonstrating how to use this attribute, see <a href="#!/url=./si_om/PPGItem.UIItems.html">PPGItem.UIItems</a>.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUINoLabel"> </a>siUINoLabel		</td>
+		<td class="example">NoLabel		</td>
+		<td>
+A boolean attribute that applies to most controls (Default: false)
+		<br /><br />
+		True to suppress the text label. If this is an animatable parameter then the animation divot will still be drawn 
+		to the left of the control.
+			</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUINoSlider"> </a>siUINoSlider		</td>
+		<td class="example">noslider		</td>
+		<td>
+A boolean attribute that applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlNumber">siControlNumber</a>. 
+		(Default: false)
+		<br /><br />
+		True to suppress the slider control (and display only the numeric edit box). This is useful if there is not a lot of 
+		space to fit many controls.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIOpenFile"> </a>siUIOpenFile		</td>
+		<td class="example">OpenFile		</td>
+		<td>
+A boolean attribute that applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlFilePath">siControlFilePath</a> control.
+		<br /><br />
+		True to turn off the warning that a file exists for the File Browser control. Normally this is used for the case of 
+		picking an existing file to load. 
+		<br /><br />
+		Note: Used in conjunction with <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIFileMustExist">siUIFileMustExist</a>.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUISelectionColor"> </a>siUISelectionColor		</td>
+		<td class="example">selcolor		</td>
+		<td>
+A LONG attribute that applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlIconList">siControlIconList</a> control.
+		<br /><br />
+		Specifies an RGBA color value for the highlighting around the selected icon in an Icon List control. The color is represented 
+		by considering the least significant byte as the R value, the next byte as the G, etc. For example, 0xFFFF is Yellow. 
+		<br /><br />
+		Note: If the <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIUseSelectionIcon">siUIUseSelectionIcon</a> has been enable this attribute is ignored.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIShowClip"> </a>siUIShowClip		</td>
+		<td class="example">showclip		</td>
+		<td>
+A boolean attribute that applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlImageClip">siControlImageClip</a> control.
+		<br /><br />
+		Set to True to show the thumbnail of the Image Clip control. The control toolbar is always displayed, regardless of this attribute value.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIShowFrame"> </a>siUIShowFrame		</td>
+		<td class="example">ShowFrame		</td>
+		<td>
+A boolean attribute that applies to Groups.  (Default: false)
+		<br /><br />
+		This attribute only applies when there is no label for the group, and is used to determine whether there should 
+		be a box drawn around the controls of the group.  See <a href="#!/url=./si_om/PPGLayout.AddGroup.html">PPGLayout.AddGroup</a> and
+		<a href="#!/url=./files/cus_ppg_GroupingControls.htm">Grouping Controls</a>.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIStyle"> </a>siUIStyle		</td>
+		<td class="example">style		</td>
+		<td>
+A LONG attribute that applies to many controls, including the multi-line edit and 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlListBox">siControlListBox</a> controls.
+		<br /><br />
+		Specifies advanced window style options such as scroll bars and support for multiple lines. For advanced use only. 
+		<br /><br />
+		The values are based on the flags defined in the Windows Header file winuser.h (long). For example, using the value for 
+		ES_PASSWORD (0x0020, or 32), displays the text the user types as asterisks; while using the value for ES_UPPERCASE 
+		(0x0008, or 8) converts the text to uppercase.
+		<br /><br />
+		Note: You can also combine these flags for multiple effects. For example, you can 9 as the value for the siUIStyle 
+		attribute to create a text box with centered and uppercase text (because ES_CENTER=1 and ES_UPPERCASE=8). 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUISubFolder"> </a>siUISubFolder		</td>
+		<td class="example">SubFolder		</td>
+		<td>
+A string attribute that applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlFilePath">siControlFilePath</a> 
+		and <a href="#!/url=./si_om/siPPGControlType.html#siControlFolder">siControlFolder</a> controls.
+		<br /><br />
+		A subfolder relative to the value specified for <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIInitialDir">siUIInitialDir</a>.  For example, if 
+		the initial directory is "project" and the subfolder is "scenes/myscenes" then the browser opens in the scenes/myscenes 
+		directory inside the current project.  This attribute is ignored if siUIInitialDir is not specified.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUISyncSlider"> </a>siUISyncSlider		</td>
+		<td class="example">SyncSlider		</td>
+		<td>
+A boolean attribute that applies to 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlNumber">siControlNumber</a>. (Default: true)
+		<br /><br />
+		True to force an update of the parameter value in Softimage when the slider is moved. 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIThumbWheel"> </a>siUIThumbWheel		</td>
+		<td class="example">ThumbWheel		</td>
+		<td>
+A boolean attribute that applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlNumber">siControlNumber</a>. 
+		(Default: false)
+		<br /><br />
+		True to reduce the slider to a small portion of the screen (like a thumbwheel). This is useful when many parameters 
+		need to be displayed in a small amount of space.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUITreadmill"> </a>siUITreadmill		</td>
+		<td class="example">Treadmill		</td>
+		<td>
+A boolean attribute that applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlNumber">siControlNumber</a>. 
+		(Default: false)
+		<br /><br />
+		True to display a control similar in size to the Thumb Wheel which can be dragged left/right to decrement/increment 
+		the value. This control is useful when many parameters need to be displayed in a small amount of space. 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIType"> </a>siUIType		</td>
+		<td class="example">uitype		</td>
+		<td>
+An <a href="#!/url=./si_om/siPPGControlType.html">siPPGControlType</a> attribute that applies to all controls.
+		<br /><br />
+		Specifies the type of control for this property page item (see <a href="#!/url=./si_om/PPGItem.Type.html">PPGItem.Type</a>).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIUseSelectionIcon"> </a>siUIUseSelectionIcon		</td>
+		<td class="example">useselicon		</td>
+		<td>
+A boolean attribute that applies to 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlIconList">siControlIconList</a>. (Default: false)
+		<br /><br />
+		True to use an alternate bitmap for selected icons in the Icon List control. For example, rather than drawing a box around 
+		a button the selected icon might show the button in a compressed position. 
+		<br /><br />
+		Note: Filenames of the alternate bitmaps must use the same name but appended with "_sel" before the extension.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIValueOnly"> </a>siUIValueOnly		</td>
+		<td class="example">ValueOnly		</td>
+		<td>
+A boolean attribute that applies to most controls (Default: false)
+		<br /><br />
+		True to suppress the text label and animation divot.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIWidthPercentage"> </a>siUIWidthPercentage		</td>
+		<td class="example">WidthPercentage		</td>
+		<td>
+A LONG attribute that applies to most controls.
+		<br /><br />
+		Specifies the percentage of the row that this control should use relative to the other members of the row (see 
+		<a href="#!/url=./si_om/PPGItem.WidthPercentage.html">PPGItem.WidthPercentage</a>).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUILineNumbering"> </a>siUILineNumbering		</td>
+		<td class="example">LineNumbering		</td>
+		<td>
+A boolean attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlTextEditor">siControlTextEditor</a>.
+		<br /><br />
+		True to display line numbers on the left edge of the text editor.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIFolding"> </a>siUIFolding		</td>
+		<td class="example">Folding		</td>
+		<td>
+A boolean attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlTextEditor">siControlTextEditor</a>.
+		<br /><br />
+		True to enable folding of comments, functions and namespaces in the text editor control. Folding makes code more readable 
+		and navigable because it allows users to expand or collapse blocks of related text (multi-line comments, entire functions, 
+		etc.) by clicking a plus or minus control. Most IDE tools such as Visual Studio .NET 2005 offer folding as a usability 
+		feature.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIBackgroundColor"> </a>siUIBackgroundColor		</td>
+		<td class="example">Background		</td>
+		<td>
+A hexadecimal attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlTextEditor">siControlTextEditor</a>.
+		<br /><br />
+		Sets the background color of the text editor control.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIForegroundColor"> </a>siUIForegroundColor		</td>
+		<td class="example">Foreground		</td>
+		<td>
+A hexadecimal attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlTextEditor">siControlTextEditor</a>.
+		<br /><br />
+		Sets the text color of the text editor control.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIFont"> </a>siUIFont		</td>
+		<td class="example">Font		</td>
+		<td>
+A string attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlTextEditor">siControlTextEditor</a>.
+		<br /><br />
+		Sets the font used by the text editor control.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUICommentColor"> </a>siUICommentColor		</td>
+		<td class="example">CommentColor		</td>
+		<td>
+A hexadecimal attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlTextEditor">siControlTextEditor</a>.
+		<br /><br />
+		Sets the color of commented text in the text editor control.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIPreprocessorColor"> </a>siUIPreprocessorColor		</td>
+		<td class="example">PreprocessorColor		</td>
+		<td>
+A hexadecimal attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlTextEditor">siControlTextEditor</a>.
+		<br /><br />
+		Sets the color of preprocessor commands in the text editor control.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIMarginWidth"> </a>siUIMarginWidth		</td>
+		<td class="example">MarginWidth		</td>
+		<td>
+A numeric attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlTextEditor">siControlTextEditor</a>.
+		<br /><br />
+		Sets the width (in characters) of the margin in the text editor control.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUICommentFont"> </a>siUICommentFont		</td>
+		<td class="example">CommentFont		</td>
+		<td>
+A string attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlTextEditor">siControlTextEditor</a>.
+		<br /><br />
+		Sets the font used by comments in the text editor control.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIFontSize"> </a>siUIFontSize		</td>
+		<td class="example">FontSize		</td>
+		<td>
+A numeric attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlTextEditor">siControlTextEditor</a>.
+		<br /><br />
+		Sets the size of the font used by the text editor control.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIKeywords"> </a>siUIKeywords		</td>
+		<td class="example">Keywords		</td>
+		<td>
+A string attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlTextEditor">siControlTextEditor</a>. This is similar to the 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIKeywordFile">siUIKeywordFile</a> attribute, but more suited to small lists.
+		<br /><br />
+		Specifies a space-delimited list of keywords that are to be highlighted in the text editor 
+		control. These values are also available for auto-completion (see the 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIAutoComplete">siUIAutoComplete</a> attribute).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIHeight"> </a>siUIHeight		</td>
+		<td class="example">Height		</td>
+		<td>
+A numeric attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlTextEditor">siControlTextEditor</a>.
+		<br /><br />
+		Specifies the height in pixels of the text editor control.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIHorizontalScroll"> </a>siUIHorizontalScroll		</td>
+		<td class="example">HorizontalScroll		</td>
+		<td>
+A boolean attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlTextEditor">siControlTextEditor</a>.
+		<br /><br />
+		True to display a horizontal scrollbar in the text editor.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIVerticalScroll"> </a>siUIVerticalScroll		</td>
+		<td class="example">VerticalScroll		</td>
+		<td>
+A boolean attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlTextEditor">siControlTextEditor</a>.
+		<br /><br />
+		True to display a vertical scrollbar in the text editor.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUILineWrap"> </a>siUILineWrap		</td>
+		<td class="example">LineWrap		</td>
+		<td>
+A boolean attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlTextEditor">siControlTextEditor</a>.
+		<br /><br />
+		True to enable line wrapping in the text editor.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIKeywordFile"> </a>siUIKeywordFile		</td>
+		<td class="example">KeywordFile		</td>
+		<td>
+A string attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlTextEditor">siControlTextEditor</a>. This is similar to the 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIKeywords">siUIKeywords</a> attribute, but more suited to large lists.
+		<br /><br />
+		Specifies the location of a file that contains a space-delimited list of keywords to be highlighted 
+		in the text editor control. These values are also available for auto-completion (see the 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIAutoComplete">siUIAutoComplete</a> attribute).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIAutoComplete"> </a>siUIAutoComplete		</td>
+		<td class="example">AutoComplete		</td>
+		<td>
+An <a href="#!/url=./si_om/siAutoCompleteMode.html">siAutoCompleteMode</a> attribute that 
+		applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlTextEditor">siControlTextEditor</a>.
+		<br /><br />
+		Specifies the behavior of the auto complete feature in the text editor control. By default, only
+		keywords are highlighted. See <a href="#!/url=./si_om/siAutoCompleteMode.html">siAutoCompleteMode</a> for a list of values you can
+		specify. Use either the <a href="#!/url=./si_om/siPPGItemAttribute.html#siUIKeywords">siUIKeywords</a> attribute or the 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIKeywordFile">siUIKeywordFile</a> attribute to specify which keywords can be 
+		autocompleted.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIToolbar"> </a>siUIToolbar		</td>
+		<td class="example">Toolbar		</td>
+		<td>
+A boolean attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlTextEditor">siControlTextEditor</a>.
+		<br /><br />
+		True to display the File and Edit menus in a toolbar at the top of the text editor. You can limit
+		which File menu options are enabled with the <a href="#!/url=./si_om/siPPGItemAttribute.html#siUICapability">siUICapability</a>
+		attribute.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUICapability"> </a>siUICapability		</td>
+		<td class="example">Capability		</td>
+		<td>
+An <a href="#!/url=./si_om/siTextEditorCapability.html">siTextEditorCapability</a> attribute that 
+		applies to the <a href="#!/url=./si_om/siPPGControlType.html#siControlTextEditor">siControlTextEditor</a>.
+		<br /><br />
+		Specifies the capabilities of some of the File menu functionality for the text editor control. 
+		<br /><br />
+		Note: The File and Edit menus do not appear by default, but you can use the 
+		<a href="#!/url=./si_om/siPPGItemAttribute.html#siUIToolbar">siUIToolbar</a> attribute to display them.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUITabSize"> </a>siUITabSize		</td>
+		<td class="example">TabSize		</td>
+		<td>
+A numeric attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlTextEditor">siControlTextEditor</a>.
+		<br /><br />
+		Specifies the size of the tabs in the text editor control.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIUseSpacesForTab"> </a>siUIUseSpacesForTab		</td>
+		<td class="example">UseSpacesForTab		</td>
+		<td>
+A boolean attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlTextEditor">siControlTextEditor</a>.
+		<br /><br />
+		True to insert spaces characters instead of a tab character when pressing the tab key.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIShowIndentationGuides"> </a>siUIShowIndentationGuides		</td>
+		<td class="example">ShowIndentationGuides		</td>
+		<td>
+A boolean attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlTextEditor">siControlTextEditor</a>.
+		<br /><br />
+		True to display indentation guides appearing as dotted vertical lines within indentation white space
+		every tab size columns.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIShowWhitespace"> </a>siUIShowWhitespace		</td>
+		<td class="example">ShowWhitespace		</td>
+		<td>
+A boolean attribute that applies to the 
+		<a href="#!/url=./si_om/siPPGControlType.html#siControlTextEditor">siControlTextEditor</a>.
+		<br /><br />
+		True to display whitespace characters (spaces and tabs) in the text editor control.
+		Space characters appear as small centered dots and tab characters as light arrows pointing to the right.		</td>
+	</tr>
+</table>
+</div>
+
+<h3>Applies To</h3>
+<div><p><a href="#!/url=./si_om/PPGItem.GetAttribute.html">PPGItem.GetAttribute</a> <a href="#!/url=./si_om/PPGItem.SetAttribute.html">PPGItem.SetAttribute</a> <a href="#!/url=./si_cpp/classXSI_1_1PPGItem.html#GetAttribute">PPGItem::GetAttribute</a> <a href="#!/url=./si_cpp/classXSI_1_1PPGItem.html#PutAttribute">PPGItem::PutAttribute</a></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/siPPGControlType.html">siPPGControlType</a> <a href="#!/url=./si_om/siAutoCompleteMode.html">siAutoCompleteMode</a> <a href="#!/url=./si_om/siTextEditorCapability.html">siTextEditorCapability</a> <a href="#!/url=./files/cus_ppg_SettingControlAttributes.htm">Setting Control Attributes</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

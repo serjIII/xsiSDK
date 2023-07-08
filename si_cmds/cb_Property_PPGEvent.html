@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>PPGEvent</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>PPGEvent</h1>
+         </div>
+
+<h2 class="pagehead">PPGEvent</h2>
+
+<hr width="100%" />
+<h3>Description</h3>
+<div><p><a name="Description"> </a>	<p>
+				This callback is fired when a user interacts with a property page. 
+			</p>
+	<p>
+				Use this callback to handle user interface events on a property page. The callback is fired when a user:
+			</p>
+<ul>
+	<li>Opens the property page.</li>
+	<li>Clicks a button.</li>
+	<li>Clicks the Close button (or the equivalent with a keyboard shortcut).</li>
+	<li>Changes a parameter value in a property page control (for example, by selecting an item from a list, 
+					changing the value in a field, or selecting a check box).</li>
+	<li>Clicks a tab.</li>
+</ul>
+	<p>
+				The callback may also be triggered by scripting code that opens the property page or changes a parameter value.
+			</p>
+<div class="tip">
+<table cellpadding="5" cellspacing="5">
+	<tr>
+		<td class="label">Warning</td>
+		<td class="emph">
+				This callback is available in the object model for C# only. For scripting, there is a separate callback for 
+				each PPG event in the object model. The scripting callbacks have no input arguments, instead the global 
+				<a href="#!/url=./si_om/PPG.html">PPG</a> object is used to access to the controls and layout of the property page.
+			</td>
+	</tr>
+</table>
+</div>
+</p></div>
+
+<hr width="100%" />
+<h3>Applies To</h3>
+<div><p><a name="AppliesTo"> </a>
+			C++ and C# <a href="#!/url=./files/cus_ppg.htm">Custom Properties</a></p></div>
+
+<hr width="100%" />
+<h3>Syntax</h3>
+<div><p><a name="Syntax"> </a><div class="example"><table>
+<tr>
+<td class="example"><pre class="csharp">public class &lt;property_name&gt;
+{
+	public bool PPGEvent( Context in_context )
+	{
+		...
+	}
+}</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="cplusplus">CStatus &lt;property_name&gt;_PPGEvent( CRef&amp; in_context )
+{ 
+	... 
+}</pre></td></tr>
+</table>
+</div>	<p><span style="font-family: courier, monospace;">&lt;property_name&gt;</span> is the name specified in the call to 
+				<a href="#!/url=./si_om/PluginRegistrar.RegisterProperty.html">PluginRegistrar.RegisterProperty</a>, with any spaces converted to underscores. For example, 
+				if you register a property with the name <span style="font-family: courier, monospace;">"My Property"</span>, the callback 
+				function names start with <span style="font-family: courier, monospace;">"My_Property"</span>. 
+			</p>
+</p></div>
+
+<hr width="100%" />
+<h3>Parameters</h3>
+<div><p><a name="Parameters"> </a>	<table>		<tr>			<th>Parameter</th>
+			<th>Language</th>
+			<th>Type</th>
+			<th>Description</th>
+</tr>
+		<tr>			<td class="name">in_context</td>
+			<td>C#</td>
+			<td><a href="#!/url=./si_om/PPGEventContext.html">PPGEventContext</a></td>
+			<td>The <a href="#!/url=./si_om/PPGEventContext.html">PPGEventContext</a> object.<br /><br />
+					PPGEventContext.EventID identifies the event that triggered the callback.<br /><br />
+					For the <a href="#!/url=./si_om/siPPGEventID.html#siOnInit">siOnInit</a>, <a href="#!/url=./si_om/siPPGEventID.html#siOnClose">siOnClose</a>, 
+					<a href="#!/url=./si_om/siPPGEventID.html#siTabChange">siTabChange</a>, and <a href="#!/url=./si_om/siPPGEventID.html#siButtonClicked">siButtonClicked</a> events, 
+					PPGEvent<a href="#!/url=./si_om/Context.Source.html">Context.Source</a> returns the <a href="#!/url=./si_om/CustomProperty.html">CustomProperty</a>.<br /><br />
+					For <a href="#!/url=./si_om/siPPGEventID.html#siParameterChange">siParameterChange</a> events, PPGEvent<a href="#!/url=./si_om/Context.Source.html">Context.Source</a> 
+					returns the <a href="#!/url=./si_om/Parameter.html">Parameter</a> object. You can get the <a href="#!/url=./si_om/CustomProperty.html">CustomProperty</a> by 
+					calling the <a href="#!/url=./si_om/SIObject.Parent.html">SIObject.Parent</a> property on the <a href="#!/url=./si_om/Parameter.html">Parameter</a>.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td>C++</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1CRef.html">CRef</a>& </td>
+			<td>A reference to a <a href="#!/url=./si_cpp/classXSI_1_1PPGEventContext.html">PPGEventContext</a>.<br /><br /><a href="#!/url=./si_cpp/classXSI_1_1PPGEventContext.html#GetEventID">PPGEventContext::GetEventID</a> 
+					identifies the event that triggered the callback.<br /><br />
+					For the <a href="#!/url=./si_om/siPPGEventID.html#siOnInit">siOnInit</a>, <a href="#!/url=./si_om/siPPGEventID.html#siOnClose">siOnClose</a>, 
+					<a href="#!/url=./si_om/siPPGEventID.html#siTabChange">siTabChange</a>, and <a href="#!/url=./si_om/siPPGEventID.html#siButtonClicked">siButtonClicked</a> events, 
+					<a href="#!/url=./si_cpp/classXSI_1_1PPGEventContext.html#GetSource">PPGEventContext::GetSource</a> returns the 
+					<a href="#!/url=./si_cpp/classXSI_1_1CustomProperty.html">CustomProperty</a>.<br /><br />
+					For <a href="#!/url=./si_om/siPPGEventID.html#siParameterChange">siParameterChange</a> events, 
+					<a href="#!/url=./si_cpp/classXSI_1_1PPGEventContext.html#GetSource">PPGEventContext::GetSource</a> returns 
+					the <a href="#!/url=./si_cpp/classXSI_1_1Parameter.html">Parameter</a> object. You can get 
+					the <a href="#!/url=./si_cpp/classXSI_1_1CustomProperty.html">CustomProperty</a> from 
+					<a href="#!/url=./si_cpp/classXSI_1_1Parameter.html#GetParent">Parameter::GetParent</a>.
+					</td>
+</tr>
+</table>
+</p></div>
+
+<hr width="100%" />
+<h3>Context Attributes</h3>
+<div><p><a name="ContextAttributes"> </a>	<table>		<tr>			<th>Attribute</th>
+			<th>Description</th>
+</tr>
+		<tr>			<td class="example">Button</td>
+			<td>For a <a href="#!/url=./si_om/siPPGEventID.html#siButtonClicked">siButtonClicked</a> event, specifies the name of the button that was clicked.</td>
+</tr>
+		<tr>			<td class="example">Close</td>
+			<td>Set to true to force Softimage to close the property page.</td>
+</tr>
+		<tr>			<td class="example">Refresh</td>
+			<td>Set to true to force Softimage to update the layout of the property page.</td>
+</tr>
+		<tr>			<td class="example">Tab</td>
+			<td>For a <a href="#!/url=./si_om/siPPGEventID.html#siTabChange">siTabChange</a> event, specifies the name of the tab that was clicked.</td>
+</tr>
+</table>
+</p></div>
+
+<hr width="100%" />
+<h3>Example</h3>
+<div><p><a name="Examples"> </a><div class="example"><table>
+<tr>
+<td class="example"><pre class="cplusplus">// PPGEvent callback generated by the Custom Property Wizard
+
+SICALLBACK MyCppProperty_PPGEvent( const CRef&amp; in_ctxt )
+{
+ // This callback is called when events happen in the user interface
+ // This is where you implement the "logic" code.
+
+ // If the value of a parameter changes but the UI is not shown then this
+ // code will not execute.  Also this code is not re-entrant, so any changes
+ // to parameters inside this code will not result in further calls to this function
+
+ Application app ;
+
+ // The context object is used to determine exactly what happened
+ // We don't use the same "PPG" object that is used from Script-based logic code 
+ // but through the C++ API we can achieve exactly the same functionality.
+ PPGEventContext ctxt( in_ctxt ) ;
+
+ PPGEventContext::PPGEvent eventID = ctxt.GetEventID() ;
+
+ if ( eventID == PPGEventContext::siOnInit )
+ {
+     // This event meant that the UI was just created.
+     // It gives us a chance to set some parameter values.
+     // We could even change the layout completely at this point.
+
+     // For this event Source() of the event is the CustomProperty object
+
+     CustomProperty prop = ctxt.GetSource() ;
+
+     app.LogMessage( L"OnInit called for " + prop.GetFullName() ) ;
+
+     /* If you regenerate the layout then call this:
+     ctxt.PutAttribute(L"Refresh",true);
+     */
+ }
+ else if ( eventID == PPGEventContext::siOnClose )
+{
+     // This event meant that the UI was just closed by the user.
+     // For this event Source() of the event is the CustomProperty object
+     CustomProperty prop = ctxt.GetSource() ;
+     app.LogMessage( L"OnClose called for " + prop.GetFullName() ) ;
+ }
+ else if ( eventID == PPGEventContext::siButtonClicked )
+ {
+     // If there are multiple buttons
+     // we can use this attribute to figure out which one was clicked.
+     CValue buttonPressed = ctxt.GetAttribute( L"Button" ) ;
+
+    app.LogMessage( L"Button pressed: " + buttonPressed.GetAsText() ) ;
+ }
+ else if ( eventID == PPGEventContext::siTabChange )
+ {
+     // We will be called when the PPG is first opened
+     // and every time the tab changes
+
+     // Retrieve the label of the tab that is now active
+     CValue tabLabel = ctxt.GetAttribute( L"Tab" ) ;
+
+     app.LogMessage( L"Tab changed to: " + tabLabel .GetAsText() ) ;
+ }
+ else if ( eventID == PPGEventContext::siParameterChange )
+ {
+     // For this event the Source of the event is the parameter
+     // itself
+     Parameter changed = ctxt.GetSource() ;
+     CustomProperty prop = changed.GetParent() ;
+     CString   paramName = changed.GetScriptName() ; 
+
+     app.LogMessage( L"Parameter Changed: " + paramName ) ;
+ }
+
+ return CStatus::OK ;
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<hr width="100%" />
+<h3>See Also</h3>
+<div><p><a name="SeeAlso"> </a><ul>
+	<li><a href="#!/url=./si_cmds/cb_Property_Define.html">Define</a></li>
+	<li><a href="#!/url=./si_cmds/cb_Property_DefineLayout.html">DefineLayout</a></li>
+	<li><a href="#!/url=./si_cmds/cb_Property_OnChanged.html">OnChanged</a></li>
+	<li><a href="#!/url=./si_cmds/cb_Property_OnClicked.html">OnClicked</a></li>
+	<li><a href="#!/url=./si_cmds/cb_Property_OnInit.html">OnInit</a></li>
+	<li><a href="#!/url=./si_cmds/cb_Property_OnClosed.html">OnClosed</a></li>
+	<li><a href="#!/url=./si_cmds/cb_Property_OnTab.html">OnTab</a></li>
+	<li><a href="#!/url=./si_cmds/cb_GridData_OnBeginValueChange.html">OnBeginValueChange (GridData)</a></li>
+	<li><a href="#!/url=./si_cmds/cb_GridData_OnEndValueChange.html">OnEndValueChange (GridData)</a></li>
+	<li><a href="#!/url=./si_cmds/cb_GridData_OnBeginSelectionChange.html">OnBeginSelectionChange (GridData)</a></li>
+	<li><a href="#!/url=./si_cmds/cb_GridData_OnEndSelectionChange.html">OnEndSelectionChange (GridData)</a></li>
+	<li><a href="#!/url=./si_cmds/cb_GridData_OnButtonClicked.html">OnButtonClicked (GridData)</a></li>
+	<li><a href="#!/url=./si_cmds/cb_GridData_OnHeaderDoubleClick.html">OnHeaderDoubleClick (GridData)</a></li>
+	<li><a href="#!/url=./si_cmds/cb_GridData_OnContextMenuInit.html">OnContextMenuInit (GridData)</a></li>
+	<li><a href="#!/url=./si_cmds/cb_GridData_OnContextMenuSelected.html">OnContextMenuSelected (GridData)</a></li>
+	<li><a href="#!/url=./si_cmds/callbacks.html">Property Callbacks</a></li>
+</ul>
+</p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

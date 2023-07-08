@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>TransferPropertiesAcrossGenOp</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>TransferPropertiesAcrossGenOp</h1>
+         </div>
+
+<h2 class="pagehead">TransferPropertiesAcrossGenOp</h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Transfers a set of properties from the specified input objects on a generator operator to a 
+specified output object as a new property. It can be optionally shared.<br /><br />
+Note: To transfer cluster properties alone, use the 
+<a href="#!/url=./si_cmds/TransferClusterPropertiesAcrossGenOp.html">TransferClusterPropertiesAcrossGenOp</a> command.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = TransferPropertiesAcrossGenOp( Operator, Object, PropertiesToTransfer, PropertyName, ShareProperty, TransferClusterProperties );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns the created <a href="#!/url=./si_om/Property.html">Property</a>.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Operator		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Specifies the generator operator on which the property transfer will be performed. 		</td>
+	</tr>
+	<tr>
+		<td class="name">Object		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Specifies an output object to which the new property will be added.		</td>
+	</tr>
+	<tr>
+		<td class="name">PropertiesToTransfer		</td>
+		<td><a href="#!/url=./files/listexpr.htm">Selection list</a>		</td>
+		<td>
+Specifies the properties to transfer to the new property. Properties are not cluster properties.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">Material					</td>
+					<td><a href="#!/url=./si_om/Material.html">Material</a> on an object or cluster.					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">PropertyName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Specifies the name of the new property. 		</td>
+	</tr>
+	<tr>
+		<td class="name">ShareProperty		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ True implies that the property will be shared. 			<p class="cell"><span class="hilite">Default Value: </span>
+True			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">TransferClusterProperties		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ 
+		True implies that the cluster property references by name are also 
+		transfered according to an internal heuristic that considers all 
+		input properties equivalent.
+				<p class="cell"><span class="hilite">Default Value: </span>
+True			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'This example transfers properties across generator 
+'operators that admit transfer of properties.
+Dim l_NewMaterial
+newscene ,false
+'Create objects
+CreatePrim "Grid", "MeshSurface", "grid"
+CreatePrim "Grid", "MeshSurface", "grid1"
+Translate "grid1", 8.2, 0, 0, siRelative, siView, siObj, siXYZ
+'Add some properties to objects: Materials and texture coordinates.
+ApplyShader , , , , siLetLocalMaterialsOverlap
+SetValue "grid1.Material.Phong.diffuse.red", 0.750
+SIApplyShaderToCnxPoint "Image", "grid1.Material.Phong.diffuse"
+SelectObj "grid", , True
+SetSelFilter "Polygon"
+AddToSelection "grid.poly[18-21,26-29,34-37,42-45,50-53]", , True
+ApplyShader , , , , siLetLocalMaterialsOverlap
+SetValue "grid.polymsh.cls.Polygon.Material.Phong.diffuse.green", 0.250
+SIApplyShaderToCnxPoint "Image", "grid.polymsh.cls.Polygon.Material.Phong.diffuse"
+CreateProjection "grid", siTxtPlanarXZ, siTxtDefaultSpherical, "Texture_Support", "Texture_Projection"
+SetInstanceDataValue , "grid.polymsh.cls.Polygon.Material.Phong.Image.tspace_id", "Texture_Projection"
+SelectObj "grid1", , True
+CreateProjection "grid1", siTxtPlanarXZ, siTxtDefaultSpherical, "Texture_Support", "Texture_Projection"
+SetInstanceDataValue , "grid1.Material.Phong.Image.tspace_id", "Texture_Projection"
+' Apply merge operator. 
+ApplyGenOp "MeshMerge", , "grid,grid1", 3, siPersistentOperation, siKeepGenOpInputs
+SetValue "polymsh.polymsh.mergemesh.tolerance", 2.0
+Translate , -4.0, 3.0, -0.0, siRelative, siView, siObj, siXYZ
+' Transfer properties across the merge operator.
+set l_NewMaterial = TransferPropertiesAcrossGenOp( "polymsh.polymsh.mergemesh", "polymsh",_
+"grid.polymsh.cls.Polygon.Material,grid1.Material", "Material_Gen", , True )
+' View results.  
+SetDisplayMode "Camera", "texturedecal"
+SetValue "Camera.camvis.objctrlpropmaps", True
+ActivateObjectSelTool
+SelectObj "grid"
+AddToSelection "grid1", , True
+AddToSelection l_NewMaterial.Parent</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">//This example transfers properties across generator 
+//operators that admit transfer of properties.
+NewScene( null, false )
+// Create objects
+CreatePrim("Grid", "MeshSurface", "grid", null);
+CreatePrim("Grid", "MeshSurface", "grid1", null);
+Translate( "grid1", 8.2, 0.0, 0.0, 
+siRelative, siView, siObj, siXYZ, 
+null, null, null, null, null, null, null, null, null);
+// Add some properties to objects: Materials and texture coordinates.
+ApplyShader(null, "", null, "", siLetLocalMaterialsOverlap);
+SetValue("grid1.Material.Phong.diffuse.red", 1, null);
+SIApplyShaderToCnxPoint("Image", "grid1.Material.Phong.diffuse", null, null);
+CreateProjection("grid1", 
+	siTxtPlanarXZ, 
+	siTxtDefaultSpherical, 
+	"Texture_Support", 	
+	"Texture_Projection", 
+	null, null, "");
+SetInstanceDataValue(null, 
+	"grid1.Material.Phong.Image.tspace_id", 
+	"Texture_Projection");
+SelectObj("grid", null, true);
+SetSelFilter("Polygon");
+AddToSelection("grid.poly[26-29,34-37,42-45]", null, true);
+ApplyShader(null, "", null, "", siLetLocalMaterialsOverlap);
+SetValue("grid.polymsh.cls.Polygon.Material.Phong.diffuse.blue", 0.006, null);
+SIApplyShaderToCnxPoint("Image", 
+	"grid.polymsh.cls.Polygon.Material.Phong.diffuse", 
+	null, null);
+CreateProjection("grid", 
+	siTxtPlanarXZ, 
+	siTxtDefaultSpherical, 
+	"Texture_Support", 	
+	"Texture_Projection1", 
+	null, null, "");
+SetInstanceDataValue(null, 
+	"grid.polymsh.cls.Polygon.Material.Phong.Image.tspace_id", 
+	"Texture_Projection1");
+// Apply merge operator. 
+ApplyGenOp("MeshMerge", "", "grid,grid1", 3, siPersistentOperation, siKeepGenOpInputs);
+SetValue("polymsh.polymsh.mergemesh.tolerance", 2, null);
+Translate( "polymsh", -4.0, 4.0, -5.0, 
+	siRelative, siView, siObj, siXYZ,
+	null, null, null, null, null, null, null, null, null);
+// Transfer properties across the merge operator.
+l_NewMaterial = TransferPropertiesAcrossGenOp(
+	"polymsh.polymsh.mergemesh", 
+	"polymsh", 	
+	"grid.polymsh.cls.Polygon.Material, grid1.Material", 
+	"Material_Gen", 
+	null, 
+	true);
+// Transfer properties across the merge operator.
+SelectObj("grid", null, true);
+AddToSelection("grid1", null, true);
+AddToSelection( l_NewMaterial , null, true);
+SetDisplayMode("Camera", "texturedecal");
+SetValue("Camera.camvis.objctrlpropmaps", true, null);</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/TransferClusterPropertiesAcrossGenOp.html">TransferClusterPropertiesAcrossGenOp</a> <a href="#!/url=./si_cmds/TransferAllPropertiesAcrossGenOp.html">TransferAllPropertiesAcrossGenOp</a> <a href="#!/url=./si_cmds/CopyAnimationAcrossGenerator.html">CopyAnimationAcrossGenerator</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

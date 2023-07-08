@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>CreateLightRigFromImage</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>CreateLightRigFromImage</h1>
+         </div>
+
+<h2 class="pagehead">CreateLightRigFromImage</h2>
+
+<h3>Description</h3>
+<div><p>
+Creates a special light rig from the given source image. This is the 
+scripting equivalent of selecting Light Rig From Image from the Light menu.<br /><br />
+The light rig is a set of infinite lights whose colors, directions, and 
+intensities simulate the lighting in the source image. Because the lights 
+are infinite, scene objects are lit the same way regardless of their 
+location and you don't have to worry about positioning the lights or 
+resizing the rig.<br /><br />
+A word of caution: Don't confuse this light rig with the <a href="#!/url=./si_om/LightRig.html">LightRig</a> 
+programming object. If you are looking for light rigs in the scene, any objects that
+were created with the <a href="#!/url=./si_om/X3DObject.AddLightRig.html">X3DObject.AddLightRig</a> method have a TypeName
+or <a href="#!/url=./si_om/Application.ClassName.html">Application.ClassName</a> value of 'LightRig', but any light rigs
+created with this command are still <a href="#!/url=./si_om/Null.html">Null</a> objects. For more 
+information, see the example.<br /><br />
+Note: This command uses output arguments. Some scripting languages don't 
+support arguments passed by reference (such as JScript and Python). For more 
+information on how to handle getting output arguments through a return-value array, 
+see <a href="#!/url=./files/OutputArgArrays.htm">Output Arguments, Return Values and Output Value Arrays</a>.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>CreateLightRigFromImage( [Filename], [Number_Layers], [AreaHigh], [LightDistHigh] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Filename		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		The supported image formats are .pic and .hdr.
+		The image must be a spherical map (longitude/latitude type image).
+		HDR images allow for better and more contrasted lighting.
+		It is not necessary to use a large image, as long as the image 
+		has enough contrast between highlights and lowlights. 
+		The suggested resolution is 400 x 200. Using low resolution 
+		images will also cut down processing time.
+					<p class="cell"><span class="hilite">Default Value: </span>
+" empty "			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Number_Layers		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+
+		Limits the number of luminance layers being created.
+		Using more layer implies increased processing time and
+		memory usage.
+		(Suggested values: 3 to 5)
+			<p class="cell"><span class="hilite">Default Value: </span>
+ 3			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">AreaHigh		</td>
+		<td><a href="#!/url=./files/Float.htm">Float</a>		</td>
+		<td>
+
+		Determines how much luminance will be extracted from the layer.
+		A higher value means more luminance, which implies that more lights can be inserted.
+			<p class="cell"><span class="hilite">Default Value: </span>
+ 20			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">LightDistHigh		</td>
+		<td><a href="#!/url=./files/Float.htm">Float</a>		</td>
+		<td>
+
+		Distance between lights (percentage of the image).
+		A lower value means that more lights will be inserted.
+			<p class="cell"><span class="hilite">Default Value: </span>
+ 40			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+'	This example demonstrates how to use a PIC file to create a
+'	special light rig with several infinite lights. It also shows
+'	how to find the light rig in your scene (since the newly-created
+'	object is not returned as part of the CreateLightRigFromImage command).
+'
+'	Note: A number of different strategies are presented here, since there
+'	is no "LightRig" filter. You can deploy whichever best suits your needs.
+'
+'-----------------------------------------
+'	CREATING THE LIGHT RIG
+'
+NewScene , false
+' Create a couple of nulls (just to make it interesting)
+ActiveSceneRoot.AddNull "Danny"
+ActiveSceneRoot.AddNull "Fanny"
+' For more sport, add an infinite type light rig using the object model
+ActiveSceneRoot.AddLightRig "Infinite", "Almighty"
+' Create the light rig from one of the sample image PIC files
+CreateLightRigFromImage InstallationPath( siFactoryPath ) _
+	&amp; "\Data\XSI_SAMPLES\Pictures\xsilogo.pic", 3, 20, 40
+'-----------------------------------------
+'	SEARCHING AMONGST THE NULLS
+'
+' First, get a collection of nulls just for comparison
+Set oNullList = ActiveSceneRoot.FindChildren( , siNullPrimType )
+showCollectionInfo oNullList
+'OUTPUT:
+'INFO : "-----------------"
+'INFO : "Found 3 rig(s) in this collection:"
+'INFO : "	Danny"
+'INFO : "	Fanny"
+'INFO : "	LightRig"
+' Or we can build a collection of light rigs based on which nulls have lights
+' for children (because presumably only light rigs will have lights for children)
+Set oLRColl = CreateObject( "XSI.Collection" )
+oLRColl.SetAsText buildLRCollFromNulls( ActiveSceneRoot.FindChildren( , siNullPrimType ) )
+showCollectionInfo oLRColl
+'OUTPUT:
+'INFO : "-----------------"
+'INFO : "Found 1 rig(s) in this collection:"
+'INFO : "	LightRig"
+' Or we can filter the oNullList collection or use the collection Filter on the whole 
+' scene by restricting our list to only nulls that contain 'rig' in their name 
+Set oNullList = oNullList.Filter( siNullPrimType,, "*rig*" )
+showCollectionInfo oNullList
+'OUTPUT:
+'INFO : "-----------------"
+'INFO : "Found 1 rig(s) in this collection:"
+'INFO : "	LightRig"
+'-----------------------------------------
+'	LOOKING BY NAME
+'
+Set oRigs = ActiveSceneRoot.Children.Filter( siNullPrimType,, "*rig*" )
+showCollectionInfo oRigs 
+' Now look for LightRig objects under the scene root 
+Set oLRigs = ActiveSceneRoot.FindChildren( "LightRig" )
+showCollectionInfo oLRigs
+'OUTPUT:
+'INFO : "-----------------"
+'INFO : "Found 1 rig(s) in this collection:"
+'INFO : "	LightRig"
+'-----------------------------------------
+'	FINDING THE WRONG LIGHT RIG
+'
+' What about the other light rig in the scene? We can get all the lights in
+' the scene, find their parents and add each one with the "LightRig" typename
+' to a new collection
+Set oLights = ActiveSceneRoot.FindChildren( , , siLightPrimitiveFamily )
+Set oLRColl = CreateObject( "XSI.Collection" )
+oLRColl.SetAsText buildLRCollFromLights( oLights )
+showCollectionInfo oLRColl
+
+'-----------------------------------------
+'	HELPER FUNCTIONS
+'
+function showCollectionInfo( in_coll )
+	If TypeName( in_coll ) &lt;&gt; "Nothing" _
+	   AND in_coll.Count &gt; 0 Then
+		LogMessage "-----------------"
+		LogMessage "Found " &amp; in_coll.Count &amp; " rig(s) in this collection:"
+		For Each mbr In in_coll
+			LogMessage vbTab &amp; mbr.FullName
+		Next
+	Else
+		LogMessage "None found."
+	End If
+end function
+function buildLRCollFromLights( in_light_coll )
+	If in_light_coll.Count &gt; 0 Then
+		Set oCLRColl = CreateObject( "XSI.Collection" )
+		For Each mbr In in_light_coll
+			' This makes sure we add only true LightRig objects, not the 
+			' ones we created with the CreateLightRigFromImage command, 
+			' but with the X3DObject.AddLightRig method
+			If TypeName( mbr.Parent ) = "LightRig" Then
+				oCLRColl.Add mbr.Parent
+			End If
+		Next
+	Else
+		LogMessage "Specified collection is empty."
+	End If
+	buildLRCollFromLights = oCLRColl
+end function
+function buildLRCollFromNulls( in_null_coll )
+	If in_null_coll.Count &gt; 0 Then
+		Set oCLRColl = CreateObject( "XSI.Collection" )
+		For Each mbr In in_null_coll
+			' This looks for a light amongst the children of the null in
+			' the current collection, assuming that only nulls that are 
+			' light rigs have lights for children
+			If mbr.Children.Filter( , siLightPrimitiveFamily ).Count &gt; 0 Then
+				oCLRColl.Add mbr
+			End If
+		Next
+	Else
+		LogMessage "Specified collection is empty."
+	End If
+	buildLRCollFromNulls = oCLRColl
+end function</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/CreateImageBasedLightingPass.html">CreateImageBasedLightingPass</a> <a href="#!/url=./si_om/X3DObject.AddLightRig.html">X3DObject.AddLightRig</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>SIObject.Categories</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>SIObject.Categories</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/SIObject.html">SIObject</a>.Categories</h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p> Sets or returns the categories defined for this object. Categories are used to extend the categorization 
+of objects. Categories of SPDL objects are initialized with the values of the Keyword field whereas the 
+categories of custom objects (such as <a href="#!/url=./si_om/Filter.html">Filter</a> and <a href="#!/url=./si_om/Command.html">Command</a>) can be set 
+when plug-in items are registered with <a href="#!/url=./si_om/PluginRegistrar.html">PluginRegistrar</a>. 
+<br /><br />
+Categories are returned as as an <a href="#!/url=./files/Array.htm">Array</a> of <a href="#!/url=./files/String.htm">String</a>s. If no categories are 
+specified, an empty array is returned. 
+<br /><br />
+Categories must be set in a comma-separated string. Use <a href="#!/url=./si_om/PluginRegistrar.html">PluginRegistrar</a>.Categories to 
+set the categories for all plug-in items defined in a plug-in or use <a href="#!/url=./si_om/PluginItem.html">PluginItem</a>.Categories 
+to set the categories of a specific plug-in item. No other interfaces support the 'set' component of this
+property.
+<br /><br />
+Note: For the deprecated (v1.0) style of creating commands, you can only set the categories by specifying
+one of the <a href="#!/url=./si_om/siCommandCategory.html">siCommandCategory</a> enum values in the Category parameter of the 
+<a href="#!/url=./si_om/XSIApplication.CreateCommand.html">XSIApplication.CreateCommand</a> method.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>// get accessor
+Object SIObject.get_Categories();
+// set accessor
+SIObject.set_Categories( String pArrayVal );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+'	This example shows how to get the categories of a SPDL object
+'
+set cone = ActiveSceneRoot.AddPrimitive( "cone" )
+cat = cone.Categories
+for i=LBound( cat, 1 ) to UBound( cat, 1 )
+	LogMessage "category: " &amp; cat(i)
+next
+'the example above will output the following:
+'INFO: category: General
+'INFO: category: Primitive
+'INFO: category: Modeling</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+'	This example shows how to set the categories of a plug-in and specific plug-in items
+'
+Function XSILoadPlugin( in_reg )
+	' register plugin information
+	in_reg.Author = "Softimage Co." 
+	in_reg.Name = "Mesh Filter plugin"
+	in_reg.URL = "http://www.softimage.com"
+	in_reg.Email = "webmaster@softimage.com"
+	in_reg.Categories = "Mesh component filter"
+	' set the version number of this plugin
+	in_reg.Major = 1
+	in_reg.Minor = 0 
+	' register filter plugin items
+	set item = in_reg.RegisterFilter( "Border Edge", siFilterSubComponentEdge )
+	item.Categories = "Mesh,Edge"
+	set item = in_reg.RegisterFilter( "Triangle", siFilterSubComponentPolygon )
+	item.Categories = "Mesh"
+	set item = in_reg.RegisterFilter( "Quad", siFilterSubComponentPolygon )
+	item.Categories = "Mesh"
+	set item = in_reg.RegisterFilter( "N-gon", siFilterSubComponentPolygon )
+	item.Categories = "Mesh"
+	set item = in_reg.RegisterFilter( "Border Point", siFilterSubComponentPoint )
+	item.Categories = "Point"
+	set item = in_reg.RegisterFilter( "Polygon Island", siFilterSubComponentPolygon )
+	item.Categories = "Mesh,Polygon"
+	in_reg.RegisterFilter "Local Material", siFilterProperty
+	XSILoadPlugin = true
+end Function</pre></td></tr>
+</table>
+</div><h4>3. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example shows how to get the plug-in items categories
+*/
+var items = Application.Plugins("Mesh Filter plugin").Items;
+for (var i=0; i&lt;items.Count; i++) 
+{
+	LogMessage( items(i).Name + " categories: " );
+	var vba = new VBArray(items(i).Categories);
+	var	categories = vba.toArray();
+	for (var j=0; j&lt;categories.length; j++) 
+	{
+		LogMessage( categories[j] );		
+	} 
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

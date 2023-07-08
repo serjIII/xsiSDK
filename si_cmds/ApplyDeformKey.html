@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>ApplyDeformKey</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>ApplyDeformKey</h1>
+         </div>
+
+<h2 class="pagehead">ApplyDeformKey</h2>
+
+<h3>Description</h3>
+<div><p>
+Saves a pose-based deformation key. In addition to saving and selecting shape keys, you can also use 
+pose-based deformation to create shape animations. To do this, you link one or more parameters to drive 
+the deformation on a selected cluster, and then set deform keys for the different poses you want. <br /><br />
+For example, you can control the blending of a shape-animated object according to the position of a 
+sphere (its position drives the shape animation). As the sphere gets closer to a deform key associated 
+to a certain pose (as indicated by a small sphere), the target object takes on that shape: when the sphere 
+is between deform keys, the target object takes on a combination (interpolation) of these deform keys.<br /><br />
+Tip: You can use an already defined shape to apply a deform key. Simply select the deform key and choose 
+Deform > Shape > Apply Deform Key to apply it to the object for which you saved it at its current pose.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = ApplyDeformKey( [InputObj] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns the key.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">InputObj		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Cluster shape key to use for setting the deform 			<p class="cell"><span class="hilite">Default Value: </span>
+Current selection			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example demonstrates how to use the ApplyDeformKey command to
+' apply a shape deformation previously created
+'
+NewScene , false
+' First get the old construction mode
+iOldMode = GetValue( "Context.ConstructionMode" )
+SetValue "Context.ConstructionMode", siConstructionModePrimaryShape
+' Create the object to deform
+CreatePrim "Sphere", "NurbsSurface"
+' Select the points used for deformation and cluster them
+CreateCluster "sphere.pnt[(5,4),(6,4),(7,4),(0,5),(1,5),(2,5),(3,5),(4,5),(5,5),(6,5),(7,5),(0,6),(1,6),(2,6),(3,6)]"
+' Link the deformation of the cluster with the parameter sphere.kine.local.posx
+LinkDeform "sphere.surfmsh.cls.Point", "sphere.kine.local.posx"
+' Translate the sphere at X = -10
+Translate "sphere", -10, 0, 0, siAbsolute
+SaveDeformKey "sphere.surfmsh.cls.Point"
+SetValue "sphere.surfmsh.cls.Point.PoseDeform1.Name", "SphereNormal"
+' Deform the sphere at X = 0 and save the deformation
+Translate "sphere", 0, 0, 0, siAbsolute
+Scale "sphere.surfmsh.cls.Point", 1, 1, 2, siAbsolute, siParent, siObj, siZ
+Scale "sphere.surfmsh.cls.Point", 2, 1, 1, siAbsolute, siParent, siObj, siX
+SaveDeformKey "sphere.surfmsh.cls.Point"
+SetValue "sphere.surfmsh.cls.Point.PoseDeform1.Name", "SphereFat"
+' Translate the sphere at X = 10 and apply the deformation called SphereNormal
+Translate "sphere", 10, 0, 0, siAbsolute
+Refresh
+ApplyDeformKey "sphere.surfmsh.cls.Point.SphereNormal"
+' Pop up a Deform Control window. If you left click on the slider, 
+' you will see the deformation of the sphere linked with the translation on the X axis
+InspectObj "sphere.surfmsh.cls.Point.DeformControls"
+' Restore the original construction mode
+SetValue "Context.ConstructionMode", iOldMode</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/LinkDeform.html">LinkDeform</a> <a href="#!/url=./si_cmds/SaveDeformKey.html">SaveDeformKey</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

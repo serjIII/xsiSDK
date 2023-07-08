@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>FCurveEditor</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>FCurveEditor</h1>
+         </div>
+
+<h2 class="pagehead">FCurveEditor</h2>
+
+<p><a href="#!/url=./si_om/_hier.html#oh_FCurveEditor">Object Hierarchy</a></p>
+
+<h3>Introduced</h3>
+<div><p>v3.0</p></div>
+
+<h3>Description</h3>
+<div><p> This object provides the context information of the Softimage FCurve editor.  By using the information
+exposed by this object, it is possible to write custom fcurve editing scripts or plug-ins which 
+react to user's actions in the FCurve Editor.
+<br /><br />
+In order to access an instance of this object you need to create a custom command with 
+the <a href="#!/url=./si_om/siCommandCategory.html">siCommandCategory</a> set to siFCurveCategory.  This command will appear in the
+edit menu of the fcurve editor so that the user can execute it on demand.  The command
+takes a single argument, which is a pointer to an instance of the FCurveEditor object.
+<br /><br />
+Using the methods and properties of the <a href="#!/url=./si_om/FCurve.html">FCurve</a> and <a href="#!/url=./si_om/FCurveKey.html">FCurveKey</a> objects
+the custom command can change the fcurves.  The user interface will update automatically to reflect 
+any changes made to the underlying fcurve objects.
+<br /><br />
+The following example demonstrates two custom fcurve editor scripts, and there are 
+more examples in Netview, under XSI Local: Tools: Animate.
+</p></div>
+
+<h3>Methods</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/FCurveEditor.GetEditorAttribute2.html">GetEditorAttribute2</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/FCurveEditor.GetSelectedKeys2.html">GetSelectedKeys2</a>		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Properties</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/FCurveEditor.EditorAttribute.html">EditorAttribute</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/FCurveEditor.SelectedFCurves.html">SelectedFCurves</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/FCurveEditor.SelectedKeys.html">SelectedKeys</a>		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' Custom FCurve Command Demo
+'
+'This script demontrates the Softimage support for plugging in a 
+'custom command.
+'
+'Instructions:
+'
+'1) In order to try this code the commands needs to be saved onto disk in a .vbs 
+'file so that it can be registered.
+'
+'2) install the commands using the following, (changing the path according to your config):
+'  xsi -script "C:/temp/FCurveDemo.vbs" -main InstallFCurveCmdExamples -args -Location "c:/temp/FCurveDemo.vbs"
+'
+'3) Launch Softimage, 
+'4) Create some animated parameters, 
+'5) Open the fcurve editor, select curves and keys from your animated parameters
+'6) Try the FCurveEditorInfo and AvgSelectedPoints commands which will appear in the Edit menu
+sub InstallFCurveCmdExamples( Location )
+	dim cmd
+	'Location argument is expected to be the full path name of the script file 
+	'where the commands we are installing are implemented
+	logmessage "Installing fcurve editor commands found in " &amp; Location
+	'Remove any existing earlier registrations of this command
+	Application.RemoveCommand "FCurveEditorInfo"		
+	Application.RemoveCommand "AvgSelectedPoints" 
+	set cmd = Application.CreateCommand("FCurveEditorInfo", siFCurveCategory)
+	cmd.Description = "FCurveEditorInfo shows information about FCurve Context"
+	cmd.ScriptingName = "FCurveEditorInfo"
+	cmd.Handler = "OnFCurveEditorInfo"
+	cmd.FileName = Location
+	cmd.Language = "VBScript"
+	'FCurve callbacks are a sub not a function
+	cmd.ReturnValue = false											
+	'FCurve commands get a pointer to an FCurveEditor OM object
+	cmd.Arguments.Add "FCurveEditor", siArgumentInput, 0, siDispatch
+	Application.AddCommand cmd
+	logmessage "FCurveEditorInfo is now added to fcurve editor Edit menu"
+	set cmd = Application.CreateCommand("AvgSelectedPoints", siFCurveCategory)
+	cmd.Description = "AvgSelectedPoints change value of selected keys"
+	cmd.ScriptingName = "AvgSelectedPoints"
+	cmd.Handler = "OnAvgSelectedPoints"
+	cmd.FileName = Location
+	cmd.Language = "VBScript"
+	cmd.ReturnValue = false											
+	cmd.Arguments.Add "FCurveEditor", siArgumentInput, 0, siDispatch
+	Application.AddCommand cmd
+	logmessage "AvgSelectedPoints is now added to fcurve editor Edit menu"
+end sub
+'This first demo is informative - it logs a bunch of information about the 
+'state of the FCurve editor, in effect demonstrating what you can find out
+sub OnFCurveEditorInfo( in_objFCurveEditor )
+	LogMessage "FCurveEditorInfo called - showing information about current context of FCurve Editor"
+	if ( typename( in_objFCurveEditor ) = "Nothing" ) then
+		Logmessage "FCurve Argument is NULL"
+	elseif ( typename( in_objFCurveEditor ) &lt;&gt; "FCurveEditor" ) then
+		LogMessage "FCurve Argument is not an FCurve, it is a " &amp; typename( in_objFCurveEditor ) 
+	else		
+		'Now access the FCurve Context listing the contents.
+		dim oCurves, oCurve
+		set oCurves = in_objFCurveEditor.SelectedFCurves
+		if ( oCurves.Count = 0 ) then
+			logmessage "There are no selected fcurves in the editor"
+		end if
+		dim i, strInfo
+		for each oCurve in oCurves
+			logmessage "-------------------------------------"
+			'build a string description of the frame/keyvalues 
+			'(for a real motion capture fcurve this would be too long to display like this)
+			strInfo = ""
+			for i = 0 to ( oCurve.Keys.Count - 1 )
+				strInfo = strInfo &amp; "(" &amp; Round( oCurve.Keys.Item( i ).Time, 3 ) _
+							&amp; ", " &amp; Round( oCurve.Keys.Item( i ).Value, 3 ) &amp; ") "
+			next		
+			LogMessage "Selected FCurve has the following keys: " &amp; strInfo
+			'List the selected keys
+			dim oKeys, oKey
+			set oKeys = in_objFCurveEditor.SelectedKeys( oCurve )
+			if ( oKeys.Count = 0 ) then
+				logmessage "There are no keys selected on this fcurve"
+			else
+				strInfo = ""
+				for each oKey in oKeys
+					strInfo = strInfo &amp; "(" &amp; Round( oKey.Time, 3 ) &amp; ", " &amp; Round( oKey.Value, 3 ) &amp; ") "
+				next
+				LogMessage "The following keys are selected on this FCurve: " &amp; strInfo
+			end if			
+		next
+		'The user may have selected a region in the fcurve editor.  This information is available like this:
+		logmessage "-------------------------------------"
+		dim Start, endFrame, Min, Max
+		Start = in_objFCurveEditor.EditorAttribute( siRegionStartFrame )
+		endFrame = in_objFCurveEditor.EditorAttribute( siRegionEndFrame )
+		Min = in_objFCurveEditor.EditorAttribute( siRegionMin )
+		Max = in_objFCurveEditor.EditorAttribute( siRegionMax )
+		if ( Start &lt;&gt; endFrame ) then
+			logmessage "User has selected time region from frame " &amp;_ 
+						round( Start, 2 ) &amp; " to " &amp; round( endFrame, 2 )
+		else
+			logmessage "No time region is selected"
+		end if 
+		if ( Min &lt;&gt; Max ) then
+			logmessage "User has selected key value range from " &amp;_ 
+						round( Min, 2 ) &amp; " to " &amp; round( Max, 2 )
+		else
+			logmessage "No Value region is selected"
+		end if 
+	end if
+end sub
+'This second demo is action oriented - it changes the state of the FCurves that are selected.
+'
+'In this case we take the selected keys and set their values to the average.
+sub OnAvgSelectedPoints( in_objFCurveEditor )
+	LogMessage "AvgSelectedPoints called"
+	'Example of some simple error handling
+	if ( typename( in_objFCurveEditor ) &lt;&gt; "FCurveEditor" ) then
+		LogMessage "Invalid argument to command - Should be FCurveEditor object instead we got a " _ 
+					&amp; typename( in_objFCurveEditor ), siError
+		exit sub
+	end if
+	dim bDidSomething
+	bDidSomething = false
+	dim oCurves, oCurve
+	set oCurves = in_objFCurveEditor.SelectedFCurves
+	for each oCurve in oCurves
+		dim oKeys, oKey, cntKeys
+		set oKeys = in_objFCurveEditor.SelectedKeys( oCurve )
+		cntKeys = oKeys.Count
+		if ( cntKeys &gt; 1 ) then
+			dim sumValues, avgValue
+			sumValues = 0
+			for each oKey in oKeys
+				sumValues = sumValues + oKey.Value
+			next
+			avgValue = sumValues / cntKeys
+			for each oKey in oKeys
+				oKey.Value = avgValue
+			next
+			bDidSomething = true
+		end if 
+	next
+	if ( not bDidSomething ) then
+		LogMessage "Please select two or more keys on an fcurve to average"
+	end if
+end sub</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/Command.html">Command</a> <a href="#!/url=./si_om/FCurve.html">FCurve</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

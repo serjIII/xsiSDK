@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>SplitPolygon</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>SplitPolygon</h1>
+         </div>
+
+<h2 class="pagehead">SplitPolygon</h2>
+
+<h3>Introduced</h3>
+<div><p>v1.5</p></div>
+
+<h3>Description</h3>
+<div><p>
+Splits the given set of polygons using the split pattern passed as an argument
+(e.g.: cross, diamond, triangles, etc).<br /><br />
+Note: This command uses <a href="#!/url=./files/OutArgDefined.htm">output arguments</a>. C# and some 
+scripting languages (such as JScript, PerlScript and Python) don't support arguments passed by reference. Normally 
+you can get the output arguments via either <a href="#!/url=./si_om/XSIApplication.ExecuteCommand.html">XSIApplication.ExecuteCommand</a> method (C#) or the 
+<a href="#!/url=./files/ISIVTCollection.htm">ISIVTCollection</a> (scripting languages), but this command
+already returns a value.
+<br /><br />
+The only available workaround in this case is to create a VBScript custom command which returns both the output
+arguments and the return value in one array. For details, see 
+<a href="#!/url=./files/RtnValProblem.htm">What Happens when the Function Already Returns a Value?</a>.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = SplitPolygon( [ConnectionSet], [TanX], [TanY], [TanZ], [SplitPolygonType], [ImmediateMode], [NewPointID] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns the collection of SplitPolygon operators created by the command.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">ConnectionSet		</td>
+		<td><a href="#!/url=./files/cnxset.htm">ConnectionSet</a>		</td>
+		<td>
+ Specifies the polygons to split. 			<p class="cell"><span class="hilite">Default Value: </span>
+Currently selected components are used.<br /><br />Warning: An error occurs if the connection set is invalid. Please verify the connection set required for this operator to avoid breaking your scripts.			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">TanX		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ X parameter w/r to the local frame of the polygon(s) where to put the split point 		</td>
+	</tr>
+	<tr>
+		<td class="name">TanY		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Y parameter w/r to the local frame of the polygon(s) where to put the split point 		</td>
+	</tr>
+	<tr>
+		<td class="name">TanZ		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Z parameter w/r to the local frame of the polygon(s) where to put the split point 			<p class="cell"><span class="hilite">Default Value: </span>
+<br /><br />This is effectively a signed distance from the polygon plane where the split point is. <br /><br />This only makes sense if SplitPolygonType is "siByTheVertices"; otherwise the polygon will become nonplanar.			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">SplitPolygonType		</td>
+		<td><a href="#!/url=./si_om/siSplitPolygonType.html">siSplitPolygonType</a>		</td>
+		<td>
+ type of split 			<p class="cell"><span class="hilite">Default Value: </span>
+siUnspecified			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ImmediateMode		</td>
+		<td><a href="#!/url=./si_om/siOperationMode.html">siOperationMode</a>		</td>
+		<td>
+Specifies whether or not the operator should be immediately frozen.			<p class="cell"><span class="hilite">Default Value: </span>
+siPersistentOperation			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">NewPointID		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+ID of the new point created at (TanX,TanY) by the operation (-1 is returned if SplitPolygonType is "siDiamond..." as no point is created) 		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">NewScene
+CreatePrim "Cylinder", "MeshSurface" 
+SplitPolygon "cylinder.poly[12-36]", 0.0, 0.0, 0.5, siByTheVertices, True</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' Create a grid and split some polygons by the Edges MidPoints 
+NewScene
+CreatePrim "Grid", "MeshSurface"
+SetValue "grid.polymsh.geom.subdivu", 4
+SetValue "grid.polymsh.geom.subdivv", 4
+SplitPolygon "grid.poly[0,2,5,7,8,10,13,15]", 0.0, 0.0, 0.5, siByTheEdgesMidPoints, True</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/ApplyTopoOp.html">ApplyTopoOp</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

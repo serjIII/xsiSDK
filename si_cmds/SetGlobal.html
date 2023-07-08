@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>SetGlobal</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>SetGlobal</h1>
+         </div>
+
+<h2 class="pagehead">SetGlobal</h2>
+
+<h3>Introduced</h3>
+<div><p>v5.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+SetGlobal and its companion command <a href="#!/url=./si_cmds/GetGlobal.html">GetGlobal</a>
+provide a simple means to store and retrieve values
+which act like "global variables".  Each variable is indentified
+by a unique string.  To change the value of a previously
+set variable call this command with a new value.  To erase
+a global variable call this command with null as the value.
+<br /><br />
+These variables are accessible from any script and remain
+active during the duration of the Softimage session.  
+<br /><br />
+Warning: For persistent Global values it is better to use a 
+<a href="#!/url=./si_om/CustomProperty.html">CustomProperty</a> or a Custom <a href="#!/url=./si_om/Preferences.html">Preferences</a> object.
+<br /><br />
+Tip 1: It is possible to store a Softimage object inside a global
+variable.  However when storing a reference to a Softimage object,
+it is often safer to store the fullname string of the object rather
+than the object itself.  This ensures that even if the scene is closed,
+reopened or significantly changed you can get a valid reference
+to the object (as long as the object isn't renamed).  This is 
+demonstrated in the examples below.
+<br /><br />
+Tip 2: This command will convert any JScript Array or
+user-created script object into a SAFEARRAY (see <a href="#!/url=./files/Array.htm">Array</a>).
+To maintain the data in its original form use <a href="#!/url=./si_cmds/SetGlobalObject.html">SetGlobalObject</a>.
+<br /><br />
+Tip 3: It is unnecessary to use this functionality if the entire plug-in 
+is implemented inside a single script, because any variable within
+the global scope is accessible inside all functions. (The only exception 
+is <a href="#!/url=./si_om/PPGLayout.html">PPGLayout</a> logic callbacks, which cannot read
+the values of global variables set by non-PPGLayout callbacks.)
+<br /><br />
+Tip 4: Global variables can be very useful, but usage should be kept
+to a minimum to avoid unexpected side-effects, "spagetti" code
+and code that is difficult to read, debug and maintain.
+Each global variable name should be well chosen to avoid
+potential conflict with other scripts.  For example if two plug-ins
+both try to use a global variable named "x" then both will be
+prone to random or unexpected failure.
+<br /><br />
+Tip 5: This feature is implemented as a self-installed
+JScript <a href="#!/url=./si_om/Plugin.html">Plugin</a> using the powerful 
+"Scripting.Dictionary" object which is available to both 
+VBScript and JScript.  For more details refer to the
+actual implementation code (GlobalVarPlugin.js).
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>SetGlobal( in_VariableName, in_Value );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">in_VariableName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The name of the global variable		</td>
+	</tr>
+	<tr>
+		<td class="name">in_Value		</td>
+		<td><a href="#!/url=./files/Variant.htm">Variant</a>		</td>
+		<td>
+A new value for the global variable		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">// Example test for GetGlobal/SetGlobal
+NewScene( null, false ) ;
+// null returned when Global hasn't been set
+ASSERT( null == GetGlobal( "X" ) ) ;
+SetGlobal( "X", 67 ) ;
+ASSERT( 67 == GetGlobal( "X" ) ) ;
+// You can change the value of the global
+SetGlobal( "X", "foo" ) ;
+ASSERT( "foo" == GetGlobal( "X" ) ) ;
+// Remove the global
+SetGlobal( "X", null ) ;
+// Handle Softimage Object
+var oGrid = ActiveSceneRoot.AddGeometry( "Grid", "MeshSurface", "mygrid" );
+// You could store a Softimage object as a Global
+SetGlobal( "InterestingObj", oGrid ) ;
+ASSERT( oGrid.Name == GetGlobal( "InterestingObj" ).Name ) ;
+// But it is better to store the string fullname
+// because oGrid won't survive saving and reloading the scene,
+SetGlobal( "InterestingObj", oGrid.FullName ) ;
+// Simulate the user closing and reopening the scene
+var strTestScene = Application.InstallationPath( siProjectPath ) + "\\Scenes\\Test.Scn" ;
+SaveSceneAs( strTestScene ) ;
+OpenScene( strTestScene, false ) ;
+var strGrid = GetGlobal( "InterestingObj" ) ;
+// Turn the string back into an object
+var oGridRevived = Dictionary.GetObject( strGrid ) ;
+ASSERT( oGridRevived.Name == "mygrid" ) ;
+// Demonstrate that it really is a valid reference to the grid
+oGridRevived.posx = 4 ;
+LogMessage( "Test complete" ) ;
+function ASSERT(in_val)
+{
+	if ( !in_val )
+		throw new Error( 0, "test failed" );
+}</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' Example test for GetGlobal/SetGlobal
+NewScene ,false 
+' null returned when Global hasn't been set
+ASSERT( Null = GetGlobal( "X" ) )
+SetGlobal "X", 67 
+ASSERT( 67 = GetGlobal( "X" ) )
+' You can change the value of the global
+SetGlobal "X", "foo" 
+ASSERT( "foo" = GetGlobal( "X" ) ) 
+' Remove the global
+SetGlobal "X", Null 
+' Handle Softimage Object
+set oGrid = ActiveSceneRoot.AddGeometry( "Grid", "MeshSurface", "mygrid" )
+' You could store a Softimage object as a Global
+SetGlobal "InterestingObj", oGrid 
+ASSERT( oGrid.Name = GetGlobal( "InterestingObj" ).Name )
+' But it is better to store the string fullname
+' because oGrid won't survive saving and reloading the scene,
+SetGlobal "InterestingObj", oGrid.FullName 
+' Simulate the user closing and reopening the scene
+strTestScene = Application.InstallationPath( siProjectPath ) &amp; "\Scenes\Test.Scn"
+SaveSceneAs strTestScene 
+OpenScene strTestScene, false 
+strGrid = GetGlobal( "InterestingObj" ) 
+' Turn the string back into an object
+set oGridRevived = Dictionary.GetObject( strGrid )
+ASSERT( oGridRevived.Name = "mygrid" )
+' Demonstrate that it really is a valid reference to the grid
+oGridRevived.posx = 4 
+LogMessage "Test complete"
+sub ASSERT( in_test )
+	if NOT in_test then
+		LogMessage "Test Failed", siError 
+	end if
+end sub</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/GetGlobal.html">GetGlobal</a> <a href="#!/url=./si_cmds/SetGlobalObject.html">SetGlobalObject</a> <a href="#!/url=./si_om/CustomProperty.html">CustomProperty</a> <a href="#!/url=./si_om/XSIFactory.CreateObject.html">XSIFactory.CreateObject</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

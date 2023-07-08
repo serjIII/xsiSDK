@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Define</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Define</h1>
+         </div>
+
+<h2 class="pagehead">Define</h2>
+
+<hr width="100%" />
+<h3>Description</h3>
+<div><p><a name="Description"> </a>	<p>
+				Defines the property set (either standalone or associated with a self-installed custom operator), including 
+				all parameters that underlie the controls on the property page. Use this callback to build a set of parameters 
+				that will appear in the property page. This is where you define the number of parameters, their type, any 
+				defaults, value limitations, and so on.
+			</p>
+	<p>
+				This callback is fired when you instantiate the property on a scene item (for example, using 
+				<a href="#!/url=./si_om/SceneItem.AddProperty.html">SceneItem.AddProperty</a> on the scene root or a cube in the scene). 
+			</p>
+<div class="tip">
+<table cellpadding="5" cellspacing="5">
+	<tr>
+		<td class="label">Note</td>
+		<td class="emph">
+				For parameters defined on custom operators, this is only called for new operators, not operators being loaded 
+				out of a scene file. This behavior differs from that of the 
+				<a href="#!/url=./si_cmds/cb_Operator_Init.html">Init (Operator)</a> callback.
+			</td>
+	</tr>
+</table>
+</div>
+</p></div>
+
+<hr width="100%" />
+<h3>Applies To</h3>
+<div><p><a name="AppliesTo"> </a><a href="#!/url=./files/cus_ops.htm">Custom Operators</a><a href="#!/url=./files/cus_ppg.htm">Custom Properties</a></p></div>
+
+<hr width="100%" />
+<h3>Syntax</h3>
+<div><p><a name="Syntax"> </a><div class="example"><table>
+<tr>
+<td class="example"><pre class="csharp">public class &lt;plugin-item_name&gt;
+{
+	public bool Define( Context in_context )
+	{
+		...
+	}
+}</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="cplusplus">CStatus &lt;plugin-item_name&gt;_Define( CRef&amp; in_context ) 
+{ 
+	... 
+}</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">function &lt;plugin-item_name&gt;_Define( in_context ) 
+{ 
+	... 
+}</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">def &lt;plugin-item_name&gt;_Define( in_context ):
+	...</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">Function &lt;plugin-item_name&gt;_Define( in_context )
+	...
+End Function</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="perlscript">sub &lt;plugin-item_name&gt;_Define 
+{ 
+	my $in_context = shift; 
+}</pre></td></tr>
+</table>
+</div>	<p><span style="font-family: courier, monospace;">&lt;plugin-item-name&gt;</span> is the name specified in the call to 
+				<a href="#!/url=./si_om/PluginRegistrar.RegisterProperty.html">PluginRegistrar.RegisterProperty</a> or 
+				<a href="#!/url=./si_om/PluginRegistrar.RegisterOperator.html">PluginRegistrar.RegisterOperator</a>, with any spaces converted to underscores. For example, 
+				if you register a property with the name <span style="font-family: courier, monospace;">"My Property"</span>, the callback 
+				function names start with <span style="font-family: courier, monospace;">"My_Property"</span>. 
+			</p>
+</p></div>
+
+<hr width="100%" />
+<h3>Parameters</h3>
+<div><p><a name="Parameters"> </a>	<table>		<tr>			<th>Parameter</th>
+			<th>Language</th>
+			<th>Type</th>
+			<th>Description</th>
+</tr>
+		<tr>			<td class="name">in_context</td>
+			<td>Scripting and C#</td>
+			<td><a href="#!/url=./si_om/Context.html">Context</a></td>
+			<td><a href="#!/url=./si_om/Context.Source.html">Context.Source</a> returns the <a href="#!/url=./si_om/CustomProperty.html">CustomProperty</a> or 
+					<a href="#!/url=./si_om/CustomOperator.html">CustomOperator</a>. </td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td>C++</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1CRef.html">CRef</a>& </td>
+			<td>A reference to the <a href="#!/url=./si_cpp/classXSI_1_1CustomProperty.html">CustomProperty</a> or 
+					<a href="#!/url=./si_cpp/classXSI_1_1CustomOperator.html">CustomOperator</a>.</td>
+</tr>
+</table>
+</p></div>
+
+<hr width="100%" />
+<h3>See Also</h3>
+<div><p><a name="SeeAlso"> </a><ul>
+	<li><a href="#!/url=./si_om/PluginRegistrar.RegisterProperty.html">PluginRegistrar.RegisterProperty</a></li>
+	<li><a href="#!/url=./si_om/PluginRegistrar.RegisterOperator.html">PluginRegistrar.RegisterOperator</a></li>
+	<li><a href="#!/url=./si_cmds/cb_Property_DefineLayout.html">DefineLayout</a></li>
+	<li><a href="#!/url=./si_om/CustomProperty.AddParameter2.html">CustomProperty.AddParameter2</a></li>
+	<li><a href="#!/url=./si_om/CustomProperty.AddFCurveParameter.html">CustomProperty.AddFCurveParameter</a></li>
+	<li><a href="#!/url=./si_om/CustomProperty.AddGridParameter.html">CustomProperty.AddGridParameter</a></li>
+	<li><a href="#!/url=./si_om/CustomProperty.AddProxyParameter.html">CustomProperty.AddProxyParameter</a></li>
+	<li><a href="#!/url=./si_om/CustomProperty.AddParameterFromDef.html">CustomProperty.AddParameterFromDef</a></li>
+	<li><a href="#!/url=./si_cmds/callbacks.html">Property Callbacks</a></li>
+	<li><a href="#!/url=./si_cmds/callbacks.html">Operator Callbacks</a></li>
+</ul>
+</p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

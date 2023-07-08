@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>siExplorerScope</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>siExplorerScope</h1>
+         </div>
+
+<h2 class="pagehead">siExplorerScope</h2>
+
+<h3>Description</h3>
+<div><p>The list of scopes supported by the Scene Explorer.</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>siExplorerScope.siExplorerScopeDefault                                      // 0
+siExplorerScope.siExplorerScopeProject                                      // 1
+siExplorerScope.siExplorerScopePreferences                                  // 2
+siExplorerScope.siExplorerScopeScene                                        // 3
+siExplorerScope.siExplorerScopeLayers                                       // 4
+siExplorerScope.siExplorerScopePasses                                       // 5
+siExplorerScope.siExplorerScopeEnvironments                                 // 6
+siExplorerScope.siExplorerScopeParTypes                                     // 7
+siExplorerScope.siExplorerScopeSelection                                    // 8
+siExplorerScope.siExplorerScopeCustom                                       // 9
+siExplorerScope.siExplorerScopeCurrentLayer                                 // 10
+siExplorerScope.siExplorerScopeCurrentPass                                  // 11
+siExplorerScope.siExplorerScopeCurrentEnvironment                           // 12
+siExplorerScope.siExplorerScopeCurrentParType                               // 13
+siExplorerScope.siExplorerScopeSourcesClips                                 // 14
+siExplorerScope.siExplorerScopeSourcesClipsAnimation                        // 15
+siExplorerScope.siExplorerScopeSourcesClipsAudio                            // 16
+siExplorerScope.siExplorerScopeSourcesClipsImages                           // 17
+siExplorerScope.siExplorerScopeSourcesClipsMaterials                        // 18
+siExplorerScope.siExplorerScopeSourcesClipsModels                           // 19
+siExplorerScope.siExplorerScopeCommands                                     // 20</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<div><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th>Constant		</th>		<th>Value		</th>		<th>Description		</th>	</tr>
+	<tr>
+		<td class="name"><a name="siExplorerScopeDefault"> </a>siExplorerScopeDefault		</td>
+		<td class="example">0		</td>
+		<td>
+Default scope.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siExplorerScopeProject"> </a>siExplorerScopeProject		</td>
+		<td class="example">1		</td>
+		<td>
+Project (Content Container) scope.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siExplorerScopePreferences"> </a>siExplorerScopePreferences		</td>
+		<td class="example">2		</td>
+		<td>
+Preferences scope.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siExplorerScopeScene"> </a>siExplorerScopeScene		</td>
+		<td class="example">3		</td>
+		<td>
+Scene scope.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siExplorerScopeLayers"> </a>siExplorerScopeLayers		</td>
+		<td class="example">4		</td>
+		<td>
+Layers scope.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siExplorerScopePasses"> </a>siExplorerScopePasses		</td>
+		<td class="example">5		</td>
+		<td>
+Passes scope.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siExplorerScopeEnvironments"> </a>siExplorerScopeEnvironments		</td>
+		<td class="example">6		</td>
+		<td>
+Environments scope.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siExplorerScopeParTypes"> </a>siExplorerScopeParTypes		</td>
+		<td class="example">7		</td>
+		<td>
+The Particle Types scope is no longer supported.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siExplorerScopeSelection"> </a>siExplorerScopeSelection		</td>
+		<td class="example">8		</td>
+		<td>
+Selection scope.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siExplorerScopeCustom"> </a>siExplorerScopeCustom		</td>
+		<td class="example">9		</td>
+		<td>
+Custom scope.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siExplorerScopeCurrentLayer"> </a>siExplorerScopeCurrentLayer		</td>
+		<td class="example">10		</td>
+		<td>
+Current Layer scope.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siExplorerScopeCurrentPass"> </a>siExplorerScopeCurrentPass		</td>
+		<td class="example">11		</td>
+		<td>
+Current Pass scope.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siExplorerScopeCurrentEnvironment"> </a>siExplorerScopeCurrentEnvironment		</td>
+		<td class="example">12		</td>
+		<td>
+The Current Environment scope is no longer supported.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siExplorerScopeCurrentParType"> </a>siExplorerScopeCurrentParType		</td>
+		<td class="example">13		</td>
+		<td>
+Current Particle Type scope.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siExplorerScopeSourcesClips"> </a>siExplorerScopeSourcesClips		</td>
+		<td class="example">14		</td>
+		<td>
+Sources and Clips scope.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siExplorerScopeSourcesClipsAnimation"> </a>siExplorerScopeSourcesClipsAnimation		</td>
+		<td class="example">15		</td>
+		<td>
+Sources and Clips (Animation Only) scope.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siExplorerScopeSourcesClipsAudio"> </a>siExplorerScopeSourcesClipsAudio		</td>
+		<td class="example">16		</td>
+		<td>
+Sources and Clips (Audio Only) scope.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siExplorerScopeSourcesClipsImages"> </a>siExplorerScopeSourcesClipsImages		</td>
+		<td class="example">17		</td>
+		<td>
+Sources and Clips (Images Only) scope.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siExplorerScopeSourcesClipsMaterials"> </a>siExplorerScopeSourcesClipsMaterials		</td>
+		<td class="example">18		</td>
+		<td>
+Sources and Clips (Materials Only) scope.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siExplorerScopeSourcesClipsModels"> </a>siExplorerScopeSourcesClipsModels		</td>
+		<td class="example">19		</td>
+		<td>
+The Sources and Clips (Models Only) scope is no longer supported.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siExplorerScopeCommands"> </a>siExplorerScopeCommands		</td>
+		<td class="example">20		</td>
+		<td>
+The Commands scope is no longer supported.		</td>
+	</tr>
+</table>
+</div>
+
+<h3>Applies To</h3>
+<div><p><a href="#!/url=./si_cmds/OpenXSIExplorer.html">OpenXSIExplorer</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

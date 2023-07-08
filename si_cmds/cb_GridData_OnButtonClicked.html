@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>OnButtonClicked (GridData)</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>OnButtonClicked (GridData)</h1>
+         </div>
+
+<h2 class="pagehead">OnButtonClicked (GridData)</h2>
+
+<hr width="100%" />
+<h3>Description</h3>
+<div><p><a name="Description"> </a>	<p>
+				Fired when a button gets clicked in a grid widget associated with a grid data parameter.
+			</p>
+</p></div>
+
+<hr width="100%" />
+<h3>Applies To</h3>
+<div><p><a name="AppliesTo"> </a>
+			GridData parameters on <a href="#!/url=./files/cus_ppg.htm">Custom Properties</a> implemented in a scripting language.
+		</p></div>
+
+<hr width="100%" />
+<h3>Syntax</h3>
+<div><p><a name="Syntax"> </a><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">function &lt;property_name&gt;_&lt;parameter_name&gt;_OnButtonClicked()
+{
+...
+}</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">def &lt;property_name&gt;_&lt;parameter_name&gt;_OnButtonClicked():
+				...</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">Function &lt;property_name&gt;_&lt;parameter_name&gt;_OnButtonClicked()
+				...
+End Function</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="perlscript">sub &lt;property_name&gt;_&lt;parameter_name&gt;_OnButtonClicked
+{ 
+	... 
+}</pre></td></tr>
+</table>
+</div>	<p><span style="font-family: courier, monospace;">&lt;property_name&gt;</span> is the name specified in the call to 
+				<a href="#!/url=./si_om/PluginRegistrar.RegisterProperty.html">PluginRegistrar.RegisterProperty</a>, with any spaces converted to underscores. For example, 
+				if you register a property with the name <span style="font-family: courier, monospace;">"My Property"</span>, the callback 
+				function names start with <span style="font-family: courier, monospace;">"My_Property"</span>. 
+			</p>
+	<p><span style="font-family: courier, monospace;">&lt;parameter_name&gt;</span> is the name specified in the call to
+				<a href="#!/url=./si_om/CustomProperty.AddGridParameter.html">CustomProperty.AddGridParameter</a>, with any spaces converted to underscores. For example,
+				if you added a grid parameter with the name <span style="font-family: courier, monospace;">"My Grid"</span>, the callback
+				function names start with <span style="font-family: courier, monospace;">"&lt;property_name&gt;_My_Grid"</span>.
+			</p>
+</p></div>
+
+<hr width="100%" />
+<h3>Parameters</h3>
+<div><p><a name="Parameters"> </a>	<table>		<tr>			<th>Parameter</th>
+			<th>Language</th>
+			<th>Type</th>
+			<th>Description</th>
+</tr>
+		<tr>			<td class="name">extra_param</td>
+			<td>Scripting</td>
+			<td><a href="#!/url=./si_om/Array.html">Array</a></td>
+			<td>
+          The first item is another Array containing the column and row indices of the selected cells.
+          Indices are arranged as [col1, row1, col2, row2, ...].
+        </td>
+</tr>
+</table>
+</p></div>
+
+<hr width="100%" />
+<h3>Examples</h3>
+<div><p><a name="Examples"> </a><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">import win32com.client
+from win32com.client import constants
+
+def XSILoadPlugin( in_reg ):
+	in_reg.Author = "Autodesk"
+	in_reg.Name = "MyPropertyPlugin"
+	in_reg.Major = 1
+	in_reg.Minor = 0
+
+	in_reg.RegisterProperty("MyProperty")
+	#RegistrationInsertionPoint - do not remove this line
+
+	return True
+
+def XSIUnloadPlugin( in_reg ):
+	strPluginName = in_reg.Name
+	return True
+
+def MyProperty_Define( in_ctxt ):
+	oCustomProperty = in_ctxt.Source
+	oCustomProperty.AddGridParameter("MyGrid")
+	return True
+
+def MyProperty_DefineLayout( in_ctxt ):
+	oLayout = in_ctxt.Source
+	oLayout.Clear()
+	oItem = oLayout.AddItem("MyGrid")
+	return True
+
+def MyProperty_OnInit( ):
+	Application.LogMessage("MyProperty_OnInit called",constants.siVerbose)
+	param = PPG.MyGrid
+
+	# Basic population of the grid data
+	gridData = param.Value
+	gridData.ColumnCount = 3
+	gridData.RowCount = 3
+	
+	for col in range( gridData.ColumnCount ):
+		gridData.SetColumnLabel( col, "Col %d"%col )
+		gridData.SetColumnDef( col, constants.siColumnButton )
+		for row in range( gridData.RowCount ):
+			if col == 0:
+				gridData.SetRowLabel( row, "Row %d"%row )
+			gridData.SetCell( col, row, "%d,%d"%(col, row) )
+
+def MyProperty_OnClosed( ):
+	pass
+
+def MyProperty_MyGrid_OnButtonClicked( in_ExtraParams ):
+	param = PPG.MyGrid
+	gridData = param.Value
+	
+	# Retrieve the set of cells on which a button was clicked
+	# (if multiple "button" cells are selected prior to clicking 
+	# then all the cells are part of the callback extra parameters)
+	columnRowPairs = []
+	columnRowPairs.extend( in_ExtraParams[0] )
+	
+	logString = "Button clicked on these cells: "
+	while len( columnRowPairs ) &gt;= 2:
+		col = columnRowPairs.pop(0)
+		row = columnRowPairs.pop(0)
+
+		logString += "(%d, %d), "%(col, row)
+
+	Application.LogMessage( logString )</pre></td></tr>
+</table>
+</div></p></div>
+
+<hr width="100%" />
+<h3>See Also</h3>
+<div><p><a name="SeeAlso"> </a><ul>
+	<li><a href="#!/url=./si_cmds/cb_Property_Define.html">Define</a></li>
+	<li><a href="#!/url=./si_cmds/cb_Property_DefineLayout.html">DefineLayout</a></li>
+	<li><a href="#!/url=./si_cmds/cb_Property_OnChanged.html">OnChanged</a></li>
+	<li><a href="#!/url=./si_cmds/cb_Property_OnClosed.html">OnClosed</a></li>
+	<li><a href="#!/url=./si_cmds/cb_Property_OnInit.html">OnInit</a></li>
+	<li><a href="#!/url=./si_cmds/cb_Property_OnTab.html">OnTab</a></li>
+	<li><a href="#!/url=./si_cmds/cb_Property_PPGEvent.html">PPGEvent</a></li>
+	<li><a href="#!/url=./si_cmds/cb_Property_OnClicked.html">OnClicked</a></li>
+	<li><a href="#!/url=./si_cmds/cb_GridData_OnBeginValueChange.html">OnBeginValueChange (GridData)</a></li>
+	<li><a href="#!/url=./si_cmds/cb_GridData_OnEndValueChange.html">OnEndValueChange (GridData)</a></li>
+	<li><a href="#!/url=./si_cmds/cb_GridData_OnBeginSelectionChange.html">OnBeginSelectionChange (GridData)</a></li>
+	<li><a href="#!/url=./si_cmds/cb_GridData_OnEndSelectionChange.html">OnEndSelectionChange (GridData)</a></li>
+	<li><a href="#!/url=./si_cmds/cb_GridData_OnHeaderDoubleClick.html">OnHeaderDoubleClick (GridData)</a></li>
+	<li><a href="#!/url=./si_cmds/cb_GridData_OnContextMenuInit.html">OnContextMenuInit (GridData)</a></li>
+	<li><a href="#!/url=./si_cmds/cb_GridData_OnContextMenuSelected.html">OnContextMenuSelected (GridData)</a></li>
+	<li><a href="#!/url=./si_cmds/callbacks.html">Property Callbacks</a></li>
+</ul>
+</p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

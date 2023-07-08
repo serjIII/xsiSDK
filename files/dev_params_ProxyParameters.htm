@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-CB07227C-BF24-4155-B1D3-C4C706C1BDD6" />
+      <meta name="indexterm" content="proxy parameters: creating and accessing" />
+      <meta name="indexterm" content="VBScript Example: Creating and Finding a Proxy Parameter" />
+      <meta name="indexterm" content="Example: Creating and Finding a Proxyarameter" />
+      <meta name="indexterm" content="proxy parameters: self-installing plug-ins" />
+      <meta name="indexterm" content="JScript Example: Using Proxy Parameters in a Self-Installing Custom Property" />
+      <meta name="indexterm" content="Example: Using Proxy Parameters in a Self-Installing Custom Property" />
+      <meta name="topic-type" content="concept" />
+      <title>Proxy Parameters</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ reflinkdata.push(["set", "si_cpp/group__RenderMapDefine.html#ga793ad1cfa149967fe4b97fc66251b831", "C++ API Reference", "../"]); 
+</script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-CB07227C-BF24-4155-B1D3-C4C706C1BDD6"></a></span><div class="head">
+            <h1>Proxy Parameters</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-B23ABC7D-FE1F-481E-AAE8-EB9A0E126D51"></a></span>A proxy parameter is a kind of a linked custom parameter, but with a fundamental difference.
+               Linked custom parameters can drive target parameters (that is, the parameters they
+               are linked to), but they are still separate and different parameters. This means that
+               when you set keyframes, you key the custom parameter and not the driven parameter.
+            </p>
+            <p><span class="anchor_wrapper"><a name="GUID-A1ADBA6C-B2E6-46B8-8C51-65AC61D5A6A6"></a></span>So what do you do when you want to drive the actual parameter or expose only certain
+               parameters to build a custom property editor? You can use <em class="mild">proxy parameters</em>.
+            </p>
+            <p><span class="anchor_wrapper"><a name="GUID-383B4805-FE4A-4701-BFAF-FFB41FE0ACE8"></a></span>Unlike custom parameters, proxy parameters are actually cloned parameters: they reflect
+               the data of another parameter in the scene. Any operation done on a proxy parameter
+               has the same result as if it had been done on the real parameter itself (change a
+               value, save a key, etc.).
+            </p>
+            <div><span class="anchor_wrapper"><a name="GUID-3BC0F820-3C4C-4919-86D4-B5188E9EB2E1"></a></span><div class="note-note"><span class="label">NOTE:</span> 
+                  <p><span class="anchor_wrapper"><a name="GUID-95C73EA9-16D8-479B-B2FD-D59D9233829B"></a></span>For more information about proxies, see the user guide.
+                  </p> 
+               </div>
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSED592B8513B33F4E98849086F360A587-0027"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-2646101E-0B70-486B-B94C-C877932FA891"></a></span> Creating and Accessing Proxy Parameters
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-1099D81A-6C5F-4103-8493-856AB1A72676"></a></span>You can use the <a href="#!/url=./si_om/CustomProperty.AddProxyParameter.html">CustomProperty.AddProxyParameter</a> method or <a href="#!/url=./si_cmds/AddProxyParam.html">AddProxyParam</a> command to create the <a href="#!/url=./si_om/ProxyParameter.html">ProxyParameter</a> object, which gives you access to the master parameter (through the <a href="#!/url=./si_om/ProxyParameter.MasterParameter.html">ProxyParameter.MasterParameter property</a>). Otherwise, finding a proxy parameter is the same procedure as finding a regular
+                  parameter.
+               </p> 
+               <div class="section"><span class="anchor_wrapper"><a name="WSED592B8513B33F4E98849086F360A587-0028"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-23BFD146-0954-4A6F-A501-E3F55C12E44A"></a></span> VBScript Example: Creating and Finding a Proxy Parameter
+                  </h3>   
+                  <div class="codeBlock"><pre class="prettyprint">
+'-----------------------------------------------------
+	'SETUP
+'
+' Set up scene with a null, a cube and a cpset
+' containing a proxy to the cube.sclx parameter
+NewScene , false
+<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> root = ActiveSceneRoot
+root.AddNull
+root.AddGeometry "Cube", "MeshSurface"
+
+'-----------------------------------------------------
+	'CREATION
+'
+<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> cpset = root.AddCustomProperty( "proxy_test" )
+cpset.AddProxyParameter "cube.kine.local.sclx"
+
+
+'-----------------------------------------------------
+	'SEARCH
+'
+' Get a pointer to the proxy parameter and return its info
+' NB: The AddProxyParameter method returns the parameter, so this would not
+' normally be necessary, this is just to demonstrate finding existing proxies
+if TypeName(cpset) &lt;&gt; "Nothing" then
+	bFound = false
+	for each pxy in cpset.Parameters
+		if TypeName(pxy) = "ProxyParameter" then
+			bFound = true
+			LogMessage pxy.FullName &amp; " is linked to " &amp; pxy.MasterParameter.FullName
+		end if
+	next
+	if Not(bFound) then
+		LogMessage "Could not find a proxy parameter on cpset."
+	end if
+else
+	LogMessage "Could not find 'proxy test' custom pset."
+end if
+
+'-----------------------------------------------------
+	'OUTPUT
+'
+'INFO : "proxy_test.cube_sclx is linked to cube.kine.local.sclx"
+</pre></div> 
+               </div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSED592B8513B33F4E98849086F360A587-0029"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-3078328A-5AF6-491B-9C17-56FFD60A3A7B"></a></span>Proxy Parameters in a Self-Installing Plug-in
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-899CF00A-5571-44CD-94E3-5CCE1EBF1555"></a></span>You can use proxy parameters in self-installing custom properties as well. Instead
+                  of defining them in the <a href="#!/url=./si_cmds/cb_Property_OnInit.html">OnInit</a> callback, check to see if they have already been defined in the OnInit callback and
+                  if not, define them and then refresh the page.
+               </p> 
+               <div class="section"><span class="anchor_wrapper"><a name="WSED592B8513B33F4E98849086F360A587-002A"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-4B6DAAC4-FCD5-42AC-B66A-F27C6D3E261A"></a></span> JScript Example: Using Proxy Parameters in a Self-Installing Custom Property
+                  </h3>   
+                  <p><span class="anchor_wrapper"><a name="GUID-DD3B5AB1-DEE9-4DB4-A716-885A46E7FE74"></a></span>This example basically does the same thing as the previous <span class="char_link"><a href="#!/url=./files/dev_params_ProxyParameters.htm#WSED592B8513B33F4E98849086F360A587-0028">VBScript example</a></span> but inside a self-installing custom property plug-in. Notice that opening the property
+                     page more than once does not create new proxy parameters.
+                  </p> 
+                  <div class="codeBlock"><pre class="prettyprint">
+//-----------------------------------------------------
+//	SETUP
+//
+// Set up scene with a null, a cube and a cpset containing a proxy to the cube.sclx parameter
+NewScene( null, false );
+var root = Application.ActiveSceneRoot;
+root.AddNull();
+root.AddGeometry( "Cube", "MeshSurface" );
+
+//-----------------------------------------------------
+//	SELF-INSTALLING PROPERTY 
+//
+// Write the helper functions under CREATION &amp; SEARCH below to the plug-in file
+var fso = XSIFactory.CreateObject( "Scripting.FileSystemObject" );
+var sFilename = XSIUtils.BuildPath( Application.InstallationPath(siUserPath),
+	"Application", "Plugins", "ProxyParamDemo.js" );
+var ts = fso.CreateTextFile( sFilename, true /* overwrite old ones */ );
+ts.Write( XSILoadPlugin.toString() + ProxyParamDemo_Define.toString() + 
+	ProxyParamDemo_DefineLayout.toString() + ProxyParamDemo_OnInit );
+
+// Load the plug-in and then open the property page (to fire the OnInit callback)
+var oPlugin = Application.LoadPlugin( sFilename );
+var oCusProp = root.AddProperty( oPlugin.Items(0).Name );
+var bCancel = InspectObj( oCusProp, "", "ProxyParamDemo", siModal, false );
+
+
+//-----------------------------------------------------
+//	OUTPUT
+//
+//INFO : ProxyParamDemo.cube_sclx is linked to cube.kine.local.sclx
+
+
+//-----------------------------------------------------
+//	CREATION &amp; SEARCH
+//
+function XSILoadPlugin( in_reg )
+{
+	in_reg.Author = "Demo";
+	in_reg.Name = "ProxyParamDemoPlugin";
+	in_reg.Major = 1;
+	in_reg.Minor = 0;
+
+	in_reg.RegisterProperty("ProxyParamDemo");
+	return true;
+}
+
+function ProxyParamDemo_Define( in_ctxt )
+{
+	var oCustomProperty = in_ctxt.Source;
+	return true;
+}
+
+function ProxyParamDemo_DefineLayout( in_ctxt )
+{
+	var oLayout = in_ctxt.Source;
+	oLayout.Clear();
+	return true;
+}
+
+function ProxyParamDemo_OnInit()
+{
+	// Get the custom property
+	var oCustomProperty = PPG.Inspected.Item(0);
+	
+	// Does the proxy parameter already exist? If not, create it
+	if ( oCustomProperty.Parameters.Count &lt; 1 ) {
+		// Make sure the cube actually exists
+		var oCube = Application.ActiveSceneRoot.FindChild( "", siCubePrimType );
+		if ( oCube ) {
+			oCustomProperty.AddProxyParameter( oCube.sclx );
+		} else {
+			Application.LogMessage( "Could not create proxy parameter because the cube does not exist.", siWarning );
+		}
+	}
+	
+	// Check each parameter to find the proxy
+	var eParams = new Enumerator( oCustomProperty.Parameters );
+	for ( ; !eParams.atEnd(); eParams.moveNext() ) {
+		var oProxy = eParams.item();
+		if ( oProxy.IsClassOf(siProxyParameterID) ) {
+			Application.LogMessage( oProxy.FullName + " is linked to " + oProxy.MasterParameter.FullName );
+		}
+	}
+	
+	// Refresh the layout so that it appears
+	PPG.Refresh();
+}</pre></div> 
+               </div> 
+            </div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

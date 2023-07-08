@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>AddTransition</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>AddTransition</h1>
+         </div>
+
+<h2 class="pagehead">AddTransition</h2>
+
+<h3>Introduced</h3>
+<div><p>v1.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Creates a transition between two clips. A transition curve is associated with 
+this transition (the default curve is linear, but this can be edited after creation).
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = AddTransition( [From], [To], [Type], [Name] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns the transition (a <a href="#!/url=./si_om/Transition.html">Transition</a> object).</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">From		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ The source clip from which to transition.				<p class="cell"><span class="hilite">Default Value: </span>
+Current selection, if empty: pick session			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">To		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ The target clip to which to transition.					<p class="cell"><span class="hilite">Default Value: </span>
+Current selection, if empty: pick session			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Type		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+ The type of transition to create.						<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>Standard transition.					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>Cardinal transition.					</td>
+				</tr>
+				<tr>
+					<td class="name">2					</td>
+					<td>Bridge   transition.					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Name		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Name of the transition. 		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' This example creates a simple 2-bone skeleton and puts it in a model.
+' Then it duplicates the model so we can compare Standard versus Cardinal
+' transitions.  Next it makes three poses for the first model.  Finally,
+' it applies these source clips onto both models and uses Standard
+' transitions for the first model and Cardinals for the second.  Cardinal
+' transitions require at least four consecutive clips in a row, and they
+' give a smoother interpolation than Standard.  It ends by plotting the
+' effector position to a curve, to illustrate the difference.
+' Create the skeleton for our example.
+set oSkelRoot = Create2DSkeleton( 0, 4, 0, 0, 0, 0, , , , , oBone1, oEff )
+oBone2 = AppendBone( oEff, 4, 0, 0 )
+' Put the skeleton in its own model, pretend it's a "character".
+CreateModel oSkelRoot, "Standard", , oModel
+' Because AppendBone just returns a string, not the object,
+' we prepend the model name onto the front (now that it's inside one).
+oBone2 = oModel &amp; "." &amp; oBone2
+' Duplicate the model in Branch mode ("B:" indicates branch), rename
+' the new model "Cardinal" (the first model is called "Standard").
+set oOtherModel = Duplicate( "B:" &amp; oModel, 1 )
+SetValue oOtherModel &amp; ".name", "Cardinal"
+' The model is the first member of the collection returned by Duplicate.
+oOtherModel = oOtherModel(0)
+' Take a few "snapshot" poses.  For this example, we translate the
+' effector (IK), but capture the values of the bone rotations (FK)
+' for later use in the mixer.
+rotParams = "/kine.local.rotx,kine.local.roty,kine.local.rotz"
+paramStr = oBone1 &amp; "," &amp; oBone2 &amp; rotParams
+dim oPoses(5)
+posCoords = Array( Array(4,0,0), Array(0,2,0), Array(-1,-3,0), _
+			Array(0,-3.5,0), Array(1,-1,0), Array(4,0,0) )
+for i = 0 to 5
+	SnapshotPose oModel, oEff, oPoses(i), _
+			posCoords(i)(0), posCoords(i)(1), posCoords(i)(2), paramStr
+next
+' Create tracks for the clips (one track in each model).
+dim oTracks(1), oClips(5,1)
+set oTracks(0) = AddTrack( oModel, , 0 )
+set oTracks(1) = AddTrack( oOtherModel, , 0 )
+' Now go through and instantiate the sources into single-frame clips on
+' the two mixers.  For the first mixer we will add standard transitions
+' between each pair of consecutive clips.  For the second one, we
+' will add Cardinal transitions.
+for i = 0 to 5
+	set oClips(i,0) = AddClip( oModel, oPoses((i)), , oTracks(0), i * 19 + 1 )
+	set oClips(i,1) = AddClip( oOtherModel, oPoses((i)), , oTracks(1), i * 19 + 1 )
+	if i &gt; 0 then
+		AddTransition oClips(i-1,0), oClips(i,0), 0	' Standard
+		AddTransition oClips(i-1,1), oClips(i,1), 1	' Cardinal
+	end if
+next
+' Just offset the two models so we can see them separately.
+SetValue oModel &amp; ".kine.local.posx", -5
+SetValue oOtherModel &amp; ".kine.local.posx", 5
+' Get the second effector's full name by prepending the
+' second model's name to the first effector's "simple" name.
+oEff1 = oOtherModel &amp; "." &amp; oEff.name
+' Finally, plot the effector positions to compare the paths.
+PlotCurve oEff &amp; "," &amp; oEff1, , 1, 96, 1
+'==================================================
+' Helper method to create a snapshot Action for the chain.
+'==================================================
+sub SnapshotPose( in_oModel, in_oEff, io_oPose, in_X, in_Y,in_Z, in_paramStr )
+	Translate in_oEff, in_X, in_Y, in_Z, siAbsolute, siView, siObj, siXYZ
+	Refresh ' needed because StoreAction just looks at current values.
+	set io_oPose = StoreAction( in_oModel, in_paramStr, 1, , True, 1, 1 )
+end sub</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/AddBridgeTransition.html">AddBridgeTransition</a> <a href="#!/url=./si_om/Transition.html">Transition</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

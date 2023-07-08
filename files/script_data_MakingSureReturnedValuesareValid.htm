@@ -1,0 +1,346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-F0882C22-B7F7-43A1-86F6-CF934F32D809" />
+      <meta name="indexterm" content="return values: exception handling" />
+      <meta name="indexterm" content="return values: TypeName" />
+      <meta name="indexterm" content="return values: Nothing" />
+      <meta name="indexterm" content="values: testing return values" />
+      <meta name="indexterm" content="return values: testing" />
+      <meta name="indexterm" content="trapping errors (scripting): from return values" />
+      <meta name="indexterm" content="error trapping: return values" />
+      <meta name="indexterm" content="exception handling" />
+      <meta name="indexterm" content="TypeName" />
+      <meta name="indexterm" content="Nothing" />
+      <meta name="indexterm" content="JScript: testing with exception handling" />
+      <meta name="indexterm" content="VBScript: testing with TypeName" />
+      <meta name="indexterm" content="VBScript: testing with Nothing" />
+      <meta name="indexterm" content="testing (in scripting): exception handling" />
+      <meta name="indexterm" content="testing (in scripting): TypeName" />
+      <meta name="indexterm" content="testing (in scripting): Nothing" />
+      <meta name="indexterm" content="To find out whether the return object is valid in VBScript" />
+      <meta name="indexterm" content="To find out whether the return object is valid in JScript" />
+      <meta name="indexterm" content="properties: Count" />
+      <meta name="indexterm" content="Count property" />
+      <meta name="indexterm" content="Filter method: and empty collections" />
+      <meta name="indexterm" content="FindChildren method: and empty collections" />
+      <meta name="indexterm" content="methods: using the Filter method with empty collections" />
+      <meta name="indexterm" content="methods: using the FindChildren method with empty collections" />
+      <meta name="indexterm" content="return values: empty collections" />
+      <meta name="indexterm" content="invalid collections" />
+      <meta name="indexterm" content="collections (scripting): invalid" />
+      <meta name="indexterm" content="collections (scripting): detecting invalid collections" />
+      <meta name="indexterm" content="collections (scripting): empty" />
+      <meta name="indexterm" content="empty collections (returned)" />
+      <meta name="indexterm" content="trapping errors (scripting): empty collections" />
+      <meta name="indexterm" content="error trapping" />
+      <meta name="indexterm" content="return values: testing collections with the Count property" />
+      <meta name="indexterm" content="testing (in scripting): return values with the Count property" />
+      <meta name="indexterm" content="To find out whether a collection contains any items in VBScript" />
+      <meta name="indexterm" content="To find out whether a collection contains any items in JScript" />
+      <meta name="indexterm" content="Calling a Command or Method That Might Fail" />
+      <meta name="topic-type" content="concept" />
+      <title>Making Sure Returned Values are Valid</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ reflinkdata.push(["type", "si_cpp/group__RenderMapDefine.html#ga7117e14e60390664f1862525dd6acaf6", "C++ API Reference", "../"]); 
+reflinkdata.push(["set", "si_cpp/group__RenderMapDefine.html#ga793ad1cfa149967fe4b97fc66251b831", "C++ API Reference", "../"]); 
+reflinkdata.push(["data", "si_cpp/group__RenderMapDefine.html#gadd4f4d7b7bb549a29e5ea45fe633c5c3", "C++ API Reference", "../"]); 
+</script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-F0882C22-B7F7-43A1-86F6-CF934F32D809"></a></span><div class="head">
+            <h1>Making Sure Returned Values are Valid</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-65D772FC-B2A4-4FBD-9925-4183A5CA1000"></a></span>Some commands and methods may return invalid collections or objects. For example,
+               if you try to use the <a href="#!/url=./si_om/X3DObjectCollection.Find.html">Find</a> method to return an item that doesn't exist in the scene, it returns nothing. Unfortunately,
+               if you try to use that invalid object or collection later on in your script, you will
+               get an error.
+            </p>
+            <div class="section"><span class="anchor_wrapper"><a name="WSBAC00627FDA41F4DBFDDFE9988A39246-0034"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-9E2BE270-2A8B-4D8A-9F05-04ED8E62EE48"></a></span> To find out whether the return object is valid in VBScript
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-1801DE89-DB4C-4B18-8AE3-A050D6BEE917"></a></span>In VBScript, if the command or method returns an invalid object, the <em class="strong">TypeName</em> function returns <span class="code" translate="no">Nothing</span>:
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+Set oRoot = ActiveSceneRoot
+Set oChildren = oRoot.FindChildren
+Set oChild = oChildren.Find( "polymsh" )
+If TypeName( oChild ) &lt;&gt; "Nothing" Then
+	LogMessage "Found " &amp; oChild.Name
+Else
+	LogMessage "Couldn't find it!"
+End If</pre></div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSBAC00627FDA41F4DBFDDFE9988A39246-0035"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-9B2BD253-E72A-4997-9DF7-06D72FAFCEDE"></a></span> To find out whether the return object is valid in JScript
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-79595AD6-4A62-45A0-9EEE-6BA303ABA482"></a></span>In JScript, if the command or method returns an invalid object, you can trap it with
+                  exception handling:
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+var oRoot = ActiveSceneRoot;
+var oChildren = oRoot.FindChildren();
+var oChild = oChildren.Find( "polymsh" );
+
+try {
+	sMessage = "Found " + oChild.Name;
+} catch(e) {
+	sMessage = "Couldn't find it!";
+} finally {
+	LogMessage( sMessage );
+}</pre></div> 
+               <p><span class="anchor_wrapper"><a name="GUID-6A2A3E8D-264F-419B-B28A-2A45FE933C92"></a></span>Alternatively, you could use the following error trap instead:
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+var oRoot = ActiveSceneRoot;
+var oChildren = oRoot.FindChildren();
+var oChild = oChildren.Find( "polymsh" );
+
+if ( oChild == null ) {
+	LogMessage( "Couldn't find it!" );
+} else {
+	LogMessage( "Found " + oChild.Name );
+}</pre></div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSBAC00627FDA41F4DBFDDFE9988A39246-0036"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-B9A83B15-0EFA-4EA5-8BB2-F066D70FF799"></a></span>Empty Collections
+               </h2>                 
+               <p><span class="anchor_wrapper"><a name="GUID-8D1CBB6E-49EB-4983-A94A-4DCA50D7E535"></a></span>Empty collections can sometimes be tricky. They behave differently depending on how
+                  you get them (which command or method returned them). For example, the <a href="#!/url=./si_om/X3DObject.FindChildren.html">FindChildren</a> method returns a valid collection containing no members:
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+Set oRoot = ActiveSceneRoot
+Set oChildren = oRoot.FindChildren( "sphere" )
+LogMessage oChildren &amp; " contains " &amp; oChildren.Count &amp; " members."</pre></div> 
+               <p><span class="anchor_wrapper"><a name="GUID-1A945BCC-5495-400C-8FC6-20F8166B9263"></a></span>If you run this code snippet on a scene with no objects named "sphere", the following
+                  message appears:
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+'INFO : "This collection contains 0 members."</pre></div> 
+               <p><span class="anchor_wrapper"><a name="GUID-B184507C-FC9A-4604-BD1A-7378357D9753"></a></span>However, the <a href="#!/url=./si_om/X3DObjectCollection.Filter.html">Filter</a> method does not return a valid collection:
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+Set oRoot = ActiveSceneRoot
+Set oChildren = oRoot.FindChildren
+Set oPolyMeshes = oChildren.Filter( "polymsh" )
+LogMessage "This collection contains " &amp; oPolyMeshes.Count &amp; " members."</pre></div> 
+               <p><span class="anchor_wrapper"><a name="GUID-2FF62F17-2D1B-41C9-8620-B250C2A59B92"></a></span>If you run this code snippet on a scene with no polygon mesh objects, the script aborts
+                  and the following error message appears:
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+'ERROR : "Object required: 'oPolyMeshes'"</pre></div> 
+               <p><span class="anchor_wrapper"><a name="GUID-7D19AD10-F235-455F-B773-B22DDF772DD5"></a></span>You can trap errors of these kinds in VBScript with a combination of <em class="strong">Nothing</em> and <a href="#!/url=./si_om/X3DObjectCollection.Count.html">Count</a> and in JScript with exception handling.
+               </p> 
+               <div class="section"><span class="anchor_wrapper"><a name="WSBAC00627FDA41F4DBFDDFE9988A39246-0037"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-53D89104-602C-4CE7-AB5D-01398A10ECD1"></a></span> To find out whether a collection contains any items in VBScript
+                  </h3>  
+                  <p><span class="anchor_wrapper"><a name="GUID-F7574F8B-72F0-4508-B795-614AC10C234E"></a></span>You can use the VBScript <em class="strong">TypeName</em> function to test whether the collection returns a valid collection without throwing
+                     an error:
+                  </p> 
+                  <div class="codeBlock"><pre class="prettyprint">
+Set oRoot = ActiveSceneRoot
+Set oChildren = oRoot.FindChildren
+If TypeName( oChildren ) = "Nothing" Then
+	LogMessage "This collection is empty."
+Else
+	LogMessage "This collection has members."
+End If</pre></div> 
+                  <p><span class="anchor_wrapper"><a name="GUID-97FD74C1-AC5B-4B2A-8B4B-F7DE73087F5E"></a></span>The only problem is that if the collection is a valid collection with no members and
+                     you run this test, you get the wrong results:
+                  </p> 
+                  <div class="codeBlock"><pre class="prettyprint">
+'INFO : "This collection has members."</pre></div> 
+                  <p><span class="anchor_wrapper"><a name="GUID-A9811FBB-6DA9-4033-ABD5-2294808C8D26"></a></span>This means that your test has to include the <a href="#!/url=./si_om/X3DObjectCollection.Count.html">Count</a> property to find out whether a collection contains any items (collection members):
+                  </p> 
+                  <div class="codeBlock"><pre class="prettyprint">
+Set oRoot = ActiveSceneRoot
+Set oChildren = oRoot.FindChildren( "sphere" )
+Set oPolyMeshes = oChildren.Filter( "polymsh" )
+Call IsCollectionEmpty( oChildren )
+Call IsCollectionEmpty( oPolyMeshes )
+
+Function IsCollectionEmpty( in_collection )
+	If TypeName( in_collection ) &lt;&gt; "Nothing" Then
+		If in_collection.Count &gt; 0 Then
+			LogMessage "Collection has some members"
+		Else
+			LogMessage "Collection has no members"
+		End If
+	Else
+		LogMessage "Collection is empty"
+	End If
+End Function</pre></div> 
+                  <div><span class="anchor_wrapper"><a name="GUID-4B2FE685-4AD9-41A6-A3AA-1A08176A6918"></a></span><div class="note-tip"><span class="label">TIP:</span> 
+                        <p><span class="anchor_wrapper"><a name="GUID-E9A81D8D-A31D-461E-8428-8C303AFE80EF"></a></span>In VBScript, there are functions called <em class="strong">IsNull</em> and <em class="strong">IsEmpty</em>. Do not use them to test whether your collection is empty, because what it is actually
+                           testing for is whether your collection's data subtype is <em class="strong">Null</em> or <em class="strong">Empty</em>. For more information on the Null and Empty data types and subtypes, see <span class="char_link"><a href="#!/url=./files/script_data_Whatisxd4Typexd5.htm">What is ÔType'?</a></span> or msdn2.microsoft.com/en-us/library/9e7a57cf.aspx.
+                        </p> 
+                     </div>
+                  </div> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WSBAC00627FDA41F4DBFDDFE9988A39246-0038"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-1BD6A9E5-F2CE-40E7-BC83-7CC988660D6E"></a></span> To find out whether a collection contains any items in JScript
+                  </h3>  
+                  <p><span class="anchor_wrapper"><a name="GUID-A991A5B8-A567-4146-9932-943654CCFCFC"></a></span>You can trap the error using the <em class="strong">try...catch...finally</em> statements in JScript. For example, the function in the following code snippet uses
+                     the <a href="#!/url=./si_om/X3DObjectCollection.Count.html">Count</a> property to see whether the collection is valid and if so, whether it has any members:
+                  </p> 
+                  <div class="codeBlock"><pre class="prettyprint">
+var oRoot = ActiveSceneRoot;
+var oChildren = oRoot.FindChildren( "sphere" );
+var oPolyMeshes = oChildren.Filter( "surfmsh" );
+
+if ( IsCollectionEmpty(oChildren) ){
+	// If empty, then...
+}
+
+if ( IsCollectionEmpty(oPolyMeshes) ){
+	// If empty, then...
+}
+
+function IsCollectionEmpty( in_collection )
+{
+	var bCollIsEmpty;
+	try {
+		if( in_collection.Count &gt; 0 ) {
+			bCollIsEmpty = false;
+		} else {
+			bCollIsEmpty = true;
+		}
+	} catch(e) {
+		bCollIsEmpty = true;
+	} finally {
+		return bCollIsEmpty;
+	}
+}</pre></div> 
+               </div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSBAC00627FDA41F4DBFDDFE9988A39246-0039"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-DB05A1BE-5013-492A-AA77-65CC21431780"></a></span> Calling a Command or Method That Might Fail
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-05B7A063-6E63-4F5D-BEAE-22D40BD17204"></a></span>Some methods or commands will fail if the arguments or context are not correct. For
+                  example, the <a href="#!/url=./si_cmds/GeneratorOperatorPresets.html">Loft</a> operator takes a connection set of two or more curves as input. If you try to apply
+                  it to anything else (in the following example, a torus), the command fails and your
+                  script will break .
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+// This is the incorrect way to apply the Loft operator:
+var cnxset = ActiveSceneRoot.AddGeometry( "Torus", "MeshSurface" );
+var oplist = ApplyOp( "Loft", cnxset );
+
+//WARNING : 3040-EDIT-GetConnectionSet - Some input objects are invalid ...
+//ERROR : Subscript out of range: '[number: 0]' - [line 213 in ...
+//ERROR :  - [line 2]
+
+
+// This is the correct way to apply the Loft operator:
+var curve1 = ActiveSceneRoot.AddGeometry( "Arc", "NurbsCurve" );
+Translate( curve1, null, null, 2 );
+var curve2 = ActiveSceneRoot.AddGeometry( "Arc", "NurbsCurve" );
+var cnxset = curve1 + "," + curve2;
+
+var oplist = ApplyOp( "Loft", cnxset );
+var msh = oplist.Item( "OutputObjs" );</pre></div> 
+               <p><span class="anchor_wrapper"><a name="GUID-E11F926C-7CAE-40D6-80EF-8A4EA3759DCF"></a></span>This could obviously be avoided by using the correct type of connection set for the
+                  operator. However, sometimes your script has to rely on the user to supply input arguments.
+                  In this case, you need to make sure you test that input before even calling the command.
+                  For example, if you are applying the <a href="#!/url=./si_cmds/GeneratorOperatorPresets.html">Loft</a> to a connection set supplied by the user, you could write something like this:
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+/*
+	This function demonstrates how to provide checks to input objects that
+	could cause your scripts to break.
+*/
+function MakeMesh( in_cnxset )
+{
+	var allgood;
+	// It should be either a string or a selection
+	if (typeof(in_cnxset) == 'object') {
+		// If it's an object, find out if it's the Selection
+		if (ClassName(in_cnxset) == "Selection" ) {
+			// Check to make sure that we have at least two items
+			if (in_cnxset.Count &lt; 2) {
+				LogMessage( "You need at least two curves for Lofting." );
+				allgood = false;
+			} else {
+			// Check each member to make sure that it's a curve
+				var e = new Enumerator(in_cnxset);
+				for ( ; !e.atEnd(); e.moveNext() ) {
+					var chkit = e.item();
+					if (chkit.Type != 'crvlist') {
+						LogMessage( "You have the right number of objects,"
+							+ " but the wrong <a href="javascript:void(0)" data="type" class="a_multireflink">type</a>!" );
+						allgood = false;
+						break;
+					}
+				}
+				// At this point, all collection members must have been valid
+				allgood = true;
+				// Convert Selection to a real connection <a href="javascript:void(0)" data="set" class="a_multireflink">set</a> (string)
+				in_cnxset = in_cnxset.GetAsText();
+			}
+		} else {
+			// There are more possibilities (like XSICollections) that could
+			// still be correct that you could test for here, but let's
+			// assume that no other kind of object is acceptable
+			LogMessage( "What did you give me?!? -- Try again." );
+			allgood = false;
+		}
+	} else {
+		// If it's not the Selection object make sure it's a string (that is,
+		// a real connection <a href="javascript:void(0)" data="set" class="a_multireflink">set</a>)
+		if (typeof(in_cnxset) == 'string') {
+			// Real connection sets should actually report that they are
+			// strings. To make sure it's a good connection <a href="javascript:void(0)" data="set" class="a_multireflink">set</a>, we have to
+			// examine each item by splitting the string into an array
+			// (assuming that it's delimited by commas ',')
+			var mbrs = in_cnxset.split( "," );
+			for (var m=0; m&lt;mbrs.length; m++) {
+				// Find each item in the scene and make sure that it's
+				// really a curve
+				var fnd = ActiveSceneRoot.FindChild( mbrs[m] );
+				if (fnd != null) {
+					// Make sure we found something to test (avoiding errors)
+					if (fnd.Type != 'crvlist') {
+						// If any member is not a curve, it's no good...
+						LogMessage( "This contains non-curve items." );
+						allgood = false;
+						break;
+					}
+				}
+			}
+			// At this point, all members of the connection <a href="javascript:void(0)" data="set" class="a_multireflink">set</a> must be valid
+			allgood = true;
+		} else {
+			// No other kind of <a href="javascript:void(0)" data="data" class="a_multireflink">data</a> value is acceptable
+			LogMessage( "Ummm -- I need at least 2 curves!" );
+			allgood = false;
+		}
+	}
+	
+	// Whew! Now can you proceed?...
+	if (allgood) {
+		var oplist = ApplyOp( "Loft", in_cnxset );
+		var msh = oplist.Item( "OutputObjs" );
+		return "Success!";
+	} else {
+		return "Failure :(";
+	}
+}</pre></div> 
+               <p><span class="anchor_wrapper"><a name="GUID-B74D179E-C45B-4F2D-B441-2CF0061C260D"></a></span>Sometimes you just can't test for all contingencies. In cases where you expect the
+                  call might fail you can use something like the <em class="strong">try...catch</em> statement in JScript (or VBScript's <em class="strong">On Error Resume Next</em> if you're feeling really lucky). This gives you a chance to continue the script or
+                  to show an informative message to the user.
+               </p> 
+            </div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

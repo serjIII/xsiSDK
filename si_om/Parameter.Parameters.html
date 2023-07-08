@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Parameter.Parameters</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Parameter.Parameters</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/Parameter.html">Parameter</a>.Parameters <img src="images/operator.gif" alt="operator" /></h2>
+
+<h3>Description</h3>
+<div><p> Returns a <a href="#!/url=./si_om/ParameterCollection.html">ParameterCollection</a> containing all parameters available 
+on the current <a href="#!/url=./si_om/Parameter.html">Parameter</a> object).
+<br /><br />
+There are two kinds of parameters in Softimage: 'compound' and 'single'. Single parameters 
+consist of a single value, like an Active parameter which is either set to true or 
+false. Compound parameters are more like organizing nodes, with entire groups of 
+parameters nested under them, like the Local node which appears under the Kinematics 
+node in the Explorer view. 
+<br /><br />
+Note: For normal parameters that do not have any children the returned 
+<a href="#!/url=./si_om/ParameterCollection.html">ParameterCollection</a> will be empty.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>// get accessor
+ParameterCollection rtn = Parameter.Parameters;</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' 
+' This example demonstrates the difference between the Property and Parameter objects
+' and what they relate to when you are looking at scene objects in Explorer view 
+' (with All Nodes scope selected):
+'
+'   Scene_Root                      (icon looks like:)      (TypeName returns:)
+'      + torus
+'         + Visibility              (gray square)           (Property)
+'            - View Visibility      (green tv screen)       (simple Parameter)
+'         + Kinematics              (gray square)           (Kinematics (a kind of Property))
+'            + Local                (gray square)           (KinematicState (a kind of compound Parameter))
+'               + Pos               (folder)                (Nothing)
+'                  - X              (green tv screen)       (simple Parameter)
+'
+' 
+NewScene , false
+' First create an X3DObject to search on
+Set oTorus = Application.ActiveSceneRoot.AddGeometry( "Torus", "MeshSurface" )
+' 
+' Looking for a parameter set and its simple parameter
+' 
+' Get the Visibility parameter set and the View Visibility parameter
+Set oVisPSet = oTorus.Properties( "Visibility" )
+Set oViewParam = oTorus.Properties( "Visibility" ).Parameters( "viewvis" )
+' What have we got?
+printType oVisPSet
+printType oViewParam 
+' 
+' Looking for a parameter set and its compound parameter
+' 
+' Get the Kinematics property, the Local compound parameter and the PosX parameter
+Set oKinePSet = oTorus.Kinematics
+Set oCompound = oTorus.Kinematics.Local
+Set oSimple = oTorus.Kinematics.Local.Parameters( "PosX" )
+' What have we got?
+printType oKinePSet 
+printType oCompound 
+printType oSimple 
+' Helper Function
+Function printType( in_oThing )
+	' Print name and class name of input object
+	Application.LogMessage in_oThing &amp; " is a " &amp; TypeName( in_oThing )
+End Function
+' Expected result:
+'INFO : "torus.visibility is a Property"
+'INFO : "torus.visibility.viewvis is a Parameter"
+'INFO : "torus.kine is a Kinematics"
+'INFO : "torus.kine.local is a KinematicState"
+'INFO : "torus.kine.local.posx is a Parameter"</pre></td></tr>
+</table>
+</div></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

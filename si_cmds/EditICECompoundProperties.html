@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>EditICECompoundProperties</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>EditICECompoundProperties</h1>
+         </div>
+
+<h2 class="pagehead">EditICECompoundProperties</h2>
+
+<h3>Introduced</h3>
+<div><p>v10.5 (2012)</p></div>
+
+<h3>Description</h3>
+<div><p>
+Modifies the properties of an ICE Compound, such as the version number, the
+description, the Category or Task (and therefore its location), the construction
+mode, etc. 
+<br /><br />
+This is the scripting equivalent of opening up the Compound Properties property
+page from the Compounds menu in an ICE Tree.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>EditICECompoundProperties( Compound, Name, [Category], [Tasks], [Author], [Description], [URL], [VersionMajor], [VersionMinor], [VersionTag], [ModeForApplyICEOp], [BackgroundColor], [PPGLogic], [PPGLogicLanguage] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Compound		</td>
+		<td><a href="#!/url=./files/objectexpr.htm">Object Name</a> (or a pointer to it).		</td>
+		<td>
+Which ICE Compound you want to modify		</td>
+	</tr>
+	<tr>
+		<td class="name">Name		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Name for the compound		</td>
+	</tr>
+	<tr>
+		<td class="name">Category		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Category for the compound			<p class="cell"><span class="hilite">Default Value: </span>
+""			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Tasks		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Task keyword for the compound			<p class="cell"><span class="hilite">Default Value: </span>
+""			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Author		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Name of the compound's author			<p class="cell"><span class="hilite">Default Value: </span>
+""			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Description		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Description of how the compound can be used			<p class="cell"><span class="hilite">Default Value: </span>
+""			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">URL		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+URL of any information available for this compound			<p class="cell"><span class="hilite">Default Value: </span>
+""			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">VersionMajor		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+Major version (eg., the '2' of v2.5)			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">VersionMinor		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+Minor version (eg., the '5' of v2.5)			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">VersionTag		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+A gentle reminder of which version this is			<p class="cell"><span class="hilite">Default Value: </span>
+""			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ModeForApplyICEOp		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+Construction mode for ApplyICEOp			<p class="cell"><span class="hilite">Default Value: </span>
+4			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>Modeling					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>Shape					</td>
+				</tr>
+				<tr>
+					<td class="name">2					</td>
+					<td>Animation					</td>
+				</tr>
+				<tr>
+					<td class="name">3					</td>
+					<td>Secondary Shape					</td>
+				</tr>
+				<tr>
+					<td class="name">4					</td>
+					<td>Current (construction mode at the time the ICE compound was saved.)					</td>
+				</tr>
+				<tr>
+					<td class="name">5					</td>
+					<td>Simulation					</td>
+				</tr>
+				<tr>
+					<td class="name">6					</td>
+					<td>Post Simulation					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">BackgroundColor		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+The color that will appear on the compound node when it is successfully connected in an ICE tree.			<p class="cell"><span class="hilite">Default Value: </span>
+6732954 (light green)			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">PPGLogic		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+A string containing a code block defining callbacks. Similar to the SPDL logic section.			<p class="cell"><span class="hilite">Default Value: </span>
+""			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">PPGLogicLanguage		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Scripting Language to use for the PPGLogic.			<p class="cell"><span class="hilite">Default Value: </span>
+If empty, VBScript will be assumed.			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">// See the example on the ReplaceICECompoundNode command reference page</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/AddICECompoundNode.html">AddICECompoundNode</a> <a href="#!/url=./si_cmds/AddICENode.html">AddICENode</a> <a href="#!/url=./si_cmds/AddExposedParamToICECompoundNode.html">AddExposedParamToICECompoundNode</a> <a href="#!/url=./si_cmds/AddNodeToICECompoundNode.html">AddNodeToICECompoundNode</a> <a href="#!/url=./si_cmds/AddPortToICENode.html">AddPortToICENode</a> <a href="#!/url=./si_cmds/CleanDisconnectedICENodes.html">CleanDisconnectedICENodes</a> <a href="#!/url=./si_cmds/ConnectICENodes.html">ConnectICENodes</a> <a href="#!/url=./si_cmds/CreateICECompoundNode.html">CreateICECompoundNode</a> <a href="#!/url=./si_cmds/DisconnectICENodePort.html">DisconnectICENodePort</a> <a href="#!/url=./si_cmds/EditExposedParamInICECompoundNode.html">EditExposedParamInICECompoundNode</a> <a href="#!/url=./si_cmds/EditICECompoundPPGLogic.html">EditICECompoundPPGLogic</a> <a href="#!/url=./si_cmds/ExplodeICECompoundNode.html">ExplodeICECompoundNode</a> <a href="#!/url=./si_cmds/ExportICECompoundNode.html">ExportICECompoundNode</a> <a href="#!/url=./si_cmds/GetICECompoundPortProperties.html">GetICECompoundPortProperties</a> <a href="#!/url=./si_cmds/GetICECompoundProperties.html">GetICECompoundProperties</a> <a href="#!/url=./si_cmds/MoveICECompoundPort.html">MoveICECompoundPort</a> <a href="#!/url=./si_cmds/RemoveExposedParamFromICECompoundNode.html">RemoveExposedParamFromICECompoundNode</a> <a href="#!/url=./si_cmds/RemoveNodeFromICECompoundNode.html">RemoveNodeFromICECompoundNode</a> <a href="#!/url=./si_cmds/RemovePortFromICENode.html">RemovePortFromICENode</a> <a href="#!/url=./si_cmds/ReplaceICECompoundNode.html">ReplaceICECompoundNode</a> <a href="#!/url=./si_om/ICECompoundNode.html">ICECompoundNode</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

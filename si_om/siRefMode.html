@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>siRefMode</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>siRefMode</h1>
+         </div>
+
+<h2 class="pagehead">siRefMode</h2>
+
+<h3>Description</h3>
+<div><p>Reference transformation modes for transformation commands (Translate, Rotate, Scale). <br /><br />Note: "COG" indicates an additional translation about the Centre-Of-Geometry. "Sym" indicates a symmetrical translation. These indicators can also be used in combination.</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>siRefMode.siGlobal                                                          // 1
+siRefMode.siLocal                                                           // 2
+siRefMode.siObjCtr                                                          // 3
+siRefMode.siView                                                            // 4
+siRefMode.siParent                                                          // 6
+siRefMode.siPlane                                                           // 7
+siRefMode.siPivot                                                           // 8
+siRefMode.siAdd                                                             // 70
+siRefMode.siGlobalCOG                                                       // 17
+siRefMode.siLocalCOG                                                        // 18
+siRefMode.siObjectCOG                                                       // 19
+siRefMode.siViewCOG                                                         // 20
+siRefMode.siParentCOG                                                       // 22
+siRefMode.siPlaneCOG                                                        // 23
+siRefMode.siPivotCOG                                                        // 24
+siRefMode.siAddCOG                                                          // 86
+siRefMode.siGlobalSym                                                       // 2049
+siRefMode.siLocalSym                                                        // 2050
+siRefMode.siObjectSym                                                       // 2051
+siRefMode.siViewSym                                                         // 2052
+siRefMode.siParentSym                                                       // 2054
+siRefMode.siPlaneSym                                                        // 2055
+siRefMode.siPivotSym                                                        // 2056
+siRefMode.siAddSym                                                          // 2118
+siRefMode.siGlobalSymCOG                                                    // 2065
+siRefMode.siLocalSymCOG                                                     // 2066
+siRefMode.siObjectSymCOG                                                    // 2067
+siRefMode.siViewSymCOG                                                      // 2068
+siRefMode.siParentSymCOG                                                    // 2070
+siRefMode.siPlaneSymCOG                                                     // 2071
+siRefMode.siPivotSymCOG                                                     // 2072
+siRefMode.siAddSymCOG                                                       // 2134</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<div><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th>Constant		</th>		<th>Value		</th>		<th>Description		</th>	</tr>
+	<tr>
+		<td class="name"><a name="siGlobal"> </a>siGlobal		</td>
+		<td class="example">1		</td>
+		<td>
+Global (world) relative movement or position		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siLocal"> </a>siLocal		</td>
+		<td class="example">2		</td>
+		<td>
+Local movement relative to center of each object/component		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siObjCtr"> </a>siObjCtr		</td>
+		<td class="example">3		</td>
+		<td>
+By Reference movement relative to center of referenced object or an absolute position where 0,0,0 is the center of the referenced object. This corresponds to Ref mode on the MCP panel.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siView"> </a>siView		</td>
+		<td class="example">4		</td>
+		<td>
+By Reference movement relative to the view. 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siParent"> </a>siParent		</td>
+		<td class="example">6		</td>
+		<td>
+Object/Parent movement is relative to the center of the parent (for an object) or the object (for a component).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPlane"> </a>siPlane		</td>
+		<td class="example">7		</td>
+		<td>
+By Reference movement relative to the active reference plane. This corresponds to Plane mode on the MCP panel.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPivot"> </a>siPivot		</td>
+		<td class="example">8		</td>
+		<td>
+Object/Pivot movement is relative to the object's pivot. If the object has not pivot or neutral pose, siPivot is the same as siParent.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siAdd"> </a>siAdd		</td>
+		<td class="example">70		</td>
+		<td>
+Additive rotation when manipulating  (rotation only)		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siGlobalCOG"> </a>siGlobalCOG		</td>
+		<td class="example">17		</td>
+		<td>
+Global + COG		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siLocalCOG"> </a>siLocalCOG		</td>
+		<td class="example">18		</td>
+		<td>
+Local + COG		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siObjectCOG"> </a>siObjectCOG		</td>
+		<td class="example">19		</td>
+		<td>
+Object + COG		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siViewCOG"> </a>siViewCOG		</td>
+		<td class="example">20		</td>
+		<td>
+View + COG		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siParentCOG"> </a>siParentCOG		</td>
+		<td class="example">22		</td>
+		<td>
+Parent + COG		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPlaneCOG"> </a>siPlaneCOG		</td>
+		<td class="example">23		</td>
+		<td>
+Plane + COG		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPivotCOG"> </a>siPivotCOG		</td>
+		<td class="example">24		</td>
+		<td>
+Pivot + COG		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siAddCOG"> </a>siAddCOG		</td>
+		<td class="example">86		</td>
+		<td>
+Add + COG		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siGlobalSym"> </a>siGlobalSym		</td>
+		<td class="example">2049		</td>
+		<td>
+Global + Sym		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siLocalSym"> </a>siLocalSym		</td>
+		<td class="example">2050		</td>
+		<td>
+Local + Sym		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siObjectSym"> </a>siObjectSym		</td>
+		<td class="example">2051		</td>
+		<td>
+Object + Sym		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siViewSym"> </a>siViewSym		</td>
+		<td class="example">2052		</td>
+		<td>
+View + Sym		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siParentSym"> </a>siParentSym		</td>
+		<td class="example">2054		</td>
+		<td>
+Parent + Sym		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPlaneSym"> </a>siPlaneSym		</td>
+		<td class="example">2055		</td>
+		<td>
+Plane + Sym		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPivotSym"> </a>siPivotSym		</td>
+		<td class="example">2056		</td>
+		<td>
+Pivot + Sym		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siAddSym"> </a>siAddSym		</td>
+		<td class="example">2118		</td>
+		<td>
+Add + Sym		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siGlobalSymCOG"> </a>siGlobalSymCOG		</td>
+		<td class="example">2065		</td>
+		<td>
+Global + Sym + COG		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siLocalSymCOG"> </a>siLocalSymCOG		</td>
+		<td class="example">2066		</td>
+		<td>
+Local + Sym + COG		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siObjectSymCOG"> </a>siObjectSymCOG		</td>
+		<td class="example">2067		</td>
+		<td>
+Object + Sym + COG		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siViewSymCOG"> </a>siViewSymCOG		</td>
+		<td class="example">2068		</td>
+		<td>
+View + Sym + COG		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siParentSymCOG"> </a>siParentSymCOG		</td>
+		<td class="example">2070		</td>
+		<td>
+Parent + Sym + COG		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPlaneSymCOG"> </a>siPlaneSymCOG		</td>
+		<td class="example">2071		</td>
+		<td>
+Plane + Sym + COG		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPivotSymCOG"> </a>siPivotSymCOG		</td>
+		<td class="example">2072		</td>
+		<td>
+Pivot + Sym + COG		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siAddSymCOG"> </a>siAddSymCOG		</td>
+		<td class="example">2134		</td>
+		<td>
+Add + Sym + COG		</td>
+	</tr>
+</table>
+</div>
+
+<h3>Applies To</h3>
+<div><p><a href="#!/url=./si_cmds/Translate.html">Translate</a> <a href="#!/url=./si_cmds/Rotate.html">Rotate</a> <a href="#!/url=./si_cmds/Scale.html">Scale</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

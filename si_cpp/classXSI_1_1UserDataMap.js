@@ -1,0 +1,28 @@
+var classXSI_1_1UserDataMap =
+[
+    [ "UserDataMap", "classXSI_1_1UserDataMap.html#a6606f47b750f818d54c165489d20fa00", null ],
+    [ "~UserDataMap", "classXSI_1_1UserDataMap.html#a6718bed1b53120b57c8ad11ceb8b0fc4", null ],
+    [ "UserDataMap", "classXSI_1_1UserDataMap.html#a0f2efcffd38c4d8c30f122380de7bd86", null ],
+    [ "UserDataMap", "classXSI_1_1UserDataMap.html#a6b7fef301370f46d018b7b78520d1175", null ],
+    [ "IsA", "classXSI_1_1UserDataMap.html#a6dd5a8a11eee55f434f151d1cd5d29d8", null ],
+    [ "GetClassID", "classXSI_1_1UserDataMap.html#acc34f4a01f2089e40f7abc7e9d98bf15", null ],
+    [ "operator=", "classXSI_1_1UserDataMap.html#a243e0eadd86b35b1aab377c11c114fc8", null ],
+    [ "operator=", "classXSI_1_1UserDataMap.html#a243df4a55f867d1b0b180be78cec634e", null ],
+    [ "GetCount", "classXSI_1_1UserDataMap.html#a845aa1e5063b24aedec1a99da2d8a4f3", null ],
+    [ "Clear", "classXSI_1_1UserDataMap.html#aa71d36872f416feaa853788a7a7a7ef8", null ],
+    [ "IsLittleEndian", "classXSI_1_1UserDataMap.html#ad733e23cf8eb0f47512fe23e36357d77", null ],
+    [ "PutLittleEndian", "classXSI_1_1UserDataMap.html#a5f65ba920dc18da5d014db54b60399ae", null ],
+    [ "GetTemplate", "classXSI_1_1UserDataMap.html#a69597c2c6dc3d79d74f1b3efa60e4696", null ],
+    [ "PutTemplate", "classXSI_1_1UserDataMap.html#a10263b7ee4385b86757052167eec2bd6", null ],
+    [ "GetItemValue", "classXSI_1_1UserDataMap.html#a7ef24f43010eeb101a43f886a48ad923", null ],
+    [ "PutItemValue", "classXSI_1_1UserDataMap.html#a63e0a11cb0f9ad4b72d000805d7d20c9", null ],
+    [ "IsItemEmpty", "classXSI_1_1UserDataMap.html#aa3eae53a202dda45e3695f8da44cb416", null ],
+    [ "GetItemSize", "classXSI_1_1UserDataMap.html#a75b0a452664886f4596ba3ed209cd5ef", null ],
+    [ "ClearItem", "classXSI_1_1UserDataMap.html#a0cc3dffe0f96fb1b36ac04be9c58847e", null ],
+    [ "GetValues", "classXSI_1_1UserDataMap.html#aad746dfe740a1ce3c817be2837c3e541", null ],
+    [ "GetValues", "classXSI_1_1UserDataMap.html#a566e825bbb8b7d305100c366c8055d9a", null ],
+    [ "SetValues", "classXSI_1_1UserDataMap.html#a1a82361f761ec3dacd39238a4a70c4e6", null ],
+    [ "SetValues", "classXSI_1_1UserDataMap.html#a842dc53178c9c9428956bd1bb89938d8", null ],
+    [ "SetFixedSizeValues", "classXSI_1_1UserDataMap.html#aa03660c328c133e710cce064b43323a7", null ],
+    [ "SetFixedSizeValues", "classXSI_1_1UserDataMap.html#ac21cfc593612b2f33c76288f9b80a5f6", null ]
+];

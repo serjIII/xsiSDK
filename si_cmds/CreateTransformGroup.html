@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>CreateTransformGroup</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>CreateTransformGroup</h1>
+         </div>
+
+<h2 class="pagehead">CreateTransformGroup</h2>
+
+<h3>Introduced</h3>
+<div><p>v5.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Reparents the objects in the input list under a transform group object. A transform group is a special 
+type of null that allows you to parent a number of objects for group transformations. Transform groups 
+are not visible by default. Transform groups can be made visible in Camera Visibility > Objects > Control 
+Objects > Transform Groups. Note that a transform group is not the same as a <a href="#!/url=./si_om/Group.html">Group</a>. 
+Unlike transform groups, groups are not 3D objects and do not affect the parenting of their members.<br /><br /> 
+This command positions a transform group null at the location of the nearest common ancestor of all the 
+objects in the input list. If there are no input objects, the transform group will be placed under the 
+scene root. The command branch selects the new transform group. <br /><br />
+Note: Bones cannot be part of a transform group because they cannot be reparented.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = CreateTransformGroup( [Name], [InputObjs] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns the transform-group (an <a href="#!/url=./si_om/X3DObject.html">X3DObject</a> object).</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Name		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Name of the group 			<p class="cell"><span class="hilite">Default Value: </span>
+"Group"			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">InputObjs		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/listexpr.htm">List</a> of objects to put in the group. 			<p class="cell"><span class="hilite">Default Value: </span>
+Selected objects			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example will transform group a cone twice, making a hierarchy 3 objects deep. 
+	Each object will be offset by 5 units in Y.
+*/
+// Make transform groups visible in the camera view
+SetValue("Camera.camvis.objctrltransfogroups", true, null);
+// Create and position the cone
+var oCone = CreatePrim("Cone", "MeshSurface");
+var pos = XSIMath.CreateVector3();
+pos.Set(0,5,0);
+oCone.LocalTranslation = pos;
+// Transform group the cone and offset the group 5 units in Y
+var oXfmGroup = CreateTransformGroup(null, "cone");
+LogMessage("---1st group created---");
+LogMessage("1st group's parent:" + oXfmGroup.Parent);
+LogMessage("1st group         :" + oXfmGroup.Name);
+LogMessage("1st group's child :" + oXfmGroup.Children(0));
+oXfmGroup.LocalTranslation = pos;
+// Group the cone again offset the new group.
+var oXfmGroup2 = CreateTransformGroup(null, "cone");
+//Move the Transform Group up
+oXfmGroup2.LocalTranslation = pos;
+LogMessage("-----------------------");
+LogMessage("---2nd group created---");
+LogMessage("1st group's parent:" + oXfmGroup.Parent);
+LogMessage("1st group         :" + oXfmGroup.Name);
+LogMessage("1st group's child :" + oXfmGroup.Children(0));
+LogMessage("-----------------------");
+LogMessage("2nd group's parent:" + oXfmGroup2.Parent);
+LogMessage("2nd group         :" + oXfmGroup2.Name);
+LogMessage("2nd group's child :" + oXfmGroup2.Children(0));
+/////////////////////////////////////
+// Output from running this script:
+/////////////////////////////////////
+//INFO : ---1st group created---
+//INFO : 1st group's parent:Scene_Root
+//INFO : 1st group         :transfogroup
+//INFO : 1st group's child :cone
+//INFO : -----------------------
+//INFO : ---2nd group created---
+//INFO : 1st group's parent:Scene_Root
+//INFO : 1st group         :transfogroup
+//INFO : 1st group's child :transfogroup1
+//INFO : -----------------------
+//INFO : 2nd group's parent:transfogroup
+//INFO : 2nd group         :transfogroup1
+//INFO : 2nd group's child :cone</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/RemoveTransformGroup.html">RemoveTransformGroup</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

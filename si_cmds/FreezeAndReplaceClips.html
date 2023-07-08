@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>FreezeAndReplaceClips</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>FreezeAndReplaceClips</h1>
+         </div>
+
+<h2 class="pagehead">FreezeAndReplaceClips</h2>
+
+<h3>Introduced</h3>
+<div><p>v1.5</p></div>
+
+<h3>Description</h3>
+<div><p>
+Freezes the input clips by plotting them into a new source action and replacing 
+them with the newly created source action. It then deletes the input clips 
+and creates a new track in the animation mixer, containing a new clip of the 
+new frozen action.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oString = FreezeAndReplaceClips( [InputObj], [Name], [IgnoreInactiveChannels], [StepFrame], [FCurve Kind], [DefaultSegKind], [Fit FCurve], [Fit Tolerance], [ProcessContRots] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns the fullname of the action as a <a href="#!/url=./files/String.htm">String</a>.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">InputObj		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/listexpr.htm">List</a> of clips 			<p class="cell"><span class="hilite">Default Value: </span>
+Current selection			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Name		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Name of the frozen action. 			<p class="cell"><span class="hilite">Default Value: </span>
+"FrozenAction"			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">IgnoreInactiveChannels		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ Ignore inactive channels when freezing. If set to True, 
+	inactive items will not be added in the frozen action. 			<p class="cell"><span class="hilite">Default Value: </span>
+True			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">StepFrame		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+Step between frames.			<p class="cell"><span class="hilite">Default Value: </span>
+1			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">FCurve Kind		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+ What kind of fcurve do we want to plot to?  			<p class="cell"><span class="hilite">Default Value: </span>
+30			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">10					</td>
+					<td>BOOLEAN (value true or false)					</td>
+				</tr>
+				<tr>
+					<td class="name">15					</td>
+					<td>INTEGER (staircase-like fcurve with integer values)					</td>
+				</tr>
+				<tr>
+					<td class="name">20					</td>
+					<td>STANDARD (fcurve with spline/linear/constant interpolation)					</td>
+				</tr>
+				<tr>
+					<td class="name">30					</td>
+					<td>RAWDATA (linear fcurve: less storage than a standard fcurve but with linear interpolation only)					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">DefaultSegKind		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+ What kind of interpolation do we want for the resulting fcurves? <br /><br />
+	Note: Only relevant when FCurveKind is 20 (Standard).			<p class="cell"><span class="hilite">Default Value: </span>
+3			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>CONSTANT					</td>
+				</tr>
+				<tr>
+					<td class="name">2					</td>
+					<td>LINEAR					</td>
+				</tr>
+				<tr>
+					<td class="name">3					</td>
+					<td>CUBIC					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Fit FCurve		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ Do we want to fit an fcurve through the plotted values?				<p class="cell"><span class="hilite">Default Value: </span>
+False			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Fit Tolerance		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ What tolerance do we want for the fit? 			<p class="cell"><span class="hilite">Default Value: </span>
+0.01			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ProcessContRots		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+Do we want to process rotation curves to ensure their continuity?			<p class="cell"><span class="hilite">Default Value: </span>
+True			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example sets up two action clips for a sphere (one on the
+' X-position and one on the Y-position), stores the actions, and
+' then freezes the clips, creating a new one on a new track.
+'
+' Set up the scene 
+Set oRoot = ActiveSceneRoot
+Set oSphere = CreatePrim( "Sphere", "NurbsSurface", "MySphere" )
+' Setting key frames on XPos and YPos at various frames
+SaveKey oSphere.posx, 1, -9.0
+SaveKey oSphere.posx, 10, 3.0
+SaveKey oSphere.posx, 30,-3.0
+SaveKey oSphere.posx, 40, 9.0
+SaveKey oSphere.posy, 1, -2.0
+SaveKey oSphere.posy, 30, 2.0
+' Store fcurve into source Actions
+Set oAct1 = StoreAction( oSphere, oSphere.posX, 2, "PlotXPosAction" , _
+			True, 1, 40, True, False )
+Set oAct2 = StoreAction( oSphere, oSphere.posy, 2, "PlotYPosAction" , _
+			True, 1, 30, True, False )
+' Add 2 tracks into the animation mixer, and add action clip with 
+' the 2 sources action in tracks
+Set oClip1 = AddClip( oRoot, oAct1, , , 1 )
+Set oClip2 = AddClip( oRoot, oAct2, , , 1 )
+' Create an XSICollection containing the 2 action clips 
+Set oInputClips = CreateObject( "XSI.Collection" )
+oInputClips.Add oClip1
+oInputClips.Add oClip2
+' Freeze action clips, and create a new one clip on a new track with 
+' the clip collection
+FreezeAndReplaceClips oInputClips, "FreezeXYPosAction", True, 1, _
+			30, 3, False, 0.01, True</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/FreezeClips.html">FreezeClips</a> <a href="#!/url=./si_cmds/StoreAction.html">StoreAction</a> <a href="#!/url=./si_cmds/PlotToActions.html">PlotToActions</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

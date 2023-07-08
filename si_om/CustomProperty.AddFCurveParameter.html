@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>CustomProperty.AddFCurveParameter</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>CustomProperty.AddFCurveParameter</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/CustomProperty.html">CustomProperty</a>.AddFCurveParameter</h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p>Adds an FCurve <a href="#!/url=./si_om/Parameter.html">Parameter</a> to the <a href="#!/url=./si_om/CustomProperty.html">CustomProperty</a>.
+An FCurve of this type is often called a "Profile Curve" because, unlike most FCurves, 
+this curve does not animate any parameter, but instead is available for use in any fashion 
+the plug-in developer or user wishes. 
+Unlike parameters that have simple types like an Integer or a String, 
+this Parameter is an instance of an <a href="#!/url=./si_om/FCurve.html">FCurve</a>.  
+It uses units of Frames for its x axis, but because it does not directly animate any 
+object this axis can actually be interpreted in any fashion.  An example use of an FCurve 
+parameter can be found on the Bulge Operator.
+<br /><br />
+The FCurve object is retrived via the <a href="#!/url=./si_om/Parameter.Value.html">Parameter.Value</a> property.
+This should not be confused with the method for retrieving an FCurve 
+that is animating a "basic" parameter, via the <a href="#!/url=./si_om/Parameter.Source.html">Parameter.Source</a> property.
+<br /><br />
+In order to view the FCurve on the Property Page for the custom property use
+<a href="#!/url=./si_om/PPGLayout.AddFCurve.html">PPGLayout.AddFCurve</a>.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>Parameter CustomProperty.AddFCurveParameter( String in_ScriptName );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = CustomProperty.AddFCurveParameter( ScriptName );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>The newly created <a href="#!/url=./si_om/Parameter.html">Parameter</a> object.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">ScriptName		</td>
+		<td><a href="#!/url=./files/string.htm">string</a>		</td>
+		<td>
+Script name of the new parameter		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'Example showing how to add a FCurve parameter to a custom
+'parameter and to use the Object Model to establish an 
+'initial curve
+dim oCustomProperty, oFCurveParameter, oFCurve, oLayout
+set oCustomProperty = ActiveSceneRoot.AddProperty( "CustomProperty", false, "NewPSet" )
+set oFCurveParameter = oCustomProperty.AddFCurveParameter("TestFCurve")
+'The Value of the Parameter is an FCurve object
+set oFCurve = oFCurveParameter.Value
+oFCurve.BeginEdit
+oFCurve.RemoveKeys
+oFCurve.AddKey -10, -5
+oFCurve.AddKey 0, 100
+oFCurve.AddKey 10, -5
+oFCurve.AddKey 20, -200
+oFCurve.AddKey 30, 100
+oFCurve.AddKey 40, 100
+oFCurve.EndEdit
+set oLayout = oCustomProperty.PPGLayout
+oLayout.AddFCurve "TestFCurve", 150 
+InspectObj oCustomProperty</pre></td></tr>
+</table>
+</div></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

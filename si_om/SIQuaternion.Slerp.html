@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>SIQuaternion.Slerp</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>SIQuaternion.Slerp</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/SIQuaternion.html">SIQuaternion</a>.Slerp</h2>
+
+<h3>Description</h3>
+<div><p> Calculates a spherical linear interpolation between q1 and q2 (two unitary quaternions).<br /><br />
+Note: In versions earlier than v3.5 the method name was called SLerp. The unnecessary capitialization
+has been removed. Plug-ins will remain binary compatible but those that need to be recompiled will 
+need editing to rename SLerp to Slerp.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>SIQuaternion.Slerp( SIQuaternion in_pQuat1, SIQuaternion in_pQuat2, Double in_dU );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>SIQuaternion.Slerp( q1, q2, alpha );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">q1		</td>
+		<td><a href="#!/url=./si_om/SIQuaternion.html">SIQuaternion</a>		</td>
+		<td>
+ unitary quaternion operand 		</td>
+	</tr>
+	<tr>
+		<td class="name">q2		</td>
+		<td><a href="#!/url=./si_om/SIQuaternion.html">SIQuaternion</a>		</td>
+		<td>
+ unitary quaternion operand 		</td>
+	</tr>
+	<tr>
+		<td class="name">alpha		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Interpolation factor 			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">[0.0, 1.0]					</td>
+					<td>Validity domain					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	Example showing how to use SIQuaternion.Slerp 
+	to blend between two rotations
+*/
+//
+// Code for the example scripted operator
+//
+strDeclOperatorGlobals = "var gQA, gQB, gQC;" ;
+function Slerper_Init( ctx )
+{
+	// The SIQuaternion objects are global
+	// to avoid recreating them at each update
+	gQA = XSIMath.CreateQuaternion() ;
+	gQB = XSIMath.CreateQuaternion() ;
+	gQC = XSIMath.CreateQuaternion() ;
+}
+function Slerper_Update( ctx, outC, inA, inB )
+{
+	slerpFactor = ctx.Parameters( "Slerp" ).Value ;
+	oATrans = inA.Value.Transform ;
+	oATrans.GetRotationQuaternion( gQA ) ;
+	oBTrans = inB.Value.Transform ;
+	oBTrans.GetRotationQuaternion( gQB ) ;
+	gQA.Normalize() ;
+	gQB.Normalize() ;
+	gQC.Slerp( gQA, gQB, slerpFactor ) ; 
+	oCTrans = outC.Value.Transform ;
+	oCTrans.SetRotationFromQuaternion( gQC ) ;
+	// Very important: oCTrans is just a temporary
+	// so we must set it back to change it
+	outC.Value.Transform = oCTrans ;
+}
+//
+// Demo the scripted operator
+//
+// Build 3 cones.  C will show the blended rotation of A and B
+NewScene( null,false) ;
+var oConeA = ActiveSceneRoot.AddPrimitive( "Cone", "A" ) ;
+var oConeB = ActiveSceneRoot.AddPrimitive( "Cone", "B" ) ;
+var oConeC = ActiveSceneRoot.AddPrimitive( "Cone", "C" ) ;
+//
+// Set some initial position/rotation
+//
+oTransA = XSIMath.CreateTransform() ;
+oTransA.SetTranslationFromValues( 5, 0 , 0 ) ;
+oTransA.SetRotationFromXYZAnglesValues( 0, 0 , XSIMath.DegreesToRadians(-90) ) ;
+oConeA.Kinematics.Global.Transform = oTransA ;
+oTransB = XSIMath.CreateTransform() ;
+oTransB.SetTranslationFromValues( -5, 0 , 0 ) ;
+oTransB.SetRotationFromXYZAnglesValues( 0, 0 , XSIMath.DegreesToRadians(90) ) ;
+oConeB.Kinematics.Global.Transform = oTransB ;
+//
+// Connect the Kinematics
+//
+strOpCode = strDeclOperatorGlobals + 
+			Slerper_Init.toString() + 
+			Slerper_Update.toString() ;
+oOp = XSIFactory.CreateScriptedOp( 
+			"Slerper", 
+			strOpCode,
+			"JScript"
+			) ;
+oOp.AddOutputPort( oConeC.Kinematics.Global ) ;
+oOp.AddInputPort( oConeA.Kinematics.Global )
+oOp.AddInputPort( oConeB.Kinematics.Global ) ;
+oSlerp = oOp.AddParameter ( XSIFactory.CreateParamDef2("Slerp", siDouble, 0.5, 0, 1) );
+oOp.Connect() ;
+// Show the operator so that the Slerp amount can be changed with a slider
+InspectObj( oOp ) ;</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">dim q1, q2, q3
+' Create Quaternions.
+set q1 = XSIMath.CreateQuaternion(1.0, 1.0, 2.0, 3.0)
+set q2 = XSIMath.CreateQuaternion(1.0, 4.0, 5.0, 6.0)
+set q3 = XSIMath.CreateQuaternion
+q1.Normalize
+q2.Normalize
+for alpha = 0 to 1 step .1
+q3.Slerp q1, q2, alpha
+'do something with q3
+next</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/SIQuaternion.Normalize.html">SIQuaternion.Normalize</a> <a href="#!/url=./si_om/SIVector3.html">SIVector3</a> <a href="#!/url=./si_om/SIMatrix3.html">SIMatrix3</a> <a href="#!/url=./si_om/SIMatrix4.html">SIMatrix4</a> <a href="#!/url=./si_om/SIRotation.html">SIRotation</a> <a href="#!/url=./si_om/SITransformation.html">SITransformation</a> <a href="#!/url=./si_om/SIQuaternion.html">SIQuaternion</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

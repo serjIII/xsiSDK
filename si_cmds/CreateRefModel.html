@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>CreateRefModel</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>CreateRefModel</h1>
+         </div>
+
+<h2 class="pagehead">CreateRefModel</h2>
+
+<h3>Introduced</h3>
+<div><p>v6.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Creates a referenced model in the scene. You can use this command to create a new instance of an existing
+model on disk or specify the name of a model file that does not yet exist. It also allows you to specify
+whether to activate the new model, what resolution to use, and under which model or object to parent it.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = CreateRefModel( [FileName], [ModelName], [ResolutionName], [Parent], [Activate], [CreateFile], [ExternalCnxMappingTemplate], [ShareOptions] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>The new referenced <a href="#!/url=./si_om/Model.html">Model</a></p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">FileName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ If a filename is specified, it is loaded and used for the first resolution.		</td>
+	</tr>
+	<tr>
+		<td class="name">ModelName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ The model name. 			<p class="cell"><span class="hilite">Default Value: </span>
+The name of the file (specified in Filename)			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ResolutionName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ The name of the first resolution. 			<p class="cell"><span class="hilite">Default Value: </span>
+res1			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Parent		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Object or  model to use as the parent of the imported model 			<p class="cell"><span class="hilite">Default Value: </span>
+Scene Root			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Activate		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+True to import the model for the first resolution. If false, the model stays offloaded. 			<p class="cell"><span class="hilite">Default Value: </span>
+True			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">CreateFile		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ 
+		If the file specified does not exist yet, this argument tells Softimage to automatically create a 
+		dummy model file (directories are also created). This is useful in a multiple-artist production 
+		pipeline to prepare the layout of a shot for a top-down approach before all the files exist.
+				<p class="cell"><span class="hilite">Default Value: </span>
+False			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ExternalCnxMappingTemplate		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		This parameter contains a list of model separated by a comma, that is used to resolved 
+		the objects that we try to reconnect at the end of the import of referenced models.<br /><br />
+		The model is reconnected at the end of the import. If this parameter is null we will try 
+		to reconnect it to the original model name when the model was first exported.
+			</td>
+	</tr>
+	<tr>
+		<td class="name">ShareOptions		</td>
+		<td><a href="#!/url=./si_om/siImportShareOptions.html">siImportShareOptions</a>		</td>
+		<td>
+
+		Bit field values of type <a href="#!/url=./files/Integer.htm">Integer</a> that specify the different options 
+		for sharing objects when importing a model.<br /><br />
+		See <a href="#!/url=./si_om/siImportShareOptions.html">siImportShareOptions</a> to know what can be shared during model import.<br /><br />
+		Sharing image clips: Image clips are identical if they 
+		refer to the same image source and all their parameters are equal, therefore FCurves 
+		on the parameters are ignored for the comparaison. <br /><br />
+		Note that the image sources are always shared when importing a model.<br /><br />
+		Sharing Materials: Materials are identical based on their name, their library, their number of shaders
+		and their shaders' order. If we find a material with the same library.materialName, the same number of shaders
+		which appear in the same order, we reuse it. <br /><br />
+		Sharing Layers/Partitions: Layers and partitions are shared also based on their name. When the 
+		model is exported it remember the name of the layers and partitions for each objects, so when 
+		importing a model, and there is a layer or a partition with the same name the object goes in it. <br /><br />
+		Referenced models share only image clips that are locked by referenced models, or if 
+		the image clip is unused. Standard models share only imageclips that are not locked 
+		at all.<br /><br />			<p class="cell"><span class="hilite">Default Value: </span>
+siImportShareOptionsAll			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example shows how to create a referenced model based on an asset that doesn't exist 
+	yet. This will create the file on disk, and create an offloaded referenced model.
+*/
+NewScene( null, false );
+var sPath = XSIUtils.BuildPath( Application.InstallationPath(siUserPath), "Data", "alain.emdl" );
+CreateRefModel( sPath, "alaind", "low", null, false, true) ;</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example shows how to create a referenced model based on a model that already exists.
+	It also demonstrates how to activate it and specify a parent model.
+*/
+NewScene( null, false );
+CreateModel( null, "mymodel" );
+var sPath = XSIUtils.BuildPath( Application.InstallationPath(siFactoryPath), 
+	"Data", "XSI_SAMPLES", "Models", "Man.emdl" );
+CreateRefModel( sPath, "man", "low", "mymodel", true, false );</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/CommitToReference.html">CommitToReference</a> <a href="#!/url=./si_cmds/ConvertToRefModel.html">ConvertToRefModel</a> <a href="#!/url=./si_cmds/ImportModel.html">ImportModel</a> <a href="#!/url=./si_cmds/ExportModel.html">ExportModel</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

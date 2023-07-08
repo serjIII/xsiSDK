@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Menu.AddCallbackItem</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Menu.AddCallbackItem</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/Menu.html">Menu</a>.AddCallbackItem</h2>
+
+<h3>Description</h3>
+<div><p> Adds a menu item to the end of the menu and attaches a callback function. The 
+callback is fired when the menu item is selected. 
+<br /><br />
+The callback function must be implemented in the plug-in file as described in 
+<a href="#!/url=./si_cmds/callbacks.html">Definition Callbacks for Menus</a>. If 
+your menu is attached to a contextual menu, the currently selected objects are 
+passed in to your callback. The target object under the cursor is also passed in 
+as part of the selected objects. However if no objects are selected, then only 
+the target is passed in. The objects can be retrieved through the 
+<a href="#!/url=./si_om/Context.GetAttribute.html">Context.GetAttribute</a> method with "Target" specified as the 
+value for the AttributeName parameter. The selected/target objects are not passed 
+in to the callback of a custom menu item attached to a regular menu.
+<br /><br />
+Note: It is a bit easier to use this method to write script code as a menu callback 
+rather than using <a href="#!/url=./si_om/Menu.AddCommandItem.html">Menu.AddCommandItem</a> and implementing a custom 
+<a href="#!/url=./si_om/Command.html">Command</a>. However the advantage of using a custom command is that
+it can also be invoked, without user involvement, from scripting.
+<br /><br />
+Tip: See any of the examples for creating a
+<a href="#!/url=./examples/Addons/SimpleMenu/netview_SimpleMenu.htm">Simple Menu plug-in</a>
+to see this method in action.
+<br /><br />Note: This method could return an invalid object in python, use <a href="#!/url=./si_om/Menu.AddCallbackItem2.html">Menu.AddCallbackItem2</a> instead.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>MenuItem Menu.AddCallbackItem( String in_pLabel, String in_pszCallback );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = Menu.AddCallbackItem( Label, Callback );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>The newly created <a href="#!/url=./si_om/MenuItem.html">MenuItem</a> object.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Label		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The menu item label.		</td>
+	</tr>
+	<tr>
+		<td class="name">Callback		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+The name of the callback function. <br /><br /> 
+Important: The function must be implemented in the self-installed menu 
+plug-in file.
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">//-------------------------------------------------------------------
+// This example shows how to implement a menu for accessing
+// the target of an anchor hook. Run the example from the
+// Softimage Script Editor and then follow the MANUAL STEPS.
+//-------------------------------------------------------------------
+// Start by building the plug-in on disk
+BuildDemoPlugin();
+// Then create a mesh and activate vertex selection
+CreatePrim("Torus", "MeshSurface");
+SetSelFilter("Vertex");
+/*
+	MANUAL STEPS:
+	Now right-click on the torus and select 'Get Target Info' from the
+	pop-up menu. Something like the following will log:
+	// Menu Target torus contains 1 item(s):
+	//    Target item torus is a X3DObject
+	//    Target contains 4 NestedObject(s):
+	//       torus.Name (Parameter)
+	//       torus.primitive (Parameter)
+	//       torus.nodecurrent (Parameter)
+	//       torus.Children (Parameter)
+	// 
+	// MenuItem Callback: LogTargetInfo
+	// MenuItem Name: Get Target Info
+	// MenuItem Origin: siUnknownPath
+*/
+//-------------------------------------------------------------------
+// Utility function to create the demo plug-in on disk
+function BuildDemoPlugin()
+{
+	var sPluginFile = XSIUtils.BuildPath(
+		Application.InstallationPath(siUserPath),
+		"Application", "Plugins", "MenuDemo.js"
+	);
+	var fso = new ActiveXObject("Scripting.FileSystemObject");
+	if (!fso.FileExists(sPluginFile)) {
+		var ts = fso.CreateTextFile(sPluginFile);
+		ts.Write(
+			XSILoadPlugin.toString() +
+			DemoContextMenu_Init.toString() +
+			LogTargetInfo.toString() +
+			MakeInstallPathReadable.toString() +
+			Log.toString()
+		);
+		ts.Close();
+	}
+}
+//-------------------------------------------------------------------
+/*
+	BELOW IS THE IMPLEMENTATION OF THE MENU PLUG-IN
+*/
+// Registration callback
+function XSILoadPlugin( in_reg )
+{
+	in_reg.Author = "Softimage";
+	in_reg.Name   = "MyContextMenu";
+	in_reg.Major  = 1;
+	in_reg.Minor  = 0;
+	in_reg.RegisterMenu(siMenu3DViewObjectSelectContextID, "DemoContextMenu", false, false);
+}
+// Init callback
+function DemoContextMenu_Init(in_ctxt)
+{
+	in_ctxt.Source.AddCallbackItem('Get Target Info', "LogTargetInfo");
+	return true;
+}
+// AddCallbackItem handler
+function LogTargetInfo(in_ctxt)
+{
+	// Context.GetAttribute("Target") allows you to access the target of the 
+	// anchor point by returning an XSICollection containing the target(s)
+	var oTargetColl = in_ctxt.GetAttribute("Target");
+	Log("Menu Target contains "+oTargetColl.Count+" item(s):");
+	for ( var i=0; i&lt;oTargetColl.Count; i++ ) {
+		var oTarget = oTargetColl.Item(i);
+		Log("   Target item "+oTarget+" is a "+Application.ClassName(oTarget));
+		Log("   Target contains "+oTarget.NestedObjects.Count+" NestedObject(s):");
+		for ( var j=0; j&lt;oTarget.NestedObjects.Count; j++ ) {
+			var oNested = oTarget.NestedObjects.Item(j);
+			Log("      "+oNested+" ("+Application.ClassName(oNested)+")");
+		}
+	}
+	var oMenuItem = in_ctxt.Source;
+	Log("\nMenuItem Callback: "+oMenuItem.Callback);
+	Log("MenuItem Name: "+oMenuItem.Name);
+	Log("MenuItem Origin: "+MakeInstallPathReadable(oMenuItem.Origin));
+}
+// Workhorse functions
+function MakeInstallPathReadable(in_path)
+{
+	switch (in_path) {
+		case siProjectPath :		return "siProjectPath";
+		case siUserPath :			return "siUserPath";
+		case siWorkgroupPath :		return "siWorkgroupPath";
+		case siFactoryPath :		return "siFactoryPath";
+		case siAddonPath :			return "siAddonPath";
+		case siUserAddonPath :		return "siUserAddonPath";
+		case siWorkgroupAddonPath :	return "siWorkgroupAddonPath";
+		case siUnknownPath :		return "siUnknownPath";
+		case siCustomPath :			return "siCustomPath";
+	}
+}
+function Log(in_msg)
+{
+	Application.LogMessage(in_msg, siComment);
+}</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">//-------------------------------------------------------------------
+// This example shows how to implement a menu for calling 
+// commands with and without hardcoded arguments through a 
+// callback function.
+//
+// README: Copy and paste the example into the script editor 
+// and run (F5).
+//
+// The menu will install itself into the application's main menubar
+//-------------------------------------------------------------------
+function XSILoadPlugin( in_reg )
+{
+	in_reg.Author = "Softimage Co.";
+	in_reg.Name = "Menu.AddCallbackItem Example";
+	// Sdd a custom menu under the Application menu in the main menu bar
+	in_reg.RegisterMenu( siMenuMainApplicationID, "ApplyOp_Menu" );
+	LogMessage( in_reg.Name + " has been loaded." );
+	return true;
+}
+function ApplyOp_Menu_Init( in_ctxt )
+{
+	var menu = in_ctxt.source;
+	menu.Name = "Apply Deform operators";
+	menu.AddCallbackItem( "Twist", "OnApplyOp" );
+	menu.AddCallbackItem( "Bend", "OnApplyOp" );
+	menu.AddCallbackItem( "Bulge", "OnApplyOp" );
+	menu.AddCallbackItem( "Shear", "OnApplyOp" );
+	menu.AddCallbackItem( "Taper", "OnApplyOp" );
+	menu.AddSeparatorItem();
+	menu.AddCallbackItem( "Push", "OnApplyOp" );
+	menu.AddCallbackItem( "Relax", "OnApplyOp" );
+	menu.AddCallbackItem( "Smooth", "OnApplyOp" );
+	menu.AddCallbackItem( "QStretch", "OnApplyOp" );
+	menu.AddCallbackItem( "Randomize", "OnApplyOp" );
+	return true;
+}
+function OnApplyOp( in_ctxt )
+{
+	var item = in_ctxt.Source;
+	switch( item.Name )
+	{
+		case "QStretch":
+			ApplyKinematicOp( "QStretch", null, siBranch );
+			break;
+		case "Randomize":
+			ApplyOp( "Randomize", null, siBranch );
+			break;
+		default:
+			ApplyOp( item.Name );
+	}
+	return true;
+}
+//--------------------------------------------------------------------
+// Code to bootstrap example into system
+//--------------------------------------------------------------------
+function ExampleSourceCode()
+{
+	return "// XSISDK Doc Example\n" +	
+		ApplyOp_Menu_Init.toString() + "\n" + 
+		OnApplyOp.toString() + "\n" + 
+		XSILoadPlugin.toString();
+}
+// If we are running from script editor save code to 
+// examples addon folder in the user's directory.
+if (GetUserPref("ScriptingSessionActive"))
+{
+	var ex_name 	= "ExMenuAddCallbackItem";
+	var ex_subfolder 	= "Plugins";
+	var ex_folder 	= "XSISDKDocExamples";
+	var ex_langsuffix	= ".js";
+	CreateAddonDirectories( InstallationPath(siUserPath), ex_folder );
+	var fso = XSIFactory.CreateActiveXObject("Scripting.FileSystemObject");
+	var filename = XSIUtils.BuildPath( 
+		InstallationPath(siUserAddonPath), 
+		ex_folder,
+		"Application",
+		ex_subfolder,
+		ex_name+ex_langsuffix );
+	if (!fso.FileExists(filename))
+	{
+		var f = fso.CreateTextFile ( filename );
+		f.write( ExampleSourceCode() );
+		f.close();
+		Application.LoadPlugin(filename);	
+	}
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/MenuItem.html">MenuItem</a> <a href="#!/url=./si_om/MenuItem.Callback.html">MenuItem.Callback</a> <a href="#!/url=./si_cmds/callbacks.html">Definition Callbacks for Menus</a> <a href="#!/url=./examples/Addons/SimpleMenu/netview_SimpleMenu.htm">Simple Menu plug-in example</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,63 @@
+var topic = "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n\
+\n\
+<!-- saved from url=(0024)http://docs.autodesk.com -->\n\
+<html>\n\
+   <head>\n\
+<link href=\"../style/prettify.css\" type=\"text/css\" rel=\"stylesheet\" />\n\
+<script type=\"text/javascript\" src=\"../scripts/prettify.js\"></script><script src=\"../scripts/lib/jquery-1.9.1.min.js\" type=\"text/javascript\"></script>\n\
+      <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n\
+      <meta name=\"product\" content=\"SI\" />\n\
+      <meta name=\"release\" content=\"2015\" />\n\
+      <meta name=\"book\" content=\"Developer\" />\n\
+      <meta name=\"created\" content=\"2014-03-13\" />\n\
+      <meta name=\"topicid\" content=\"GUID-E220D7D4-FAA9-449C-B2FB-57E9B3F15332\" />\n\
+      <meta name=\"topic-type\" content=\"concept\" />\n\
+      <title>Setting Plug-in Properties</title><script type=\"text/javascript\" src=\"../scripts/utils/adsk.redirect.js\"></script></head>\n\
+   <body height=\"100%\"><div class=\"body_content\" id=\"body-content\"><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/ac_common.js\"); });</script><script type=\"text/javascript\">var reflinkid = \"si_cpp\"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on(\'click\', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/multireflink.js\"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$(\"div#WidgetFloaterPanels,link[href*=\'microsofttranslator.com\'],script[src*=\'microsofttranslator.com\'],script[src*=\'bing.com\']\").remove();</script><script type=\'text/javascript\'>$(\"div#navigation,div#breadcrumbs,div#banner\").attr(\"translate\",\"no\"); var mtLocation = ((location && location.href && location.href.indexOf(\'https\') == 0)?\'https://ssl.microsofttranslator.com\':\'http://www.microsofttranslator.com\')+\'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages=\'; yepnope.injectJs(mtLocation, function() {}, { charset:\'utf-8\', type:\'text/javascript\' } );</script><script type=\"text/javascript\">\n\
+ reflinkdata.push([\"PluginRegistrar::PutAuthor()\", \"si_cpp/classXSI_1_1PluginRegistrar.html#a016d5861a81325723599011d8d2d698d\", \"C++ API Reference\", \"../\"]); \n\
+reflinkdata.push([\"PluginRegistrar::PutHelp()\", \"si_cpp/classXSI_1_1PluginRegistrar.html#afe6e6e6b1af9b70370de81719eef0569\", \"C++ API Reference\", \"../\"]); \n\
+reflinkdata.push([\"version\", \"si_cpp/group__RenderMapDefine.html#gad6034d1c8c050eba0cf6533a8e6f3785\", \"C++ API Reference\", \"../\"]); \n\
+</script><!-- begin MT -->\n\
+            \n\
+            <div id=\'MicrosoftTranslatorWidget\' class=\'Dark\' style=\'position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden\'></div><div id=\"reflinkdiv\" style=\"display:none; font-family: \'RobotoRegular\', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible\"></div>\n\
+      <div><span class=\"anchor_wrapper\"><a name=\"GUID-E220D7D4-FAA9-449C-B2FB-57E9B3F15332\"></a></span><div class=\"head\">\n\
+            <h1>Setting Plug-in Properties</h1>\n\
+         </div>\n\
+         <div class=\"bodyProcess\">\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-FC233C73-26C1-4A36-BD06-4D6E32204A96\"></a></span> The <a href=\"#!/url=./si_cmds/cb_XSILoadPlugin.html\">XSILoadPlugin</a> function gets a <a href=\"#!/url=./si_om/PluginRegistrar.html\">PluginRegistrar</a> or <a href=\"#!/url=./si_cpp/classXSI_1_1PluginRegistrar.html\">PluginRegistrar</a> object as an argument. Through this object, you can set plug-in properties such as\n\
+               <a href=\"#!/url=./si_om/SIObject.Name.html\">SIObject.Name</a> or <span class=\"code\" translate=\"no\">SIObject::PutName()</span>, <a href=\"#!/url=./si_om/PluginRegistrar.Author.html\">PluginRegistrar.Author</a> or <span class=\"code\" translate=\"no\"><a href=\"javascript:void(0)\" data=\"PluginRegistrar::PutAuthor()\" class=\"a_multireflink\">PluginRegistrar::PutAuthor()</a></span>, and <a href=\"#!/url=./si_om/SIObject.Help.html\">SIObject.Help</a> or <span class=\"code\" translate=\"no\"><a href=\"javascript:void(0)\" data=\"PluginRegistrar::PutHelp()\" class=\"a_multireflink\">PluginRegistrar::PutHelp()</a></span>. \n\
+            </p>\n\
+            <div class=\"codeBlock\"><pre class=\"prettyprint\">// JScript\n\
+function XSILoadPlugin(in_pluginRegistrar)\n\
+{\n\
+	in_pluginRegistrar.Name = \"My Commands\";\n\
+	\n\
+	// Contact info\n\
+	in_pluginRegistrar.Author = \"The Plugin Factory\";\n\
+	in_pluginRegistrar.Email = \"support@example.com\";\n\
+	in_pluginRegistrar.URL = \"http://www.example.com/support\";\n\
+	\n\
+	// Plug-in <a href=\"javascript:void(0)\" data=\"version\" class=\"a_multireflink\">version</a> information\n\
+	in_pluginRegistrar.Major = 1;\n\
+	in_pluginRegistrar.Minor = 0;\n\
+	\n\
+	// Comma-separated list of user-defined categories\n\
+	in_pluginRegistrar.Categories = \"Example, Command, Menu\";\n\
+	\n\
+	// The plug-in help file is located in the Help subfolder inside the installation folder\n\
+	in_pluginRegistrar.Help = XSIUtils.BuildPath(in_reg.OriginPath, \"Help\", \"FooUserGuide.htm\");\n\
+	\n\
+	// Register plug-in items ...\n\
+	\n\
+	return true;\n\
+}</pre></div>\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-B1E9371A-E49B-42E9-96FE-2EB5C100BB64\"></a></span>All these plug-in details are displayed in the Plug-in Manager. You can right-click\n\
+               a plug-in in the Plug-in tree and click <span class=\"MenuCascade\" id=\"GUID-B10A6752-E5C6-4B95-A1E2-C7D8F6193ABA\">Properties</span> to open the Plug-in Details dialog. You can click the Email, URL, and Help properties\n\
+               to open the links. \n\
+            </p>\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-1A63B442-826E-4E88-96D6-5933F0E06050\"></a></span> <img src=\"../images/GUID-BDFD25D8-C290-4F46-B7A8-BA81255FE078-low.png\" /> \n\
+            </p>\n\
+         </div>\n\
+         <div class=\"footer-block\"><a href=\"../html/ac.cmtdialog.htm\" class=\"comments-anchor\" target=\"_blank\"><span class=\"comments-link\">Please send us your comment about this page</span></a></div><br /><p class=\"footer-license-block\"><a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\"><img alt=\"Creative Commons License\" style=\"border-width: 0;\" src=\"../images/ccLink.png\" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href=\"http://autodesk.com/creativecommons\" target=\"_blank\">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>\n\
+   </div></body>\n\
+</html>";

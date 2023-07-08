@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>SIObject.Help</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>SIObject.Help</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/SIObject.html">SIObject</a>.Help</h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p> Specifies the help file for an object as a <a href="#!/url=./files/String.htm">String</a> (an empty string is 
+returned if an object has no help file).<br /><br />
+The Help property is read-only for all objects except <a href="#!/url=./si_om/PluginItem.html">PluginItem</a> and 
+<a href="#!/url=./si_om/PluginRegistrar.html">PluginRegistrar</a>. <br /><br />
+A plug-in (and plug-in item) help file can be an HTML page.<br /><br />
+By default, Softimage looks for a plug-in (and for a plug-in item) help file in the "doc" subfolder of the plug-in 
+installation folder. Softimage assumes the help file has the same name as the plug-in (and as the plug-in item). For example, 
+if the plug-in MyPlugin.js is located in the folder "C:\MyWorkgroup\Application\Plugins" 
+then Softimage looks in the folder "C:\MyWorkgroup\Application\Plugins\Doc" for a help file named 
+MyPlugin.html, or MyPlugin.htm.<br /><br />
+If a plug-in (and plug-in item) help file has a different name or location, you can set this property on the
+PluginItem or PluginRegistrar object to specify the names of help files and, optionally, 
+their locations. <br /><br />
+Notes:<br /><br />
+To specify the help file for a dynamic custom property (a property created with 
+<a href="#!/url=./si_om/SceneItem.AddCustomProperty.html">SceneItem.AddCustomProperty</a>) use <a href="#!/url=./si_om/PPGLayout.SetAttribute.html">PPGLayout.SetAttribute</a> 
+to set the siUIHelpFile attribute.
+<br /><br />
+The help file string for SPDL objects contains the location of the help file. It can also be accompanied 
+by an identifier for indexing the help file. For example, 
+'HelpFile = "C:\MyWorkgroup\Application\Plugins\Doc\MyCustomHelp.htm";' and 'HelpID = 37;'.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>// get accessor
+String rtn = SIObject.Help;
+// set accessor
+SIObject.Help = String;</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/* 
+	This example shows how to specify the help
+	for a plug-in and for a custom property.
+*/
+function XSILoadPlugin( in_reg )
+{
+	in_reg.Author = "sblair";
+	in_reg.Name = "MyPlugin";
+	// Help file is in the same folder as the plug-in
+	var sHtm = "MyPluginHelp.htm";
+	in_reg.Help = XSIUtils.BuildPath( in_reg.OriginPath, sHtm );
+	var oPluginItem = in_reg.RegisterProperty("MyProperty");
+	// Open a specific help topic for the property
+	sHtm = "MyProperty.htm";
+	oPluginItem.Help = XSIUtils.BuildPath( in_reg.OriginPath, sHtm );
+	//RegistrationInsertionPoint - do not remove this line
+	return true;
+}</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example shows how to specify help files for a plug-in 
+' and for specific plug-in items. The help files are assumed
+' to be in the "doc" subfolder of the plug-in installation folder.
+'
+Function XSILoadPlugin( in_reg )
+	' register plugin information
+	in_reg.Author = "Softimage Co." 
+	in_reg.Name = "Mesh Filter plugin"
+	in_reg.Help = "MeshFilter.htm"
+	in_reg.URL = "http://www.softimage.com"
+	in_reg.Email = "webmaster@softimage.com"
+	' set the version number of this plugin
+	in_reg.Major = 1
+	in_reg.Minor = 0 
+	' register filter plugin items
+	set item = in_reg.RegisterFilter( "Border Edge", siFilterSubComponentEdge )
+	item.help = "BorderEdge.htm"
+	set item = in_reg.RegisterFilter( "Triangle", siFilterSubComponentPolygon )
+	item.help = "Triangle.htm"
+	in_reg.RegisterFilter "Quad", siFilterSubComponentPolygon 
+	in_reg.RegisterFilter "N-gon", siFilterSubComponentPolygon 
+	in_reg.RegisterFilter "Border Point", siFilterSubComponentPoint 
+	in_reg.RegisterFilter "Polygon Island", siFilterSubComponentPolygon 
+	XSILoadPlugin = true
+end Function</pre></td></tr>
+</table>
+</div><h4>3. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example shows how to get the plug-in items help files
+*/
+var items = Application.Plugins("Mesh Filter plugin").Items;
+for (var i=0; i&lt;items.Count; i++) 
+{
+	Application.LogMessage( items(i).Name + " help file is " + items(i).Help );
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/XSIUtils.BuildPath.html">XSIUtils.BuildPath</a> <a href="#!/url=./si_om/PluginItem.HelpButton.html">PluginItem.HelpButton</a> <a href="#!/url=./si_om/PluginRegistrar.HelpButton.html">PluginRegistrar.HelpButton</a> <a href="#!/url=./si_om/Plugin.HelpButton.html">Plugin.HelpButton</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

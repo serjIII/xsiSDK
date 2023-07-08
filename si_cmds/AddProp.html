@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>AddProp</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>AddProp</h1>
+         </div>
+
+<h2 class="pagehead">AddProp</h2>
+
+<h3>Introduced</h3>
+<div><p>v1.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Adds properties to objects.<br /><br />
+Notice that UV cluster properties and vertex color properties can only be added to 
+clusters which are always complete, see <a href="#!/url=./si_om/Geometry.AddCluster.html">Geometry.AddCluster</a> method.<br /><br />
+Note: This command uses <a href="#!/url=./files/OutArgDefined.htm">output arguments</a>. C# and some 
+scripting languages (such as JScript, PerlScript and Python) don't support arguments passed by reference so you 
+need to use the best workaround for your situation:
+<br /><br />
+For scripting languages this command returns an <a href="#!/url=./files/ISIVTCollection.htm">ISIVTCollection</a> 
+which you can use to get the output arguments. 
+<br /><br />
+For C# you can use the <a href="#!/url=./si_om/XSIApplication.ExecuteCommand.html">XSIApplication.ExecuteCommand</a> method to call this command. ExecuteCommand 
+packs the output arguments into a C# System.Object containing an <a href="#!/url=./files/Array.htm">Array</a> of the output arguments (see
+<a href="#!/url=./files/csharp_understand_CallingCommandsfromCSharp.htm">Calling Commands from C#</a>).
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>AddProp( PresetObj, [InputObjs], [Propagation], [PropertyName], [Value] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">PresetObj		</td>
+		<td><a href="#!/url=./files/String.htm">String</a> or a preset object (see <a href="#!/url=./si_cmds/SIGetPreset.html">SIGetPreset</a>)		</td>
+		<td>
+One of the <a href="#!/url=./si_cmds/PropPreset.html">Property Presets</a>		</td>
+	</tr>
+	<tr>
+		<td class="name">InputObjs		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/listexpr.htm">List</a> of objects. 			<p class="cell"><span class="hilite">Default Value: </span>
+Currently selected objects			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Propagation		</td>
+		<td><a href="#!/url=./si_om/siPropagationType.html">siPropagationType</a>		</td>
+		<td>
+ Propagation type for property 			<p class="cell"><span class="hilite">Default Value: </span>
+siDefaultPropagation (node)			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">PropertyName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Name of property 		</td>
+	</tr>
+	<tr>
+		<td class="name">Value		</td>
+		<td><a href="#!/url=./si_om/XSICollection.html">XSICollection</a>		</td>
+		<td>
+Returns the new properties in an <a href="#!/url=./si_om/XSICollection.html">XSICollection</a>.<br /><br /> Note: For backwards compatibility, ClassName returns "Object" when you test this collection, but if you test it with <a href="#!/url=./si_om/XSICollection.Type.html">XSICollection.Type</a>, it returns "XSICollection".<br /><br /> Tip: Each member of the returned collection is a <a href="#!/url=./si_om/Property.html">Property</a> object.		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example demonstrates how to add the RenderMap property to both a sphere and 
+' a cube and then shows how you can use the returned Property objects by accessing
+' them as members of the returned collection.
+'
+' Note: In this example we are using the XSIApplication.ClassName method instead
+' 	of the VBScript TypeName function to provide a distinction between
+'	class type and what we test with the Type property, but you can use
+'	either.
+'
+NewScene , false
+' Add a sphere to the scene
+Set oSphere = CreatePrim( "Sphere", "NurbsSurface" )
+' Add a sphere to the scene
+Set oCube = CreatePrim( "Cube", "NurbsSurface" )
+' Create rendermaps on the sphere and cube; the AddProp command returns the 
+' output object as an XSICollection of 2, so you can get each RenderMap 
+' as a Property object from the returned collection
+AddProp "RenderMap", oSphere &amp; "," &amp; oCube, , , oRtnColl
+' Test the type of the return value 
+PrintInfo oRtnColl
+' Get only the sphere's rendermap as a Property object
+' Note: We could also use 'Set oRMap = oRtnColl(0)' to
+'	accomplish the same thing, but this is more precise
+For Each mbr In oRtnColl
+	If mbr.Parent = oSphere Then
+		Set oRMap = mbr
+	End If
+Next
+' Specify a destination directory and name for the new image file
+' Note: Since the new object is a real Property object, we can use
+' 		the object model to get its parameters
+oRMap.Parameters( "imagefile" ).Value = InstallationPath( siUserPath ) _
+			&amp; "\temp\rendermap.pic"
+' Add a texture projection to the sphere and attach the rendermap to it
+CreateProjection oSphere, siTxtUV, siTxtDefaultSpherical, sSupport, sProj
+SetInstanceDataValue , oRMap.Parameters( "uvprop" ), sProj
+' Now add an annotation property to the sphere and test it
+AddProp "Annotation", oSphere, , , oNewRtnColl
+PrintInfo oNewRtnColl
+' This is just a utility function to separate the printing procedure
+' from the rest of the example
+function PrintInfo( in_coll )
+	' Print the class type (ie., Object, X3DObject, Property, etc.)
+	LogMessage "========="
+	LogMessage "ClassName: " &amp; ClassName( in_coll )
+	' This prevents an error if the specified object is invalid
+	if ClassName( in_coll ) &lt;&gt; "Nothing" then
+		' This prevents us from trying to use collection functions
+		' on a non-collection object (XSICollections returned from
+		' commands report that they have the "Object" class type:
+		' this is for backwards compatibility)
+		if ( ClassName( in_coll ) = "Object" AND in_coll.Type = "XSICollection" ) _
+		OR ClassName( in_coll ) = "ISIVTCollection" _
+		then 
+			' ISIVTCollections can be enumerated but they don't 
+			' support the Type property, so we'll skip that for
+			' ISIVTCollections
+			if ClassName( in_coll ) = "ISIVTCollection" then 
+				' Convert the ISIVTCollection to an XSICollection (now 
+				' we can continue with the XSICollection-specific tests)
+				Set in_coll = in_coll.item(1)
+				' Test it again to make sure it's really an XSICollection
+				LogMessage "Type after conversion: " &amp; in_coll.Type
+			end if
+			' Loop through the collection and print the name, type and 
+			' class type of each item
+			LogMessage ""
+			LogMessage "This collection contains the following ( " _
+				&amp; in_coll.Count &amp; " ) members ........"
+			for each member in in_coll
+				' Note: None of this information will be printed if the 
+				' collection is empty
+				LogMessage vbTab &amp; "Name: " &amp; member.Name
+				LogMessage vbTab &amp; "Type: " &amp; member.Type
+				LogMessage vbTab &amp; "ClassName: " &amp; ClassName( member )
+				LogMessage "---------"
+			next
+		elseif ClassName( in_coll ) = "CollectionItem" then
+			' Print the name, type and class type of the item
+			LogMessage vbTab &amp; "Name: " &amp; member.Name
+			LogMessage vbTab &amp; "Type: " &amp; member.Type
+			LogMessage vbTab &amp; "ClassName: " &amp; ClassName( member )
+		end if
+	end if
+	LogMessage "End of collection information.................................."
+end function
+' Output of above script:
+'INFO : "========="
+'INFO : "ClassName: Object"
+'INFO : ""
+'INFO : "This collection contains the following ( 2 ) members ........"
+'INFO : "	Name: RenderMap"
+'INFO : "	Type: rendermap"
+'INFO : "	ClassName: Property"
+'INFO : "---------"
+'INFO : "	Name: RenderMap"
+'INFO : "	Type: rendermap"
+'INFO : "	ClassName: Property"
+'INFO : "---------"
+'INFO : "End of collection information.................................."
+CreateProjection "sphere", siTxtUV, siTxtDefaultSpherical, , "Texture_Projection", , siRelDefault
+SetInstanceDataValue , "sphere.RenderMap.uvprop", "Texture_Projection"
+AddProp "Annotation", "sphere", siDefaultPropagation
+'INFO : "========="
+'INFO : "ClassName: Object"
+'INFO : ""
+'INFO : "This collection contains the following ( 1 ) members ........"
+'INFO : "	Name: Annotation"
+'INFO : "	Type: customparamset"
+'INFO : "	ClassName: CustomProperty"
+'INFO : "---------"
+'INFO : "End of collection information.................................."</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This JScript example illustrates how to use the AddProp command to add an 
+	annotation property to a null object. Of special interest in this example
+	is how we use the returned object to extract an array of output arguments
+	(since JScript does not support output arguments).
+	Note: In this example we are using the XSIApplication.ClassName method 
+	which is the equivalent of the VBScript TypeName function (for which
+	there is no native JScript equivalent).
+*/
+NewScene( null , false );
+// Add a null to the scene
+var oSphere = GetPrim( "Null" );
+// Add an annotation to the null; the AddProp command returns the output 
+// object as an XSICollection of 1, so you can get the actual annotation 
+// as a Property object by resetting the object pointer to the first 
+// member of the returned collection
+var oRtnColl = AddProp( "Annotation", oSphere, siDefaultPropagation, "Jenny" );
+// Test the type of the return value 
+PrintInfo( oRtnColl );
+// To get the Property object, set the reference to the first member of
+// the collection
+//var oRMap = oRtnColl(0);
+// This is just a utility function to separate the printing procedure
+// from the rest of the example
+function PrintInfo( in_coll )
+{
+	// Print the class type (ie., Object, X3DObject, Property, etc.)
+	LogMessage( "=========" );
+	LogMessage( "ClassName: " + ClassName( in_coll ) );
+	// This prevents an error if the specified object is invalid
+	if ( ClassName( in_coll ) != "Nothing" ) 
+	{
+		// This prevents us from trying to use collection functions
+		// on a non-collection object (XSICollections returned from
+		// commands report that they have the "Object" class type:
+		// this is for backwards compatibility)
+		if ( ( ClassName( in_coll ) == "Object" &amp;&amp; in_coll.Type() == "XSICollection" ) || 
+			ClassName( in_coll ) == "ISIVTCollection" )
+		{ 
+			// ISIVTCollections can be enumerated but they don't 
+			// support the Type property, so we'll skip that for
+			// ISIVTCollections
+			if ( ClassName( in_coll ) == "ISIVTCollection" )
+			{
+				// Convert the ISIVTCollection to an XSICollection (now 
+				// we can continue with the XSICollection-specific tests)
+				in_coll = in_coll.item(1);
+				// Test it again to make sure it's really an XSICollection
+				LogMessage( "Type after conversion: " + in_coll.Type );
+			}
+			// Loop through the collection and print the name, type and 
+			// class type of each item
+			LogMessage( "" );
+			LogMessage( "This collection contains the following ( " 
+				+ in_coll.Count + " ) members ........" );
+			for ( i=0; i&lt;in_coll.count; i++ )
+			{
+				LogMessage( "\tName: " + in_coll.item(i).Name );
+				LogMessage( "\tType: " + in_coll.item(i).Type);
+				LogMessage( "\tClassName: " + ClassName( in_coll.item(i) ) );
+			} 
+		}
+		else 
+		{
+			// Print error message 
+			LogMessage( "Object is not a collection at all." );
+		}
+	}
+	LogMessage( "End of collection information.................................." );
+}
+// Output of above script:
+//INFO : "========="
+//INFO : "ClassName: ISIVTCollection"
+//INFO : "Type after conversion: XSICollection"
+//INFO : ""
+//INFO : "This collection contains the following ( 1 ) members ........"
+//INFO : "	Name: Jenny"
+//INFO : "	Type: customparamset"
+//INFO : "	ClassName: CustomProperty"
+//INFO : "End of collection information.................................."</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/SIAddProp.html">SIAddProp</a> <a href="#!/url=./si_om/SceneItem.AddProperty.html">SceneItem.AddProperty</a> <a href="#!/url=./si_om/Property.html">Property</a> <a href="#!/url=./si_om/XSICollection.html">XSICollection</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

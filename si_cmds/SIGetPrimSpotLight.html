@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>SIGetPrimSpotLight</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>SIGetPrimSpotLight</h1>
+         </div>
+
+<h2 class="pagehead">SIGetPrimSpotLight</h2>
+
+<h3>Description</h3>
+<div><p>
+Creates a spot light primitive.
+<br /><br />
+Note: This command uses <a href="#!/url=./files/OutArgDefined.htm">output arguments</a>. C# and some 
+scripting languages (such as JScript, PerlScript and Python) don't support arguments passed by reference so you 
+need to use the best workaround for your situation:
+<br /><br />
+For scripting languages this command returns an <a href="#!/url=./files/ISIVTCollection.htm">ISIVTCollection</a> 
+which you can use to get the output arguments. 
+<br /><br />
+For C# you can use the <a href="#!/url=./si_om/XSIApplication.ExecuteCommand.html">XSIApplication.ExecuteCommand</a> method to call this command. ExecuteCommand 
+packs the output arguments into a C# System.Object containing an <a href="#!/url=./files/Array.htm">Array</a> of the output arguments (see
+<a href="#!/url=./files/csharp_understand_CallingCommandsfromCSharp.htm">Calling Commands from C#</a>).
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>SIGetPrimSpotLight( PresetObj, [Name], [InterestName], [Parent], [3DObjSpot], [3DObjSpotInterest], [PrimObjSpot], [PrimObjSpotInterest] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">PresetObj		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ A spot light preset (see <a href="#!/url=./si_cmds/LightPrimitives.html#">Light Primitives</a>). 			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">Spot					</td>
+					<td>The spot preset					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Name		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Name of the light. 		</td>
+	</tr>
+	<tr>
+		<td class="name">InterestName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Name of the interest. 		</td>
+	</tr>
+	<tr>
+		<td class="name">Parent		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Parent <a href="#!/url=./files/objectexpr.htm">object</a> for the light. 		</td>
+	</tr>
+	<tr>
+		<td class="name">3DObjSpot		</td>
+		<td><a href="#!/url=./si_om/Light.html">Light</a>		</td>
+		<td>
+ Returns the spot light object. 		</td>
+	</tr>
+	<tr>
+		<td class="name">3DObjSpotInterest		</td>
+		<td><a href="#!/url=./si_om/Null.html">Null</a>		</td>
+		<td>
+ Returns the spot interest. 		</td>
+	</tr>
+	<tr>
+		<td class="name">PrimObjSpot		</td>
+		<td><a href="#!/url=./si_om/Primitive.html">Primitive</a>		</td>
+		<td>
+ Returns the spot light primitive. 		</td>
+	</tr>
+	<tr>
+		<td class="name">PrimObjSpotInterest		</td>
+		<td><a href="#!/url=./si_om/Primitive.html">Primitive</a>		</td>
+		<td>
+ Returns the interest primitive. 		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example demonstrates how to retrieve the output arguments through 
+	the returned ISIVTCollection, by using their name with the Value property.
+*/
+NewScene( null, false );
+// Get the output arguments via the ISIVTCollection
+var rtn = SIGetPrimSpotLight( "Spot.Preset", "MySpotName", "MySpotInterestName" );
+// With the ISIVTCollection, you can either get the items by index number using the Item
+// property, or by output argument name by using the Value property, which is much clearer
+// and faster to use
+var o3DObjSpot = rtn.Value("3DObjSpot");
+var o3DObjSpotInterest = rtn.Value("3DObjSpotInterest");
+var oPrimObjSpot = rtn.Value("PrimObjSpot");
+var oPrimObjSpotInterest = rtn.Value("PrimObjSpotInterest");
+// For each object, find out its name and class, if possible
+WhatAmI( o3DObjSpot );		//INFO : MySpotName is a Light
+WhatAmI( o3DObjSpotInterest );	//INFO : MySpotInterestName is a Null
+WhatAmI( oPrimObjSpot );		//INFO : MySpotName.light is a Primitive
+WhatAmI( oPrimObjSpotInterest );	//INFO : MySpotInterestName.SpotInterest is a Primitive
+// Convenience function
+function WhatAmI( in_obj ) 
+{
+	// To prevent crashes, use the try...catch statement, because using ClassName 
+	// on a simple data type (string, number, etc.) will throw an error
+	try {
+		LogMessage( in_obj + " is a " + ClassName(in_obj) );
+	} catch (e) {
+		LogMessage( "input object is a " + typeof(in_obj) );
+	}
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/GetPrimLight.html">GetPrimLight</a> <a href="#!/url=./si_cmds/SIGetPrimLight.html">SIGetPrimLight</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

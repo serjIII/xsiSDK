@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>siFCurveKeyConstraint</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>siFCurveKeyConstraint</h1>
+         </div>
+
+<h2 class="pagehead">siFCurveKeyConstraint</h2>
+
+<h3>Description</h3>
+<div><p>
+Function curve key constraints. The last seven tangent constraints apply only to 
+standard function curves. FCurve key constraints can be set and retrieved via the 
+<a href="#!/url=./si_om/FCurveKey.Constraint.html">FCurveKey.Constraint</a> property. 
+<br /><br />
+The constraints are not mutally exclusive for example if you have the siParameterConstraint
+set and clear the siLockConstraint you will also clear the siParameterConstraint.
+You cannot set constraints on a raw function curve. They will be ignored.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>siFCurveKeyConstraint.siParameterConstraint                                 // 1
+siFCurveKeyConstraint.siLeftRightValuesConstraint                           // 2
+siFCurveKeyConstraint.siG1ContinuousConstraint                              // 4
+siFCurveKeyConstraint.siLeftRightTangentDirectionConstraint                 // 8
+siFCurveKeyConstraint.siLeftRightTangentLengthConstraint                    // 16
+siFCurveKeyConstraint.siLockConstraint                                      // 32
+siFCurveKeyConstraint.siHorizontalTangentConstraint                         // 64
+siFCurveKeyConstraint.siExtremumHorizontalTangentConstraint                 // 128
+siFCurveKeyConstraint.siZeroLengthTangentConstraint                         // 512
+siFCurveKeyConstraint.siSameLengthTangentConstraint                         // 1024
+siFCurveKeyConstraint.siNeighborTangentConstraint                           // 2048
+siFCurveKeyConstraint.siMirrorTangentConstraint                             // 4096
+siFCurveKeyConstraint.siAutoPlateauTangentConstraint                        // 8192
+siFCurveKeyConstraint.siAdjustedTangentConstraint                           // 8448</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<div><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th>Constant		</th>		<th>Value		</th>		<th>Description		</th>	</tr>
+	<tr>
+		<td class="name"><a name="siAdjustedTangentConstraint"> </a>siAdjustedTangentConstraint		</td>
+		<td class="example">8448		</td>
+		<td>
+If on, the tangents are adjusted automatically when neighbouring keys are created or moved.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siAutoPlateauTangentConstraint"> </a>siAutoPlateauTangentConstraint		</td>
+		<td class="example">8192		</td>
+		<td>
+If on, the left and right tangents are automatically adjusted and plateaued based on neighbouring keys.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siExtremumHorizontalTangentConstraint"> </a>siExtremumHorizontalTangentConstraint		</td>
+		<td class="example">128		</td>
+		<td>
+If on, the tangents are considered as horizontal when the key is a local extremum.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siG1ContinuousConstraint"> </a>siG1ContinuousConstraint		</td>
+		<td class="example">4		</td>
+		<td>
+If on, the left and right tangent orientations are the same.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siHorizontalTangentConstraint"> </a>siHorizontalTangentConstraint		</td>
+		<td class="example">64		</td>
+		<td>
+If on, the tangents are considered horizontal.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siLeftRightTangentDirectionConstraint"> </a>siLeftRightTangentDirectionConstraint		</td>
+		<td class="example">8		</td>
+		<td>
+If on, the left and right tangent directions are locked.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siLeftRightTangentLengthConstraint"> </a>siLeftRightTangentLengthConstraint		</td>
+		<td class="example">16		</td>
+		<td>
+If on, the left and right tangent lengths are locked.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siLeftRightValuesConstraint"> </a>siLeftRightValuesConstraint		</td>
+		<td class="example">2		</td>
+		<td>
+If on, the left and right key values are locked.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siLockConstraint"> </a>siLockConstraint		</td>
+		<td class="example">32		</td>
+		<td>
+If on, the parameter, values, and tangents are locked.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMirrorTangentConstraint"> </a>siMirrorTangentConstraint		</td>
+		<td class="example">4096		</td>
+		<td>
+If on, the left and right tangents are mirrored.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siNeighborTangentConstraint"> </a>siNeighborTangentConstraint		</td>
+		<td class="example">2048		</td>
+		<td>
+If on, the left and right tangent point at the previous and next keys.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siParameterConstraint"> </a>siParameterConstraint		</td>
+		<td class="example">1		</td>
+		<td>
+If on, the parameter (or key time) is locked.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSameLengthTangentConstraint"> </a>siSameLengthTangentConstraint		</td>
+		<td class="example">1024		</td>
+		<td>
+If on, the left and right tangent lengths are the same.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siZeroLengthTangentConstraint"> </a>siZeroLengthTangentConstraint		</td>
+		<td class="example">512		</td>
+		<td>
+If on, the left and right tangent lengths are constrained to be zero.		</td>
+	</tr>
+</table>
+</div>
+
+<h3>Applies To</h3>
+<div><p><a href="#!/url=./si_om/FCurveKey.Constraint.html">FCurveKey.Constraint</a> <a href="#!/url=./si_om/FCurveKey.GetConstraint2.html">FCurveKey.GetConstraint2</a> <a href="#!/url=./si_cpp/classXSI_1_1FCurveKey.html#GetConstraint">FCurveKey::GetConstraint</a> <a href="#!/url=./si_cpp/classXSI_1_1FCurveKey.html#PutConstraint">FCurveKey::PutConstraint</a></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/FCurve.SI3DStyle.html">FCurve.SI3DStyle</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

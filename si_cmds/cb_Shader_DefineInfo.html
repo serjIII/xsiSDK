@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>DefineInfo</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>DefineInfo</h1>
+         </div>
+
+<h2 class="pagehead">DefineInfo</h2>
+
+<hr width="100%" />
+<h3>Description</h3>
+<div><p><a name="Description"> </a>	<p>
+				Allows you to define information about your custom shader definition. For example, this is where you
+				can assign it a <a href="#!/url=./si_om/ShaderDef.Category.html">ShaderDef.Category</a> so that it will appear in the Preset Manager.
+			</p>
+	<p>
+				This callback is fired after the shader plug-in loaded (that is, after 
+				<a href="#!/url=./si_cmds/cb_XSILoadPlugin.html">XSILoadPlugin</a> returns).
+			</p>
+</p></div>
+
+<hr width="100%" />
+<h3>Applies To</h3>
+<div><p><a name="AppliesTo"> </a><a href="#!/url=./files/cus_shaders.htm">Custom Shaders</a></p></div>
+
+<hr width="100%" />
+<h3>Syntax</h3>
+<div><p><a name="Syntax"> </a><div class="example"><table>
+<tr>
+<td class="example"><pre class="csharp">public class &lt;plugin-item_name&gt;
+{
+	public bool DefineInfo( Context in_context )
+	{
+		...
+	}
+}</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="cplusplus">CStatus &lt;plugin-item_name&gt;_DefineInfo( CRef&amp; in_context ) 
+{ 
+	... 
+}</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">function &lt;plugin-item_name&gt;_DefineInfo( in_context ) 
+{ 
+	... 
+}</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">def &lt;plugin-item_name&gt;_DefineInfo( in_context ):
+	...</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">Function &lt;plugin-item_name&gt;_DefineInfo( in_context )
+	...
+End Function</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="perlscript">sub &lt;plugin-item_name&gt;_DefineInfo 
+{ 
+	my $in_context = shift; 
+}</pre></td></tr>
+</table>
+</div>	<p><span style="font-family: courier, monospace;">&lt;plugin-item-name&gt;</span> is a special string constructed from the plug-in name, the name 
+				specified in the call to <a href="#!/url=./si_om/PluginRegistrar.RegisterShader.html">PluginRegistrar.RegisterShader</a>, and the major and minor version 
+				numbers, with any spaces converted to underscores. For example, if you register a shader definition in a plug-in called
+				<span style="font-family: courier, monospace;">"MyPlugin"</span> with the shader class name <span style="font-family: courier, monospace;">"My Shader"</span>, 
+				and the version number <span style="font-family: courier, monospace;">1.0</span>, the callback function names start with 
+				<span style="font-family: courier, monospace;">"MyPlugin_My_Shader_1_0"</span>. 
+			</p>
+</p></div>
+
+<hr width="100%" />
+<h3>Parameters</h3>
+<div><p><a name="Parameters"> </a>	<table>		<tr>			<th>Parameter</th>
+			<th>Language</th>
+			<th>Type</th>
+			<th>Description</th>
+</tr>
+		<tr>			<td class="name">in_context</td>
+			<td>Scripting and C#</td>
+			<td><a href="#!/url=./si_om/Context.html">Context</a></td>
+			<td>
+						Use the <a href="#!/url=./si_om/Context.GetAttribute.html">Context.GetAttribute</a> method to get basic information, such as Category, 
+						DisplayName, etc.
+					</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td>C++</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1CRef.html">CRef</a>& </td>
+			<td>
+					Use the <a href="#!/url=./si_om/Context.GetAttribute.html">Context.GetAttribute</a> method to get basic information, such as Category, 
+					DisplayName, etc.
+					</td>
+</tr>
+</table>
+</p></div>
+
+<hr width="100%" />
+<h3>Context Attributes</h3>
+<div><p><a name="ContextAttributes"> </a><a name="ContextAttributes_ShaderDefineInfo"></a>	<table>		<tr>			<th>Attribute</th>
+			<th>Get/Set</th>
+			<th>Description</th>
+</tr>
+		<tr>			<td class="example">ClassName</td>
+			<td>Returns a <a href="#!/url=./files/String.htm">String</a> or <a href="#!/url=./si_cpp/classXSI_1_1CString.html">CString</a></td>
+			<td>
+						The class name of the shader. This is used to build the <a href="#!/url=./si_om/ShaderDef.ProgID.html">ShaderDef.ProgID</a> with the parser 
+						name and version number in this form: <span style="font-family: courier, monospace;">"ParserName.ClassName.MajorVersion.MinorVersion"</span>.
+					</td>
+</tr>
+		<tr>			<td class="example">MajorVersion</td>
+			<td>Returns a <a href="#!/url=./files/Long.htm">Long</a> or ULONG</td>
+			<td>
+						The major version of the shader definition. This is used to build the <a href="#!/url=./si_om/ShaderDef.ProgID.html">ShaderDef.ProgID</a> with 
+						the parser name, class name and minor version number in this form: <span style="font-family: courier, monospace;">"ParserName.ClassName.MajorVersion.MinorVersion"</span>.
+					</td>
+</tr>
+		<tr>			<td class="example">MinorVersion</td>
+			<td>Returns a <a href="#!/url=./files/Long.htm">Long</a> or ULONG</td>
+			<td>
+						The minor version of the shader definition. This is used to build the <a href="#!/url=./si_om/ShaderDef.ProgID.html">ShaderDef.ProgID</a> with 
+						the parser name, class name and major version number in this form: <span style="font-family: courier, monospace;">"ParserName.ClassName.MajorVersion.MinorVersion"</span>.
+					</td>
+</tr>
+		<tr>			<td class="example">Category</td>
+			<td>Returns a <a href="#!/url=./files/String.htm">String</a> or <a href="#!/url=./si_cpp/classXSI_1_1CString.html">CString</a></td>
+			<td>The category to use in the Preset Manager.</td>
+</tr>
+		<tr>			<td class="example">DisplayName</td>
+			<td>Returns a <a href="#!/url=./files/String.htm">String</a> or <a href="#!/url=./si_cpp/classXSI_1_1CString.html">CString</a></td>
+			<td>The display name to use in the Preset Manager.</td>
+</tr>
+		<tr>			<td class="example">Errors</td>
+			<td>Returns a <a href="#!/url=./files/String.htm">String</a> or <a href="#!/url=./si_cpp/classXSI_1_1CString.html">CString</a></td>
+			<td>The parser can output parse errors.</td>
+</tr>
+		<tr>			<td class="example">Warnings</td>
+			<td>Returns a <a href="#!/url=./files/String.htm">String</a> or <a href="#!/url=./si_cpp/classXSI_1_1CString.html">CString</a></td>
+			<td>The parser can output parse warnings.</td>
+</tr>
+		<tr>			<td class="example">{XXXX-XXXX-XXXX-XXXX} or simple string attribute name</td>
+			<td>Sets a <a href="#!/url=./files/String.htm">String</a> or <a href="#!/url=./si_cpp/classXSI_1_1CString.html">CString</a></td>
+			<td>You can set a custom shader attribute in the <a href="#!/url=./si_om/ShaderDef.html">ShaderDef</a> by setting a string repesenting a GUID or the name of any attribute.</td>
+</tr>
+</table>
+</p></div>
+
+<hr width="100%" />
+<h3>Example</h3>
+<div><p><a name="Examples"> </a><div class="example"><table>
+<tr>
+<td class="example"><pre class="cplusplus">SICALLBACK UtShaderPlugin_ColorShare_1_0_DefineInfo( CRef&amp; in_ctxt )
+{
+	XSI::Context ctxt(in_ctxt);
+	
+	// Setting the location and appearance of the shader definition in the preset manager
+	ctxt.PutAttribute( L"Category", L"UtShaderPlugin" );
+	ctxt.PutAttribute( L"DisplayName", L"Color Share UtShaderPlugin" );
+
+	// Setting a user attribute
+	ctxt.PutAttribute( L"{F2EF07FE-1B57-4245-BF08-F5556212BFDF}", L"User data" );
+
+	return CStatus::OK;
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<hr width="100%" />
+<h3>See Also</h3>
+<div><p><a name="SeeAlso"> </a><ul>
+	<li><a href="#!/url=./si_om/PluginRegistrar.RegisterShader.html">PluginRegistrar.RegisterShader</a></li>
+	<li><a href="#!/url=./si_cmds/cb_Shader_Define.html">Define (Shader)</a></li>
+	<li><a href="#!/url=./si_cmds/callbacks.html">Shader Callbacks</a></li>
+</ul>
+</p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

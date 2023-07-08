@@ -1,0 +1,68 @@
+h2        { color: #003366;
+            font-size: 20px; font-style: normal; font-weight: normal;
+            margin-left: 0em; margin-top: 0.5em; margin-bottom: 0.5em;
+            text-align: left; text-indent: 0em; text-decoration: none;
+            white-space: normal }
+
+
+p  { color: #006D9E; font-size: 12px; font-family: verdana, arial, helvetica, sans-serif; background-color: #ffffff }	
+
+p.button { font-size:65%; margin-top:0em; margin-bottom:.25em; margin-left:0em; font-weight:bold }
+
+p.level0 {  margin-top:1em;	margin-bottom:.5em; margin-left:0em; margin-right:-50em;}
+p.level1 {  margin-top:0em;	margin-bottom:0em; margin-left:2em; margin-right:-50em;}
+p.level2 {  margin-top:0em;	margin-bottom:0em; margin-left:4em; margin-right:-50em;}
+p.level3 {  margin-top:0em;	margin-bottom:0em; margin-left:6em; margin-right:-50em;}
+p.level4 {  margin-top:0em;	margin-bottom:0em; margin-left:8em; margin-right:-50em;}
+p.level5 {  margin-top:0em;	margin-bottom:0em; margin-left:10em; margin-right:-50em;}
+p.level6 {  margin-top:0em;	margin-bottom:0em; margin-left:11em; margin-right:-50em;}
+p.level7 {  margin-top:0em;	margin-bottom:0em; margin-left:12em; margin-right:-50em;}
+
+
+
+
+td { font-family: verdana, arial, helvetica, sans-serif; }
+
+/*
+body      { color: #000000; font-size: 12px; font-family: Verdana, Arial, Helvetica, sans-serif; background-color: #ffffff }
+*/
+
+.hilite {
+	padding: 1pt;
+	margin-top:1em;	
+	margin-bottom:.1em; 
+	background: #D0D0D0;
+}
+
+.notimpl {
+	color: red;
+	font-size: 75%;	
+}
+
+.onlyinter {
+	color: black;
+	font-size: 75%;	>
+}
+
+.obsolete {
+	color: fuchsia;
+	font-size: 75%;		
+}
+
+.needsdoc {
+	color: #1E90FF;
+	font-size: 75%;		
+}
+
+.reviewme {
+	color: #00EE00;
+	font-size: 75%;		
+}
+
+
+
+a { text-decoration: none;  }
+a:link { color: #006D9E }
+a:visited { color: #941F1F }
+a:active { color: #FFF09E }
+a:hover { background: #CCCCCC }

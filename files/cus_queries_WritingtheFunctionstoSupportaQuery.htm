@@ -1,0 +1,630 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-3B5FF6E0-5C9D-4F81-B231-3E521A79A107" />
+      <meta name="indexterm" content="Single-level Query" />
+      <meta name="indexterm" content="Example of Showing Local SRT Values for Selected Objects" />
+      <meta name="indexterm" content="Example: Line script" />
+      <meta name="indexterm" content="Example: Column script" />
+      <meta name="indexterm" content="Example: Query file" />
+      <meta name="indexterm" content="Single-level Queries with Custom Information" />
+      <meta name="indexterm" content="Example of Showing Geometry Information for All Scene Objects" />
+      <meta name="indexterm" content="Example: Row Script" />
+      <meta name="indexterm" content="Example: Column Script" />
+      <meta name="indexterm" content="Example: Query file" />
+      <meta name="indexterm" content="Relational Queries" />
+      <meta name="indexterm" content="Example of Showing Cluster List s for All Selected Objects" />
+      <meta name="indexterm" content="Example: Query file" />
+      <meta name="indexterm" content="Example: Relation Object script" />
+      <meta name="indexterm" content="Example: Second-level column script" />
+      <meta name="indexterm" content="Example: First-level Column Script" />
+      <meta name="indexterm" content="Sorting Queries" />
+      <meta name="indexterm" content="Script Column Syntax" />
+      <meta name="topic-type" content="concept" />
+      <meta name="keywords" content="<line_def&gt;, <col_def&gt;" />
+      <meta name="keyword" content="<line_def&gt;" />
+      <meta name="keyword" content="<col_def&gt;" />
+      <title>Scripting for the Spreadsheet Queries</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ reflinkdata.push(["Application", "si_cpp/classXSI_1_1Application.html", "C++ API Reference", "../"]); 
+reflinkdata.push(["version", "si_cpp/group__RenderMapDefine.html#gad6034d1c8c050eba0cf6533a8e6f3785", "C++ API Reference", "../"]); 
+reflinkdata.push(["set", "si_cpp/group__RenderMapDefine.html#ga793ad1cfa149967fe4b97fc66251b831", "C++ API Reference", "../"]); 
+</script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-3B5FF6E0-5C9D-4F81-B231-3E521A79A107"></a></span><div class="head">
+            <h1>Scripting for the Spreadsheet Queries </h1>
+         </div>
+         <div class="bodyProcess">
+            <div class="section"><span class="anchor_wrapper"><a name="WS5EE8E32878D4074790F31E2B430E2186-000C"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-8B3E10BE-518A-48B5-867C-49584244215D"></a></span> Single-level Query
+               </h2>  
+               <div class="section"><span class="anchor_wrapper"><a name="WS5EE8E32878D4074790F31E2B430E2186-000D"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-EC42A771-3E09-452B-B1DB-77E7E8A3735F"></a></span> Example of Showing Local SRT Values for Selected Objects
+                  </h3>  
+                  <div class="section"><span class="anchor_wrapper"><a name="WS5EE8E32878D4074790F31E2B430E2186-000E"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-15589B9C-FC5E-4036-9C60-B10EE974F28A"></a></span> Example: Line script
+                     </h4>  
+                     <p><span class="anchor_wrapper"><a name="GUID-A301A57D-983B-4AEB-87E9-C669F885B80A"></a></span>The first line of this script returns the list of selected items, making sure that
+                        branch-selected items are turned into node selections (SelectChildNodes). The spreadsheet
+                        scripts must return arrays, so this is why the collection returned by GetValue("SelectionList")
+                        and then SelectChildNodes must be transferred to an array in a loop. The array must
+                        be dimensioned with the right number of elements. 
+                     </p> 
+                     <div><span class="anchor_wrapper"><a name="GUID-23A10683-E92B-4AED-BB75-B441A54D54FB"></a></span><div class="note-note"><span class="label">NOTE:</span> 
+                           <p><span class="anchor_wrapper"><a name="GUID-9A3C0E78-396A-45F5-B810-6353A620792F"></a></span>If you have errors in your script as you run the query, the errors will appear in
+                              the Log window in the script editor. You can use logmessage calls to help debug scripts.
+                              
+                           </p> 
+                        </div>
+                     </div> 
+                     <div class="codeBlock"><pre class="prettyprint">
+Function Current_Selection ()
+	Dim R(), SelList
+
+	Set SelList = GetValue( "SelectionList" )
+	if SelList.Count = 0 then
+		Current_Selection = R
+		Exit Function
+	end if
+
+	Set SelList = SelectChildNodes( SelList, False )
+	Dim i
+	ReDim R(SelList.Count - 1)
+	for i = 0 to SelList.Count - 1
+		R(i) = SelList(i)
+	next
+	Current_Selection = R
+End Function</pre></div> 
+                  </div> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WS5EE8E32878D4074790F31E2B430E2186-000F"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-FC1F3D09-261E-45B9-ABA7-C4E4713B7A34"></a></span> Example: Column script
+                     </h4>  
+                     <p><span class="anchor_wrapper"><a name="GUID-5189B29E-3C68-4BF9-A022-82C2E20DF974"></a></span>Column scripts also return arrays, but given that they do not return a list of scene
+                        elements, but rather a description of which parameter each column must show, a special
+                        syntax is required. As this example shows, the syntax is relatively simple because
+                        all columns display standard Softimage parameters. Each element in the array is a
+                        string composed of three values: 
+                     </p> <span class="anchor_wrapper"><a name="UL_BF094620A3CF49D1853A0B6C352B20EE"></a></span><ul>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-9890E43A-3F0E-4605-84A6-EFC2FCEDA508"></a></span>The parameter to display (for example, kine.local.posx, which will be appended to
+                              each item from each line). 
+                           </p> 
+                        </li>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-C7976675-5751-4D20-AEE1-8DFFE6840D54"></a></span>The type of cell. In this case 'Default' is sufficient because Softimage knows what
+                              the type of the parameter is (float, integer, boolean, string. etc.) 
+                           </p> 
+                        </li>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-BAA93A98-F54D-49EC-84FB-59F9F91E49D1"></a></span>The label to display at the top of the column. If left empty, the column title will
+                              use the name of the parameter. This is why for the first column containing the name
+                              of object (see example) we can omit the type and label information. 
+                           </p> 
+                        </li>
+                     </ul> 
+                     <div><span class="anchor_wrapper"><a name="GUID-80FB54DA-BFFA-4CBD-A129-D04F64549992"></a></span><div class="note-note"><span class="label">NOTE:</span> 
+                           <p><span class="anchor_wrapper"><a name="GUID-93A0083A-4B7B-4F66-8088-F33044B23F72"></a></span>Be careful when dimensioning the array because VBScript deals with this a bit strangely:
+                              <span class="code" translate="no">Dim(9)</span> will declare an array that goes from 0 to 9, thus containing 10 items. 
+                           </p> 
+                        </div>
+                     </div> 
+                     <div class="codeBlock"><pre class="prettyprint">
+Function Object_Xfo ()
+	Dim R(9)
+	R(0) = "Name"
+	R(1) = "kine.local.posx:Default:Local posx"
+	R(2) = "kine.local.posy:Default:Local posy"
+	R(3) = "kine.local.posz:Default:Local posz"
+	R(4) = "kine.local.rotx:Default:Local rotx"
+	R(5) = "kine.local.roty:Default:Local roty"
+	R(6) = "kine.local.rotz:Default:Local rotz"
+	R(7) = "kine.local.sclx:Default:Local sclx"
+	R(8) = "kine.local.scly:Default:Local scly"
+	R(9) = "kine.local.sclz:Default:Local sclz"
+	Object_Transformations = R
+End Function</pre></div> 
+                  </div> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WS5EE8E32878D4074790F31E2B430E2186-0010"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-CB4F7AD7-5407-49AE-9292-8444A6EFFDC6"></a></span> Example: Query file
+                     </h4>  
+                     <p><span class="anchor_wrapper"><a name="GUID-8FFDD5B0-CE5B-4F38-8BEB-EEF87CD44FE8"></a></span>The query file is a simple file that can be loaded in the Softimage spreadsheet to
+                        tell it which scripts to use. It can be stored anywhere. 
+                     </p> <span class="anchor_wrapper"><a name="UL_68EEC415B6844AB48F6FCEF6EFFD5C01"></a></span><ul>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-C0BDE4A4-81C7-4B21-83F5-C517BEAB5E16"></a></span>The row script is defined with the tag <span class="keyword">&lt;line_def&gt;</span>. 
+                           </p> 
+                        </li>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-31BB249A-D850-4EBA-9EB0-435813E67FA0"></a></span>The column script with the tag <span class="keyword">&lt;col_def&gt;</span>. 
+                           </p> 
+                        </li>
+                     </ul> 
+                     <p><span class="anchor_wrapper"><a name="GUID-200FC295-CF03-4DA7-91A3-28EC4E596613"></a></span>For each tag, you supply the scripting language being used, the file where the script
+                        will be found, and the name of the function to call. 
+                     </p> 
+                     <p><span class="anchor_wrapper"><a name="GUID-A085172D-9BC5-4B6C-A9C5-6D066ACEDC51"></a></span>The script file can be any name, but it must be placed under the ..\Application\DSScripts
+                        folder (could be an absolute path too if needed). 
+                     </p> 
+                     <div class="codeBlock"><pre class="prettyprint">
+Ex: Object_Xfo_Selected.query
+&lt;<a href="javascript:void(0)" data="version" class="a_multireflink">version</a>&gt;{1}
+&lt;line_def&gt;
+{
+	vbscript
+	spreadsheet.vbs
+	Current_Selection
+}
+&lt;col_def&gt;
+{
+	vbscript
+	spreadsheet.vbs
+	Object_Xfo
+}</pre></div> 
+                  </div> 
+               </div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS5EE8E32878D4074790F31E2B430E2186-0011"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-C63ACAA8-795F-4E10-A707-933F158D44A6"></a></span> Single-level Queries with Custom Information
+               </h2>  
+               <div class="section"><span class="anchor_wrapper"><a name="WS5EE8E32878D4074790F31E2B430E2186-0012"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-0F44E030-0694-4159-BC1F-E1AF4A2A96A7"></a></span> Example of Showing Geometry Information for All Scene Objects
+                  </h3>  
+                  <p><span class="anchor_wrapper"><a name="GUID-B70F0DE6-4685-47FC-AF1F-E47D8685A389"></a></span>This example query counts the number of triangles, points, edges (segments) and polygons
+                     in the scene. This is the Geometry query used by the spreadsheet in Softimage. Given
+                     that there is no specific scene parameter that holds the number of each component,
+                     the spreadsheet must be given functions that return these values. These functions
+                     can be used to calculate any type of measure, such as the distance of an object to
+                     the camera, its the volume, etc. 
+                  </p> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WS5EE8E32878D4074790F31E2B430E2186-0013"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-6C3E0316-6541-4422-A697-0D0E6CE0D168"></a></span> Example: Row Script
+                     </h4>  
+                     <p><span class="anchor_wrapper"><a name="GUID-022DC7A4-4CC0-45F2-A706-A183153EE655"></a></span>Since you want all of the elements in the scene, the row script will be like the one
+                        shown below. The <span class="code" translate="no">SIFilter</span> command ensures we get only the 3D objects from the selection "*". 
+                     </p> 
+                     <div class="codeBlock"><pre class="prettyprint">
+Function All_SceneObject ()
+	Dim R(), sceneObjectList
+	<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> sceneObjectList =  SIFilter( "*", "sceneobject",,siQuickSearch)
+
+	if sceneObjectList.Count = 0 then
+		All_SceneObject = R
+		Exit Function
+	end if
+End Function</pre></div> 
+                  </div> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WS5EE8E32878D4074790F31E2B430E2186-0014"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-115D5221-5316-4E86-B353-19FC8C70202F"></a></span> Example: Column Script
+                     </h4>  
+                     <p><span class="anchor_wrapper"><a name="GUID-AAFC3C82-9F32-417C-8175-E3709A730CA9"></a></span>The columns for cells that will contain custom information are defined using the following
+                        syntax: 
+                     </p> <span class="anchor_wrapper"><a name="UL_89379F74E925473E9699573EB40CA4ED"></a></span><ul>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-C8241640-A897-4665-9673-C3787ED011F8"></a></span>Name string that will be used as the label of the column. 
+                           </p> 
+                        </li>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-F615D647-9C46-496D-A936-A4EF3A33A6B7"></a></span>Script as the type of the cell. 
+                           </p> 
+                        </li>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-0025A286-94D1-4F6B-9235-92B73A0A28D3"></a></span>&lt;Script Language&gt;~&lt;script filename&gt;~&lt;name of the function to call&gt; 
+                           </p> 
+                        </li>
+                     </ul> 
+                     <div class="codeBlock"><pre class="prettyprint">
+Function Object_Geometry ()
+	Dim R(7)
+	R(0) = "Name"
+	R(1) = "Type:Script:vbscript~spreadsheet.vbs~GetObjType"
+	R(2) = "Triangles:Script:vbscript~spreadsheet.vbs~GetNbrTriangles"
+	R(3) = "Points:Script:vbscript~spreadsheet.vbs~GetNbPoints"
+	R(4) = "Segments:Script:vbscript~spreadsheet.vbs~GetNbSegments"
+	R(5) = "Facets:Script:vbscript~spreadsheet.vbs~GetNbFacets"
+	R(6) = "Particles:Script:vbscript~spreadsheet.vbs~GetNbParticles"
+	R(7) = "geomapprox.gapproxmosl:Default:Subdiv"
+	Object_Geometry = R
+End Function</pre></div> 
+                     <p><span class="anchor_wrapper"><a name="GUID-E8E593B6-65A1-49FF-ADA7-1549B2D6DB92"></a></span>The following script functions are the ones used by the script column query above.
+                        These functions are called for each script cell and for each row. Results are cached
+                        for operations like sorting. 
+                     </p> 
+                     <div><span class="anchor_wrapper"><a name="GUID-7027B727-8B8B-4508-8E19-F37943DD13A1"></a></span><div class="note-note"><span class="label">NOTE:</span> 
+                           <p><span class="anchor_wrapper"><a name="GUID-14770C4F-DB35-465E-9F46-C5E426C4937F"></a></span> The function receives a string that corresponds to the object for each line. It must
+                              be converted into an object for the object model. The example here is using the <span class="code" translate="no">GetObject</span> function below, but other methods to do this exists. 
+                           </p> 
+                        </div>
+                     </div> 
+                     <div class="codeBlock"><pre class="prettyprint">
+'----------------------------------------------------------------------
+' GetObject
+' Function that converts an object string into a scripting object 
+' (for the object model)
+'----------------------------------------------------------------------
+Function GetObject (in_obj)
+	GetObject = "Nothing"
+	if IsEmpty(in_obj) Then
+		exit function
+	end if
+
+	dim l_coll
+
+	<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> l_coll = CreateObject("XSI.Collection")
+	l_coll.Add in_obj
+	<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> GetObject = l_coll(0)  ' returns a X3DObject
+End Function
+
+Function GetNbrTriangles( in_obj )
+	GetNbrTriangles = 0
+	Dim l_obj 
+	<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> l_obj = GetObject( in_obj )
+	if l_obj.type = "polymsh" Or l_obj.type = "surfmsh" Or l_obj.type = "crvlist" then
+		GetNbrTriangles = GetNbTriangles( in_obj )
+	end if
+End Function
+
+Function GetNbPoints( in_obj )
+	GetNbPoints = 0
+	Dim l_obj, l_geom
+	<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> l_obj = GetObject( in_obj )
+	if l_obj.type = "polymsh" Or l_obj.type = "surfmsh" Or l_obj.type = "crvlist" then
+		<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> l_geom = l_obj.obj
+		GetNbPoints = l_geom.nb0D
+	end if
+End Function
+
+Function GetNbSegments( in_obj )
+	GetNbSegments = 0
+	Dim l_obj, l_geom
+	<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> l_obj = GetObject( in_obj )
+	if l_obj.type = "polymsh" then
+		<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> l_geom = l_obj.obj
+		GetNbSegments = l_geom.nb1D
+	end if
+End Function
+
+Function GetNbFacets( in_obj )
+	GetNbFacets = 0
+	Dim l_obj, l_geom
+	<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> l_obj = GetObject( in_obj )
+	if l_obj.type = "polymsh" Or l_obj.type = "surfmsh" then
+		<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> l_geom = l_obj.obj
+		GetNbFacets = l_geom.nb2D
+	end if
+End Function
+
+Function GetNbParticles( in_obj )
+	Dim myType, l_obj, l_part
+
+	GetNbParticles = 0
+	myType = GetObjType( in_obj )
+	if myType = "cloud" then
+		<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> l_obj = GetObject( in_obj )
+		<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> l_part = l_obj.particles
+		GetNbParticles = l_part.count
+	end if
+End Function</pre></div> 
+                  </div> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WS5EE8E32878D4074790F31E2B430E2186-0015"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-2384382E-7758-48CC-8C9B-3ABF73825887"></a></span> Example: Query file
+                     </h4>  
+                     <p><span class="anchor_wrapper"><a name="GUID-2203F47F-72A5-48BF-8031-959A19B48C6C"></a></span>Finally, the query file, as you may have already guessed, looks like this: 
+                     </p> 
+                     <div class="codeBlock"><pre class="prettyprint">
+Object_Geometry_All.query
+&lt;<a href="javascript:void(0)" data="version" class="a_multireflink">version</a>&gt;{1}
+&lt;line_def&gt;
+{
+	vbscript
+	spreadsheet.vbs
+	All_SceneObject
+}
+&lt;col_def&gt;
+{
+	vbscript
+	spreadsheet.vbs
+	Object_Geometry
+}
+&lt;sort_order&gt;
+{
+	asc:-1
+}</pre></div> 
+                  </div> 
+               </div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS5EE8E32878D4074790F31E2B430E2186-0016"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-C66DD401-5B8E-40BB-8D02-5AFCB2CB0109"></a></span> Relational Queries
+               </h2>  
+               <div class="section"><span class="anchor_wrapper"><a name="WS5EE8E32878D4074790F31E2B430E2186-0017"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-3AE5D0FB-910E-43DC-8743-861938F340C7"></a></span> Example of Showing Cluster List s for All Selected Objects
+                  </h3>  
+                  <p><span class="anchor_wrapper"><a name="GUID-7C73D414-A316-41A9-AE03-AD56867DBA98"></a></span>This example shows a two-level query. The first level lists all of the selected objects,
+                     which also display some visibility information. For each of these objects, their clusters
+                     will appear, if any. For each of these clusters, their name, their type and number
+                     of elements will appear. 
+                  </p> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WS5EE8E32878D4074790F31E2B430E2186-0018"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-5D452DCF-1878-440D-B046-C20AA83206CC"></a></span> Example: Query file
+                     </h4>  
+                     <p><span class="anchor_wrapper"><a name="GUID-D6B35108-7D50-45F9-B28D-97DFC0547D26"></a></span>This time, start with the query file. As you can see, there are three additional tags:
+                        
+                     </p> <span class="anchor_wrapper"><a name="UL_E5827D75759C40BFA830BDB17166A27A"></a></span><ul>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-87CC731C-AD53-4C96-94D7-57FE4A95C3A4"></a></span>&lt;relation&gt;. This gives the name of the relation that you want to appear in the spreadsheet.
+                              
+                           </p> 
+                        </li>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-3D8A8527-BBB7-409D-89AB-E8801FFFA1C1"></a></span>&lt;relation_object_def&gt;. This provides a script which will, for each item provided by
+                              the &lt;line_def&gt; script, define the row of second-level items to display in the spreadsheet
+                              
+                           </p> 
+                        </li>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-695C48B5-1D34-43AA-8C38-DD047B6B9F44"></a></span>&lt;relation_param_def&gt;. This provides a script which will define the columns we want
+                              to display for the second-level items. Nothing prevents you from using the same script
+                              as the &lt;col_def&gt; tag; it just depends on the items you want to appear in each row
+                              and what columns you want to see. 
+                           </p> 
+                        </li>
+                     </ul> 
+                     <div class="codeBlock"><pre class="prettyprint">
+&lt;<a href="javascript:void(0)" data="version" class="a_multireflink">version</a>&gt;{1}
+&lt;line_def&gt;
+{
+	vbscript
+	spreadsheet.vbs
+	Current_Selection
+}
+&lt;col_def&gt;
+{
+	vbscript
+	spreadsheet.vbs
+	Object_Visibility
+}
+&lt;relation&gt;
+{
+	Clusters
+}
+&lt;relation_object_def&gt;
+{
+	vbscript
+	spreadsheet.vbs
+	ObjectClusters
+}
+&lt;relation_param_def&gt;
+{
+	vbscript
+	spreadsheet.vbs
+	Cluster_Info
+}
+&lt;sort_order&gt;
+{
+	asc:-1
+}</pre></div> 
+                  </div> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WS5EE8E32878D4074790F31E2B430E2186-0019"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-F62DE235-2BB1-40FC-AA0C-750FB2397800"></a></span> Example: Relation Object script
+                     </h4>  
+                     <p><span class="anchor_wrapper"><a name="GUID-2B8FEA9A-B862-4264-8CFD-7333754CFB5C"></a></span>This script receives the objects for each row and must return an array that contains
+                        the second-level items. Other than that, the script can pretty much do anything that
+                        regular scripting in Softimage can do, so you can define a wide variety of relations
+                        (for example, objects that are close to the camera, objects that are blue, clusters
+                        that have properties, etc.). 
+                     </p> 
+                     <p><span class="anchor_wrapper"><a name="GUID-DD843259-61A8-4A4A-BE39-3CAC88C244F0"></a></span>In the example below, the script (using the object model and not a command) accesses
+                        the geometry of the object, upon which we can find the list of clusters. It excludes
+                        texture support objects because these have a geometry but do not hold a cluster container.
+                        
+                     </p> 
+                     <div class="codeBlock"><pre class="prettyprint">
+Function ObjectClusters( in_obj )
+	Dim l_obj, i, l_geom, l_clusters, l_cluster
+
+	<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> l_obj = GetObject( in_obj )
+
+	Dim l_cArray()
+	if typename(l_obj) = "X3DObject" and not (l_obj.type = "Texture Support") then
+
+		<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> l_geom = l_obj.activeprimitive.geometry
+		<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> l_clusters = l_geom.clusters
+
+		if ( l_clusters.count &gt; 0 ) then
+			ReDim l_cArray( l_clusters.count - 1 )
+			for i = 0 to l_clusters.count - 1
+				l_cArray(i) = l_clusters.Item(i)
+			next
+		else
+			ReDim l_cArray(0)
+		end if
+	else
+		ReDim l_cArray(0)
+	end if
+	 
+	ObjectClusters = l_cArray
+end function</pre></div> 
+                  </div> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WS5EE8E32878D4074790F31E2B430E2186-001A"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-D52AFE9E-8199-4844-8C56-2D35CAA44EB8"></a></span> Example: Second-level column script
+                     </h4>  
+                     <p><span class="anchor_wrapper"><a name="GUID-32B6CF74-CB60-4E9D-B5B3-E55E2B594F76"></a></span>The script displays the name, type, and number of components for each cluster. There's
+                        nothing specifically new here, so here are the needed scripts. 
+                     </p> 
+                     <div class="codeBlock"><pre class="prettyprint">
+Function Cluster_Info ()
+	Dim R(2)
+	R(0) = "Name"
+	R(1) = "Type:Script:vbscript~spreadsheet.vbs~GetObjType"
+	R(2) = "Components:Script:vbscript~spreadsheet.vbs~GetNbClsComponents"
+
+	Cluster_Info = R
+End Function
+
+Function GetObjType (in_obj)
+	Dim l_obj
+
+	GetObjType = " "
+	if IsEmpty(in_obj) Then
+		exit function
+	end if
+
+	<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> l_obj = GetObject( in_obj )
+	GetObjType = l_obj.Type
+End Function
+
+Function GetNbClsComponents( in_cls )
+	Dim l_cls, l_elems
+
+	GetNbClsComponents = 0
+	<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> l_cls = GetObject( in_cls )
+	if typename(l_cls) = "Cluster" then
+		<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> l_elems = l_cls.elements
+		GetNbClsComponents = l_elems.count
+	end if
+End Function</pre></div> 
+                  </div> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WS5EE8E32878D4074790F31E2B430E2186-001B"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-9B07F1C3-73AE-4C40-AC5B-B4DBEC65871C"></a></span> Example: First-level Column Script
+                     </h4>  
+                     <p><span class="anchor_wrapper"><a name="GUID-8B5795B1-9484-41EA-9D8F-263FEFF4E039"></a></span>Finally, the first-level columns use the following script. It uses an alternate syntax
+                        for the cell: instead of giving a label explicitly for the column, we use the GUID
+                        identification of the parameter (which can be found in the appropriate SPDL file).
+                        This seeks and displays the appropriate parameter name for you. 
+                     </p> 
+                     <div class="codeBlock"><pre class="prettyprint">
+Function Object_Visibility ()
+	Dim R(4)
+	R(0) = "Name"
+	R(1) = "Type:Script:vbscript~spreadsheet.vbs~GetObjType"
+	R(2) = "visibility.viewvis:Default:{D636F4D0-D94B-11D1-B0ED-00A024C79287}"
+	R(3) = "visibility.rendvis:Default:{A9D242E0-D948-11D1-B0ED-00A024C79287}"
+	R(4) = "visibility.selectability:Default:{4256027B-C691-11d2-B740-0008C7A011A6}"
+	Object_Visibility = R
+End Function</pre></div> 
+                  </div> 
+               </div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS5EE8E32878D4074790F31E2B430E2186-001C"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-0E4B7858-5337-4838-A1D2-42F69CFD2757"></a></span> Sorting Queries
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-CF6116F3-D3FF-446D-9E5E-2A50B9F32472"></a></span>One final thing we haven't covered is how to sort the results that are presented to
+                  the user when the query gets executed. 
+               </p> 
+               <p><span class="anchor_wrapper"><a name="GUID-4365EB53-24B3-4B80-BEDA-079B62E28846"></a></span>By default you can use the following information for the Sort tag. This will sort
+                  based on the line header. Use <span class="code" translate="no">asc</span> for ascendant sort and des for descendent. 
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+&lt;sort_order&gt;
+{
+	asc:-1
+}</pre></div> 
+               <p><span class="anchor_wrapper"><a name="GUID-D090E300-C01C-4C10-8332-BF964535F79D"></a></span>However you can have the query sorted on specific columns. In the example below, the
+                  query sorts in ascending order the eighth column, then the third in ascending order,
+                  and so on. Of course, the user can then sort the spreadsheet using the contextual
+                  menu sort command on any column (only one column sort can be sorted for now). 
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">&lt;sort_order&gt;
+{
+	asc: 8
+	des: 3
+	asc:-1
+}</pre></div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS5EE8E32878D4074790F31E2B430E2186-001D"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-E1D42EB4-EEC5-4C03-ADB2-1E67CEB77CD2"></a></span> Script Column Syntax
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-A42F09FB-F157-486D-8348-3185A4B787DF"></a></span>Here is a summary of the currently available syntax for the script columns, which
+                  we have seen in the examples in this case study. 
+               </p> 
+               <p><span class="anchor_wrapper"><a name="GUID-5E5C523F-4D51-4522-9E8B-724769F7A759"></a></span>A cell description can be given as one of the following options: 
+               </p> <span class="anchor_wrapper"><a name="UL_7E260E98E68640D2A98A1C6590FC810C"></a></span><ul>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-082D95E6-9405-4D93-A605-3E4F15FFF6ED"></a></span>"&lt;param name&gt;" 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-F09AE17F-49B3-426D-AE05-D8F750C0E8AB"></a></span>"&lt;param name&gt;:&lt;cell type&gt;" 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-11C57A5A-7F3E-49A9-883F-5A39D4E2827C"></a></span>"&lt;param name&gt;:&lt;cell type&gt;:&lt;column label&gt;" 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-57FFDD50-34EF-4771-97E2-E485C394E1CC"></a></span>"&lt;param name&gt;:&lt;cell type&gt;:&lt;param guid&gt;" (automatic column labeling) 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-5DEA77EA-594A-46A3-9AEC-050855E56622"></a></span>"&lt;param name&gt;:Script:&lt;script language&gt;~&lt;script filename&gt;~&lt;name of the function to
+                        call&gt;" 
+                     </p> 
+                  </li>
+               </ul> <span class="anchor_wrapper"><a name="TABLE_73545F1089B14D3E85BABA2F35192278"></a></span><div class="table_Ruled">
+                  <table cellpadding="0" cellspacing="0" class="ruled">
+                     <colgroup>
+                        <col align="left" />
+                        <col align="left" />
+                     </colgroup>
+                     <tr class="ruledOddRow">
+                        <td class="table-body"> <span class="anchor_wrapper"><a name="GUID-624D3A9E-72B8-4CCB-A7BC-EEBA853A88E7"></a></span><p class="table-body">&lt;param name&gt; </p> 
+                        </td>
+                        <td class="table-body" align="left"> <span class="anchor_wrapper"><a name="GUID-DA7FF000-CAB0-4E9E-A2A1-0E5A434D01DA"></a></span><p class="table-body">Name of the parameter as you would see in the script log, without the leading dot
+                              (ex: kine.posx). 
+                           </p> 
+                        </td>
+                     </tr>
+                     <tr class="ruledEvenRow">
+                        <td class="table-body"> <span class="anchor_wrapper"><a name="GUID-86B54705-EC21-4043-9359-405B218E7D64"></a></span><p class="table-body">&lt;cell type&gt; </p> 
+                        </td>
+                        <td class="table-body" align="left"> <span class="anchor_wrapper"><a name="GUID-BFD4882E-2E71-4A85-A02B-8330A0189391"></a></span><p class="table-body">"Default" or "Script". The are other types but we suggest not using them for now...
+                              
+                           </p> 
+                        </td>
+                     </tr>
+                     <tr class="ruledOddRow">
+                        <td class="table-body"> <span class="anchor_wrapper"><a name="GUID-31B8E7F4-7FAC-45D0-94B8-EDFAC954E43D"></a></span><p class="table-body">&lt;column label&gt; </p> 
+                        </td>
+                        <td class="table-body" align="left"> <span class="anchor_wrapper"><a name="GUID-9216F67E-A14D-4711-B0C6-BB4045E63050"></a></span><p class="table-body">String that will be used as the column header </p> 
+                        </td>
+                     </tr>
+                     <tr class="ruledEvenRow">
+                        <td class="table-body"> <span class="anchor_wrapper"><a name="GUID-7D237DAC-F47E-42DC-9DF0-44378E0F4F31"></a></span><p class="table-body">&lt;param guid&gt; </p> 
+                        </td>
+                        <td class="table-body" align="left"> <span class="anchor_wrapper"><a name="GUID-2A85F639-B9D0-4514-BD25-51484891D2FA"></a></span><p class="table-body">GUID associated with the parameter, as found in SPDL files. </p> 
+                        </td>
+                     </tr>
+                  </table>
+               </div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="SECTION_5B0F6C8642644D989B8D927F069AB400"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-60709F2A-16FD-4446-BFB8-F7D7E8039F74"></a></span>Installing the Spreadsheet Queries
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-B75642EF-3D7C-4088-9294-1407E97EFD27"></a></span> <span class="anchor_wrapper"><a name="GUID-EBEA7381-9FCA-4F69-A1B0-2C2E7E1420B5"></a></span><p class="list-intro"><span class="anchor_wrapper"><a name="GUID-68C5CF7C-E922-4557-9D6D-89BA1BB1C2E0"></a></span>After you have written the queries and the query handler support scripts, perform
+                     these steps:
+                  </p>
+                  <ol type="1" start="1">
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-68268ED3-D8E7-4570-A078-A74A9618DB1E"></a></span>Put the scripts in the following location: 
+                        </p> <span class="code" translate="no">$factory/<a href="javascript:void(0)" data="Application" class="a_multireflink">Application</a>/DSScripts</span> 
+                     </li>
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-D55447C4-6471-4AD3-B50F-972C3B89C444"></a></span>Put the queries in the following location: 
+                        </p> <span class="code" translate="no">$factory/<a href="javascript:void(0)" data="Application" class="a_multireflink">Application</a>/Queries</span> 
+                     </li>
+                  </ol> 
+               </p> 
+            </div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

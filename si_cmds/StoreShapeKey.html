@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>StoreShapeKey</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>StoreShapeKey</h1>
+         </div>
+
+<h2 class="pagehead">StoreShapeKey</h2>
+
+<h3>Description</h3>
+<div><p>
+Stores a shape key. When you store shape keys, a shape key is 
+created for the current shape and added to the model's list of 
+shape sources (in the model's Mixer > Sources > Shape folder) but 
+it does not create a shape clip in the mixer. <br /><br />
+Storing shape keys is a good way to build up a library of shapes 
+that you can use later. The first shape created on a geometry 
+installs a cluster shape combiner operator and serves to define 
+the reference shape. <br /><br />
+With shape animation (sometimes called morphing), you can change 
+the shape of an object over time, animating the geometrical shape 
+of an object using clusters of points (clusters made of polygons 
+or edges are not supported). You can use surface (NURBS) or polygon 
+objects to create shape animation, or even curves and lattices--any 
+geometry that has a static number of points. <br /><br />
+In Softimage, all shape animation is done on clusters. This means that you 
+can create different clusters on an object and create shape keys for 
+each of them; or you can treat a complete object as one cluster and 
+save shape keys for it. For more information on clusters in general, see 
+<a href="http://softimage.wiki.softimage.com/xsidocs/components_Clusters.htm">the Softimage user guide</a>. <br /><br />
+A shape key is static if the duration specified is zero. Otherwise,
+the deformation of the geometry is captured at the sampling specified.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = StoreShapeKey( [InputObj], [Name], [RefMode], [Frame], [Duration], [Sampling], [Content], [Force deform stripping] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns the <a href="#!/url=./si_om/ShapeKey.html">ShapeKey</a>.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">InputObj		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Points, clusters, or an object. 			<p class="cell"><span class="hilite">Default Value: </span>
+Current selection			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Name		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Name of the shape key. 		</td>
+	</tr>
+	<tr>
+		<td class="name">RefMode		</td>
+		<td><a href="#!/url=./si_om/siShapeReferenceMode.html">siShapeReferenceMode</a>		</td>
+		<td>
+ The reference mode of the shape key created 			<p class="cell"><span class="hilite">Default Value: </span>
+siShapeObjectReferenceMode			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Frame		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Frame for which to store the shape key. 			<p class="cell"><span class="hilite">Default Value: </span>
+Current frame			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Duration		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ The duration of the shape key in frames. 
+	When the duration is non-zero we plot deformations into the shape key, 
+	otherwise the shape key will contain only the deformation at the provided frame.			<p class="cell"><span class="hilite">Default Value: </span>
+Zero duration. Store the shape key as a static shape at the provided frame.			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Sampling		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ The sampling at which to plot the deformations. The sampling the the number of frames
+	in between samples.			<p class="cell"><span class="hilite">Default Value: </span>
+Zero sampling. Store the shape key as a static shape at the provided frame.			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Content		</td>
+		<td><a href="#!/url=./si_om/siShapeContent.html">siShapeContent</a>		</td>
+		<td>
+ Determines which deformations should get stored in the shape.			<p class="cell"><span class="hilite">Default Value: </span>
+siShapeContentSecondaryShape			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Force deform stripping		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+Forces the removal of any deformations above the shape combiner.			<p class="cell"><span class="hilite">Default Value: </span>
+false			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">NewScene , false
+CreatePrim "Sphere", "NurbsSurface" 
+SetSelFilter "Point" 
+AddToSelection "sphere.pnt[(5,4),(6,4),(7,4),(0,5),(1,5),(2,5),(3,5),(4,5),(5,5),(6,5),(7,5),(0,6),(1,6),(2,6),(3,6)]" 
+CreateCluster 
+StoreShapeKey "sphere.surfmsh.cls.Point", "MyShape", siShapeObjectReferenceMode</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/SaveShapeKey.html">SaveShapeKey</a> <a href="#!/url=./si_cmds/ApplyShapeKey.html">ApplyShapeKey</a> <a href="#!/url=./si_cmds/SelectShapeKey.html">SelectShapeKey</a> <a href="#!/url=./si_cmds/StoreShapeKey.html">StoreShapeKey</a> <a href="#!/url=./si_cmds/CreateShapeGroup.html">CreateShapeGroup</a> <a href="#!/url=./si_cmds/SetShapeGroup.html">SetShapeGroup</a> <a href="#!/url=./si_om/ShapeKey.ShapeGroupName.html">ShapeKey.ShapeGroupName</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

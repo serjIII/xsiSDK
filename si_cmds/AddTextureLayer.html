@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>AddTextureLayer</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>AddTextureLayer</h1>
+         </div>
+
+<h2 class="pagehead">AddTextureLayer</h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p> Adds a texture layer to one or more containers (a container can be either a shader or a material). The command does
+some error checking, such as preventing layers from being added in a way that would introduce cycles between various containers,
+and preventing adding layers to containers contained in different render trees. <br /><br />
+A texture layer is an object which simplifies layering of shader effects on top of shaders and materials.  Each layer has a set of
+properties which describe its characteristics (such as color, mixing mode, scale factor) to specify how it will affect the
+shader ports it drives.  The order that layers appear under a container indicates the order the layering is applied, similar to the
+way a "mix N colors" shader node works.  Texture layer port objects (see <a href="#!/url=./si_cmds/AddTextureLayerPorts.html">AddTextureLayerPorts</a> command) are owned by
+layers, and are used to specify which shader ports the layer should affect. </p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = AddTextureLayer( [Object], [InputObjs], [Name], [After], [Reference] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns the new <a href="#!/url=./si_om/TextureLayer.html">TextureLayer</a> object, if one was created.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Object		</td>
+		<td><a href="#!/url=./files/String.htm">String</a> or object		</td>
+		<td>
+<a href="#!/url=./files/objectexpr.htm">Texture layer</a> to add to the container(s). If not specified, then a new texture layer is created to add. 		</td>
+	</tr>
+	<tr>
+		<td class="name">InputObjs		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/listexpr.htm">List</a> of containers (shaders or materials) to which to add the texture layer.  Note that all containers must currently be contained in a single render tree. 			<p class="cell"><span class="hilite">Default Value: </span>
+Current selection.			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Name		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Name to use for the new layer.  If an existing layer is being passed in, then this argument is ignored. 		</td>
+	</tr>
+	<tr>
+		<td class="name">After		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ True to insert the new texture layer after the reference layer.  False to insert it before.  If no reference layer, then True will add at the end of the container's list, False will add it at the start. 			<p class="cell"><span class="hilite">Default Value: </span>
+True			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Reference		</td>
+		<td><a href="#!/url=./files/String.htm">String</a> or object		</td>
+		<td>
+<a href="#!/url=./files/objectexpr.htm">Reference texture layer</a>, to indicate where the newly-added layer should be located in the stack.  The layer will be inserted adjacent to (before or after) the reference layer.  If not specified, then the new layer will be added at the beginning or the end, depending on the value of the "After" argument. 		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example creates two shaders in a simple render tree, and applies
+' texture layers to them, illustrating inserting before/after, sharing layers
+' between containers, and other fun things.
+' In particular, it builds the following stacks of layers (in a slightly
+' convoluted way, to show various features of the AddTextureLayer command)...
+'
+' Phong      Fractal
+'   A           A
+'   B           D
+'   C           E
+'   D
+'
+option explicit
+dim oSph, oPhong, oFractal, oLyr(4)
+' Build our shaders (a Phong and a Fractal), which will be the "texture
+' layer containers" that will each be able to hold a stack of layers.
+NewScene , False
+set oSph = CreatePrim( "Sphere", "MeshSurface" )
+set oPhong = SIApplyShader( "Phong", oSph )
+set oFractal = BlendInPresetsInsp( "Fractal", , , True, siReplaceNoBlend, False, False, True )
+' Now create and add all the layers, as indicated above.
+' Add 'D' to (the end of) the first container.
+set oLyr(3) = AddTextureLayer( , oPhong, "D", True )
+' Add 'A' to both containers at the start.
+set oLyr(0) = AddTextureLayer( , oPhong &amp; "," &amp; oFractal, "A", False )
+' Insert 'B' after 'A'.
+set oLyr(1) = AddTextureLayer( , oPhong, "B", True, oLyr(0) )
+' Insert 'C' before 'D'.
+set oLyr(2) = AddTextureLayer( , oPhong, "C", False, oLyr(3) )
+' Add 'E' to the end of the second container.
+set oLyr(4) = AddTextureLayer( , oFractal, "E", True )
+' Add existing layer 'D' to the second container, before 'E'.
+AddTextureLayer oLyr(3), oFractal, , False, oLyr(4)
+PrintTextureLayersInContainer oPhong
+PrintTextureLayersInContainer oFractal
+sub PrintTextureLayersInContainer( in_cont )
+	dim oStack, oItem, oStr
+	oStr = "Texture Layers in Container: " &amp; in_cont &amp; vbCrLf
+	set oStack = EnumElements( in_cont &amp; ".TextureLayers" )
+	for each oItem in oStack
+		oStr = oStr &amp; "    " &amp; oItem.name &amp; vbCrLf
+	next
+	logmessage oStr
+end sub
+'
+' The output from the example should look something like this:
+'
+'INFO : "Texture Layers in Container: sphere.Material.Phong
+'    A
+'    B
+'    C
+'    D
+'
+'INFO : "Texture Layers in Container: sphere.Material.Phong.Fractal
+'    A
+'    D
+'    E
+'</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/RemoveTextureLayers.html">RemoveTextureLayers</a> <a href="#!/url=./si_cmds/MoveTextureLayers.html">MoveTextureLayers</a> <a href="#!/url=./si_cmds/AddTextureLayerPorts.html">AddTextureLayerPorts</a> <a href="#!/url=./si_cmds/AddImageTextureLayer.html">AddImageTextureLayer</a> <a href="#!/url=./si_cmds/AddClipTextureLayer.html">AddClipTextureLayer</a> <a href="#!/url=./si_cmds/AddPresetTextureLayer.html">AddPresetTextureLayer</a> <a href="#!/url=./si_om/Shader.CreateTextureLayer.html">Shader.CreateTextureLayer</a> <a href="#!/url=./si_om/Shader.AddSharedTextureLayer.html">Shader.AddSharedTextureLayer</a> <a href="#!/url=./si_om/Material.CreateTextureLayer.html">Material.CreateTextureLayer</a> <a href="#!/url=./si_om/Material.AddSharedTextureLayer.html">Material.AddSharedTextureLayer</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

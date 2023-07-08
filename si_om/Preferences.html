@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Preferences</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Preferences</h1>
+         </div>
+
+<h2 class="pagehead">Preferences</h2>
+
+<p><a href="#!/url=./si_om/_hier.html#oh_Preferences">Object Hierarchy</a> | Related C++ Class: <a href="#!/url=./si_cpp/classXSI_1_1Preferences.html">Preferences</a></p>
+
+<h3>Inheritance<h3>
+<p class="level1"><a href="#!/url=./si_om/SIObject.html">SIObject</a></p>
+<p class="level2">Preferences</p>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p> The Preferences object can be used to manage preferences in Softimage. Each preference is in a category 
+which is represented by a node under the Preferences object under the Application. To identify a 
+preference the category must be specified: (category.preference) Ex: "scripting.language".
+<br /><br />
+There are 2 kinds of preferences: native and custom. Native preferences come with Softimage and can be 
+viewed with the File->Preferences dialog. Initially all preference values are set to the factory 
+defaults.  When the user changes the value of a preference the new value is stored in the default.xsipref 
+file found in the \Data\Preference directory, and this value overrides the factory setting.
+<br /><br />
+For custom preferences, you can create new preferences in an .xsipref file. However, preferences created 
+this way have no UI and can only be accessed via scripting.
+<br /><br />
+You can also create custom preferences by creating a <a href="#!/url=./si_om/CustomProperty.html">CustomProperty</a> object and calling 
+<a href="#!/url=./si_cmds/InstallCustomPreferences.html">InstallCustomPreferences</a>.  The only way to delete such a custom preference is to delete 
+the associated Preset file that is found in the \Data\Preferences directory.  
+<br /><br />
+Note: Unlike native preferences, custom preferences created in this fashion are also loaded from the Workgroup 
+location.  
+<br /><br />
+Only a subset of parameter types are supported for Custom Preferences, they are siInt4, siString, siBool and 
+siDouble (see <a href="#!/url=./si_om/siVariantType.html">siVariantType</a>).
+<br /><br />
+Many custom plug-ins use a CustomProperty as a way of providing a user interface.  For example, a plug-in that 
+exports data may ask the user to choose the output file and other configuration settings by calling 
+<a href="#!/url=./si_cmds/InspectObj.html">InspectObj</a> with a CustomProperty.  Installing such a CustomProperty as a custom preference 
+can be useful because the values are not forgotten from one session to the next, the object does not clutter 
+the current scene and the information is centralized in the Preferences section of the Scene Explorer.  However, 
+because of the limitations of supported parameter types it can often be more flexible to achieve the same thing 
+by calling <a href="#!/url=./si_cmds/SavePreset.html">SavePreset</a> and <a href="#!/url=./si_cmds/LoadPreset.html">LoadPreset</a> directly from within the plug-in.
+</p></div>
+
+<h3>Methods</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Preferences.Export.html">Export</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Preferences.GetPreferenceValue.html">GetPreferenceValue</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Preferences.Import.html">Import</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.IsClassOf.html">IsClassOf</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.IsEqualTo.html">IsEqualTo</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Preferences.RestoreDefault.html">RestoreDefault</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Preferences.SaveChanges.html">SaveChanges</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Preferences.SetPreferenceValue.html">SetPreferenceValue</a>		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Properties</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Application.html">Application</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Preferences.Categories.html">Categories</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Categories.html">Categories</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.FullName.html">FullName</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Help.html">Help</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Name.html">Name</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.NestedObjects.html">NestedObjects</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Origin.html">Origin</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.OriginPath.html">OriginPath</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Parent.html">Parent</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Type.html">Type</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">from win32com.client import constants as cns
+app = Application
+# Get the preferences object on the application
+oPrefs = app.Preferences
+# Show the current language
+app.LogMessage(oPrefs.GetPreferenceValue ("scripting.language"))
+# or
+app.LogMessage(oPrefs.Categories("scripting").Language.Value)
+# Export all data_management preferences
+oPrefs.Export( XSIUtils.BuildPath(app.InstallationPath(cns.siFactoryPath), "myDMprefs.xsipref"), "data_management")
+# Now reset all preferences of the category data_management
+oPrefs.RestoreDefault("data_management")
+# Expected results:
+# INFO : Python
+# INFO : Python</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/* 
+	This example demonstrates how to temporarily change the user's
+	AutoInspect preference (if enabled, property pages always pop
+	up for objects newly created via command). It also illustrates
+	how Softimage automatically reverts any scripting change to this 
+	preference after the script runs.
+*/
+var app = Application;
+// Current value of AutoInspect
+app.LogMessage( app.Preferences.GetPreferenceValue("Interaction.autoinspect") );
+// Toggle the orginal value and re-log the value
+app.Preferences.SetPreferenceValue( 
+	"Interaction.autoinspect", 
+	!app.Preferences.GetPreferenceValue("Interaction.autoinspect") 
+);
+app.LogMessage( app.Preferences.GetPreferenceValue("Interaction.autoinspect") );
+// If your AutoInspect preference was enabled originally, the History Log 
+// would display the following:
+// INFO : True
+// INFO : False
+// VERBOSE : Restoring preference changed by script: Interaction.autoinspect
+// If your AutoInspect preference was disabled originally, the History Log 
+// would display the following:
+// INFO : False
+// INFO : True
+// VERBOSE : Restoring preference changed by script: Interaction.autoinspect</pre></td></tr>
+</table>
+</div><h4>3. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' This example show how to navigate in preferences object
+' All categories and all preferences in each category will be printed.
+set oPrefs = Application.Preferences
+set oCategories = oPrefs.categories
+For each oCategory in oCategories
+Application.LogMessage "The preferences for category " &amp; oCategory &amp; " are:"
+set oPreferences = oCategory.Parameters
+For each oPref in oPreferences
+Application.LogMessage "   -" &amp; oPref &amp; " = " &amp; oPref.Value
+Next
+Next
+' The script logs information like the following:
+' ....
+' INFO : The preferences for category preferences.units are:
+' INFO :    -preferences.units.colorspace = 1
+' INFO :    -preferences.units.length = 2
+' INFO :    -preferences.units.angle = 2
+' INFO :    -preferences.units.time = 2
+' INFO :    -preferences.units.mass = 2
+' ....</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/XSIApplication.Preferences.html">XSIApplication.Preferences</a> <a href="#!/url=./si_cmds/InstallCustomPreferences.html">InstallCustomPreferences</a> <a href="#!/url=./si_cmds/SetUserPref.html">SetUserPref</a> <a href="#!/url=./si_cmds/GetUserPref.html">GetUserPref</a> <a href="#!/url=./si_om/UserPreference.html">UserPreference</a> <a href="#!/url=./files/dev_userprefs.htm">Working with User Preferences</a> <a href="#!/url=./files/script_editor_RunningScripts.htm">Property Editor Automatic Inspection</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></h3></h3></div>
+   </div></body>
+</html>

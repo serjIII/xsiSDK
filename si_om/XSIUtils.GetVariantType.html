@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>XSIUtils.GetVariantType</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>XSIUtils.GetVariantType</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/XSIUtils.html">XSIUtils</a>.GetVariantType</h2>
+
+<h3>Introduced</h3>
+<div><p>v5.0</p></div>
+
+<h3>Description</h3>
+<div><p> Returns the precise variant data type of the specified value represented by a <a href="#!/url=./files/Long.htm">Long</a> corresponding to
+one of the win32 Variant types (most of which are covered in the Softimage <a href="#!/url=./si_om/siVariantType.html">siVariantType</a> enum).
+This method is for advanced script writers who require more detailed information about the internal representation 
+of a particular variable or value.<br /><br />
+In normal scripting the exact type of a variable is not important. For example the string "14" can be used in much 
+the same way as the integer 14 or the double 14.0.  In fact, JScript lumps all numeric types into a single umbrella 
+term "number".<br /><br />
+All objects, including Softimage Object Model references, will return siDispatch.  Use methods like
+<a href="#!/url=./si_om/Application.ClassName.html">Application.ClassName</a>, <a href="#!/url=./si_om/SIObject.IsClassOf.html">SIObject.IsClassOf</a> or <a href="#!/url=./si_om/SIObject.Type.html">SIObject.Type</a> 
+to get more information about the specific type of object.<br /><br />
+Internally all scripting variables are represented using the <a href="#!/url=./files/Variant.htm">Variant</a> structure. This method returns 
+the value of the "vt" member of that structure.  For more details please refer to the win32 documentation of the 
+Variant structure.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>Int32 XSIUtils.GetVariantType( Object in_value );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = XSIUtils.GetVariantType( Value );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>One of the values of <a href="#!/url=./si_om/siVariantType.html">siVariantType</a> as a <a href="#!/url=./files/Long.htm">Long</a></p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Value		</td>
+		<td><a href="#!/url=./files/Variant.htm">Variant</a>		</td>
+		<td>
+A scripting variable that needs testing		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example demonstrates the difference between XSIUtils.GetVariantType
+	and the JScript typeof() function.
+*/
+//INFO : typeof: number VariantType: siInt4
+TestJScriptVariable( 49 ) ;
+//INFO : typeof: number VariantType: siDouble
+TestJScriptVariable( 49.1 ) ;
+//INFO : typeof: boolean VariantType: siBool
+TestJScriptVariable( true ) ;
+//INFO : typeof: string VariantType: siString
+TestJScriptVariable( "hello" ) ;
+//INFO : typeof: undefined VariantType: siEmpty
+TestJScriptVariable( undefined ) ;
+//INFO : typeof: object VariantType: VT_NULL
+TestJScriptVariable( null ) ;
+// All Softimage objects show up as siDispatch
+//INFO : typeof: object VariantType: siDispatch
+TestJScriptVariable( ActiveSceneRoot ) ;
+// So do these standard Automation objects
+//INFO : typeof: object VariantType: siDispatch
+TestJScriptVariable( new ActiveXObject( "Scripting.FileSystemObject" )) ;
+// A JScript array also shows up as siDispatch
+//INFO : typeof: object VariantType: siDispatch
+TestJScriptVariable( new Array( "1","2","3" )) ;
+// A VBScript error shows up differently than a JScript Array
+//INFO : typeof: unknown VariantType: VBScript Array (Safearray)
+TestJScriptVariable( Application.Workgroups )
+// Even code shows up as an object in JScript
+//INFO : typeof: function VariantType: siDispatch
+TestJScriptVariable( TestJScriptVariable ) ;
+function TestJScriptVariable( in_val )
+{
+	Application.LogMessage( "typeof: " + typeof(in_val) + " VariantType: " 
+		+ siVariantTypeToStr( XSIUtils.GetVariantType(in_val) ) );	
+}
+function siVariantTypeToStr( in_vt )
+{
+	//Demonstrate just the most common
+	switch ( in_vt ) {
+		case siEmpty : 
+			return "siEmpty";
+		case 1 :
+			// 1 == VT_NULL, used by jscript "null"
+			return "VT_NULL";
+		case siInt2 :
+			return "siInt2";
+		case siInt4 :
+			return "siInt4";
+		case siFloat :
+			return "siFloat";
+		case siDouble :
+			return "siDouble";
+		case siString :
+			return "siString";
+		case siBool :
+			return "siBool";
+		case siDispatch :
+			return "siDispatch";
+		case siUnknown :
+			return "siUnknown";
+		case siByte :
+			return "siByte";
+		case siUByte :
+			return "siUByte";
+		case siUInt2 :
+			return "siUInt2";
+		case siUInt4 :
+			return "siUInt4";
+		case siUByte :
+			return "siUByte";
+		case 8204 :
+			// An array of Variants
+			// 8204 == VT_ARRAY | VT_VARIANT
+			return "VBScript Array (Safearray)"
+		default :
+			return in_vt.toString() ; 	
+	}
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/Application.ClassName.html">Application.ClassName</a> <a href="#!/url=./si_om/SIObject.Type.html">SIObject.Type</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

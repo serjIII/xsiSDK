@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>RegenerateMaps</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>RegenerateMaps</h1>
+         </div>
+
+<h2 class="pagehead">RegenerateMaps</h2>
+
+<h3>Description</h3>
+<div><p>
+Regenerates the specified RenderMaps. This is the scripting equivalent of
+clicking the Regenerate Map button in the RenderMap property editor. To add
+a RenderMap, use the '<a href="#!/url=./si_cmds/AddProp.html">AddProp</a> "RenderMap"' command.<br /><br />
+RenderMaps allow you to 'bake' complex texturing and rendertree information 
+into a single texture image, which you can use for previewing textures in
+the textured viewing modes, creating textures for games and realtime
+rendering, or for generally speeding up rendering.<br /><br />
+Note: You cannot generate a rendermap for an object unless there is a texture
+projection attached to the image and the texture projection cannot be a spatial 
+texture projection (use a UV projection instead).
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>RegenerateMaps( [Properties], [TileSize] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Properties		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/listexpr.htm">List</a> of RenderMaps to regenerate. 
+		RenderMaps are properties, for example, "sphere.RenderMap".
+				<p class="cell"><span class="hilite">Default Value: </span>
+Current selection			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">TileSize		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+
+		Increase or decrease the likelihood that satellite machines will be used in the render 
+		(see <a href="http://softimage.wiki.softimage.com/xsidocs/rendermap_RenderMapAndRenderVertexTips.htm">the Softimage user guide</a> 
+		for more information about tiles). <br /><br />
+		Suggested values are 8, 16, 32, and 64. <br /><br />
+		Accepted values are in the range of 8 to 512 inclusive.
+				<p class="cell"><span class="hilite">Default Value: </span>
+32			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example creates a sphere with a rendermap, and then connects a rendermap 
+' using a UV projection to the sphere and regenerates the map.
+'
+NewScene , false
+' Add a sphere to the scene
+Set oSphere = CreatePrim( "Sphere", "NurbsSurface" )
+' Create a rendermap on the sphere; the AddProp command returns the output 
+' object as an XSICollection of 1, so you can get the actual RenderMap as
+' a Property object by resetting the object pointer to the first member
+' of the returned collection
+AddProp "RenderMap", oSphere, , , oRMap
+Set oRMap = oRMap(0)
+' Specify a destination directory and name for the new image file
+' Note: You must specify the image filename with an extension
+oRMap.Parameters( "imagefile" ).Value = InstallationPath( siUserPath ) _
+			&amp; "\temp\rendermap.pic"
+'
+' Tip: You can also use the SetValue command instead of accessing the 
+' 	parameter through the object model:
+' SetValue oSphere &amp; ".RenderMap.imagefile", InstallationPath( siUserPath ) _
+' 			&amp; "\temp\rendermap.pic"
+'
+' Add a texture projection to the sphere and attach the rendermap to it
+CreateProjection oSphere, siTxtUV, siTxtDefaultSpherical, sSupport, sProj
+SetInstanceDataValue , oRMap.Parameters( "uvprop" ), sProj
+'
+' Tip: You can also use the SetInstanceDataValue command instead of 
+' 	accessing the parameter through the object model:
+' SetInstanceDataValue , oSphere &amp; ".RenderMap.uvprop", sProj
+'
+' Regenerate the rendermap with a tile size of 16
+RegenerateMaps oRMap, 16</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/AddProp.html">AddProp</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-4B979F05-6289-46EE-BBDD-286D98DA4F33" />
+      <meta name="indexterm" content="subcomponents: filtering" />
+      <meta name="indexterm" content="filters: subcomponents" />
+      <meta name="indexterm" content="points: filtering" />
+      <meta name="indexterm" content="filters: points" />
+      <meta name="indexterm" content="polygons: filtering" />
+      <meta name="indexterm" content="filters: polygons" />
+      <meta name="indexterm" content="edges: filtering" />
+      <meta name="indexterm" content="filters: edges" />
+      <meta name="indexterm" content="filters: Subset callbacks" />
+      <meta name="indexterm" content="Subset callbacks: subcomponents" />
+      <meta name="indexterm" content="callbacks: Subset" />
+      <meta name="indexterm" content="SubComponent property (from CollectionItem)" />
+      <meta name="indexterm" content="SubComponent property (from CollectionItem)" />
+      <meta name="indexterm" content="ComponentCollection property (from SubComponent)" />
+      <meta name="indexterm" content="RemoveElement method (from SubComponent)" />
+      <meta name="indexterm" content="filters: Match callbacks" />
+      <meta name="indexterm" content="Match callbacks: subcomponents" />
+      <meta name="indexterm" content="callbacks: Match" />
+      <meta name="topic-type" content="concept" />
+      <title>Writing SubComponent Filters</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ reflinkdata.push(["index", "si_cpp/group__RenderMapDefine.html#gadca2b0ae15c62d8023e6645c3404056c", "C++ API Reference", "../"]); 
+reflinkdata.push(["set", "si_cpp/group__RenderMapDefine.html#ga793ad1cfa149967fe4b97fc66251b831", "C++ API Reference", "../"]); 
+reflinkdata.push(["points", "si_cpp/group__RenderMapDefine.html#ga7b51c5e95877ebaeb51314f8731f55f6", "C++ API Reference", "../"]); 
+</script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-4B979F05-6289-46EE-BBDD-286D98DA4F33"></a></span><div class="head">
+            <h1>Writing SubComponent Filters</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-79905836-6B78-40BF-AB8A-050EEBBF577B"></a></span> To filter selections of subcomponents (edges, points, or polygons), Softimage prefers
+               the Subset callback to the Match callback. That is, Softimage calls Subset instead
+               of the Match callback when a user selects some subcomponents. You should always provide
+               a Subset callback for a subcomponent filter.
+            </p>
+            <div class="section"><span class="anchor_wrapper"><a name="WSC098C24645EDDE428048CE3C4F46FCA7-0017"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-1B393CDD-E47F-406A-AFDC-FB3961AA48D8"></a></span>Subset
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-5863AAEC-AB70-4296-AA5A-DF15602C514E"></a></span> When Softimage calls Subset, it puts an XSICollection in the Input attribute of the
+                  callback context. This collection contains one CollectionItem for each 3D object with
+                  selected subcomponents. In the callback function, you get the selected subcomponents
+                  from the CollectionItem.SubComponent.ComponentCollection property.
+               </p> 
+               <p><span class="anchor_wrapper"><a name="GUID-2AEA708D-7E8D-48F6-B0A7-B8753532EAB4"></a></span>The following example shows the typical structure of a Subset callback for subcomponent
+                  filter. First, the callback creates a new XSICollection, which will be used to hold
+                  the output of the callback. Then for each 3D object, Subset finds the matching polygons
+                  and creates a new SubComponent object with them. The new SubComponent objects are
+                  added to the output collection, and the collection is put in the Output attribute
+                  of the callback context.
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+function MyPolygonFilter_Subset( oContext )
+{
+	var oFilter = oContext.Source;
+	logmessage( oFilter.Name + "_Subset");
+
+	// Create a new XSICollection to hold the output
+	var cloSubset = new ActiveXObject( "XSI.Collection" );
+
+	// Get the XSI.Collection from the context
+	// The collection contains one CollectionItem for each object with selected polygons
+	var cloObjects = oContext.GetAttribute( "Input" );
+
+	for (var objEnumerator = new Enumerator(cloObjects) ; !objEnumerator.atEnd(); objEnumerator.moveNext())
+	{
+		// Get the CollectionItem
+		var oItem = objEnumerator.item();
+
+		// Get the SubComponent object
+		var oPolySubComponent = oItem.SubComponent;
+
+		if ( !( (classname(oPolySubComponent) == "SubComponent") &amp;&amp; ( oPolySubComponent.type == "polySubComponent" ) ) )
+			continue;
+
+		// This array will hold the indices of the polygons that match the filter conditions
+		var aIndices = new Array();
+
+		// Enumerate the selected polygons; if a polygon matches, put its <a href="javascript:void(0)" data="index" class="a_multireflink">index</a> in the array
+		for (var polyEnumerator = new Enumerator(oPolySubComponent.ComponentCollection) ; !polyEnumerator.atEnd(); polyEnumerator.moveNext())
+		{
+			var oPoly = polyEnumerator.item();
+			if ( polygon_isamatch( oPoly ) )
+			{
+				aIndices.push( oPoly.index );
+			}
+		}
+
+		// Create a SubComponent from the subset of polygons that match, and add the SubComponent to the output
+		if ( aIndices.length &gt; 0 )
+		{
+			var oSubComponent = oPolySubComponent.Parent3DObject.ActivePrimitive.Geometry.CreateSubComponent(siPolygonCluster, aIndices );
+			cloSubset.Add( oSubComponent );
+		}
+	}
+
+	// You always <a href="javascript:void(0)" data="set" class="a_multireflink">set</a> the Output attribute, even if the subset is empty
+	oContext.SetAttribute( "Output", cloSubset );
+
+	// Return True if the subset is non-empty
+	return (cloSubset.Count &gt; 0);
+}
+
+
+// Select only polygons with more than 3 <a href="javascript:void(0)" data="points" class="a_multireflink">points</a>
+function polygon_isamatch( oPoly )
+{
+	return ( oPoly.NbPoints != 3 )
+}</pre></div> 
+               <p><span class="anchor_wrapper"><a name="GUID-7C4200CC-5935-4467-ACAE-89478008857C"></a></span>Another way to implement a Subset callback is to work directly with the SubComponent
+                  objects passed in by Softimage. In this approach, you use SubComponent.RemoveElement
+                  to remove the polygons that don't match, and put the modified SubComponent in the
+                  output collection.
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+function MyPolygonFilter_Subset( oContext )
+{
+	var cloSubset = new ActiveXObject( "XSI.Collection" );
+
+	var cloObjects = oContext.GetAttribute( "Input" );
+
+	for (var objEnumerator = new Enumerator(cloObjects) ; !objEnumerator.atEnd(); objEnumerator.moveNext())
+	{
+		var oItem = objEnumerator.item();
+
+		var oPolySubComponent = oItem.SubComponent;
+
+		if ( !( (classname(oPolySubComponent) == "SubComponent") &amp;&amp; ( oPolySubComponent.type == "polySubComponent" ) ) )
+			continue;
+
+		// Get a copy of the PolygonFaceCollection; 
+		// We'll enumerate cloTmpCopy, and modify oPolySubComponent.ComponentCollection 
+		var cloTmpCopy = oPolySubComponent.ComponentCollection;
+
+		// Enumerate the selected polygons; if a polygon doesn't match, remove it from oPolySubComponent
+		for (var polyEnumerator = new Enumerator(cloTmpCopy) ; !polyEnumerator.atEnd(); polyEnumerator.moveNext())
+		{
+			var oPoly = polyEnumerator.item();
+			if ( !polygon_isamatch( oPoly ) )
+			{
+				oPolySubComponent.RemoveElement( oPoly.index );
+			}
+		}
+
+		// Add the modified SubComponent the output collection
+		if ( aIndices.length &gt; 0 )
+		{
+			cloSubset.Add( oPolySubComponent );
+		}
+	}
+
+	oContext.SetAttribute( "Output", cloSubset );
+
+	return (cloSubset.Count &gt; 0);
+}</pre></div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSC098C24645EDDE428048CE3C4F46FCA7-0018"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-2C14420F-9505-4FDB-B395-CD04A246B3F1"></a></span>Match
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-3B00DD80-975B-4FC6-8610-F385DDC113F9"></a></span> For subcomponent filters, Subset is the most important callback. Softimage won't
+                  call Match unless a filter doesn't have a Subset callback. However, Match is required,
+                  so you must provide an implementation. Typically, Match returns false as soon as it
+                  finds a subcomponent that doesn't match the filter conditions.
+               </p> 
+               <p><span class="anchor_wrapper"><a name="GUID-4B3F867B-87BF-4464-A71C-22C803847EE9"></a></span>When Softimage calls Match for a subcomponent filter, it puts a SubComponent object
+                  in the callback context. The following example shows a typical structure for a Match
+                  callback.
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+function MyPolygonFilter_Match( oContext )
+{
+	// Get the SubComponent object from the context
+	var oPolySubComponent = oContext.GetAttribute( "Input" );
+
+	// Return false if we don't have a SubComponent, or we don't have polygons
+	if ( !( (classname(oPolySubComponent) == "SubComponent") &amp;&amp; ( oPolySubComponent.type == "polySubComponent" ) ) )
+	{
+		return false;
+	}
+
+	// Enumerate the selected polygons; Return false as soon as we find a polygon that doesn't match
+	for (var polyEnumerator = new Enumerator(oPolySubComponent.ComponentCollection) ; !polyEnumerator.atEnd(); polyEnumerator.moveNext())
+	{
+		var oPoly = polyEnumerator.item();
+		if ( !polygon_isamatch( oPoly ) )
+		{
+			return false;
+		}
+	}
+
+	// If we make it here, all the polygons match
+	return true;
+}</pre></div> 
+            </div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Model Presets</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Model Presets</h1>
+         </div>
+
+<h2 class="pagehead">Model Presets</h2>
+
+<div>
+	<p><a href="#!/url=./si_om/Model.html">Model</a> presets are stored in the <span style="font-family: courier, monospace;">Data\DSPresets\Models</span> folder under XSI's factory location. As a backup, any model file (.emdl) can be substituted in commands calling for a model. For example, if XSI does not find any presets, it will look in the <span style="font-family: courier, monospace;">XSI_SAMPLES\Models</span> folder (also in the factory location) and load a model from there.
+			</p>
+<div class="tip">
+<table cellpadding="5" cellspacing="5">
+	<tr>
+		<td class="label">Note</td>
+		<td class="emph">
+				All of these presets can be used with the <a href="#!/url=./si_cmds/GetPresetModel.html">GetPresetModel</a> command but only these four presets are supported by the <a href="#!/url=./si_cmds/GetProportionalGuide.html">GetProportionalGuide</a> command:
+						<ul>
+			<li><span style="font-family: courier, monospace;">BipedPropGuide</span></li>
+			<li><span style="font-family: courier, monospace;">Biped_DogLeg_Guide</span></li>
+			<li><span style="font-family: courier, monospace;">Biped_Guide</span></li>
+			<li><span style="font-family: courier, monospace;">Quadruped_Guide</span></li>
+		</ul>
+</td>
+	</tr>
+</table>
+</div>
+</div>
+
+<div><table class="values">
+	<tr>
+		<th>Preset</th>
+		<th>Models</th>
+	</tr>
+	<tr>
+		<td class="name">BipedPropGuide</td>
+		<td>BipedPropGuide (also available with <a href="#!/url=./si_cmds/GetProportionalGuide.html">GetProportionalGuide</a> only)		</td>
+	</tr>
+	<tr>
+		<td class="name">Biped_Box</td>
+		<td>Biped_Box		</td>
+	</tr>
+	<tr>
+		<td class="name">Biped_Box_Generated</td>
+		<td>Biped_Box_Generated		</td>
+	</tr>
+	<tr>
+		<td class="name">Biped_DogLeg_Guide</td>
+		<td>Biped proportional guide with DogLeg (also available with <a href="#!/url=./si_cmds/GetProportionalGuide.html">GetProportionalGuide</a> only)		</td>
+	</tr>
+	<tr>
+		<td class="name">Biped_Guide</td>
+		<td>Biped proportional guide with ears and stomach (also available with <a href="#!/url=./si_cmds/GetProportionalGuide.html">GetProportionalGuide</a> only)		</td>
+	</tr>
+	<tr>
+		<td class="name">Biped_Null</td>
+		<td>Biped null		</td>
+	</tr>
+	<tr>
+		<td class="name">Biped_Rig</td>
+		<td>Biped_Rig		</td>
+	</tr>
+	<tr>
+		<td class="name">Biped_Rig_Generated</td>
+		<td>Biped_Rig_Generated		</td>
+	</tr>
+	<tr>
+		<td class="name">Biped_Skeleton</td>
+		<td>Biped_Skeleton		</td>
+	</tr>
+	<tr>
+		<td class="name">Biped_Skeleton_Generated</td>
+		<td>Biped_Skeleton_Generated		</td>
+	</tr>
+	<tr>
+		<td class="name">Biped_XSISkeleton</td>
+		<td>Biped_XSISkeleton		</td>
+	</tr>
+	<tr>
+		<td class="name">Biped_XSISkeleton_Generated</td>
+		<td>Biped_XSISkeleton_Generated		</td>
+	</tr>
+	<tr>
+		<td class="name">Facial_Animation</td>
+		<td>Facial_Animation		</td>
+	</tr>
+	<tr>
+		<td class="name">ICONS</td>
+		<td>ICONS		</td>
+	</tr>
+	<tr>
+		<td class="name">Man</td>
+		<td>Man		</td>
+	</tr>
+	<tr>
+		<td class="name">ManSkeleton_Basic</td>
+		<td>ManSkeleton_Basic		</td>
+	</tr>
+	<tr>
+		<td class="name">ManSkeleton_Complete</td>
+		<td>ManSkeleton_Complete		</td>
+	</tr>
+	<tr>
+		<td class="name">ManSkeleton_Complexe</td>
+		<td>ManSkeleton_Complexe		</td>
+	</tr>
+	<tr>
+		<td class="name">ManSkeleton_Rig</td>
+		<td>ManSkeleton_Rig		</td>
+	</tr>
+	<tr>
+		<td class="name">Man_Character</td>
+		<td>Man_Character		</td>
+	</tr>
+	<tr>
+		<td class="name">Man_Face</td>
+		<td>Man_Face		</td>
+	</tr>
+	<tr>
+		<td class="name">mocap_rig</td>
+		<td>mocap_rig		</td>
+	</tr>
+	<tr>
+		<td class="name">Quadruped_Guide</td>
+		<td>Quadruped_Guide (also available with <a href="#!/url=./si_cmds/GetProportionalGuide.html">GetProportionalGuide</a> only)		</td>
+	</tr>
+	<tr>
+		<td class="name">Quadruped_PropGuide</td>
+		<td>Quadruped_PropGuide		</td>
+	</tr>
+	<tr>
+		<td class="name">Quadruped_Rig</td>
+		<td>Quadruped_Rig		</td>
+	</tr>
+	<tr>
+		<td class="name">Quadruped_Rig_Generated</td>
+		<td>Quadruped_Rig_Generated		</td>
+	</tr>
+	<tr>
+		<td class="name">Woman</td>
+		<td>Woman		</td>
+	</tr>
+	<tr>
+		<td class="name">WomanSkeleton_Basic</td>
+		<td>WomanSkeleton_Basic		</td>
+	</tr>
+	<tr>
+		<td class="name">WomanSkeleton_Complete</td>
+		<td>WomanSkeleton_Complete		</td>
+	</tr>
+	<tr>
+		<td class="name">WomanSkeleton_Rig</td>
+		<td>WomanSkeleton_Rig		</td>
+	</tr>
+	<tr>
+		<td class="name">Woman_Face</td>
+		<td>Woman_Face		</td>
+	</tr>
+</table>
+<br />
+
+</div>
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

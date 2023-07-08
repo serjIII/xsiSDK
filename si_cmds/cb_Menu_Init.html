@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Init (Menu)</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Init (Menu)</h1>
+         </div>
+
+<h2 class="pagehead">Init (Menu)</h2>
+
+<hr width="100%" />
+<h3>Description</h3>
+<div><p><a name="Description"> </a>	<p>
+				For dynamic menus, this callback is fired every time the menu is accessed. For static menus, 
+				this callback is fired the first time the menu is accessed after the plug-in is loaded.
+			</p>
+	<p>
+				This is where you add items and commands to a menu.
+			</p>
+</p></div>
+
+<hr width="100%" />
+<h3>Applies To</h3>
+<div><p><a name="AppliesTo"> </a><a href="#!/url=./files/cus_cmds.htm">Standard and Contextual Menus</a></p></div>
+
+<hr width="100%" />
+<h3>Syntax</h3>
+<div><p><a name="Syntax"> </a><div class="example"><table>
+<tr>
+<td class="example"><pre class="csharp">public class &lt;menu_name&gt;
+{
+	public bool Init( Context in_context )
+	{
+		...
+	}
+}</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="cplusplus">CStatus &lt;menu_name&gt;_Init( CRef&amp; in_context )
+{ 
+	... 
+}</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">function &lt;menu_name&gt;_Init( in_context )
+{ 
+	... 
+}</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">def &lt;menu_name&gt;_Init( in_context ):
+	...</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">Function &lt;menu_name&gt;_Init( in_context )
+	...
+End Function</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="perlscript">sub &lt;menu_name&gt;_Init 
+{ 
+	my $in_context = shift; 
+}</pre></td></tr>
+</table>
+</div>	<p><span style="font-family: courier, monospace;">&lt;menu_name&gt;</span> is the name specified in the call to 
+				<a href="#!/url=./si_om/PluginRegistrar.RegisterMenu.html">PluginRegistrar.RegisterMenu</a>, with any spaces converted to underscores.
+			</p>
+</p></div>
+
+<hr width="100%" />
+<h3>Parameters</h3>
+<div><p><a name="Parameters"> </a>	<table>		<tr>			<th>Parameter</th>
+			<th>Language</th>
+			<th>Type</th>
+			<th>Description</th>
+</tr>
+		<tr>			<td class="name">in_context</td>
+			<td>Scripting and C#</td>
+			<td><a href="#!/url=./si_om/Context.html">Context</a></td>
+			<td><a href="#!/url=./si_om/Context.Source.html">Context.Source</a> returns the <a href="#!/url=./si_om/Menu.html">Menu</a>.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="name">C++</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1CRef.html">CRef</a>&</td>
+			<td>A reference to the <a href="#!/url=./si_cpp/classXSI_1_1Context.html">Context</a> object. 
+					<a href="#!/url=./si_cpp/classXSI_1_1Context.html#GetSource">Context::GetSource</a> 
+					returns the <a href="#!/url=./si_cpp/classXSI_1_1Menu.html">Menu</a>.</td>
+</tr>
+</table>
+</p></div>
+
+<hr width="100%" />
+<h3>Examples</h3>
+<div><p><a name="Examples"> </a><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">// JScript code generated by the Command Wizard
+// Shows the Init callbacks for a command and for a menu
+function XSILoadPlugin( in_reg )
+{
+ in_reg.Author = "sblair";
+ in_reg.Name = "MyCommandPlugin";
+ in_reg.Email = "";
+ in_reg.URL = "";
+ in_reg.Major = 1;
+ in_reg.Minor = 0;
+
+ in_reg.RegisterCommand("MyCommand","MyCommand");
+ in_reg.RegisterMenu(siMenuTbGetPropertyID,"MyCommand_Menu",false,false);
+ //RegistrationInsertionPoint - do not remove this line
+
+ return true;
+}
+
+function XSIUnloadPlugin( in_reg )
+{
+ strPluginName = in_reg.Name;
+ Application.LogMessage(strPluginName + " has been unloaded.");
+ return true;
+}
+
+function MyCommand_Init( ctxt )
+{
+ var oCmd;
+ oCmd = ctxt.Source;
+ oCmd.Description = "";
+ oCmd.ReturnValue = true;
+
+ var oArgs;
+ oArgs = oCmd.Arguments;
+ oArgs.Add("Arg0",siArgumentInput);
+ return true;
+}
+
+function MyCommand_Execute( Arg0 )
+{
+
+ Application.LogMessage("MyCommand_Execute called");
+ // 
+ // TODO: Put your command implementation here.
+ // 
+ return true;
+}
+
+function MyCommand_Menu_Init( ctxt )
+{
+ var oMenu;
+ oMenu = ctxt.Source;
+ oMenu.AddCommandItem("Run My Command","MyCommand");
+ return true;
+}</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="cplusplus">// C++ code generated by the Command Wizard
+// Shows the Init callbacks for a command and a menu
+#include &lt;xsi_application.h&gt;
+#include &lt;xsi_context.h&gt;
+#include &lt;xsi_pluginregistrar.h&gt;
+#include &lt;xsi_status.h&gt;
+#include &lt;xsi_argument.h&gt;
+#include &lt;xsi_command.h&gt;
+#include &lt;xsi_menu.h&gt;
+using namespace XSI; 
+
+SICALLBACK XSILoadPlugin( PluginRegistrar&amp; in_reg )
+{
+ in_reg.PutAuthor(L"sblair");
+ in_reg.PutName(L"My_CppCommandPlugin");
+ in_reg.PutEmail(L"");
+ in_reg.PutURL(L"");
+ in_reg.PutVersion(1,0);
+ in_reg.RegisterCommand(L"My_CppCommand",L"My_CppCommand1");
+ in_reg.RegisterMenu(siMenuTbGetPropertyID,L"My_CppCommand_Menu",false,false);
+ //RegistrationInsertionPoint - do not remove this line
+
+ return CStatus::OK;
+}
+
+SICALLBACK XSIUnloadPlugin( const PluginRegistrar&amp; in_reg )
+{
+ CString strPluginName = in_reg.GetName();
+ Application().LogMessage(strPluginName + L" has been unloaded.");
+ return CStatus::OK;
+}
+
+SICALLBACK My_CppCommand_Init( CRef&amp; in_ctxt )
+{
+ Context ctxt( in_ctxt );
+ Command oCmd;
+ oCmd = ctxt.GetSource();
+ oCmd.PutDescription(L"");
+ oCmd.EnableReturnValue(true);
+
+ ArgumentArray oArgs;
+ oArgs = oCmd.GetArguments();
+ oArgs.Add(L"Arg0");
+ return CStatus::OK;
+}
+
+SICALLBACK My_CppCommand_Execute( CRef&amp; in_ctxt )
+{
+ Context ctxt( in_ctxt );
+ CValueArray args = ctxt.GetAttribute(L"Arguments");
+ CValue Arg0 = args[0];
+
+ Application().LogMessage(L"My_CppCommand_Execute called");
+ // 
+ // TODO: Put your command implementation here.
+ // 
+ // Return a value by setting this attribute:
+ ctxt.PutAttribute( L"ReturnValue", true );
+
+ // Return CStatus::Fail if you want to raise a script error
+ return CStatus::OK;
+}
+
+SICALLBACK My_CppCommand_Menu_Init( CRef&amp; in_ctxt )
+{
+ Context ctxt( in_ctxt );
+ Menu oMenu;
+ oMenu = ctxt.GetSource();
+ MenuItem oNewItem;
+ oMenu.AddCommandItem(L"My_CppCommand",L"My_CppCommand",oNewItem);
+ return CStatus::OK;
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<hr width="100%" />
+<h3>See Also</h3>
+<div><p><a name="SeeAlso"> </a><ul>
+	<li><a href="#!/url=./si_cmds/cb_MenuItem_Callback.html">Menu Item Callbacks</a></li>
+	<li><a href="#!/url=./si_cmds/callbacks.html">Menu Callbacks</a></li>
+</ul>
+</p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>XSICollection.Filter</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>XSICollection.Filter</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/XSICollection.html">XSICollection</a>.Filter</h2>
+
+<h3>Introduced</h3>
+<div><p>v11.0 (2013)</p></div>
+
+<h3>Description</h3>
+<div><p> Returns a subset of this collection as a new collection of objects matching the filter criteria.
+If no items are found, Filter returns "Nothing", which allows you to trap errors.<br /><br />
+You can set up the filter criteria by using the 'Type', 'Families', and/or 'Path' parameters which
+roughly correspond to searching by type as outlined in the <a href="#!/url=./si_om/siType.html">siType</a> constant, searching
+by family as outlined in the <a href="#!/url=./si_om/siFamily.html">siFamily</a> constant, or searching by name of the object
+(see <a href="#!/url=./files/objectexpr.htm">Object Name</a> for more about valid syntax
+for the Path parameter).<br /><br />
+Note: If you combine these parameters, they will narrow the scope of your search, not broaden it.
+For example, if you specify 'Nurbs Surface Mesh Geometries' (siNurbsSurfaceMeshFamily) for the 
+Families parameter and 'Cone*' for the Path parameter, the return collection will contain any Nurbs
+cone that was in the original collection, but no Polygon Mesh cones and no Nurbs cubes, spheres, etc.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>CXSICollection XSICollection.Filter( String in_filter, Object in_famArray, String in_path );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = XSICollection.Filter( [Type], [Families], [Path] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p><a href="#!/url=./si_om/XSICollection.html">XSICollection</a> (subset of original collection).</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Type		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./si_om/siType.html">siType</a> (for example, "Model", "cube", "torus", etc.).  Providing a type 
+		argument is equivalent to testing each object with the <a href="#!/url=./si_om/ProjectItem.IsKindOf.html">ProjectItem.IsKindOf</a> method.
+				<p class="cell"><span class="hilite">Default Value: </span>
+Empty string			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Families		</td>
+		<td><a href="#!/url=./si_om/siFamily.html">siFamily</a> or <a href="#!/url=./files/Array.htm">Array</a> of siFamily values		</td>
+		<td>
+
+		Specifies the families that objects must belong to. To match the filter, an object must belong to at least one of the specified families.
+				<p class="cell"><span class="hilite">Default Value: </span>
+Empty <a href="#!/url=./files/Variant.htm">Variant</a>			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Path		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		An <a href="#!/url=./files/objectexpr.htm">Object Name</a>. This can be a partial name using wildcards. For example, 
+		"a*" returns all matches that begin with the character "a".
+				<p class="cell"><span class="hilite">Default Value: </span>
+Empty string			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">// Build a new scene with lots of objects to filter and return the scene root
+var child_coll = CreateCollection();
+// Using this criterion will match either nulls or srfmesh elements
+families2find = new Array( "Nurbs Surface Mesh Geometries", "Nulls" )
+WriteCollection( child_coll.Filter( "", "","*Cone" ), "filter( , ,'*Cone' )", "any item with a name ending in 'Cone'" );
+WriteCollection( child_coll.Filter( "", "","MyAwesome*" ), "filter( '', '', '*Awesome*' )", "any item with a name starting with 'MyAwesome'" );
+WriteCollection( child_coll.Filter( "Cone", families2find,"MyAwesome*" ), "filter( 'Cone', new Array( 'Nurbs Surface Mesh Geometries', 'Nulls' ), 'MyAwesome*' )", "any cone with a name starting with 'MyAwesome' that is either a surfmsh or a null" );
+WriteCollection( child_coll.Filter( "Cone", families2find ), "filter( 'Cone', new Array( 'Nurbs Surface Mesh Geometries', 'Nulls' ) )","any cone that is either a surfmsh or a null" );
+WriteCollection( child_coll.Filter( "", families2find ), "filter( '', Array( 'Nurbs Surface Mesh Geometries', 'Nulls' ) )", "any item that is either a surfmsh or a null"  );
+WriteCollection( child_coll.Filter( "Cone", "Nurbs Surface Mesh Geometries" ),  "filter( 'Cone', 'Nurbs Surface Mesh Geometries' )", "any surfmsh cone"  );
+WriteCollection( child_coll.Filter( "Cone" ), "filter( 'Cone' )", "any cone"  );
+WriteCollection( child_coll.Filter( "Torus", "","*Super*" ), "filter( 'Torus', '', '*Super*' )", "any torus with a name containing 'Super'"  );
+WriteCollection( child_coll.Filter( "", "Nurbs Surface Mesh Geometries" ), "filter( '', 'Nurbs Surface Mesh Geometries' )", "any surfmsh" );
+WriteCollection( child_coll.Filter( "", "Mesh Geometries" ), "filter( '', Mesh Geometries )", "any polymsh"   );
+WriteCollection( child_coll.Filter( "", "Mesh Geometries","*Cone" ), "filter( '', 'Mesh Geometries', '*Cone' )", "any polymsh item with a name ending in 'Cone'" );
+/* --------------------------------------------------------------
+This function adds the following items to the scene root:
+Name                Primitive Type      Geometry Type
+---------------     --------------      -------------
+MySuperCone         polymsh             Cone
+MySuperCylinder     polymsh             Cylinder
+MyAwesomeCone       surfmsh             Cone
+MyAwesomeTorus      polymsh             Torus
+MySuperTorus        surfmsh             Torus
+MyImplicitCube      cube                Cube
+MyAwesomeNull       --                  Null
+CameraRoot          --                  CameraRig
+camera1             --                  Camera
+CameraInterest      --                  Null
+*/
+function CreateCollection( )
+{
+	NewScene( null, false );
+	var root = ActiveProject.ActiveScene.Root;
+	root.AddGeometry( "cone", "meshsurface", "MySuperCone" ); 
+	root.AddGeometry( "Cylinder", "meshsurface", "MySuperCylinder" ); 
+	root.AddGeometry( "cone", "nurbssurface", "MyAwesomeCone" ); 
+	root.AddGeometry( "Torus", "nurbssurface", "MySuperTorus"  ); 
+	root.AddGeometry( "Torus", "meshsurface", "MyAwesomeTorus" ); 
+	root.AddPrimitive( "cube", "MyImplicitCube" ); 
+	root.AddNull( "MyAwesomeNull" ); 
+	root.AddCameraRig( "Camera" ); 
+	var coll = new ActiveXObject( "XSI.Collection" );        
+	var children = root.Children
+	for (var i=0; i&lt;children.count; i++)
+	{  			
+		coll.Add( children(i) );
+	}
+	return coll;
+	}
+/* --------------------------------------------------------------
+This function prints the collection information
+*/
+function WriteCollection( in_collection, in_filter_text, in_plain_text )
+{
+	// Make sure the script doesn't break
+	try 
+	{
+		LogMessage( "-----" );
+		LogMessage( "TEST: " + in_filter_text );
+		LogMessage( "      [" + in_plain_text + "]" );
+		LogMessage( "Size of collection: " + in_collection.Count );
+		for ( var i=0; i&lt;in_collection.Count; i++ ) {
+			LogMessage( "\titem #" + (i+1) + ": " + in_collection(i).Name + " (type = " + in_collection(i).Type + ")" );
+		}
+		return 1;
+	} 
+	catch(e) 
+	{
+		LogMessage( "Encountered a problem with the input collection. Quitting..." );
+		return 0;
+	}
+}
+/* --------------------------------------------------------------
+	Output of the above script:
+*/
+//INFO : -----
+//INFO : TEST: filter( , ,'*Cone' )
+//INFO :       [any item with a name ending in 'Cone']
+//INFO : Size of collection: 2
+//INFO : 	item #1: MySuperCone (type = polymsh)
+//INFO : 	item #2: MyAwesomeCone (type = surfmsh)
+//INFO : -----
+//INFO : TEST: filter( '', '', '*Awesome*' )
+//INFO :       [any item with a name starting with 'MyAwesome']
+//INFO : Size of collection: 3
+//INFO : 	item #1: MyAwesomeCone (type = surfmsh)
+//INFO : 	item #2: MyAwesomeTorus (type = polymsh)
+//INFO : 	item #3: MyAwesomeNull (type = null)
+//INFO : -----
+//INFO : TEST: filter( 'Cone', new Array( 'Nurbs Surface Mesh Geometries', 'Nulls' ), 'MyAwesome*' )
+//INFO :       [any cone with a name starting with 'MyAwesome' that is either a surfmsh or a null]
+//INFO : Size of collection: 1
+//INFO : 	item #1: MyAwesomeCone (type = surfmsh)
+//INFO : -----
+//INFO : TEST: filter( 'Cone', new Array( 'Nurbs Surface Mesh Geometries', 'Nulls' ) )
+//INFO :       [any cone that is either a surfmsh or a null]
+//INFO : Size of collection: 1
+//INFO : 	item #1: MyAwesomeCone (type = surfmsh)
+//INFO : -----
+//INFO : TEST: filter( '', Array( 'Nurbs Surface Mesh Geometries', 'Nulls' ) )
+//INFO :       [any item that is either a surfmsh or a null]
+//INFO : Size of collection: 5
+//INFO : 	item #1: Camera_Root (type = CameraRoot)
+//INFO : 	item #2: MyAwesomeCone (type = surfmsh)
+//INFO : 	item #3: MySuperTorus (type = surfmsh)
+//INFO : 	item #4: MyAwesomeNull (type = null)
+//INFO : 	item #5: CameraRoot (type = CameraRoot)
+//INFO : -----
+//INFO : TEST: filter( 'Cone', 'Nurbs Surface Mesh Geometries' )
+//INFO :       [any surfmsh cone]
+//INFO : Size of collection: 1
+//INFO : 	item #1: MyAwesomeCone (type = surfmsh)
+//INFO : -----
+//INFO : TEST: filter( 'Cone' )
+//INFO :       [any cone]
+//INFO : Size of collection: 2
+//INFO : 	item #1: MySuperCone (type = polymsh)
+//INFO : 	item #2: MyAwesomeCone (type = surfmsh)
+//INFO : -----
+//INFO : TEST: filter( 'Torus', '', '*Super*' )
+//INFO :       [any torus with a name containing 'Super']
+//INFO : Size of collection: 1
+//INFO : 	item #1: MySuperTorus (type = surfmsh)
+//INFO : -----
+//INFO : TEST: filter( '', 'Nurbs Surface Mesh Geometries' )
+//INFO :       [any surfmsh]
+//INFO : Size of collection: 2
+//INFO : 	item #1: MyAwesomeCone (type = surfmsh)
+//INFO : 	item #2: MySuperTorus (type = surfmsh)
+//INFO : -----
+//INFO : TEST: filter( '', Mesh Geometries )
+//INFO :       [any polymsh]
+//INFO : Size of collection: 3
+//INFO : 	item #1: MySuperCone (type = polymsh)
+//INFO : 	item #2: MySuperCylinder (type = polymsh)
+//INFO : 	item #3: MyAwesomeTorus (type = polymsh)
+//INFO : -----
+//INFO : TEST: filter( '', 'Mesh Geometries', '*Cone' )
+//INFO :       [any polymsh item with a name ending in 'Cone']
+//INFO : Size of collection: 1
+//INFO : 	item #1: MySuperCone (type = polymsh)</pre></td></tr>
+</table>
+</div></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

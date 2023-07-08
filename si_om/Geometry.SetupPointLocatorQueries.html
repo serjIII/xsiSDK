@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Geometry.SetupPointLocatorQueries</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Geometry.SetupPointLocatorQueries</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/Geometry.html">Geometry</a>.SetupPointLocatorQueries <img src="images/operator.gif" alt="operator" /></h2>
+
+<h3>Introduced</h3>
+<div><p>v6.0</p></div>
+
+<h3>Description</h3>
+<div><p> Sets up how subsequent calls to <a href="#!/url=./si_om/Geometry.GetClosestLocations.html">Geometry.GetClosestLocations</a>,
+<a href="#!/url=./si_om/Geometry.GetClosestLocationsWithinRadius.html">Geometry.GetClosestLocationsWithinRadius</a> and 
+<a href="#!/url=./si_om/Geometry.GetRaycastIntersections.html">Geometry.GetRaycastIntersections</a> will operate.
+<br /><br />
+An acceleration cache is built either on the first call to this method or to 
+<a href="#!/url=./si_om/Geometry.GetClosestLocations.html">Geometry.GetClosestLocations</a> or
+<a href="#!/url=./si_om/Geometry.GetClosestLocationsWithinRadius.html">Geometry.GetClosestLocationsWithinRadius</a>.
+The cache assumes that the geometry is not deformed during all 
+subsequent calls to <a href="#!/url=./si_om/Geometry.GetClosestLocations.html">Geometry.GetClosestLocations</a>, 
+<a href="#!/url=./si_om/Geometry.GetClosestLocationsWithinRadius.html">Geometry.GetClosestLocationsWithinRadius</a> and 
+<a href="#!/url=./si_om/Geometry.GetRaycastIntersections.html">Geometry.GetRaycastIntersections</a>. If that is not the
+case, you should get the geometry again or force a rebuild of the acceleration 
+cache by calling this method, otherwise you may get wrong results.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>Geometry.SetupPointLocatorQueries( Int32 in_Method, Object in_Transfo, Object in_FacetsToRestrictSearch, Int32 in_NbLocatorsToBeQueried );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>Geometry.SetupPointLocatorQueries( Method, Reference, Facets, NbLocatorsToBeQueried );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Method		</td>
+		<td><a href="#!/url=./si_om/siClosestLocationMethod.html">siClosestLocationMethod</a>		</td>
+		<td>
+
+Method to use when searching the closest location. This must be set to 
+siClosestSurfaceRaycastIntersections if you will be calling 
+<a href="#!/url=./si_om/Geometry.GetRaycastIntersections.html">Geometry.GetRaycastIntersections</a> next.
+				<p class="cell"><span class="hilite">Default Value: </span>
+siClosestSurface			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Reference		</td>
+		<td><a href="#!/url=./si_om/SITransformation.html">SITransformation</a>		</td>
+		<td>
+
+		Allows you to specify the reference transformation in which the input positions 
+		will be interpreted, and in which the search will be executed. Notice that the "closest distance"
+		relationship may change relative to the spatial reference of the geometry and the input 
+		positions. For instance, if you copy closest locations of an object's points onto another one, 
+		you will generally have different results if you scale both of them non-uniformly or if you 
+		add some shearing to the pose. In such case, computing the closest locations in local space 
+		will lead to different results from computing the closest locations in global space.
+			</td>
+	</tr>
+	<tr>
+		<td class="name">Facets		</td>
+		<td>1-dimensional <a href="#!/url=./files/Array.htm">Array</a>		</td>
+		<td>
+
+		Restricts the search to a subset of facets (instead of all the geometry).
+		This allows faster searches and a lower memory usage for the acceleration cache.
+			</td>
+	</tr>
+	<tr>
+		<td class="name">NbLocatorsToBeQueried		</td>
+		<td><a href="#!/url=./files/Long.htm">Long</a>		</td>
+		<td>
+
+		Approximate number of point locators that will be queried after the call.
+		This helps improving the overall performance.
+		Pass -1 if you have no clue.
+			</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example uses PointLocatorData to shrink-wrap a sphere on only
+	two faces of a cube
+*/
+NewScene( null, false );
+var root = Application.ActiveSceneRoot;
+var CubeGeom = root.AddGeometry("Cube", "MeshSurface").ActivePrimitive.Geometry;
+var SphereObj = root.AddGeometry("Sphere", "MeshSurface");
+SphereObj.subdivv = 24;
+SphereObj.subdivu = 24;
+// Freeze it, otherwise its position array cannot be set:
+FreezeObj(SphereObj);
+var SphereGeom = SphereObj.ActivePrimitive.Geometry;
+var Facets = new Array(2);
+var Transform = XSIMath.CreateTransform();
+Facets[0] = 2;
+Facets[1] = 3;
+CubeGeom.SetupPointLocatorQueries(siClosestSurface,Transform,Facets,-1);
+var SphereOnCubePointLocators = CubeGeom.GetClosestLocations(SphereGeom.Points.PositionArray);
+SphereGeom.Points.PositionArray = CubeGeom.EvaluatePositions(SphereOnCubePointLocators);</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/PointLocatorData.html">PointLocatorData</a> <a href="#!/url=./si_om/Geometry.html">Geometry</a> <a href="#!/url=./si_om/Geometry.GetClosestLocations.html">Geometry.GetClosestLocations</a> <a href="#!/url=./si_om/Geometry.GetClosestLocationsWithinRadius.html">Geometry.GetClosestLocationsWithinRadius</a> <a href="#!/url=./si_om/Geometry.GetRaycastIntersections.html">Geometry.GetRaycastIntersections</a> <a href="#!/url=./si_om/Geometry.GetSurfacePointLocatorsFromPoints.html">Geometry.GetSurfacePointLocatorsFromPoints</a> <a href="#!/url=./si_om/Geometry.EvaluatePositions.html">Geometry.EvaluatePositions</a> <a href="#!/url=./si_om/Geometry.EvaluateNormals.html">Geometry.EvaluateNormals</a> <a href="#!/url=./si_om/Geometry.EvaluateClusterProperty.html">Geometry.EvaluateClusterProperty</a> <a href="#!/url=./si_om/PolygonMesh.GetPolygonIndexArray.html">PolygonMesh.GetPolygonIndexArray</a> <a href="#!/url=./si_om/PolygonMesh.GetTriangleVertexIndexArray.html">PolygonMesh.GetTriangleVertexIndexArray</a> <a href="#!/url=./si_om/PolygonMesh.GetTriangleNodeIndexArray.html">PolygonMesh.GetTriangleNodeIndexArray</a> <a href="#!/url=./si_om/PolygonMesh.GetTriangleWeightArray.html">PolygonMesh.GetTriangleWeightArray</a> <a href="#!/url=./si_om/PolygonMesh.ConstructPointLocators.html">PolygonMesh.ConstructPointLocators</a> <a href="#!/url=./si_om/NurbsSurfaceMesh.GetSubSurfaceIndexArray.html">NurbsSurfaceMesh.GetSubSurfaceIndexArray</a> <a href="#!/url=./si_om/NurbsSurfaceMesh.GetNormalizedUVArray.html">NurbsSurfaceMesh.GetNormalizedUVArray</a> <a href="#!/url=./si_om/NurbsSurfaceMesh.ConstructPointLocators.html">NurbsSurfaceMesh.ConstructPointLocators</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>PPG</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>PPG</h1>
+         </div>
+
+<h2 class="pagehead">PPG</h2>
+
+<p><a href="#!/url=./si_om/_hier.html#oh_PPG">Object Hierarchy</a> | Related C++ Class: <a href="#!/url=./si_cpp/classXSI_1_1PPGEventContext.html">PPGEventContext</a></p>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p> Represents an instance of a Property Page.  This object can be manipulated within
+the event handling script code associated with a <a href="#!/url=./si_om/PPGLayout.html">PPGLayout</a>.
+(This event handling code is often called "SPDL logic" because in previous versions
+it could only be specified by putting script code directly in a spdl file.)  
+This object is available
+to logic code as a global variable called "PPG".  (For the purposes of 
+backward compatibility it is also available via the global variable "PSet".
+It is also for reasons of backward compatibility that this
+object does not derive from <a href="#!/url=./si_om/Context.html">Context</a> and 
+is available as a global variable rather than being passed as an argument
+to the callback routines).<br /><br />
+There are two ways a Property Page can inspect multiple objects.
+In the first case, where the objects are of different types, there
+will actually be separate Property Page objects displayed within the 
+same frame.  In the second case, where the objects have the same type,
+multi-edit mode is used and a single instance of the PPG object may
+actually represent multiple objects.  This is why the property
+<a href="#!/url=./si_om/PPG.Inspected.html">PPG.Inspected</a> returns an array rather than a single object.<br /><br />
+This object provides shortcuts for direct access to the <a href="#!/url=./si_om/Parameter.html">Parameter</a>s 
+of the inspected object.  For example, if a Property Page has a parameter named 
+x then "PPG.x.Value = 10" is the VBScript code to change the value.
+In the case of multi-edit mode, this technique will only modify the first inspected
+object.<br /><br />
+Note: The equivalent object in the C++ API is called PPGEventContext.
+</p></div>
+
+<h3>Methods</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/PPG.Close.html">Close</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/PPG.Refresh.html">Refresh</a>		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Properties</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/PPG.CurrentTab.html">CurrentTab</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/PPG.Inspected.html">Inspected</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/PPG.InspectedObjects.html">InspectedObjects</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/PPG.PPGLayout.html">PPGLayout</a>		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example shows how to build an extremely dynamic Custom Property using 
+	the PPG object. It appears in two parts: 
+	 * PART ONE writes the implementation to disk, loads it in Softimage, and
+	   then displays the property editor.
+	 * PART TWO is the code that implements the custom property
+	Not only does the layout change but the actual underlying parameters are 
+	rebuilt each time the Property Page is shown.
+	Once this plugin is installed you can apply an instance of the custom 
+	property via the Property Menu on the left side of the screen.  Then 
+	each time you inspect the custom property it will regenerate its UI 
+	so that there is a check box for each X3DObject parented under the scene 
+	root.  You can pick which ones to select and then click apply.
+	Normally a feature like this would probably be implemented as a custom 
+	command that pops up a temporary, modal custom property which is deleted 
+	after the fact.  However for the purpose of this example the custom 
+	property remains in the scene for use whenever the user wants to change 
+	selection.
+	(This example was implemented by using the Custom Property wizard to 
+	generate the initial plugin and then editing the code to add the dynamic 
+	behavior)
+*/
+NewScene( null, false );
+// ------------------------------------------------------------
+//
+//		PART ONE: Save Implementation to Disk and Open PPG
+//
+var filename = XSIUtils.BuildPath( Application.InstallationPath(siUserPath), 
+	"Application", "Plugins", "DynParamDemo.js" );
+// Write the contents of the Implementation functions below to DynParamDemo.js
+var fso = new ActiveXObject( "Scripting.FileSystemObject" );
+var ts = fso.CreateTextFile( filename, true );
+ts.Write( XSILoadPlugin.toString() + "\n\n" );
+ts.Write( DynParamDemo_Define.toString() + "\n\n" );
+ts.Write( DynParamDemo_DefineLayout.toString() + "\n\n" );
+ts.Write( DynParamDemo_OnInit.toString() + "\n\n" );
+ts.Write( DynParamDemo_Apply_OnClicked.toString() );
+ts.Close();
+// Load the plugin 
+Application.LoadPlugin( filename );
+// Instantiate the custom property and display its property page
+var oCustomProperty = Application.ActiveSceneRoot.AddProperty( "DynParamDemo" );
+InspectObj( oCustomProperty );
+// ------------------------------------------------------------
+//
+//		PART TWO: PPG Implementation
+//
+function XSILoadPlugin( in_reg )
+{
+	in_reg.Author = "Softimage";
+	in_reg.Name = "DynParamDemoPlugin";
+	in_reg.Major = 1;
+	in_reg.Minor = 1;
+	in_reg.RegisterProperty( "DynParamDemo" );
+	return true;
+}
+function DynParamDemo_Define( io_Context )
+{
+	// No parameters are added here because we want the
+	// data to be dynamic, see DynParamDemo_OnInit
+}
+function DynParamDemo_DefineLayout( io_Context )
+{
+	// Do nothing here because we want a dynamic layout.
+	// The work is done inside DynParamDemo_OnInit instead.
+}
+function DynParamDemo_OnInit()
+{
+	// This example doesn't make sense in the case
+	// of selection of more than one instance of the custom
+	// property at a time, so we only look at the first inspected
+	var oCustomProperty = PPG.Inspected.Item(0);
+	// Remove any existing parameters
+	for ( var i=oCustomProperty.Parameters.Count-1; i&gt;=0; i-- ) {
+		oCustomProperty.RemoveParameter( oCustomProperty.Parameters.Item(i) );
+	}
+	var oLayout = PPG.PPGLayout;
+	oLayout.Clear();
+	var oSceneChildren = Application.ActiveSceneRoot.Children; 
+	for ( var j=0; j&lt;oSceneChildren.Count; j++ ) {
+		var oChild = oSceneChildren.Item(j);
+		// Add a boolean parameter to represent this object
+		oCustomProperty.AddParameter2( oChild.Name, siBool, false,
+				null, null, null, null, 0, siPersistable );
+		// Put this in the layout
+		oLayout.AddItem( oChild.Name, "Select " + oChild.Name );		
+	}
+	oLayout.AddButton( "Apply" );
+	PPG.Refresh();
+}
+function DynParamDemo_Apply_OnClicked()
+{
+	DeselectAll(); // Call Softimage Command
+	var oCustomProperty = PPG.Inspected.Item(0);
+	for ( var j=0; j&lt;oCustomProperty.Parameters.Count; j++ ) {
+		var oParam = oCustomProperty.Parameters.Item(j);
+		if ( oParam.Value == true ) {
+			// We used a naming sceme for the parameters that matches the object	
+			AddToSelection( oParam.Name );	// Call Softimage Command
+		}
+	}
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/PPGLayout.Logic.html">PPGLayout.Logic</a> <a href="#!/url=./si_om/ProjectItem.html">ProjectItem</a> <a href="#!/url=./si_om/Parameter.html">Parameter</a> <a href="#!/url=./si_om/Context.html">Context</a> <a href="#!/url=./si_cmds/InspectObj.html">InspectObj</a> <a href="#!/url=./si_cmds/callbacks.html">Property Host Callbacks</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

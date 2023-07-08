@@ -1,0 +1,72 @@
+var topic = "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n\
+\n\
+<!-- saved from url=(0024)http://docs.autodesk.com -->\n\
+<html>\n\
+   <head>\n\
+<link href=\"../style/prettify.css\" type=\"text/css\" rel=\"stylesheet\" />\n\
+<script type=\"text/javascript\" src=\"../scripts/prettify.js\"></script><script src=\"../scripts/lib/jquery-1.9.1.min.js\" type=\"text/javascript\"></script>\n\
+      <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n\
+      <meta name=\"product\" content=\"SI\" />\n\
+      <meta name=\"release\" content=\"2015\" />\n\
+      <meta name=\"book\" content=\"Developer\" />\n\
+      <meta name=\"created\" content=\"2014-03-13\" />\n\
+      <meta name=\"topicid\" content=\"GUID-A4B23973-3452-442B-8E94-43B8F839CC44\" />\n\
+      <meta name=\"indexterm\" content=\"batch scripting: real-time message logging\" />\n\
+      <meta name=\"indexterm\" content=\"scripts: real-time message logging\" />\n\
+      <meta name=\"indexterm\" content=\"user preferences: real-time message logging\" />\n\
+      <meta name=\"indexterm\" content=\"preferences: real-time message logging\" />\n\
+      <meta name=\"indexterm\" content=\"messages: real-time logging\" />\n\
+      <meta name=\"indexterm\" content=\"real-time message logging\" />\n\
+      <meta name=\"topic-type\" content=\"concept\" />\n\
+      <title>Real-Time Message Logging</title><script type=\"text/javascript\" src=\"../scripts/utils/adsk.redirect.js\"></script></head>\n\
+   <body height=\"100%\"><div class=\"body_content\" id=\"body-content\"><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/ac_common.js\"); });</script><script type=\"text/javascript\">var reflinkid = \"si_cpp\"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on(\'click\', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/multireflink.js\"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$(\"div#WidgetFloaterPanels,link[href*=\'microsofttranslator.com\'],script[src*=\'microsofttranslator.com\'],script[src*=\'bing.com\']\").remove();</script><script type=\'text/javascript\'>$(\"div#navigation,div#breadcrumbs,div#banner\").attr(\"translate\",\"no\"); var mtLocation = ((location && location.href && location.href.indexOf(\'https\') == 0)?\'https://ssl.microsofttranslator.com\':\'http://www.microsofttranslator.com\')+\'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages=\'; yepnope.injectJs(mtLocation, function() {}, { charset:\'utf-8\', type:\'text/javascript\' } );</script><script type=\"text/javascript\">\n\
+ </script><!-- begin MT -->\n\
+            \n\
+            <div id=\'MicrosoftTranslatorWidget\' class=\'Dark\' style=\'position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden\'></div><div id=\"reflinkdiv\" style=\"display:none; font-family: \'RobotoRegular\', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible\"></div>\n\
+      <div><span class=\"anchor_wrapper\"><a name=\"GUID-A4B23973-3452-442B-8E94-43B8F839CC44\"></a></span><div class=\"head\">\n\
+            <h1>Real-Time Message Logging</h1>\n\
+         </div>\n\
+         <div class=\"bodyProcess\">\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-EA235D30-1105-4FAE-AE18-F2B679D7AB24\"></a></span>When running scripts, you can set your preferences to allow for real-time message\n\
+               logging. This is particularly useful when rendering in batch mode. To activate real-time\n\
+               message logging:\n\
+            </p><span class=\"anchor_wrapper\"><a name=\"GUID-8F7D8A2F-C723-41C6-B849-4A62E46624CD\"></a></span><ol type=\"1\" start=\"1\">\n\
+               <li> \n\
+                  <p><span class=\"anchor_wrapper\"><a name=\"GUID-C1493D69-2D55-489B-B468-F1E65ACCC592\"></a></span>Choose <span class=\"MenuCascade\" id=\"GUID-7BF2C7AE-B1FD-4E3F-A29C-91BB57F68A0D\">File</span><img src=\"../images/ac.menuaro.gif\" /><span class=\"MenuCascade\" id=\"GUID-6600B5BD-D5D8-4E85-B89A-E50B65AE60F2\">User Preferences</span> from the main menu.\n\
+                  </p> \n\
+                  <p><span class=\"anchor_wrapper\"><a name=\"GUID-B6A45DC7-686D-403A-9883-8EE984C26A22\"></a></span>The User Preferences dialog box opens.\n\
+                  </p> \n\
+               </li>\n\
+               <li> \n\
+                  <p><span class=\"anchor_wrapper\"><a name=\"GUID-ADE14E55-E956-4200-B93A-2ADF14695FE6\"></a></span>On the <em class=\"strong\">Scripting/Logging</em> page, set the <span class=\"MenuCascade\" id=\"GUID-36AE6A6C-8C75-45C2-AAAA-ECBACE7BF65C\">Real-Time Message Logging</span> option as you want it:\n\
+                  </p> \n\
+                  <ul>\n\
+                     <li> \n\
+                        <p><span class=\"anchor_wrapper\"><a name=\"GUID-CE8F69FD-C2DE-49F6-B5F4-170870F131CA\"></a></span>When this option is off (default), commands that involve picking sessions are properly\n\
+                           logged after all the inputs have been picked.\n\
+                        </p> \n\
+                     </li>\n\
+                     <li> \n\
+                        <p><span class=\"anchor_wrapper\"><a name=\"GUID-8A5DD542-D044-4AF7-A8CB-0BE3BB4A4855\"></a></span>When this option is on, messages are logged as they occur. This lets you see, for\n\
+                           example, messages about each frame as it is rendered rather than after all frames\n\
+                           are rendered.\n\
+                        </p> \n\
+                     </li>\n\
+                  </ul> \n\
+               </li>\n\
+            </ol>\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-7A7FA608-78F7-403C-B1EB-45544B1B367C\"></a></span>You can also get and set this preference using the \"<em class=\"strong\">RealTimeMessageLogging</em>\" string and the <em class=\"strong\">GetUserPref</em> and <em class=\"strong\">SetUserPref</em> commands. For example, the following VBScript script stores the current preference,\n\
+               then activates real-time message logging, renders the current pass, and finally restores\n\
+               the original preference:\n\
+            </p>\n\
+            <div class=\"codeBlock\"><pre class=\"prettyprint\">\n\
+Dim flag\n\
+flag = GetUserPref(\"RealTimeMessageLogging\")\n\
+SetUserPref \"RealTimeMessageLogging\", True\n\
+RenderPass\n\
+SetUserPref \"RealTimeMessageLogging\", flag\n\
+</pre></div>\n\
+         </div>\n\
+         <div class=\"footer-block\"><a href=\"../html/ac.cmtdialog.htm\" class=\"comments-anchor\" target=\"_blank\"><span class=\"comments-link\">Please send us your comment about this page</span></a></div><br /><p class=\"footer-license-block\"><a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\"><img alt=\"Creative Commons License\" style=\"border-width: 0;\" src=\"../images/ccLink.png\" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href=\"http://autodesk.com/creativecommons\" target=\"_blank\">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>\n\
+   </div></body>\n\
+</html>";

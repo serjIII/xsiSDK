@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>CreateEmptyPartition</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>CreateEmptyPartition</h1>
+         </div>
+
+<h2 class="pagehead">CreateEmptyPartition</h2>
+
+<h3>Description</h3>
+<div><p>
+Creates a new empty partition of the specified type (either object or light) 
+and inspects it. This is the scripting equivalent of deselecting everything
+in the scene and then selecting Pass - Partition > New from the Render 
+menu. <br /><br />
+Note: After creating an empty partition, you can add items to it, but <a href="#!/url=./si_cmds/CreatePartition.html">CreatePartition</a> 
+and <a href="#!/url=./si_cmds/SICreatePartition.html">SICreatePartition</a> command already performs both tasks simultaneously.<br /><br />
+A partition is a division of a pass and behaves like a group. Partitions 
+are used to organize scene elements within a pass. There are only two types 
+of partitions, object and light. A render pass creates a picture layer of a 
+scene that can be composited with any other passes to create a complete image.<br /><br />
+Note: This command uses <a href="#!/url=./files/OutArgDefined.htm">output arguments</a>. C# and some 
+scripting languages (such as JScript, PerlScript and Python) don't support arguments passed by reference so you 
+need to use the best workaround for your situation:
+<br /><br />
+For scripting languages this command returns an <a href="#!/url=./files/ISIVTCollection.htm">ISIVTCollection</a> 
+which you can use to get the output arguments. 
+<br /><br />
+For C# you can use the <a href="#!/url=./si_om/XSIApplication.ExecuteCommand.html">XSIApplication.ExecuteCommand</a> method to call this command. ExecuteCommand 
+packs the output arguments into a C# System.Object containing an <a href="#!/url=./files/Array.htm">Array</a> of the output arguments (see
+<a href="#!/url=./files/csharp_understand_CallingCommandsfromCSharp.htm">Calling Commands from C#</a>).
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>CreateEmptyPartition( [Target], [Name], [Type], [Value] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Target		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Pass to add the partition to 			<p class="cell"><span class="hilite">Default Value: </span>
+Selected pass, or current pass			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Name		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Name of the new partition 			<p class="cell"><span class="hilite">Default Value: </span>
+"Partition"			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Type		</td>
+		<td><a href="#!/url=./si_om/siPartitionType.html">siPartitionType</a>		</td>
+		<td>
+Type of the partition to create 			<p class="cell"><span class="hilite">Default Value: </span>
+siObjectPartition			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Value		</td>
+		<td><a href="#!/url=./si_om/XSICollection.html">XSICollection</a> containing a <a href="#!/url=./si_om/Group.html">Group</a> object		</td>
+		<td>
+ Returns the new partition 		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+'	This example demonstrates how to create an empty partition
+'	and then add an object to it. It also shows how you can 
+'	access partition information from a particular pass.
+'
+' Create a new scene 
+NewScene , false
+' Create a cone to add to one of the partitions
+Set oCone = GetPrim( "Cone", "MeshSurface" )
+' Create a standard (default) pass 
+CreatePass , "PassMeBy", oPass
+' Print partition info for default pass
+getPartInfo oPass
+' Now add an empty light partition to the pass and add the light to it
+CreateEmptyPartition oPass, "Sweet_Sorrow", siLightPartition, oLightPart
+AddToPartition oLightPart(0), "Light"
+' Print new partition info 
+getPartInfo oPass
+function getPartInfo( in_pass )
+	Application.LogMessage "Partitions for " &amp; in_pass &amp; ":"
+	Application.LogMessage "--------------------------------"
+	' Create an XSICollection with the partition info
+	set oParts = CreateObject( "XSI.Collection" )
+	oParts.SetAsText in_pass &amp; ".Partitions.*" 
+	For Each p In oParts
+		Application.LogMessage p
+	Next
+end function
+' Output of the above script:
+'INFO : "Partitions for Passes.PassMeBy:"
+'INFO : "--------------------------------"
+'INFO : "Passes.PassMeBy.Background_Objects_Partition"
+'INFO : "Passes.PassMeBy.Background_Lights_Partition"
+'
+'INFO : "Partitions for Passes.PassMeBy:"
+'INFO : "--------------------------------"
+'INFO : "Passes.PassMeBy.Background_Objects_Partition"
+'INFO : "Passes.PassMeBy.Background_Lights_Partition"
+'INFO : "Passes.PassMeBy.Sweet_Sorrow"</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/RenderPasses.html">RenderPasses</a> <a href="#!/url=./si_cmds/CreateLayer.html">CreateLayer</a> <a href="#!/url=./si_cmds/CreatePartition.html">CreatePartition</a> <a href="#!/url=./si_cmds/CreatePass.html">CreatePass</a> <a href="#!/url=./si_cmds/GetCurrentPass.html">GetCurrentPass</a> <a href="#!/url=./si_cmds/SetCurrentPass.html">SetCurrentPass</a> <a href="#!/url=./si_cmds/DeleteCurrentPass.html">DeleteCurrentPass</a> <a href="#!/url=./si_cmds/SICreateLayer.html">SICreateLayer</a> <a href="#!/url=./si_cmds/SICreateEmptyPartition.html">SICreateEmptyPartition</a> <a href="#!/url=./si_cmds/AddToPartition.html">AddToPartition</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>XSIApplication.LoadPlugin</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>XSIApplication.LoadPlugin</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/XSIApplication.html">XSIApplication</a>.LoadPlugin</h2>
+
+<h3>Description</h3>
+<div><p> Loads a self-installable plug-in file. Files with the following extensions are considered 
+valid: .dll,.so,.vbs, .pys,.ps,.js. This method returns a <a href="#!/url=./si_om/Plugin.html">Plugin</a> object 
+representing the newly loaded plug-in.<br /><br />
+If the plugin is already loaded, the existing plug-in is returned.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>Plugin XSIApplication.LoadPlugin( String in_pluginName );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = XSIApplication.LoadPlugin( Path );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p><a href="#!/url=./si_om/Plugin.html">Plugin</a></p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Path		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The full file path of the plug-in to load.		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">//--------------------------------------------------------------------
+//	This example shows how to define and load a plug-in in Softimage
+//
+// README: Copy and paste the example into the script editor 
+// and run (F5).
+//--------------------------------------------------------------------
+function ExLoadPluginDemo(filename)
+{
+	// manually load the plugin
+	var oPlugin = Application.LoadPlugin( filename );
+	// Display the plug-in information
+	Application.LogMessage( "Name: " 		+ oPlugin.Name );
+	Application.LogMessage( "Author: "		+ oPlugin.Author );
+	Application.LogMessage( "Major: "		+ oPlugin.Major );
+	Application.LogMessage( "Minor: "		+ oPlugin.Minor );
+	Application.LogMessage( "Language: "	+ oPlugin.Language );
+	Application.LogMessage( "Filename: "	+ oPlugin.Filename );
+	Application.LogMessage( "URL: "			+ oPlugin.URL );
+	Application.LogMessage( "Email: "		+ oPlugin.Email );
+	Application.LogMessage( "Help: "		+ oPlugin.Help );
+	Application.LogMessage( "HelpButton: "	+ oPlugin.HelpButton );
+	Application.LogMessage( "OriginPath: "	+ oPlugin.OriginPath );
+	Application.LogMessage( "Categories: "	+ oPlugin.Categories.toArray().join(",") );
+	Application.LogMessage( "Loaded: "		+ oPlugin.Loaded );
+	// The above script logs the following results:
+	//INFO : Name: XSIApplication.LoadPlugin Example
+	//INFO : Author: Softimage Co.
+	//INFO : Major: 1
+	//INFO : Minor: 0
+	//INFO : Language: JScript
+	//INFO : Filename: [userpath]\Addons\XSISDKDocExamples\Application\Plugins\ExXSIApplicationLoadPlugin.js
+	//INFO : URL: www.softimage.com
+	//INFO : Email: xsi@softimage.com
+	//INFO : Help: [factorypath]\Addons\XSISDKDocExamples\Application\Plugins\doc\ExXSIApplicationLoadPlugin.html
+	//INFO : OriginPath: [userpath]\Addons\XSISDKDocExamples\Application\Plugins\
+	//INFO : Categories: Demo
+	//INFO : Loaded: True
+}
+function  XSILoadPlugin( in_reg )
+{
+	in_reg.Name = "XSIApplication.LoadPlugin Example";
+	in_reg.Author = "Softimage Co."; 
+	in_reg.Major = 1;
+	in_reg.Minor = 0;
+	in_reg.URL = "www.softimage.com"; 
+	in_reg.Email = "xsi@softimage.com"; 
+	in_reg.Categories = "Demo"; 
+	// generate help files
+	GeneratePluginHelpFile(in_reg);
+	return true;
+} 
+function GeneratePluginHelpFile( in_reg )
+{
+	var fso = XSIFactory.CreateActiveXObject("Scripting.FileSystemObject");
+	var pluginfolder = fso.GetParentFolderName( in_reg.filename );
+	var helpfolder = fso.BuildPath( pluginfolder, "Doc" );
+	if ( ! fso.FolderExists(helpfolder ) )
+	{
+		fso.CreateFolder(helpfolder);	
+	}
+	var helpfilename = fso.GetBaseName(in_reg.filename);
+	var helpfile = fso.BuildPath( helpfolder, helpfilename + ".html" );
+	var file = fso.CreateTextFile ( helpfile );
+	file .WriteLine( "&lt;html&gt;" );
+	file .WriteLine( "&lt;head&gt;" );
+	file .WriteLine( "\t&lt;title&gt;" + in_reg.name + "Help&lt;/title&gt;" );
+	file .WriteLine( "&lt;/head&gt;");
+	file .WriteLine( "&lt;body&gt;");
+	file .WriteLine( "\t&lt;p&gt;description of "+in_reg.name+" plugin&lt;/p&gt;" );
+	file .WriteLine( "&lt;/body&gt;" );
+	file .WriteLine( "&lt;/html&gt;" );
+	file.close();
+}
+//--------------------------------------------------------------------
+// Code to bootstrap example into system
+//--------------------------------------------------------------------
+function ExampleSourceCode()
+{
+	return "// XSISDK Doc Example\n" +
+		GeneratePluginHelpFile.toString() + "\n" +
+		XSILoadPlugin.toString();
+}
+// if we are running from script editor save code to 
+// examples addon folder in the user's directory.
+if (GetUserPref("ScriptingSessionActive"))
+{
+	var ex_name 		= "ExXSIApplicationLoadPlugin";
+	var ex_subfolder 	= "Plugins";
+	var ex_folder 		= "XSISDKDocExamples";
+	var ex_langsuffix	= ".js";
+	CreateAddonDirectories( InstallationPath(siUserPath), ex_folder );
+	var fso = XSIFactory.CreateActiveXObject("Scripting.FileSystemObject");
+	var filename = XSIUtils.BuildPath( 
+		InstallationPath(siUserAddonPath), 
+		ex_folder,
+		"Application",
+		ex_subfolder,
+		ex_name+ex_langsuffix );
+	if (!fso.FileExists(filename))
+	{
+		var f = fso.CreateTextFile ( filename );
+		f.write( ExampleSourceCode() );
+		f.close();
+	}
+	ExLoadPluginDemo( filename );
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/XSIApplication.UnloadPlugin.html">XSIApplication.UnloadPlugin</a> <a href="#!/url=./si_om/XSIApplication.Plugins.html">XSIApplication.Plugins</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

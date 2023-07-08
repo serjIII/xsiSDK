@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>SIImportDotXSIFile</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>SIImportDotXSIFile</h1>
+         </div>
+
+<h2 class="pagehead">SIImportDotXSIFile</h2>
+
+<h3>Description</h3>
+<div><p>
+Imports a dotXSI file. The import file must be in dotXSI format, 
+and have .xsi as a file extension.<br /><br />This command is accessed through the main 
+menu by selecting File->Export->dotXSI, then by selecting the desired import options and 
+pressing Ok. This command is equivalent to the <a href="#!/url=./si_cmds/ImportDotXSI.html">ImportDotXSI</a> command, 
+except that the user is not prompted for import options.
+<br /><br />
+This command supports the downloading of files off the internet. If the filename
+specified is a URL then the file will be downloaded locally before the command
+is executed.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>SIImportDotXSIFile( FileName, [Parent] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">FileName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Name of the dotXSI file to import. 		</td>
+	</tr>
+	<tr>
+		<td class="name">Parent		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Object or  model to use as the parent 		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'---------------------------------------------------------
+' VBScript example : Importing and exporting a dotXSI file.
+' This example uses the SIImportDotXSIFile and SIExportDotXSIFile
+' commands, which do not prompt for the user for validation of 
+' import/export parameters like ImportDotXSI and ExportDotXSI.
+'---------------------------------------------------------
+' Create a model, with some primitives.
+dim ExportRoot
+SICreateModel , "ExportRoot", , ExportRoot
+CreatePrim "Torus", "MeshSurface", "Torus", ExportRoot
+CreatePrim "Cube", "NurbsSurface", "Cube", ExportRoot
+' Since we are not getting a dialog to modify dotXSIExport options,
+' We can specify them here, if we wish. To see what each parameter corresponds to,
+' goto the .spdl file, &lt;InstallationPath&gt;\Application\spdl\C3DdotXSIExportOpt.spdl.
+SetValue "dotXSIExportOptions.project_name", ActiveProject.Name
+SetValue "dotXSIExportOptions.output_file_format", 1 ' 0 = Binary, 1 = Ascii
+SetValue "dotXSIExportOptions.output_file_format_version", 360 ' "3.0" = 300, "3.5" = 350, "3.6" = 360
+SetValue "dotXSIExportOptions.sceneroot", False
+SetValue "dotXSIExportOptions.polymesh", True
+SetValue "dotXSIExportOptions.tesselation", False
+SetValue "dotXSIExportOptions.nrbssrf", True
+SetValue "dotXSIExportOptions.nrbscrv", True
+SetValue "dotXSIExportOptions.animall", True
+SetValue "dotXSIExportOptions.constraint", True
+SetValue "dotXSIExportOptions.custompset", True
+' Now specify to export the model to a dotXSI file
+dotXSIFile = Application.InstallationPath( siUserPath ) &amp; "\MyModel.xsi"
+SIExportDotXSIFile ExportRoot, dotXSIFile
+' Now delete the primitives and model, and re-import them.
+DeleteObj "ExportRoot.Torus"
+DeleteObj "ExportRoot.Cube"
+DeleteObj "ExportRoot"
+' Again, since we do not get a dialog box to change import options, change them
+' now programmatically. To see what each parameter corresponds to, goto the
+' .spdl file, &lt;InstallationPath&gt;\Application\spdl\C3DdotXSIImportOpt.spdl.
+SetValue "dotXSIImportOptions.anim_import", True
+SetValue "dotXSIImportOptions.classical_scaling", True
+SetValue "dotXSIImportOptions.mat_import", True
+SetValue "dotXSIImportOptions.txt_import", True
+' Now import the same model that was just exported.
+SIImportDotXSIFile dotXSIFile
+'---------------------------------------------------------
+' Output from this script (user specifies ok on both dialogs):
+'INFO : "4004 - Begin: Export .xsi file"
+'INFO : "4005 - End: Export .xsi file"
+'INFO : "4002 - Begin: Import .xsi file"
+'INFO : "4003 - End: Import .xsi file"
+' Object: ExportRoot.Torus
+' Object: ExportRoot.Cube
+'---------------------------------------------------------</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/ImportDotXSI.html">ImportDotXSI</a> <a href="#!/url=./si_cmds/ExportDotXSI.html">ExportDotXSI</a> <a href="#!/url=./si_cmds/ImportModel.html">ImportModel</a> <a href="#!/url=./si_cmds/SIExportDotXSIFile.html">SIExportDotXSIFile</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

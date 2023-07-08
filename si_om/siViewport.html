@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>siViewport</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>siViewport</h1>
+         </div>
+
+<h2 class="pagehead">siViewport</h2>
+
+<h3>Introduced</h3>
+<div><p>v6.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Used as a convenient list of identifiers for the different viewports of the
+view manager. The first three are special identifiers for commands and 
+methods that use the enumeration and do not refer to a specific viewport.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>siViewport.siViewportFocussed                                               // -3
+siViewport.siViewportCurrent                                                // -2
+siViewport.siViewportAll                                                    // -1
+siViewport.siViewportA                                                      // 0
+siViewport.siViewportB                                                      // 1
+siViewport.siViewportC                                                      // 2
+siViewport.siViewportD                                                      // 3</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<div><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th>Constant		</th>		<th>Value		</th>		<th>Description		</th>	</tr>
+	<tr>
+		<td class="name"><a name="siViewportFocussed"> </a>siViewportFocussed		</td>
+		<td class="example">-3		</td>
+		<td>
+Refers to the viewport that has the focus (indicated by a light gray border).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siViewportCurrent"> </a>siViewportCurrent		</td>
+		<td class="example">-2		</td>
+		<td>
+Refers to the viewport that is currently under the cursor.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siViewportAll"> </a>siViewportAll		</td>
+		<td class="example">-1		</td>
+		<td>
+Refers to all viewports. This value is only accepted as an argument if the command or method can use it.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siViewportA"> </a>siViewportA		</td>
+		<td class="example">0		</td>
+		<td>
+This identifies viewport A, which, in a 4-viewport view, is the upper left viewport (by default the top camera).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siViewportB"> </a>siViewportB		</td>
+		<td class="example">1		</td>
+		<td>
+This identifies viewport B, which, in a 4-viewport view, is the upper right viewport (by default the scene camera).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siViewportC"> </a>siViewportC		</td>
+		<td class="example">2		</td>
+		<td>
+This identifies viewport C, which, in a 4-viewport view, is the lower left viewport (by default the front camera).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siViewportD"> </a>siViewportD		</td>
+		<td class="example">3		</td>
+		<td>
+This identifies viewport D, which, in a 4-viewport view, is the lower right viewport (by default the right camera).		</td>
+	</tr>
+</table>
+</div>
+
+<h3>Applies To</h3>
+<div><p><a href="#!/url=./si_cmds/RenderRegionClose.html">RenderRegionClose</a> <a href="#!/url=./si_cmds/RenderRegionCreate.html">RenderRegionCreate</a> <a href="#!/url=./si_cmds/RenderRegionRefresh.html">RenderRegionRefresh</a> <a href="#!/url=./si_cmds/RenderRegionSave.html">RenderRegionSave</a> <a href="#!/url=./si_cmds/RenderRegionSetDisplayType.html">RenderRegionSetDisplayType</a> <a href="#!/url=./si_cmds/RenderRegionSetRefreshMode.html">RenderRegionSetRefreshMode</a> <a href="#!/url=./si_cmds/RenderRegionSetRenderChannel.html">RenderRegionSetRenderChannel</a> <a href="#!/url=./si_cmds/RenderRegionGetDisplayType.html">RenderRegionGetDisplayType</a> <a href="#!/url=./si_cmds/RenderRegionGetRefreshMode.html">RenderRegionGetRefreshMode</a> <a href="#!/url=./si_cmds/RenderRegionGetRenderChannel.html">RenderRegionGetRenderChannel</a> <a href="#!/url=./si_cmds/RenderRegionToggleSelectionTracking.html">RenderRegionToggleSelectionTracking</a> <a href="#!/url=./si_cmds/RenderRegionToggleVisibility.html">RenderRegionToggleVisibility</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

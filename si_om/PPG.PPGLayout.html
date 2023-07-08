@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>PPG.PPGLayout</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>PPG.PPGLayout</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/PPG.html">PPG</a>.PPGLayout</h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p> Returns the <a href="#!/url=./si_om/PPGLayout.html">PPGLayout</a> for the currently inspected
+object.  By changing the PPGLayout's contents, it is possible
+to dynamically change the UI from within logic code.  After changes
+are complete use <a href="#!/url=./si_om/PPG.Refresh.html">PPG.Refresh</a> to redraw the user
+interface.
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">// JScript Custom Property example demonstrating how to
+// build a simple Script viewer by using the
+// siControlFolder, siControlCombo and multi-line string
+// control.
+//
+// Note: This example could be extended: for example by adding a 
+// "Save" and "New" button.
+Main()
+function Main()
+{
+	var oCustomProperty = ActiveSceneRoot.AddProperty( 
+	                          "CustomProperty", false,
+	                          "Script View" ) ;
+	oCustomProperty.AddParameter3( "Dir", siString ) ;
+	oCustomProperty.AddParameter3( "Scripts", siString ) ;
+	oCustomProperty.AddParameter3( "File", siString ) ;
+	var oLayout = oCustomProperty.PPGLayout
+	oLayout.AddGroup( "Script Directory" ) ;
+	var oItem = oLayout.AddItem( "Dir", "Directory", "Folder" ) ;	
+	oItem.SetAttribute( "NoLabel", true ) ;	
+	oLayout.EndGroup() ;
+	oLayout.AddGroup( "Script File" ) ;
+	var oItem = oLayout.AddEnumControl( "Scripts", Array(),
+		             "", siControlCombo ) ;
+	oItem.SetAttribute( "NoLabel", true ) ;	
+	oLayout.EndGroup();
+	oLayout.AddGroup( "File Contents" ) ;
+	var oItem = oLayout.AddString( "File", "", true, 200 ) ;
+	oItem.SetAttribute( "NoLabel", true ) ;	
+	oLayout.EndGroup() ;
+	oLayout.Language = "Jscript" ;
+	oLayout.Logic = OnInit.toString() +
+		             PopulateCombo.toString() +
+		             Dir_OnChanged.toString() +
+		             Scripts_OnChanged.toString();
+	strDefaultDir = Application.InstallationPath( siUserPath ) + 
+	                     "/Data/Scripts" ;
+	oCustomProperty.Dir = strDefaultDir ;	
+	InspectObj( oCustomProperty );
+}
+//
+// The remaining code is event code which
+// is injected into the PPG layout.
+//
+function OnInit()
+{
+	PopulateCombo() ;	
+}
+function Dir_OnChanged()
+{
+	PopulateCombo() ;
+	PPG.File.Value = "" ;
+}
+function Scripts_OnChanged()
+{
+	strDir = PPG.Dir.Value 
+	strScript = PPG.Scripts.Value 
+	if ( strDir == "" || strScript == "" )
+	{
+		PPG.File.Value = "" ;
+		return ;
+	}
+	try
+	{
+		var oFSO = new ActiveXObject( "Scripting.FileSystemObject" ) ;		
+		var oFile = oFSO.OpenTextFile( strDir + "/" + strScript ) ;
+		PPG.File.Value = oFile.ReadAll() ;
+	}
+	catch( e )
+	{
+		PPG.File.Value = "" ;
+		Application.LogMessage ( "Error reading file " + 
+		             strDir + "/" + strScript + 
+		             "(" + e.Description + ")" ) ;
+	}
+}
+function PopulateCombo()
+{
+	strDir = PPG.Dir.Value ;
+	strOldValue = PPG.Scripts.Value ; 
+	// Get access to the PPGLayout object
+var oLayout = PPG.PPGLayout ;
+	// The Combo box definition is part of the layout.
+	// We look it up based on the script name of the associated
+	// parameter
+	var oCombo = PPG.PPGLayout.Item( "Scripts" ) ;
+	if ( strDir == "" )
+	{
+		//Flush any contents
+		oCombo.UIItems = null ;
+		PPG.Scripts.Value = "" ;
+	}
+	else
+	{
+		var oFSO = new ActiveXObject( "Scripting.FileSystemObject" ) ;		
+		var oItems = new Array() ;
+		try
+		{
+			bFoundOldValue = false ;
+			var oFolder = oFSO.GetFolder( strDir ) ;
+		   fc = new Enumerator(oFolder.files);
+		   for (; !fc.atEnd(); fc.moveNext())
+		   {
+		   		var oFile = fc.item() ;
+		   		if ( -1 != oFile.Name.indexOf( ".vbs" ) ||
+			   		  -1 != oFile.Name.indexOf( ".js" ) ||
+			   		  -1 != oFile.Name.indexOf( ".pys" ) ||
+			   		  -1 != oFile.Name.indexOf( ".pls" ) )
+			   	{			   		 		   		
+			   		// Both label and value will be the string name
+			   		oItems.push( oFile.Name ) ;
+		   			oItems.push( oFile.Name ) ;
+		   			if ( strOldValue == oFile.Name )
+		   			{
+		   				bFoundOldValue = true ;
+		   			}
+		   		}
+		   }
+			oCombo.UIItems = oItems ;
+			if ( bFoundOldValue )
+			{
+				// This is the case when you close and reopen the
+				// property page - we want to restore the original 
+				// setting if possible.
+				PPG.Scripts.Value = strOldValue ;
+			}
+			else
+			{
+				// We leave the value empty
+				// so that the user actually 
+				// picks a script file
+				// before we load anything
+				PPG.Scripts.Value = "" ;
+			}
+		}
+		catch( e )
+		{
+			Application.LogMessage( "Error finding script files" +
+		           " in specified directory: " + e.Description );
+		}
+	}	
+	// Necessary to make sure the updated Combo is drawn
+	PPG.Refresh() ;
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/ProjectItem.PPGLayout.html">ProjectItem.PPGLayout</a> <a href="#!/url=./si_cmds/InspectObj.html">InspectObj</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

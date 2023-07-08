@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>X3DObjectCollection.Find</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>X3DObjectCollection.Find</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/X3DObjectCollection.html">X3DObjectCollection</a>.Find</h2>
+
+<h3>Description</h3>
+<div><p> Returns the first member of this collection that matches the type criteria. 
+If no item is found, it returns "Nothing", which you can use to trap errors.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>X3DObject X3DObjectCollection.Find( String in_filter );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = X3DObjectCollection.Find( [Type] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p><a href="#!/url=./si_om/X3DObject.html">X3DObject</a></p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Type		</td>
+		<td><a href="#!/url=./si_om/siType.html">siType</a>		</td>
+		<td>
+
+		The type of object to look for defined by <a href="#!/url=./si_om/siType.html">siType</a> or an 
+		empty string if the type is not required. The type can be a specific 
+		<a href="#!/url=./si_om/X3DObject.html">X3DObject</a> type such as siModelType and si3DObjectType or 
+		a primitive type such as siPolyMeshType or siSrfMeshPrimType. If a primitive 
+		type is supplied, the function returns the first child object defined with 
+		a primitive of this type. 
+				<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">siPolyMeshType					</td>
+					<td>Polygon Mesh type					</td>
+				</tr>
+				<tr>
+					<td class="name">si3DObjectType					</td>
+					<td>3D Object type					</td>
+				</tr>
+				<tr>
+					<td class="name">siArcPrimType					</td>
+					<td>Implicit Arc Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siAttractorCtrlType					</td>
+					<td>Attractor Control Object type (electric force)					</td>
+				</tr>
+				<tr>
+					<td class="name">siCameraPrimType					</td>
+					<td>Camera Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siCameraRootPrimType					</td>
+					<td>Camera Root primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siChainBonePrimType					</td>
+					<td>Chain Bone Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siChainEffPrimType					</td>
+					<td>Chain End Effector Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siChainRootPrimType					</td>
+					<td>Chain Root Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siCirclePrimType					</td>
+					<td>Implicit Circle Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siCloudPrimType					</td>
+					<td>Cloud Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siConePrimType					</td>
+					<td>Cone Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siCrvListAggregatePrimType					</td>
+					<td>NURBS Curve List Aggregate Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siCrvListPrimType					</td>
+					<td>NURBS Curve List Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siCubePrimType					</td>
+					<td>Cube Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siCylinderPrimType					</td>
+					<td>Cylinder Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siDiscPrimType					</td>
+					<td>Disc Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siDodecahedronPrimType					</td>
+					<td>Dodecahedron Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siDragCtrlPrimType					</td>
+					<td>Drag Control Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siEddyCtrlPrimType					</td>
+					<td>Eddy Control Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siFanType					</td>
+					<td>Fan Force Object type					</td>
+				</tr>
+				<tr>
+					<td class="name">siFurPrimType					</td>
+					<td>Fur Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siGeoShaderPrimType					</td>
+					<td>GeoShader Primitive Type					</td>
+				</tr>
+				<tr>
+					<td class="name">siGravityCtrlType					</td>
+					<td>Gravity Force Control Object type					</td>
+				</tr>
+				<tr>
+					<td class="name">siGridPrimType					</td>
+					<td>Grid Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siIcosahedronPrimType					</td>
+					<td>Icosahedron Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siLatticePrimType					</td>
+					<td>Lattice Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siLightPrimType					</td>
+					<td>Light Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siModelNullPrimType					</td>
+					<td>Model Null Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siModelType					</td>
+					<td>3D Model type					</td>
+				</tr>
+				<tr>
+					<td class="name">siNullPrimType					</td>
+					<td>Null Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siOctahedronPrimType					</td>
+					<td>Octahedron Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siSpherePrimType					</td>
+					<td>Sphere Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siSpiralPrimType					</td>
+					<td>Implicit Spiral Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siSpotInterestPrimType					</td>
+					<td>Spot Interest Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siSpotRootPrimType					</td>
+					<td>Spot Root Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siSquarePrimType					</td>
+					<td>Implicit Square Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siSrfMeshPrimType					</td>
+					<td>NURBS Surface Mesh Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siTetrahedronPrimType					</td>
+					<td>Tetrahedron Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siTorusPrimType					</td>
+					<td>Torus Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siTurbulenceCtrlPrimType					</td>
+					<td>Turbulence Control Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siVolumeDeformType					</td>
+					<td>Volume Deform type (implicit sphere volume)					</td>
+				</tr>
+				<tr>
+					<td class="name">siVortexCtrlType					</td>
+					<td>Vortex Control Object type (magnetic force)					</td>
+				</tr>
+				<tr>
+					<td class="name">siWaveCtrlType					</td>
+					<td>Wave Control Object type					</td>
+				</tr>
+				<tr>
+					<td class="name">siWindType					</td>
+					<td>Wind Force Object type					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'VBScript example
+' Set up the example using a mesh grid, cube, cone, and a nurbs cube:
+set oRoot = activesceneroot
+oRoot.addgeometry "grid", "meshsurface"
+oRoot.addgeometry "cube", "meshsurface"
+oRoot.addgeometry "cone", "meshsurface"
+oRoot.addgeometry "cube", "nurbssurface"
+set oGeoms = oRoot.findchildren( ,,siGeometryFamily)
+logmessage "The collection of geometry from the root is a " &amp; typename( oGeoms ) 
+logmessage "There are " &amp; oGeoms.count &amp; " geometry objects under the root." 
+logmessage ""
+for each item in oGeoms
+	logmessage item.name &amp; " is a " &amp; item.type &amp; " " &amp; typename( item )
+next
+set oCone = oGeoms.find( "cone" )
+set oCube = oGeoms.find( "cube" )
+set oGrid = oGeoms.find( "grid" )
+logmessage ""
+logmessage "=========================================================================="
+logmessage " Stats for the collection:"
+logmessage " ------------------------"
+logmessage "	Total number of objects in collection: " &amp; oGeoms.count
+logmessage "	Name of the first cone in the collection: " &amp; oCone.name
+logmessage "	Name of the first cube in the collection: " &amp; oCube.name
+' Try some error trapping ( if you are trying to use a find criteria that returns Nothing, 
+' you will see this error message: 'ERROR : "Object required: 'oCube1'" )
+set oCube1 = oGeoms.find( "cube1" )
+if typename( oCube1 ) = "Nothing" then
+	logmessage "	Can't get the name of the other cube in the collection."
+else 
+	logmessage "	Name of the other cube in the collection: " &amp; oCube1.name
+end if
+logmessage "	Name of the first grid in the collection: " &amp; oGrid.name
+' Output of above script is:
+'INFO : "The collection of geometry from the root is a X3DObjectCollection"
+'INFO : "There are 4 geometry objects under the root."
+'INFO : ""
+'INFO : "grid is a polymsh X3DObject"
+'INFO : "cube is a polymsh X3DObject"
+'INFO : "cone is a polymsh X3DObject"
+'INFO : "cube1 is a surfmsh X3DObject"
+'INFO : ""
+'INFO : "=========================================================================="
+'INFO : " Stats for the collection:"
+'INFO : " ------------------------"
+'INFO : "	Total number of objects in collection: 4"
+'INFO : "	Name of the first cone in the collection: cone"
+'INFO : "	Name of the first cube in the collection: cube"
+'INFO : "	Can't get the name of the other cube in the collection."
+'INFO : "	Name of the first grid in the collection: grid"</pre></td></tr>
+</table>
+</div></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

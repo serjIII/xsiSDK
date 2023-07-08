@@ -1,0 +1,235 @@
+var topic = "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n\
+\n\
+<!-- saved from url=(0024)http://docs.autodesk.com -->\n\
+<html>\n\
+   <head>\n\
+<link href=\"../style/prettify.css\" type=\"text/css\" rel=\"stylesheet\" />\n\
+<script type=\"text/javascript\" src=\"../scripts/prettify.js\"></script><script src=\"../scripts/lib/jquery-1.9.1.min.js\" type=\"text/javascript\"></script>\n\
+      <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n\
+      <meta name=\"product\" content=\"SI\" />\n\
+      <meta name=\"release\" content=\"2015\" />\n\
+      <meta name=\"book\" content=\"Developer\" />\n\
+      <meta name=\"created\" content=\"2014-03-13\" />\n\
+      <meta name=\"topicid\" content=\"GUID-E8756A13-D5B3-4A12-A734-CF8234C40B2B\" />\n\
+      <meta name=\"indexterm\" content=\"UFOs: raster inputs and outputs\" />\n\
+      <meta name=\"indexterm\" content=\"raster: inputs\" />\n\
+      <meta name=\"indexterm\" content=\"raster: outputs\" />\n\
+      <meta name=\"topic-type\" content=\"concept\" />\n\
+      <title>Raster Inputs and Outputs</title><script type=\"text/javascript\" src=\"../scripts/utils/adsk.redirect.js\"></script></head>\n\
+   <body height=\"100%\"><div class=\"body_content\" id=\"body-content\"><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/ac_common.js\"); });</script><script type=\"text/javascript\">var reflinkid = \"si_cpp\"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on(\'click\', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/multireflink.js\"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$(\"div#WidgetFloaterPanels,link[href*=\'microsofttranslator.com\'],script[src*=\'microsofttranslator.com\'],script[src*=\'bing.com\']\").remove();</script><script type=\'text/javascript\'>$(\"div#navigation,div#breadcrumbs,div#banner\").attr(\"translate\",\"no\"); var mtLocation = ((location && location.href && location.href.indexOf(\'https\') == 0)?\'https://ssl.microsofttranslator.com\':\'http://www.microsofttranslator.com\')+\'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages=\'; yepnope.injectJs(mtLocation, function() {}, { charset:\'utf-8\', type:\'text/javascript\' } );</script><script type=\"text/javascript\">\n\
+ </script><!-- begin MT -->\n\
+            \n\
+            <div id=\'MicrosoftTranslatorWidget\' class=\'Dark\' style=\'position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden\'></div><div id=\"reflinkdiv\" style=\"display:none; font-family: \'RobotoRegular\', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible\"></div>\n\
+      <div><span class=\"anchor_wrapper\"><a name=\"GUID-E8756A13-D5B3-4A12-A734-CF8234C40B2B\"></a></span><div class=\"head\">\n\
+            <h1>Raster Inputs and Outputs</h1>\n\
+         </div>\n\
+         <div class=\"bodyProcess\">\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-29EB5B2F-BEF2-4CFD-8DD5-10DD5DF060A3\"></a></span>The number of raster inputs and outputs must be defined in the <em class=\"mild\">ufoProcessDefine</em> user function. For each input or output, the library function <em class=\"mild\">ufoProcessRasterInDefine</em> or <em class=\"mild\">ufoProcessRasterOutDefine</em> must be called to define its identification and suggested working component combination.\n\
+               This can be RGB, RGB-Alpha, Alpha, or any.\n\
+            </p>\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-E29F3B03-765C-4CFD-957D-B6E48DB45DF4\"></a></span>If an input does not need to be connected for the effect to work, then <em class=\"mild\">ufoProcessSetRasterInOptional</em> should be called to set it to optional. The default selection state for the optional\n\
+               input can be set with <em class=\"mild\">ufoProcessSetRasterInOptionalDefault</em>.\n\
+            </p>\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-66FD8AEF-DCE6-440F-95FE-491A2DD4AE18\"></a></span>UFO processes can support input and output rasters of nine different pixel types:\n\
+            </p>\n\
+            <ul>\n\
+               <li> \n\
+                  <p><span class=\"anchor_wrapper\"><a name=\"GUID-464AD181-BAFF-4BCC-8765-B4FAE6C94A07\"></a></span>8-bits per component. Component range is 0 to 255.\n\
+                  </p> \n\
+                  <div class=\"table_Ruled\">\n\
+                     <table cellpadding=\"0\" cellspacing=\"0\" class=\"ruled\">\n\
+                        <colgroup>\n\
+                           <col align=\"left\" />\n\
+                           <col align=\"left\" />\n\
+                        </colgroup>\n\
+                        <tr class=\"ruledHeading\">\n\
+                           <th class=\"table-heading\"> <span class=\"anchor_wrapper\"><a name=\"GUID-EB974D1A-D261-46FA-A4D6-358534108C86\"></a></span><p class=\"table-heading\">Function</p> \n\
+                           </th>\n\
+                           <th class=\"table-heading\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-08CC83AF-23D3-4F8A-8300-D02864CAFA98\"></a></span><p class=\"table-heading\">Description</p> \n\
+                           </th>\n\
+                        </tr>\n\
+                        <tr class=\"ruledOddRow\">\n\
+                           <td class=\"table-body\"> <span class=\"anchor_wrapper\"><a name=\"GUID-A2F1E684-4763-4EF0-B71C-696AD685379F\"></a></span><p class=\"table-body\">ufoRGB8PixelType</p> \n\
+                           </td>\n\
+                           <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-C2658F39-27AA-4CAE-8540-81ED8540ECA2\"></a></span><p class=\"table-body\">RGB packed UBGR (U is redundant 32-bits per pixel)</p> \n\
+                           </td>\n\
+                        </tr>\n\
+                        <tr class=\"ruledEvenRow\">\n\
+                           <td class=\"table-body\"> <span class=\"anchor_wrapper\"><a name=\"GUID-89CBE1A2-EBDB-47C6-AB95-CCA58FB87ADF\"></a></span><p class=\"table-body\">ufoA8PixelType</p> \n\
+                           </td>\n\
+                           <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-C4379BA8-F431-4DBE-9BF1-FA8584A9D0D9\"></a></span><p class=\"table-body\">Alpha 8-bits per pixel</p> \n\
+                           </td>\n\
+                        </tr>\n\
+                        <tr class=\"ruledOddRow\">\n\
+                           <td class=\"table-body\"> <span class=\"anchor_wrapper\"><a name=\"GUID-EED079CB-DD7D-4E52-A1E7-8213554EED08\"></a></span><p class=\"table-body\">ufoRGBA8PixelType</p> \n\
+                           </td>\n\
+                           <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-AC9A7C17-CDCD-45DB-BA6F-49798E1D484A\"></a></span><p class=\"table-body\">RGB-Alpha packed ABGR 32-bits per pixel</p> \n\
+                           </td>\n\
+                        </tr>\n\
+                     </table>\n\
+                  </div> \n\
+               </li>\n\
+               <li> \n\
+                  <p><span class=\"anchor_wrapper\"><a name=\"GUID-B42EE3D6-D6FA-462B-9823-D16339A74C70\"></a></span>16-bits per component. Component range is 0 to 16383 (14 bits).\n\
+                  </p> \n\
+                  <div class=\"table_Ruled\">\n\
+                     <table cellpadding=\"0\" cellspacing=\"0\" class=\"ruled\">\n\
+                        <colgroup>\n\
+                           <col align=\"left\" />\n\
+                           <col align=\"left\" />\n\
+                        </colgroup>\n\
+                        <tr class=\"ruledHeading\">\n\
+                           <th class=\"table-heading\"> <span class=\"anchor_wrapper\"><a name=\"GUID-397C92BB-62EF-4EAF-9E21-E8E301B6226A\"></a></span><p class=\"table-heading\">Function</p> \n\
+                           </th>\n\
+                           <th class=\"table-heading\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-CE7F024A-CF92-4160-930E-AD3C2B4891A2\"></a></span><p class=\"table-heading\">Description</p> \n\
+                           </th>\n\
+                        </tr>\n\
+                        <tr class=\"ruledOddRow\">\n\
+                           <td class=\"table-body\"> <span class=\"anchor_wrapper\"><a name=\"GUID-AE1F3C87-284D-492B-877D-45AC086781CE\"></a></span><p class=\"table-body\">ufoRGB16PixelType</p> \n\
+                           </td>\n\
+                           <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-B7CC1D93-C100-4A9E-9100-F548D052DF06\"></a></span><p class=\"table-body\">RGB packed BGR 48-bits per pixel</p> \n\
+                           </td>\n\
+                        </tr>\n\
+                        <tr class=\"ruledEvenRow\">\n\
+                           <td class=\"table-body\"> <span class=\"anchor_wrapper\"><a name=\"GUID-4C9A1824-B332-4B06-87BC-72BE7D57D149\"></a></span><p class=\"table-body\">ufoA16PixelType</p> \n\
+                           </td>\n\
+                           <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-C7FFEEA2-0260-475C-A8EF-3B473C8E827E\"></a></span><p class=\"table-body\">Alpha 16-bits per pixel</p> \n\
+                           </td>\n\
+                        </tr>\n\
+                        <tr class=\"ruledOddRow\">\n\
+                           <td class=\"table-body\"> <span class=\"anchor_wrapper\"><a name=\"GUID-1D6CB715-DBFE-4532-90C7-D4D21DF59CFA\"></a></span><p class=\"table-body\">ufoRGBA16PixelType</p> \n\
+                           </td>\n\
+                           <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-6C11BBC1-35FF-4BC9-B1C2-7F361A3C8009\"></a></span><p class=\"table-body\">RGB-Alpha packed ABGR 64-bits per pixel</p> \n\
+                           </td>\n\
+                        </tr>\n\
+                     </table>\n\
+                  </div> \n\
+               </li>\n\
+               <li> \n\
+                  <p><span class=\"anchor_wrapper\"><a name=\"GUID-79E46320-E747-4A09-BD74-F97B9DE28C16\"></a></span>Floating point 32-bits per component. Component range is 0.0 to 1.0.\n\
+                  </p> \n\
+                  <div class=\"table_Ruled\">\n\
+                     <table cellpadding=\"0\" cellspacing=\"0\" class=\"ruled\">\n\
+                        <colgroup>\n\
+                           <col align=\"left\" />\n\
+                           <col align=\"left\" />\n\
+                        </colgroup>\n\
+                        <tr class=\"ruledHeading\">\n\
+                           <th class=\"table-heading\"> <span class=\"anchor_wrapper\"><a name=\"GUID-C27A229C-0950-4DDC-9A68-A6A18333E5F5\"></a></span><p class=\"table-heading\">Function</p> \n\
+                           </th>\n\
+                           <th class=\"table-heading\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-25C4671E-A671-4472-AF36-0803BA76495F\"></a></span><p class=\"table-heading\">Description</p> \n\
+                           </th>\n\
+                        </tr>\n\
+                        <tr class=\"ruledOddRow\">\n\
+                           <td class=\"table-body\"> <span class=\"anchor_wrapper\"><a name=\"GUID-079C59A1-5E00-4725-B65F-8D1FE7941738\"></a></span><p class=\"table-body\">ufoRGBFPixelType</p> \n\
+                           </td>\n\
+                           <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-6E18057C-2190-4BF3-A9A7-E61E1BF63711\"></a></span><p class=\"table-body\">RGB packed BGR 96-bits per pixel</p> \n\
+                           </td>\n\
+                        </tr>\n\
+                        <tr class=\"ruledEvenRow\">\n\
+                           <td class=\"table-body\"> <span class=\"anchor_wrapper\"><a name=\"GUID-820FA158-F398-4615-B16E-75023612D36B\"></a></span><p class=\"table-body\">ufoAFPixelType</p> \n\
+                           </td>\n\
+                           <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-4DBCDADB-C010-453D-A1A7-FB60E4223B72\"></a></span><p class=\"table-body\">Alpha 32-bits per pixel</p> \n\
+                           </td>\n\
+                        </tr>\n\
+                        <tr class=\"ruledOddRow\">\n\
+                           <td class=\"table-body\"> <span class=\"anchor_wrapper\"><a name=\"GUID-ECA5BBA1-909B-4D6F-A77B-F44E8522E9F4\"></a></span><p class=\"table-body\">ufoRGBAFPixelType</p> \n\
+                           </td>\n\
+                           <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-EF294457-85E1-46E2-9E82-CA000A323A93\"></a></span><p class=\"table-body\">RGB-Alpha packed ABGR 128-bits per pixel</p> \n\
+                           </td>\n\
+                        </tr>\n\
+                     </table>\n\
+                  </div> \n\
+               </li>\n\
+            </ul>\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-B687C19B-6D49-44C8-BFF5-E5BD657AAB29\"></a></span>By default, the rasters supplied to the inputs and outputs can be of any of the supported\n\
+               raster types. There are generic pixel access functions, described later, which can\n\
+               be used to set and get RGB, RGB-Alpha, or Alpha normalized (0.0 to 1.0) component\n\
+               values, generating sensible results regardless of a raster\'s actual type. These functions\n\
+               are fine for many one-off or mathematically-intensive effects.\n\
+            </p>\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-34860600-4F56-4184-A993-777534263360\"></a></span>However, in the majority of cases, direct pixel access using pointers to pixel structures\n\
+               and using integer arithmetic will increase rendering performance, and may be necessary.\n\
+               In this case, the UFO code will probably only support a narrow subset of the entire\n\
+               possible combinations of input and output pixel types that may get connected to it.\n\
+               There are two ways to specify how input and output pixel type combinations may be\n\
+               converted to a combination that the UFO code supports. The recommended method is by\n\
+               supplying the <em class=\"mild\">ufoProcessSpecifyConvertPixelTypes</em> user function. The pixel types of the rasters that will be supplied to the UFO process\n\
+               inputs and output are passed as arguments. If you would like the application to pre-convert\n\
+               the input rasters or supply a different type output to be converted after rendering,\n\
+               then the pixel type arguments should be changed.\n\
+            </p>\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-B8E4F223-C790-41EE-9BA5-6F88DC1B2350\"></a></span>Alternatively, although not recommended any more, the combinations of input and output\n\
+               pixel types supported by the UFO rendering code can be defined using <em class=\"mild\">ufoProcessSetPixelTypeCombinations</em>. This allows multiple specifications of the desired pixel types for each input and\n\
+               output.\n\
+            </p>\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-550889AF-5846-4717-8F56-E3300D517C35\"></a></span>Some of the values used to describe desired pixel type values can indicate <em class=\"mild\">no specific</em> pixel type or <em class=\"mild\">any</em> pixel type of a <em class=\"mild\">specific component type</em>. The full set of available values to specify a supported pixel type are:\n\
+            </p>\n\
+            <ul>\n\
+               <li> \n\
+                  <p><span class=\"anchor_wrapper\"><a name=\"GUID-216604FE-4FB4-4B07-87E3-36FA4E77C7EF\"></a></span>To specify any pixel type\n\
+                  </p> \n\
+                  <div class=\"table_Ruled\">\n\
+                     <table cellpadding=\"0\" cellspacing=\"0\" class=\"ruled\">\n\
+                        <colgroup>\n\
+                           <col align=\"left\" />\n\
+                           <col align=\"left\" />\n\
+                        </colgroup>\n\
+                        <tr class=\"ruledOddRow\">\n\
+                           <td class=\"table-body\"> <span class=\"anchor_wrapper\"><a name=\"GUID-525A86FA-6706-49D2-935D-FCE937780FE1\"></a></span><p class=\"table-body\">ufoAnyPixelType</p> \n\
+                           </td>\n\
+                           <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-C3DD4CC0-D9CB-436F-A983-B77CC94A8587\"></a></span><p class=\"table-body\">any pixel type</p> \n\
+                           </td>\n\
+                        </tr>\n\
+                     </table>\n\
+                  </div> \n\
+               </li>\n\
+               <li> \n\
+                  <p><span class=\"anchor_wrapper\"><a name=\"GUID-B7FC7CA8-3482-433C-9ABD-FDC9E6612310\"></a></span>To specify any pixel type of a component type\n\
+                  </p> \n\
+                  <div class=\"table_Ruled\">\n\
+                     <table cellpadding=\"0\" cellspacing=\"0\" class=\"ruled\">\n\
+                        <colgroup>\n\
+                           <col align=\"left\" />\n\
+                           <col align=\"left\" />\n\
+                        </colgroup>\n\
+                        <tr class=\"ruledOddRow\">\n\
+                           <td class=\"table-body\"> <span class=\"anchor_wrapper\"><a name=\"GUID-60C8CDA7-AA6A-476B-8E97-C96C91DF6E73\"></a></span><p class=\"table-body\">ufoAny8PixelType</p> \n\
+                           </td>\n\
+                           <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-B197DF60-76D2-4E34-8750-DB9B3D7B61A1\"></a></span><p class=\"table-body\">any 8-bits per component pixel type</p> \n\
+                           </td>\n\
+                        </tr>\n\
+                        <tr class=\"ruledEvenRow\">\n\
+                           <td class=\"table-body\"> <span class=\"anchor_wrapper\"><a name=\"GUID-D6A09E30-BA2C-416C-9B10-6A6D0A0403C4\"></a></span><p class=\"table-body\">ufoAny16PixelType</p> \n\
+                           </td>\n\
+                           <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-BD05CF34-34D6-4D69-A743-DBEA315E0E3C\"></a></span><p class=\"table-body\">any 16-bits per component pixel type</p> \n\
+                           </td>\n\
+                        </tr>\n\
+                        <tr class=\"ruledOddRow\">\n\
+                           <td class=\"table-body\"> <span class=\"anchor_wrapper\"><a name=\"GUID-2889FCC8-47AB-49CF-B005-E62210226660\"></a></span><p class=\"table-body\">ufoAnyFPixelType</p> \n\
+                           </td>\n\
+                           <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-70373A8C-E5BE-404D-B489-762C9FFDF6C2\"></a></span><p class=\"table-body\">any floating point (32-bits per component) pixel type</p> \n\
+                           </td>\n\
+                        </tr>\n\
+                     </table>\n\
+                  </div> \n\
+               </li>\n\
+               <li> \n\
+                  <p><span class=\"anchor_wrapper\"><a name=\"GUID-4F910CD6-BCD2-43CB-AC4F-AE073B22A203\"></a></span>To specify an actual pixel type\n\
+                  </p> \n\
+                  <div class=\"codeBlock\"><pre class=\"prettyprint\">\n\
+	ufoRGB8PixelType\n\
+	ufoA8PixelType\n\
+	ufoRGBA8PixelType\n\
+	ufoRGB16PixelType\n\
+	ufoA16PixelType\n\
+	ufoRGBA16PixelType\n\
+	ufoRGBFPixelType\n\
+	ufoAFPixelType\n\
+	ufoRGBAFPixelType</pre></div> \n\
+               </li>\n\
+            </ul>\n\
+         </div>\n\
+         <div class=\"footer-block\"><a href=\"../html/ac.cmtdialog.htm\" class=\"comments-anchor\" target=\"_blank\"><span class=\"comments-link\">Please send us your comment about this page</span></a></div><br /><p class=\"footer-license-block\"><a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\"><img alt=\"Creative Commons License\" style=\"border-width: 0;\" src=\"../images/ccLink.png\" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href=\"http://autodesk.com/creativecommons\" target=\"_blank\">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>\n\
+   </div></body>\n\
+</html>";

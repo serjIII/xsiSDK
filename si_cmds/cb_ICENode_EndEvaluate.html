@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>EndEvaluate</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>EndEvaluate</h1>
+         </div>
+
+<h2 class="pagehead">EndEvaluate</h2>
+
+<hr width="100%" />
+<h3>Description</h3>
+<div><p><a name="Description"> </a>	<p>
+				This optional callback is a single-threaded task for freeing up memory, cleaning resources, or anything required to 
+				undo the work performed in <a href="#!/url=./si_cmds/cb_ICENode_BeginEvaluate.html">BeginEvaluate</a>. The EndEvaluate callback 
+				uses the <a href="#!/url=./si_cpp/classXSI_1_1ICENodeContext.html">ICENodeContext</a> object to clean up the user data stored 
+				in the BeginEvaluate callback.
+			</p>
+<div class="tip">
+<table cellpadding="5" cellspacing="5">
+	<tr>
+		<td class="label">Warning</td>
+		<td class="emph">
+				The input and output ports cannot be accessed at all through the <a href="#!/url=./si_cpp/classXSI_1_1ICENodeContext.html">ICENodeContext</a>
+				object in this callback. The <a href="#!/url=./si_cmds/cb_ICENode_Evaluate.html">Evaluate</a> callback can access both input and 
+				output port information and the BeginEvaluate callback can access input ports only in some cases.
+			</td>
+	</tr>
+</table>
+</div>
+</p></div>
+
+<hr width="100%" />
+<h3>Applies To</h3>
+<div><p><a name="AppliesTo"> </a><a href="#!/url=./files/cus_render.htm">Custom ICENodes</a></p></div>
+
+<hr width="100%" />
+<h3>Syntax</h3>
+<div><p><a name="Syntax"> </a><div class="example"><table>
+<tr>
+<td class="example"><pre class="cplusplus">CStatus &lt;icenode_name&gt;_EndEvaluate( CRef&amp; in_context )
+{ 
+	... 
+}</pre></td></tr>
+</table>
+</div>	<p><span style="font-family: courier, monospace;">&lt;icenode_name&gt;</span> is the name specified in the call to 
+				<a href="#!/url=./si_cpp/classXSI_1_1PluginRegistrar.html#RegisterICENode">PluginRegistrar::RegisterICENode</a>, 
+				with any spaces converted to underscores.
+			</p>
+</p></div>
+
+<hr width="100%" />
+<h3>Parameters</h3>
+<div><p><a name="Parameters"> </a>	<table>		<tr>			<th>Parameter</th>
+			<th>Language</th>
+			<th>Type</th>
+			<th>Description</th>
+</tr>
+		<tr>			<td class="name">in_context</td>
+			<td class="name">C++</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1CRef.html">CRef</a>&</td>
+			<td>A reference to the <a href="#!/url=./si_cpp/classXSI_1_1ICENodeContext.html">ICENodeContext</a> object. 
+					<a href="#!/url=./si_cpp/classXSI_1_1Context.html#GetSource">Context::GetSource</a> 
+					is not avaliable for this callback and returns empty <a href="#!/url=./si_cpp/classXSI_1_1ICENode.html">ICENode</a>.</td>
+</tr>
+</table>
+</p></div>
+
+<hr width="100%" />
+<h3>See Also</h3>
+<div><p><a name="SeeAlso"> </a><ul>
+	<li><a href="#!/url=./si_cmds/cb_ICENode_BeginEvaluate.html">BeginEvaluate</a></li>
+	<li><a href="#!/url=./si_cmds/cb_ICENode_Evaluate.html">Evaluate</a></li>
+	<li><a href="#!/url=./si_cmds/cb_ICENodes_Init.html">Init (ICE Nodes)</a></li>
+	<li><a href="#!/url=./si_cmds/cb_ICENode_SubmitEvaluationPhaseInfo.html">SubmitEvaluationPhaseInfo</a></li>
+	<li><a href="#!/url=./si_cmds/callbacks.html">ICE Node Callbacks</a></li>
+</ul>
+</p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

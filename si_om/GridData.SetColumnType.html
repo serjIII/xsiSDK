@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>GridData.SetColumnType</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>GridData.SetColumnType</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/GridData.html">GridData</a>.SetColumnType <img src="images/operator.gif" alt="operator" /></h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p> Specifies a type of control to use for a particular column.  
+This method is optional because the default column type, 
+siColumnStandard, is suitable for strings, numbers and most other data.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>GridData.SetColumnType( Int32 in_lColumnIndex, siGridWidgetColumnType in_Type );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>GridData.SetColumnType( ColumnIndex, Type );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">ColumnIndex		</td>
+		<td><a href="#!/url=./files/long.htm">long</a>		</td>
+		<td>
+Index of the Column.  The left-most column has index 0.		</td>
+	</tr>
+	<tr>
+		<td class="name">Type		</td>
+		<td><a href="#!/url=./si_om/siGridWidgetColumnType.html">siGridWidgetColumnType</a>		</td>
+		<td>
+Type of the Column		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">//Demo of Grid Data with a
+//Combo column and Boolean column
+var oPSet = ActiveSceneRoot.AddProperty("CustomProperty",false,"GridColumnTypeDemo") ;
+var oParam = oPSet.AddGridParameter( "mygrid" ) ;
+var oLayout = oPSet.PPGLayout;
+var oPPGItem = oLayout.AddItem( "mygrid", "", siControlGrid ) ;
+oPPGItem.SetAttribute( "NoLabel", true ) ;
+oPPGItem.SetAttribute( "HideColumnHeader", true ) ;
+oPPGItem.SetAttribute( "ColumnWidths", "60:100:16" ) ;
+var oGridData = oParam.Value
+oGridData.ColumnCount = 2 ;
+oGridData.RowCount = 50 ;
+oGridData.SetColumnType( 0, siColumnCombo ) ;
+oGridData.SetColumnComboItems( 0, 
+		new Array( "Item 0", 0, "Item 5", 5, "Item 6", 6 ) ) ;
+oGridData.SetColumnType( 1, siColumnBool ) ;
+//We use the underlying value to set cell values
+//in the OM, but the user will have the
+//choice in a drop down between "Item 0" and "Item 5"
+for ( i = 0 ; i &lt; oGridData.RowCount ; i++ )
+{
+	// Initialize the data
+	oGridData.SetCell( 0, i, 0 ) ;
+	oGridData.SetRowLabel( i, "Row " + i.toString() ) ;
+	oGridData.SetCell( 1, i, true ) ;
+}
+// change our mind about some
+// We use the value rather than the 
+// combo item label
+oGridData.SetCell( 0, "Row 2", 6 ) ;
+oGridData.SetCell( 0, "Row 6", 5 ) ;
+oGridData.SetCell( 1, "Row 1", false ) ;
+//Note: It would not be valid to 
+//set a value that
+//has no associated label in the 
+//Combo Items array:
+//oGridData.SetCell( 0, "Row 3", 1 ) ;
+//insert a row at index 5 GridData has 51 rows now!
+oGridData.InsertRow( 5 ) ;
+InspectObj( oPSet ) ;</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/GridData.GetColumnType.html">GridData.GetColumnType</a> <a href="#!/url=./si_om/GridData.SetColumnComboItems.html">GridData.SetColumnComboItems</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

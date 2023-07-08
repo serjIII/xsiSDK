@@ -1,0 +1,473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>ShapeKey</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>ShapeKey</h1>
+         </div>
+
+<h2 class="pagehead">ShapeKey</h2>
+
+<p><a href="#!/url=./si_om/_hier.html#oh_ShapeKey">Object Hierarchy</a> | Related C++ Class: <a href="#!/url=./si_cpp/classXSI_1_1ShapeKey.html">ShapeKey</a></p>
+
+<h3>Inheritance<h3>
+<p class="level1"><a href="#!/url=./si_om/SIObject.html">SIObject</a></p>
+<p class="level2"><a href="#!/url=./si_om/ProjectItem.html">ProjectItem</a></p>
+<p class="level3"><a href="#!/url=./si_om/Property.html">Property</a></p>
+<p class="level4"><a href="#!/url=./si_om/ClusterProperty.html">ClusterProperty</a></p>
+<p class="level5">ShapeKey</p>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p> The ShapeKey object represents a special <a href="#!/url=./si_om/ClusterProperty.html">ClusterProperty</a> which is used to store a 
+specific geometry. ShapeKeys provide information about how the shape of a cluster changes by either 
+storing its absolute value, an offset based on the object referential or values base on the local 
+reference frame of vertices. <br /><br />
+You can find out the key's reference mode by getting the value of the KeyType <a href="#!/url=./si_om/Parameter.html">Parameter</a>. 
+To convert from one reference mode to the other, use the <a href="#!/url=./si_cmds/ConvertShapeReferenceMode.html">ConvertShapeReferenceMode</a> command.<br /><br />
+Warning: The KeyType parameter uses a different set of values from the 
+<a href="#!/url=./si_om/siShapeReferenceMode.html">siShapeReferenceMode</a> enum. For more information, see 
+<a href="#!/url=./files/ShapeAnimation.htm">Shape Animation</a>.<br /><br />
+Because a ShapeKey modifies scene content when instantiated, it is an <a href="#!/url=./si_om/AnimationSource.html">AnimationSource</a> 
+and as such can be accessed by using the <a href="#!/url=./si_om/AnimationSourceItem.Source.html">AnimationSourceItem.Source</a> method.
+</p></div>
+
+<h3>Methods</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.AddCustomOp.html">AddCustomOp</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.AddICEAttribute.html">AddICEAttribute</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.AddScriptedOp.html">AddScriptedOp</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.AddScriptedOpFromFile.html">AddScriptedOpFromFile</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.AnimatedParameters2.html">AnimatedParameters2</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.BelongsTo.html">BelongsTo</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.EvaluateAt.html">EvaluateAt</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.GetICEAttributeFromName.html">GetICEAttributeFromName</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.IsA.html">IsA</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.IsAnimated2.html">IsAnimated2</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.IsClassOf.html">IsClassOf</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.IsEqualTo.html">IsEqualTo</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.IsKindOf.html">IsKindOf</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.IsLocked.html">IsLocked</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.IsSelected.html">IsSelected</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.LockOwners.html">LockOwners</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.RemoveICEAttribute.html">RemoveICEAttribute</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.SetAsSelected.html">SetAsSelected</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.SetCapabilityFlag.html">SetCapabilityFlag</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.SetLock.html">SetLock</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.TaggedParameters.html">TaggedParameters</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.UnSetLock.html">UnSetLock</a>		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Properties</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Application.html">Application</a>		</td>		<td class="members"><a href="#!/url=./si_om/Property.Branch.html">Branch</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.BranchFlag.html">BranchFlag</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.Capabilities.html">Capabilities</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Categories.html">Categories</a>		</td>		<td class="members"><a href="#!/url=./si_om/ClusterProperty.Elements.html">Elements</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.EvaluationID.html">EvaluationID</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.Families.html">Families</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.FullName.html">FullName</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Help.html">Help</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.HierarchicalEvaluationID.html">HierarchicalEvaluationID</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.ICEAttributes.html">ICEAttributes</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.LockLevel.html">LockLevel</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.LockMasters.html">LockMasters</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.LockType.html">LockType</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.Model.html">Model</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Name.html">Name</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.NestedObjects.html">NestedObjects</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.ObjectID.html">ObjectID</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Origin.html">Origin</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.OriginPath.html">OriginPath</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.Owners.html">Owners</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.PPGLayout.html">PPGLayout</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.Parameters.html">Parameters</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Parent.html">Parent</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.Parent3DObject.html">Parent3DObject</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.Selected.html">Selected</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/ShapeKey.ShapeGroupName.html">ShapeGroupName</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/Property.Singleton.html">Singleton</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Type.html">Type</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	The following example illustrates how to access the position
+	information stored in a shape key. Adding a shape key using
+	local reference mode will store the positions as deltas to
+	the local referential of each point. To calculate the
+	absolute position for each point you need the local
+	referential for the point and the original position before
+	the shape was applied.
+*/
+// Create the scene with an object with a shape clip
+NewScene( null, false );
+var root = Application.ActiveSceneRoot;
+var c1 = root.AddGeometry( "Cube", "MeshSurface" );
+var c2 = Duplicate( c1, 1, 2, 1, 1, 0, 0, 1, 0, 1 )(0);
+Translate( c2, 10, 0, -2, siRelative, siView, siObj, siXYZ );
+Translate( c2 + ".pnt[2,3,6,LAST]", -6, -4, 4, siRelative, siView, siObj, siXYZ );
+// Add a shapeclip where the position data is stored as deltas to
+// the point's local referential. You can also store the shape in
+// absolute mode in which case the cluster property contains
+// for the shape the actual point data or you can store it in
+// object mode in which case deltas are stored in the object
+// referential (i.e. the pose of the object).
+var key = SelectShapeKey( c1, c2, siShapeLocalReferenceMode );
+var mix = ( root.HasMixer() ) ? root.Mixer : root.AddMixer();
+var shapetrack = AddTrack( root, mix, 1 );
+AddClip( root, key, "", shapetrack, 1, null, "", "", false );
+//
+// Get the shapeclip
+//
+var clip;
+var c = new Enumerator( mix.Clips );
+for ( ; !c.atEnd(); c.moveNext() ) {
+	if ( c.item().Type == siClipShapeType ) {
+		clip = c.item();
+	}
+}
+// We need to mute the shape combiner and all the operators above it
+// in order to get the local reference frame and position of each
+// point before the shape animation was applied to the geometry.
+// (This gives the position values before the shape that was stored
+// and does not include the result of deformations applied afterwards.)
+var geom = null;
+for ( var idx=0; idx&lt;clip.MappedItems.Count; idx++ ) {
+	var mi = clip.MappedItems(idx);
+	Application.LogMessage( Application.ClassName(mi) );
+	Application.LogMessage( Application.ClassName(mi.Source2) );
+	// Get the cluster property/shape key stored in the shapeclip
+	var clsprop = mi.Source2;
+	// Since the geometry for each mappeditem will be
+	// the same we'll only need to get it once.
+	if ( !geom ) {
+		// Get the primitive and geometry from the cluster property
+		geom = clsprop.Parent.Parent;
+		var prim = geom.Parent;
+		// Deactivate all operators above and including the shape combiner
+		DeactivateAbove( prim.FullName + ".clustershapecombiner", true );
+		// Get the position array from the geometry
+		var aPosition = geom.Points.PositionArray;
+		// Get the old Geometry0D object to access
+		// the local reference frame for each point
+		var geomv1 = geom.Parent.Obj;
+		var o0DGeometry = geomv1.Geometry0D;
+	}
+	// Assume that the number of cluster property elements
+	// matches the geometry and that they are same order i.e.
+	// point0 == clusterelement0
+	// Get the delta position array from the clusterproperty
+	var vbaDelta = clsprop.Elements.Array;
+	// Figure out the absolute position value using the deltas,
+	// the original point position and the local referential
+	// of each point
+	for ( var i=vbaDelta.lbound(2); i&lt;=vbaDelta.ubound(2); i++ ) {
+		// Set a vector3 with the delta for the position
+		var oDelta = XSIMath.CreateVector3(
+			vbaDelta.getItem(0,i),
+			vbaDelta.getItem(1,i),
+			vbaDelta.getItem(2,i)
+		);
+		// Get the local reference frame for the point
+		var oXAxis = XSIMath.CreateVector3();
+		var oYAxis = XSIMath.CreateVector3();
+		var oZAxis = XSIMath.CreateVector3();
+		var oXAxisValid, oYAxisValid, oZAxisValid;
+		var rtn = o0DGeometry.LocalReferenceFrame( i, oXAxis, oXAxisValid, oYAxis, oYAxisValid, oZAxis, oZAxisValid );
+		// Get the transformation matrix to go from point
+		// local reference frame to object referential
+		var oMatrix33 = XSIMath.CreateMatrix3(
+			oXAxis.X , oXAxis.Y, oXAxis.Z,
+			oYAxis.X , oYAxis.Y, oYAxis.Z,
+			oZAxis.X , oZAxis.Y, oZAxis.Z
+		);
+		oDelta.MulByMatrix3( oDelta, oMatrix33 );
+		// Set a vector3 with the point position
+		var oPosition = XSIMath.CreateVector3(
+			aPosition.getItem(0,i),
+			aPosition.getItem(1,i),
+			aPosition.getItem(2,i)
+		);
+		// Compute the absolute position by adding the delta
+		oPosition.AddInPlace( oDelta );
+		// Log the absolute position values for the point
+		Application.LogMessage( oPosition.X + "," + oPosition.Y + "," + oPosition.Z	);
+	}
+}
+// Reactivate shapecombiner and all operators above it
+if ( !prim ) {
+	DeactivateAbove( prim.FullName + ".clustershapecombiner", false );
+}
+// Enumerate the shapeclips under the mixer shape track.
+var t = new Enumerator( ActiveSceneRoot.Mixer.Tracks );
+for ( ; !t.atEnd(); t.moveNext() ) {
+	if ( t.item().Type == siTrackShapeType ) {
+		var shapetrack = t.item();
+		break;
+	}
+}
+for ( var s=0; s&lt;shapetrack.Clips.Count; s++ ) {
+	var shapeclip = shapetrack.Clips(s);
+	Application.LogMessage( shapeclip );
+}
+// Expected results:
+// INFO : MappedItem
+// INFO : ShapeKey
+// INFO : -4,-4,-4
+// INFO : 4,-4,-4
+// INFO : -10,-8.881784197001252e-16,8.881784197001252e-16
+// INFO : -2.000000000000001,-8.881784197001252e-16,8.881784197001252e-16
+// INFO : -4,-4,4
+// INFO : 4,-4,4
+// INFO : -10.000000000000001,-8.881784197001252e-16,8.000000000000001
+// INFO : -2.0000000000000017,-1.7763568394002505e-15,8
+// INFO : Mixer.Mixer_Shape_Track.cube1_ShapeKey_Clip</pre></td></tr>
+</table>
+</div><h4>2. Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python"># 
+# Three cones are created with identical animation although 
+# they use different Reference Modes to record the shape 
+# 
+from win32com.client import constants as c
+app = Application
+app.NewScene( "", 0 )
+root = app.ActiveSceneRoot
+# Local mode
+obj1 = root.AddGeometry( "Cone", "MeshSurface" )
+app.ApplyOp( "bend", obj1 )
+obj1.posz.Value = -3
+geom1 = obj1.GetActivePrimitive3().Geometry
+clip1 = geom1.SaveShapeKey( 1, 1, c.siShapeLocalReferenceMode, c.siShapeInstanceOnlyMode, "MyShapeKey1", [1], [1,1,0] )
+# Absolute mode
+obj2 = root.AddGeometry( "Cone", "MeshSurface" )
+app.ApplyOp( "bend", obj2 )
+geom2 = obj2.GetActivePrimitive3().Geometry
+clip2 = geom2.SaveShapeKey( 1, 1, c.siShapeAbsoluteReferenceMode, c.siShapeInstanceOnlyMode, "MyShapeKey2", [1], [1,1,0] )
+# Object mode
+obj3 = root.AddGeometry( "Cone", "MeshSurface" )
+app.ApplyOp( "bend", obj3 )
+obj3.posz.Value = 3
+geom3 = obj3.GetActivePrimitive3().Geometry
+clip3 = geom3.SaveShapeKey( 1, 1, c.siShapeObjectReferenceMode, c.siShapeInstanceOnlyMode, "MyShapeKey3", [1], [1,1,0] )</pre></td></tr>
+</table>
+</div><h4>3. C# Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="csharp">/*
+	This example demonstrates how you access the shape information for a particular shape key by looking
+	at the cluster properties which store this data
+*/
+using System;
+using Softimage.XSIOM; // Softimage object model
+using Softimage.XSIMath;
+using Softimage.XSIUtil;
+using System.Text.RegularExpressions;	// for Regex class instanced in ShowShapeInformation
+public class XSIPlugin
+{
+	public bool Load( PluginRegistrar in_reg )
+	{
+		in_reg.Author = "ShapeKeyDemo";
+		in_reg.Name = "ShapeKeyCSexamplePlugin";
+		in_reg.Major = 1;
+		in_reg.Minor = 0;
+		in_reg.RegisterCommand("ShapeKeyCSexample", "ShapeKeyCSexample");
+		return true;
+	}
+}
+public class ShapeKeyCSexample : XSIPlugin
+{
+	public bool Init( Context in_ctxt )
+	{
+		Command oCmd = null;
+		oCmd = (Command)in_ctxt.Source;
+		oCmd.Description = "ShapeKey object example written in CSharp";
+		oCmd.Tooltip = "CSharp ShapeKey example";
+		oCmd.ReturnValue = false;
+		return true;
+	}
+	// --------------------------------------------------------------------------
+	// Gets the shape clusters on the specified object, accesses their shape keys
+	// and reports on their reference mode and position
+	public bool ShowShapeInformation( X3DObject in_obj )
+	{
+		CXSIApplicationClass app = new CXSIApplicationClass();
+		try {
+			ClusterCollection oClusters = in_obj.ShapeAnimatedClusters();
+			app.LogMessage( "Dump of shape key data on object " + in_obj.FullName, siSeverity.siInfo );
+			long cntFoundShapes = 0;
+			// Go through the various clusters on the object
+			// (in practice only the Point clusters will have shape keys)
+			foreach ( Cluster oCluster in oClusters ) {
+				// Cluster indices are not the same as the indices on the
+				// geometry, but we can easily determine the relationship with
+				// this array:
+				ClusterElementCollection oClusterElementsCollection = oCluster.Elements;
+				Array aElements = (Array)oClusterElementsCollection.Array;
+				// Only search for the shape keys, which have type "clskey"
+				PropertyCollection oLocalProps = oCluster.LocalProperties;
+				PropertyCollection oClsKeyProps = oLocalProps.Filter("clskey", null, null);
+				foreach ( ShapeKey oProperty in oClsKeyProps ) {
+					// Found a shape key
+					cntFoundShapes++;
+					Regex rx = new Regex(@"ResultClusterKey$", RegexOptions.IgnoreCase);
+					if ( rx.IsMatch(oProperty.Name) ) {
+						// There may also be an internal cluster property
+						// called "ResultClusterKey" which stores the
+						// result of blending the various shapes at the
+						// current time
+						app.LogMessage( "Blended shape at current time: " + oProperty.FullName, siSeverity.siInfo );
+					} else {
+						app.LogMessage( "Shape key: " + oProperty.FullName, siSeverity.siInfo );
+					}
+					// The reference mode is available from the KeyType parameter
+					Parameter oClsKeyTypeParam = oProperty.Parameters["KeyType"];
+					Object ReferenceType =	oClsKeyTypeParam.get_Value(null);
+					switch ( ReferenceType.ToString() ) {
+						case "0" :
+						case "6" :
+							app.LogMessage( "\tUses: Absolute Reference Mode", siSeverity.siInfo );
+							break;
+						case "1" :
+						case "5" :
+							app.LogMessage( "\tUses: Local Reference Mode", siSeverity.siInfo );
+							break;
+						case "2" :
+						case "3" :
+							app.LogMessage( "\tUses: Object Reference Mode", siSeverity.siInfo );
+							break;
+						default :
+							app.LogMessage( "\tReference Mode = " + ReferenceType.ToString(), siSeverity.siInfo );
+							break;
+					}
+					// The contents of the cluster can be found in this safearray
+					// (which we can read via the VBArray object)
+					ClusterElementCollection oShapeKeyElements = oProperty.get_Elements();
+					Array aXYZArray = (Array)oShapeKeyElements.Array;
+					for ( int i=0; i&lt;aXYZArray.GetLength(aXYZArray.Rank-1); i++ ) {
+						// Print out the x,y,z values
+						app.LogMessage( "\tpnt["+ aElements.GetValue(i).ToString() + "] has position ("
+							+ Math.Round( (double)aXYZArray.GetValue(0,i), 3 ).ToString() + ","
+							+ Math.Round( (double)aXYZArray.GetValue(1,i), 3 ).ToString() + ","
+							+ Math.Round( (double)aXYZArray.GetValue(2,i), 3 ).ToString() + ")",
+							siSeverity.siInfo
+						);
+					}
+				}
+			}
+			if ( cntFoundShapes == 0 ) {
+				app.LogMessage( "There are no shapes on this object", siSeverity.siInfo );
+			}
+		} catch {
+			app.LogMessage( "Please select a 3D Object", siSeverity.siInfo );
+			return false;
+		}
+		return true;
+	}
+	public bool Execute( Context in_ctxt )
+	{
+		// Set up a little scene
+		CXSIApplicationClass app = new CXSIApplicationClass();
+		Object[] args = new Object[2] { null, false };
+		Object rtn = app.ExecuteCommand( "NewScene", args );
+		Model root = app.ActiveSceneRoot;
+		X3DObject oCircle = root.AddGeometry( "Sphere", "MeshSurface", null );
+		// Move the top and bottom point of the sphere outwards
+		Primitive oPrim = oCircle.ActivePrimitive;
+		Geometry oGeom = oPrim.get_Geometry( null );
+		Object[] aIndexArray = new Object[2] { 1, 0  };
+		Object[] aPositionArray = new Object[6] { 0,6,0, 0,-6,0 };
+		oGeom.SaveShapeKey( 0.5, 3.0, siShapeReferenceMode.siShapeAbsoluteReferenceMode,
+			siShapeInstanceMode.siShapeInstanceOnlyMode, "ShapeKey1", aIndexArray, aPositionArray, null );
+		// Move two different points - this creates a new, independent cluster
+		// We can use a different reference mode for this, but we still specify the
+		// point positions in Absolute terms.
+		aIndexArray = new Object[2] { 5, 33  };
+		aPositionArray = new Object[6] { -2,0,0, 2,0,0 };
+		oGeom.SaveShapeKey( 0.8, 1.0, siShapeReferenceMode.siShapeLocalReferenceMode,
+			siShapeInstanceMode.siShapeInstanceOnlyMode, "ShapeKey2", aIndexArray, aPositionArray, null );
+		if ( ShowShapeInformation(oCircle) ) {
+			return true;
+		} else {
+			app.LogMessage("ShowShapeInformation failed.", siSeverity.siInfo);
+			return false;
+		}
+	}
+}
+// --------------------------------------------------------------------------
+// Expected output:
+// INFO : Dump of shape key data on object sphere
+// INFO : Blended shape at current time: sphere.polymsh.cls.Shape.ResultClusterKey
+// INFO : 	Uses: Absolute Reference Mode
+// INFO : 	pnt[1] has position (0,0,0)
+// INFO : 	pnt[0] has position (0,0,0)
+// INFO : Shape key: sphere.polymsh.cls.Shape.ShapeKey
+// INFO : 	Uses: Absolute Reference Mode
+// INFO : 	pnt[1] has position (0,6,0)
+// INFO : 	pnt[0] has position (0,-6,0)
+// INFO : Blended shape at current time: sphere.polymsh.cls.Shape1.ResultClusterKey
+// INFO : 	Uses: Local Reference Mode
+// INFO : 	pnt[5] has position (0,0,0)
+// INFO : 	pnt[33] has position (0,0,0)
+// INFO : Shape key: sphere.polymsh.cls.Shape1.ShapeKey2
+// INFO : 	Uses: Local Reference Mode
+// INFO : 	pnt[5] has position (0,-2,0)
+// INFO : 	pnt[33] has position (0,-2,0)</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/ShapeClip.html">ShapeClip</a> <a href="#!/url=./si_om/ActionSource.html">ActionSource</a> <a href="#!/url=./si_om/Clip.Source.html">Clip.Source</a> <a href="#!/url=./si_cmds/StoreShapeKey.html">StoreShapeKey</a> <a href="#!/url=./si_cmds/SelectShapeKey.html">SelectShapeKey</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></h3></h3></div>
+   </div></body>
+</html>

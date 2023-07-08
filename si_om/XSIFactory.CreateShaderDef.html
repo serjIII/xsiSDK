@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>XSIFactory.CreateShaderDef</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>XSIFactory.CreateShaderDef</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/XSIFactory.html">XSIFactory</a>.CreateShaderDef <img src="images/operator.gif" alt="operator" /></h2>
+
+<h3>Introduced</h3>
+<div><p>v9.0 (2011)</p></div>
+
+<h3>Description</h3>
+<div><p> Creates a new shader definition. Softimage shader definitions can be accessed via either 
+<a href="#!/url=./si_om/XSIApplication.ShaderDefinitions.html">XSIApplication.ShaderDefinitions</a> or by <a href="#!/url=./si_om/ShaderDef.ProgID.html">ShaderDef.ProgID</a>
+via <a href="#!/url=./si_om/XSIApplication.GetShaderDef.html">XSIApplication.GetShaderDef</a>.
+<br /><br />
+Note: Each shader definition has a unique ProgID which is built from the four specified components. For more information, see 
+<a href="#!/url=./files/cus_shaders_ProgID.htm">Instantiating Shader Definitions and the ProgID</a>.
+<br /><br />
+Tip: On-the-fly (nonpersisted) shader definitions act like parser-based shader definitions that are never parsed 
+(<a href="#!/url=./si_om/ShaderDef.Parsed.html">ShaderDef.Parsed</a> always returns false) and have no definition file (<a href="#!/url=./si_om/ShaderDef.DefinitionPath.html">ShaderDef.DefinitionPath</a> 
+is always empty). However, you must specify a parser name, and it cannot be either "Softimage" or the name of a parser already registered.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>ShaderDef XSIFactory.CreateShaderDef( String in_strParserName, String in_strClassName, UInt32 in_ulMajor, UInt32 in_ulMinor );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = XSIFactory.CreateShaderDef( in_strParserName, in_strClassName, in_ulMajor, in_ulMinor );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p><a href="#!/url=./si_om/ShaderDef.html">ShaderDef</a></p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">in_strParserName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		Name of the parser for the new shader definition. This is basically a dummy string, since shader 
+		definitions created with this method are not defined by either plug-ins or parsers.
+			</td>
+	</tr>
+	<tr>
+		<td class="name">in_strClassName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		Name of the shader class. If you don't specify a UI name for the shader definition, this 
+		is the name that appears on the shader node when instantiated in the render tree.
+			</td>
+	</tr>
+	<tr>
+		<td class="name">in_ulMajor		</td>
+		<td><a href="#!/url=./files/Long.htm">Long</a>		</td>
+		<td>
+Major version number ('2' in v2.5)		</td>
+	</tr>
+	<tr>
+		<td class="name">in_ulMinor		</td>
+		<td><a href="#!/url=./files/Long.htm">Long</a>		</td>
+		<td>
+Minor version number ('5' in v2.5)		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">#
+# This example demonstrates how to create a completely bogus shader 
+# definition on the fly (ie., not to be persisted) and then how to
+# instantiate it on a scene object
+#
+from win32com.client import constants as si
+app = Application
+app.NewScene("", False)
+# This function creates a bogus shader definition on the fly and returns its ProgID
+def CreateDefOnTheFly () :
+	otmpShaderDef = XSIFactory.CreateShaderDef("NoParser", "Nunce", 1, 0)
+	otmpShaderDef.Category = "Test Shaders"
+	# family
+	otmpShaderDef.AddShaderFamily("mrTexture")
+	# paramdef options (in)
+	otmpShadPDefOpts = XSIFactory.CreateShaderParamDefOptions()
+	otmpShadPDefOpts.SetTexturable(True)
+	otmpShadPDefOpts.SetShortName("squelch")
+	# paramdef (in)
+	otmpInParams = otmpShaderDef.InputParamDefs
+	otmpInParams.AddParamDef2("west", si.siColorParameterType, otmpShadPDefOpts)
+	# paramdef options (out)
+	otmpShadPDefOpts = XSIFactory.CreateShaderParamDefOptions()
+	otmpShadPDefOpts.SetTexturable(True)
+	otmpShadPDefOpts.SetShortName("splosh")
+	# paramdef (out)
+	otmpOutParams = otmpShaderDef.OutputParamDefs
+	otmpOutParams.AddParamDef2("east", si.siColorParameterType, otmpShadPDefOpts)
+	# renderer
+	otmpRendDef = otmpShaderDef.AddRendererDef("whoops")
+	otmpRendOpts = otmpRendDef.RendererOptions
+	otmpRendOpts.Set("plain", False)
+	# attributes
+	otmpAttrs = otmpShaderDef.Attributes
+	otmpAttrs.Set("chuckle", "on")
+	otmpAttrs.Set("nbr", 456123)
+	# return the ProgID of the new shader
+	return otmpShaderDef.ProgID
+# This function tests to see whether the specified parser name is 
+# a registered parser name already (if it is, the script will not
+# attempt to create a definition on the fly (to avoid errors)
+def IsNotRegistered( in_name ) :
+	oPC = Application.Plugins
+	for p in oPC :
+		for pi in p.Items :
+			if pi.Type == "Shader Language Parser" :
+				if pi.Name == in_name :
+					return False
+	# If no match is found, return true
+	return True
+# First check to make sure the parser name isn't already registered
+if IsNotRegistered("NoParser"):
+	# Create the shader definition on the fly and get its ProgID
+	sProgID = CreateDefOnTheFly()
+	# Now create a cube and instantiate this shader on it
+	oCube = app.CreatePrim("Cube", "MeshSurface")
+	app.CreateShaderFromProgID(sProgID, "Sources.Materials.DefaultLib.Scene_Material")
+	app.SIConnectShaderToCnxPoint("Sources.Materials.DefaultLib.Scene_Material.Nunce.east", 
+		"Sources.Materials.DefaultLib.Scene_Material.Phong.ambient", False)
+	# Finally, remove it (we don't want to clutter up the system)
+	oRemoveMe = app.ShaderDefinitions(sProgID)
+	if oRemoveMe :
+		XSIFactory.RemoveShaderDef(oRemoveMe)
+else :
+	app.LogMessage("Parser name is already registered.")</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/XSIFactory.RemoveShaderDef.html">XSIFactory.RemoveShaderDef</a> <a href="#!/url=./si_om/XSIFactory.CreateShaderParamDefOptions.html">XSIFactory.CreateShaderParamDefOptions</a> <a href="#!/url=./si_om/XSIApplication.ShaderDefinitions.html">XSIApplication.ShaderDefinitions</a> <a href="#!/url=./si_om/XSIApplication.GetShaderDef.html">XSIApplication.GetShaderDef</a> <a href="#!/url=./files/cus_shaders_ProgID.htm">Instantiating Shader Definitions and the ProgID</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

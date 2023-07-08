@@ -1,0 +1,63 @@
+var topic = "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n\
+\n\
+<!-- saved from url=(0024)http://docs.autodesk.com -->\n\
+<html>\n\
+   <head>\n\
+<link href=\"../style/prettify.css\" type=\"text/css\" rel=\"stylesheet\" />\n\
+<script type=\"text/javascript\" src=\"../scripts/prettify.js\"></script><script src=\"../scripts/lib/jquery-1.9.1.min.js\" type=\"text/javascript\"></script>\n\
+      <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n\
+      <meta name=\"product\" content=\"SI\" />\n\
+      <meta name=\"release\" content=\"2015\" />\n\
+      <meta name=\"book\" content=\"Developer\" />\n\
+      <meta name=\"created\" content=\"2014-03-13\" />\n\
+      <meta name=\"topicid\" content=\"GUID-D6A846A4-D6B6-401B-A026-FECCA4B17DEE\" />\n\
+      <meta name=\"topic-type\" content=\"concept\" />\n\
+      <title>Softimage Developer Help</title><script type=\"text/javascript\" src=\"../scripts/utils/adsk.redirect.js\"></script></head>\n\
+   <body height=\"100%\"><div class=\"body_content\" id=\"body-content\"><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/ac_common.js\"); });</script><script type=\"text/javascript\">var reflinkid = \"si_cpp\"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on(\'click\', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/multireflink.js\"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$(\"div#WidgetFloaterPanels,link[href*=\'microsofttranslator.com\'],script[src*=\'microsofttranslator.com\'],script[src*=\'bing.com\']\").remove();</script><script type=\'text/javascript\'>$(\"div#navigation,div#breadcrumbs,div#banner\").attr(\"translate\",\"no\"); var mtLocation = ((location && location.href && location.href.indexOf(\'https\') == 0)?\'https://ssl.microsofttranslator.com\':\'http://www.microsofttranslator.com\')+\'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages=\'; yepnope.injectJs(mtLocation, function() {}, { charset:\'utf-8\', type:\'text/javascript\' } );</script><script type=\"text/javascript\">\n\
+ </script><!-- begin MT -->\n\
+            \n\
+            <div id=\'MicrosoftTranslatorWidget\' class=\'Dark\' style=\'position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden\'></div><div id=\"reflinkdiv\" style=\"display:none; font-family: \'RobotoRegular\', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible\"></div>\n\
+      <div><span class=\"anchor_wrapper\"><a name=\"GUID-D6A846A4-D6B6-401B-A026-FECCA4B17DEE\"></a></span><div class=\"head\">\n\
+            <h1>Softimage Developer Help</h1>\n\
+         </div><img src=\"../images/GUID-6F559942-F86B-483B-8719-7542BD1CD6B7-low.png\" /><span class=\"anchor_wrapper\"><a name=\"TABLE_69DDF64392A540B7AE1D57DF4FFA5767\"></a></span><div class=\"table_Ruled\">\n\
+            <table cellpadding=\"0\" cellspacing=\"0\" class=\"ruled\">\n\
+               <colgroup>\n\
+                  <col width=\"32.641291810841984%\" align=\"left\" />\n\
+                  <col width=\"31.718569780853517%\" align=\"left\" />\n\
+                  <col width=\"35.6401384083045%\" align=\"left\" />\n\
+               </colgroup>\n\
+               <tr class=\"ruledHeading\">\n\
+                  <th class=\"table-heading\"> <span class=\"anchor_wrapper\"><a name=\"GUID-B97B1EEF-BAD2-4F17-BF14-26CDD866673B\"></a></span><p class=\"table-heading\">Wiki Resources </p> \n\
+                  </th>\n\
+                  <th class=\"table-heading\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-D8F36039-B40E-4DD0-8942-29A32B914A5D\"></a></span><p class=\"table-heading\">Support &amp; Services </p> \n\
+                  </th>\n\
+                  <th class=\"table-heading\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-1404B26E-1818-466E-8294-4F24E0527B71\"></a></span><p class=\"table-heading\">Blogs, Forums &amp; Videos </p> \n\
+                  </th>\n\
+               </tr>\n\
+               <tr class=\"ruledOddRow\">\n\
+                  <td class=\"table-body\"> <span class=\"anchor_wrapper\"><a name=\"GUID-C84BDF8D-D934-4BF0-B1B8-CC7D8D7596B2\"></a></span><p class=\"table-body\"> <a href=\"http://softimage.wiki.softimage.com/index.php/Category:XSISDK\" target=\"_blank\"> Softimage SDK Wiki </a> \n\
+                     </p> \n\
+                  </td>\n\
+                  <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-5306F47B-00B2-48E0-A725-55249B258792\"></a></span><p class=\"table-body\"> <a href=\"http://www.autodesk.com/softimage-support\" target=\"_blank\">Softimage Support &amp; Services </a> \n\
+                     </p> <span class=\"anchor_wrapper\"><a name=\"GUID-D873E5A9-CB8E-494A-994C-40C6BE81A8EE\"></a></span><p class=\"table-body\"> <a href=\"http://xsisupport.wordpress.com/\" target=\"_blank\"> ex-SI Support Blog </a> \n\
+                     </p> <span class=\"anchor_wrapper\"><a name=\"GUID-4E7F51C6-31F6-41A3-8F71-C972CE99B296\"></a></span><p class=\"table-body\"> <a href=\"http://xsisupport.wordpress.com/category/scripting/\" target=\"_blank\"> ex-SI Support for Scripting </a> \n\
+                     </p> <span class=\"anchor_wrapper\"><a name=\"GUID-14C67D57-AF1A-4191-A03F-A0C851050E61\"></a></span><p class=\"table-body\"> <a href=\"http://xsisupport.wordpress.com/category/plugins/\" target=\"_blank\"> ex-SI Support for Plug-ins </a> \n\
+                     </p> <span class=\"anchor_wrapper\"><a name=\"GUID-19CD0D22-6AD1-4818-8863-E69C4AEE65D1\"></a></span><p class=\"table-body\"> <a href=\"http://twitter.com/xsisupport\" target=\"_blank\">XSISupport on Twitter</a> \n\
+                     </p> \n\
+                  </td>\n\
+                  <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-28487F6B-8882-4D51-9FEF-DDD9624D2D39\"></a></span><p class=\"table-body\"> <a href=\"http://www.youtube.com/softimagehowtos\" target=\"_blank\">Softimage YouTube Learning Channel</a> \n\
+                     </p> <span class=\"anchor_wrapper\"><a name=\"GUID-7028FBBD-DEBE-437E-A3A9-A5F59DA84B8E\"></a></span><p class=\"table-body\"> <a href=\"http://area.autodesk.com/products/softimage\" target=\"_blank\">Autodesk Softimage on the AREA</a> \n\
+                     </p> <span class=\"anchor_wrapper\"><a name=\"GUID-899919C3-6A94-4B76-9D30-BB45C788677D\"></a></span><p class=\"table-body\"> <a href=\"http://area.autodesk.com/blogs/marks\" target=\"_blank\">Planet Softimage on the AREA</a> \n\
+                     </p> <span class=\"anchor_wrapper\"><a name=\"GUID-9CC41C5F-4B6F-4CE9-8FB9-8B2DEC271661\"></a></span><p class=\"table-body\"> <a href=\"http://www.si-community.com\" target=\"_blank\">www.si-community.com</a> \n\
+                     </p> <span class=\"anchor_wrapper\"><a name=\"GUID-9AF31CCE-8C27-490E-A590-7737E90CCA5F\"></a></span><p class=\"table-body\"> <a href=\"http://www.xsidatabase.com\" target=\"_blank\">www.xsidatabase.com</a> \n\
+                     </p> <span class=\"anchor_wrapper\"><a name=\"GUID-203F1E42-601F-4BC6-B865-E1B46B36C78E\"></a></span><p class=\"table-body\"> <a href=\"http://www.xsi-blog.com\" target=\"_blank\">www.xsi-blog.com</a> \n\
+                     </p> \n\
+                  </td>\n\
+               </tr>\n\
+            </table>\n\
+         </div>\n\
+         <p><span class=\"anchor_wrapper\"><a name=\"GUID-909D7B3C-1D60-4C63-9930-2BAB1321F344\"></a></span> <span class=\"char_link\"><a href=\"#!/url=./files/GUID-C24CEC73-653D-453F-A6B5-1B0B07EF79AF.htm\">© Copyright 2014 Autodesk Inc. All rights reserved.</a></span> \n\
+         </p>\n\
+         <div class=\"footer-block\"><a href=\"../html/ac.cmtdialog.htm\" class=\"comments-anchor\" target=\"_blank\"><span class=\"comments-link\">Please send us your comment about this page</span></a></div><br /><p class=\"footer-license-block\"><a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\"><img alt=\"Creative Commons License\" style=\"border-width: 0;\" src=\"../images/ccLink.png\" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href=\"http://autodesk.com/creativecommons\" target=\"_blank\">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>\n\
+   </div></body>\n\
+</html>";

@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-4D1BA778-3E4D-453C-A7DB-ED9FF1603E54" />
+      <meta name="indexterm" content="expressions: accessing" />
+      <meta name="indexterm" content="expressions: in the mixer" />
+      <meta name="indexterm" content="expressions: storing as actions" />
+      <meta name="indexterm" content="clips: accessing expression-based" />
+      <meta name="indexterm" content="sources: accessing expression-based" />
+      <meta name="indexterm" content="expressions: accessing sources and clips" />
+      <meta name="indexterm" content="constraints: interacting with expressions" />
+      <meta name="indexterm" content="expressions: interacting with constraints" />
+      <meta name="topic-type" content="concept" />
+      <title>Accessing Expressions</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-4D1BA778-3E4D-453C-A7DB-ED9FF1603E54"></a></span><div class="head">
+            <h1> Accessing Expressions</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-C9C774EF-87A7-4DF3-8A01-7D47A3A81801"></a></span>An expression is a piece of data (a <span class="char_link"><a href="#!/url=./files/DataSource.htm">DataSource</a></span> ) that drives a parameter value, which means it is accessible using any of the following
+               approaches:
+            </p>
+            <ul>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-F298C883-B40D-4B50-B2A9-506863651F8C"></a></span> <em class="strong">Scripting command</em>:<a href="#!/url=./si_cmds/GetSource.html">GetSource</a> which takes the name(s) of of one or more parameters and returns an <a href="#!/url=./si_om/XSICollection.html">XSICollection</a> of its sources
+                  </p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-C65993F9-6F7A-4160-B456-ECC086D7F77D"></a></span> <em class="strong">Object model</em>: <a href="#!/url=./si_om/Parameter.Source.html">Parameter.Source</a></p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-D04F2300-B512-40B8-AB0C-BEF885A1A49B"></a></span> <em class="strong">C++ API</em>: <a href="#!/url=./si_cpp/classXSI_1_1Parameter.html#GetSource">Parameter::GetSource</a></p> 
+               </li>
+            </ul>
+            <p><span class="anchor_wrapper"><a name="GUID-8CD82983-DAC6-4D71-85AB-D660780BE554"></a></span>You can also get animation information from clips and sources that are based on expressions.
+               For more information, see <span class="char_link"><a href="#!/url=./files/dev_Expressions_Accessing.htm#WS00FA839CE9F5F148906F76DDEF5331DD-0017">Expressions and the Mixer</a></span>.
+            </p>
+            <div class="section"><span class="anchor_wrapper"><a name="WS00FA839CE9F5F148906F76DDEF5331DD-0014"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-DA35BDD3-1F34-4BB7-8816-0D487CA74302"></a></span>Python Example: Using the GetSource Command
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-408A9B4B-D5AD-4770-974A-209D74E714F9"></a></span>This example demonstrates how to use the GetSource ommand in Python to get a pointer
+                  to the expression. This example continues from <span class="char_link"><a href="#!/url=./files/dev_Expressions_Creating.htm#WS00FA839CE9F5F148906F76DDEF5331DD-000F">Python Example: Setting an Expression with the SetExpr Command</a></span>, which applied an expression to the null's position:
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+# Find the expressions on Null4Expr
+rtn = Application.GetSource( params, c.siExpressionSource )
+for expr in rtn :
+	# From the expression we can access its output port
+	for oport in expr.OutputPorts :
+		target = oport.Target2
+		Application.LogMessage( "Expression is writing " + str(target.Value) + " to " + target.FullName );
+	
+
+# Expected result:
+#INFO : Expression is writing 2.0 to Null4Expr.kine.local.posx
+#INFO : Expression is writing 2.0 to Null4Expr.kine.local.posy
+#INFO : Expression is writing 2.0 to Null4Expr.kine.local.posz
+</pre></div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS00FA839CE9F5F148906F76DDEF5331DD-0015"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-36B469EB-C1C6-401A-9D94-53563CC6F3FA"></a></span>JScript Example: Using the Source Property
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-06A163C1-B9AF-439A-B25B-21722B87805F"></a></span>This example demonstrates how to use the Source property in JScript to get a pointer
+                  to the expression. This example continues from <span class="char_link"><a href="#!/url=./files/dev_Expressions_Creating.htm#WS00FA839CE9F5F148906F76DDEF5331DD-0010">JScript Example: Setting an Expression with the Parameter.AddExpression Method</a></span>, which applied an expression to the null's position:
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+// Find the expressions on Null4Expr
+var params2search = n.AnimatedParameters();
+for ( var i=0; i&lt;params2search.Count; i++ ) {
+	var expr = params2search(i).Source;
+
+	// From the expression we can access its output port
+	var oports = new Enumerator( expr.OutputPorts );
+	for ( ; !oports.atEnd(); oports.moveNext() ) {
+		var target = oports.item().Target2;
+		Application.LogMessage( "Expression is writing " + target.Value + " to " + target.FullName );
+	}
+}
+
+// Expected result:
+//INFO : Expression is writing 2 to Null4Expr.kine.local.posx
+//INFO : Expression is writing 2 to Null4Expr.kine.local.posy
+//INFO : Expression is writing 2 to Null4Expr.kine.local.posz
+</pre></div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS00FA839CE9F5F148906F76DDEF5331DD-0016"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-E1FF7074-4D96-47B8-A73E-D3B62A3421C5"></a></span>C++ Example: Using the GetSource Member
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-7C2EF24D-83AD-4E25-A93B-7A1731C0DBFB"></a></span>This example demonstrates how to use the GetSource member in C++ to get a pointer
+                  to the expression. This example continues from <span class="char_link"><a href="#!/url=./files/dev_Expressions_Creating.htm#WS00FA839CE9F5F148906F76DDEF5331DD-0011">C++ API Example: Setting an Expression with the Parameter::AddExpression Member Function</a></span>, which applied an expression to the null's position:
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+// Find the expressions on Null4Expr
+CRefArray params2search = n.GetAnimatedParameters( siExpressionSource );
+for ( LONG i=0; i&lt;params2search.GetCount(); ++i ) 
+{
+	Parameter posparam( params2search[i] );
+	Expression expr( posparam.GetSource() );
+
+	// From the expression we can access its output port
+	CRefArray oports( expr.GetOutputPorts() );
+	for ( LONG j=0; j&lt;oports.GetCount(); ++j ) 
+	{
+		OutputPort currport( oports[j] );
+		Parameter target( currport.GetTarget() );
+		app.LogMessage( L"Expression is writing " + CString(target.GetValue()) + L" to " + target.GetFullName() );
+	}
+}
+
+// Expected results:
+//INFO : Expression is writing 2 to Null4Expr.kine.local.posx
+//INFO : Expression is writing 2 to Null4Expr.kine.local.posy
+//INFO : Expression is writing 2 to Null4Expr.kine.local.posz
+</pre></div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS00FA839CE9F5F148906F76DDEF5331DD-0017"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-D6F36B32-7FE4-4416-91C2-5B3C08738294"></a></span> Expressions and the Mixer
+               </h2>  
+               <div class="section"><span class="anchor_wrapper"><a name="WS00FA839CE9F5F148906F76DDEF5331DD-0018"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-8F0014E2-E14B-42BE-868B-A1548F4DFFD3"></a></span> Storing Expressions as Actions
+                  </h3>  
+                  <p><span class="anchor_wrapper"><a name="GUID-65FC7C6E-9461-48AB-97A7-6F3171AE9020"></a></span>The only way to store an action via scripting or the C++ API is by using the <a href="#!/url=./si_cmds/StoreAction.html">StoreAction</a> (or <a href="#!/url=./si_cmds/SIStoreAction.html">SIStoreAction</a>) command. The StoreAction command stores several different kinds of low-level animation
+                     as an <a href="#!/url=./si_om/ActionSource.html">ActionSource</a> or <a href="#!/url=./si_cpp/classXSI_1_1ActionSource.html">ActionSource</a> besides expressions: fcurves, constraints, and static values.
+                  </p> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WS00FA839CE9F5F148906F76DDEF5331DD-0019"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-73A0B78F-6B65-4E45-86C2-0053C35B9EC3"></a></span>JScript Example: Creating Expression-based Sources and Clips
+                     </h4> 
+                     <p><span class="anchor_wrapper"><a name="GUID-0DC6B62D-765B-45CC-99C9-2061AAB115F1"></a></span>This example demonstrates how to set up an linked-parameter expression between two
+                        nulls and then store it as an action. The example continues in <span class="char_link"><a href="#!/url=./files/dev_Expressions_Accessing.htm#WS00FA839CE9F5F148906F76DDEF5331DD-001C">JScript Example: Accessing Expression-based ActionSources and Clips</a></span> with accessing the source from the model and the clip from the mixer's track.
+                     </p> 
+                     <div class="codeBlock"><pre class="prettyprint">
+var root = Application.ActiveSceneRoot;
+var jack = root.AddNull("jack");
+var diane = root.AddNull("diane");
+
+// Get list of parameters to mark
+var params = jack+".kine.local.posx,";
+params += jack+".kine.local.posy,";
+params += jack+".kine.local.posz";
+
+// Create an Expression (linked parameter)
+AddExpr( jack+".kine.local.posx", "l_fcv("+diane+".kine.local.posx)-0.25", true );
+AddExpr( jack+".kine.local.posy", "l_fcv("+diane+".kine.local.posy)",      true );
+AddExpr( jack+".kine.local.posz", "l_fcv("+diane+".kine.local.posz)+0.25", false );
+
+// Make the Expressions into an Action
+StoreAction( root, params, 3, "StoredExprAction", true, 0, 0, false, false, true, 0);
+</pre></div> 
+                  </div> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WS00FA839CE9F5F148906F76DDEF5331DD-001A"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-3261B0F0-D3E9-4CB1-875F-8834FB5AE259"></a></span>C++ Example: Creating Expression-based Sources and Clips
+                     </h4> 
+                     <p><span class="anchor_wrapper"><a name="GUID-06FD6AE8-517C-4CD7-B027-843C380C57CB"></a></span>This example demonstrates how to create an expression source and instantiate it as
+                        a clip in the mixer using the C++ API. The example continues in <span class="char_link"><a href="#!/url=./files/dev_Expressions_Accessing.htm#WS00FA839CE9F5F148906F76DDEF5331DD-001D">C++ Example: Accessing an Expression-based ActionSource and Clip</a></span> with accessing the source and clip from the model and the clip from the mixer's track.
+                     </p> 
+                     <div class="codeBlock"><pre class="prettyprint">
+Application app = Application();
+Model root = app.GetActiveSceneRoot();
+Null jack; root.AddNull( L"jack", jack );
+Null diane; root.AddNull( L"diane", diane );
+
+// Get list of parameters to mark
+CString jname = jack.GetFullName();
+CString dname = diane.GetFullName();
+CString params = jname + L".kine.local.posx," + jname + L".kine.local.posy," + jname + L".kine.local.posz";
+
+// Create an Expression (linked parameter) on posx
+CValueArray addExprArgs; CValue outArg;
+addExprArgs.Add( jname + L".kine.local.posx" );
+addExprArgs.Add( L"l_fcv(" + dname + L".kine.local.posx)-0.25" );
+addExprArgs.Add( true );
+app.ExecuteCommand( L"AddExpr", addExprArgs, outArg );
+
+// For the second call, just change the first two arguments
+addExprArgs[0] = jname + L".kine.local.posy";
+addExprArgs[1] = L"l_fcv(" + dname + L".kine.local.posy)";
+app.ExecuteCommand( L"AddExpr", addExprArgs, outArg );
+
+// For the third call, change all arguments
+addExprArgs[0] = jname + L".kine.local.posz";
+addExprArgs[1] = L"l_fcv(" + dname + L".kine.local.posz)+0.25";
+addExprArgs[2] = false;
+app.ExecuteCommand( L"AddExpr", addExprArgs, outArg );
+
+// Make the Expressions into an Action
+CValueArray storeActionArgs; 
+storeActionArgs.Add( root.GetFullName() );
+storeActionArgs.Add( params );
+storeActionArgs.Add( CValue(3.0) );
+storeActionArgs.Add( L"StoredExprAction" );
+storeActionArgs.Add( true );
+storeActionArgs.Add( CValue(0.0) );
+storeActionArgs.Add( CValue(0.0) );
+storeActionArgs.Add( false );
+storeActionArgs.Add( false );
+storeActionArgs.Add( true );
+storeActionArgs.Add( CValue(0.0) );
+app.ExecuteCommand( L"StoreAction", storeActionArgs, outArg );
+</pre></div> 
+                  </div> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WS00FA839CE9F5F148906F76DDEF5331DD-001B"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-8F80E3F4-03A1-41E1-BAB0-43FBBEE547FD"></a></span> Accessing Expression-based Sources and Clips
+                  </h3>    
+                  <p><span class="anchor_wrapper"><a name="GUID-1384EE8A-A13A-4926-8B47-976552365CFE"></a></span>The <a href="#!/url=./si_om/ActionSource.html">ActionSource</a> or <a href="#!/url=./si_cpp/classXSI_1_1ActionSource.html">ActionSource</a> is available from the Model under which it is stored or instantiated via the <a href="#!/url=./si_om/Model.Sources.html">Model.Sources</a> property (OM) or the <a href="#!/url=./si_cpp/classXSI_1_1Model.html#GetSources">Model::GetSources</a> member (C++ API).
+                  </p> 
+                  <p><span class="anchor_wrapper"><a name="GUID-1BC586D7-3EAA-42AF-81F3-9332919E37D7"></a></span>The Clip is available from either the mixer or the compound clip on which it is instantiated.
+                     It is also available directly off its Track owner. For the object model, the properties
+                     to use are <a href="#!/url=./si_om/ClipContainer.Clips.html">ClipContainer.Clips</a> and <a href="#!/url=./si_om/Track.Clips.html">Track.Clips</a>. For the C++ API you can use <a href="#!/url=./si_cpp/classXSI_1_1ClipContainer.html#GetClips">ClipContainer::GetClips</a> and <a href="#!/url=./si_cpp/classXSI_1_1Track.html#GetClips">Track::GetClips</a>.
+                  </p> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WS00FA839CE9F5F148906F76DDEF5331DD-001C"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-40E7EF06-D9E4-4EAE-9A15-E7742E24DC31"></a></span>JScript Example: Accessing Expression-based ActionSources and Clips
+                     </h4> 
+                     <p><span class="anchor_wrapper"><a name="GUID-088FA0B8-723E-4174-BDBE-F2132E0ACE4F"></a></span>This example demonstrates how to get the ActionSource via the Model.Sources property
+                        and how to get the Clip via the Track.Clips property. This example continues from
+                        <span class="char_link"><a href="#!/url=./files/dev_Expressions_Accessing.htm#WS00FA839CE9F5F148906F76DDEF5331DD-0019">JScript Example: Creating Expression-based Sources and Clips</a></span>, which applied an expression to the null's position and then stored and instantiated
+                        it.
+                     </p> 
+                     <div class="codeBlock"><pre class="prettyprint">
+// Get the new source from the model
+var sourcelist = new Enumerator( root.Sources );
+for ( ; !sourcelist.atEnd(); sourcelist.moveNext() ) {
+	var src = sourcelist.item();
+	// Make sure we are getting the right source by testing the underlying
+	// AnimationSourceItem to verify that it is an Expression
+	if ( src.SourceItems(0).Type == siExpressionAnimItem ) {
+		Application.LogMessage( "Found " + src.FullName );
+	}
+}
+
+// Get the clip from the mixer via the Track object
+if ( root.HasMixer() ) {
+	var alltracks = new Enumerator( root.Mixer.Tracks );
+	for ( ; !alltracks.atEnd(); alltracks.moveNext() ) {
+		// Make sure to skip audio and shape tracks
+		if ( alltracks.item().Type == siTrackAnimationType ) {
+			var currtrack = alltracks.item();
+			var cliplist = new Enumerator( currtrack.Clips );
+			for ( ; !cliplist.atEnd(); cliplist.moveNext() ) {
+				var clp = cliplist.item();
+				Application.LogMessage( "Found " + clp.FullName );
+			}
+		}
+	}
+}
+
+//INFO : Found Sources.Scene_Root.StoredExprAction
+//INFO : Found Mixer.Mixer_Anim_Track.StoredExprAction_Clip
+</pre></div> 
+                  </div> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WS00FA839CE9F5F148906F76DDEF5331DD-001D"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-A2881A70-656A-4A4E-820D-44416CF3B5FC"></a></span>C++ Example: Accessing an Expression-based ActionSource and Clip
+                     </h4> 
+                     <p><span class="anchor_wrapper"><a name="GUID-FD3C56B2-1274-454B-84F2-523C20A3A178"></a></span>This example demonstrates how to get the ActionSource via <a href="#!/url=./si_cpp/classXSI_1_1Model.html#GetSources">Model::GetSources</a> and how to get the Clip via <a href="#!/url=./si_cpp/classXSI_1_1Track.html#GetClips">Track::GetClips</a>. This example continues from <span class="char_link"><a href="#!/url=./files/dev_Expressions_Accessing.htm#WS00FA839CE9F5F148906F76DDEF5331DD-001A">C++ Example: Creating Expression-based Sources and Clips</a></span>, which applied an expression to the null's position and then stored and instantiated
+                        it.
+                     </p> 
+                     <div class="codeBlock"><pre class="prettyprint">
+// Get the new source from the model
+CRefArray sourcelist = root.GetSources();
+for ( LONG i=0; i&lt;sourcelist.GetCount(); ++i ) 
+{
+	ActionSource src( sourcelist[i] );
+	// Make sure we are getting the right source by testing the underlying
+	// AnimationSourceItem to verify that it is an Expression
+	CRefArray underlying = src.GetItems();
+	AnimationSourceItem animsrcitm( underlying[0] );
+	if ( animsrcitm.GetType() == siExpressionAnimItem ) 
+	{
+		app.LogMessage( L"Found " + src.GetFullName() );
+	} 
+}
+
+// Get the clip from the mixer via the Track object
+if ( root.HasMixer() ) {
+	CRefArray alltracks = root.GetMixer().GetTracks();
+	for ( LONG j=0; j&lt;alltracks.GetCount(); ++j ) 
+	{
+		// Make sure to skip audio and shape tracks
+		Track currtrack( alltracks[j] );
+		if ( currtrack.GetType() == siTrackAnimationType ) {
+			CRefArray cliplist = currtrack.GetClips();
+			for ( LONG k=0; k&lt;cliplist.GetCount(); ++k ) 
+			{
+				Clip clp( cliplist[k] );
+				app.LogMessage( L"Found " + clp.GetFullName() );
+			}
+		}
+	}
+}
+
+// Expected results:
+//INFO : Found Sources.Scene_Root.StoredExprAction
+//INFO : Found Mixer.Mixer_Anim_Track.StoredExprAction_Clip
+</pre></div> 
+                  </div> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WS00FA839CE9F5F148906F76DDEF5331DD-001E"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-08D0FC04-A0AB-429D-B30A-0FCE8C847B47"></a></span> How Do Expressions Interact with Constraints?
+                  </h3>   
+                  <p><span class="anchor_wrapper"><a name="GUID-CBDD2DCA-BE50-4A71-9EF8-7893BE58C033"></a></span>Expressions are always evaluated before constraints on the same object. If an expression
+                     is reading from a parameter that is driven by a constraint, the data pulled by the
+                     expression may be stale. You can work around this problem by applying the constraint
+                     to a null and reading the data from there instead.
+                  </p> 
+               </div> 
+            </div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

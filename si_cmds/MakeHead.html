@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>MakeHead</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>MakeHead</h1>
+         </div>
+
+<h2 class="pagehead">MakeHead</h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Creates a spine or skeleton head rig from three guide objects. The guide objects position the base of the head,
+the neck and the head. Optionally guide objects can also be passed to generate ears (a form of tail, see
+<a href="#!/url=./si_cmds/MakeTail.html">MakeTail</a> ).<br /><br />
+Optionally a shadow rig can be attached to the head. Shadow objects are created for each chain element or spine
+vertebra in the head, and pose-constrained to these objects. Shadow rigs can be used to plot animation 
+off of a rig.<br /><br /> 
+A jaw can be generated using MakeHead by duplicating the neck guide object (the second object in the guide
+collection). A minimum of 2 neck guide duplicates are needed to generate a jaw (see the example).<br /><br />
+If a skeleton style head is used, extra bones can be added to the neck by duplicating the head guide object
+(the third object in the guide collection). An extra bone will be created for each duplicate (see the example).
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oHead = MakeHead( Parent, GuideObjectCollection, [Prefix], [AssemblyType], [HeadType], [NbDivisions], [StretchType], Sliders, EarGuideCollection, [ShadowType], [ShadowParent] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns a <a href="#!/url=./files/CDKHead.htm">Head</a> JScript object.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Parent		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The object to which the new head will be parented.		</td>
+	</tr>
+	<tr>
+		<td class="name">GuideObjectCollection		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+An collection of 3 guide objects, consisting of the base of the head, the neck, and the head.		</td>
+	</tr>
+	<tr>
+		<td class="name">Prefix		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The prefix used to name new objects when making the new head.  Example "L", "R".		</td>
+	</tr>
+	<tr>
+		<td class="name">AssemblyType		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+The style of head assembly to be used.			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>Skeleton head and neck.					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>Spine head and neck.					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">HeadType		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+The type of head, used in the creation of box shadows.			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>Biped head.					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>Quadruped head.					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">NbDivisions		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+The number of divisions on the neck if a spine head assembly is choosen.			<p class="cell"><span class="hilite">Default Value: </span>
+2			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">StretchType		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+Whether the neck spine should stretch automatically to follow the head, or try to maintain a constant length.			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>Stretches by spine scale slider.					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>Stretches to meet the head controller.					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Sliders		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+A slider PPG to put the spine parameters on.  If none is supplied a slider page is added on the spine Curve.		</td>
+	</tr>
+	<tr>
+		<td class="name">EarGuideCollection		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Collection of starting objects for ear spring chains.  If empty, no ears are created.		</td>
+	</tr>
+	<tr>
+		<td class="name">ShadowType		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+The type of shadow rig to attach. Shadow rigs can be used to transfer or remap animation.			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>No shadow					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>SI|3D Skeleton shadow rig					</td>
+				</tr>
+				<tr>
+					<td class="name">2					</td>
+					<td>XSI Skeleton shadow rig					</td>
+				</tr>
+				<tr>
+					<td class="name">3					</td>
+					<td>Null shadow rig					</td>
+				</tr>
+				<tr>
+					<td class="name">4					</td>
+					<td>Box shadow rig					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ShadowParent		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Parent of the shadow rig hiearchy.  If empty, no shadow rig is generated.		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example makes two heads using the same three 
+	guide objects. The first head uses a spine, the 
+	second head uses a skeleton.
+*/
+var guidecoll = new ActiveXObject("XSI.Collection");
+guidecoll.Add( GetPrim("Null", "Guide_Base") ); 
+guidecoll.Add( GetPrim("Null", "Guide_Neck") ); 
+guidecoll.Add( GetPrim("Null", "Guide_Head") ); 
+//
+// Can duplicate the neck guide to generate a jaw.
+// At least two duplicates are required to create a jaw.
+//
+jaw0 = GetPrim("Null", "Guide_Neck1");  //duplicated neck for jaw
+jaw1 = GetPrim("Null", "Guide_Neck2");  //duplicated neck for jaw
+var lXfm = guidecoll(0).Kinematics.Global.Transform;
+lXfm.SetTranslationFromValues(0,0,0);
+guidecoll(0).Kinematics.Global.Transform = lXfm;
+lXfm.SetTranslationFromValues(0,2,0);
+guidecoll(1).Kinematics.Global.Transform = lXfm;
+lXfm.SetTranslationFromValues(0,4,0);
+guidecoll(2).Kinematics.Global.Transform = lXfm;
+lXfm.SetTranslationFromValues(1,2,0); 
+jaw0.Kinematics.Global.Transform = lXfm; 
+lXfm.SetTranslationFromValues(2,2,0); 
+jaw1.Kinematics.Global.Transform = lXfm; 
+//
+// Make the heads.
+//
+var Head= MakeHead(	ActiveSceneRoot,//parent
+					guidecoll,			//guide objects
+					"ABC",				//prefix
+					1,					//spine head and neck
+					0,					//biped head
+					3,					//nb of spine divisions
+					0);					//stretch using spine scale
+lXfm.SetTranslationFromValues(-4,0,0);
+guidecoll(0).Kinematics.Global.Transform = lXfm;
+lXfm.SetTranslationFromValues(-4,2,0);
+guidecoll(1).Kinematics.Global.Transform = lXfm;
+lXfm.SetTranslationFromValues(-4,4,0);
+guidecoll(2).Kinematics.Global.Transform = lXfm;
+lXfm.SetTranslationFromValues(-3,2,0); 
+jaw0.Kinematics.Global.Transform = lXfm; 
+lXfm.SetTranslationFromValues(-2,2,0); 
+jaw1.Kinematics.Global.Transform = lXfm; 
+//
+// Can duplicate the head guide to make a longer head.
+//
+head0= GetPrim("Null", "Guide_Head1");  
+head1= GetPrim("Null", "Guide_Head2");  
+head2= GetPrim("Null", "Guide_Head3");  
+head3= GetPrim("Null", "Guide_Head4");  
+head4= GetPrim("Null", "Guide_Head5");  
+lXfm.SetTranslationFromValues(-4,5,0); head0.Kinematics.Global.Transform = lXfm; 
+lXfm.SetTranslationFromValues(-4,6,0); head1.Kinematics.Global.Transform = lXfm; 
+lXfm.SetTranslationFromValues(-4,7,0); head2.Kinematics.Global.Transform = lXfm; 
+lXfm.SetTranslationFromValues(-4,8,0); head3.Kinematics.Global.Transform = lXfm; 
+lXfm.SetTranslationFromValues(-4,9,0); head4.Kinematics.Global.Transform = lXfm; 
+//
+// Make the skeleton head with extended neck
+// 
+Head = MakeHead(	ActiveSceneRoot,	//parent
+					guidecoll,			//guide objects
+					"123",				//prefix
+					0,					//skeleton neck
+					0,					//biped head
+					3,					//nb of spine divisions
+					0);					//stretch using spine scale</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/MakeTorso.html">MakeTorso</a> <a href="#!/url=./si_cmds/MakeSpine.html">MakeSpine</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

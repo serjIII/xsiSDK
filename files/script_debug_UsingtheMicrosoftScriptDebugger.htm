@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-6B1F56EB-59AB-45CB-A123-475763301B3A" />
+      <meta name="indexterm" content="debugging: using the JIT (Just In Time) Debugger" />
+      <meta name="indexterm" content="JIT (Just In Time) Debugger: using" />
+      <meta name="indexterm" content="Debug Features (Windows debugger)" />
+      <meta name="indexterm" content="debugging: setting and clearing breakpoints" />
+      <meta name="indexterm" content="Microsoft Script Debugger" />
+      <meta name="indexterm" content="breakpoints: clearing" />
+      <meta name="indexterm" content="Microsoft Script Debugger" />
+      <meta name="indexterm" content="breakpoints: setting" />
+      <meta name="indexterm" content="Microsoft Script Debugger" />
+      <meta name="indexterm" content="JScript: setting and clearing breakpoints" />
+      <meta name="indexterm" content="VBScript: setting and clearing breakpoints" />
+      <meta name="indexterm" content="debugging: stepping through scripts" />
+      <meta name="indexterm" content="Microsoft Script Debugger" />
+      <meta name="indexterm" content="stepping through scripts: Microsoft Script Debugger" />
+      <meta name="indexterm" content="debugging: viewing" />
+      <meta name="indexterm" content="the call stack: Microsoft Script Debugger" />
+      <meta name="indexterm" content="call stack: viewing" />
+      <meta name="indexterm" content="Microsoft Script Debugger" />
+      <meta name="indexterm" content="viewing the call stack: Microsoft Script Debugger" />
+      <meta name="indexterm" content="debugging: viewing" />
+      <meta name="indexterm" content="watches: Microsoft Script Debugger" />
+      <meta name="indexterm" content="watches: setting" />
+      <meta name="indexterm" content="Microsoft Script Debugger" />
+      <meta name="indexterm" content="watches: viewing" />
+      <meta name="indexterm" content="Microsoft Script Debugger" />
+      <meta name="indexterm" content="variables: viewing watches" />
+      <meta name="indexterm" content="Microsoft Script Debugger" />
+      <meta name="indexterm" content="variables: setting watches" />
+      <meta name="indexterm" content="Microsoft Script Debugger" />
+      <meta name="indexterm" content="Invoking the Microsoft Script Debugger" />
+      <meta name="indexterm" content="debugging: closing (detaching) the Microsoft Script Debugger" />
+      <meta name="topic-type" content="concept" />
+      <title>Using the Microsoft Script Debugger</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-6B1F56EB-59AB-45CB-A123-475763301B3A"></a></span><div class="head">
+            <h1>Using the Microsoft Script Debugger</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-E2A4BF1E-E6AF-473D-813A-CBF1AA34AEAC"></a></span>The Microsoft Script Debugger is installed with Internet Explorer and other common
+               Microsoft products. However, if you need to download and install it using the instructions
+               available at http://www.microsoft.com/downloads/.
+            </p><img src="../images/GUID-359567F2-9118-4E6B-A5FB-3C4EDD94A1C8-low.png" /><div class="section"><span class="anchor_wrapper"><a name="WS74602FA0B9B41E4C91B574963E250A95-0007"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-DB648457-C006-465E-AEC7-E4C91C740A48"></a></span> Debug Features
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-D8FF9415-226F-4534-B470-79700CBF2111"></a></span>The Microsoft Script Debugger provides the following standard debugging tools to help
+                  you debug your scripts:
+               </p> 
+               <ul>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-BC714AA5-6E44-4A71-B44C-54B898C3239D"></a></span> <em class="strong">Setting and clearing breakpoints</em>: when the Softimage Script Editor encounters the <em class="strong">stop</em> (for VBScript) or <em class="strong">debugger</em> (for JScript) statement in a script, the Microsoft Script Debugger opens.
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-20C33A2D-7D95-4E27-BA64-B99C0B42EFEE"></a></span> <em class="strong">Stepping through scripts</em>: allows you to tightly control the script execution so you can peek at variable values
+                        and see the results of each line as it happens.
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-33F8D2E2-37CF-4361-BBF3-4909332ACCE9"></a></span> <em class="strong">Viewing the call stack</em>: helps you trace the course of execution through a series of nested procedures. This
+                        is useful when you are debugging scripts called from within scripts, especially when
+                        used in conjunction with stepping through scripts.
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-D98F7425-0ADC-4DA5-8E9C-D4D27D839DB8"></a></span> <em class="strong">Setting and viewing variables</em>: you can view and set variable values on the fly using the command window with the
+                        ? statement.
+                     </p> 
+                     <div><span class="anchor_wrapper"><a name="GUID-D19EACD4-AF07-487C-9B59-388D86E116BC"></a></span><div class="note-note"><span class="label">NOTE:</span> 
+                           <p><span class="anchor_wrapper"><a name="GUID-E244F0CC-0242-4913-BB0A-C9C80779029B"></a></span>For more information, see the documentation on the Microsoft Scripting Technologies
+                              website.
+                           </p> 
+                        </div>
+                     </div> 
+                  </li>
+               </ul> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS74602FA0B9B41E4C91B574963E250A95-0008"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-B4141838-38A5-40F1-8489-D593D6828D3D"></a></span> Invoking the Microsoft Script Debugger
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-6C9CB684-13B8-4463-84A4-CD2DEDC8778E"></a></span>You can hook up the Microsoft Script Debugger to Softimage by right-clicking in the
+                  Script Editor's editing pane, then selecting <span class="MenuCascade" id="GUID-80F26306-98BE-4FD2-8787-DA1769090D3F">Tools</span><img src="../images/ac.menuaro.gif" /><span class="MenuCascade" id="GUID-FA845701-7025-4007-B485-CD2A28EA5B55">Enable External Script Debugger</span>. This sets the JITDebug (just-in-time debugging) key in your registry to <span class="code" translate="no">1</span> (by default it is set to <span class="code" translate="no">0</span>, or disabled):
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+REGEDIT4
+[HKEY_CURRENT_USER\Software\Microsoft\Windows Script\Settings]
+"JITDebug"=dword:00000001</pre></div> 
+               <p><span class="anchor_wrapper"><a name="GUID-8E11A0A7-08A2-4871-AE2C-3BC380D6F95D"></a></span>Once you have enabled this link, the debugger will pop up every time your script causes
+                  an error. If you want to cut this link between Softimage and the MS Script Debugger,
+                  select <span class="MenuCascade" id="GUID-B32BEF02-12A0-4225-B215-DAFD674809B7">Tools</span><img src="../images/ac.menuaro.gif" /><span class="MenuCascade" id="GUID-4C99DEAD-4113-42F9-80AA-F3964F1EDD83">Disable External Script Debugger</span>. from the editing pane's contextual menu. This sets the JITDebug key back to <span class="code" translate="no">0</span>:
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+REGEDIT4
+[HKEY_CURRENT_USER\Software\Microsoft\Windows Script\Settings]
+"JITDebug"=dword:00000000</pre></div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS74602FA0B9B41E4C91B574963E250A95-0009"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-3B734DA7-14D3-4F98-AD49-44C1B8D2EDA4"></a></span>Returning Program Control to Softimage
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-8DE7367C-297E-4A2C-A481-C10F596335F6"></a></span> When you want to close the Microsoft Script Debugger safely, select <span class="MenuCascade" id="GUID-790A64F6-7FB8-4229-9F3B-3585D88F5F15">Detach All Processes</span> from the Debug menu. If you exit or stop the debugger, Softimage will also close.
+               </p> <img src="../images/GUID-C786AB4D-F467-43FB-AC77-61BB665F7D99-low.png" /> 
+            </div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

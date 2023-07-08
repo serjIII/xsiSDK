@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>GenerateAutomaticUVs</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>GenerateAutomaticUVs</h1>
+         </div>
+
+<h2 class="pagehead">GenerateAutomaticUVs</h2>
+
+<h3>Introduced</h3>
+<div><p>v5.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Generates a UV texture coordinate cluster property from the specified generator operator. Only 
+operators that generate mesh or NURBS geometry from input curves are supported 
+(Birail, 
+CrvNet, 
+ExtrusionAlongAxis,
+Extrusion, 
+ExtrusionTwoProfiles,
+FourSided, 
+Loft,
+RevolutionAlongAxis, and 
+Revolution).
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = GenerateAutomaticUVs( Operator, Object, [ClusterPropertyName] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns the newly created UV texture coordinate <a href="#!/url=./si_om/ClusterProperty.html">ClusterProperty</a>.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Operator		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Specifies the generator operator from which to create the UV texture coordinates. 		</td>
+	</tr>
+	<tr>
+		<td class="name">Object		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Specifies the object to which the new UV cluster property will be added.		</td>
+	</tr>
+	<tr>
+		<td class="name">ClusterPropertyName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Specifies the name of the new UV texture coordinate cluster property. 			<p class="cell"><span class="hilite">Default Value: </span>
+"" (use Softimage's naming heuristic)			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+'	This example demonstrates how to generate a NURBS object from curves via the Extrusion operator
+'	and then use that operator to generate UV texture coordinates for the new surface mesh. For a
+'	JScript version, see the next example.
+'
+Dim l_GeneratedUVs
+Dim l_AlreadyGeneratedUVs
+NewScene ,false
+' Create curve objects that will be used to create surfaces.
+CreatePrim "Circle", "NurbsCurve" 
+SetValue "circle.circle.radius", 1
+SICreateCurve "crvlist", 3, 1
+SIAddPointOnCurveAtEnd "crvlist", 0, 0, -3, False, 1
+SIAddPointOnCurveAtEnd "crvlist", 0, 0, -13, False, 1
+SIAddPointOnCurveAtEnd "crvlist", 8, 0, -13, False, 1
+SIAddPointOnCurveAtEnd "crvlist", 8, 0, -3, False, 1
+' Generate a mesh surface from the curves.
+ApplyGenOp "Extrusion", "MeshSurface", "circle;crvlist", 3, siPersistentOperation, siKeepGenOpInputs
+SetValue "polymsh.polymsh.extrusion.subdivvperspan", 5
+' Put a material on the generated surface
+ApplyShader , , , , siLetLocalMaterialsOverlap
+SIApplyShaderToCnxPoint "Image", "Sources.Materials.DefaultLib.Material.Phong.diffuse"
+' Generate automatic UVs.
+set l_GeneratedUVs = GenerateAutomaticUVs( "polymsh.polymsh.extrusion", "polymsh", "AutoUVTxtCoords")
+' Log name of UV texture coordinate cluster property
+Application.LogMessage "Automatic Generation of UV Texture Coordinates returns the generated cluster property."
+Application.LogMessage "Generated UV Texture Coordinate Cluster Property: " &amp; l_GeneratedUVs.FullName
+' Trying to regenerate again will log a warning message and the already existing 
+' UV texture coordinate cluster property will be returned.
+' Generate automatic UVs.
+Application.LogMessage "Regeneration of UV Texture Coordinates generates a warning and the already generated cluster property is returned."
+set l_AlreadyGeneratedUVs = GenerateAutomaticUVs( "polymsh.polymsh.extrusion", "polymsh", "AutoUVTxtCoords")
+'Log name of UV texture coordinate cluster property
+Application.LogMessage "Already Generated UV Texture Coordinate Cluster Property: " &amp;l_AlreadyGeneratedUVs.FullName
+'Logged information and warning by this example.
+'INFO : Automatic Generation of UV Texture Coordinates returns the generated cluster property."
+'INFO : Generated UV Texture Coordinate Cluster Property: polymsh.polymsh.cls.AutomaticSamples.AutoUVTxtCoords
+'INFO : Regeneration of UV Texture Coordinates generates a warning and the already generated cluster property is returned.
+'WARNING : 3000-MODE-GenerateAutomaticUVs - Returning already generated UV texture coordinate cluster property. None re-generated.
+'INFO : Already Generated UV Texture Coordinate Cluster Property: polymsh.polymsh.cls.AutomaticSamples.AutoUVTxtCoords
+' View results.  
+SetDisplayMode "Camera", "texturedecal"</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example demonstrates how to generate a NURBS object from curves via the Extrusion operator
+	and then use that operator to generate UV texture coordinates for the new surface mesh. This
+	example is similar to the VBScript version above, except that it uses the object model 
+	instead of scripting commands.
+*/
+var l_GeneratedUVs;
+var l_AlreadyGeneratedUVs;
+NewScene( null, false );
+// Create curve objects that will be used to create surfaces.
+var oCrv = ActiveSceneRoot.AddGeometry( "Circle", "NurbsCurve" );
+oCrv.radius = 1;
+var pnts = new Array( 0,0,-3,1, 0,0,-3,1, 0,0,-3,1, 0,0,-3,1, 0,0,-6.333333333333333,1,
+	0,0,-9.666666666666666,1, 0,0,-13,1, 2.6666666666666665,0,-13,1, 5.333333333333333,0,-13,1, 
+	8,0,-13,1, 8,0,-9.666666666666667,1, 8,0,-6.333333333333334,1, 8,0,-3,1 );
+var oCrvlist = ActiveSceneRoot.AddNurbsCurve( pnts );
+// // Generate a mesh surface from the curves.
+var oGenOp = ApplyGenOp( "Extrusion", "MeshSurface", oCrv + ";" + oCrvlist, 3, siPersistentOperation, siKeepGenOpInputs )(0);
+var oNewMesh = oGenOp.OutputPorts(0).Target2.Parent3DObject;
+oGenOp.subdivvperspan = 5;
+// Put a material on the generated surface
+ApplyShader( null, null, null, null, siLetLocalMaterialsOverlap );
+SIApplyShaderToCnxPoint( "Image", "Sources.Materials.DefaultLib.Material.Phong.diffuse" );
+// Generate automatic UVs.
+l_GeneratedUVs = GenerateAutomaticUVs( oGenOp, oNewMesh, "AutoUVTxtCoords");
+// Log name of UV texture coordinate cluster property
+Application.LogMessage( "Automatic Generation of UV Texture Coordinates returns the generated cluster property." );
+Application.LogMessage( "Generated UV Texture Coordinate Cluster Property: " + l_GeneratedUVs.fullname );
+// Trying to regenerate again will log a warning message and the already existing 
+// UV texture coordinate cluster property will be returned.
+// Generate automatic UVs.
+Application.LogMessage( "Regeneration of UV Texture Coordinates generates a warning and the already generated cluster property is returned." );
+l_AlreadyGeneratedUVs = GenerateAutomaticUVs( oGenOp, oNewMesh, "AutoUVTxtCoords");
+// Log name of UV texture coordinate cluster property
+Application.LogMessage( "Already Generated UV Texture Coordinate Cluster Property: " + l_AlreadyGeneratedUVs.fullname );
+// Logged information and warning by this example.
+//INFO : Automatic Generation of UV Texture Coordinates returns the generated cluster property."
+//INFO : Generated UV Texture Coordinate Cluster Property: polymsh.polymsh.cls.AutomaticSamples.AutoUVTxtCoords
+//INFO : Regeneration of UV Texture Coordinates generates a warning and the already generated cluster property is returned.
+//WARNING : 3000-MODE-GenerateAutomaticUVs - Returning already generated UV texture coordinate cluster property. None re-generated.
+//INFO : Already Generated UV Texture Coordinate Cluster Property: polymsh.polymsh.cls.AutomaticSamples.AutoUVTxtCoords
+// View results.  
+SetDisplayMode( "Camera", "texturedecal" );</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/ApplyGenOp.html">ApplyGenOp</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

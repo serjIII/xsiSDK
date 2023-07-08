@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Geometry.SaveShapeKey</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Geometry.SaveShapeKey</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/Geometry.html">Geometry</a>.SaveShapeKey</h2>
+
+<h3>Description</h3>
+<div><p> Saves a shape key for this <a href="#!/url=./si_om/Geometry.html">Geometry</a> and creates a new <a href="#!/url=./si_om/ShapeClip.html">ShapeClip</a> 
+object in the mixer to represent this shape. Shape keys have two parts: sources (a shape that you 
+have stored) and clips (an instance of a shape key (source) at a particular position along a track 
+in the animation mixer).
+<br /><br />
+There are two possible workflows for using this method: the first is to change the actual shape of 
+the primitive and then call this method (which is similar to the <a href="#!/url=./si_cmds/SaveShapeKey.html">SaveShapeKey</a> 
+command); the second is to specify the shape using the PositionArray argument. The example below 
+illustrates these two approaches.
+<br /><br />
+The actual data for the shape is stored as a <a href="#!/url=./si_om/ClusterProperty.html">ClusterProperty</a>. It is possible to 
+store a shape key that defines positions for only a subset of the points, by using the IndexArray 
+argument.  This can save memory on a large object. Each subset of points with a shape key is 
+represented by a separate <a href="#!/url=./si_om/Cluster.html">Cluster</a>.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>ShapeClip Geometry.SaveShapeKey( Double in_time, Double in_clipDuration, siShapeReferenceMode in_refMode, siShapeInstanceMode in_instMode, String in_name, Object in_indexArray, Object in_positionArray, Object in_normalArray );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = Geometry.SaveShapeKey( Time, [ClipDuration], [RefMode], [InstMode], [Name], [IndexArray], [PositionArray], [NormalArray] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p><a href="#!/url=./si_om/ShapeClip.html">ShapeClip</a></p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Time		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+
+		Time in seconds.  The shape of the object is evaluated at this time, unless 
+		the shape is explicitly defined by the PositionArray argument.  The time argument 
+		is also used when adding the ShapeClip to the Mixer.  For example, if 
+		siShapeMixedWeightMode is specified as the InstMode argument, then the new shape 
+		will account for 100% of the shape at the specified time.  Only a single shape key 
+		can be specified at any particular time.
+			</td>
+	</tr>
+	<tr>
+		<td class="name">ClipDuration		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+
+		Clip duration in seconds.  Specify -1.0 to have the default behavior, which depends 
+		on the InstMode argument.  For example if siShapeMixedWeightMode is specified then 
+		the ClipDuration is the entire scene duration, but if siShapeTransitionMode is 
+		specified then clip will last 1 second.
+				<p class="cell"><span class="hilite">Default Value: </span>
+-1.0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">RefMode		</td>
+		<td><a href="#!/url=./si_om/siShapeReferenceMode.html">siShapeReferenceMode</a>		</td>
+		<td>
+
+		Shape reference mode. This specifies how the shape is stored and how the shape will 
+		change if the underlying reference shape changes.  The reference mode is ignored when 
+		more than one shape is saved on the same cluster, the reference mode of the first shape 
+		key is used instead.
+				<p class="cell"><span class="hilite">Default Value: </span>
+siShapeLocalReferenceMode			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">InstMode		</td>
+		<td><a href="#!/url=./si_om/siShapeInstanceMode.html">siShapeInstanceMode</a>		</td>
+		<td>
+
+		Shape instantiation mode.  This controls the way the new <a href="#!/url=./si_om/ShapeClip.html">ShapeClip</a> is
+		added to the Mixer.  With siShapeMixedWeightMode a new track is created, the new clip 
+		added to this track, and the fcurves controlling the weighting are adjusted. With 
+		siShapeInstanceOnlyMode the clips are added to separate tracks, but no fcurves are used 
+		to weight between the shapes.  With siShapeTransitionMode all clips are added to the same 
+		track, with transition effects applied between them.
+				<p class="cell"><span class="hilite">Default Value: </span>
+siShapeMixedWeightMode			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Name		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		Name to use for the new <a href="#!/url=./si_om/ShapeClip.html">ShapeClip</a>.  The <a href="#!/url=./si_om/ClusterProperty.html">ClusterProperty</a> 
+		associated with this shape is not affected by this argument.
+				<p class="cell"><span class="hilite">Default Value: </span>
+"Point_AUTO_ShapeAction_Clip"			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">IndexArray		</td>
+		<td><a href="#!/url=./files/Array.htm">Array</a>		</td>
+		<td>
+
+		A 1-dimensional array of geometry point indices.  Only these points will be included in the 
+		shape definition.  If no other shapes use this subset of points then a new 
+		<a href="#!/url=./si_om/Cluster.html">Cluster</a> will be created.
+				<p class="cell"><span class="hilite">Default Value: </span>
+If not specified the shape key is saved for every point on the geometry			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">PositionArray		</td>
+		<td><a href="#!/url=./files/Array.htm">Array</a>		</td>
+		<td>
+
+		A 1- or 2- dimensional array of key position points used for computing the offsets of the geometry 
+		points referred by the array of indices.  The points must be specified in absolute coordinates. 
+		A 1-dimensional array must be formatted as a sequence of x,y,z values: {Xo,Yo,Zo,...X(n-1),Y(n-1),Z(n-1)}. 
+		A 2 dimensional array must be formatted as a Nx3 array of x,y,z values. This argument is only considered 
+		if the IndexArray argument is specified, and must specify the same number of points as the IndexArray.
+				<p class="cell"><span class="hilite">Default Value: </span>
+Shape key is based on the current positions of the geometry points			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">NormalArray		</td>
+		<td><a href="#!/url=./files/Array.htm">Array</a>		</td>
+		<td>
+A 1 or 2 dimensional array of normal points. Normals are not yet supported.		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example shows how it is possible to create shape animations from the object model.
+' Two techniques are used to create the same animation on two polygons
+'
+dim oGrid1, oGrid2
+' Technique one is similar to the process used when interactively 
+' saving shape keys - we change the shape of the object and then save a
+' shape key
+' Create a polygon
+set oGrid1 = CreatePrim( "Grid", "MeshSurface" )
+SetValue oGrid1 &amp; ".polymsh.geom.subdivu", 1
+SetValue oGrid1 &amp; ".polymsh.geom.subdivv", 1
+Scale oGrid1, 0.25, 0.25, 0.25, siAbsolute, siParent, siObj, siXYZ
+Translate  oGrid1, -2, 0, 0, siRelative, siParent, siObj, siXYZ	
+' Our animation will start with the initial shape at frame 1 and
+' morph to the second shape until frame 30
+dim frameRate, frame1Seconds, frame30Seconds
+frameRate = GetValue( "PlayControl.Rate" )	
+frame1Seconds = 1 / frameRate
+frame30Seconds = 30 / frameRate
+' Save the current shape as the reference
+' This remembers the locations of each vertex.  This information will
+' be all zeros because we haven't moved any vertices and use siShapeLocalReferenceMode
+call oGrid1.ActivePrimitive.Geometry.SaveShapeKey( frame1Seconds, -1.0, _
+	siShapeLocalReferenceMode, siShapeMixedWeightMode )
+' Move some of the points
+Translate oGrid1 &amp; ".pnt[0]" , 0, 0, -1, siRelative, siGlobal, siObj, siXYZ
+Translate oGrid1 &amp; ".pnt[2]" , 0, 0, 1, siRelative, siGlobal, siObj, siXYZ
+Translate oGrid1 &amp; ".pnt[3]" , 0, 0, -1, siRelative, siGlobal, siObj, siXYZ
+' Take a second snap shot of the object
+call oGrid1.ActivePrimitive.Geometry.SaveShapeKey( frame30Seconds, -1.0, _
+	siShapeLocalReferenceMode, siShapeMixedWeightMode )
+' Technique two is direct.  We describe the actual positions
+' of the vertices for each shape.
+set oGrid2 = CreatePrim( "Grid", "MeshSurface" )
+SetValue oGrid2 &amp; ".polymsh.geom.subdivu", 1
+SetValue oGrid2 &amp; ".polymsh.geom.subdivv", 1
+Scale oGrid2, 0.25, 0.25, 0.25, siAbsolute, siParent, siObj, siXYZ
+Translate oGrid2, +2, 0, 0, siRelative, siParent, siObj, siXYZ	
+' We only specify the vertices that actually move.  In the case of 
+' a large object this could save a lot of memory
+call oGrid2.ActivePrimitive.Geometry.SaveShapeKey( frame1Seconds, -1.0, _
+	siShapeLocalReferenceMode, siShapeMixedWeightMode, ,_
+	Array( 0,2,3 ), Array( -4,0,-4,  4,0,-4,  4,0,4) )
+call oGrid2.ActivePrimitive.Geometry.SaveShapeKey( frame30Seconds, -1.0, _
+	siShapeLocalReferenceMode, siShapeMixedWeightMode, ,_
+	Array( 0,2,3 ), Array( -4,0,-8,  4,0,0,  4,0,0) )</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' 
+' Three cones are created with identical animation
+' although they use different Reference Modes to record the shape 
+' 
+set root = Application.ActiveProject.ActiveScene.Root
+set obj = root.AddGeometry( "Cone", "MeshSurface" )
+ApplyOp "bend", obj
+obj.posz.Value = -3
+set geometry = obj.ActivePrimitive.Geometry
+' Move the point to 1,1,0 in local mode
+set clip = geometry.SaveShapeKey( 1, 1, siShapeLocalReferenceMode, _
+	siShapeInstanceOnlyMode, "MyShapeKey", Array(1), Array(1.,1.,0) )
+set obj = root.AddGeometry( "Cone", "MeshSurface" )
+ApplyOp "bend", obj
+set geometry = obj.ActivePrimitive.Geometry
+' Move the point to 1,1,0 in absolute mode
+set clip = geometry.SaveShapeKey( 1, 1, siShapeAbsoluteReferenceMode, _
+	siShapeInstanceOnlyMode, "MyShapeKey", Array(1), Array(1.,1.,0) )
+set obj = root.AddGeometry( "Cone", "MeshSurface" )
+ApplyOp "bend", obj
+obj.posz.value = 3
+set geometry = obj.ActivePrimitive.Geometry
+' Move the point to 1,1,0 in object mode
+set clip = geometry.SaveShapeKey( 1, 1, siShapeObjectReferenceMode, _
+	siShapeInstanceOnlyMode, "MyShapeKey", Array(1), Array(1.,1.,0) )</pre></td></tr>
+</table>
+</div><h4>3. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' 
+' This example demonstrates how you access the shape information for a particular shape key by looking 
+' at the cluster properties which store this data
+' 
+option explicit
+' Set up a little scene
+dim oCircle
+set oCircle = CreatePrim( "Sphere", "MeshSurface" )
+' Move the top and bottom point of the sphere outwards
+oCircle.ActivePrimitive.Geometry.SaveShapeKey 0.5, 3.0, _
+	siShapeAbsoluteReferenceMode, siShapeInstanceOnlyMode, ,_
+	Array( 1, 0 ), Array( 0,6,0,  0,-6,0 )
+' Move two different points - this creates a new, independent cluster
+' We can use a different reference mode for this, but we still specify the
+' point positions in Absolute terms.
+oCircle.ActivePrimitive.Geometry.SaveShapeKey 0.8, 1.0, _
+	siShapeLocalReferenceMode, siShapeInstanceOnlyMode,, _
+	Array( 5, 33 ), Array( -2,0,0, 2,0,0 )
+ShowShapeInformation( oCircle )
+sub ShowShapeInformation( in_obj )
+	dim oClusters, oCluster, oProperties, oProperty, cntFoundShapes
+	on error resume next
+	set oClusters = in_obj.ShapeAnimatedClusters
+	if ( err &lt;&gt; 0 ) then
+		Application.LogMessage "Please select a 3D Object"
+		exit sub
+	end if
+	on error goto 0
+	Application.LogMessage "Dump of shape key data on object " &amp; in_obj.Fullname
+	cntFoundShapes = 0
+	' Go through the various clusters on the object
+	' (In practice only the Point clusters will have shape keys)
+	for each oCluster in oClusters
+		' Cluster indices are not the same as the indices on the
+		' geometry, but we can easily determine the relationship with
+		' this array:		
+		dim oClusterElementsCollection, aElements
+		set oClusterElementsCollection = oCluster.Elements
+		aElements = oClusterElementsCollection.Array  
+		' Only search for the shape keys, which have type "clskey"		
+		set oProperties = oCluster.LocalProperties.filter( "clskey" )
+		for each oProperty in oProperties
+			' Found a shape key					
+			dim i, XYZArray
+			cntFoundShapes = cntFoundShapes + 1
+			if InstrRev( oProperty, ".ResultClusterKey" ) &lt;&gt; 0 then
+				' There may also be an internal cluster property 
+				' called "ResultClusterKey" which stores the 
+				' result of blending the various shapes at the 
+				' current time						
+				Application.LogMessage "Blended shape at this time: " &amp; oProperty
+			else
+				Application.LogMessage "Shape key: " &amp; oProperty
+			end if		
+			' The reference mode is available from the KeyType parameter
+			dim ReferenceType
+			ReferenceType =	oProperty.Parameters("KeyType").Value
+			if ( ReferenceType = 0 ) then
+				Logmessage "        Uses: Absolute Reference Mode"
+			elseif ( ReferenceType = 1 ) then
+				Logmessage "        Uses: Local Reference Mode"			
+			elseif ( ReferenceType = 2 ) then
+				Logmessage "        Uses: Object Reference Mode"
+			end if
+			' The contents of the cluster can be found in this safearray	
+			XYZArray = oProperty.Elements.Array
+			For i=0 to UBound(oProperty.Elements.Array,2)
+				' Print out the x,y,z values
+				LogMessage "        pnt["&amp; aElements( i ) &amp; "] has position (" _ 
+					&amp; Round(XYZArray(0,i),3) &amp; "," &amp; Round(XYZArray(1,i),3) &amp; ","_
+					&amp; Round(XYZArray(2,i),3) &amp; ")"
+			Next		
+		next
+	next	
+	if ( cntFoundShapes = 0 ) then
+		LogMessage "There are no shapes on this object"
+	end if
+end sub</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/SaveShapeKey.html">SaveShapeKey</a> <a href="#!/url=./si_om/Cluster.html">Cluster</a> <a href="#!/url=./si_om/ClusterProperty.html">ClusterProperty</a> <a href="#!/url=./si_om/ShapeClip.html">ShapeClip</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

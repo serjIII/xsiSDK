@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>MakeTorso</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>MakeTorso</h1>
+         </div>
+
+<h2 class="pagehead">MakeTorso</h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Creates a torso rig consisting of a spine, left and right shoulders, and a hip. The torso is 
+rigged with controls for the chest, hip and upper body.<br /><br />
+A collection of 10 or 11 guide objects defines the torso. The first four guide objects determine 
+the shape of the spine. The next six define the left side of the torso (left leg base, left 
+shouder base, left shoulder tip, right leg base, right shouder base, right shoulder tip). An 11th 
+guide object can be added to create a chest bone. A hip icon is created with hip sockets positioned 
+at the leg bases, and the top of the hip is positioned at the base of the spine. One bone shoulder 
+is created using the shoulder base and tip guide objects.<br /><br /> 
+A tail can be generated using MakeTorso by duplicating the spine base control object, the first object in the 
+guide object collection. A minimum of 3 spine base duplicates are needed to generate a tail (see example).
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oTorso = MakeTorso( Parent, [NbDivisions], [StretchType], GuideObjectCollection, [ControlType], [SpineType], Sliders, [ShadowType], [ShadowParent], [NegativeScale] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns a <a href="#!/url=./files/CDKTorso.htm">Torso</a> JScript object.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Parent		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The object to which the torso will be parented. This is usually the global SRT.		</td>
+	</tr>
+	<tr>
+		<td class="name">NbDivisions		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+The number of spine divisions. The number of vertebra will be NbDivisions+1 .			<p class="cell"><span class="hilite">Default Value: </span>
+2			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">StretchType		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+Whether the spine should stretch to follow the chest controller, or maintain a constant length.			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>Stretches by spine scale slider.					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>Stretches to meet the chest controller.					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">GuideObjectCollection		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		A collection of 10 or 11 guide objects (an 11th guide object can be used as the target 
+		for a chest bone). The first four bones describe the spine path: 1) spine base, 2) spine 
+		base depth, 3) spine end depth, 4) spine end; the next three define the left side appendages 
+		of the torso: 5) left leg start, 6) left shoulder start, 7) left shoulder end; the next 
+		three define the right side appendages: 8) right leg start, 9) right shoulder start, 10) 
+		right shoulder end. The 11th object is optional and describes the chest bone position. If 
+		included, MakeTorso draws a spine to the end of this position and makes a chest bone between 
+		the position and the spine end (item #4).
+			</td>
+	</tr>
+	<tr>
+		<td class="name">ControlType		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+Type of icon to use for chest, hip, and upper body controls.			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>Use square controllers.					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>Use cube controllers.					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">SpineType		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+The style of head assembly to be used.			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>make quaternion spine with polygon divisions.					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>make quaternion spine with implicit divisions.					</td>
+				</tr>
+				<tr>
+					<td class="name">2					</td>
+					<td>make skeleton spine.					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Sliders		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+A slider PPG to put the spine parameters on.  If none is supplied a slider page is added on the spine Curve.		</td>
+	</tr>
+	<tr>
+		<td class="name">ShadowType		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+The type of shadow rig to attach. Shadow rigs can be used to transfer or remap animation.			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>No shadow					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>SI|3D Skeleton shadow rig					</td>
+				</tr>
+				<tr>
+					<td class="name">2					</td>
+					<td>XSI Skeleton shadow rig					</td>
+				</tr>
+				<tr>
+					<td class="name">3					</td>
+					<td>Null shadow rig					</td>
+				</tr>
+				<tr>
+					<td class="name">4					</td>
+					<td>Box shadow rig					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ShadowParent		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Parent of the shadow rig hiearchy.  If empty, no shadow rig is generated.		</td>
+	</tr>
+	<tr>
+		<td class="name">NegativeScale		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+Negative scaling on the shoulders.  Negative scaling is useful for manipulating the left and right shoulders symmetrically.			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>No negative Scaling					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>Negative scaling on the Right Shoulder					</td>
+				</tr>
+				<tr>
+					<td class="name">2					</td>
+					<td>Negative Scaling on the Left Shoulder					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This script builds a collection of torso guide objects
+	places them and constructs a torso using the makeTorso
+	command.
+*/
+var guidecoll = new ActiveXObject("XSI.Collection");
+guidecoll.Add( GetPrim("Null", "Guide_SpineBase") ); 
+guidecoll.Add( GetPrim("Null", "Guide_SpineDepth") ); 
+guidecoll.Add( GetPrim("Null", "Guide_SpineEndDepth") ); 
+guidecoll.Add( GetPrim("Null", "Guide_SpineEnd") ); 
+guidecoll.Add( GetPrim("Null", "Guide_LLegStart") ); 
+guidecoll.Add( GetPrim("Null", "Guide_LShoulderStart") ); 
+guidecoll.Add( GetPrim("Null", "Guide_LShoulderEnd") ); 
+guidecoll.Add( GetPrim("Null", "Guide_RLegStart") ); 
+guidecoll.Add( GetPrim("Null", "Guide_RShoulderStart") ); 
+guidecoll.Add( GetPrim("Null", "Guide_RShoulderEnd") ); 
+var lXfm = guidecoll(0).Kinematics.Global.Transform;
+lXfm.SetTranslationFromValues(0,0,0);
+guidecoll(0).Kinematics.Global.Transform = lXfm;
+lXfm.SetTranslationFromValues(0,2,0);
+guidecoll(1).Kinematics.Global.Transform = lXfm;
+lXfm.SetTranslationFromValues(0,4,0);
+guidecoll(2).Kinematics.Global.Transform = lXfm;
+lXfm.SetTranslationFromValues(0,6,0);
+guidecoll(3).Kinematics.Global.Transform = lXfm;
+lXfm.SetTranslationFromValues(2,0,0);
+guidecoll(4).Kinematics.Global.Transform = lXfm;
+lXfm.SetTranslationFromValues(2,6,0);
+guidecoll(5).Kinematics.Global.Transform = lXfm;
+lXfm.SetTranslationFromValues(4,6,0);
+guidecoll(6).Kinematics.Global.Transform = lXfm;
+lXfm.SetTranslationFromValues(-2,0,0);
+guidecoll(7).Kinematics.Global.Transform = lXfm;
+lXfm.SetTranslationFromValues(-2,6,0);
+guidecoll(8).Kinematics.Global.Transform = lXfm;
+lXfm.SetTranslationFromValues(-4,6,0);
+guidecoll(9).Kinematics.Global.Transform = lXfm;
+//
+// Duplicate the spine base guide to generate a tail.
+// At least 3 duplicates are required.
+//
+var tail0 = GetPrim("Null", "Guide_SpineBase1");  
+var tail1 = GetPrim("Null", "Guide_SpineBase2");  
+var tail2 = GetPrim("Null", "Guide_SpineBase3");  
+lXfm.SetTranslationFromValues(0,0,-2); 
+tail0.Kinematics.Global.Transform = lXfm; 
+lXfm.SetTranslationFromValues(0,0,-4); 
+tail1.Kinematics.Global.Transform = lXfm; 
+lXfm.SetTranslationFromValues(0,0,-6); 
+tail2.Kinematics.Global.Transform = lXfm; 
+//
+// Make the torso
+// 
+var Torso= MakeTorso( ActiveSceneRoot,	//parent
+			 3,			//# vertebrae
+			 0,			//stretch using spine scale
+			 guidecoll,		//guide objects
+			 1,			//cube controls
+			 0);			//quat spine with polygon divs
+DumpTorso(Torso);
+function DumpTorso(inTorso)
+{
+	logmessage("Data in the returned torso object:");
+	logmessage("Parent         : "+ inTorso.Parent);
+	logmessage("Spine Curve    : "+ inTorso.Spine.Curve);
+	logmessage("Hip Bone       : "+ inTorso.HipBone);
+	logmessage("Right Effector : "+ inTorso.REff);
+	logmessage("Left Effector  : "+ inTorso.LEff);
+	logmessage("Right Skeleton : "+ inTorso.RSkel);
+	logmessage("Left Skeleton  : "+ inTorso.LSkel);
+	logmessage("Spine Vertebrae: "+ inTorso.Spine.Vertebra);
+	logmessage("Upper Body     : "+ inTorso.UpperBody);
+	logmessage("Hip            : "+ inTorso.Hip);
+	logmessage("Chest          : "+ inTorso.Chest);
+	logmessage("Hidden         : "+ inTorso.Hidden);
+	logmessage("Envelope       : "+ inTorso.Envelope);
+	logmessage("Shadows        : "+ inTorso.Shadows);
+}
+//results from running this script:
+//INFO : "Data in the returned torso object:"
+//INFO : "Parent         : undefined"
+//INFO : "Spine Curve    : crvlist"
+//INFO : "Hip Bone       : Hip"
+//INFO : "Right Effector : RShoulderRoot"
+//INFO : "Left Effector  : LShoulderRoot"
+//INFO : "Right Skeleton : RShoulder,RShoulderEff,RShoulderRoot"
+//INFO : "Left Skeleton  : LShoulder,LShoulderEff,LShoulderRoot"
+//INFO : "Spine Vertebrae: Vertebra,Vertebra1,Vertebra2"
+//INFO : "Upper Body     : UpperBody"
+//INFO : "Hip            : Hip1"
+//INFO : "Chest          : Chest"
+//INFO : "Hidden         : SpineStart,SpineEnd,RShoulderRoot,LShoulderRoot"
+//INFO : "Envelope       : Hip,RShoulderEff,LShoulderEff"
+//INFO : "Shadows        : undefined"</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/MakeSpine.html">MakeSpine</a> <a href="#!/url=./si_cmds/MakeArm.html">MakeArm</a> <a href="#!/url=./si_cmds/MakeLeg.html">MakeLeg</a> <a href="#!/url=./si_cmds/MakeDogLeg.html">MakeDogLeg</a> <a href="#!/url=./si_cmds/MakeHead.html">MakeHead</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

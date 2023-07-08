@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Geometry Primitives</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Geometry Primitives</h1>
+         </div>
+
+<h2 class="pagehead">Geometry Primitives</h2>
+
+<div>
+	<p>These primitive presets can be used with either primitive-creating functions (<a href="#!/url=./si_om/X3DObject.AddPrimitive.html">X3DObject.AddPrimitive</a> method, <a href="#!/url=./si_cmds/GetPrim.html">GetPrim</a> and <a href="#!/url=./si_cmds/SIGetPrim.html">SIGetPrim</a> commands) or geometry-creating functions (<a href="#!/url=./si_om/X3DObject.AddGeometry.html">X3DObject.AddGeometry</a> method, <a href="#!/url=./si_cmds/CreatePrim.html">CreatePrim</a> and <a href="#!/url=./si_cmds/DrawPrimitiveTool.html">DrawPrimitiveTool</a>).</p>
+<div class="tip">
+<table cellpadding="5" cellspacing="5">
+	<tr>
+		<td class="label">Note</td>
+		<td class="emph">See <a href="#!/url=./si_cmds/PrimPreset.html">Primitive Presets</a> for list of the possible types of primitives. Also see <a href="#!/url=./si_cmds/AlphabeticalListOfAllPrimitives.html#">Alphabetical Listing of All Primitive Presets</a> for a complete list of available primitive types.</td>
+	</tr>
+</table>
+</div>
+</div>
+
+<div><table class="values">
+	<tr>
+		<th>Preset</th>
+		<th>Primitives</th>
+	</tr>
+	<tr>
+		<td class="name">Cone</td>
+		<td><a name="Cone"></a><a href="http://softimage.wiki.softimage.com/sdkdocs/xsiparams/cone.html">Cone</a>s can be <a href="#!/url=./si_om/PolygonMesh.html">PolygonMesh</a>es, <a href="#!/url=./si_om/NurbsSurfaceMesh.html">NurbsSurfaceMesh</a>es, <a href="#!/url=./si_om/PointCloudGeometry.html">PointCloudGeometry</a> objects, or implicit objects (non-renderable shapes commonly used to define bounding volumes for envelopes, particles, etc.)<br /><br />		</td>
+	</tr>
+	<tr>
+		<td class="name">Cube</td>
+		<td><a name="Cube"></a><a href="http://softimage.wiki.softimage.com/sdkdocs/xsiparams/cube.html">Cube</a>s can be <a href="#!/url=./si_om/PolygonMesh.html">PolygonMesh</a>es, <a href="#!/url=./si_om/NurbsSurfaceMesh.html">NurbsSurfaceMesh</a>es, <a href="#!/url=./si_om/PointCloudGeometry.html">PointCloudGeometry</a> objects, or implicit objects (non-renderable shapes commonly used to define bounding volumes for envelopes, particles, etc.)<br /><br />		</td>
+	</tr>
+	<tr>
+		<td class="name">Cylinder</td>
+		<td><a name="Cylinder"></a><a href="http://softimage.wiki.softimage.com/sdkdocs/xsiparams/cylinder.html">Cylinder</a>s can be <a href="#!/url=./si_om/PolygonMesh.html">PolygonMesh</a>es, <a href="#!/url=./si_om/NurbsSurfaceMesh.html">NurbsSurfaceMesh</a>es, <a href="#!/url=./si_om/PointCloudGeometry.html">PointCloudGeometry</a> objects, or implicit objects (non-renderable shapes commonly used to define bounding volumes for envelopes, particles, etc.)<br /><br />		</td>
+	</tr>
+	<tr>
+		<td class="name">Disc</td>
+		<td><a name="Disc"></a><a href="http://softimage.wiki.softimage.com/sdkdocs/xsiparams/disc.html">Disc</a>s can be <a href="#!/url=./si_om/PolygonMesh.html">PolygonMesh</a>es, <a href="#!/url=./si_om/NurbsSurfaceMesh.html">NurbsSurfaceMesh</a>es, <a href="#!/url=./si_om/PointCloudGeometry.html">PointCloudGeometry</a> objects, or implicit objects (non-renderable shapes commonly used to define bounding volumes for envelopes, particles, etc.)<br /><br />		</td>
+	</tr>
+	<tr>
+		<td class="name">Dodecahedron</td>
+		<td><a name="Dodecahedron"></a><a href="http://softimage.wiki.softimage.com/sdkdocs/xsiparams/dodecahedron.html">Dodecahedron</a>s are <a href="#!/url=./si_om/PolygonMesh.html">PolygonMesh</a>es.<br /><br />		</td>
+	</tr>
+	<tr>
+		<td class="name">Grid</td>
+		<td><a name="Grid"></a><a href="http://softimage.wiki.softimage.com/sdkdocs/xsiparams/grid.html">Grid</a>s can be <a href="#!/url=./si_om/PolygonMesh.html">PolygonMesh</a>es, <a href="#!/url=./si_om/NurbsSurfaceMesh.html">NurbsSurfaceMesh</a>es, <a href="#!/url=./si_om/PointCloudGeometry.html">PointCloudGeometry</a> objects, or implicit objects (non-renderable shapes commonly used to define bounding volumes for envelopes, particles, etc.)<br /><br />		</td>
+	</tr>
+	<tr>
+		<td class="name">Icosahedron</td>
+		<td><a name="Icosahedron"></a><a href="http://softimage.wiki.softimage.com/sdkdocs/xsiparams/icosahedron.html">Icosahedron</a>s are <a href="#!/url=./si_om/PolygonMesh.html">PolygonMesh</a>es.<br /><br />		</td>
+	</tr>
+	<tr>
+		<td class="name">Null</td>
+		<td><a name="Null"></a><a href="http://softimage.wiki.softimage.com/sdkdocs/xsiparams/null.html">Null</a>s are objects that have no geometry, but do have a position in space. They are useful for organizing scenes into hierarchies and when used as control objects in a character rig.<br /><br />		</td>
+	</tr>
+	<tr>
+		<td class="name">Octahedron</td>
+		<td><a name="Octahedron"></a><a href="http://softimage.wiki.softimage.com/sdkdocs/xsiparams/octahedron.html">Octahedron</a>s are <a href="#!/url=./si_om/PolygonMesh.html">PolygonMesh</a>es.<br /><br />		</td>
+	</tr>
+	<tr>
+		<td class="name">Rhombicosidodecahedron</td>
+		<td><a name="Rhombicosidodecahedron"></a>Rhombicosidodecahedrons are <a href="#!/url=./si_om/PolygonMesh.html">PolygonMesh</a>es.<br /><br />		</td>
+	</tr>
+	<tr>
+		<td class="name">SoccerBall</td>
+		<td><a name="SoccerBall"></a>Soccer Balls are <a href="#!/url=./si_om/PolygonMesh.html">PolygonMesh</a>es.<br /><br />		</td>
+	</tr>
+	<tr>
+		<td class="name">Sphere</td>
+		<td><a name="Sphere"></a><a href="http://softimage.wiki.softimage.com/sdkdocs/xsiparams/sphere.html">Sphere</a>s can be <a href="#!/url=./si_om/PolygonMesh.html">PolygonMesh</a>es, <a href="#!/url=./si_om/NurbsSurfaceMesh.html">NurbsSurfaceMesh</a>es, <a href="#!/url=./si_om/PointCloudGeometry.html">PointCloudGeometry</a> objects, or implicit objects (non-renderable shapes commonly used to define bounding volumes for envelopes, particles, etc.)<br /><br />		</td>
+	</tr>
+	<tr>
+		<td class="name">Tetrahedron</td>
+		<td><a name="Tetrahedron"></a><a href="http://softimage.wiki.softimage.com/sdkdocs/xsiparams/tetrahedron.html">Tetrahedron</a>s are <a href="#!/url=./si_om/PolygonMesh.html">PolygonMesh</a>es.<br /><br />		</td>
+	</tr>
+	<tr>
+		<td class="name">Text</td>
+		<td><a name="Text"></a><a href="http://softimage.wiki.softimage.com/sdkdocs/xsiparams/text.html">3D Text</a> information is immediately converted to curves which can be optionally converted to planar or extruded <a href="#!/url=./si_om/PolygonMesh.html">PolygonMesh</a>es. Strictly speaking, text is not a true type of geometric object in XSI but can still be created using the geometry-creating <a href="#!/url=./si_om/X3DObject.AddGeometry.html">X3DObject.AddGeometry</a> method and the <a href="#!/url=./si_cmds/CreatePrim.html">CreatePrim</a> and <a href="#!/url=./si_cmds/DrawPrimitiveTool.html">DrawPrimitiveTool</a> commands. Also see the <a href="#!/url=./si_cmds/CreateMeshText.html">CreateMeshText</a> command.<br /><br />		</td>
+	</tr>
+	<tr>
+		<td class="name">Torus</td>
+		<td><a name="Torus"></a><a href="http://softimage.wiki.softimage.com/sdkdocs/xsiparams/torus.html">Torus</a>es can be <a href="#!/url=./si_om/PolygonMesh.html">PolygonMesh</a>es, <a href="#!/url=./si_om/NurbsSurfaceMesh.html">NurbsSurfaceMesh</a>es, <a href="#!/url=./si_om/PointCloudGeometry.html">PointCloudGeometry</a> objects, or implicit objects (non-renderable shapes commonly used to define bounding volumes for envelopes, particles, etc.)<br /><br />		</td>
+	</tr>
+</table>
+<br />
+
+</div>
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

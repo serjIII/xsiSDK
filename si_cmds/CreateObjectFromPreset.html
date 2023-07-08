@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>CreateObjectFromPreset</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>CreateObjectFromPreset</h1>
+         </div>
+
+<h2 class="pagehead">CreateObjectFromPreset</h2>
+
+<h3>Introduced</h3>
+<div><p>v1.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Creates and returns a new object based on a preset. The object is created
+in the TransientObjectContainer meaning that it is not persisted in the scene
+or visible in the scene explorer.  This area is flushed each time a new scene
+is loaded.  This command can be useful for creating temporary 
+<a href="#!/url=./si_om/CustomProperty.html">CustomProperty</a> objects as shown in the example below.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = CreateObjectFromPreset( PresetObj, [Name] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns the newly created object.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">PresetObj		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		Preset object or full path of the preset file. See
+		<a href="#!/url=./si_cmds/ModelPresets.html">Model Presets</a>,
+		<a href="#!/url=./si_cmds/PassPresets.html">Pass Presets</a>,
+		<a href="#!/url=./si_cmds/PrimPreset.html">Primitive Presets</a>,
+		<a href="#!/url=./si_cmds/PropPreset.html">Property Presets</a>, and
+		<a href="#!/url=./si_cmds/ShaderPreset.html">Shader Presets</a>		</td>
+	</tr>
+	<tr>
+		<td class="name">Name		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Name to give the created object 		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	Example of creating a temporary custom property (aka custom pset).
+	This can be useful for showing a temporary yet non-modal custom pset
+	to the user.  The user doesn//t have to close the PPG immediately
+	yet the object does not clutter up the scene file.
+*/
+NewScene( "", false );
+// Demonstrate how you can use it to create a built-in custom pset
+var oAnnotation = CreateTemporaryCustomPSet( "Annotation", Application.InstallationPath(siFactoryPath), "MyA" );
+if ( oAnnotation ) {
+	InspectObj( oAnnotation, "", "Annotation Test", siModal, false );
+}
+// Create an instance of one of the SDK workgroup sample psets
+var presetpath = XSIUtils.BuildPath(
+	Application.InstallationPath( siFactoryPath ),
+	"XSISDK", "examples", "workgroup", "Addons", "PSetUIDemo"
+);
+var oPSetUIDemo = CreateTemporaryCustomPSet( "PSetUIDemo", presetpath, "" );
+if ( oPSetUIDemo ) {
+	InspectObj( oPSetUIDemo, "", "PSetUIDemo Test", siModal, false );
+}
+// Now the following lines will log, declaring that these instances live inside the TransientObjectContainer:
+// INFO : Full path of Annotation instance is: TransientObjectContainer.MyA
+// INFO : Full path of PSetUIDemo instance is: TransientObjectContainer.PSetUIDemo
+// ... but nothing exists under the Scene_Root...
+var oProp = Application.ActiveSceneRoot.Properties("PSetUIDemo");
+if (oProp == null || typeof(oProp) == "undefined") {
+	Application.LogMessage( "No instances found." );
+} else {
+	Application.LogMessage( "Found an instance." );
+}
+// INFO : No instances found.
+// ... until you apply it
+Application.ActiveSceneRoot.AddProperty( XSIUtils.BuildPath(presetpath, "Data", "DSPresets", "Properties", "PSetUIDemo.Preset") );
+oProp = Application.ActiveSceneRoot.Properties("PSetUIDemo");
+if (oProp == null || typeof(oProp) == "undefined") {
+	Application.LogMessage( "No instances found." );
+} else {
+	Application.LogMessage( "Found an instance." );
+}
+// INFO : Found an instance.
+// Function CreateTemporaryCustomPSet
+// Creates a temporary custom property set.  This does not appear in the scene explorer and you do not have to
+// worry about deleting it.
+//
+// in_PresetName - Name of the preset, which normally matches the name of the spdl file.  Do not include the extension
+// in_PresetLocation - May be one of the siInstallationPath values (e.g. siUserPath, siUserAddonPath, etc.) or a string path
+// in_CustomPSetName - Desired name for the new object, or leave empty for default behavior
+//
+// Return Value: newly created custom pset
+function CreateTemporaryCustomPSet( in_PresetName, in_PresetLocation, in_CustomPSetName )
+{
+	var oPSet;
+	// Last argument is optional
+	if ( in_CustomPSetName == "" ) {
+		in_CustomPSetName = in_PresetName;
+	}
+	// Figure out whether this is a string path or an siInstallationPath value
+	in_PresetLocation = ( typeof(in_PresetLocation) == "string" ) 
+		? in_PresetLocation
+		: Application.InstallationPath(in_PresetLocation);
+	var presetFullPath = XSIUtils.BuildPath( 
+		in_PresetLocation, "Data", "DSPresets", "Properties", in_PresetName + ".Preset"
+	);
+	try {
+		oPSet = CreateObjectFromPreset( presetFullPath, in_CustomPSetName );
+		Application.LogMessage( "Full path of " + in_PresetName + " instance is: " + oPSet.FullName );
+	} catch(e) {
+		Application.LogMessage( "Failed to create temporary instance of " + in_PresetName + " preset", siWarning );
+		return null;
+	}
+	return oPSet;
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/XSIFactory.CreateObjectFromPreset.html">XSIFactory.CreateObjectFromPreset</a> <a href="#!/url=./si_cmds/CreatePreset.html">CreatePreset</a> <a href="#!/url=./si_cmds/LoadPreset.html">LoadPreset</a> <a href="#!/url=./si_cmds/SavePreset.html">SavePreset</a> <a href="#!/url=./si_cmds/SIGetPreset.html">SIGetPreset</a> <a href="#!/url=./si_cmds/SILoadPreset.html">SILoadPreset</a> <a href="#!/url=./si_cmds/SIAddPropEx.html">SIAddPropEx</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

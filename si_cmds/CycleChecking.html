@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>CycleChecking</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>CycleChecking</h1>
+         </div>
+
+<h2 class="pagehead">CycleChecking</h2>
+
+<h3>Introduced</h3>
+<div><p>v3.5</p></div>
+
+<h3>Description</h3>
+<div><p>
+Checks the Graph For Operator Evaluation Cycles. An evaluation cycle is a looped graph dependency where 
+an operation is dependent on itself.<br /><br />
+This function determines if there is a cycle in a specified hierarchy and outputs to the script window
+the operators that are within the cycle, or are accessing the data within the cycle.
+Within each cycle traversed the script window outputs a name of a operator as 'Cycle Breaking Point'
+and outputs many operators names labeled as 'Cycle through' operators.  <br /><br />
+The 'Cycle Breaking Point' operator is the graph location where the evaluation check is terminated.
+This is dependent on where the evaluation was initiated from and may slightly vary. This is the critical
+location for scene evalution differences/odd results/odd behavior users see with problematic cycles in their
+graph.  The reason, is that to avoid an infinite loop the data used to honour this evaluation request, is
+the evaluation upto that point in the connection stack.  So in fact the result is not a re-evaluation of itself.<br /><br />
+The 'Cycle through' operators are the contributers to the cycle and breaking one of these key dependencies
+will break the dependency cycle. Note: there are also other operators that will access the cycle and during
+a scene evaluation may end up with skewed cyclical results, but are not key contributers
+and as such removing one of these operators will not break the cycle.<br /><br />
+To fix a cycle users should look for, narrow down and remove key contributers within the cycle.
+There are suggested approches for this.  First to narrow down a cycle within a hierarchy isolating
+the breaking point and rerunning the cycle checking on it's data owner or other hierarchy's within it's
+cycled operators to get a handle on the depth and width of the cycle.  Second, look for key contributers
+labeled within the cycle.  To do this start with the 'Cycle Breaking Point' and trace down the output
+through the 'Cycle through' operators until the same 'Cycle Breaking Point' operator is found
+and labled as a 'Cycle through' operator.  These are your contributers.  Then look through
+the contributers for familiar cycle creators such as "Expression", "ScriptedOp" or "kine.Constraints".
+A key contributor for a problamatic cycle will not be of the form "kine.local.PoseCompensatorOp"or
+"kine.global.ParentPoseCns_E" or "kine.local.ParentPoseAndPoseCns_D" or "kine.global.SkeletonCtrlOpProp".
+Note: the operators labeled "*_D"'s and "*_E"'s are definers and enforcers of the "kine.Constraints". <br /><br />
+You can customize cycle checking in several ways: <br /><br />
+Tip 1: If you want to check only the current frame for cycles, set the Check Current Frame parameter to true.  
+This is especially useful when one of the constraints participating in the cycle the activeness of a cycle 
+is animated. <br /><br />
+Tip 2: If you are running this command from scripting, running the <a href="#!/url=./si_cmds/Refresh.html">Refresh</a> command prior to 
+running the <a href="#!/url=./si_cmds/CycleChecking.html">CycleChecking</a> command will ensure the values are current for the timeframe. <br /><br />
+Tip 3: You can also maximize performance by enabling the 'Disable cycle checking when applying animation 
+operators' User Preference and then specifying true for the FollowCycleCheckUserPref parameter. Note that if
+you leave the default value (false), this command will proceed with cycle checking regardless of what your
+user preference says. <br /><br />
+Tip 4: By default the cycle checker checks the entire nested hierarchy, beginning with the scene element 
+specified by the StartingGraphPt parameter. To check only the StartingGraphPt element, set the CheckFullNestedHier 
+flag to false. <br /><br />
+Note: This command uses <a href="#!/url=./files/OutArgDefined.htm">output arguments</a>. C# and some 
+scripting languages (such as JScript, PerlScript and Python) don't support arguments passed by reference. Normally 
+you can get the output arguments via either <a href="#!/url=./si_om/XSIApplication.ExecuteCommand.html">XSIApplication.ExecuteCommand</a> method (C#) or the 
+<a href="#!/url=./files/ISIVTCollection.htm">ISIVTCollection</a> (scripting languages), but this command
+already returns a value.
+<br /><br />
+The only available workaround in this case is to create a VBScript custom command which returns both the output
+arguments and the return value in one array. For details, see 
+<a href="#!/url=./files/RtnValProblem.htm">What Happens when the Function Already Returns a Value?</a>.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oBoolean = CycleChecking( [StartingGraphPt], [Check Current Frame], IsCycle, [DisableCycleCheck], [CheckFullNestedHier], [OutputObjs] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns the result of the cycle check as a <a href="#!/url=./files/Boolean.htm">Boolean</a> (true if there is a cycle).</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">StartingGraphPt		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/objectexpr.htm">Object</a> where the cycle checking will begin (the starting point). 			<p class="cell"><span class="hilite">Default Value: </span>
+Current selection			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Check Current Frame		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ True to check only the current frame for cycles. 			<p class="cell"><span class="hilite">Default Value: </span>
+false			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">IsCycle		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ True if there is a cycle. 		</td>
+	</tr>
+	<tr>
+		<td class="name">DisableCycleCheck		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ Check the User Prefs to see if cycle checking is enabled. 			<p class="cell"><span class="hilite">Default Value: </span>
+false			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">CheckFullNestedHier		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ Checks the entire nested hierarchy when enabled. Checks the specified object only when disabled. 			<p class="cell"><span class="hilite">Default Value: </span>
+true			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">OutputObjs		</td>
+		<td><a href="#!/url=./si_om/XSICollection.html">XSICollection</a> of <a href="#!/url=./si_om/Operator.html">Operator</a> objects		</td>
+		<td>
+ The Ops in the cycle(s).		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' Example: A cyclical expression
+NewScene
+CreatePrim "Sphere", "MeshSurface"
+Translate , -7.20756310877914, 2.07707676083662, -0.207707676083662, siRelative, siView, siObj, siXYZ
+GetPrim "Null"
+Translate , 3.82040230356053, 0.744612423696161, -7.44612423696161E-02, siRelative, siView, siObj, siXYZ
+SelectObj "sphere", , True
+InspectObj "sphere.kine.local"
+AddExpr "sphere.kine.local.posy"
+SelectObj "null", , True
+SetExpr "sphere.kine.local.posy", "null.kine.posy"
+Translate , 0.118156772275078, 0.235140765377718, -2.35140765377718E-02, siRelative, siView, siObj, siXYZ
+AddExpr "null.kine.local.posy"
+SetExpr "null.kine.local.posy", "sphere.kine.posy"
+Translate , 0.669555043461009, 1.01894331750266, -0.101894331750266, siRelative, siView, siObj, siXYZ
+Translate , -0.712516724951656, 1.96939066659309, -0.196939066659309, siRelative, siView, siObj, siXYZ
+Dim bCycle
+bCycle = CycleChecking( "Scene_Root" )
+Logmessage  bCycle
+' The output is:
+'WARNING : "3000 - Cycle Breaking Point sphere.kine.local.pos.posy.Expression"
+'WARNING : "3000 - Cycle through sphere.kine.global.ParentPoseCns_E"
+'WARNING : "3000 - Cycle through sphere.kine.local.PoseCompensatorOp"
+'WARNING : "3000 - Cycle through null.kine.local.pos.posy.Expression"
+'WARNING : "3000 - Cycle through null.kine.global.ParentPoseCns_E"
+'WARNING : "3000 - Cycle through null.kine.local.PoseCompensatorOp"
+'WARNING : "3000 - Cycle through sphere.kine.local.pos.posy.Expression"
+'WARNING : "3000 - PROBLAMATIC EVALUATION CYCLES ARE IN THE SPECIFIED GRAPH"
+'CycleChecking "Scene_Root"
+'INFO : "True"</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' Example: A cyclical constraint
+NewScene
+CreatePrim "Cube", "MeshSurface"
+Translate , -7.75896137939607, -0.235140765377774, 2.35140765377774E-02, siRelative, siView, siObj, siXYZ
+CreatePrim "Sphere", "MeshSurface"
+Translate , 8.12409703994715, -0.284640094775458, 2.84640094775458E-02, siRelative, siView, siObj, siXYZ
+ApplyCns "Pose", "sphere", "cube"
+SelectObj "cube", , True
+ApplyCns "Position", "cube", "sphere"
+SelectObj "Scene_Root"
+Dim bCycle
+bCycle = CycleChecking( "Scene_Root" )
+Logmessage  bCycle
+' The output is:
+'WARNING : "3000 - Cycle Breaking Point cube.kine.global.IndpCns_E"
+'WARNING : "3000 - Cycle through sphere.kine.Constraints.posecns.blends.PosePoseCns_D"
+'WARNING : "3000 - Cycle through sphere.kine.global.PoseCns_E"
+'WARNING : "3000 - Cycle through cube.kine.Constraints.poscns.blends.PosePoseCns_D"
+'WARNING : "3000 - Cycle through cube.kine.global.IndpCns_E"
+'WARNING : "3000 - Cycle through cube.kine.local.PoseCompensatorOp"
+'WARNING : "3000 - Cycle through sphere.kine.local.PoseCompensatorOp"
+'WARNING : "3000 - PROBLAMATIC EVALUATION CYCLES ARE IN THE SPECIFIED GRAPH"
+'CycleChecking "Scene_Root"
+'INFO : "True"</pre></td></tr>
+</table>
+</div></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

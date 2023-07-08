@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>SimulationEnvironment</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>SimulationEnvironment</h1>
+         </div>
+
+<h2 class="pagehead">SimulationEnvironment</h2>
+
+<p><a href="#!/url=./si_om/_hier.html#oh_SimulationEnvironment">Object Hierarchy</a> | Related C++ Class: <a href="#!/url=./si_cpp/classXSI_1_1SimulationEnvironment.html">SimulationEnvironment</a></p>
+
+<h3>Inheritance<h3>
+<p class="level1"><a href="#!/url=./si_om/SIObject.html">SIObject</a></p>
+<p class="level2"><a href="#!/url=./si_om/ProjectItem.html">ProjectItem</a></p>
+<p class="level3">SimulationEnvironment</p>
+
+<h3>Introduced</h3>
+<div><p>v4.2</p></div>
+
+<h3>Description</h3>
+<div><p> The SimulationEnvironment object represents a construct which is used to define 
+a simulation.  For now SimulationEnvironment objects are used only for 
+RigidBody simulations. A simulation environment is a set of connection containers, one 
+for each kind of element in the simulation: the rigid body objects, the rigid body 
+constraints and the forces. The environment keeps track of the relationships between 
+the objects in the simulation and determines on which objects the dynamics
+operator is applied. The dynamics operator solves the simulation for all elements 
+that are in this environment. As well, a <a href="#!/url=./si_om/TimeControl.html">TimeControl</a> object 
+determines how the simulation in this environment is played back.<br /><br />
+An environment is created as soon as you create a RigidBody object, which you can achieve 
+by using <a href="#!/url=./si_cmds/CreateActiveRigidBody.html">CreateActiveRigidBody</a> or <a href="#!/url=./si_cmds/CreatePassiveRigidBody.html">CreatePassiveRigidBody</a>.
+You can also explicitly create an environment by using <a href="#!/url=./si_cmds/CreateEnvironment.html">CreateEnvironment</a>.
+SimulationEnvironment object can be retrieved using <a href="#!/url=./si_om/Scene.ActiveSimulationEnvironment.html">Scene.ActiveSimulationEnvironment</a> 
+or <a href="#!/url=./si_om/Scene.SimulationEnvironments.html">Scene.SimulationEnvironments</a>.
+</p></div>
+
+<h3>Methods</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.AddCustomOp.html">AddCustomOp</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.AddICEAttribute.html">AddICEAttribute</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.AddScriptedOp.html">AddScriptedOp</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.AddScriptedOpFromFile.html">AddScriptedOpFromFile</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.AnimatedParameters2.html">AnimatedParameters2</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.BelongsTo.html">BelongsTo</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.EvaluateAt.html">EvaluateAt</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/SimulationEnvironment.FindCacheForModel.html">FindCacheForModel</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.GetICEAttributeFromName.html">GetICEAttributeFromName</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.IsA.html">IsA</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.IsAnimated2.html">IsAnimated2</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.IsClassOf.html">IsClassOf</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.IsEqualTo.html">IsEqualTo</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.IsKindOf.html">IsKindOf</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.IsLocked.html">IsLocked</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.IsSelected.html">IsSelected</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.LockOwners.html">LockOwners</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.RemoveICEAttribute.html">RemoveICEAttribute</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.SetAsSelected.html">SetAsSelected</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.SetCapabilityFlag.html">SetCapabilityFlag</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.SetLock.html">SetLock</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.TaggedParameters.html">TaggedParameters</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.UnSetLock.html">UnSetLock</a>		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Properties</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Application.html">Application</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.BranchFlag.html">BranchFlag</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/SimulationEnvironment.Caches.html">Caches</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.Capabilities.html">Capabilities</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Categories.html">Categories</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/SimulationEnvironment.Containers.html">Containers</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.EvaluationID.html">EvaluationID</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.Families.html">Families</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.FullName.html">FullName</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Help.html">Help</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.HierarchicalEvaluationID.html">HierarchicalEvaluationID</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.ICEAttributes.html">ICEAttributes</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.LockLevel.html">LockLevel</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.LockMasters.html">LockMasters</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.LockType.html">LockType</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.Model.html">Model</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Name.html">Name</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.NestedObjects.html">NestedObjects</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.ObjectID.html">ObjectID</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/SimulationEnvironment.Operators.html">Operators</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Origin.html">Origin</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.OriginPath.html">OriginPath</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.Owners.html">Owners</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.PPGLayout.html">PPGLayout</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.Parameters.html">Parameters</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Parent.html">Parent</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.Parent3DObject.html">Parent3DObject</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.Selected.html">Selected</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/SimulationEnvironment.SimulationTimeControl.html">SimulationTimeControl</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Type.html">Type</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+This example illustrates how to create a cached RigidBody simulation and 
+apply that cache to animate the simulated objects directly without using
+the simulation.
+*/
+NewScene( null, false );
+var oCone = ActiveSceneRoot.AddGeometry( "cone","MeshSurface" );
+var oModel = ActiveSceneRoot.AddModel();
+oModel.Name = "Model";
+var oGrid = oModel.AddGeometry( "grid","MeshSurface" );
+// Move the cone
+oCone.posy.value = 6.0;
+// Modify the grid
+oGrid.ulength.value = 24;
+oGrid.vlength.value = 24;
+oGrid.subdivu.value = 24;
+oGrid.subdivv.value = 24;
+// The following line creates the SimulationEnvironment object.
+CreatePassiveRigidBody( oGrid );
+CreateActiveRigidBody( oCone );
+CreateForce( "Gravity" );
+var oEnvironment = ActiveProject.ActiveScene.ActiveSimulationEnvironment;
+var oSimulationTimeControl = oEnvironment.SimulationTimeControl;
+// Turn the caching on.
+oSimulationTimeControl.caching.value = true;
+oSimulationTimeControl.playmode.value = 0; //Standard play mode.
+// Simulate
+// To make sure that all frames get simulated
+for ( i=0; i&lt;100; i++ ) {
+	NextFrame();
+	Refresh();
+}
+// Get all models in the scene (getting the identifier of the Scene Root's class = Model)
+var sModelClassID = XSIUtils.DataRepository.GetIdentifier( ActiveSceneRoot, siObjectCLSID );
+var oModels = FindObjects( "", sModelClassID );
+ApplyCurrentEnvironmentCacheToSimulateObjectForModels( oModels );
+// The FCurve animated objects
+PlayForwardsFromStart();
+// This function takes the cached simulation and copies it directly
+// on the driven objects as FCurves. It also turns off the simulation
+// so that we could
+function ApplyCurrentEnvironmentCacheToSimulateObjectForModels( in_models )
+{
+	var eModels = new Enumerator( in_models );
+	var oCurrEnvironment = ActiveProject.ActiveScene.ActiveSimulationEnvironment;
+	var oSimulationTimeControl = oCurrEnvironment.SimulationTimeControl;
+	// Deactivate the simulation so that objects are driven by their 
+	// animation.
+	oSimulationTimeControl.Active.Value = false;
+	for ( ; !eModels.atEnd(); eModels.moveNext() ) {
+		var oCurrModel = eModels.item();
+		var oCache = oCurrEnvironment.FindCacheForModel( oCurrModel );
+		var oSourceItems = oCache.SourceItems;
+		var eSourceItems = new Enumerator(oSourceItems);
+		for( ; !eSourceItems.atEnd(); eSourceItems.moveNext() ) {
+			var oSourceItem = eSourceItems.item();
+			strTarget = oSourceItem.Target;
+			if ( oCurrModel.IsEqualTo(ActiveSceneRoot) == false ) {
+				// ActionSource keeps the relative name of an
+				// animated parameter. We need to prepend the
+				// model name if the model owner is not the scene
+				// root in order to fetch the parameter.
+				strTarget = oCurrModel.Name + "." + strTarget;
+			}
+			var oTargetParameter = Dictionary.GetObject(strTarget);
+			// The RigidBody simulation caches linear acceleration which
+			// is not animatable. We won't be copying those values on 
+			// the global transform.
+			if ( oTargetParameter.Animatable ) {
+				var oCachedFCurve = oSourceItem.Source;
+				CopyFCurveOnParameter( oCachedFCurve, oTargetParameter );
+			}
+		}
+	}
+}
+// This function creates a copy of an FCurve on a parameter by creating a new 
+// FCurve on the parameter and adding all keys. It will take use the default
+// Tangent and Interpolation.
+function CopyFCurveOnParameter( in_FCurve, in_Parameter )
+{
+	var oNewFCurve = in_Parameter.AddFCurve2();
+	var oFCurveKeys = in_FCurve.Keys;
+	var eFCurveKeys = new Enumerator( oFCurveKeys );
+	oNewFCurve.BeginEdit();
+	for( ; !eFCurveKeys.atEnd(); eFCurveKeys.moveNext() ) {
+		var oCurrentKey = eFCurveKeys.item();
+		oNewFCurve.AddKey( oCurrentKey.time, oCurrentKey.value );
+	}
+	oNewFCurve.EndEdit();
+}</pre></td></tr>
+</table>
+</div><h4>2. Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">#
+#     This example illustrates how to create cached RigidBody simulations, export 
+#     that cache as an action source, import it into a new scene, and then 
+#     instantiate it as a clip in the new mixer.
+#
+from win32com.client import constants as c
+Application.NewScene( "", 0 )
+oRoot = Application.ActiveSceneRoot
+oCone = oRoot.AddGeometry( "cone","MeshSurface" )
+oModel = oRoot.AddModel()
+oModel.Name = "TestModel"
+oGrid = oModel.AddGeometry( "grid","MeshSurface" )
+# Move the cone
+oCone.posy.Value = 6.0
+# Modify the grid
+oGrid.ulength.Value = 24
+oGrid.vlength.Value = 24
+oGrid.subdivu.Value = 24
+oGrid.subdivv.Value = 24
+# The following line creates the SimulationEnvironment object.
+Application.CreatePassiveRigidBody( oGrid )
+Application.CreateActiveRigidBody( oCone )
+Application.CreateForce( "Gravity" )
+oEnvironment = Application.ActiveProject.ActiveScene.ActiveSimulationEnvironment
+oSimulationTimeControl = oEnvironment.SimulationTimeControl
+# Turn the caching on.
+oSimulationTimeControl.caching.Value = 1;
+oSimulationTimeControl.playmode.Value = 0; #Standard play mode.
+# Simulate, making sure that all frames get simulated
+i=0
+while i &lt; 100 :
+	Application.NextFrame()
+	Application.Refresh()
+	i = i + 1
+# Export the action sources
+aModelNames = [ "two", "one", "two", "one" ]
+sPath = Application.InstallationPath( c.siProjectPath )
+for oActionSource in oEnvironment.Caches :
+	Application.ExportAction( oActionSource, sPath + "\\Actions\\SimCache" 
+		+ aModelNames.pop() + ".xsi" )
+# Dump the current scene and open a new one
+Application.NewScene( "", 0 )
+oRoot = Application.ActiveSceneRoot
+oCone = oRoot.AddGeometry( "cone","MeshSurface" )
+oGrid = oRoot.AddGeometry( "grid","MeshSurface" )
+# Reload the sources
+oNewAction = Application.ImportAction( oRoot, sPath + "\\Actions\\SimCache" 
+	+ aModelNames.pop() + ".xsi", "MyImportedAction1", c.siSourceStorageTypeInternal )
+Application.AddClip( oRoot, oNewAction )
+oNewAction = Application.ImportAction( oRoot, sPath + "\\Actions\\SimCache" 
+	+ aModelNames.pop() + ".xsi", "MyImportedAction2", c.siSourceStorageTypeInternal )
+Application.AddClip( oRoot, oNewAction );
+# Playback the results
+Application.PlayForwardsFromStart()</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/Scene.ActiveSimulationEnvironment.html">Scene.ActiveSimulationEnvironment</a> <a href="#!/url=./si_om/Scene.SimulationEnvironments.html">Scene.SimulationEnvironments</a> <a href="#!/url=./si_cmds/SetCurrentEnvironment.html">SetCurrentEnvironment</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></h3></h3></div>
+   </div></body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-31682525-0946-4663-8F82-9166D256C4C7" />
+      <meta name="topic-type" content="concept" />
+      <title>Working with Custom Python Modules in Softimage</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ reflinkdata.push(["set", "si_cpp/group__RenderMapDefine.html#ga793ad1cfa149967fe4b97fc66251b831", "C++ API Reference", "../"]); 
+</script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-31682525-0946-4663-8F82-9166D256C4C7"></a></span><div class="head">
+            <h1>Working with Custom Python Modules in Softimage</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-4785832F-DE92-4672-963D-3177CCD2A087"></a></span>Python modules are convenient for writing reusable code for Softimage plug-ins. To
+               import a module in a Softimage plug-in, you first need to tell Python where to find
+               the module by adding the module folder path to the Python system path (sys.path).
+               Once Python knows where to find your module file, you can import it into your plug-in.
+               
+            </p>
+            <div class="codeBlock"><pre class="prettyprint">
+#---------
+
+import sys
+
+sys.path.append( 'd:\MyModules' )
+
+import moduleA
+
+--------</pre></div>
+            <p><span class="anchor_wrapper"><a name="GUID-3980D98D-85C4-4173-89B0-88006A47ED6D"></a></span>The example above imports <em class="strong">moduleA</em> defined in <span class="filePath" translate="no">d:\MyModules</span>. You can add more than one path to sys.path, but keep in mind that the order in which
+               the paths are added determines the search order that Python uses to look for your
+               modules. 
+            </p>
+            <p><span class="anchor_wrapper"><a name="GUID-BC0553AC-EE6E-4836-8359-D6A343574345"></a></span>Adding specific paths to sys.path is not always the most convenient method. This is
+               particularly true for plug-ins that need to be installed to different locations. For
+               instance, when your modules are located with your plug-in file, the plug-in path must
+               be added to sys.path. In this case, you can use the variable __sipath__ which gets
+               set by Softimage to the plug-in file folder path. This variable is always defined
+               in the plug-in file namespace and can be used as is without going through the Softimage
+               Application object. 
+            </p>
+            <div class="codeBlock"><pre class="prettyprint">
+#---------
+
+import sys
+
+if __sipath__ not in sys.path:
+
+	sys.path.append( __sipath__ )
+
+import moduleA
+
+--------
+</pre></div>
+            <p><span class="anchor_wrapper"><a name="GUID-2E7EF71B-451B-4E2C-807C-51E8603FD7D2"></a></span>In the example above, Python will search the plug-in folder and import moduleA. The
+               code also ensures that __sipath__ gets added to sys.path only (this check is required
+               because a plug-in can be loaded multiple times during a Softimage session). __sipath__
+               can also be used to specify any folder paths related to your plug-in folder. 
+            </p>
+            <div class="codeBlock"><pre class="prettyprint">
+#---------
+
+import sys
+
+import os
+
+myModules = __sipath__ + os.sep + 'MyModules'
+
+if myModules not in sys.path:
+
+	sys.path.append( myModules )
+
+import moduleA
+
+--------
+</pre></div>
+            <p><span class="anchor_wrapper"><a name="GUID-CA69DF7A-DE0C-40A1-92B0-6D1B0AA35A3B"></a></span>The Softimage sipyutils module contains functions to help you specify your module
+               paths more easily. It also contains functions for importing source code files as modules,
+               which can be handy if versioning has to be considered when writing plug-ins. The sipyutils
+               module file is located in the Softimage application folder: <span class="filePath" translate="no">&lt;install_folder&gt;\Application\bin\sipyutils.py.</span> 
+            </p>
+            <p><span class="anchor_wrapper"><a name="GUID-C43B8AEF-0CAC-4546-808F-27700631D83D"></a></span>The following example demonstrates how to use the functions defined in sipyutils:
+               
+            </p>
+            <div class="codeBlock"><pre class="prettyprint">
+#---------
+Example 1:
+
+# note: for the example, the plug-in's __sipath__ variable is <a href="javascript:void(0)" data="set" class="a_multireflink">set</a> to d:\Application\Plugins
+
+
+# import the Softimage utility module
+	
+import sipyutils
+
+
+#add some paths to python system path
+
+sipyutils.add_to_syspath( __sipath__ )
+
+sipyutils.add_subfolder_to_syspath( __sipath__, 'mysubfolder' )
+
+
+# import eggs from d:\Application\Plugins
+
+import eggs
+
+
+def XSILoadPlugin( in_reg ):
+
+	in_reg.Author = "Softimage"
+
+	in_reg.Name = "TestPlugin"
+
+	in_reg.Major = 1
+
+	in_reg.Minor = 0
+
+
+	in_reg.RegisterCommand( "TestCommand", "TestCommand")
+
+
+	return True
+
+
+def TestCommand_Execute(  ):
+
+	# INFO: d:\Application\Plugins\eggs.pyc
+
+	LogMessage( 'eggs.__siplugin_file__ ' + eggs.__siplugin_file__  )	
+
+
+	# import foo from d:\Application\Plugins\mysubfolder
+
+	import foo
+
+	LogMessage( 'foo.__siplugin_file__ ' + foo.__siplugin_file__  )
+	
+	return True
+
+
+Example 2:
+
+
+import sipyutils
+
+
+sipyutils.add_to_syspath( __sipath__ )
+
+
+# import foo.py from d:\Application\Plugins
+
+# INFO: d:\Application\Plugins\foo.pyc
+
+import foo
+
+LogMessage( foo.__siplugin_file__ )
+
+	
+# import foo.py from d:\Application\Plugins\mysubfolderA
+
+foo = sipyutils.import_source( __sipath__ + os.sep + 'mysubfolderA' + os.sep + 'foo.py' )
+
+# INFO: d:\Application\Plugins\mysubfolderA\foo.pyc
+
+LogMessage( foo.__siplugin_file__ )
+
+
+# import foo.py from d:\Application\Plugins\mysubfolderB
+
+foo = sipyutils.import_source( __sipath__ + os.sep + 'mysubfolderB' + os.sep + 'foo.py' )
+
+# INFO: d:\Application\Plugins\mysubfolderB\foo.pyc
+
+LogMessage( foo.__siplugin_file__ )
+
+---------
+</pre></div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

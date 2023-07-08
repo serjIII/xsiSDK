@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-E03EB087-302F-4445-BC4E-E2370D19D886" />
+      <meta name="indexterm" content="custom properties: creating controls: Bitfield" />
+      <meta name="indexterm" content="Bitfield: creating: in a property page" />
+      <meta name="indexterm" content="Bitfield" />
+      <meta name="topic-type" content="concept" />
+      <title>Bitfield</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-E03EB087-302F-4445-BC4E-E2370D19D886"></a></span><div class="head">
+            <h1> Bitfield</h1>
+         </div>
+         <div class="bodyProcess"><img src="../images/GUID-28648378-B808-4BB4-877D-6CB2011E9874-low.png" /><p><span class="anchor_wrapper"><a name="GUID-1BCF206E-2691-49F4-AB4B-91AF6BB34A34"></a></span>Bitfield controls display a group of check boxes that the user can select along with
+               an optional animation divot and an optional label. They are associated to an underlying
+               <em class="strong">Integer</em> parameter.
+            </p>
+            <p><span class="anchor_wrapper"><a name="GUID-F9D4C3E0-6B2C-472F-8BB7-B6D1F3896A69"></a></span>You create them using the <a href="#!/url=./si_om/PPGLayout.AddEnumControl.html">PPGLayout.AddEnumControl</a> or PPGLayout::AddEnumControl method with the <a href="#!/url=./si_om/siPPGControlType.html">siControlCheck</a> control type enum:
+            </p>
+            <div class="codeBlock"><pre class="prettyprint">
+// 1D array of label,value pairs
+var path = XSIUtils.BuildPath(
+	Application.InstallationPath(siFactoryPath),
+	"Application", "layouts", "bitmaps"
+);
+var aListItems = new Array( 
+	"Bit 0",	0, 
+	"Bit 6", 	1,
+	"Bit 2",	2,
+	"Bit 7",	3
+);
+oLayout.AddEnumControl( "MyBitField", aListItems, "", siControlCheck );</pre></div>
+            <div><span class="anchor_wrapper"><a name="GUID-902B5232-B60D-415E-A9FF-159FB0CF8DE6"></a></span><div class="note-note"><span class="label">NOTE:</span> 
+                  <p><span class="anchor_wrapper"><a name="GUID-3A5A0EBE-2DCC-4CFE-850B-EB3933C7D9A2"></a></span>You can also use the <a href="#!/url=./si_om/PPGLayout.AddItem.html">PPGLayout.AddItem</a> or PPGLayout::AddItem method with the <a href="#!/url=./si_om/siPPGControlType.html">siControlCheck</a> control type enum, but the <a href="#!/url=./si_om/PPGLayout.AddEnumControl.html">PPGLayout.AddEnumControl</a> or PPGLayout::AddEnumControl method is a little more convenient.
+                  </p> 
+               </div>
+            </div>
+            <p><span class="anchor_wrapper"><a name="GUID-BA729ABD-B9BC-4FE7-A775-125B13131E90"></a></span>The following item attributes are available:
+            </p>
+            <div class="table_Ruled">
+               <table cellpadding="0" cellspacing="0" class="ruled">
+                  <colgroup>
+                     <col align="left" />
+                     <col align="left" />
+                  </colgroup>
+                  <tr class="ruledHeading">
+                     <th class="table-heading"> <span class="anchor_wrapper"><a name="GUID-704002AA-9DE9-4A9E-8A8D-3854D2C79B55"></a></span><p class="table-heading">Available on all Controls also as a property on the PPGItem object:</p> 
+                     </th>
+                     <th class="table-heading" align="left"> <span class="anchor_wrapper"><a name="GUID-24998635-5FA5-4E06-A1D8-6C69170FAC26"></a></span><p class="table-heading">Common to many Controls:</p> 
+                     </th>
+                  </tr>
+                  <tr class="ruledOddRow">
+                     <td class="table-body"> 
+                        <ul>
+                           <li> 
+                              <p><span class="anchor_wrapper"><a name="GUID-087BE917-EC34-48B6-A42F-1DFFFF1F29EC"></a></span> <a href="#!/url=./si_om/siPPGItemAttribute.html">siUILabel</a> 
+                              </p> 
+                           </li>
+                           <li> 
+                              <p><span class="anchor_wrapper"><a name="GUID-93CB8458-2394-4982-BDBF-C36DA3699FCB"></a></span> <a href="#!/url=./si_om/siPPGItemAttribute.html">siUIItems</a> 
+                              </p> 
+                           </li>
+                           <li> 
+                              <p><span class="anchor_wrapper"><a name="GUID-8E4164E4-5C77-4E36-A995-367EBDC623E4"></a></span> <a href="#!/url=./si_om/siPPGItemAttribute.html">siUIType</a> 
+                              </p> 
+                           </li>
+                           <li> 
+                              <p><span class="anchor_wrapper"><a name="GUID-9B541A3F-8CF8-4253-8BA6-980A96CEC490"></a></span> <a href="#!/url=./si_om/siPPGItemAttribute.html">siUIWidthPercentage</a> 
+                              </p> 
+                           </li>
+                           <li> 
+                              <p><span class="anchor_wrapper"><a name="GUID-7566891A-9A2E-49CD-A806-90D6DFB41DEE"></a></span> <a href="#!/url=./si_om/siPPGItemAttribute.html">siUILabelPercentage</a> 
+                              </p> 
+                           </li>
+                           <li> 
+                              <p><span class="anchor_wrapper"><a name="GUID-3DC474DF-CCA7-49DD-B83A-AFF96A5EA3F6"></a></span> <a href="#!/url=./si_om/siPPGItemAttribute.html">siUILabelMinPixels</a> 
+                              </p> 
+                           </li>
+                        </ul> 
+                     </td>
+                     <td class="table-body" align="left"> 
+                        <ul>
+                           <li> 
+                              <p><span class="anchor_wrapper"><a name="GUID-2A98880D-083D-4FC1-8F66-CC193776A961"></a></span> <a href="#!/url=./si_om/siPPGItemAttribute.html">siUINoLabel</a> 
+                              </p> 
+                           </li>
+                           <li> 
+                              <p><span class="anchor_wrapper"><a name="GUID-B58CA667-E44B-4C11-BEF9-C59A8F93EC19"></a></span> <a href="#!/url=./si_om/siPPGItemAttribute.html">siUIValueOnly</a> 
+                              </p> 
+                           </li>
+                           <li> 
+                              <p><span class="anchor_wrapper"><a name="GUID-CCBA1560-5B31-42F4-9491-FD80F15E327B"></a></span> <a href="#!/url=./si_om/siPPGItemAttribute.html">siUIContinue</a> 
+                              </p> 
+                           </li>
+                        </ul> 
+                     </td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

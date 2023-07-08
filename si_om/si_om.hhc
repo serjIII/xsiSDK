@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="generator" content=
+"HTML Tidy for Windows (vers 6 November 2007), see www.w3.org" />
+<title></title>
+</head>
+<body>
+<object type="text/site properties"><param name="FrameName" value=
+"right" /></object>
+<ul>
+<li><object type="text/sitemap"><param name="Name" value=
+"Object Model Reference" />
+<param name="Local" value="_omref.html" /></object>
+<ul>
+<li><object type="text/sitemap"><param name="Name" value=
+"Collections" />
+<param name="Local" value="_azcol.html" /></object></li>
+<li><object type="text/sitemap"><param name="Name" value=
+"Constants" />
+<param name="Local" value="_azconst.html" /></object></li>
+<li><object type="text/sitemap"><param name="Name" value=
+"Methods" />
+<param name="Local" value="_azmeth.html" /></object></li>
+<li><object type="text/sitemap"><param name="Name" value=
+"Object Hierarchy" />
+<param name="Local" value="_hier.html" /></object></li>
+<li><object type="text/sitemap"><param name="Name" value=
+"Object List" />
+<param name="Local" value="_azobj.html" /></object></li>
+<li><object type="text/sitemap"><param name="Name" value=
+"Properties" />
+<param name="Local" value="_azprop.html" /></object></li>
+</ul>
+</li>
+</ul>
+</body>
+</html>

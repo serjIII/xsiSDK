@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>CopyExtFilesIntoProject</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>CopyExtFilesIntoProject</h1>
+         </div>
+
+<h2 class="pagehead">CopyExtFilesIntoProject</h2>
+
+<h3>Introduced</h3>
+<div><p>v1.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Copies all external files used by the current scene into the current project or any 
+given project. This command can be used to centralize all external files used by a 
+scene, so the scene is self-contained in the project. In other words you can zip the 
+project and extract it on another machine and all external files (like pictures, audio, 
+etc.) will be there and valid. 
+<br /><br />
+Files are copied into their corresponding directories (for example, a picture is copied 
+into the Pictures directory).
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>CopyExtFilesIntoProject( SceneFileName, [Overwrite], [Models], [UpdateSourcePaths], [Files], [IgnoreFilesFromRefModel], [ConsiderOnlyFilesUnderProject], [ExcludedPaths] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">SceneFileName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Full path name of the scene, or the project path of the destination. 		</td>
+	</tr>
+	<tr>
+		<td class="name">Overwrite		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ True to overwrite the files if they exist. 			<p class="cell"><span class="hilite">Default Value: </span>
+False			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Models		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		If a <a href="#!/url=./files/listexpr.htm">list</a> of models is specified, 
+		only files that relate to these models will be copied.<br /><br />
+		Note: External files contained in folders (and subfolders) specified by the ExcludedPaths 
+		parameter will not be copied.
+				<p class="cell"><span class="hilite">Default Value: </span>
+Selected objects.			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">UpdateSourcePaths		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+
+		If true, all sources objects that have files that have been copied will be updated in the scene. 
+		This way the scene will use the new files copied to the current project, so they will be relative 
+		paths to the current project. If false, the files are copied locally but the scene still use the 
+		files where they were before they were copied. This is true when using a SaveAs command.  
+				<p class="cell"><span class="hilite">Default Value: </span>
+True			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Files		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		With this argument you can specify which files are to be copied. When this argument is not empty 
+		the Models argument is ignored. The files can be either the resolved path or the GUID of the file 
+		path. Using a GUID will be more performing. Many files can be specified, they need to be separated 
+		by a semi-colon (;).<br /><br />
+		Note: External files contained in folders (and subfolders) specified by the ExcludedPaths 
+		parameter will not be copied.
+				<p class="cell"><span class="hilite">Default Value: </span>
+Empty string.			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">IgnoreFilesFromRefModel		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+
+		The files that are used by objects in a referenced model cannot be changed because the data is really 
+		in the original model, not in the scene. Each time you load a scene, any models referenced  in that 
+		scene are imported from the original location. So because of that you may want to ignore copying these 
+		files for efficiency. <br /><br /> 
+		Note: If this parameter is false, the files that are used by the referenced models will be copied but 
+		the object owner of the path will not be changed because the objects are locked.
+				<p class="cell"><span class="hilite">Default Value: </span>
+True			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ConsiderOnlyFilesUnderProject		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+
+		If true, only the external files that are hierarchically under the current project will be copied over the given project.
+		This might be useful when using external files shared by many projects that are not located hierarchically under projects,
+		by preventing copying them into projects. If false, all external files will be copied over the given project.
+		Note: This parameter only makes sense when copying the external files from the current project to another project path.
+		When copying external files into the current project, having the parameter set to true won't copy any external files.
+				<p class="cell"><span class="hilite">Default Value: </span>
+False			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ExcludedPaths		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		External files contained in the specified excluded paths will not be copied.
+		When this parameter is not set (not to be confused with an empty string),
+		the "Data Management > Excluded path(s) when copying external files" preference value will be used.
+		Many paths can be specified, they need to be separated by a semi-colon (;).
+				<p class="cell"><span class="hilite">Default Value: </span>
+The "Data Management > Excluded path(s) when copying external files" preference value.			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example shows how to use CopyExtFilesIntoProject command to copy the 
+	external files used by a scene to a new destination.
+*/
+NewScene( "", false );
+Application.LogMessage ( "Current project: " + Application.ActiveProject );
+var sPathNewProject = XSIUtils.BuildPath(
+	Application.InstallationPath( siFactoryPath ), 
+	"Data", "NewProject"
+);
+Application.CreateProject( sPathNewProject );
+var sPathScn = XSIUtils.BuildPath(
+	Application.InstallationPath( siProjectPath ),
+	"Scenes", "Texturing", "Head.scn"
+);
+// Load a scene with textures
+OpenScene( sPathScn, false );
+var oScene = Application.ActiveProject.ActiveScene;
+// Now copy all files in the new project, by setting the last argument to false 
+// the source path is not updated but the file is copied.
+var oImageSource = oScene.ImageClips(0).Source;
+Application.LogMessage( "Before: " + oImageSource.Parameters("FileName").Value );
+CopyExtFilesIntoProject( sPathNewProject, true, null, false );
+Application.LogMessage( "After: " + oScene.ImageClips(0).Source.Parameters("FileName").Value );
+// Now do the same but set the last argument to true, so we change the source
+Application.LogMessage( "Before: " + oScene.ImageClips(0).Source.Parameters("FileName").Value );
+CopyExtFilesIntoProject( sPathNewProject, true, null, true )
+Application.LogMessage( "After: " + oScene.ImageClips(0).Source.Parameters("FileName").Value );
+Application.LogMessage ( "Current project: " + Application.ActiveProject);
+// Expected results (note that your_current_project_path will not change): 
+// INFO : Current project: $XSI_HOME\Data\XSI_SAMPLES
+// INFO : Before: $XSI_HOME/Application/rsrc/noIcon.pic
+// INFO : After: $XSI_HOME/Application/rsrc/noIcon.pic
+// INFO : Before: $XSI_HOME/Application/rsrc/noIcon.pic
+// INFO : After: $XSI_HOME/Application/rsrc/noIcon.pic
+// INFO : Current project: $XSI_HOME\Data\XSI_SAMPLES</pre></td></tr>
+</table>
+</div><h4>2. Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">#
+#     This example shows how to use CopyExtFilesIntoProject command to copy some 
+#     specific files. This example is theorical because we copy some files that
+#     are already under the project.
+#
+from win32com.client import constants as c
+app = Application
+sFactory = app.InstallationPath( c.siFactoryPath )
+sProject = app.InstallationPath( c.siProjectPath )
+sScene2Open = XSIUtils.BuildPath( sProject, "Scenes", "Texturing", "Head.scn" )
+app.OpenScene( sScene2Open, 0, 0 )
+# Note that the files are separated by a semi-colon
+sFile1 = XSIUtils.BuildPath( sProject, "Pictures", "Checks.pic" )
+sFile2 = XSIUtils.BuildPath( sFactory, "Application", "rsrc", "noIcon.pic" )
+sFiles = sFile1 + ";" + sFile2
+app.CopyExtFilesIntoProject( sProject, 1, "", 0, sFiles, 1 )</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/SaveSceneAs.html">SaveSceneAs</a> <a href="#!/url=./si_cmds/ExportModel.html">ExportModel</a> <a href="#!/url=./si_cmds/FileReference.GUID.html">FileReference.GUID</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>siAddonItemType</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>siAddonItemType</h1>
+         </div>
+
+<h2 class="pagehead">siAddonItemType</h2>
+
+<h3>Description</h3>
+<div><p>This enumeration type specifies the type of item supported by add-ons. 
+Depending on which type you use with the <a href="#!/url=./si_om/Addon.AddItem.html">Addon.AddItem</a> method, 
+you need to supply only a name, or a path and file name, or you may be able to use 
+either as indicated below.</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>siAddonItemType.siLayoutAddonItemType                                       // 1
+siAddonItemType.siToolbarAddonItemType                                      // 2
+siAddonItemType.siKeyMapAddonItemType                                       // 3
+siAddonItemType.siScriptCmdAddonItemType                                    // 4
+siAddonItemType.siPresetAddonItemType                                       // 5
+siAddonItemType.siSpdlAddonItemType                                         // 6
+siAddonItemType.siLibraryAddonItemType                                      // 7
+siAddonItemType.siOtherAddonItemType                                        // 8
+siAddonItemType.siEventAddonItemType                                        // 9
+siAddonItemType.siDeviceAddonItemType                                       // 10
+siAddonItemType.siShelfAddonItemType                                        // 11
+siAddonItemType.siPluginAddonItemType                                       // 12
+siAddonItemType.siHelpAddonItemType                                         // 13
+siAddonItemType.siViewAddonItemType                                         // 14</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<div><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th>Constant		</th>		<th>Value		</th>		<th>Description		</th>	</tr>
+	<tr>
+		<td class="name"><a name="siLayoutAddonItemType"> </a>siLayoutAddonItemType		</td>
+		<td class="example">1		</td>
+		<td>
+
+	Layout. 
+	To specify a layout, use either the name of the layout or the full path and file name.
+	<br /><br />
+	The name appears in the File > Addons > Package dialog (eg., "myLayout").
+	<br /><br />
+	The full path and file name is similar to this:
+	<br /><br />
+	InstallationPath( siUserPath ) & "\Data\Layouts\myLayout.xsily"
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siToolbarAddonItemType"> </a>siToolbarAddonItemType		</td>
+		<td class="example">2		</td>
+		<td>
+
+	Toolbar created before version 4.0 (with the .DSToolbar file extension). 
+	To specify such a toolbar, use either the name of the toolbar or the full path and file name.
+	<br /><br /> 
+	The name appears in the File > Addons > Package dialog (eg., "myToolbar").
+	<br /><br />
+	The full path and file name is similar to this:<br /><br /> InstallationPath( siUserPath ) & "\Data\Preferences\Toolbars\MyToolbar{FB913D3E-F14E-11D3-9F04-009027318C6F}.DSToolbar"
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siKeyMapAddonItemType"> </a>siKeyMapAddonItemType		</td>
+		<td class="example">3		</td>
+		<td>
+
+	Key Map. 
+	To specify a keymap, use either the name of the keymap or the full path and file name.
+	<br /><br />
+	The name appears in the File > Addons > Package dialog (eg., "myKeyMap").
+	<br /><br />
+	The full path and file name is similar to this:
+	<br /><br />
+	InstallationPath( siUserPath ) & "\Data\Preferences\KeyMaps\myKeyMap.DSKeymap"
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siScriptCmdAddonItemType"> </a>siScriptCmdAddonItemType		</td>
+		<td class="example">4		</td>
+		<td>
+
+	Custom Command (script based or compiled). 
+	To specify a custom command, use the name of the command as it appears in the history pane of the Script Editor (eg., "myCustomCommand").  
+	If the command is part of a self-installed plug-in use siPluginAddonItemType (12) instead.
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPresetAddonItemType"> </a>siPresetAddonItemType		</td>
+		<td class="example">5		</td>
+		<td>
+
+	Preset. 
+	To specify a preset, use the full path and file name (eg., InstallationPath( siUserPath ) & "\Data\DSPresets\Properties\MyCustomPreset.Preset").
+	<br /><br />
+	When the Preset refers to a SPDL based custom property then the SPDL will automatically be packaged as well.  
+	<br /><br />
+	When the Preset refers to a custom compiled operator or real-time shader then both the SPDL file and binary (.dll or .so) 
+	will automatically be packaged.
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSpdlAddonItemType"> </a>siSpdlAddonItemType		</td>
+		<td class="example">6		</td>
+		<td>
+
+	SPDL. 
+	To specify a SPDL, use the full path and file name (eg., InstallationPath( siUserPath ) & "\Data\DSPresets\spdl\MyCustomDialog.spdl").
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siLibraryAddonItemType"> </a>siLibraryAddonItemType		</td>
+		<td class="example">7		</td>
+		<td>
+
+	Library file, (.dll or .so). (NOT CURRENTLY SUPPORTED)
+	You can use siPluginAddonItemType (12) instead to package any libraries in an .xsiaddon file.
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siOtherAddonItemType"> </a>siOtherAddonItemType		</td>
+		<td class="example">8		</td>
+		<td>
+
+	Other kind of file
+	The 'Other' category includes HTML files containing help pages for your application, an image file used by your application, etc. 
+	To specify an additional file, use the full path and file name (eg., InstallationPath( siUserPath ) & "\Data\VCCProject\HelpPages\MyHTMLHelp.html").
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siEventAddonItemType"> </a>siEventAddonItemType		</td>
+		<td class="example">9		</td>
+		<td>
+
+	Event. 
+	To specify an event, use the name of the event as it appears in the File > Addons > Package dialog (eg., "myCustomEvent").
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siDeviceAddonItemType"> </a>siDeviceAddonItemType		</td>
+		<td class="example">10		</td>
+		<td>
+
+	Device Driver. (NOT CURRENTLY SUPPORTED)
+	You can use siPluginAddonItemType (12) instead to package any .xsidevice and .dll/.so files in an .xsiaddon file. 
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siShelfAddonItemType"> </a>siShelfAddonItemType		</td>
+		<td class="example">11		</td>
+		<td>
+
+	New format toolbar or shelf.  
+	Toolbars created starting with version 4.0 are .xsitb files found in the \Application\toolbars directory.  
+	All Presets and Custom Commands referenced by the toolbar will also be packaged in the add-on automatically.
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPluginAddonItemType"> </a>siPluginAddonItemType		</td>
+		<td class="example">12		</td>
+		<td>
+
+	A self-installed <a href="#!/url=./si_om/Plugin.html">Plugin</a>.  
+	This is a single script file or dll which can contain one or more Commands, Custom Properties or other items. 
+	You can specify this type of add-on item either by plug-in name or by its full path.
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siHelpAddonItemType"> </a>siHelpAddonItemType		</td>
+		<td class="example">13		</td>
+		<td>
+
+	A Windows Help (.hlp) file. (NOT CURRENTLY SUPPORTED)
+	You can use siPluginAddonItemType (12) instead to package any .hlp files in an .xsiaddon file. 
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siViewAddonItemType"> </a>siViewAddonItemType		</td>
+		<td class="example">14		</td>
+		<td>
+
+	A custom relational view.
+		</td>
+	</tr>
+</table>
+</div>
+
+<h3>Applies To</h3>
+<div><p><a href="#!/url=./si_om/Addon.AddItem.html">Addon.AddItem</a></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/XSIApplication.CreateAddon.html">XSIApplication.CreateAddon</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

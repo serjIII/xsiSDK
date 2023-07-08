@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-5490C3B8-5548-4EBC-B95C-49DFF430D21E" />
+      <meta name="topic-type" content="concept" />
+      <title>Element Generator Custom ICENodes</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ reflinkdata.push(["xsi_application.h", "si_cpp/xsi__application_8h.html", "C++ API Reference", "../"]); 
+reflinkdata.push(["xsi_context.h", "si_cpp/xsi__context_8h.html", "C++ API Reference", "../"]); 
+reflinkdata.push(["xsi_pluginregistrar.h", "si_cpp/xsi__pluginregistrar_8h.html", "C++ API Reference", "../"]); 
+reflinkdata.push(["xsi_status.h", "si_cpp/xsi__status_8h.html", "C++ API Reference", "../"]); 
+reflinkdata.push(["xsi_factory.h", "si_cpp/xsi__factory_8h.html", "C++ API Reference", "../"]); 
+reflinkdata.push(["xsi_math.h", "si_cpp/xsi__math_8h.html", "C++ API Reference", "../"]); 
+reflinkdata.push(["xsi_vector3f.h", "si_cpp/xsi__vector3f_8h.html", "C++ API Reference", "../"]); 
+reflinkdata.push(["xsi_indexset.h", "si_cpp/xsi__indexset_8h.html", "C++ API Reference", "../"]); 
+reflinkdata.push(["xsi_dataarray.h", "si_cpp/xsi__dataarray_8h.html", "C++ API Reference", "../"]); 
+reflinkdata.push(["size", "si_cpp/group__RenderMapDefine.html#gaa9831b27d43e13316c674746b6efccb1", "C++ API Reference", "../"]); 
+reflinkdata.push(["index", "si_cpp/group__RenderMapDefine.html#gadca2b0ae15c62d8023e6645c3404056c", "C++ API Reference", "../"]); 
+reflinkdata.push(["data", "si_cpp/group__RenderMapDefine.html#gadd4f4d7b7bb549a29e5ea45fe633c5c3", "C++ API Reference", "../"]); 
+reflinkdata.push(["type", "si_cpp/group__RenderMapDefine.html#ga7117e14e60390664f1862525dd6acaf6", "C++ API Reference", "../"]); 
+reflinkdata.push(["name", "si_cpp/group__RenderMapDefine.html#ga882c17490314f92c7159d6d7d69696e7", "C++ API Reference", "../"]); 
+</script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-5490C3B8-5548-4EBC-B95C-49DFF430D21E"></a></span><div class="head">
+            <h1>Element Generator Custom ICENodes</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-FFC22015-38E0-46D1-8B6D-4F44AA4F7A26"></a></span>Element generator nodes are like regular custom <a href="#!/url=./si_cpp/classXSI_1_1ICENode.html">ICENodes</a> with the additional capability to define the number of elements to process during
+               an evaluation. For now, this feature can only be used to generate particles. The element
+               generator capability is enabled by setting one or more output ports context to <a href="#!/url=./si_om/siICENodeContextType.html">siICENodeContextElementGenerator</a> during the ICENode registration phase. The siICENodeContextElementGenerator context
+               is not compatible with other contexts and must be the only one specified.
+            </p>
+            <p><span class="anchor_wrapper"><a name="GUID-92FE1F4B-DAD2-4B51-A5F9-0095477A3BF4"></a></span>Some simple registration rules must be followed when defining the element generator
+               ports:
+            </p><span class="anchor_wrapper"><a name="GUID-4465B979-AF81-4267-A639-51B83C1C096C"></a></span><ol type="1" start="1">
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-F331C122-5CEF-4817-8522-495D75A5BD94"></a></span>All input ports must be defined with a singleton context (<a href="#!/url=./si_om/siICENodeContextType.html">siICENodeContextSingleton</a>).
+                  </p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-C5100655-1DAC-47E9-AC93-573BCBCA6825"></a></span>All output ports must be defined with a <a href="#!/url=./si_om/siICENodeContextType.html">siICENodeContextSingleton</a> or <a href="#!/url=./si_om/siICENodeContextType.html">siICENodeContextElementGenerator</a>.
+                  </p> 
+               </li>
+            </ol>
+            <p><span class="anchor_wrapper"><a name="GUID-71B6CE9A-3A0C-4BE3-8A93-7BF2B664F717"></a></span>If these rules are not met, Softimage will log an error at registration time and then
+               abort the ICENode registration.
+            </p>
+            <p><span class="anchor_wrapper"><a name="GUID-89BF277F-23F2-4993-92BE-646538F85E8B"></a></span>The number of elements to process must be specified in the <a href="#!/url=./si_cmds/cb_ICENode_BeginEvaluate.html">BeginEvaluate</a> callback with <a href="#!/url=./si_cpp/classXSI_1_1ICENodeContext.html#PutNumberOfElementsToProcess">MDNodeContext::PutNumberOfElementsToProcess</a>. Exceptionally, accessing input port data from the BeginEvaluate callback is supported
+               for generator nodes. Softimage issues an error if the BeginEvaluate callback is missing.
+            </p>
+            <p><span class="anchor_wrapper"><a name="GUID-0C2B65AA-6942-4F23-A060-8EE7A463885F"></a></span>The following ICENode example demonstrates the element generator feature by generating
+               a 2D particle grid:
+            </p>
+            <div class="codeBlock"><pre class="prettyprint">
+#include &lt;<a href="javascript:void(0)" data="xsi_application.h" class="a_multireflink">xsi_application.h</a>&gt;
+#include &lt;<a href="javascript:void(0)" data="xsi_context.h" class="a_multireflink">xsi_context.h</a>&gt;
+#include &lt;<a href="javascript:void(0)" data="xsi_pluginregistrar.h" class="a_multireflink">xsi_pluginregistrar.h</a>&gt;
+#include &lt;<a href="javascript:void(0)" data="xsi_status.h" class="a_multireflink">xsi_status.h</a>&gt;
+#include &lt;xsi_mdnodecontext.h&gt;
+#include &lt;xsi_mdnodedef.h&gt;
+#include &lt;<a href="javascript:void(0)" data="xsi_factory.h" class="a_multireflink">xsi_factory.h</a>&gt;
+#include &lt;<a href="javascript:void(0)" data="xsi_math.h" class="a_multireflink">xsi_math.h</a>&gt;
+#include &lt;<a href="javascript:void(0)" data="xsi_vector3f.h" class="a_multireflink">xsi_vector3f.h</a>&gt;
+#include &lt;<a href="javascript:void(0)" data="xsi_indexset.h" class="a_multireflink">xsi_indexset.h</a>&gt;
+#include &lt;<a href="javascript:void(0)" data="xsi_dataarray.h" class="a_multireflink">xsi_dataarray.h</a>&gt;
+
+// Defines port, group and map identifiers used for registering the ICENode
+enum IDs
+{
+	ID_Size = 1,
+	ID_G_100 = 100,
+	ID_Vector3D = 200,
+	ID_Elements = 201,
+	ID_TMAP = 400,
+	ID_SMAP,
+	ID_CMAP,
+	ID_UNDEF = ULONG_MAX
+};
+
+using namespace XSI;
+ 
+XSIPLUGINCALLBACK CStatus XSILoadPlugin( PluginRegistrar&amp; in_reg )
+{
+	in_reg.PutAuthor(L"Softimage");
+	in_reg.PutName(L"ICENodeGenerator Plugin");
+	in_reg.PutVersion(1,0);
+	ICENodeDef nodeOpDef;
+	nodeOpDef = Application().GetFactory().CreateICENodeDef( L"ICENodeGenerator" );
+	CStatus st;
+	
+	// Add a port to specify the <a href="javascript:void(0)" data="size" class="a_multireflink">size</a> of the grid to generate
+	st = nodeOpDef.AddPortGroup(ID_G_100);
+	st.AssertSucceeded( ) ;
+	
+	st = nodeOpDef.AddInputPort(
+		ID_Size, // port <a href="javascript:void(0)" data="index" class="a_multireflink">index</a>
+		ID_G_100, // group <a href="javascript:void(0)" data="index" class="a_multireflink">index</a>
+		siICENodePortDataLong, // <a href="javascript:void(0)" data="data" class="a_multireflink">data</a> <a href="javascript:void(0)" data="type" class="a_multireflink">type</a>
+		siICENodePortStructureSingle, // structure <a href="javascript:void(0)" data="type" class="a_multireflink">type</a>
+		siICENodeContextSingleton, // context <a href="javascript:void(0)" data="type" class="a_multireflink">type</a>
+		L"Size", // port <a href="javascript:void(0)" data="name" class="a_multireflink">name</a>
+		L"Size", // port scripting <a href="javascript:void(0)" data="name" class="a_multireflink">name</a>
+		10			// default value
+	);
+	st.AssertSucceeded( ) ;
+	
+	// Add output ports.
+	st = nodeOpDef.AddOutputPort(
+		ID_Vector3D, // port <a href="javascript:void(0)" data="index" class="a_multireflink">index</a>
+		siICENodeDataVector3, // <a href="javascript:void(0)" data="data" class="a_multireflink">data</a> <a href="javascript:void(0)" data="type" class="a_multireflink">type</a>
+		siICENodePortStructureSingle, // structure <a href="javascript:void(0)" data="type" class="a_multireflink">type</a>
+		siICENodeContextElementGenerator, // context <a href="javascript:void(0)" data="type" class="a_multireflink">type</a>
+		L"OutVector3D", // port <a href="javascript:void(0)" data="name" class="a_multireflink">name</a>
+		L"OutVector3D"// port scripting <a href="javascript:void(0)" data="name" class="a_multireflink">name</a>
+	);
+	st.AssertSucceeded( ) ;
+	
+	st = nodeOpDef.AddOutputPort(
+		ID_Elements, // port <a href="javascript:void(0)" data="index" class="a_multireflink">index</a>
+		siICENodePortDataLong, // <a href="javascript:void(0)" data="data" class="a_multireflink">data</a> <a href="javascript:void(0)" data="type" class="a_multireflink">type</a>
+		siICENodePortStructureSingle, // structure <a href="javascript:void(0)" data="type" class="a_multireflink">type</a>
+		siICENodeContextSingleton, // context <a href="javascript:void(0)" data="type" class="a_multireflink">type</a>
+		L"Elements", // port <a href="javascript:void(0)" data="name" class="a_multireflink">name</a>
+		L"Elements 				"// port scripting <a href="javascript:void(0)" data="name" class="a_multireflink">name</a>
+	);
+	st.AssertSucceeded( ) ;
+	
+	PluginItem nodeItem = in_reg.RegisterICENode(nodeOpDef);
+	nodeItem.PutCategories(L"Custom ICENode");
+	
+	return CStatus::OK;
+}
+XSIPLUGINCALLBACK CStatus ICENodeGenerator_BeginEvaluate( ICENodeContext&amp; in_ctxt )
+{
+	CDataArrayLong inSize( in_ctxt, ID_Size );
+	
+	// Total number of elements to generate
+	ULONG nSize = inSize[ 0 ];
+	ULONG nElements = nSize * nSize;
+	in_ctxt.PutNumberOfElementsToProcess( nElements );
+	
+	return CStatus::OK;
+}
+XSIPLUGINCALLBACK CStatus ICENodeGenerator_Evaluate( ICENodeContext&amp; in_ctxt )
+{
+	// The current output port being evaluated...
+	ULONG out_portID = in_ctxt.GetEvaluatedOutputPortID( );
+	
+	switch( out_portID )
+	{
+		case ID_Vector3D:
+		{
+			// Set the output port array with the new elements
+			CDataArrayVector3f outData( in_ctxt );
+			CDataArrayLong inSize( in_ctxt, ID_Size );
+			
+			ULONG nSize = inSize[ 0 ];
+			CIndexSet indexSet( in_ctxt );
+			
+			for(CIndexSet::Iterator it = indexSet.Begin(); it.HasNext(); it.Next())
+			{
+				ULONG nAbsIndex = it.GetAbsoluteIndex( );
+				
+				ULONG x = nAbsIndex % nSize;
+				ULONG y = nAbsIndex / nSize;
+				MATH::CVector3f v;
+				v.PutX( x * 1.0f - nSize/2 );
+				v.PutY( y * 1.0f - nSize/2 );
+				v.PutZ( 0.0f );
+				outData[ it ] = v;
+			}
+		}
+		break;
+		
+		case ID_Elements:
+		{
+			// Returns the number of elements to generate
+			CDataArrayLong outData( in_ctxt );
+			outData[ 0 ] = in_ctxt.GetNumberOfElementsToGenerate( );
+		}
+		break;
+	};
+	
+	return CStatus::OK;
+}</pre></div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

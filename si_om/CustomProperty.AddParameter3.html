@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>CustomProperty.AddParameter3</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>CustomProperty.AddParameter3</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/CustomProperty.html">CustomProperty</a>.AddParameter3</h2>
+
+<h3>Description</h3>
+<div><p> Adds a new custom parameter to the custom property. This version is a simplified version
+of <a href="#!/url=./si_om/CustomProperty.AddParameter2.html">CustomProperty.AddParameter2</a>.
+<br /><br />
+The most commonly-used <a href="#!/url=./si_om/siCapabilities.html">siCapabilities</a> flags, siAnimatable and siReadOnly, are exposed
+directly as optional arguments.
+<br /><br />
+Most parameters can be specified with this method.  However you should consider using
+<a href="#!/url=./si_om/CustomProperty.AddParameter.html">CustomProperty.AddParameter</a> or <a href="#!/url=./si_om/CustomProperty.AddParameter2.html">CustomProperty.AddParameter2</a>
+if the parameter needs a UI range, specific classification flags, or
+a user name.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>Parameter CustomProperty.AddParameter3( String in_ScriptName, siVariantType in_ValueType, Object in_DefaultValue, Object in_Min, Object in_Max, Boolean in_bAnimatable, Boolean in_bReadOnly );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = CustomProperty.AddParameter3( ScriptName, ValueType, [DefaultValue], [Min], [Max], [Animatable], [ReadOnly] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>The newly created <a href="#!/url=./si_om/Parameter.html">Parameter</a> object.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">ScriptName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Name of the custom parameter.  This 
+argument specifies both the <a href="#!/url=./si_om/Parameter.ScriptName.html">Parameter.ScriptName</a> and
+				  <a href="#!/url=./si_om/SIObject.Name.html">SIObject.Name</a>.  It should not contain spaces.
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ValueType		</td>
+		<td><a href="#!/url=./si_om/siVariantType.html">siVariantType</a>		</td>
+		<td>
+ Type of the custom parameter.  The recommended types are siString, 
+siBool, siInt4, siUByte, and siFloat. 
+					(See <a href="#!/url=./si_om/Parameter.ValueType.html">Parameter.ValueType</a>)  
+		</td>
+	</tr>
+	<tr>
+		<td class="name">DefaultValue		</td>
+		<td><a href="#!/url=./files/Variant.htm">Variant</a>		</td>
+		<td>
+Default value of the custom parameter. A default value for a numerical values
+including boolean is 0, the string default is "".
+	(See <a href="#!/url=./si_om/Parameter.Default.html">Parameter.Default</a>)  
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Min		</td>
+		<td><a href="#!/url=./files/Variant.htm">Variant</a>		</td>
+		<td>
+ Minimum value of the custom parameter. siString and siBool types do not require
+a Min value. For all other numerical type the default will be minimum value possible for the 
+type for example all unsigned values will have a min=0.
+					(See <a href="#!/url=./si_om/Parameter.Min.html">Parameter.Min</a>)  
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Max		</td>
+		<td><a href="#!/url=./files/Variant.htm">Variant</a>		</td>
+		<td>
+ Maximum value of the custom parameter. siString and siBool types do not require
+a Max value. For all other numerical type the default will be minimum value possible for the 
+type for example the maximum value for siUByte is 255. 
+					(See <a href="#!/url=./si_om/Parameter.Max.html">Parameter.Max</a>)  
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Animatable		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+
+		Specify that the parameter should support animation.  This argument
+		is ignored for string parameters, which do not support animation.
+		It is possible to override this setting on a particular instance of a parameter via 
+		<a href="#!/url=./si_om/Parameter.Animatable.html">Parameter.Animatable</a>.
+			<p class="cell"><span class="hilite">Default Value: </span>
+true			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ReadOnly		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+
+		Specify that the user cannot change the value of this Parameter.  A read-only parameter 
+can still be changed via scripting (see <a href="#!/url=./si_om/Parameter.Value.html">Parameter.Value</a>)
+		It is possible to override this setting on a particular instance of a parameter via 
+		<a href="#!/url=./si_om/Parameter.ReadOnly.html">Parameter.ReadOnly</a>.
+			<p class="cell"><span class="hilite">Default Value: </span>
+false			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/CustomProperty.html">CustomProperty</a>,
+	  <a href="#!/url=./si_om/CustomProperty.AddParameter2.html">CustomProperty.AddParameter2</a>,
+	  <a href="#!/url=./si_om/Parameter.html">Parameter</a> <a href="#!/url=./si_om/siCapabilities.html">siCapabilities</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>X3DObject.GetActivePrimitive2</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>X3DObject.GetActivePrimitive2</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/X3DObject.html">X3DObject</a>.GetActivePrimitive2</h2>
+
+<h3>Introduced</h3>
+<div><p>v9.0 (2011)</p></div>
+
+<h3>Description</h3>
+<div><p> Returns the 3D object's active <a href="#!/url=./si_om/Primitive.html">Primitive</a> for a given frame. 
+<br /><br />
+Note: Although the scene root is a kind of <a href="#!/url=./si_om/Model.html">Model</a> 
+it does not support primitives. In this case this function will return Nothing.
+<br /><br />
+This method has the added convenienence of allowing sequential evaluation of simulation objects
+without risking a simulation restart because the scene time and given time don't match.
+<br /><br />Note: This method could return an invalid object in python, use <a href="#!/url=./si_om/X3DObject.GetActivePrimitive3.html">X3DObject.GetActivePrimitive3</a> instead.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>Primitive X3DObject.GetActivePrimitive2( Object in_Frame );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = X3DObject.GetActivePrimitive2( [Time] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p><a href="#!/url=./si_om/Primitive.html">Primitive</a></p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Time		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Time (in frames) at which to get the primitive			<p class="cell"><span class="hilite">Default Value: </span>
+Current time in frames			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">#
+#	This example illustrates how to get the active primitive object from an 
+#	X3DObject object and how to detect if the object supports primitives.
+#
+from win32com.client import constants
+Application.NewScene( None, False )
+cube = Application.ActiveSceneRoot.AddGeometry( "Cube", "MeshSurface" )
+twist = Application.ApplyOp("Twist", cube, 3, "siPersistentOperation", None, 0)[ 0 ]
+twist.angle.AddFcurve( None, constants.siLinearInterpolation, None, [ 1.0, 0.0, 10.0, 180.0 ] )
+Application.LogMessage( cube.ActivePrimitive.Geometry.Points[ 5 ].Position.Y )
+Application.LogMessage( cube.GetActivePrimitive2(5).Geometry.Points[ 5 ].Position.Y )
+# Expected results:
+# INFO : -4.0
+# INFO : 3.24463830138</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/X3DObject.ActivePrimitive.html">X3DObject.ActivePrimitive</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

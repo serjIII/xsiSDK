@@ -1,0 +1,486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-7FBADAFE-A951-428C-8E74-E583BE00755F" />
+      <meta name="indexterm" content="Defining Your Workspace" />
+      <meta name="indexterm" content="scripting: defining your workspace" />
+      <meta name="indexterm" content="workspace: in scripting" />
+      <meta name="indexterm" content="To get the root model of the scene" />
+      <meta name="indexterm" content="To get the active scene" />
+      <meta name="indexterm" content="To get the active project" />
+      <meta name="indexterm" content="Identifying Your Object" />
+      <meta name="indexterm" content="scripting: identifying your object" />
+      <meta name="indexterm" content="object model: how to identify the object" />
+      <meta name="indexterm" content="Adding Something to Your Scene" />
+      <meta name="indexterm" content="scripting: adding an object with the object model" />
+      <meta name="indexterm" content="object model: adding an object" />
+      <meta name="indexterm" content="scripting: finding an object with the object model" />
+      <meta name="indexterm" content="object model: finding an object" />
+      <meta name="indexterm" content="To access the first object starting with &#34;cube&#34;" />
+      <meta name="indexterm" content="To access all lights under the scene root using the Type parameter" />
+      <meta name="indexterm" content="To find the number of null primitives in the scene" />
+      <meta name="indexterm" content="Working with Parameters" />
+      <meta name="indexterm" content="Getting Information about a Specific Object's Parameters" />
+      <meta name="indexterm" content="To print out a list of information on all parameters on an object" />
+      <meta name="indexterm" content="Accessing a Specific Parameter by its Name with the Object Model" />
+      <meta name="indexterm" content="To get the camera visibility property (parameter set)" />
+      <meta name="indexterm" content="What You Should Know about the Range of a Parameter" />
+      <meta name="indexterm" content="To find out what the range is for a given parameter" />
+      <meta name="indexterm" content="Getting and Setting Object Data" />
+      <meta name="indexterm" content="scripting: getting and setting object data" />
+      <meta name="indexterm" content="object model: getting and setting data" />
+      <meta name="topic-type" content="concept" />
+      <title>Using the Softimage Object Model for Novices</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ reflinkdata.push(["set", "si_cpp/group__RenderMapDefine.html#ga793ad1cfa149967fe4b97fc66251b831", "C++ API Reference", "../"]); 
+reflinkdata.push(["name", "si_cpp/group__RenderMapDefine.html#ga882c17490314f92c7159d6d7d69696e7", "C++ API Reference", "../"]); 
+</script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-7FBADAFE-A951-428C-8E74-E583BE00755F"></a></span><div class="head">
+            <h1>Using the Softimage Object Model for Novices</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-1A283D13-59DE-4120-95BE-75D3AB0B8260"></a></span>Using the object model to write code usually consists of three steps:
+            </p><span class="anchor_wrapper"><a name="GUID-D9FA3730-2539-4319-9E4F-DFBC5FE21E67"></a></span><ol type="1" start="1">
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-0443BDA6-7FB7-4208-BFF6-9CAE31437E99"></a></span>Indicate where you are working—see <span class="char_link"><a href="#!/url=./files/script_intro_UsingtheXSIObjectModelforNovices.htm#WS74F57519B241D54691EA264324B2CEC7-000C">Defining Your Workspace</a></span>.
+                  </p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-33A80672-7041-4865-9769-97F7A4B516BB"></a></span>Identify what you are working on—see <span class="char_link"><a href="#!/url=./files/script_intro_UsingtheXSIObjectModelforNovices.htm#WS74F57519B241D54691EA264324B2CEC7-0010">Identifying Your Object</a></span>.
+                  </p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-D47F04E0-2B4A-4B84-AB63-87EC4C18373B"></a></span>Explain what you want to do with it or know about it—see <span class="char_link"><a href="#!/url=./files/script_intro_UsingtheXSIObjectModelforNovices.htm#WS74F57519B241D54691EA264324B2CEC7-001D">Getting and Setting Object Data</a></span>.
+                  </p> 
+               </li>
+            </ol>
+            <p><span class="anchor_wrapper"><a name="GUID-03CE1E4E-3F5C-45DC-A569-D6DE2BD37D61"></a></span>For more information on using the components of the object model, see individual help
+               in the C++ API Reference or the <a href="#!/url=./si_cmds/_scriptref.html">Commands and Scripting Reference</a>.
+            </p>
+            <div class="section"><span class="anchor_wrapper"><a name="WS74F57519B241D54691EA264324B2CEC7-000C"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-020EC89F-6152-482E-99A6-8874AB697EE3"></a></span> Defining Your Workspace
+               </h2>    
+               <p><span class="anchor_wrapper"><a name="GUID-46C3213B-D1F1-4466-A331-0A02A7211ECB"></a></span>The first thing you need to indicate is where to look for the object you want to deal
+                  with. Typically you start at the scene root.
+               </p> 
+               <div class="section"><span class="anchor_wrapper"><a name="WS74F57519B241D54691EA264324B2CEC7-000D"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-150EBED4-03FA-4A3B-84DA-8766310B59D8"></a></span> To get the root model of the scene
+                  </h3>  
+                  <ul>
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-E0E520E7-8A78-46A3-AE26-11B27DF5EBE9"></a></span>The Application object contains a property that accesses the root directly:
+                        </p> 
+                        <div class="codeBlock"><pre class="prettyprint">
+Application.ActiveSceneRoot</pre></div> 
+                        <div><span class="anchor_wrapper"><a name="GUID-D3589ACF-C4F4-46C0-BB3D-070D810161CE"></a></span><div class="note-note"><span class="label">NOTE:</span> 
+                              <p><span class="anchor_wrapper"><a name="GUID-B75444BD-E1F6-4D15-96C5-DB60D2BE8524"></a></span>If your script is running inside Softimage, using the word <em class="mild">Application</em> is optional. This is because the Application object is global. That means that these
+                                 two statements are equivalent:
+                              </p> 
+                           </div>
+                        </div> 
+                        <div class="codeBlock"><pre class="prettyprint">
+ActiveSceneRoot
+Application.ActiveSceneRoot</pre></div> 
+                        <div><span class="anchor_wrapper"><a name="GUID-C7AB2FB2-0613-4E6B-A6BF-731C99E6ED5C"></a></span><div class="note-tip"><span class="label">TIP:</span> 
+                              <p><span class="anchor_wrapper"><a name="GUID-F5E2322E-2A64-4F57-958B-ACDC82EC40C2"></a></span>Use a Set statement to assign objects to variables, so that you can refer to them
+                                 quickly in the rest of your procedure. You can combine Set statements to suit your
+                                 needs. The following statement gets an object pointer to the scene root:
+                              </p> 
+                           </div>
+                        </div> 
+                        <div class="codeBlock"><pre class="prettyprint"><a href="javascript:void(0)" data="set" class="a_multireflink">set</a> oRoot = ActiveSceneRoot</pre></div> 
+                     </li>
+                  </ul> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WS74F57519B241D54691EA264324B2CEC7-000E"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-D6762570-875E-44D9-83FB-36AF2A75A29C"></a></span> To get the active scene
+                  </h3>  
+                  <ul>
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-3D1E7A87-DF94-4C7C-ABED-BAE5164CAFB8"></a></span>You can access the ActiveScene property on the Project object:
+                        </p> 
+                        <div class="codeBlock"><pre class="prettyprint">
+Application.ActiveProject.ActiveScene</pre></div> 
+                     </li>
+                  </ul> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WS74F57519B241D54691EA264324B2CEC7-000F"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-534DF0B0-915C-46C6-BEBE-BBDAC9EC9FB1"></a></span> To get the active project
+                  </h3>  
+                  <ul>
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-8AEE24D7-2225-4233-8347-4065F48CA513"></a></span>You can access the ActiveProject property on the Application object:
+                        </p> 
+                        <div class="codeBlock"><pre class="prettyprint">
+Application.ActiveProject</pre></div> 
+                     </li>
+                  </ul> 
+               </div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS74F57519B241D54691EA264324B2CEC7-0010"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-601A210B-C709-4A37-91F0-F63491A3F1A4"></a></span> Identifying Your Object
+               </h2>    
+               <p><span class="anchor_wrapper"><a name="GUID-0D269D48-F5ED-4083-8146-0CAD503F0C22"></a></span>After indicating where to look, you need to identify which object you want to work
+                  with. This process is different depending on whether you need to add an object to
+                  the scene or work with an existing object.
+               </p> 
+               <div class="section"><span class="anchor_wrapper"><a name="WS74F57519B241D54691EA264324B2CEC7-0011"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-5082A20F-FCCB-4FC6-9E50-A67932700EC4"></a></span> Adding Something to Your Scene
+                  </h3>    
+                  <p><span class="anchor_wrapper"><a name="GUID-9529EB86-BA75-4DBC-80B2-31F6A9EAF46F"></a></span>You can add a 3D object to your scene by using a method of whatever object will be
+                     its parent (typically the root model). For example, if you want to create a polygon
+                     mesh sphere, you need to use the AddGeometry method of the root model object:
+                  </p> 
+                  <div class="codeBlock"><pre class="prettyprint">
+Set oSphere = ActiveSceneRoot.AddGeometry( "Sphere", "MeshSurface" )</pre></div> 
+                  <p><span class="anchor_wrapper"><a name="GUID-52030D41-90BB-4197-A8B9-F95E2CDC9CC8"></a></span>You can also use scene items themselves as parents of other objects. For example,
+                     if you want to add a phong material to your new sphere, you could add this statement
+                     to the previous one:
+                  </p> 
+                  <div class="codeBlock"><pre class="prettyprint">
+Set oMaterial = oSphere.AddMaterial("Phong")</pre></div> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WS74F57519B241D54691EA264324B2CEC7-0012"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-B5D09261-4296-4C83-A97F-ABE4E7AFABB6"></a></span>Working with an Existing Softimage Object
+                  </h3>   
+                  <p><span class="anchor_wrapper"><a name="GUID-BB287A10-4637-4D5C-A768-B89E3FAEDE65"></a></span>To find objects in the scene, you need to use the FindChild or FindChildren method
+                     of the model you want look under. Both of these methods allow you to use several different
+                     ways of searching (criteria); the only difference is that FindChild returns the first
+                     object it finds that matches the criteria, and FindChildren returns a collection of
+                     every object that matches.
+                  </p> 
+                  <p><span class="anchor_wrapper"><a name="GUID-EA698589-4453-4CD5-877C-CEC3009CB937"></a></span>You can search using any of these criteria:
+                  </p> 
+                  <ul>
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-AFC4DACD-D43D-49B9-8288-4CDB33912087"></a></span> <em class="strong">Name</em>—the name of the object as a string expression. This can include wildcards, so that
+                           any object beginning with <span class="code" translate="no">"co*"</span> is a potential match.
+                        </p> 
+                     </li>
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-6052EC37-4787-4CAF-A206-738D53111062"></a></span> <em class="strong">Type</em>—the type of the object as a string or a constant. For a list of possible values,
+                           see the <a href="#!/url=./si_om/siType.html">siType</a> constant reference page.
+                        </p> 
+                     </li>
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-7C11F2A2-1A4B-4559-95A6-859893ED3033"></a></span> <em class="strong">Family</em>—the name of the family to which the object belongs. A family is a group of objects
+                           that are connected. They may be loosely connected (Geometries) or a very similar type
+                           (Topology Operators). For a list of possible values, see the <a href="#!/url=./si_om/siFamily.html">siFamily</a> constant reference page.
+                        </p> 
+                        <div><span class="anchor_wrapper"><a name="GUID-06C7B284-B62A-4691-AD17-E93B5B7275D8"></a></span><div class="note-note"><span class="label">NOTE:</span> 
+                              <p><span class="anchor_wrapper"><a name="GUID-0D432363-5DC1-42C4-A4F0-A14EB62E5459"></a></span>The other parameter you can specify is <em class="strong">Recursive</em>, which is a Boolean (meaning it can be only False or True) value. If you specify
+                                 False here, the method searches only the current object's children; otherwise, all
+                                 of its dependents are also searched.
+                              </p> 
+                           </div>
+                        </div> 
+                     </li>
+                  </ul> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WS74F57519B241D54691EA264324B2CEC7-0013"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-6E70FD21-CE6E-4C00-937A-2DB64F07CEF3"></a></span> To access the first object starting with "cube"
+                     </h4>  
+                     <div class="codeBlock"><pre class="prettyprint">
+	' Set up the scene with a cube
+	<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> oRoot = ActiveSceneRoot
+	oRoot.AddGeometry "Cube", "MeshSurface", "cubeist"
+
+	' Find the first thing starting with "cube"
+	Set oCube = oRoot.FindChild( "cube*" )
+	' Here's a check to make sure that an empty object doesn't crash the script
+	if Application.ClassName( oCube ) &lt;&gt; "Nothing" then
+		Application.LogMessage "Found " &amp; oCube.Name
+	else
+		Application.LogMessage "Couldn't find it... Sorry."
+
+	end if
+	' Script outputs the following:
+	'INFO : "Found cubeque"</pre></div> 
+                     <div><span class="anchor_wrapper"><a name="GUID-6C0D96AC-037F-4B4A-A416-6CD5C98E7F95"></a></span><div class="note-tip"><span class="label">TIP:</span> 
+                           <p><span class="anchor_wrapper"><a name="GUID-05221F2D-234C-497E-A51B-42AF2150026C"></a></span>Notice that because this example uses the Name parameter with a wildcard, this method
+                              might return "cube", "cube99", or "cubeist", depending on what it finds first.
+                           </p> 
+                        </div>
+                     </div> 
+                  </div> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WS74F57519B241D54691EA264324B2CEC7-0014"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-B217A4C1-877E-4E6C-8A2C-FAA6DAB60EC2"></a></span> To access all lights under the scene root using the Type parameter
+                     </h4>  
+                     <div class="codeBlock"><pre class="prettyprint">
+	Set oLights = ActiveSceneRoot.FindChildren( , "light" )
+	' Once you get the collection of lights you can loop through it
+	' Here's another check to make sure the collection isn't empty
+	if oLights.Count &gt; 0 then
+	   Application.LogMessage "Found the following member(s)..." 
+	   For Each oMember in oLights
+	      Application.LogMessage vbTab &amp; oMember
+	   Next
+	else
+	   Application.LogMessage "Couldn't find it... Sorry."
+	end if
+
+	' Script outputs the following:
+	'INFO : "Found the following member(s)..."
+	'INFO : "	light"</pre></div> 
+                     <div><span class="anchor_wrapper"><a name="GUID-50B9FE3A-6E3B-4B3F-B969-E077FD0F9739"></a></span><div class="note-tip"><span class="label">TIP:</span> 
+                           <p><span class="anchor_wrapper"><a name="GUID-2DA08A6B-7442-40A9-BCFB-8A2A6CFA7A4C"></a></span>Notice that this example uses the string name of the Light primitive type. You could
+                              also use the name of the constant instead too: siLightPrimType (without quotation
+                              marks).
+                           </p> 
+                        </div>
+                     </div> 
+                  </div> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WS74F57519B241D54691EA264324B2CEC7-0015"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-3ACEF422-A7E6-43D3-ABA9-9C156A779048"></a></span> To find the number of null primitives in the scene
+                     </h4>  
+                     <div class="codeBlock"><pre class="prettyprint">
+' Set up two nested nulls under the scene root
+<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> oRoot = ActiveSceneRoot
+<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> oNested = oRoot.AddNull("Nodule")
+oNested.AddNull
+
+' Starting at the lower nested level, look for any nulls underneath
+printFindResults oNested
+' Then look at the scene root
+printFindResults oRoot
+
+
+function printFindResults( in_object )
+   <a href="javascript:void(0)" data="set" class="a_multireflink">set</a> oNullColl = in_object.FindChildren( ,,siNullPrimitiveFamily )
+	
+   ' Check to make sure empty collections won't crash the script
+   if oNullColl.Count &gt; 0 then
+      LogMessage "There are " &amp; oNullColl.Count &amp; " null primitives under " _
+              &amp; in_object.Parent.Name &amp; ":"
+      for each oNP in oNullColl 
+         LogMessage vbTab &amp; oNP.Name &amp; " is nested under " &amp; oNP.Parent.Name
+      next
+   else
+      LogMessage "Couldn't find it...Sorry."
+   end if
+end function
+
+
+' Output of above script:
+'INFO : "There are 2 null primitives under Scene_Root:"
+'INFO : 	"Nodule is nested under Scene_Root"
+'INFO : 	"null is nested under Nodule"
+'INFO : "There are 4 null primitives under Scene_Root:"
+'INFO : 	"Camera_Root is nested under Scene_Root"
+'INFO : 	"Camera_Interest is nested under Camera_Root"
+'INFO : 	"Nodule is nested under Scene_Root"
+'INFO : 	"null is nested under Nodule"</pre></div> 
+                  </div> 
+               </div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS74F57519B241D54691EA264324B2CEC7-0016"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-0ADD1BFC-DB23-447C-9D5F-FC43DCE37B20"></a></span> Working with Parameters
+               </h2>  
+               <div class="section"><span class="anchor_wrapper"><a name="WS74F57519B241D54691EA264324B2CEC7-0017"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-8C880E89-CC4E-4A11-8A52-8937742213ED"></a></span> Getting Information about a Specific Object's Parameters
+                  </h3>  
+                  <p><span class="anchor_wrapper"><a name="GUID-8E74B95C-3D02-4D53-9865-546A8CB4F651"></a></span>Some parameters are defined directly on an object (that is, there is no organizing
+                     parameter/property set to go through first) and some are accessible only through the
+                     parameter set (also known as a property).
+                  </p> 
+                  <p><span class="anchor_wrapper"><a name="GUID-A5EBFC51-E701-41D5-8F17-48BCE13AEB29"></a></span>You can get all the information about an object's parameters by accessing the ParameterCollection
+                     either directly from the object or through each member of the PropertyCollection.
+                  </p> 
+                  <p><span class="anchor_wrapper"><a name="GUID-E384562B-36BA-456F-990C-5887B16F1672"></a></span>The following example pulls all the parameter names and descriptions out of Softimage
+                     and dumps the information in a text file on your hard drive.
+                  </p> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WS74F57519B241D54691EA264324B2CEC7-0018"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-998CAFB3-D8EC-4F51-8809-B980B070D9A6"></a></span> To print out a list of information on all parameters on an object
+                     </h4>  
+                     <p><span class="anchor_wrapper"><a name="GUID-EE4869D0-3306-46E2-96CF-AC77EE1995B6"></a></span>Copy and paste this script into the Softimage Script Editor and run it. Once it's
+                        done you can view the information is written in the textfile in this location: <span class="filePath" translate="no">C:\Temp\Camera_Parameter_List.txt.</span></p> 
+                     <div class="codeBlock"><pre class="prettyprint">
+' First get the camera
+<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> oCamera = ActiveSceneRoot.FindChild( ,siCameraPrimType )
+
+' Check to make sure it found something (prevent it from crashing)
+if ClassName( oCamera ) &lt;&gt; "Nothing" then
+   ' Write some headers to identify the start and end of 
+   ' the list of parameters 
+   sOutput = "========================================" &amp; _ 
+	 "========================================" &amp; vbLf
+   sOutput = sOutput &amp; 	"PARAMETERS directly on the " &amp; _
+         oCamera.Name &amp; " object......" &amp; vbLf
+   sOutput = sOutput &amp; "----------------------------------------" &amp; _
+         "----------------------------------------" &amp; vbLf
+
+   ' Print out the information for each parameter
+   for each oParam in oCamera.Parameters
+      sOutput = sOutput &amp; oParam.ScriptName &amp; ": " &amp; vbTab &amp; _
+	    "(" &amp; oParam.Name &amp; ")" &amp; vbTab &amp; _
+	    oParam.Description &amp; vbLf
+      next
+	
+      for each oProp in oCamera.Properties
+	 ' Write some headers to identify the start and end of 
+	 ' the list of parameters 
+	 sOutput = sOutput &amp; "----------------------------------------" &amp; _
+                    "----------------------------------------" &amp; vbLf
+         sOutput = sOutput &amp; 	"PARAMETERS on the " &amp; oCamera.Name &amp; "." &amp; _
+	          oProp.Name &amp; " property......" &amp; vbLf
+         sOutput = sOutput &amp; "----------------------------------------" &amp; _
+
+                    "----------------------------------------" &amp; vbLf
+         ' Print out the information for each parameter
+	 for each oParam in oProp.Parameters
+	    sOutput = sOutput &amp; oParam.ScriptName &amp; ": " &amp; vbTab &amp; _
+	          "(" &amp; oParam.Name &amp; ")" _
+              &amp; vbTab &amp; oParam.Description &amp; vbLf
+         next
+      next
+	' Write a footer to identify the end of the file
+        sOutput = sOutput &amp; "========================================" &amp; _ 
+                  "========================================" &amp; vbLf
+end if
+
+' Write the output to the external file
+<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> fso = CreateObject( "Scripting.FileSystemObject" )
+<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> ts = fso.CreateTextFile( "C:\Temp\Camera_Parameter_List.txt", true )
+ts.Write sOutput 
+ts.Close
+
+' Just so you know when it's done
+Application.LogMessage "Output complete."</pre></div> 
+                  </div> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WS74F57519B241D54691EA264324B2CEC7-0019"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-94AE5BE5-260D-491E-8D3C-FA5A8CBE419E"></a></span> Accessing a Specific Parameter by its Name with the Object Model
+                  </h3>  
+                  <p><span class="anchor_wrapper"><a name="GUID-0A775B99-3536-4791-B724-5AA42F1B4BF1"></a></span>A lot of script writers use the automatic logging feature of the History Log to give
+                     the correct command syntax for certain commands in the scripts they want to write.
+                     Some also activate the Use Script Names feature from the Show menu in the Softimage
+                     explorer so that they can see how to refer to each object in scripting.
+                  </p> 
+                  <p><span class="anchor_wrapper"><a name="GUID-BE045FEC-0C95-4810-ABFE-732FD21902CF"></a></span>However, the object model uses a different way to access objects and parameters. What
+                     the History Log of the Script Editor shows is the object and parameter names (generally
+                     called String Expressions) that can be used with commands, but not necessarily with
+                     the object model. The object model uses its own set of object and parameter names,
+                     some of which have shortcuts.
+                  </p> 
+                  <p><span class="anchor_wrapper"><a name="GUID-B8DDC724-4EE9-4CD6-A16F-D9DC9CF7BD5A"></a></span>If you want to use the object model, it's a little more involved, but it makes sense
+                     once you know what to look for. You just traverse down the hierarchy as it appears
+                     in the explorer.
+                  </p> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WS74F57519B241D54691EA264324B2CEC7-001A"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-6DC99DC0-46EC-4E92-8389-11A3C7A404DE"></a></span> To get the camera visibility property (parameter set)
+                     </h4>  
+                     <div class="codeBlock"><pre class="prettyprint">
+' First get the camera (Camera object)
+<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> oCamera = ActiveSceneRoot.FindChild( , siCameraPrimType )
+
+' Underneath the camera are its properties (Properties returns the 
+' PropertyCollection)
+<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> oProps = oCamera.Properties
+
+' Once you have all the property sets (PropertyCollection) you can specify the 
+' one you want (the Property object is returned)
+<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> oVis = oProps( "visibility" )
+
+' Now we have a single Property (property <a href="javascript:void(0)" data="set" class="a_multireflink">set</a>), so we need to get all the 
+' parameters for that property <a href="javascript:void(0)" data="set" class="a_multireflink">set</a> (Parameters returns the ParameterCollection)
+<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> oParams = oVis.Parameters
+
+' Again we choose the single parameter we want from the collection (the 
+' Parameter object is returned)
+' NB: This is where what appears in the History Log comes into play...
+<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> oViewVis = oParams( "viewvis" )
+
+' And once you have a single Parameter object, you can get it's value...
+' (the line below returns 'INFO : "False")
+logmessage oViewVis.Value
+
+' ...or <a href="javascript:void(0)" data="set" class="a_multireflink">set</a> it...
+oViewVis.Value = true
+
+' And you can make as many shortcuts as you like, so...
+oCamera.Properties( "visibility" ).Parameters( "viewvis" ).Value = false
+</pre></div> 
+                  </div> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WS74F57519B241D54691EA264324B2CEC7-001B"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-70F748BD-E429-4DAA-951F-CCD736584876"></a></span> What You Should Know about the Range of a Parameter
+                  </h3>  
+                  <p><span class="anchor_wrapper"><a name="GUID-204EA138-E97A-49AE-A7CA-F2E86CB77AC5"></a></span>Using the object model to set parameters can bypass the maximum and minimum values
+                     allowed. Setting a value outside the allowable range can cause unpredictable results.
+                  </p> 
+                  <p><span class="anchor_wrapper"><a name="GUID-546A1EBA-6F3B-42B0-B2C2-C8CF408A8AA1"></a></span>To avoid this, it's good programming practice to get the maximum and minimum allowable
+                     values for a parameter before you try to change them.
+                  </p> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WS74F57519B241D54691EA264324B2CEC7-001C"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-1FD60A4C-A54E-40B8-813B-15FA9179CB88"></a></span> To find out what the range is for a given parameter
+                     </h4>  
+                     <div class="codeBlock"><pre class="prettyprint">
+' Pick a number out of the air for the new value for a parameter
+dProposedValue = -10.00
+
+' Set up an object and get its Display::Near Distance to
+' Output Camera parameter
+<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> oNull = ActiveSceneRoot.AddNull()
+<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> oParam = oNull.Properties( "display" ).Parameters( "neardist" )
+
+' Get the range of allowable values for this parameter
+dMaxValue = oParam.Max
+dMinValue = oParam.Min
+
+' Now check the number you were going to use against the range
+if dProposedValue &gt; dMaxValue then
+   ' Here is where you write some code to handle it
+   Application.LogMessage dProposedValue &amp; " has exceeded the " _
+         &amp; "maximum value (" &amp; dMaxValue &amp; ") <a href="javascript:void(0)" data="set" class="a_multireflink">set</a> for this " _
+         &amp; "parameter. Please adjust the value and try again."
+elseif dProposedValue &lt; dMinValue then
+   ' Here is where you write some code to handle it
+   Application.LogMessage dProposedValue &amp; " has not met the " _
+         &amp; "minimum value (" &amp; dMinValue &amp; ") <a href="javascript:void(0)" data="set" class="a_multireflink">set</a> for this " _
+         &amp; "parameter. Please adjust the value and try again."
+else
+   ' Here is where you update the parameter with your value
+   oParam.Value = dProposedValue
+   Application.LogMessage oParam.Name &amp; "'s value = " &amp; oParam.Value
+end if
+
+' Output of above script:
+'INFO : "-10 has not met the minimum value (0) <a href="javascript:void(0)" data="set" class="a_multireflink">set</a> for this parameter. Please adjust the value and try again."
+</pre></div> 
+                  </div> 
+               </div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS74F57519B241D54691EA264324B2CEC7-001D"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-DF40BE59-80E5-4D0C-9A50-D638D53B360C"></a></span> Getting and Setting Object Data
+               </h2>    
+               <p><span class="anchor_wrapper"><a name="GUID-9C07E34D-A3FB-4C0E-B12F-ECB800BFACA4"></a></span>Once you have identified the object you want to work with, you need to explain what
+                  you want to find out about it or what you want to do to it. For example, if you want
+                  to display the object's name in the history pane of the Script Editor, you could use
+                  the following:
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+Set oRoot = ActiveSceneRoot
+Set oThing = oRoot.AddGeometry( "Cube", "MeshSurface" )
+Application.LogMessage oThing.Name  ' Getting information
+
+If you want to change the <a href="javascript:void(0)" data="name" class="a_multireflink">name</a> of the object instead, you could use this code fragment:
+
+Set oRoot = ActiveSceneRoot
+Set oThing = oRoot.AddGeometry( "Cube", "MeshSurface" )
+oThing.Name = "Toybox"              ' Setting information
+</pre></div> 
+            </div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

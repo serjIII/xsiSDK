@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-7664E770-5EA2-4512-BD7C-E84D5A47EC7C" />
+      <meta name="topic-type" content="concept" />
+      <title>Using Prefixes with Custom Properties</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ reflinkdata.push(["set", "si_cpp/group__RenderMapDefine.html#ga793ad1cfa149967fe4b97fc66251b831", "C++ API Reference", "../"]); 
+reflinkdata.push(["name", "si_cpp/group__RenderMapDefine.html#ga882c17490314f92c7159d6d7d69696e7", "C++ API Reference", "../"]); 
+reflinkdata.push(["color", "si_cpp/group__RenderMapDefine.html#ga9b982a36d73688fd43fe5f3539824d21", "C++ API Reference", "../"]); 
+reflinkdata.push(["version", "si_cpp/group__RenderMapDefine.html#gad6034d1c8c050eba0cf6533a8e6f3785", "C++ API Reference", "../"]); 
+</script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-7664E770-5EA2-4512-BD7C-E84D5A47EC7C"></a></span><div class="head">
+            <h1>Using Prefixes with Custom Properties</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-2C9E9D89-5AB6-446F-AE8E-6C1DB5903F86"></a></span>The naming conventions for property page event handlers differ slightly for SPDL-based,
+               <span class="char_link"><a href="#!/url=./files/cus_ppg_PropertyCallbacks.htm#WS34BA39B437A993419C80CAB58E3BEFA1-0021">runtime and plug-in properties:</a></span> 
+            </p><span class="anchor_wrapper"><a name="UL_DF68830871B44ED79C77AB76E31214C5"></a></span><ul>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-134D2633-E130-4BB7-8340-837290E12CE5"></a></span>By default, plug-in based (self-installing) properties use the name of the property
+                     as a prefix. For example, the <span class="code" translate="no">MyProp</span> property's <a href="#!/url=./si_cmds/cb_Property_OnInit.html">OnInit</a> callback would be <span class="code" translate="no">MyProp_OnInit</span>. 
+                  </p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-5C1035D8-BFC1-48C0-8F26-29BE19848495"></a></span>By default, SPDL- and runtime-based properties use no prefix at all. For example,
+                     the <span class="code" translate="no">MyProp</span> property's <a href="#!/url=./si_cmds/cb_Property_OnInit.html">OnInit</a> callback would be simply <span class="code" translate="no">OnInit</span> whether it's defined in a SPDL file or on the fly. 
+                  </p> 
+               </li>
+            </ul>
+            <p><span class="anchor_wrapper"><a name="GUID-4202883D-8428-4664-AF9A-7713ED817AB8"></a></span>However, when a prefix is specified, it is used across the board for all event handler
+               callbacks, regardless of the name of the property or how it was implemented. For example,
+               for the <span class="code" translate="no">MyProp</span> property with a prefix defined as <span class="code" translate="no">FooBar</span>, the <a href="#!/url=./si_cmds/cb_Property_OnInit.html">OnInit</a> callback would be <span class="code" translate="no">FooBar_OnInit</span> for SPDL-based, runtime-based, and plug-in based custom properties alike. 
+            </p>
+            <div class="section"><span class="anchor_wrapper"><a name="WSEFBD9C1CA813C8499600F28142419F26-0014"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-8E3502C4-2B59-4B91-9D93-77D560DE824F"></a></span>Defining a Prefix
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-159AD587-8F1B-4231-9DD3-000ADEC5C618"></a></span>For <span class="char_link"><a href="#!/url=./files/cus_self_Prefixes.htm#WSEFBD9C1CA813C8499600F28142419F26-0015">runtime</a></span> and <span class="char_link"><a href="#!/url=./files/cus_self_Prefixes.htm#WSEFBD9C1CA813C8499600F28142419F26-0016">plug-in properties</a></span> you can explicitly specify a prefix via scripting, by setting the siUILogicPrefix
+                  via <a href="#!/url=./si_om/PPGLayout.SetAttribute.html">PPGLayout.SetAttribute</a> or PPGLayout::PutAttribute. <span class="char_link"><a href="#!/url=./files/cus_self_Prefixes.htm#WSEFBD9C1CA813C8499600F28142419F26-0017">SPDL-based properties</a></span>, on the other hand, can either define a prefix via scripting in the Logic block of
+                  the SPDL file or via the LogicPrefix setting. 
+               </p> 
+               <div class="section"><span class="anchor_wrapper"><a name="WSEFBD9C1CA813C8499600F28142419F26-0015"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-2968AA7D-D1BD-4A5E-BEB8-A626612D7F69"></a></span>Example: Simple Runtime Property
+                  </h3> 
+                  <p><span class="anchor_wrapper"><a name="GUID-83AD762B-8589-48DC-BFE4-46A97BE05F81"></a></span>This example creates a very simple custom property on the fly using the prefix <span class="code" translate="no">FooBar</span>, which must appear on the event handlers for this page's logic. 
+                  </p> 
+                  <div class="codeBlock"><pre class="prettyprint">// Define an on-the-fly property with a single boolean parameter
+var root = Application.ActiveSceneRoot;
+var prop = root.AddCustomProperty( "RuntimePropertyDemo" );
+prop.AddParameter3( "BooParam", siBool );
+
+
+// Access the logic via the layout and simply add the handlers 
+// specified below via the JScript toString() function
+var ppglay = prop.PPGLayout;
+ppglay.Logic = FooBar_OnInit.toString() + FooBar_BooParam_OnChanged.toString();
+
+// Specify the new prefix and <a href="javascript:void(0)" data="set" class="a_multireflink">set</a> the language to JScript
+ppglay.Language = "JScript";
+<em class="strong">ppglay.SetAttribute( siUILogicPrefix, "FooBar_" );</em> // explicitly specify the underscore 
+
+
+//
+// Event handlers: for demo, these just log their names when called
+//
+// INFO : OnInit handler called
+function <em class="strong">FooBar_OnInit</em>() // specify the prefix before 'OnInit'
+
+{
+	Application.LogMessage( "OnInit handler called" );
+}
+
+// INFO : Parameter_OnChanged handler called
+function <em class="strong">FooBar_BooParam_OnChanged</em>() // specify the prefix before 'Parameter_OnChanged'
+{
+	Application.LogMessage( "Parameter_OnChanged handler called" );
+}</pre></div> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WSEFBD9C1CA813C8499600F28142419F26-0016"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-F32D971D-86C1-4F6F-B65E-EF95960CD5AE"></a></span>Example: Simple Plug-in Based Property
+                  </h3> 
+                  <p><span class="anchor_wrapper"><a name="GUID-4CA715F4-ABCA-45EF-8E75-83BA86169895"></a></span>This example is very similar to its <span class="char_link"><a href="#!/url=./files/cus_self_Prefixes.htm#WSEFBD9C1CA813C8499600F28142419F26-0015">runtime</a></span> counterpart except that it is a scripted plug-in. To test it, follow these instructions:
+                     
+                  </p> <span class="anchor_wrapper"><a name="GUID-606A16E4-3D26-4CC9-A0D8-67CB333875D9"></a></span><ol type="1" start="1">
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-6E53A0AF-A38C-460D-86B6-02441DF5DD35"></a></span>Copy and paste the example text below into a file under the <span class="filePath" translate="no">Applications/Plugins</span> folder of your user directory (call it <span class="filePath" translate="no">PluginPropertyDemoPlugin.js</span>). 
+                        </p> 
+                     </li>
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-693DA29A-BC12-4586-B82C-F3CC9E823DE5"></a></span>Apply the property to the scene root by running the following in the script editor:
+                           
+                        </p> 
+                        <div class="codeBlock"><pre class="prettyprint">Application.ActiveSceneRoot.AddProperty( "PluginPropertyDemo" );</pre></div> 
+                     </li>
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-58E247EF-33D0-485D-AA85-B01EFAC4D81D"></a></span>Inspect the new property (the <span class="code" translate="no">OnInit</span> event handler will log a message). 
+                        </p> 
+                        <p><span class="anchor_wrapper"><a name="GUID-0ADE0B1E-090D-4177-BE4B-18B07E04FA0A"></a></span>You can toggle the <span class="MenuCascade" id="GUID-5C28FCE5-2B44-45D4-B3CF-E9E31301A1CC">BooParam</span> check box to see its event handler log messages to the screen. 
+                        </p> 
+                     </li>
+                  </ol> 
+                  <p><span class="anchor_wrapper"><a name="GUID-06D4DFE2-473F-4A14-BF9B-A3D50A8A7B60"></a></span>In this example, notice that not only do the <a href="#!/url=./si_cmds/cb_Property_OnInit.html">OnInit</a> and <a href="#!/url=./si_cmds/cb_Property_OnChanged.html">OnChanged</a> callbacks use the prefix, but also the <a href="#!/url=./si_cmds/cb_Property_Define.html">Define</a> and <a href="#!/url=./si_cmds/cb_Property_DefineLayout.html">DefineLayout</a> callbacks. 
+                  </p> 
+                  <div class="codeBlock"><pre class="prettyprint">// Define a plug-in based property with a single boolean parameter
+//
+// Notice that the Define and DefineLayout callbacks use the 
+// property <a href="javascript:void(0)" data="name" class="a_multireflink">name</a>; only the event handlers use the prefix
+function XSILoadPlugin( in_reg )
+{
+	in_reg.Name = "PluginPropertyDemoPlugin";
+	in_reg.RegisterProperty( "PluginPropertyDemo" );
+	return true;
+}
+
+// Add parameters in this callback
+function PluginPropertyDemo_Define( in_ctxt )
+{
+	var prop = in_ctxt.Source; // Get the CustomProperty
+	prop.AddParameter3( "BooParam", siBool );
+	return true;
+}
+
+// Set the language and prefix in this callback (the logic is automatically 
+// provided by the event handler callbacks specified at the bottom of the file)
+function PluginPropertyDemo_DefineLayout( in_ctxt )
+{
+	var ppglay = in_ctxt.Source; // Get the PPGLayout
+	
+	// Set the language to JScript and specify the new prefix 
+	ppglay.Language = "JScript";
+	ppglay.SetAttribute( siUILogicPrefix, "FooBar_" ); // explicitly specify the underscore 
+	return true;
+}
+
+
+//
+// Event handlers: for demo, these just log their names when called
+//
+// INFO : OnInit handler called
+function FooBar_OnInit() // specify the prefix before 'OnInit'
+{
+	Application.LogMessage( "OnInit handler called" );
+}
+
+// INFO : Parameter_OnChanged handler called
+function FooBar_BooParam_OnChanged() // specify the prefix before 'Parameter_OnChanged'
+{
+	Application.LogMessage( "Parameter_OnChanged handler called" );
+}</pre></div> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WSEFBD9C1CA813C8499600F28142419F26-0017"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-7701CAF7-58C2-4AA0-9749-2C4B7BF674FF"></a></span>Example: Simple SPDL Shader Property
+                  </h3> 
+                  <p><span class="anchor_wrapper"><a name="GUID-9DEA0A12-EFCA-49D8-BE4C-E31C9985574C"></a></span>This example demonstrates how to set the prefix using the LogicPrefix setting. It
+                     is a fully functional SPDL file although as a shader it will obviously fail without
+                     some kind of library file. To test it, follow these instructions: 
+                  </p> <span class="anchor_wrapper"><a name="GUID-9AA5A62F-D422-4CC9-942F-14C6D4FDCB32"></a></span><ol type="1" start="1">
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-63608E23-819E-47C2-B562-59526D237E7F"></a></span>Copy and paste the text below into a file under the <span class="filePath" translate="no">Applications/spdl</span> folder of your user directory (call it <span class="filePath" translate="no">SPDLPropertyDemo.spdl</span>). 
+                        </p> 
+                     </li>
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-45C1BF4E-22CB-4340-BBA4-985C2E698AC4"></a></span>From the Plug-in Tree in Softimage, right-click the new spdl file (click <span class="MenuCascade" id="GUID-E45546AE-C6F5-48CE-B994-F3C4B5165CE2">Update All</span> if you don't see it) and choose <span class="MenuCascade" id="GUID-D4EF1292-BF61-4676-B7E6-9C75ADA3F72F">Regenerate Preset</span>. 
+                        </p> 
+                     </li>
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-56B447CF-AD34-42A4-A322-70461CC5ABEB"></a></span>Apply the shader to a cube in Softimage scene by running the following in the script
+                           editor: 
+                        </p> 
+                        <div class="codeBlock"><pre class="prettyprint">var obj = Application.ActiveSceneRoot.AddGeometry( "Cube", "NurbsSurface" );
+var shaderpreset = XSIUtils.BuildPath( 
+   Application.InstallationPath( siUserPath ),
+   "Data", "DSPresets", "Shaders", "Texture", "SPDLPropertyDemo.Preset" );
+CreateShaderFromPreset( shaderpreset, "Sources.Materials.DefaultLib.Material" );
+SIConnectShaderToCnxPoint( "Sources.Materials.DefaultLib.Material.SPDLPropertyDemo", 
+	"Sources.Materials.DefaultLib.Scene_Material.Phong.ambient", false );</pre></div> 
+                     </li>
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-73F84685-E525-4426-97C2-B3B93B59DA3B"></a></span>Inspect the new shader property (the <span class="code" translate="no">OnInit</span> event handler will log a message). 
+                        </p> 
+                        <p><span class="anchor_wrapper"><a name="GUID-0723B9A9-A0DB-499E-A812-E3300DE84B88"></a></span>You can toggle the <span class="MenuCascade" id="GUID-532D8BF3-18D3-4AD5-899D-E23FFD853B28">BooParam</span> check box to see its event handler log messages to the screen. 
+                        </p> 
+                     </li>
+                  </ol> 
+                  <p><span class="anchor_wrapper"><a name="GUID-98AA3E5D-D48F-4FFE-A1B8-2F143011153C"></a></span>Notice that, in this SPDL snippet, the prefix is specified exactly as in the <span class="char_link"><a href="#!/url=./files/cus_self_Prefixes.htm#WSEFBD9C1CA813C8499600F28142419F26-0015">runtime</a></span> and <span class="char_link"><a href="#!/url=./files/cus_self_Prefixes.htm#WSEFBD9C1CA813C8499600F28142419F26-0016">plug-in</a></span> based examples, and the event handlers are identical. 
+                  </p> 
+                  <div class="codeBlock"><pre class="prettyprint">SPDL
+Version = "2.0.0.0";
+Reference = "{0DEC8359-4327-42E4-AE1B-A9504FF4047C}";
+PropertySet "SPDLPropertyDemo_pset"
+{
+	Parameter "out" output
+	{
+		GUID = "{248FCEFE-DBA6-412A-9A8F-17A96D97F1E3}";
+		Type = <a href="javascript:void(0)" data="color" class="a_multireflink">color</a>;
+	}
+	Parameter "BooParam" input
+	{
+		GUID = "{4F5EE6C2-D219-4986-B455-EFAA6C538FC7}";
+		Type = boolean;
+		Value = off;
+	}
+}
+
+MetaShader "SPDLPropertyDemo_meta"
+{
+	Name = "SPDL Property Demo Shader";
+	Type = texture;
+	Renderer "mental ray"
+	{
+		Name = "SPDLPropertyDemo";
+		FileName = "SPDLPropertyDemo";
+		Options
+		{
+			"<a href="javascript:void(0)" data="version" class="a_multireflink">version</a>" = 1;
+		}
+	}
+}
+
+Layout "Default"
+{
+	BooParam;
+}
+
+Language = "JScript";
+<em class="strong">LogicPrefix = "FooBar_";</em>
+# Alternatively you could copy the code between the BeginScript and EndScript
+# keywords and save them in the following file (and uncomment the next line):
+#LogicFile = "$XSI_USERHOME/Application/spdl/lib/SPDLPropertyDemo.js";
+
+BeginScript
+	//
+	// Event handlers: for demo, these just log their names when called
+	//
+	// INFO : OnInit handler called
+	function <em class="strong">FooBar_OnInit()</em> // specify the prefix before 'OnInit'
+	{
+		Application.LogMessage( "OnInit handler called" );
+	}
+	
+	// INFO : Parameter_OnChanged handler called
+	function <em class="strong">FooBar_BooParam_OnChanged</em>()					// specify the prefix before 'Parameter_OnChanged'
+	{
+		Application.LogMessage( "Parameter_OnChanged handler called" );
+	}
+EndScript
+
+Plugin = Shader
+{
+	FileName = "SPDLPropertyDemo";
+}</pre></div> 
+               </div> 
+            </div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

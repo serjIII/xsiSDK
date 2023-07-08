@@ -1,0 +1,236 @@
+var topic = "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n\
+\n\
+<!-- saved from url=(0024)http://docs.autodesk.com -->\n\
+<html>\n\
+   <head>\n\
+<link href=\"../style/prettify.css\" type=\"text/css\" rel=\"stylesheet\" />\n\
+<script type=\"text/javascript\" src=\"../scripts/prettify.js\"></script><script src=\"../scripts/lib/jquery-1.9.1.min.js\" type=\"text/javascript\"></script>\n\
+      <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n\
+      <meta name=\"product\" content=\"SI\" />\n\
+      <meta name=\"release\" content=\"2015\" />\n\
+      <meta name=\"book\" content=\"Developer\" />\n\
+      <meta name=\"created\" content=\"2014-03-13\" />\n\
+      <meta name=\"topicid\" content=\"GUID-D17D287E-31B3-469D-93BB-E5285459BA20\" />\n\
+      <meta name=\"indexterm\" content=\"scripts: managing files\" />\n\
+      <meta name=\"indexterm\" content=\"files: scripts\" />\n\
+      <meta name=\"indexterm\" content=\"script editor: opening files\" />\n\
+      <meta name=\"indexterm\" content=\"script editor: creating files\" />\n\
+      <meta name=\"topic-type\" content=\"concept\" />\n\
+      <title>Managing Script Files</title><script type=\"text/javascript\" src=\"../scripts/utils/adsk.redirect.js\"></script></head>\n\
+   <body height=\"100%\"><div class=\"body_content\" id=\"body-content\"><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/ac_common.js\"); });</script><script type=\"text/javascript\">var reflinkid = \"si_cpp\"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on(\'click\', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/multireflink.js\"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$(\"div#WidgetFloaterPanels,link[href*=\'microsofttranslator.com\'],script[src*=\'microsofttranslator.com\'],script[src*=\'bing.com\']\").remove();</script><script type=\'text/javascript\'>$(\"div#navigation,div#breadcrumbs,div#banner\").attr(\"translate\",\"no\"); var mtLocation = ((location && location.href && location.href.indexOf(\'https\') == 0)?\'https://ssl.microsofttranslator.com\':\'http://www.microsofttranslator.com\')+\'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages=\'; yepnope.injectJs(mtLocation, function() {}, { charset:\'utf-8\', type:\'text/javascript\' } );</script><script type=\"text/javascript\">\n\
+ </script><!-- begin MT -->\n\
+            \n\
+            <div id=\'MicrosoftTranslatorWidget\' class=\'Dark\' style=\'position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden\'></div><div id=\"reflinkdiv\" style=\"display:none; font-family: \'RobotoRegular\', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible\"></div>\n\
+      <div><span class=\"anchor_wrapper\"><a name=\"GUID-D17D287E-31B3-469D-93BB-E5285459BA20\"></a></span><div class=\"head\">\n\
+            <h1>Managing Script Files</h1>\n\
+         </div>\n\
+         <div class=\"bodyProcess\">\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-9EB50020-258A-40C2-8B94-38E9E4DA3ACA\"></a></span> After you write a script, you can save the contents in the editing pane as a script\n\
+               file. You can also open existing script files in the script editor. \n\
+            </p>\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-D3DB4E1A-1F6C-4944-85CB-814D8AAFE1AB\"></a></span>Scripts are saved as plain text files with an extension that denotes the scripting\n\
+               language. For more information about the supported scripting languages, see <a href=\"#!/url=./files/script_intro-1.htm\">Introduction to Scripting in Softimage</a>. \n\
+            </p>\n\
+            <div class=\"section\"><span class=\"anchor_wrapper\"><a name=\"WS7764D933E362064489C22357B4B7178F-003E\"></a></span> \n\
+               <h2><span class=\"anchor_wrapper\"><a name=\"GUID-0EB0E55E-2FAA-4A7F-AB3A-C7B333B7B2C8\"></a></span>Choosing Where to Save Script Files\n\
+               </h2> \n\
+               <p><span class=\"anchor_wrapper\"><a name=\"GUID-C0973FF1-A672-4C3F-8D4E-5BAC17BFDC0D\"></a></span>Although, you can save script files anywhere, it is recommended that you use a standard\n\
+                  location. This makes it easier to track your scripts, especially when editing and\n\
+                  updating them. The default location is the <span class=\"filePath\" translate=\"no\">Data\\Scripts</span> folder in your user path. \n\
+               </p> \n\
+               <p><span class=\"anchor_wrapper\"><a name=\"GUID-9E24FB8F-C275-4915-9A5E-1F5B1B74DB15\"></a></span> You can click the <span class=\"MenuCascade\" id=\"GUID-BD0E9B2B-A7CA-429A-B5DF-C2339198604F\">Paths</span> button in the Open Script File and Save Script File dialog to choose different locations\n\
+                  as shown in the following figure: \n\
+               </p> <span class=\"anchor_wrapper\"><a name=\"FIG_8207060992404137856A564D86B6C692\"></a></span><div class=\"figure-anchor\"><img src=\"../images/GUID-AA3C2098-E184-459B-9831-432F3D14C92B-low.png\" /></div> <span class=\"anchor_wrapper\"><a name=\"UL_BAD334EFEF584A79A4BD129738DCBD34\"></a></span><ul>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-A4E8C967-2CBC-4980-B02E-7E2CB3054A96\"></a></span><span class=\"MenuCascade\" id=\"GUID-53BB3081-5498-445F-8BAD-85F376772805\"> Installation (Factory)</span> is the location where the Softimage program files are installed. Scripts saved here\n\
+                        are available to any user on the local machine. You must copy these scripts if you\n\
+                        install Softimage to a new location. \n\
+                     </p> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-2A29F4DA-F14C-4DBC-A383-15555427783F\"></a></span> <span class=\"MenuCascade\" id=\"GUID-29000BB5-5B7D-442D-9FA0-B85166B3329F\">Workgroup</span> lets you share scripts, presets, and other data with members of your team. To set\n\
+                        a workgroup application path, select <span class=\"MenuCascade\" id=\"GUID-60C63619-EFAE-4541-BBDF-F2EFE1425BFF\">File <img src=\"../images/ac.menuaro.gif\" /> Preferences</span> in the application menu bar and set the <span class=\"MenuCascade\" id=\"GUID-50942300-A632-4EBC-9F70-A4241834863C\">Workgroup(s)</span> option in the Data Management preferences as shown in the following figure. \n\
+                     </p> <span class=\"anchor_wrapper\"><a name=\"FIG_2E7C284462E145BFB2A34E82FCE1B34C\"></a></span><div class=\"figure-anchor\"><img src=\"../images/GUID-06045496-ED65-4B3D-946A-829E84A27CD3-low.png\" /></div> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-A33955B0-216A-44BC-A7E2-A2B11A783BF3\"></a></span> <span class=\"MenuCascade\" id=\"GUID-CE870EA0-E9B5-4FCF-B29E-A8460955276C\">User</span> is your user path. For example, <span class=\"filePath\" translate=\"no\">C:\\users\\xyz\\Autodesk\\Softimage_&lt;version&gt;</span>. You can access the scripts saved in this location whenever you log on as the same\n\
+                        user. \n\
+                     </p> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-E98957C7-39B2-497E-B04C-5BC39C699BD7\"></a></span> <span class=\"MenuCascade\" id=\"GUID-049DAC95-1D95-45A1-8682-CF11315477AF\">Sample Project</span> is a project that contains sample scenes included with Softimage. It is not recommended\n\
+                        to save your scripts here. \n\
+                     </p> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-4283C392-8E94-4C68-85E4-7868BCC99037\"></a></span> <span class=\"MenuCascade\" id=\"GUID-61A9E0DA-94F3-4BBC-A5D5-B8A158DB597C\">Current Project</span> is a project that contains the open scene. You can use this folder if your script\n\
+                        is specific to a particular project. \n\
+                     </p> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-00497CA8-16AF-4702-BF22-B5B0CCEDA73C\"></a></span><span class=\"MenuCascade\" id=\"GUID-E9B377D5-4861-43B8-95EC-3C530A3B83C8\">Factory Add-ons</span> is the <span class=\"filePath\" translate=\"no\">Addons</span> folder in the location where the Softimage program files are installed. \n\
+                     </p> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-F1657E92-A1BE-4053-A8AB-043AEEA8F593\"></a></span><span class=\"MenuCascade\" id=\"GUID-BB502C2E-4581-45F0-A7B7-02BC035F30F7\"> User Add-ons</span> is the <span class=\"filePath\" translate=\"no\">Addons</span> folder in your user path. \n\
+                     </p> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-AFE783DB-B740-4C65-B938-EA93AFF5E199\"></a></span>Other projects in your Projects List are listed under <em class=\"strong\">Projects</em>. \n\
+                     </p> \n\
+                  </li>\n\
+               </ul> \n\
+               <p><span class=\"anchor_wrapper\"><a name=\"GUID-A1FF6D37-5EFF-4B51-89A6-18666F87989B\"></a></span>There is a <span class=\"filePath\" translate=\"no\">Scripts</span> folder in each project. This is a good location to save a script file if it is specific\n\
+                  to a particular project or scene, or if you want to make sure that the correct version\n\
+                  of a script is stored with a project for archiving. \n\
+               </p> \n\
+            </div>\n\
+            <div class=\"section\"><span class=\"anchor_wrapper\"><a name=\"WS7764D933E362064489C22357B4B7178F-0040\"></a></span> \n\
+               <h2><span class=\"anchor_wrapper\"><a name=\"GUID-2346E207-0324-4C09-99F7-AC80974CABCF\"></a></span>Saving Script Files\n\
+               </h2> \n\
+               <p><span class=\"anchor_wrapper\"><a name=\"GUID-24B70997-64EF-4696-AE94-02ECC5F3B265\"></a></span>You can either save the entire contents of the editing pane or just the selected text.\n\
+                  \n\
+               </p> \n\
+               <p><span class=\"anchor_wrapper\"><a name=\"GUID-2CB9ACBE-30AC-451F-A521-58A47C787A5D\"></a></span> <em class=\"strong\">To save the entire contents of the editing pane to the disk as a script file, do one\n\
+                     of the following:</em> \n\
+               </p> <span class=\"anchor_wrapper\"><a name=\"UL_A2BC9572282B4B61917BB16E79E4B12F\"></a></span><ul>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-51C1AEF9-35B2-4514-9474-B02FD3CA34A0\"></a></span>Click the save icon on the command bar. \n\
+                     </p> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-3C30F013-61EB-4F18-B239-894CA6655AD0\"></a></span>Select <span class=\"MenuCascade\" id=\"GUID-70C06C57-DAA7-4725-B1E7-052C414A859C\">File <img src=\"../images/ac.menuaro.gif\" /> Save</span> from the command bar. \n\
+                     </p> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-F86AA48A-B34B-47FC-B5AC-834962A36FD8\"></a></span>Press Ctrl+S. \n\
+                     </p> \n\
+                  </li>\n\
+               </ul> \n\
+               <p><span class=\"anchor_wrapper\"><a name=\"GUID-B4E48A85-242B-45A2-A62C-A1D6804D1F04\"></a></span>You must make sure to provide the correct file extension based on the language of\n\
+                  the script. \n\
+               </p> \n\
+               <p><span class=\"anchor_wrapper\"><a name=\"GUID-9805C09E-6EDE-419D-BB6D-5B1EFBDAE246\"></a></span> <em class=\"strong\">To save the entire contents of the editing pane with a new name:</em> \n\
+               </p> <span class=\"anchor_wrapper\"><a name=\"UL_4A0C07D188CB4DA29699CC59CC4A29F7\"></a></span><ul>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-870264D6-BA4E-47BB-A3A6-DA078B9A6782\"></a></span>Select <span class=\"MenuCascade\" id=\"GUID-0A4E9966-457B-4888-80B4-D6C60F6862C1\">File <img src=\"../images/ac.menuaro.gif\" /> Save As</span> from the command bar. \n\
+                     </p> \n\
+                  </li>\n\
+               </ul> \n\
+               <p><span class=\"anchor_wrapper\"><a name=\"GUID-A70FC6CD-982B-4FFE-9F24-FBB8A17128D0\"></a></span> <em class=\"strong\">To save selected text as a script file:</em> \n\
+               </p> <span class=\"anchor_wrapper\"><a name=\"GUID-814B5BE5-895D-404D-912B-4D00F06357EA\"></a></span><ol type=\"1\" start=\"1\">\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-12D0B7BB-320C-4DBC-A1ED-6C3A67632293\"></a></span>Select the text in the editing pane. \n\
+                     </p> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-0D8EAB42-859C-4FDC-87AC-97A6E8B33097\"></a></span>Select <span class=\"MenuCascade\" id=\"GUID-D18564C9-2068-46CD-83A9-5B118A1599D3\">File <img src=\"../images/ac.menuaro.gif\" /> Save Selection</span> from the command bar. \n\
+                     </p> \n\
+                  </li>\n\
+               </ol> \n\
+               <p><span class=\"anchor_wrapper\"><a name=\"GUID-FF233677-F282-44A5-944D-708137012692\"></a></span>You must make sure that the file extension is correct for the script language when\n\
+                  saving files. \n\
+               </p> \n\
+            </div>\n\
+            <div class=\"section\"><span class=\"anchor_wrapper\"><a name=\"WS7764D933E362064489C22357B4B7178F-0044\"></a></span> \n\
+               <h2><span class=\"anchor_wrapper\"><a name=\"GUID-B5AFBF0A-1584-4D47-86AE-6180A75129DD\"></a></span>Opening Script Files\n\
+               </h2>  \n\
+               <p><span class=\"anchor_wrapper\"><a name=\"GUID-6C6FF890-B57E-4DAC-A7B6-FD930EE47325\"></a></span>You can open a script file from the script editor\'s File menu, or by dragging and\n\
+                  dropping. You can also open a script file that is registered as a custom command directly\n\
+                  from its command button. \n\
+               </p> \n\
+               <div><span class=\"anchor_wrapper\"><a name=\"GUID-41048692-E846-4AB6-976F-103C8960869C\"></a></span><div class=\"note-note\"><span class=\"label\">NOTE:</span> The scripting language that is set in your user preferences automatically changes\n\
+                     to the language of the script file when you open it. \n\
+                  </div>\n\
+               </div> \n\
+               <p><span class=\"anchor_wrapper\"><a name=\"GUID-CE5926B9-BC2E-4E91-8684-40E767F0FAB4\"></a></span> <em class=\"strong\">To open a script file from the File menu:</em> <span class=\"anchor_wrapper\"><a name=\"GUID-E2D9390D-5CD4-4391-B832-BBF80AAD9B8A\"></a></span><ol type=\"1\" start=\"1\">\n\
+                     <li> \n\
+                        <p><span class=\"anchor_wrapper\"><a name=\"GUID-432847D2-50F6-42EB-81B2-0777A7572342\"></a></span>Do one of the following to display the Open dialog box: \n\
+                        </p> <span class=\"anchor_wrapper\"><a name=\"UL_FFA1DD7B34834BC6817BD423D0A42D8F\"></a></span><ul>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-962323AA-1D66-4E0B-A7D4-23397C804632\"></a></span> Select <span class=\"MenuCascade\" id=\"GUID-4DF7C80E-FFB8-4BDD-B08B-B74BD9D45B36\">File <img src=\"../images/ac.menuaro.gif\" /> Open</span> from the command bar. \n\
+                              </p> \n\
+                           </li>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-EC04CCFA-BB31-4FE7-A064-0A2D82D0A5CB\"></a></span> Press Ctrl+O. \n\
+                              </p> \n\
+                           </li>\n\
+                        </ul> \n\
+                     </li>\n\
+                     <li> \n\
+                        <p><span class=\"anchor_wrapper\"><a name=\"GUID-257D27F0-1740-434D-B9E1-C4DC51B6FB35\"></a></span>Select a script file and click <span class=\"MenuCascade\" id=\"GUID-BF37DC91-8A1E-4C98-95DE-0E023BFA1DF0\">OK</span>. \n\
+                        </p> \n\
+                        <p><span class=\"anchor_wrapper\"><a name=\"GUID-B29F35BA-DCFB-472C-870A-6313086AAAA8\"></a></span>The contents of the script file appear in a tab in the editing pane. The name of the\n\
+                           file is displayed in the script editor\'s title bar. \n\
+                        </p> \n\
+                     </li>\n\
+                  </ol> \n\
+               </p> \n\
+               <p><span class=\"anchor_wrapper\"><a name=\"GUID-283E80EE-E7DB-40AC-AE17-7BD322D3F03C\"></a></span> <em class=\"strong\">To open a script file by dragging and dropping:</em> <span class=\"anchor_wrapper\"><a name=\"UL_A40A5CFCA7504E45BE0E043D2A11F686\"></a></span><ul>\n\
+                     <li> \n\
+                        <p><span class=\"anchor_wrapper\"><a name=\"GUID-9E4013C6-1943-4F8D-9329-76FE002CF73D\"></a></span>Drag the script file from a browser view into the editing pane, or drag a link to\n\
+                           the script file from net view. On Windows, you can also drag it from a folder window.\n\
+                           \n\
+                        </p> \n\
+                     </li>\n\
+                  </ul> \n\
+               </p> \n\
+               <p><span class=\"anchor_wrapper\"><a name=\"GUID-5DC92A28-FB73-4E73-B59E-9A99C72CDDBA\"></a></span> <em class=\"strong\">To open a script file that is registered as a custom command:</em> \n\
+               </p> <span class=\"anchor_wrapper\"><a name=\"UL_A8B8F3DC60C94D6AABC731A9D2A59505\"></a></span><ul>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-3855A3E1-786D-4B87-9F96-C05BBB8D90F1\"></a></span>Right-click the command button in a custom toolbar, and choose <span class=\"MenuCascade\" id=\"GUID-1639DD75-7BD8-4A21-9473-34C85CD6BF13\">Edit Script</span>. \n\
+                     </p> \n\
+                  </li>\n\
+               </ul> \n\
+               <p><span class=\"anchor_wrapper\"><a name=\"GUID-AA50F1EB-A60D-4E17-B9BF-7F938878F3F1\"></a></span> If more than one script file (tab) is open, you can drag the tabs to reorder them\n\
+                  in the editing pane. \n\
+               </p> \n\
+            </div>\n\
+            <div class=\"section\"><span class=\"anchor_wrapper\"><a name=\"WS7764D933E362064489C22357B4B7178F-0048\"></a></span> \n\
+               <h2><span class=\"anchor_wrapper\"><a name=\"GUID-177CC7B8-D8AA-447E-BBC8-AE71C23DBE86\"></a></span>Starting New Script Files\n\
+               </h2>  \n\
+               <p><span class=\"anchor_wrapper\"><a name=\"GUID-825916CF-93D0-4FCE-B75C-D2D0DB34E79E\"></a></span>Do one of the following: \n\
+               </p> <span class=\"anchor_wrapper\"><a name=\"UL_7462098E325640878C1E59B652941DBF\"></a></span><ul>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-BCC9EABA-9357-48D9-9282-FB0C8A03A691\"></a></span>Click the new icon on the command bar. \n\
+                     </p> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-6D015141-BDDB-40B6-AF47-AD656F85D2DB\"></a></span>Select <span class=\"MenuCascade\" id=\"GUID-6ABD15C1-3345-4A08-A4F0-E0D75C2BB8FB\">File <img src=\"../images/ac.menuaro.gif\" /> New</span> from the command bar. \n\
+                     </p> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-8CB37D36-29E5-4CD7-B82F-3208F3374C2B\"></a></span>Press Ctrl+N. \n\
+                     </p> \n\
+                  </li>\n\
+               </ul> \n\
+               <div><span class=\"anchor_wrapper\"><a name=\"GUID-ED639AE5-2E65-490D-A7A3-C7E5E5A2A263\"></a></span><div class=\"note-important\"><span class=\"label\">IMPORTANT:</span>You can clear the contents of the editing pane by choosing <span class=\"MenuCascade\" id=\"GUID-16971C9A-F287-453A-9BBB-856F41B73757\">Clear Script Editor</span> from the <span class=\"MenuCascade\" id=\"GUID-20FB24A7-F63B-451B-A549-11AA8BA9A876\">Edit</span> menu. However, this action only clears the open file in the editing pane and does\n\
+                     not create a new script file. If you select <span class=\"MenuCascade\" id=\"GUID-AD6B380C-66B3-4C82-A99F-C639EEC8797C\">Save</span> instead of <span class=\"MenuCascade\" id=\"GUID-8C6DE17F-8B5B-491F-9CFD-8AA8230FC2CF\">Save As</span> after clearing the editing pane, the open file in the disk is overwritten. \n\
+                  </div>\n\
+               </div> \n\
+            </div>\n\
+            <div class=\"section\"><span class=\"anchor_wrapper\"><a name=\"SECTION_2E2E0331D7A14FC5933FDCC8F3FE04D5\"></a></span> \n\
+               <h2><span class=\"anchor_wrapper\"><a name=\"GUID-104AABF4-6334-48EA-B491-64CA5C00D0BB\"></a></span>Closing Script Files\n\
+               </h2> \n\
+               <p><span class=\"anchor_wrapper\"><a name=\"GUID-A5DDCB7B-5DBB-485E-B9D8-ADC703BC4CA3\"></a></span>You can do the following: <span class=\"anchor_wrapper\"><a name=\"UL_690B3082017D40579274A01C067351FC\"></a></span><ul>\n\
+                     <li> \n\
+                        <p><span class=\"anchor_wrapper\"><a name=\"GUID-662C90CA-D121-4FA0-8AE9-5D53D825FE6B\"></a></span>To close a script file, select <span class=\"MenuCascade\" id=\"GUID-52FE0A85-207F-40D5-8A10-39D8B1D13B82\">File <img src=\"../images/ac.menuaro.gif\" /> Close</span> from the command bar. \n\
+                        </p> \n\
+                     </li>\n\
+                     <li> \n\
+                        <p><span class=\"anchor_wrapper\"><a name=\"GUID-264AB84B-D3F0-4353-93FB-9C101FFF3E6B\"></a></span>To close all script files, select <span class=\"MenuCascade\" id=\"GUID-551838D8-82B1-49B7-B2D5-74CFC3A9FE55\">File <img src=\"../images/ac.menuaro.gif\" /> Close All</span> from the command bar. \n\
+                        </p> \n\
+                     </li>\n\
+                     <li> \n\
+                        <p><span class=\"anchor_wrapper\"><a name=\"GUID-8EBEA326-B67B-48B1-A963-DEFEA7CC9C5B\"></a></span> To close all script files except the current script file, select <span class=\"MenuCascade\" id=\"GUID-EC081D47-8916-4838-8CA0-278BA00379C6\">File <img src=\"../images/ac.menuaro.gif\" /> Close All but Current</span> from the command bar. \n\
+                        </p> \n\
+                     </li>\n\
+                  </ul> \n\
+               </p> \n\
+               <p><span class=\"anchor_wrapper\"><a name=\"GUID-AC1CB47F-A448-4D30-9089-6AC1AF98FD19\"></a></span>You can also right-click a tab, and select <span class=\"MenuCascade\" id=\"GUID-689B4816-AC74-4ED8-996D-1713BFC9F606\">Close</span> or <span class=\"MenuCascade\" id=\"GUID-777FC734-9DD8-4F21-BE2B-5EA841FB62E2\">Close All but This</span> in the pop-up menu. Additionally, you can use Ctrl + W to close a tab. \n\
+               </p> \n\
+            </div>\n\
+         </div>\n\
+         <div class=\"footer-block\"><a href=\"../html/ac.cmtdialog.htm\" class=\"comments-anchor\" target=\"_blank\"><span class=\"comments-link\">Please send us your comment about this page</span></a></div><br /><p class=\"footer-license-block\"><a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\"><img alt=\"Creative Commons License\" style=\"border-width: 0;\" src=\"../images/ccLink.png\" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href=\"http://autodesk.com/creativecommons\" target=\"_blank\">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>\n\
+   </div></body>\n\
+</html>";

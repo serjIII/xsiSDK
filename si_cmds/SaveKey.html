@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>SaveKey</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>SaveKey</h1>
+         </div>
+
+<h2 class="pagehead">SaveKey</h2>
+
+<h3>Description</h3>
+<div><p>
+Saves key frames on parameters at a given frame. When you invoke this command on a parameter not
+already driven by an FCurve, a new FCurve is automatically created. <br /><br />
+The tolerance argument can be used to merge all keys within a certain range. The range is
+defined as  Frame - Tolerance and Frame + Tolerance. The merged key will inherit the constraints 
+of the nearest key within this range.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>SaveKey( [InputObjs], [Time], [Value], [Tolerance], [Layer], [ModifiedOnly], [AutokeyScope] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">InputObjs		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+List of animatable parameters (for example "cone*/kine.local.pos").			<p class="cell"><span class="hilite">Default Value: </span>
+
+		If no argument is specified, the current <a href="#!/url=./files/markingexpr.htm">marking</a> 
+		is used.<br /><br />
+		Note: This command will fail if no argument is specified and no parameters are marked.
+				</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Time		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+Frame at which to set the key.			<p class="cell"><span class="hilite">Default Value: </span>
+If no argument is specified, the current frame is used.			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Value		</td>
+		<td>Number		</td>
+		<td>
+Key frame values.			<p class="cell"><span class="hilite">Default Value: </span>
+Parameter values at current frame.			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Tolerance		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Frame tolerance 			<p class="cell"><span class="hilite">Default Value: </span>
+Nearest 0.5 frame (-1)			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">>0					</td>
+					<td>Merge all keys between Frame - Tolerance and Frame + Tolerance					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>Key must be exactly at frame					</td>
+				</tr>
+				<tr>
+					<td class="name">-1					</td>
+					<td>Nearest 0.5 frame					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Layer		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+ Animation layer to set keys on 			<p class="cell"><span class="hilite">Default Value: </span>
+Current animation layer (-1)			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ModifiedOnly		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ If true keys will only be set for parameters that have been modified at the current frame 			<p class="cell"><span class="hilite">Default Value: </span>
+False			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">AutokeyScope		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+ Specifies whether keys will be set on all parameters or only those with existing fcurves or keys. 			<p class="cell"><span class="hilite">Default Value: </span>
+All specified parameters (0)			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>Key all specified parameters					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>Only key parameters that have an existing key at the given time					</td>
+				</tr>
+				<tr>
+					<td class="name">2					</td>
+					<td>Only key parameters that have an existing fcurve					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+'	This example demonstrates how you can use the SaveKey command with
+'	or without marking parameters. This example saves position keys on 
+'	the nulls using various techniques demonstrating the flexibility of
+'	this command.
+'
+NewScene , false
+' Specify the parameter to set, the frame at which to set it and the value to use
+GetPrim "Null", "null"
+SaveKey "null.kine.global.posx", 50, 3
+SaveKey "null.kine.global.posy", 50, 3
+SaveKey "null.kine.global.posz", 50, 3
+' Instead of a string identifying the null, we can also use the Null 
+' object's shortcut to the Parameter 
+set n1 = GetPrim( "Null" )
+SaveKey n1.posx, 50, 3
+SaveKey n1.posy, 50, 3
+SaveKey n1.posz, 50, 3
+' You can also mark the parameters instead of specifying them
+GetPrim "Null" 
+SetMarking "kine.local.pos"
+SaveKey , 50, 3
+' This saves the same keys, but does not mark posx, posy, and posz
+ClearMarking
+GetPrim "Null"
+SaveKey "/kine.local.pos", 50, 3
+' You can also use the currently marked parameters at the current frame
+GetPrim "Null" 
+SetMarking "kine.local.pos"
+Translate , 3, 3, 3
+SetValue "PlayControl.Key", 50
+SetValue "PlayControl.Current", 50
+SaveKey</pre></td></tr>
+</table>
+</div><h4>2. Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">#
+# This example demonstrates how you can use the SaveKey command to define an FCurve 
+# on a parameter and then change its interpolation type to Linear (the default is 
+# cubic Bezier -- see the FCurve object's documentation for more details). 
+#
+from win32com.client import constants as c
+# Create scene
+Application.NewScene( "", 0 )
+Application.GetPrim( "Null", "null" )
+Application.CreatePrim( "Arc", "NurbsCurve" )
+Application.SelectObj( "null", c.siSelectDefault, 1 )
+Application.ApplyCns( "Path", "null", "arc" )
+# Set some keys
+Application.SaveKey( "null.kine.pathcns.perc", 1, 0 )
+Application.SaveKey( "null.kine.pathcns.perc", 30, 25 )
+Application.SaveKey( "null.kine.pathcns.perc", 75, 85 )
+Application.SaveKey( "null.kine.pathcns.perc", 100, 100 )
+# Get the fcurve from a string path using the GetSource command
+col = Application.GetSource( "null.kine.pathcns.perc" )
+fc = col(0)
+# Alternatively, you can use the Dictionary.GetObject method to 
+# get the parameter object and then use its Source method
+pathperc = Application.Dictionary.GetObject( "null.kine.pathcns.perc" )
+fc = pathperc.Source
+# Get the fcurve interpolation type 
+Application.LogMessage( fc.Interpolation )
+# Change the fcurve from cubic Bezier (3) to linear (2) and then 
+# print the interpolation type again
+Application.SetCurveType( "null.kine.pathcns.perc", 2 )
+Application.LogMessage( fc.Interpolation )
+# Expected results: (siFCurveInterpolation: 1=constant; 2=linear; 3=bezier cubic)
+#INFO : 3
+#INFO : 2</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/SaveKeyOnKeyable.html">SaveKeyOnKeyable</a> <a href="#!/url=./si_cmds/SaveKeyOnMarkedKeyable.html">SaveKeyOnMarkedKeyable</a> <a href="#!/url=./si_om/FCurve.SetKey.html">FCurve.SetKey</a> <a href="#!/url=./si_om/FCurve.SetKeys.html">FCurve.SetKeys</a> <a href="#!/url=./si_cmds/AddFCurve.html">AddFCurve</a> <a href="#!/url=./si_cmds/RemoveAnimation.html">RemoveAnimation</a> <a href="#!/url=./si_cmds/RemoveAllAnimation.html">RemoveAllAnimation</a> <a href="#!/url=./si_cmds/RemoveKey.html">RemoveKey</a> <a href="#!/url=./si_cmds/PrevKey.html">PrevKey</a> <a href="#!/url=./si_cmds/NextKey.html">NextKey</a> <a href="#!/url=./si_cmds/FirstKey.html">FirstKey</a> <a href="#!/url=./si_cmds/LastKey.html">LastKey</a> <a href="#!/url=./si_om/FCurve.html">FCurve</a> <a href="#!/url=./si_om/Parameter.Source.html">Parameter.Source</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

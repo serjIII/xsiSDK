@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-0A267E81-FD5B-438A-A229-9B9C4612D4C7" />
+      <meta name="indexterm" content="UFOs: memory allocation" />
+      <meta name="indexterm" content="UFOs: memory allocation" />
+      <meta name="indexterm" content="Order of UFO Process User Function Calls" />
+      <meta name="indexterm" content="UFOs: order of UFO process user funcion calls" />
+      <meta name="indexterm" content="compositor initialization" />
+      <meta name="indexterm" content="UFO Process Instance Copy" />
+      <meta name="indexterm" content="UFO Process Instance Destruction" />
+      <meta name="indexterm" content="UFO Process Instance Saving and Loading" />
+      <meta name="indexterm" content="Rendering Sequence" />
+      <meta name="topic-type" content="concept" />
+      <title>Memory Allocation</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-0A267E81-FD5B-438A-A229-9B9C4612D4C7"></a></span><div class="head">
+            <h1>Memory Allocation</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-AB118B54-4822-4463-8E0B-D34432239EB8"></a></span>You should use the UFO memory allocation mechanism to dynamically allocate and free
+               memory. This will make use of the Softimage Compositor's memory manager. The functions
+               <em class="mild">ufoMalloc</em>, <em class="mild">ufoRealloc</em>, and <em class="mild">ufoFree</em> have the same functionality as the <em class="mild">malloc</em>, <em class="mild">realloc</em> and <em class="mild">free system</em> calls.
+            </p>
+            <div class="section"><span class="anchor_wrapper"><a name="WS1DF8264D3D78F14A83B5A0B860AA3F2F-0025"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-183240C5-E5F0-4738-A99A-C642787E39C7"></a></span> Order of UFO Process User Function Calls
+               </h2>   
+               <p><span class="anchor_wrapper"><a name="GUID-60E8DDCF-F9CA-400B-ACEF-4504E6462730"></a></span>UFO user functions are called as follows:
+               </p> 
+               <div class="section"><span class="anchor_wrapper"><a name="WS1DF8264D3D78F14A83B5A0B860AA3F2F-0026"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-53558153-4E87-4306-A10C-82D8C25F6F30"></a></span> Softimage Compositor Initialization
+                  </h3>  
+                  <p><span class="anchor_wrapper"><a name="GUID-4E6D09AB-3A1D-47A6-8775-0B1BA65124C6"></a></span> <span class="code" translate="no">ufoProcessDefine</span> 
+                  </p> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WS1DF8264D3D78F14A83B5A0B860AA3F2F-0027"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-F041F51F-C168-4C35-B12A-B5CEC318F009"></a></span> UFO Process Instance Copy
+                  </h3>  
+                  <p><span class="anchor_wrapper"><a name="GUID-A139D230-515F-418B-BC48-F8014E113FBB"></a></span> <span class="code" translate="no">ufoProcessCopyUserData</span> 
+                  </p> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WS1DF8264D3D78F14A83B5A0B860AA3F2F-0028"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-60A57F09-A8FB-46D6-98A5-084D319B8D8A"></a></span> UFO Process Instance Destruction
+                  </h3>  
+                  <p><span class="anchor_wrapper"><a name="GUID-48D5F078-C89E-4D35-B699-572C2D729299"></a></span> <span class="code" translate="no">ufoProcessDeleteUserData</span> 
+                  </p> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WS1DF8264D3D78F14A83B5A0B860AA3F2F-0029"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-8A4E2548-9C57-4D47-865D-71663A51C038"></a></span> UFO Process Instance Saving and Loading
+                  </h3>  
+                  <div class="codeBlock"><pre class="prettyprint">
+ufoProcessWriteAsciiData 
+ufoProcessReadAsciiData 
+ufoProcessWriteBinaryData 
+ufoProcessReadBinaryData </pre></div> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WS1DF8264D3D78F14A83B5A0B860AA3F2F-002A"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-6B4B91AB-BD67-4849-8998-91BFB328037E"></a></span> Rendering Sequence
+                  </h3>  
+                  <div class="codeBlock"><pre class="prettyprint">
+ufoProcessPreSequenceRender
+	:
+	Rendering Frame <em class="mild">f</em>
+	ufoProcessCanAvoidRendering
+	ufoProcessCalcDefinedRectangle
+	ufoProcessCalcDefinePixelType
+	ufoProcessCalcNeedRectangles
+	ufoProcessSpecifyConvertPixelTypes
+	ufoProcessPreRender
+	Render Pass <em class="mild">0</em>
+		:
+	Rendering Pass <em class="mild">p</em>
+		ufoProcessPreRenderPass
+		ufoProcessRenderRectangle
+		[ufoProcessRenderRectangle ..]</pre></div> 
+                  <p><span class="anchor_wrapper"><a name="GUID-B8E19E03-E69E-4E63-A421-0A230F9A9970"></a></span>(possibly rendered in tiles or slices)
+                  </p> 
+                  <p><span class="anchor_wrapper"><a name="GUID-65BF092A-86CC-43DB-8EBB-A67E2D5D1D62"></a></span>or
+                  </p> 
+                  <div class="codeBlock"><pre class="prettyprint">		ufoProcessRenderLine ..
+		[ufoProcessRenderLine ..]</pre></div> 
+                  <p><span class="anchor_wrapper"><a name="GUID-07340514-DCFD-45DB-ACA1-44EB429C3A1D"></a></span>or
+                  </p> 
+                  <div class="codeBlock"><pre class="prettyprint">		ufoProcessRenderPixel..
+		[ufoProcessRenderPixel..]
+		ufoProcessPostRenderPass
+	Rendering Pass <em class="mild">p+1</em>
+		:
+		ufoProcessPostRender
+	Render Frame <em class="mild">f+1</em>
+		:
+		ufoProcessPostSequenceRender</pre></div> 
+               </div> 
+            </div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

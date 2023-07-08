@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Dictionary.GetObject</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Dictionary.GetObject</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/Dictionary.html">Dictionary</a>.GetObject</h2>
+
+<h3>Description</h3>
+<div><p> Returns an existing object that corresponds to a full path name. In other words, it converts from a string 
+representation of a Softimage object to the Object Model representation.  This is similar to the <a href="#!/url=./si_cmds/GetValue.html">GetValue</a>
+command.  However, in the case of <a href="#!/url=./si_om/Parameter.html">Parameter</a> objects, Dictionary.GetObject returnz the Parameter object 
+and GetValue returns the parameter value (see the example below). <br /><br />
+To convert in the other direction (from an Object Model representation to a string), use <a href="#!/url=./si_om/SIObject.FullName.html">SIObject.FullName</a>.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>Object Dictionary.GetObject( String in_bszObjectName, Boolean in_bThrowError );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = Dictionary.GetObject( Pathname, [ThrowError] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>The found object.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Pathname		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Full path name of the object to find.		</td>
+	</tr>
+	<tr>
+		<td class="name">ThrowError		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+
+		By default Softimage will cause a script error if the object does not exist.
+		If you are not sure if the object exists or not pass false as the value 
+		of this argument and Softimage will return null rather than throwing an error.
+		This parameter is new starting with v5.0.
+				<p class="cell"><span class="hilite">Default Value: </span>
+true			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' Demonstrates usage of the Dictionary.GetObject method
+'
+' Clear the current scene to avoid name clashes and create
+' a new cone named "foo"
+deleteall false
+CreatePrim "Cone", "MeshSurface", "foo"
+' Find the subdivu parameter from the cone and set it to 10
+Set oSubdivuParam = Dictionary.GetObject("foo.polymsh.geom.subdivu")
+Application.LogMessage "Found a " &amp; oSubdivuParam.type ' Outputs "Found a Parameter"
+SetValue oSubdivuParam, 10
+' Find the cone by its name and delete it
+Set oCone = Dictionary.GetObject("foo")
+Application.LogMessage "Found a " &amp; oCone.type ' Outputs "Found a polymsh"
+DeleteObj (oCone)</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	Demonstrates usage of the Dictionary.GetObject method
+*/
+NewScene(null,false);
+var oModel = ActiveSceneRoot.AddModel(new ActiveXObject("XSI.Collection"),"MyMdl") ;
+var oNull = oModel.AddNull( "MyN" );
+var oSphere = oNull.AddGeometry("Sphere","MeshSurface","MyS");
+// Expect "MyMdl.MyS"
+Application.LogMessage( oSphere.FullName ) ;
+// Retrieve the sphere again, this time via its string name
+oSphere = Dictionary.GetObject( "MyMdl.MyS" )
+// The sphere is actually nested underneath the Null so you can also specify it like this
+oSphere = Dictionary.GetObject( "MyMdl.MyN.MyS" )
+// Now look at one of the parameters under the sphere
+// Expect "MyMdl.MyS.kine.local.posx"
+Application.LogMessage( oSphere.Kinematics.Local.Parameters("posx").FullName );
+// First move the sphere to a recognizable position
+SetValue( "MyMdl.MyS.kine.local.posx", 7.5 )
+// Calling GetValue will return the VALUE of posx parameter
+var paramValue = GetValue( "MyMdl.MyS.kine.local.posx" ) ;
+// Expect "number,7.5"
+Application.LogMessage( typeof( paramValue ) + "," + paramValue);
+// But calling Dictionary.GetObject will return the 
+// actual Parameter object
+var oParameter = Dictionary.GetObject( "MyMdl.MyS.kine.local.posx" )
+// Expect "object,Parameter,7.5"
+Application.LogMessage( typeof( oParameter ) + "," + Application.ClassName(oParameter) + "," + oParameter.Value ) ;</pre></td></tr>
+</table>
+</div><h4>3. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example shows how to find an object by its name, and to create it if it doesn't already exists.  
+' In this case we reuse the Annotation that has a specific name if it is already present at the scene root.
+'
+NewScene , false
+dim strAnnotationName
+strAnnotationName = "MyAnnotation"
+set oObj = Dictionary.GetObject( strAnnotationName, false )
+if TypeName( oObj ) = "Nothing" then
+	set oObj = ActiveSceneRoot.AddProperty( "Annotation", false, strAnnotationName )
+end if
+InspectObj( oObj )</pre></td></tr>
+</table>
+</div><h4>4. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example shows how to find an object by its name, and to create it if it doesn't already exists.  
+	In this case we reuse the Annotation that has a specific name if it is already present at the scene root.
+*/
+var strAnnotationName = "MyAnnotation" ;
+var oObj = Dictionary.GetObject( strAnnotationName, false ) ;
+if ( !oObj ) {
+	var oObj = ActiveSceneRoot.AddProperty( "Annotation", false, strAnnotationName ) ;
+}
+InspectObj( oObj )</pre></td></tr>
+</table>
+</div><h4>5. Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">"""
+Demonstrates Dictionary.GetObject() method with error handling
+"""
+Application.NewScene( "", False )
+#Create a primitive
+oCone = Application.CreatePrim("Cone", "MeshSurface", "", "")
+# Use dictionary to locate the its render visibility
+try:
+	oRenderVisParam = Application.Dictionary.GetObject( "cone.visibility.rendvis", True )
+	Application.LogMessage( "Parameter found. Value: " + str( oRenderVisParam.Value ) )
+except:
+	Application.LogMessage( "Parameter not found." )</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/GetValue.html">GetValue</a> <a href="#!/url=./si_om/SIObject.html">SIObject</a> <a href="#!/url=./si_om/Parameter.html">Parameter</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

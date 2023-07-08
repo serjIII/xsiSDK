@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-43E4CC26-49E9-4ED1-BEC0-FE32D6FE1506" />
+      <meta name="indexterm" content="Scripting Command API (about)" />
+      <meta name="indexterm" content="Softimage Object Model (about)" />
+      <meta name="indexterm" content="OM (about)" />
+      <meta name="indexterm" content="Object Model: about" />
+      <meta name="indexterm" content="C++ API: about" />
+      <meta name="indexterm" content="architecture: overview" />
+      <meta name="indexterm" content="SDK architecture: overview" />
+      <meta name="topic-type" content="concept" />
+      <title>Understanding the Softimage SDK Architecture</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-43E4CC26-49E9-4ED1-BEC0-FE32D6FE1506"></a></span><div class="head">
+            <h1>Understanding the Softimage SDK Architecture</h1>
+         </div>
+         <p><span class="anchor_wrapper"><a name="GUID-1E006E57-B94D-4BC5-876C-35B4E201D138"></a></span>The Autodesk Softimage SDK features three main APIs: the <em class="strong">Scripting Command API</em>, the <em class="strong">Softimage Object Model</em> (OM) and the <em class="strong">C++ API</em>. These can be used independently, or used in tandem in certain circumstances. For
+            example, there are some commands that you may need to run in a compiled tool, and
+            you may also choose to deploy your tools using a scripted interface. 
+         </p>
+         <div class="section"><span class="anchor_wrapper"><a name="WSD71C824707591D4F8003D9E88CF4A117-0004"></a></span> 
+            <h2><span class="anchor_wrapper"><a name="GUID-D4920342-D5E8-4B4D-828B-49A34E2CDEE5"></a></span> Scripting Command API
+            </h2>  
+            <p><span class="anchor_wrapper"><a name="GUID-7A788EBC-A76A-4CA3-9B0A-33471A04A332"></a></span>The Scripting Commands API is a function library built on Autodesk Softimage's proprietary
+               command interface language which can be used with ActiveX-compliant languages. All
+               menu items and task buttons are driven by these underlying commands, most of which
+               are available to the casual scripter or the tool developer in one of the compatible
+               scripting languages (VBScript, JScript, and Python ActiveX). These can also be used
+               in compiled tools authored with the C++ API via the <a href="#!/url=./si_cpp/classXSI_1_1Application.html#ExecuteCommand">Application::ExecuteCommand</a> function. 
+            </p> 
+         </div>
+         <div class="section"><span class="anchor_wrapper"><a name="WSD71C824707591D4F8003D9E88CF4A117-0005"></a></span> 
+            <h2><span class="anchor_wrapper"><a name="GUID-DE22986E-8F91-4038-AEEF-93FC0F062F5B"></a></span> Softimage Object Model
+            </h2>    
+            <p><span class="anchor_wrapper"><a name="GUID-D8765935-004C-4A27-AD19-DC75DF9261E4"></a></span>The Softimage Object Model (OM) is a collection of classes or interfaces (objects)
+               and their member data (properties) and member functions (methods) which represent
+               the Softimage world. For example, an instance of the X3DObject class represents a
+               specific 3D Object in Softimage and provides ways to get and set data, manipulate
+               it in space and time, and generally perform most of the same operations a Softimage
+               artist can perform but programatically. 
+            </p> 
+            <p><span class="anchor_wrapper"><a name="GUID-46BAD83B-82F2-416C-BDA1-DC488B9A1609"></a></span>The object model can be used with one of the ActiveX-compliant scripting languages
+               (VBScript, JScript, Python ActiveX) or with any .NET language, including C# (see <span class="char_link"><a href="#!/url=./files/CSharpDevelopment.htm">C# Development</a></span>for more information). 
+            </p> 
+         </div>
+         <div class="section"><span class="anchor_wrapper"><a name="WSD71C824707591D4F8003D9E88CF4A117-0006"></a></span> 
+            <h2><span class="anchor_wrapper"><a name="GUID-663FFF71-F82C-48BE-BB3F-ABF73A03A333"></a></span> C++ API
+            </h2>  
+            <p><span class="anchor_wrapper"><a name="GUID-03E404FC-68CF-44AB-9002-24958AF5ACD5"></a></span>The C++ API provides the same kind of flexibility and power as the Softimage Object
+               Model, but in the form of a pure C++ class library. The C++ API has no reliance on
+               MainWin or any COM dependencies because it was built to handle the interaction between
+               the COM-based Softimage architecture and pure C++ under the hood. 
+            </p> 
+         </div>
+         <div class="section"><span class="anchor_wrapper"><a name="WSD71C824707591D4F8003D9E88CF4A117-0007"></a></span> 
+            <h2><span class="anchor_wrapper"><a name="GUID-13B1F522-C13E-45FC-A385-3D9689C9BA97"></a></span> Putting It All Together
+            </h2>   
+            <p><span class="anchor_wrapper"><a name="GUID-5760D637-AE9A-43AB-98EA-DED6829F8397"></a></span>This illustration represents the SDK architecture: 
+            </p> <img src="../images/GUID-47D46356-0CA0-4071-834B-BBD63B4A8E47-low.png" /> 
+            <p><span class="anchor_wrapper"><a name="GUID-8E026A0E-D05D-496C-B18E-04EE48E1A749"></a></span>Notice that if you write compiled code, you can use either the C++ API or the Softimage
+               Object Model. Both APIs form a layer which sits on top of the core implementation
+               in Softimage. For scripted code, the Scripting Engine forms yet another layer which
+               sits on top of the Softimage Object Model. 
+            </p> 
+            <p><span class="anchor_wrapper"><a name="GUID-0C5A60DA-26B6-4BA5-BFCC-A050C2974688"></a></span>If you are interested in writing scripts, you will probably use a mix of the <em class="mild">Scripting Command API</em> and the <em class="mild">Softimage Object Model</em> in one of the four ActiveX-compliant languages. To read general and task-oriented
+               information about how the specific scripting languages interact with these APIs, check
+               out <span class="char_link"><a href="#!/url=./files/script_intro.htm">Script Development</a></span>. To get specific information about a command or object model element, see the<a href="#!/url=./si_cmds/_scriptref.html">Commands and Scripting Reference</a>. 
+            </p> 
+            <p><span class="anchor_wrapper"><a name="GUID-A1BB3D45-26B8-486C-932E-68EF6DFD9FF7"></a></span>If you are interested in developing compiled tools in C#, you use the <em class="mild">COM API</em>. To read general information and figure out which libraries to link to and header
+               files to include, check out <span class="char_link"><a href="#!/url=./files/CSharpDevelopment.htm">C# Development</a></span> . To get specific information about object model elements, see the <a href="#!/url=./si_om/_omref.html">Object Model Reference</a>. 
+            </p> 
+            <p><span class="anchor_wrapper"><a name="GUID-164D2B90-216D-48A7-856E-EAFE1224FC59"></a></span>If you are interested in developing compiled tools in C++, you will probably use the
+               <em class="mild">C++ API</em> almost exclusively. To read general information and figure out which libraries to
+               link to and header files to include, check out the<span class="char_link"><a href="#!/url=./files/cpp_intro.htm">C++ API Development</a></span>. To get specific information about a class or a class member, see the<a href="#!/url=./si_cpp/pages.html">C++ Reference</a> 
+            </p> 
+         </div><span class="noindex">
+            <div class="topic-list">
+               <h4 class="related">Topics in this section</h4>
+               <ul class="jumplist">
+                  <li class="topiclist-litem"><a href="#!/url=./files/dev_intro_AbouttheStructureofXSIxd5sAPIs.htm">About the Structure of the Softimage APIs</a></li>
+                  <li class="topiclist-litem"><a href="#!/url=./files/dev_intro_HowistheXSIObjectModelDifferentfromtheCAPI.htm">How is the Softimage Object Model Different from the C++ API?</a></li>
+               </ul>
+            </div></span><div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

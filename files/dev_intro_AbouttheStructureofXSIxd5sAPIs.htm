@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-B82714AD-0E6F-4DDA-8794-582D9B2FBE15" />
+      <meta name="indexterm" content="architecture: base class" />
+      <meta name="indexterm" content="architecture: Softimage Application" />
+      <meta name="indexterm" content="architecture: utility classes" />
+      <meta name="indexterm" content="architecture: 3D scene objects" />
+      <meta name="indexterm" content="architecture: content classes" />
+      <meta name="indexterm" content="architecture: utility classes" />
+      <meta name="indexterm" content="architecture: global classes" />
+      <meta name="topic-type" content="concept" />
+      <title>About the Structure of the Softimage APIs</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ reflinkdata.push(["SIObject", "si_cpp/classXSI_1_1SIObject.html", "C++ API Reference", "../"]); 
+reflinkdata.push(["Application", "si_cpp/classXSI_1_1Application.html", "C++ API Reference", "../"]); 
+reflinkdata.push(["ProjectItem", "si_cpp/classXSI_1_1ProjectItem.html", "C++ API Reference", "../"]); 
+reflinkdata.push(["SceneItem", "si_cpp/classXSI_1_1SceneItem.html", "C++ API Reference", "../"]); 
+</script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-B82714AD-0E6F-4DDA-8794-582D9B2FBE15"></a></span><div class="head">
+            <h1>About the Structure of the Softimage APIs</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-C2728656-E511-4C5A-8AE2-77246FCC417C"></a></span>The C++ API and the Softimage Object Model (OM) are both implemented using an object-oriented
+               approach. This means that classes that are children inherit the functions of the parent
+               class and then extend that class by implementing more specific functions. Hierarchical
+               representations of both APIs are available: 
+            </p><span class="anchor_wrapper"><a name="UL_91FB46E4B25E422D912E9EFD65DA76ED"></a></span><ul>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-DF6748C7-3B62-45A8-84D7-E311B803A91A"></a></span>Object Model: <a href="#!/url=./si_om/_hier.html">Object Hierarchy</a> 
+                  </p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-3EDAE0BC-4B8A-4416-A1BC-57F4514C4B33"></a></span>C++ API: <a href="#!/url=./si_cpp/hierarchy.html">Class Hierarchy</a> 
+                  </p> 
+               </li>
+            </ul>
+            <p><span class="anchor_wrapper"><a name="GUID-BC9D058B-42C1-4B81-A13B-C6E0DDE4C16F"></a></span>You can also use the <em class="strong">SDK Explorer</em> in Softimage, which is a relational view that displays SDK information about a selected
+               object. The SDK Explorer is available from Softimage's main menu via the <span class="MenuCascade" id="GUID-AE3145D3-DAA1-4FE3-A827-5EFB53FD4A71">View</span><img src="../images/ac.menuaro.gif" /><span class="MenuCascade" id="GUID-05343438-C0FE-4FFD-AB48-BA0767C96DC1">Scripting</span><img src="../images/ac.menuaro.gif" /><span class="MenuCascade" id="GUID-1BC59039-FDB7-402D-8262-1750464DEE0C">SDK Explorer</span> entry. 
+            </p>
+            <p><span class="anchor_wrapper"><a name="GUID-F5EED19F-513A-4E46-8590-624986DEF1F2"></a></span>The <em class="strong">SDK Explorer</em> displays information from the scripting object model, and provides links to the scripting
+               reference pages. The <a href="#!/url=./si_cmds/_scriptref.html">Commands and Scripting Reference</a> pages include links to the corresponding C++ reference pages, so you can quickly
+               get to the mirrored C++ information. 
+            </p>
+            <p><span class="anchor_wrapper"><a name="GUID-1135C1AC-E225-4091-8A9D-342A8C94D03E"></a></span>The following sections provide a very high-level view of the scripting object model
+               and the C++ class libraries. 
+            </p>
+            <div class="section"><span class="anchor_wrapper"><a name="WSD71C824707591D4F8003D9E88CF4A117-000C"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-E9D5C560-C67F-4734-93CD-21370C3F47D6"></a></span> Base Class
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-759652C4-AC34-4C61-B2D5-41FBDB7B7315"></a></span>The basic building block for the Softimage scene in both APIs is <a href="#!/url=./si_om/SIObject.html">SIObject</a> or <a href="#!/url=./si_cpp/classXSI_1_1SIObject.html">SIObject</a>, which implements basic information like <span class="code" translate="no">Name</span> and <span class="code" translate="no">FullName</span>, <span class="code" translate="no">Type</span>, <span class="code" translate="no">Origin</span> and <span class="code" translate="no">OriginPath</span>, etc. Most objects inherit from <span class="code" translate="no"><a href="javascript:void(0)" data="SIObject" class="a_multireflink">SIObject</a></span>. 
+               </p> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSD71C824707591D4F8003D9E88CF4A117-000D"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-CD917BB8-D8BC-438E-B415-F8134B538E9A"></a></span> Application
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-7449B587-AAE9-4102-9227-13A814DA9AB3"></a></span><a href="#!/url=./si_om/Application.html">Application</a> or <a href="#!/url=./si_cpp/classXSI_1_1Application.html">Application</a> provides hooks into Softimage for scripted and compiled plug-ins using the following
+                  syntax: 
+               </p> <span class="anchor_wrapper"><a name="UL_CF344CD0EF664CCAB1E40A08E43ABB9B"></a></span><ul>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-B1529012-C721-4827-A339-C91AAFC18513"></a></span>For writing scripted plug-ins running outside of Softimage (for example, NetView pages)
+                        you can hook into Softimage using the Application object: 
+                     </p> 
+                     <div class="codeBlock"><pre class="prettyprint">
+// JScript
+var xsi_app = new ActiveXObject( XSI.Application );
+var app = xsi_app.Application;
+app.LogMessage( "Initiating NetView session" );</pre></div> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-0CF943E9-F37E-4014-BE9B-C0B732BCC74C"></a></span>For writing plug-ins with the C++ API, use the following: 
+                     </p> 
+                     <div class="codeBlock"><pre class="prettyprint">
+Application app;
+app.LogMessage( L"Welcome to Softimage!" );</pre></div> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-EBFBFCA6-72F3-4A13-A7F9-9CC0D14C3BB3"></a></span>For writing C# plug-ins with the object model, use this: 
+                     </p> 
+                     <div class="codeBlock"><pre class="prettyprint">
+CXSIApplicationClass app = new CXSIApplicationClass();
+app.LogMessage( "Custom Plug-in started", siSeverity.siInfo );</pre></div> 
+                  </li>
+               </ul> 
+               <p><span class="anchor_wrapper"><a name="GUID-DF51A132-268A-4A4E-83A0-A15165DD1D97"></a></span>The <span class="code" translate="no"><a href="javascript:void(0)" data="Application" class="a_multireflink">Application</a></span> class also provides many essential services, including command creation and execution,
+                  add-on installation, access to basic Softimage utilities such as the dictionary, the
+                  selection, the desktop, etc. 
+               </p> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSD71C824707591D4F8003D9E88CF4A117-000E"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-812C9C39-5749-4C51-B683-A124F38BBF01"></a></span> Utility Classes
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-DF34EA39-5963-44F8-AF47-EA8711462D3D"></a></span>There are two classes that are primarily used as base classes for project-level items
+                  and scene-level items: 
+               </p> <span class="anchor_wrapper"><a name="UL_852637C60ED940D8920FD8175A40F4FA"></a></span><ul>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-DBC6ED83-EED9-486A-84CE-E643C194DFBD"></a></span><a href="#!/url=./si_om/ProjectItem.html">ProjectItem</a> or <a href="#!/url=./si_cpp/classXSI_1_1ProjectItem.html">ProjectItem</a>—base class for most content objects in the project; for example, objects that inherit
+                        from the <span class="code" translate="no"><a href="javascript:void(0)" data="ProjectItem" class="a_multireflink">ProjectItem</a></span> potentially have parameters. Some of the objects that inherit from the <span class="code" translate="no"><a href="javascript:void(0)" data="ProjectItem" class="a_multireflink">ProjectItem</a></span> are: <a href="#!/url=./si_om/Clip.html">Clip</a> or <a href="#!/url=./si_cpp/classXSI_1_1Clip.html">Clip</a>, <a href="#!/url=./si_om/Source.html">Source</a> or <a href="#!/url=./si_cpp/classXSI_1_1Source.html">Source</a>, <a href="#!/url=./si_om/Operator.html">Operator</a> or <a href="#!/url=./si_cpp/classXSI_1_1Operator.html">Operator</a>, <a href="#!/url=./si_om/Shader.html">Shader</a> or <a href="#!/url=./si_cpp/classXSI_1_1Shader.html">Shader</a>, <a href="#!/url=./si_om/Scene.html">Scene</a> or <a href="#!/url=./si_cpp/classXSI_1_1Scene.html">Scene</a>, etc. 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-6B528438-0812-4258-9039-EE83220834B2"></a></span><a href="#!/url=./si_om/SceneItem.html">SceneItem</a> or <a href="#!/url=./si_cpp/classXSI_1_1SceneItem.html">SceneItem</a>—base class for most scene objects; for example, most objects that inherit from the
+                        <span class="code" translate="no"><a href="javascript:void(0)" data="SceneItem" class="a_multireflink">SceneItem</a></span> potentially have properties. Some of the objects that inherit from the <span class="code" translate="no"><a href="javascript:void(0)" data="SceneItem" class="a_multireflink">SceneItem</a></span> are: <a href="#!/url=./si_om/Cluster.html">Cluster</a> or <a href="#!/url=./si_cpp/classXSI_1_1Cluster.html">Cluster</a>, <a href="#!/url=./si_om/Group.html">Group</a> or <a href="#!/url=./si_cpp/classXSI_1_1Group.html">Group</a>, <a href="#!/url=./si_om/Model.html">Model</a> or <a href="#!/url=./si_cpp/classXSI_1_1Model.html">Model</a>, <a href="#!/url=./si_om/X3DObject.html">X3DObject</a> or <a href="#!/url=./si_cpp/classXSI_1_1X3DObject.html">X3DObject</a>, etc. 
+                     </p> 
+                  </li>
+               </ul> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSD71C824707591D4F8003D9E88CF4A117-000F"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-087F7537-B65D-45DB-AEA0-23DA455FA741"></a></span> 3D Scene Objects
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-E1DE395D-E70E-4DE3-B132-DBE0F5EB4AF1"></a></span>The main class that manages 3D scene objects is <a href="#!/url=./si_om/X3DObject.html">X3DObject</a> or <a href="#!/url=./si_cpp/classXSI_1_1X3DObject.html">X3DObject</a>, which implements functions to create child objects, allows access to the geometry
+                  and provides navigation through its children. 
+               </p> 
+               <p><span class="anchor_wrapper"><a name="GUID-B8EBE682-21DC-4DE6-BC55-F60534130DF6"></a></span>These are some of the more typical functions you could use to access the data on a
+                  scene object: 
+               </p> <span class="anchor_wrapper"><a name="UL_965385C9761D46D8B77C5202CDA06773"></a></span><ul>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-5A7334BB-F7AB-413A-A0E0-BC9CCAD675C2"></a></span><a href="#!/url=./si_om/SceneItem.Properties.html">SceneItem.Properties</a> or SceneItem::GetProperties—inherited from the <a href="#!/url=./si_om/SceneItem.html">SceneItem</a> or <a href="#!/url=./si_cpp/classXSI_1_1SceneItem.html">SceneItem</a> class, this provides access to the object's property sets. From here you can access
+                        the individual parameters with <a href="#!/url=./si_om/ProjectItem.Parameters.html">ProjectItem.Parameters property</a> or ProjectItem::GetParameters member function. 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-FBD4899F-8068-43CE-B652-71892902EDB3"></a></span><a href="#!/url=./si_om/X3DObject.ActivePrimitive.html">X3DObject.ActivePrimitive property</a> or X3DObject::GetActivePrimitive member function—this provides access to the object's
+                        geometry through the <a href="#!/url=./si_om/Primitive.html">Primitive</a> or <a href="#!/url=./si_cpp/classXSI_1_1Primitive.html">Primitive</a>. The <a href="#!/url=./si_om/Geometry.html">Geometry</a> or <a href="#!/url=./si_cpp/classXSI_1_1Geometry.html">Geometry</a> object gives you low-level access to the object's subcomponents. 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-8CF9A3E6-1BB2-478B-A963-8F8EE5822732"></a></span><a href="#!/url=./si_om/X3DObject.Kinematics.html">X3DObject.Kinematics property</a> or X3DObject::GetKinematics member function—this provides access to a special kind
+                        of property containing data controling position, scaling, rotation, etc. 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-4222FC94-260C-4AEF-B01D-D9E7AB3A4A4C"></a></span> <span class="code" translate="no">AddXXX</span>—there are several functions that add specific types of elements as children under
+                        the scene object (including the <span class="code" translate="no">Scene_Root</span>, which is a kind of <a href="#!/url=./si_om/X3DObject.html">X3DObject</a> or <a href="#!/url=./si_cpp/classXSI_1_1X3DObject.html">X3DObject</a>). The most common of these is the <a href="#!/url=./si_om/X3DObject.AddGeometry.html">AddGeometry</a> or AddGeometry function, which allows you to add new cubes, spheres, etc. 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-9F6FE8B4-4370-4DDC-9C1C-8B8FB6707DC5"></a></span><a href="#!/url=./si_om/X3DObject.FindChild.html">FindChild</a> or FindChild, <a href="#!/url=./si_om/X3DObject.FindChildren.html">FindChildren</a> or FindChildren, <a href="#!/url=./si_om/X3DObject.Children.html">X3DObject.Children property</a> or X3DObject::GetChildren member function—these provide navigational tools that allow
+                        you to find specific objects (or kinds of objects) under the scene object (again,
+                        including the <span class="code" translate="no">Scene_Root</span>). 
+                     </p> 
+                  </li>
+               </ul> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSD71C824707591D4F8003D9E88CF4A117-0010"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-AF8875B4-8DE2-4FFE-B7C7-3192BAD0C424"></a></span> Content Classes
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-2FEEFB56-8554-4B24-9E49-5CE9278BE1C8"></a></span>There are many classes implemented in the object model that represent specific Softimage
+                  items, such as <a href="#!/url=./si_om/Shader.html">Shader</a> or <a href="#!/url=./si_cpp/classXSI_1_1Shader.html">Shader</a>, <a href="#!/url=./si_om/Camera.html">Camera</a> or <a href="#!/url=./si_cpp/classXSI_1_1Camera.html">Camera</a>, <a href="#!/url=./si_om/Vertex.html">Vertex</a> or <a href="#!/url=./si_cpp/classXSI_1_1Vertex.html">Vertex</a>, <a href="#!/url=./si_om/ImageClip.html">ImageClip</a> or <a href="#!/url=./si_cpp/classXSI_1_1ImageClip2.html">ImageClip</a>, <a href="#!/url=./si_om/Port.html">Port</a> or <a href="#!/url=./si_cpp/classXSI_1_1Port.html">Port</a>, etc. 
+               </p> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSD71C824707591D4F8003D9E88CF4A117-0011"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-D33CE44F-C81A-4D38-99E8-8690D695D1AE"></a></span> Global and Utility Classes
+               </h2>   
+               <p><span class="anchor_wrapper"><a name="GUID-E2C32081-D048-4366-93D0-3ED1B4F0737B"></a></span>There are several global (intrinsic) and utility classes that provide extra value.
+                  These include: 
+               </p> <span class="anchor_wrapper"><a name="UL_A98FC750C58B43A2AE23741CBFF28F10"></a></span><ul>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-F1F8FD45-B553-4905-88C3-B33DAE0852FE"></a></span><a href="#!/url=./si_om/Application.html">Application</a> or <a href="#!/url=./si_cpp/classXSI_1_1Application.html">Application</a> class—hooks into Softimage and essential services. 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-DB027D16-4792-4B6B-A764-AEF139DD4A50"></a></span> <em class="mild">Math features</em>—these are implemented through the <a href="#!/url=./si_om/XSIMath.html">XSIMath</a> object in the object model and the XSI::MATH namespace in the C++ API. They provide
+                        convenience methods and interfaces for math. 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-8CC9846C-75D3-4716-82F7-F2E59E2F9168"></a></span><a href="#!/url=./si_om/XSIUIToolkit.html">UI Toolkit</a> or <a href="#!/url=./si_cpp/classXSI_1_1UIToolkit.html">UI Toolkit</a>—this provides access to tools that you can use to help build a user interface, such
+                        as the <a href="#!/url=./si_om/XSIUIToolkit.ProgressBar.html">ProgressBar</a> or <a href="#!/url=./si_om/ProgressBar.html">ProgressBar</a> and the <a href="#!/url=./si_om/XSIUIToolkit.MsgBox.html">MsgBox</a> or MsgBox functionality. 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-5F895C5B-4D2A-434B-A25B-7E055730A17E"></a></span><a href="#!/url=./si_om/XSIUtils.html">XSIUtils</a> object—this is only available in the object model. It provides access to general
+                        utilities such as the <a href="#!/url=./si_om/DataRepository.html">DataRepository</a> and <a href="#!/url=./si_om/Linktab.html">Linktab</a>. 
+                     </p> 
+                  </li>
+               </ul> 
+            </div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

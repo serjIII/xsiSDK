@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-D3409AF7-5913-485B-9A32-9025594CEAC8" />
+      <meta name="indexterm" content="FileBrowser widget" />
+      <meta name="indexterm" content="MsgBox" />
+      <meta name="indexterm" content="ProgressBar" />
+      <meta name="topic-type" content="concept" />
+      <title>Using the Softimage User Interface Toolkit (XSIUIToolkit)</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-D3409AF7-5913-485B-9A32-9025594CEAC8"></a></span><div class="head">
+            <h1>Using the Softimage User Interface Toolkit (XSIUIToolkit)</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-81799C70-FAB6-4843-A0AF-0A34FA0F1717"></a></span>The <a href="#!/url=./si_om/XSIUIToolkit.html">XSIUIToolkit</a> or <a href="#!/url=./si_cpp/classXSI_1_1UIToolkit.html">XSIUIToolkit</a> object is an intrinsic object in Softimage: it acts as a global object in Softimage
+               so you don't have to explicitly create a pointer to it. It provides access to the
+               <a href="#!/url=./si_om/XSIUIToolkit.MsgBox.html">XSIUIToolkit.MsgBox</a> or UIToolkit::MsgBox and the <a href="#!/url=./si_om/XSIUIToolkit.ProgressBar.html">XSIUIToolkit.ProgressBar</a> or UIToolkit::GetProgressBar utilities (and the <a href="#!/url=./si_om/XSIUIToolkit.FileBrowser.html">XSIUIToolkit.FileBrowser</a> for scripting) which extend the ability to interact with the user. 
+            </p>
+            <div class="section"><span class="anchor_wrapper"><a name="WS8AD400B78794354E8F5A74BCE7CD86FD-000F"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-08B5B14A-EB23-41E3-AE2A-8645D74B99BF"></a></span> FileBrowser
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-E9062721-02F0-488B-B9AC-3FBA323E5B11"></a></span>The <a href="#!/url=./si_om/FileBrowser.html">FileBrowser</a> allows you to ask the user to either identify a file to open or provide the filename
+                  and location where to save an output file. 
+               </p> <img src="../images/GUID-FEF41F4E-3BED-4EB3-93BD-230D18745D1E-low.png" /> 
+               <div><span class="anchor_wrapper"><a name="GUID-AC6F9C79-1017-4324-B2CB-E1AEF67BB02C"></a></span><div class="note-tip"><span class="label">TIP:</span> 
+                     <p><span class="anchor_wrapper"><a name="GUID-54153610-3521-49FA-BB5E-DF34CD7B5AC7"></a></span>The <a href="#!/url=./si_om/PPGLayout.html">PPGLayout</a> or <a href="#!/url=./si_cpp/classXSI_1_1PPGLayout.html">PPGLayout</a> object also implements a type of <a href="#!/url=./si_om/FileBrowser.html">FileBrowser</a> as the <span class="char_link"><a href="#!/url=./files/cus_ppg_FileBrowserWidget.htm">FilePath</a></span> control. 
+                     </p> 
+                  </div>
+               </div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS8AD400B78794354E8F5A74BCE7CD86FD-0011"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-B8EBAB8F-65CC-46EE-8DC8-AA92ABAE83D6"></a></span> MsgBox
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-6A62C8BE-3DD4-441F-83B3-4D821A4E71D7"></a></span>The <a href="#!/url=./si_om/XSIUIToolkit.MsgBox.html">XSIUIToolkit.MsgBox</a> or UIToolkit::MsgBox allows you to communicate with the user in a limited fashion.
+                  It basically provides the same functionality as the VBScript <span class="code" translate="no">MsgBox</span> function but makes it available to any language that Softimage supports (JScript,
+                  C++, and others). 
+               </p> <img src="../images/GUID-6D241212-3A0A-4FAF-A2E0-FCBEB91F2AA2-low.png" /> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS8AD400B78794354E8F5A74BCE7CD86FD-0013"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-F41D6F47-CFE3-4784-8CC7-D241C5E8AC42"></a></span> ProgressBar
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-0B40D6FE-7D37-41DD-B8DB-15274F1CBDDD"></a></span>The <a href="#!/url=./si_om/ProgressBar.html">ProgressBar</a> or <a href="#!/url=./si_cpp/classXSI_1_1ProgressBar.html">ProgressBar</a> visually represents the progress of a lengthy operation using a colored bar to indicate
+                  the percentage completed. 
+               </p> <img src="../images/GUID-015964C1-2007-49A8-B867-CCDB93C55913-low.png" /> 
+            </div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

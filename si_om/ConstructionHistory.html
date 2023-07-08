@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>ConstructionHistory</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>ConstructionHistory</h1>
+         </div>
+
+<h2 class="pagehead">ConstructionHistory</h2>
+
+<p><a href="#!/url=./si_om/_hier.html#oh_ConstructionHistory">Object Hierarchy</a></p>
+
+<h3>Inheritance<h3>
+<p class="level1"><a href="#!/url=./si_om/SIObject.html">SIObject</a></p>
+<p class="level2">ConstructionHistory</p>
+
+<h3>Description</h3>
+<div><p>This object represents the <a href="#!/url=./si_om/Operator.html">Operator</a> stack for a 
+<a href="#!/url=./si_om/Primitive.html">Primitive</a> object. It allows you to browse through the stack one 
+operator at a time by enumerating the ConstructionHistory object, which you can
+get with the <a href="#!/url=./si_om/Primitive.ConstructionHistory.html">Primitive.ConstructionHistory</a> property.<br /><br />
+The operator stack on a primitive is called the "Construction History" because
+the order of the operators generally reflects the order that the operators were created.
+However because of the concept of <a href="#!/url=./si_om/siConstructionMode.html">siConstructionMode</a>, operators may
+sometime be added underneath existing operators.
+<br /><br />
+The construction history is one example of the more general concept of "Connection Stack",
+see <a href="#!/url=./si_om/DataRepository.GetConnectionStackInfo.html">DataRepository.GetConnectionStackInfo</a> for details.
+<br /><br />
+Note: For performance reasons the Item and Count properties have not been implemented,
+so you have to enumerate the entire stack and check each one to see if it's the one you
+want.
+</p></div>
+
+<h3>Methods</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/ConstructionHistory.Filter.html">Filter</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/ConstructionHistory.Find.html">Find</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.IsClassOf.html">IsClassOf</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.IsEqualTo.html">IsEqualTo</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Properties</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Application.html">Application</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Categories.html">Categories</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.FullName.html">FullName</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Help.html">Help</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Name.html">Name</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.NestedObjects.html">NestedObjects</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Origin.html">Origin</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.OriginPath.html">OriginPath</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Parent.html">Parent</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Type.html">Type</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' Set up the scenario (a cylinder with two operators)
+Set oObj = CreatePrim( "Cylinder", "MeshSurface" )
+ApplyOp "Bulge", oObj, 3, siPersistentOperation
+ApplyOp "Twist", oObj, 3, siPersistentOperation
+' First find the cylinder with the operators on it
+Set oRoot = ActiveSceneRoot
+Set oCyl = oRoot.FindChild(,,siMeshFamily)
+' Now get the primitive from the cylinder and then the 
+' operator stack as the construction history object
+Set oPrim = oCyl.ActivePrimitive
+Set oOpStack = oPrim.ConstructionHistory
+' This isn't a normal collection, so Count and Item 
+' do not work, as you can see if you uncomment these lines:
+REM LogMessage "The stack contains " &amp; oOpStack.Count &amp; " operators."
+REM LogMessage "...and the first one is: " &amp; oOpStack.Item(0)
+' Since you cannot indicate which one you want with Item,
+' you need to enumerate each one to check to see whether it
+' is the one you are looking for 
+For Each o in oOpStack
+	If (o = oPrim &amp; ".bulgeop") Then
+		' You found it!
+		Set oBulgeOp = o
+		' Find the DeformAlong settings and toggle Y and Z
+		For Each p in oBulgeOp.Parameters
+			Select Case p.ScriptName
+				Case "defy"
+					LogMessage "Original value for DeformAlongY = " &amp; p.Value
+					p.Value = not( p.Value )
+					LogMessage "New value = " &amp; p.Value
+				Case "defz"
+					LogMessage "Original value for DeformAlongZ = " &amp; p.Value
+					p.Value = not( p.Value )
+					LogMessage "New value = " &amp; p.Value
+				Case Else
+			End Select
+		Next
+	End If
+Next
+REM Output of above script is:
+'INFO : "Original value for DeformAlongY = False"
+'INFO : "New value = True"
+'INFO : "Original value for DeformAlongZ = True"
+'INFO : "New value = False"</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' The following code illustrates how to get a ConstructionHistory 
+' object and how to iterate the construction history using the 
+' For Each...Next statement: 
+Set oObject = Application.ActiveProject.ActiveScene.Root.AddGeometry("Sphere","MeshSurface")
+ApplyOp "Twist", oObject
+ApplyOp "Bend", oObject
+ApplyOp "Taper", oObject
+LogMessage "The " &amp; oObject.Name &amp; " has the following operators applied:"
+For Each oOperator in oObject.ActivePrimitive.ConstructionHistory
+	LogMessage vbTab &amp; oOperator.Name 
+Next
+REM The output of the above script is:
+'INFO : "The sphere has the following operators applied:"
+'INFO : "	Taper Op"
+'INFO : "	Bend Op"
+'INFO : "	Twist Op"
+'INFO : "	Geometry"</pre></td></tr>
+</table>
+</div><h4>3. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">//jscript example showing how to 
+//enumerate the Operators on a geometry
+var oGrid = ActiveProject.ActiveScene.Root.AddGeometry( "Sphere", "MeshSurface" ) ;
+ApplyOp("Bulge", oGrid.Name, 3, siPersistentOperation);
+ApplyOp("Bend", oGrid.Name, 3, siPersistentOperation);
+oEnum = new Enumerator( oGrid.ActivePrimitive.ConstructionHistory );
+for (;!oEnum.atEnd();oEnum.moveNext())           
+{
+	// Print the name of the operator
+	logmessage( oEnum.item().fullname ) ;
+}
+// Output of this script is:
+//INFO : "sphere.polymsh.bendop"
+//INFO : "sphere.polymsh.bulgeop"
+//INFO : "sphere.polymsh.geom"</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/Primitive.ConstructionHistory.html">Primitive.ConstructionHistory</a> <a href="#!/url=./si_om/Operator.html">Operator</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></h3></h3></div>
+   </div></body>
+</html>

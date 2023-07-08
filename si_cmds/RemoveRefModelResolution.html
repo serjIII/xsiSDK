@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>RemoveRefModelResolution</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>RemoveRefModelResolution</h1>
+         </div>
+
+<h2 class="pagehead">RemoveRefModelResolution</h2>
+
+<h3>Introduced</h3>
+<div><p>v6.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Removes a resolution to a referenced <a href="#!/url=./si_om/Model.html">Model</a>. A referenced model can 
+have an unlimited number of resolutions. Each resolution has a name and a file. <br /><br />
+Warning: If you try to remove the active resolution, the command raises an Invalid 
+Argument error. You can activate a different resolution via the "Active Resolution" 
+parameter on the referenced model.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>RemoveRefModelResolution( Model, ResolutionName, [Confirm] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Model		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The model containing the resolution you want to remove. 			<p class="cell"><span class="hilite">Default Value: </span>
+Current selection			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ResolutionName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ The name of the resolution.		</td>
+	</tr>
+	<tr>
+		<td class="name">Confirm		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+
+		This argument will indicate if you want to get a confirmation message 
+		before continuing with the resolution. This can be useful when writing 
+		scripts in order to avoid stopping the script.
+				<p class="cell"><span class="hilite">Default Value: </span>
+False			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' 
+'	This example illustrates how to add and remove resolutions on a reference model. It also demonstrates
+'	how to navigate through the resolution information on a reference model (see the convenience functions
+'	at the bottom of the example, especially GetAllResolutions).
+'
+' Import a referenced model.
+NewScene , false
+sModelPath =  XSIUtils.BuildPath( Application.InstallationPath(siFactoryPath), _
+	"Data", "XSI_SAMPLES", "Models", "ManSkeleton_Basic.emdl" )
+ImportModel sModelPath, , true 
+' Add a new resolution
+set oRefModel = Application.ActiveSceneRoot.Models.Item(0)
+AddRefModelResolution oRefModel, "MyRes", sModelPath
+' Now remove the original resolution
+iTargetRes = GetResolutionIndexByName( oRefModel, "res1" )
+if iTargetRes &gt; -1 then
+	iCurrentRes = oRefModel.NestedObjects("Active Resolution").Value
+	if iCurrentRes = iTargetRes then
+		' Change the active resolution to the new one and remove the original
+		oRefModel.NestedObjects("Active Resolution").Value = iTargetRes + 1
+		RemoveRefModelResolution oRefModel, "res1", true 
+	end if
+	' Display again the resolutions
+	LogResolutions oRefModel 
+end if
+' Expected results:
+' INFO : res0
+' INFO :     file =  
+' INFO :     name =  Offloaded
+' INFO : res1
+' INFO :     file =  Models\ManSkeleton_Basic.emdl
+' INFO :     name =  res1
+' INFO : res2
+' INFO :     file =  Models\ManSkeleton_Basic.emdl
+' INFO :     name =  MyRes
+' INFO : res0
+' INFO :     file =  
+' INFO :     name =  Offloaded
+' INFO : res1
+' INFO :     file =  Models\ManSkeleton_Basic.emdl
+' INFO :     name =  MyRes
+'
+'	These are convenience functions that do most of the work of navigating through
+'	the resolutions information nested under each reference model. The resolutions 
+'	info is never displayed in the UI, but you can think of its structure like so:
+'	
+'		ReferenceModel (model)
+'			- Resolutions (special container)
+'				- res0 (compound parameter)
+'					- File parameter (eg., "&lt;installationpath&gt;/Data/XSI_SAMPLES/Models/ManSkeleton_Basic.emdl")
+'					- Name parameter (eg., "MyRes")
+'				+ res1
+'				  ...
+'				+ resN
+'				
+'	In order to access this info you need to use the SIObject.NestedObjects property
+'	on the ReferenceModel, the Resolutions container, and then each resolution parameter.
+'
+function GetAllResolutions( in_oRefModel )
+	for each oCurrentContainer in in_oRefModel.NestedObjects
+		if oCurrentContainer.Name = "Resolutions" then
+			set GetAllResolutions = oCurrentContainer.NestedObjects
+			exit function
+		end if
+	next
+end function
+'
+'	Logs the file and name values of each resolution to history
+'
+sub LogResolutions( in_oRefModel )
+	' Visit each resolution and find its name and file info
+	set oResolutions = GetAllResolutions( in_oRefModel )
+	for each oResolutionParameter in oResolutions 
+		Application.LogMessage oResolutionParameter.Name 
+		' The file and name parameters are nested under the compound resolution parameter
+		for each oResInfoParam in oResolutionParameter.NestedObjects
+			Application.LogMessage "    " &amp; oResInfoParam.Name &amp; " =  " &amp; oResInfoParam.Value 
+		next
+	next
+end sub
+' 
+'	Returns the index number of the resolution given its name
+'
+function GetResolutionIndexByName( in_oModel, in_sResName )
+	' Visit each resolution and check its name against the specified name
+	set oResolutions = GetAllResolutions( in_oModel )
+	for i=0 to oResolutions.Count
+		set oResolutionParameter = oResolutions(i)
+		if oResolutionParameter.NestedObjects("name").Value = in_sResName then
+			GetResolutionIndexByName = i
+			exit function
+		end if
+	next
+	' If not found, return a negative value
+	GetResolutionIndexByName = -1
+end function</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/AddRefModelResolution.html">AddRefModelResolution</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

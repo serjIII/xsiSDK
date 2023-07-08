@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Commands and Scripting Reference</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Commands and Scripting Reference</h1>
+         </div>
+
+<h2 class="pagehead">Commands and Scripting Reference</h2>
+
+<div><p>
+Scripting in Softimage is a set of features that allows you to develop scripts. A script is a series of calls to
+Softimage functions (commands or object model functions) written in a particular scripting language, together with
+logic and variables as permitted by the language. <br /><br />
+The Autodesk Softimage SDK supports more than just scripting. Scripting is interpreted line by line as it runs, but
+you can also write code that is compiled from the source into binary files that can then be distributed, either as an
+executable (*.exe file) or a library (*.dll for Windows and *.so for Linux). <br /><br />
+If a path constraint already exists, a position is added onto the existing curve and a  key is added on the path
+percentage property ( ObjectName.kine.PathCns.Percentage ) of the constraint at the given time.
+The type of development you decide to do depends largely on what you need to accomplish and what you are capable of doing,
+so it&#8217;s really an individual decision. For example, you may be a C++ programmer who is interested in creating a compiled
+plug-in for Autodesk Softimage; or you may be a technical director who just needs to automate some repetitive tasks. <br /><br />
+Softimage&#8217;s SDK can accommodate both types of users, since it supports four scripting languages
+(VBScript, JScript, Perl, and Python) for Windows and two for and Linux (VBScript and JScript) and you can access components
+of the object model from a programming language like C++.
+</p></div>
+
+<h3>Available Reference Topics</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Topics		</th>
+		<th title="Description of the parameter">Information Provided		</th>
+	</tr>
+	<tr>
+		<td class="name"><a href="#!/url=./si_cmds/_az.html">Commands</a>		</td>
+		<td>Native Softimage scripting commands.			<p />
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a href="#!/url=./si_om/_azobj.html">Objects</a>, <a href="#!/url=./si_om/_azmeth.html">Methods</a>, <a href="#!/url=./si_om/_azprop.html">Properties</a>, <a href="#!/url=./si_om/_azconst.html">Constants</a>, and <a href="#!/url=./si_om/_azcol.html">Collections</a>		</td>
+		<td>Softimage Object Model library.			<p />
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a href="#!/url=./si_om/_hier.html">Object Model Hierarchy</a>		</td>
+		<td>List of object model classes presented with indenting to indicate hierarchical relationships.	<p />
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a href="#!/url=./si_cmds/_presets.html">Presets</a>		</td>
+		<td>Lists of valid preset strings to be used in various commands and object model methods. 			<p />
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a href="#!/url=./si_cmds/ViewAttributes.html">View Attributes</a>		</td>
+		<td>List of valid attributes that can be used to customize and control various View windows in the Softimage UI.	<p />
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a href="#!/url=./si_cmds/Views.html">View Definitions</a>		</td>
+		<td>List of all names recognized by Softimage as possible view IDs. These names can be specified in the <a href="#!/url=./si_cmds/OpenView.html">OpenView</a> command to open and instance of the given name.	<p />
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a href="#!/url=./si_cmds/callbacks.html">Callbacks</a>		</td>
+		<td>List of all callbacks for self-installing plug-ins.	<p />
+		</td>
+	</tr>
+</table>
+</p></div>
+
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

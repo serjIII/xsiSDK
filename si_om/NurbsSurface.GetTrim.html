@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>NurbsSurface.GetTrim</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>NurbsSurface.GetTrim</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/NurbsSurface.html">NurbsSurface</a>.GetTrim <img src="images/operator.gif" alt="operator" /></h2>
+
+<h3>Description</h3>
+<div><p> Returns a complete data description of a nurbs surface trim.
+A trim is a nurbs curve list that is projected on a nurbs surface.<br /><br />
+Note: This method uses <a href="#!/url=./files/OutArgDefined.htm">output arguments</a>. C# and some 
+scripting languages (such as JScript and PerlScript) don't support arguments passed by reference. However, there is a 
+alternate version of this method which is considered safe to use with C#, JScript and PerlScript: 
+<a href="#!/url=./si_om/NurbsSurface.GetTrim2.html">NurbsSurface.GetTrim2</a>.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>NurbsSurface.GetTrim( Int32 in_nTrimIndex, siNurbsFormat in_eNurbsFormat, Object& out_vsabIsBoundary, Object& out_vsalProjectionType, Object& out_vsalCount, Object& out_vsaControlPoints, Object& out_vsaNbControlPoints, Object& out_vsadKnots, Object& out_vsaNbKnots, Object& out_vsasClosed, Object& out_vsalDegree, Object& out_vsalParameterization );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>NurbsSurface.GetTrim( TrimIndex, [NurbsFormat], IsBoundary, ProjectionType, Count, ControlPoints, [NbControlPoints], [Knots], [NbKnots], [Closed], [Degree], [Parameterization] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">TrimIndex		</td>
+		<td><a href="#!/url=./files/Long.htm">Long</a>		</td>
+		<td>
+ Specifies which trim must be described. 		</td>
+	</tr>
+	<tr>
+		<td class="name">NurbsFormat		</td>
+		<td><a href="#!/url=./si_om/siNurbsFormat.html">siNurbsFormat</a>		</td>
+		<td>
+ Specifies how the data is formatted. 			<p class="cell"><span class="hilite">Default Value: </span>
+siSINurbs			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">IsBoundary		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ Specifies whether the trim is a boundary.		</td>
+	</tr>
+	<tr>
+		<td class="name">ProjectionType		</td>
+		<td><a href="#!/url=./files/Long.htm">Long</a>		</td>
+		<td>
+ Specifies the projection type of this trim.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>UV space					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>World space					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Count		</td>
+		<td><a href="#!/url=./files/Long.htm">Long</a>		</td>
+		<td>
+Number of nurbs curve in the trim		</td>
+	</tr>
+	<tr>
+		<td class="name">ControlPoints		</td>
+		<td>2D <a href="#!/url=./files/Array.htm">Array</a>		</td>
+		<td>
+
+		The control points are stored in a 2 dimensional array.<br /><br />
+		The array is a 4 x Number of ControlPoints
+			</td>
+	</tr>
+	<tr>
+		<td class="name">NbControlPoints		</td>
+		<td><a href="#!/url=./files/Array.htm">Array</a> of <a href="#!/url=./files/Long.htm">Long</a>		</td>
+		<td>
+ Specifies the number of ControlPoints per NurbsCurve.		</td>
+	</tr>
+	<tr>
+		<td class="name">Knots		</td>
+		<td><a href="#!/url=./files/Array.htm">Array</a> of <a href="#!/url=./files/Double.htm">Double</a>s		</td>
+		<td>
+An array of knot values.		</td>
+	</tr>
+	<tr>
+		<td class="name">NbKnots		</td>
+		<td><a href="#!/url=./files/Array.htm">Array</a> of <a href="#!/url=./files/Long.htm">Long</a>s		</td>
+		<td>
+ Specifies the number of Knots per nurbs curve.		</td>
+	</tr>
+	<tr>
+		<td class="name">Closed		</td>
+		<td><a href="#!/url=./files/Array.htm">Array</a> of <a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ Specifies whether the nurbs curve is closed .			<p class="cell"><span class="hilite">Default Value: </span>
+False			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Degree		</td>
+		<td><a href="#!/url=./files/Array.htm">Array</a> of <a href="#!/url=./files/Long.htm">Long</a>		</td>
+		<td>
+ Degree of the nurbs curves.			<p class="cell"><span class="hilite">Default Value: </span>
+3			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Parameterization		</td>
+		<td><a href="#!/url=./files/Array.htm">Array</a> of <a href="#!/url=./si_om/siKnotParameterization.html">siKnotParameterization</a>		</td>
+		<td>
+ The parameterization factor of the nurbs curve.		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">Dim lDegree, bClosed, eParameterization, aControlVertex, aKnots, lCount, aNbControlVertex, bIsBoundary, lProjType
+set oRoot = application.activeproject.activescene.root
+set oSphere = oRoot.AddGeometry( "Sphere", "NurbsSurface" )
+' extract each trim contained in the surface
+for i = 0 to (oSphere.ActivePrimitive.Geometry.Surfaces.Item(0).TrimCount - 1)
+	oSphere.ActivePrimitive.Geometry.Surfaces.Item(0).GetTrim _
+		i, _
+		siSINurbs, _
+		bIsBoundary, _
+		lProjType, _
+		lCount, _
+		aControlVertex, _
+		aNbControlVertex, _
+		aKnots , _
+		aNbKnots, _
+		bClosed, _
+		lDegree, _
+		eParameterization
+	oRoot.AddNurbsCurveList2 _
+		lCount, _
+		aControlVertex, _
+		aNbControlVertex, _
+		aKnots, _
+		aNbKnots, _
+		bClosed, _
+		lDegree, _
+		eParameterization, _
+		siSINurbs
+next</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/NurbsSurfaceMesh.AddSurfaceWithTrim.html">NurbsSurfaceMesh.AddSurfaceWithTrim</a> <a href="#!/url=./si_om/NurbsSurface.GetTrim2.html">NurbsSurface.GetTrim2</a> <a href="#!/url=./si_om/NurbsSurface.TrimCount.html">NurbsSurface.TrimCount</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

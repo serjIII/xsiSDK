@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Command.Code</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Command.Code</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/Command.html">Command</a>.Code</h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p> Sets and returns the implementation of the Command as a <a href="#!/url=./files/String.htm">String</a> value.
+Use this property as an alternative to storing the Command implementation
+in a file.  This is a convenient way to implement small, simple script-based 
+custom commands.  The code is stored as part of the Command definition.<br /><br />
+Any script language can be represented as a string, but the "toString()" method
+in JScript is particularly convenient for turning a function into its string 
+representation.<br /><br />
+The string must include a function with the name specified in the 
+<a href="#!/url=./si_om/Command.Handler.html">Command.Handler</a> property, and it can also contain 
+helper functions or global variables.<br /><br />
+Note: Global variables will potentially be re-initialized each time the command is executed.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>// get accessor
+String rtn = Command.Code;
+// set accessor
+Command.Code = String;</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	Example of an embedded command
+*/
+// These are the two different implementations of
+// the command that we will use
+function FuncImpl1( arg )
+{
+	Application.LogMessage( arg ) ;
+}
+function FuncImpl2( arg )
+{
+	XSIUIToolkit.MsgBox( arg ) ;
+}
+Application.RemoveCommand( "EmbeddedJScript" ) ;
+var cmd = Application.CreateCommand( "EmbeddedJScript" ) ;
+cmd.ScriptingName = "EmbeddedJScript" ;
+cmd.Language = "JScript" ;
+cmd.Handler = "FuncImpl1" 
+cmd.Code = FuncImpl1.toString(); // Embed the code directly in the definition
+cmd.Arguments.Add( "arg1") ;
+cmd.ReturnValue = false   // Optional, but makes it explicit that this is
+						  // is a subroutine
+Application.AddCommand( cmd ) ;
+//Tip: uncomment this line to see the command
+//that has just been defined
+//EditCommand( "EmbeddedJScript" ) ;
+//Execute the command
+//This will log:
+//INFO : "56"
+EmbeddedJScript( 56 ) ;
+//Change the code by updating the command with
+//a new function
+var cmd = Application.Commands( "EmbeddedJScript" ) ;
+cmd.Code = FuncImpl2.toString() ;
+cmd.Handler = "FuncImpl2" ;
+cmd.Update() ;
+//Execute the command
+//This will pop up a message box
+EmbeddedJScript( 56 ) ;
+//Cleanup 
+Application.RemoveCommand( "EmbeddedJScript" ) ;</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+'	VBScript example of an embedded command
+'
+'The implementation of the command is stored in this string
+'Clearly it would be awkward to write a huge command
+'like that.  For large custom commands we recommend that
+'you store the command in a file
+'and set the Command.FileName property.
+dim strCommandImpl 
+strCommandImp = _
+	"sub FuncImpl( arg )" &amp; vbCrLf &amp; _
+	"	logmessage arg" &amp; vbCrLf &amp; _
+	"end sub"
+Application.RemoveCommand "EmbeddedVBScript" 
+set cmd = Application.CreateCommand( "EmbeddedVBScript" )
+cmd.ScriptingName = "EmbeddedVBScript" 
+cmd.Language = "VBScript" 
+cmd.Handler = "FuncImpl" 
+cmd.Code = strCommandImp  ' Embed the code directly in the definition
+cmd.Arguments.Add "arg1"
+cmd.ReturnValue = false   ' Optional, but makes it explicit that this is
+						  'is a subroutine
+Application.AddCommand( cmd )
+'Tip: uncomment this line to see the command
+'that has just been defined
+'EditCommand "EmbeddedVBScript"
+'Execute the command
+'This will log:
+'INFO : "56"
+EmbeddedVBScript 56
+'Change the code by updating the command with
+'a new function
+strCommandImp = _
+	"sub FuncImpl( arg )" &amp; vbCrLf &amp; _
+	"	MsgBox arg" &amp; vbCrLf &amp; _
+	"end sub"
+set cmd = Application.Commands( "EmbeddedVBScript" )
+cmd.Code = strCommandImp
+cmd.Update
+'Execute the command
+'This will pop up a message box
+EmbeddedVBScript 56
+'Cleanup 
+Application.RemoveCommand "EmbeddedVBScript"</pre></td></tr>
+</table>
+</div><h4>3. Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">#g_EmbeddedCmd is some simple python code that we will
+#use as the implementation of a custom command
+g_EmbeddedCmd = """
+#This routine expects in_obj to be a light
+def FuncWithLightAsArgCmdImp( in_obj ):
+	Application.LogMessage( in_obj.Shaders.Count ) 
+	Application.LogMessage( in_obj.Name ) 
+"""
+#
+# Function that creates custom command, provides g_EmbeddedCmd
+# as the implementation and then calls it
+#
+def DemoObjectArgument():
+	oDefaultLight = Application.ActiveSceneRoot.Children( "light" )		
+	Application.RemoveCommand( "pythontestcmd" )
+	cmd = Application.CreateCommand( "pythontestcmd" )
+	cmd.ScriptingName = "pythontestcmd"
+	cmd.Code = g_EmbeddedCmd
+	cmd.Language = "Python"
+	cmd.Handler = "FuncWithLightAsArgCmdImp"
+	cmd.Arguments.AddObjectArgument( "in_obj" )
+	Application.AddCommand( cmd )
+	Application.pythontestcmd( oDefaultLight )
+	#Because of argument handler we can also call it 
+	#with a string and it will automatically be converted
+	#into the object equivalent
+	Application.pythontestcmd( "light" )
+	Application.RemoveCommand( "pythontestcmd" )
+DemoObjectArgument()
+#Expected output
+#INFO : 2
+#INFO : light
+#INFO : 2
+#INFO : light</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/Command.FileName.html">Command.FileName</a> <a href="#!/url=./si_om/Command.Handler.html">Command.Handler</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

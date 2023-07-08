@@ -1,0 +1,46 @@
+var topic = "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n\
+\n\
+<!-- saved from url=(0024)http://docs.autodesk.com -->\n\
+<html>\n\
+   <head>\n\
+<link href=\"../style/prettify.css\" type=\"text/css\" rel=\"stylesheet\" />\n\
+<script type=\"text/javascript\" src=\"../scripts/prettify.js\"></script><script src=\"../scripts/lib/jquery-1.9.1.min.js\" type=\"text/javascript\"></script>\n\
+      <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n\
+      <meta name=\"product\" content=\"SI\" />\n\
+      <meta name=\"release\" content=\"2015\" />\n\
+      <meta name=\"book\" content=\"Developer\" />\n\
+      <meta name=\"created\" content=\"2014-03-13\" />\n\
+      <meta name=\"topicid\" content=\"GUID-1174596A-0630-44C5-BAEF-B890E3C379E6\" />\n\
+      <meta name=\"topic-type\" content=\"concept\" />\n\
+      <meta name=\"keywords\" content=\"<plug-in_name&gt;, <parser_name&gt;\" />\n\
+      <meta name=\"keyword\" content=\"<plug-in_name&gt;\" />\n\
+      <meta name=\"keyword\" content=\"<parser_name&gt;\" />\n\
+      <title>Custom Shaders</title><script type=\"text/javascript\" src=\"../scripts/utils/adsk.redirect.js\"></script></head>\n\
+   <body height=\"100%\"><div class=\"body_content\" id=\"body-content\"><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/ac_common.js\"); });</script><script type=\"text/javascript\">var reflinkid = \"si_cpp\"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on(\'click\', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/multireflink.js\"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$(\"div#WidgetFloaterPanels,link[href*=\'microsofttranslator.com\'],script[src*=\'microsofttranslator.com\'],script[src*=\'bing.com\']\").remove();</script><script type=\'text/javascript\'>$(\"div#navigation,div#breadcrumbs,div#banner\").attr(\"translate\",\"no\"); var mtLocation = ((location && location.href && location.href.indexOf(\'https\') == 0)?\'https://ssl.microsofttranslator.com\':\'http://www.microsofttranslator.com\')+\'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages=\'; yepnope.injectJs(mtLocation, function() {}, { charset:\'utf-8\', type:\'text/javascript\' } );</script><script type=\"text/javascript\">\n\
+ </script><!-- begin MT -->\n\
+            \n\
+            <div id=\'MicrosoftTranslatorWidget\' class=\'Dark\' style=\'position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden\'></div><div id=\"reflinkdiv\" style=\"display:none; font-family: \'RobotoRegular\', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible\"></div>\n\
+      <div><span class=\"anchor_wrapper\"><a name=\"GUID-1174596A-0630-44C5-BAEF-B890E3C379E6\"></a></span><div class=\"head\">\n\
+            <h1>Custom Shaders</h1>\n\
+         </div>\n\
+         <p><span class=\"anchor_wrapper\"><a name=\"GUID-D262C4F9-ED94-4FD5-9EA5-D2FAA8CC5CD7\"></a></span>Information about developing custom shaders for Autodesk Softimage.\n\
+         </p><span class=\"noindex\">\n\
+            <div class=\"topic-list\">\n\
+               <h4 class=\"related\">Topics in this section</h4>\n\
+               <ul class=\"jumplist\">\n\
+                  <li class=\"topiclist-litem\"><a href=\"#!/url=./files/cus_shaders_GettingStarted.htm\">Understanding Softimage Custom Shaders</a></li>\n\
+                  <li class=\"topiclist-litem\"><a href=\"#!/url=./files/cus_shaders_CreatingDefPlugins.htm\">Creating Shader Definition Plug-ins</a></li>\n\
+                  <li class=\"topiclist-litem\"><a href=\"#!/url=./files/cus_shaders_CreatingShaderParsers.htm\">Creating Shader Language Parser Definitions</a></li>\n\
+                  <li class=\"topiclist-litem\"><a href=\"#!/url=./files/cus_shaders_hwrenderers.htm\">Creating Realtime (Hardware) Shader Plug-ins</a></li>\n\
+                  <li class=\"topiclist-litem\"><a href=\"#!/url=./files/cus_shaders_PresetMgr.htm\">Populating the Preset Manager</a></li>\n\
+                  <li class=\"topiclist-litem\"><a href=\"#!/url=./files/cus_shaders_Families.htm\">Shader Families</a></li>\n\
+                  <li class=\"topiclist-litem\"><a href=\"#!/url=./files/cus_shaders-1.htm\">Shader Parameter Definitions</a></li>\n\
+                  <li class=\"topiclist-litem\"><a href=\"#!/url=./files/cus_shaders_Attributes.htm\">Setting ShaderDef Attributes</a></li>\n\
+                  <li class=\"topiclist-litem\"><a href=\"#!/url=./files/cus_shaders_Renderers.htm\">Providing Renderer Information</a></li>\n\
+                  <li class=\"topiclist-litem\"><a href=\"#!/url=./files/cus_shaders_CodeEditor.htm\">Editing Shader Code in Softimage</a></li>\n\
+                  <li class=\"topiclist-litem\"><a href=\"#!/url=./files/cus_shaders_Examples.htm\">Shader Definition and Parser Examples</a></li>\n\
+                  <li class=\"topiclist-litem\"><a href=\"#!/url=./files/cus_mrshad_wizard.htm\">Using the Mental Ray Shader Wizard</a></li>\n\
+               </ul>\n\
+            </div></span><div class=\"footer-block\"><a href=\"../html/ac.cmtdialog.htm\" class=\"comments-anchor\" target=\"_blank\"><span class=\"comments-link\">Please send us your comment about this page</span></a></div><br /><p class=\"footer-license-block\"><a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\"><img alt=\"Creative Commons License\" style=\"border-width: 0;\" src=\"../images/ccLink.png\" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href=\"http://autodesk.com/creativecommons\" target=\"_blank\">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>\n\
+   </div></body>\n\
+</html>";

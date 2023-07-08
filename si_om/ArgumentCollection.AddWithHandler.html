@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>ArgumentCollection.AddWithHandler</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>ArgumentCollection.AddWithHandler</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/ArgumentCollection.html">ArgumentCollection</a>.AddWithHandler</h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p> Appends an argument with an <a href="#!/url=./si_om/ArgumentHandler.html">ArgumentHandler</a>.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>Argument ArgumentCollection.AddWithHandler( String in_ArgumentName, Object in_ArgHandler, String in_DefaultValue );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = ArgumentCollection.AddWithHandler( ArgumentName, ArgumentHandler, [DefaultValue] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p><a href="#!/url=./si_om/Argument.html">Argument</a></p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">ArgumentName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Name of the new argument to append		</td>
+	</tr>
+	<tr>
+		<td class="name">ArgumentHandler		</td>
+		<td><a href="#!/url=./si_om/siArgumentHandler.html">siArgumentHandler</a>		</td>
+		<td>
+Name of the argument handler to use.		</td>
+	</tr>
+	<tr>
+		<td class="name">DefaultValue		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		Normally Argument Handlers do not require a default value, but some 
+		adjust their behavior if a string is provided.  For example
+		if the string "*" is provided in conjunction with the "Collection"
+		Argument Handler then all the objects in the scene are sent
+		to the command rather than the current selection.  This behavior 
+		is documented with the <a href="#!/url=./si_om/siArgumentHandler.html">siArgumentHandler</a> enum.
+			</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">// JScript example: Add argument handler that gets the current selection
+// Remove existing command
+Application.RemoveCommand("MyCommand"); 
+// Create a command named "MyCommand". You must create the file and paste 
+// the "MyCommandFunc" function in the file to get the example to work
+var oCmd = Application.CreateCommand("MyCommand");
+// Outputs all element that are currently selected
+function MyCommandFunc( in_CurrentSelection )
+{
+		Logmessage( "MyCommandFunc was called with the following arguments: " ) ;
+		for (i = 0; i &lt; in_CurrentSelection.Count; i++ )
+		{
+			var currentItem = in_CurrentSelection(i);
+			LogMessage( currentItem.Name );
+		}
+}
+// Set the handler code (this is an embedded command)
+oCmd.Code = MyCommandFunc.toString() ;
+oCmd.Language = "Jscript" ;
+// Function implementing the handling code (see MyCommandFunc for the actual function code)
+oCmd.Handler = "MyCommandFunc";		  
+// Adds an argument handler that gets the currently selected objects
+// when the user does not specify the argument value when invoking the
+// command.
+var oCmdArguments = oCmd.Arguments
+var noValue;
+oCmdArguments.AddWithHandler
+( 
+		"CurrentSelection",			// name of the new argument
+		"Collection",				// name of the argument handler to use
+		noValue					// parameter to the argument handlers (stored in Argument.Value)
+);
+// Register the new command
+Application.AddCommand(oCmd);
+SelectObj( "light" ) ;
+// Call the updated command.  The "CurrentSelection" argument
+// will contain the current selection.  
+oCmd.Execute();
+// You can override the behavior by passing specific object
+oCmd.Arguments(0).Value = "Camera_Root" ;
+oCmd.Execute() ;
+// Remove the command
+Application.RemoveCommand("MyCommand"); 
+// Expected results:
+//INFO : "MyCommandFunc was called with the following arguments: "
+//INFO : "light"
+//INFO : "MyCommandFunc was called with the following arguments: "
+//INFO : "Camera_Root"</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/ArgumentHandler.html">ArgumentHandler</a> <a href="#!/url=./si_om/ArgumentCollection.Add.html">ArgumentCollection.Add</a> <a href="#!/url=./si_om/Command.Arguments.html">Command.Arguments</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

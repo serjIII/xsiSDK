@@ -1,0 +1,191 @@
+var topic = "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n\
+\n\
+<!-- saved from url=(0024)http://docs.autodesk.com -->\n\
+<html>\n\
+   <head>\n\
+<link href=\"../style/prettify.css\" type=\"text/css\" rel=\"stylesheet\" />\n\
+<script type=\"text/javascript\" src=\"../scripts/prettify.js\"></script><script src=\"../scripts/lib/jquery-1.9.1.min.js\" type=\"text/javascript\"></script>\n\
+      <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n\
+      <meta name=\"product\" content=\"SI\" />\n\
+      <meta name=\"release\" content=\"2015\" />\n\
+      <meta name=\"book\" content=\"Developer\" />\n\
+      <meta name=\"created\" content=\"2014-03-13\" />\n\
+      <meta name=\"topicid\" content=\"GUID-C9BD06A5-A279-47DF-8219-8D27D772974E\" />\n\
+      <meta name=\"indexterm\" content=\"custom properties: creating controls: FCurve Widget\" />\n\
+      <meta name=\"indexterm\" content=\"FCurve Widget: creating: in a property page\" />\n\
+      <meta name=\"topic-type\" content=\"concept\" />\n\
+      <title>FCurve Widget</title><script type=\"text/javascript\" src=\"../scripts/utils/adsk.redirect.js\"></script></head>\n\
+   <body height=\"100%\"><div class=\"body_content\" id=\"body-content\"><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/ac_common.js\"); });</script><script type=\"text/javascript\">var reflinkid = \"si_cpp\"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on(\'click\', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/multireflink.js\"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$(\"div#WidgetFloaterPanels,link[href*=\'microsofttranslator.com\'],script[src*=\'microsofttranslator.com\'],script[src*=\'bing.com\']\").remove();</script><script type=\'text/javascript\'>$(\"div#navigation,div#breadcrumbs,div#banner\").attr(\"translate\",\"no\"); var mtLocation = ((location && location.href && location.href.indexOf(\'https\') == 0)?\'https://ssl.microsofttranslator.com\':\'http://www.microsofttranslator.com\')+\'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages=\'; yepnope.injectJs(mtLocation, function() {}, { charset:\'utf-8\', type:\'text/javascript\' } );</script><script type=\"text/javascript\">\n\
+ </script><!-- begin MT -->\n\
+            \n\
+            <div id=\'MicrosoftTranslatorWidget\' class=\'Dark\' style=\'position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden\'></div><div id=\"reflinkdiv\" style=\"display:none; font-family: \'RobotoRegular\', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible\"></div>\n\
+      <div><span class=\"anchor_wrapper\"><a name=\"GUID-C9BD06A5-A279-47DF-8219-8D27D772974E\"></a></span><div class=\"head\">\n\
+            <h1> FCurve Widget</h1>\n\
+         </div>\n\
+         <div class=\"bodyProcess\"><img src=\"../images/GUID-74A8C02E-213F-4C89-BD4A-B3847F8DB3FE-low.png\" /><p><span class=\"anchor_wrapper\"><a name=\"GUID-57E09218-70C2-49A6-9984-FB3C83E42D18\"></a></span>FCurve controls display a standard Softimage FCurve grid. They are associated to an\n\
+               underlying <a href=\"#!/url=./si_om/FCurve.html\">FCurve</a> or <a href=\"#!/url=./si_cpp/classXSI_1_1FCurve.html\">FCurve</a> parameter (often called a <em class=\"mild\">Profile Curve</em> because it does not animate any parameter, but instead is available for use in any\n\
+               fashion the plug-in developer or user wishes).\n\
+            </p>\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-C10F4307-B49F-4E03-9474-70BF06D3708F\"></a></span>You create them using the <a href=\"#!/url=./si_om/PPGLayout.AddFCurve.html\">PPGLayout.AddFCurve</a> or PPGLayout::AddFCurve method:\n\
+            </p>\n\
+            <div class=\"codeBlock\"><pre class=\"prettyprint\">\n\
+// ** during parameter definition (for example, in the <a href=\"#!/url=./si_cmds/cb_Property_DefineLayout.html\">DefineLayout</a> callback) **\n\
+// use the convenience method to add the fcurve to the custom property\n\
+var oParam = oCustomProperty.AddFCurveParameter( \"MyFCurve\" );\n\
+\n\
+// now to get the actual fcurve from the parameter, use [Get]Value (not [Get]Source)\n\
+var oFCurve = oParam.Value;\n\
+oFCurve.BeginEdit();\n\
+oFCurve.AddKey( 0, 0 );\n\
+oFCurve.AddKey( 50, 90 );\n\
+oFCurve.AddKey( 100, 0 );\n\
+oFCurve.EndEdit();\n\
+\n\
+// ** during control creation (for example, in the <a href=\"#!/url=./si_cmds/cb_Property_DefineLayout.html\">DefineLayout</a> callback) **\n\
+// by default, the height of the widget is 300 units\n\
+var oItem = oLayout.AddFCurve( \"MyFCurve\", 250 );</pre></div>\n\
+            <div><span class=\"anchor_wrapper\"><a name=\"GUID-F5687D80-FEB9-42B5-9A45-69C69B9F243F\"></a></span><div class=\"note-note\"><span class=\"label\">NOTE:</span> \n\
+                  <p><span class=\"anchor_wrapper\"><a name=\"GUID-82EF90FC-B6F7-4320-8651-A7F05F994ADC\"></a></span>You can also use the <a href=\"#!/url=./si_om/PPGLayout.AddItem.html\">PPGLayout.AddItem</a> or PPGLayout::AddItem method with the <a href=\"#!/url=./si_om/siPPGControlType.html\">siControlFCurve</a> control type enum, but the <a href=\"#!/url=./si_om/PPGLayout.AddFCurve.html\">PPGLayout.AddFCurve</a> or PPGLayout::AddFCurve method is a little more convenient.\n\
+                  </p> \n\
+               </div>\n\
+            </div>\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-BB594829-5FE1-411A-9A27-9E9EB1491668\"></a></span>The underlying <a href=\"#!/url=./si_om/FCurve.html\">FCurve</a> or <a href=\"#!/url=./si_cpp/classXSI_1_1FCurve.html\">FCurve</a> parameter is a real instance of an <a href=\"#!/url=./si_om/FCurve.html\">FCurve</a> or <a href=\"#!/url=./si_cpp/classXSI_1_1FCurve.html\">FCurve</a> object, so that all methods and properties available on the <a href=\"#!/url=./si_om/FCurve.html\">FCurve</a> or <a href=\"#!/url=./si_cpp/classXSI_1_1FCurve.html\">FCurve</a> object are available dynamically through Logic, using <a href=\"#!/url=./si_om/Parameter.Value.html\">Parameter.Value</a> (from <a href=\"#!/url=./si_om/PPG.Inspected.html\">PPG.Inspected</a>), which returns a <a href=\"#!/url=./si_om/ProjectItemCollection.html\">ProjectItemCollection</a> which you use in turn to get the particular item\'s parameter) to get a pointer to\n\
+               the <a href=\"#!/url=./si_om/FCurve.html\">FCurve</a> or <a href=\"#!/url=./si_cpp/classXSI_1_1FCurve.html\">FCurve</a> object (see <span class=\"char_link\"><a href=\"#!/url=./files/cus_ppg_DynamicallyChangingCustomProperties.htm\">Dynamically Changing Custom Properties</a></span>).\n\
+            </p>\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-ED0DC72D-BDF7-40DA-BC10-4D5175A0B3EB\"></a></span>The following item attributes are available:\n\
+            </p>\n\
+            <div class=\"table_Ruled\">\n\
+               <table cellpadding=\"0\" cellspacing=\"0\" class=\"ruled\">\n\
+                  <colgroup>\n\
+                     <col align=\"left\" />\n\
+                     <col align=\"left\" />\n\
+                     <col align=\"left\" />\n\
+                  </colgroup>\n\
+                  <tr class=\"ruledHeading\">\n\
+                     <th class=\"table-heading\"> <span class=\"anchor_wrapper\"><a name=\"GUID-C35CBE05-3B28-4402-BB55-57FEFD742635\"></a></span><p class=\"table-heading\">Available on all Controls also as a property on the PPGItem object:</p> \n\
+                     </th>\n\
+                     <th class=\"table-heading\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-E83E8A57-315E-4A23-A699-8383B6C6BB1B\"></a></span><p class=\"table-heading\">Common to many Controls:</p> \n\
+                     </th>\n\
+                     <th class=\"table-heading\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-4654507C-7E5F-44A5-B097-44DB8DD51B5D\"></a></span><p class=\"table-heading\">Specific to the FCurve control:</p> \n\
+                     </th>\n\
+                  </tr>\n\
+                  <tr class=\"ruledOddRow\">\n\
+                     <td class=\"table-body\"> \n\
+                        <ul>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-2D895BB0-D2B0-431B-87F8-F66105BDF7D0\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUILabel</a> \n\
+                              </p> \n\
+                           </li>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-537D0394-5CD9-49CB-BEBB-278AF7DE9FE4\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUIItems</a> \n\
+                              </p> \n\
+                           </li>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-C26998E0-B6DA-4598-B69C-90A80314005A\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUIType</a> \n\
+                              </p> \n\
+                           </li>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-C740CAE1-A5F2-4B0A-BAA1-59A82C3ECD0B\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUIWidthPercentage</a> \n\
+                              </p> \n\
+                           </li>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-9A40AC50-1576-459E-86AD-D4ABEC7576BF\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUILabelPercentage</a> \n\
+                              </p> \n\
+                           </li>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-4FB55C79-B17B-431B-B675-5900022B404F\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUILabelMinPixels</a> \n\
+                              </p> \n\
+                           </li>\n\
+                        </ul> \n\
+                     </td>\n\
+                     <td class=\"table-body\" align=\"left\"> \n\
+                        <ul>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-6E5D4D57-9A84-4B66-A849-C6DCB9A8D249\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUIContinue</a> \n\
+                              </p> \n\
+                           </li>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-850757B0-5E5F-49C9-9949-3516B3C970E7\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUICX</a> \n\
+                              </p> \n\
+                           </li>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-8C9D4BBE-C922-48BA-8DB5-ACA588C2F2B3\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUICY</a> \n\
+                              </p> \n\
+                           </li>\n\
+                        </ul> \n\
+                     </td>\n\
+                     <td class=\"table-body\" align=\"left\"> \n\
+                        <ul>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-BD1BBDEC-4AAD-4538-BC9C-A1B44DA8878B\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUIFCurveLabelX</a> \n\
+                              </p> \n\
+                           </li>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-06E09EE6-B717-4BA1-937D-5FECD4E49BC8\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUIFCurveLabelY</a> \n\
+                              </p> \n\
+                           </li>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-E33B929C-26AB-4F5B-B19E-9F8F94FF2406\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUIFCurveViewMinX</a> \n\
+                              </p> \n\
+                           </li>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-8C5389FB-8108-4101-A056-FA7429542BD1\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUIFCurveViewMinY</a> \n\
+                              </p> \n\
+                           </li>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-6A039058-9319-4ABB-9CD5-85D24BFD0370\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUIFCurveViewMaxX</a> \n\
+                              </p> \n\
+                           </li>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-0C21775E-6611-4994-9399-52C3DB10E1AC\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUIFCurveViewMaxY</a> \n\
+                              </p> \n\
+                           </li>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-69D39DCD-9DA4-4AE1-B7F9-EDBE48D116C6\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUIFCurveGridSpaceX</a> \n\
+                              </p> \n\
+                           </li>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-464485B3-1146-4C4C-9057-5F9D5AAFD6C5\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUIFCurveGridSpaceY</a> \n\
+                              </p> \n\
+                           </li>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-9F076DA5-543A-4006-A0F6-8E30AA6D0571\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUIFCurveNoGrid</a> \n\
+                              </p> \n\
+                           </li>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-224F71C5-6690-4AF3-8B1A-F60D54F28630\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUIFCurveNoRulerX</a> \n\
+                              </p> \n\
+                           </li>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-8B87D15B-42D0-48E2-BA1E-6CC4C8475F45\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUIFCurveNoRulerY</a> \n\
+                              </p> \n\
+                           </li>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-1D50B9C0-E080-4651-881C-98E3E50942F7\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUIFCurveSnapX</a> \n\
+                              </p> \n\
+                           </li>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-7AA7559D-4C7C-40D4-9BC4-0091D0E106F2\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUIFCurveSnapY</a> \n\
+                              </p> \n\
+                           </li>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-D3F1EF96-240E-40E5-8349-356889930A55\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUIFCurveGhosting</a> \n\
+                              </p> \n\
+                           </li>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-66AF0046-A9EA-45E6-8775-A01691EECFE5\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUIFCurveColorNonBijective</a> \n\
+                              </p> \n\
+                           </li>\n\
+                           <li> \n\
+                              <p><span class=\"anchor_wrapper\"><a name=\"GUID-C0757CB9-BB74-4E3E-B883-9BF649757500\"></a></span> <a href=\"#!/url=./si_om/siPPGItemAttribute.html\">siUIFCurveShowTimeCursor</a> \n\
+                              </p> \n\
+                           </li>\n\
+                        </ul> \n\
+                     </td>\n\
+                  </tr>\n\
+               </table>\n\
+            </div>\n\
+         </div>\n\
+         <div class=\"footer-block\"><a href=\"../html/ac.cmtdialog.htm\" class=\"comments-anchor\" target=\"_blank\"><span class=\"comments-link\">Please send us your comment about this page</span></a></div><br /><p class=\"footer-license-block\"><a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\"><img alt=\"Creative Commons License\" style=\"border-width: 0;\" src=\"../images/ccLink.png\" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href=\"http://autodesk.com/creativecommons\" target=\"_blank\">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>\n\
+   </div></body>\n\
+</html>";

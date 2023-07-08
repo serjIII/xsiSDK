@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Model.Groups</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Model.Groups</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/Model.html">Model</a>.Groups</h2>
+
+<h3>Description</h3>
+<div><p> Returns a <a href="#!/url=./si_om/GroupCollection.html">GroupCollection</a> containing all <a href="#!/url=./si_om/Group.html">Group</a> 
+objects in the model.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>// get accessor
+GroupCollection rtn = Model.Groups;</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'----------------------------------------------------------
+'
+'	This example demonstrates how to find groups under the
+'	scene root or under a specific model given the 
+'	following structure:
+'
+'        Scene_Root                        Model    Group
+'            + RootGroup                              *
+'            + ChildModel                    *
+'                + ChildGroup                         *
+'            + AnotherChildModel             *
+'                + AnotherChildGroup                  *
+'                + GrandChildModel           *
+'                    + GrandChildGroup                *
+'                                          =====    =====
+'                                            3        4
+'
+'	NB: The Model.Groups property has a limitation of only 
+'		getting the immediate children of that model 
+'		(whereas you can get every all models in all 
+'		generations with the X3DObject.Models property).
+'
+'----------------------------------------------------------
+'
+'	SETUP
+'
+NewScene , false
+' Set up a scene with 4 objects
+set oRoot = ActiveSceneRoot
+set oMbr1 = oRoot.AddGeometry( "Disc", "MeshSurface" )
+set oMbr2 = oRoot.AddGeometry( "Torus", "MeshSurface" )
+set oMbr3 = oRoot.AddGeometry( "Sphere", "MeshSurface" )
+set oMbr4 = oRoot.AddNull()
+' Create a group under the root 
+oRoot.AddGroup oMbr1, "RootGroup"
+' Create a new model and another group under the new model 
+set oMdl = oRoot.AddModel( oMbr2, "ChildModel" )
+oMdl.AddGroup oMbr2, "ChildGroup" 
+' Add another model to the root 
+set oMdl = oRoot.AddModel( oMbr3, "AnotherChildModel" )
+oMdl.AddGroup oMbr3, "AnotherChildGroup"
+' Nest yet another model under the second child model
+set oMdl = oMdl.AddModel( oMbr4, "GrandChildModel" )
+oMdl.AddGroup oMbr4, "GrandChildGroup"
+'----------------------------------------------------------
+'
+'	SEARCH
+'
+' Find all groups under the scene root
+LogMessage "******** GROUPS UNDER " &amp; oRoot.Name &amp; " ********"
+FindGroupsUnderModel oRoot
+' Find all groups under 'AnotherChildModel' 
+LogMessage "******** GROUPS UNDER " &amp; oMdl.Name &amp; " ********"
+FindGroupsUnderModel oMdl 
+' Now find all groups in the scene
+RecursiveGroupSearch oRoot
+'----------------------------------------------------------
+'
+'	RESULTS
+'
+'INFO : "******** GROUPS UNDER Scene_Root ********"
+'INFO : "RootGroup contains these members:"
+'INFO : "	disc"
+'INFO : "******** GROUPS UNDER GrandChildModel ********"
+'INFO : "GrandChildModel.GrandChildGroup contains these members:"
+'INFO : "	null"
+'INFO : "******** FINDING ALL GROUPS IN THE SCENE ********"
+'INFO : "# of models under the root: 3"
+'INFO : "RootGroup contains these members:"
+'INFO : "	disc"
+'INFO : "ChildModel.ChildGroup contains these members:"
+'INFO : "	torus"
+'INFO : "AnotherChildModel.AnotherChildGroup contains these members:"
+'INFO : "	sphere"
+'INFO : "GrandChildModel.GrandChildGroup contains these members:"
+'INFO : "	null"
+'----------------------------------------------------------
+'
+'	HELPERS
+'
+' Finds all groups under a specific model (not recursive)
+function FindGroupsUnderModel( in_model )
+	' Find all groups under the specified model
+	set oGrps = in_model.Groups
+	for each g in oGrps 
+		LogMessage g.FullName &amp; " contains these members:"
+		for each m in g.Members
+			LogMessage vbTab &amp; m.Name
+		next
+	next
+end function
+'----------------------------------------------------------
+' Finds all groups under a specific model (recursive). Since
+' we can get every model recursively (except the one we 
+' started with) start with listing the groups under the 
+' current model and then get the groups for each model under
+' it, calling FindGroupsUnderModel for each one.
+function RecursiveGroupSearch( in_model )
+	LogMessage "******** FINDING ALL GROUPS IN THE SCENE ********"
+	LogMessage "# of models under the root: " &amp; in_model.Models.Count
+	' First print out the groups info for the current model
+	FindGroupsUnderModel in_model
+	' Then iterate over every model contained inside the
+	' current model, printing the groups info for each one
+	for each mdl in in_model.Models
+		FindGroupsUnderModel mdl
+	next
+end function</pre></td></tr>
+</table>
+</div></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

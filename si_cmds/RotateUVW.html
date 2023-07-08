@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>RotateUVW</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>RotateUVW</h1>
+         </div>
+
+<h2 class="pagehead">RotateUVW</h2>
+
+<h3>Description</h3>
+<div><p>Rotates texture coordinate elements</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>RotateUVW( InputObjs, TextureProjection, [X], [Y], [Z], [Delta], [AxesFilter], [Pivot], [PivotU], [PivotV], [PivotW], [AspectRatio] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">InputObjs		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/listexpr.htm">List</a> of objects or components to translate. 			<p class="cell"><span class="hilite">Default Value: </span>
+Selected elements			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">TextureProjection		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Texture projection to modify. 		</td>
+	</tr>
+	<tr>
+		<td class="name">X		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+U rotation in degrees.			<p class="cell"><span class="hilite">Default Value: </span>
+0.0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Y		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+V rotation in degrees.			<p class="cell"><span class="hilite">Default Value: </span>
+0.0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Z		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+W rotation in degrees.			<p class="cell"><span class="hilite">Default Value: </span>
+0.0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Delta		</td>
+		<td><a href="#!/url=./si_om/siDeltaMode.html">siDeltaMode</a>		</td>
+		<td>
+ Specifies whether to rotate the object a relative or absolute amount 			<p class="cell"><span class="hilite">Default Value: </span>
+siRelative			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">siRelative					</td>
+					<td>Rotation is relative to existing rotation					</td>
+				</tr>
+				<tr>
+					<td class="name">siAbsolute					</td>
+					<td>Rotation specifies an absolute orientation					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">AxesFilter		</td>
+		<td><a href="#!/url=./si_om/siUVWAxesFilter.html">siUVWAxesFilter</a>		</td>
+		<td>
+ Determines which of the u,v,w arguments are valid 			<p class="cell"><span class="hilite">Default Value: </span>
+siUVW			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">siU					</td>
+					<td>Filter in U					</td>
+				</tr>
+				<tr>
+					<td class="name">siV					</td>
+					<td>Filter in V					</td>
+				</tr>
+				<tr>
+					<td class="name">siUV					</td>
+					<td>Filter in U & V					</td>
+				</tr>
+				<tr>
+					<td class="name">siW					</td>
+					<td>Filter in W					</td>
+				</tr>
+				<tr>
+					<td class="name">siUW					</td>
+					<td>Filter in U & W					</td>
+				</tr>
+				<tr>
+					<td class="name">siVW					</td>
+					<td>Filter in V & W					</td>
+				</tr>
+				<tr>
+					<td class="name">siUVW					</td>
+					<td>Filter in U & V & W					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Pivot		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+If true the specified pivot point is used for the rotation, otherwise the center of geometry of the sample points is used.			<p class="cell"><span class="hilite">Default Value: </span>
+False			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">PivotU		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+The U coordinate of the pivot arround which the rotation will be made.			<p class="cell"><span class="hilite">Default Value: </span>
+0.0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">PivotV		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+The V coordinate of the pivot arround which the rotation will be made.			<p class="cell"><span class="hilite">Default Value: </span>
+0.0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">PivotW		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+The W coordinate of the pivot arround which the rotation will be made.			<p class="cell"><span class="hilite">Default Value: </span>
+0.0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">AspectRatio		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+The aspect ratio (x resolution/y resolution) of the image for which the UVs are being used.  If
+specified, the command performs a scaling to compensate for the aspect ratio.			<p class="cell"><span class="hilite">Default Value: </span>
+1.0			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' This example creates grid and applies a texture on it. It then modifies a subset of its uvw coordinates
+' by rotating them 45 degrees.
+NewScene
+CreatePrim "Grid", "MeshSurface"
+SetDisplayMode "Views.ViewA.TopCamera", "textured"
+CreateProjection "grid", siTxtPlanarXZ, siTxtDefaultPlanarXZ, , "Texture_Projection"
+SIApplyShaderToCnxPoint "Image", "Sources.Materials.DefaultLib.Scene_Material.Phong.diffuse"
+RotateUVW "grid.sample[108-115,140-147]", "grid.polymsh.cls.Texture_Coordinates_AUTO.Texture_Projection", 0, 0, 45, siRelative</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/TranslateUVW.html">TranslateUVW</a> <a href="#!/url=./si_cmds/ScaleUVW.html">ScaleUVW</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

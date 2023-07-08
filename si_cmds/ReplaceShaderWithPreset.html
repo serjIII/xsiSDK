@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>ReplaceShaderWithPreset</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>ReplaceShaderWithPreset</h1>
+         </div>
+
+<h2 class="pagehead">ReplaceShaderWithPreset</h2>
+
+<h3>Introduced</h3>
+<div><p>v1.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Disconnects a shader and connects another shader created from a preset.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>ReplaceShaderWithPreset( [Source], PresetObj );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Source		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Shader to disconnect 			<p class="cell"><span class="hilite">Default Value: </span>
+Current selection			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">PresetObj		</td>
+		<td><a href="#!/url=./files/String.htm">String</a> or a preset object (see <a href="#!/url=./si_cmds/SIGetPreset.html">SIGetPreset</a>)		</td>
+		<td>
+Any of the appropriate <a href="#!/url=./si_cmds/ShaderPreset.html">Shader Presets</a>		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example demonstrates how to replace an existing shader on an object with
+' a preset shader.
+'
+NewScene , false
+' Get the default pass
+Set oDefPass = GetValue( "Passes.Default_Pass" )
+' Create a sphere and apply a default (Phong) shader to it 
+Set oSphere = CreatePrim( "Sphere", "MeshSurface" )
+ApplyShader , oSphere
+' Tweak the color values on the sphere's material using the Shader
+' parameter shortcuts "diffuse" and "ambient"
+Set oPhong = oSphere.Material.Shaders( "Phong" )
+oPhong.diffuse.Parameters( "red" ).Value = 0.9
+oPhong.diffuse.Parameters( "green" ).Value = 0.5
+oPhong.ambient.Parameters( "green" ).Value = 0.7
+' View the results in a rendered frame. (You can see the sphere looks magenta
+' with a specular highlight)
+RenderPasses oDefPass, 1, 1
+' Now, replace the Phong shader on the sphere by a Toon preset shader 
+ReplaceShaderWithPreset oPhong, "Material\Toon_Paint_Highlight.Preset"
+Set oToon = oSphere.Material.Shaders( "Toon_Paint_Highlight" )
+oToon.cover.Value = 0.1
+oToon.softness.Value = 0.6
+' View the results in a rendered frame. (Now the sphere has a gray, soft and
+' dull appearance)
+RenderPasses oDefPass, 1, 1</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/ApplyShader.html">ApplyShader</a> <a href="#!/url=./si_cmds/ReplaceShader.html">ReplaceShader</a> <a href="#!/url=./si_cmds/ReplaceShaderWithProgID.html">ReplaceShaderWithProgID</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

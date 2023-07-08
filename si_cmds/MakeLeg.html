@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>MakeLeg</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>MakeLeg</h1>
+         </div>
+
+<h2 class="pagehead">MakeLeg</h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Creates a two bone leg with an up vector control object. The leg bones are created from a collection 
+of guide objects, containing a guide for the hip socket, the knee joint, and the ankle respectively.<br /><br />
+MakeLeg can optionally add roll divisions to the thigh. Roll divisions are used to distribute the roll 
+difference between adjacent bones over the length of a bone. When used as deformers on an envelope they 
+evenly distribute twist along the length of a bone giving a more natural skin deformation. Roll divisions
+can also be added separately using the <a href="#!/url=./si_cmds/MakeBicepRoll.html">MakeBicepRoll</a> command. <br /><br />
+Optionally a shadow rig can be attached to the leg. Shadow objects are created for each chain element in the 
+leg, and shadow bones are pose-constrained to the acutal leg bones. Shadow rigs can be used to plot animation 
+off of a rig. 
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oLeg = MakeLeg( Model, Parent, [Prefix], GuideObjectCollection, [UpVectorBehindLeg], [NbThighDivisions], [ShadowType], [ShadowParent] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns a <a href="#!/url=./files/CDKLeg.htm">Leg</a> JScript object.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Model		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The model the leg will belong to.		</td>
+	</tr>
+	<tr>
+		<td class="name">Parent		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The parent of the new leg.		</td>
+	</tr>
+	<tr>
+		<td class="name">Prefix		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The naming prefix for the newly created leg objects.		</td>
+	</tr>
+	<tr>
+		<td class="name">GuideObjectCollection		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+A list of 3 objects to search for when making the leg: 1) Top of leg; 2)Knee joint; 3)Ankle.		</td>
+	</tr>
+	<tr>
+		<td class="name">UpVectorBehindLeg		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+Determines whether the upvector is places behind the leg (-z globally) or in front (+z globally).			<p class="cell"><span class="hilite">Default Value: </span>
+False			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">NbThighDivisions		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+The number of roll divisions. If the value is zero no roll is created.			<p class="cell"><span class="hilite">Default Value: </span>
+3			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ShadowType		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+The type of shadow rig to attach to the leg. Shadow rigs can be used to transfer or remap animation.			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>No shadow					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>SI|3D Skeleton shadow rig					</td>
+				</tr>
+				<tr>
+					<td class="name">2					</td>
+					<td>XSI Skeleton shadow rig					</td>
+				</tr>
+				<tr>
+					<td class="name">3					</td>
+					<td>Null shadow rig					</td>
+				</tr>
+				<tr>
+					<td class="name">4					</td>
+					<td>Box shadow rig					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ShadowParent		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Parent of the shadow rig hiearchy. If empty, no shadow rig is generated.		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This script creates two legs, left and right
+	Left  leg has thigh roll divisions
+	Right leg has a box shadow hierarchy
+*/
+var guidecoll = new ActiveXObject("XSI.Collection");
+guidecoll.Add( GetPrim("Null", "Guide_HipJoint") ); 
+guidecoll.Add( GetPrim("Null", "Guide_KneeJoint") ); 
+guidecoll.Add( GetPrim("Null", "Guide_AnkleJoint") ); 
+var lXfm = guidecoll(0).Kinematics.Global.Transform
+var lNull = GetPrim("Null", "Legs");
+/*
+	Right Leg
+*/
+lXfm.SetTranslationFromValues(2,4,0);
+guidecoll(0).Kinematics.Global.Transform = lXfm;
+lXfm.SetTranslationFromValues(2,0,-1);
+guidecoll(1).Kinematics.Global.Transform = lXfm;
+lXfm.SetTranslationFromValues(2,-4,0);
+guidecoll(2).Kinematics.Global.Transform = lXfm;
+var RLeg= MakeLeg(lNull, GetPrim("Null", "RLegParent"),"R", guidecoll, true, 0, 4, GetPrim("Null", "RShadowParent") );
+Logmessage("Right Leg");
+DumpLeg(RLeg);
+/*
+	Left Leg
+*/
+lXfm.SetTranslationFromValues(-2,4,0);
+guidecoll(0).Kinematics.Global.Transform = lXfm;
+lXfm.SetTranslationFromValues(-2,0,-1);
+guidecoll(1).Kinematics.Global.Transform = lXfm;
+lXfm.SetTranslationFromValues(-2,-4,0);
+guidecoll(2).Kinematics.Global.Transform = lXfm;
+var LLeg = MakeLeg(lNull , GetPrim("Null", "LLegParent"),"L", guidecoll);
+Logmessage("Left Leg");
+DumpLeg(LLeg);
+function DumpLeg(inLeg)
+{
+	logmessage ("Data in the returned leg:");
+	logmessage ("------------------------");
+	logmessage ("Root        : " + inLeg.Root);
+	logmessage ("Effector    : " + inLeg.Eff);
+	logmessage ("UpVector    : " + inLeg.upV);
+	logmessage ("Skeleton    : " + inLeg.Skel);
+	if(inLeg.ThighDivisions&gt;0)
+	{logmessage ("Thigh Divs  : " + inLeg.ThighRoll.Divisions);}
+	logmessage ("Hidden      : " + inLeg.Hidden);
+	logmessage ("Envelope    : " + inLeg.Envelope);
+	logmessage ("ShadowsStart: " + inLeg.ShadowStart);
+	logmessage ("ShadowsEnds : " + inLeg.ShadowEnds);
+	logmessage ("Shadows     : " + inLeg.Shadows);
+}
+//results of running this command:
+//INFO : Right Leg
+//INFO : Data in the returned leg:
+//INFO : ------------------------
+//INFO : Root        : RRoot
+//INFO : Effector    : RlegEff
+//INFO : UpVector    : RlegUpV
+//INFO : Skeleton    : RRoot,RThigh,RShin,RlegEff
+//INFO : Hidden      : RRoot,RlegEff
+//INFO : Envelope    : RThigh,RShin
+//INFO : ShadowsStart: RThigh1
+//INFO : ShadowsEnds : RForeleg
+//INFO : Shadows     : RThigh1,RForeleg
+//
+//INFO : Left Leg
+//INFO : Data in the returned leg:
+//INFO : ------------------------
+//INFO : Root        : LRoot
+//INFO : Effector    : LlegEff
+//INFO : UpVector    : LlegUpV
+//INFO : Skeleton    : LRoot,LThigh,LShin,LlegEff
+//INFO : Thigh Divs  : LBicepRoll1,LBicepRoll2,LBicepRoll3,LBicepRoll_4
+//INFO : Hidden      : LRoot,LlegEff
+//INFO : Envelope    : LShin,LBicepRoll1,LBicepRoll2,LBicepRoll3,LBicepRoll_4
+//INFO : ShadowsStart: undefined
+//INFO : ShadowsEnds : undefined
+//INFO : Shadows     : undefined</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/MakeDogLeg.html">MakeDogLeg</a> <a href="#!/url=./si_cmds/MakeArm.html">MakeArm</a> <a href="#!/url=./si_cmds/MakeThighSlide.html">MakeThighSlide</a> <a href="#!/url=./si_cmds/MakeFoot.html">MakeFoot</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

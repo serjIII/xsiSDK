@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>AddFileCacheSource</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>AddFileCacheSource</h1>
+         </div>
+
+<h2 class="pagehead">AddFileCacheSource</h2>
+
+<h3>Introduced</h3>
+<div><p>v7.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Loads a file cache sequence onto the mixer. The file cache sequence has to be generated first using either the 
+CacheOnFileNode node in an ICE Tree, or by running the <a href="#!/url=./si_cmds/CacheObjectsIntoFile.html">CacheObjectsIntoFile</a> 
+command and then the <a href="#!/url=./si_cmds/CacheObjectsIntoFileDialog.html">CacheObjectsIntoFileDialog</a> command. 
+<br /><br />
+This command creates a new FileCacheSource object, and can additionally create the FileCache track on the mixer 
+and deploy the FileCache clip onto that track.
+<br /><br />
+Note: This command uses <a href="#!/url=./files/OutArgDefined.htm">output arguments</a>. C# and some 
+scripting languages (such as JScript, PerlScript and Python) don't support arguments passed by reference so you 
+need to use the best workaround for your situation:
+<br /><br />
+For scripting languages this command returns an <a href="#!/url=./files/ISIVTCollection.htm">ISIVTCollection</a> 
+which you can use to get the output arguments. 
+<br /><br />
+For C# you can use the <a href="#!/url=./si_om/XSIApplication.ExecuteCommand.html">XSIApplication.ExecuteCommand</a> method to call this command. ExecuteCommand 
+packs the output arguments into a C# System.Object containing an <a href="#!/url=./files/Array.htm">Array</a> of the output arguments (see
+<a href="#!/url=./files/csharp_understand_CallingCommandsfromCSharp.htm">Calling Commands from C#</a>).
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>AddFileCacheSource( [InputObj], [FileName], [DeployInMixer], [Source] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">InputObj		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The object to be linked to the file cache			<p class="cell"><span class="hilite">Default Value: </span>
+Current selection			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">FileName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Full path of the new file cache source. 			<p class="cell"><span class="hilite">Default Value: </span>
+User is prompted to select a file			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">DeployInMixer		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ True to make available in the animation mixer. 			<p class="cell"><span class="hilite">Default Value: </span>
+True			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Source		</td>
+		<td><a href="#!/url=./si_om/CollectionItem.html">CollectionItem</a>Legacy		</td>
+		<td>
+ The new file cache source. 		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="Python">app = Application
+True = 1
+False = 0
+app.NewScene("", False)
+# First set the caching preferences
+app.SetValue("preferences.simulation.cachetemplatefilename", "[object]_[version]_[frame].icecache")
+app.SetValue("preferences.simulation.cachetemplateprojectpath", "[project path]/simulation/[model]/[object]/")
+# Create a grid deformed by a wave
+app.CreatePrim("Grid", "MeshSurface")
+app.GetPrimWave()
+# Cache this deformation into a file sequence
+app.CacheObjectsIntoFile("grid", 0, 1, 100, 1, True, True, "PointPosition", "Wave")
+# Delete the wave deform
+app.DeleteObj("wave")
+# Load the deformation file sequence onto the mixer
+rtn = app.AddFileCacheSource("grid", "Simulation\Scene_Root\grid\grid_Wave_[1..100].icecache")
+src = rtn.Value("Source")
+app.LogMessage("The newly created %s is: %s" % (src.Type, src.FullName))
+# INFO : The newly created FileCacheSource is: Mixer.grid_Wave__1__100__icecache
+# Now hit Playback
+app.PlayForwards()</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/CacheObjectsIntoFile.html">CacheObjectsIntoFile</a> <a href="#!/url=./si_cmds/CacheObjectsIntoFileDialog.html">CacheObjectsIntoFileDialog</a> <a href="#!/url=./si_om/Source.html">Source</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

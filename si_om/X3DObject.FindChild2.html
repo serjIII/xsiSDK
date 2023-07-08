@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>X3DObject.FindChild2</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>X3DObject.FindChild2</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/X3DObject.html">X3DObject</a>.FindChild2</h2>
+
+<h3>Introduced</h3>
+<div><p>v9.0 (2011)</p></div>
+
+<h3>Description</h3>
+<div><p> Finds the first X3DObject child object of an <a href="#!/url=./si_om/X3DObject.html">X3DObject</a> that 
+matches a set of search criteria. The search is done recursively by default,
+the function returns the object that meet all supplied criteria i.e. name, 
+type and family(ies). This function is typically used for retrieving an 
+object if you know its type or name for instance.
+<br /><br />
+This method differs from <a href="#!/url=./si_om/X3DObject.FindChild.html">X3DObject.FindChild</a> because this 
+method will not return itself if its family matches the specified family. 
+For example, calling 'cube.FindChild("", siMeshFamily)' will return the cube 
+itself but this method will return null.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>X3DObject X3DObject.FindChild2( Object in_varName, String in_pbstrType, Object in_famArray, Boolean in_bRecursive );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = X3DObject.FindChild2( [Name], [Type], [Family], [Recursive] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p><a href="#!/url=./si_om/X3DObject.html">X3DObject</a></p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Name		</td>
+		<td><a href="#!/url=./files/String.htm">String</a> or <a href="#!/url=./si_om/CollectionItem.html">CollectionItem</a>		</td>
+		<td>
+
+		A name expression or a <a href="#!/url=./si_om/CollectionItem.html">CollectionItem</a>, the 
+		expression can also contain wildcard characters. The name can be empty if 
+		the name is not required.
+			</td>
+	</tr>
+	<tr>
+		<td class="name">Type		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		The type of object defined by <a href="#!/url=./si_om/siType.html">siType</a> or an empty string if 
+		no type is used. The type can be a specific X3DObject type such as 
+		siModelType and si3DObjectType or a primitive type such as siPolyMeshType 
+		or siSrfMeshPrimType. If a primitive type is supplied, the function 
+		considers only the children objects defined with a primitive of this type. 
+		The valid types are listed below.
+				<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">si3DObjectType					</td>
+					<td>3D Object type					</td>
+				</tr>
+				<tr>
+					<td class="name">siArcPrimType					</td>
+					<td>Implicit Arc Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siAttractorCtrlType					</td>
+					<td>Attractor Control Object type (electric force)					</td>
+				</tr>
+				<tr>
+					<td class="name">siCameraPrimType					</td>
+					<td>Camera Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siCameraRootPrimType					</td>
+					<td>Camera Root primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siChainBonePrimType					</td>
+					<td>Chain Bone Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siChainEffPrimType					</td>
+					<td>Chain End Effector Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siChainRootPrimType					</td>
+					<td>Chain Root Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siCirclePrimType					</td>
+					<td>Implicit Circle Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siCloudPrimType					</td>
+					<td>Cloud Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siConePrimType					</td>
+					<td>Cone Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siCrvListAggregatePrimType					</td>
+					<td>NURBS Curve List Aggregate Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siCrvListPrimType					</td>
+					<td>NURBS Curve List Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siCubePrimType					</td>
+					<td>Cube Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siCylinderPrimType					</td>
+					<td>Cylinder Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siDiscPrimType					</td>
+					<td>Disc Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siDodecahedronPrimType					</td>
+					<td>Dodecahedron Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siDragCtrlPrimType					</td>
+					<td>Drag Control Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siEddyCtrlPrimType					</td>
+					<td>Eddy Control Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siFanType					</td>
+					<td>Fan Force Object type					</td>
+				</tr>
+				<tr>
+					<td class="name">siFurPrimType					</td>
+					<td>Fur Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siGeoShaderPrimType					</td>
+					<td>GeoShader Primitive Type					</td>
+				</tr>
+				<tr>
+					<td class="name">siGravityCtrlType					</td>
+					<td>Gravity Force Control Object type					</td>
+				</tr>
+				<tr>
+					<td class="name">siGridPrimType					</td>
+					<td>Grid Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siIcosahedronPrimType					</td>
+					<td>Icosahedron Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siLatticePrimType					</td>
+					<td>Lattice Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siLightPrimType					</td>
+					<td>Light Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siModelNullPrimType					</td>
+					<td>Model Null Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siModelType					</td>
+					<td>3D Model type					</td>
+				</tr>
+				<tr>
+					<td class="name">siNullPrimType					</td>
+					<td>Null Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siOctahedronPrimType					</td>
+					<td>Octahedron Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siPolyMeshType					</td>
+					<td>Polygon Mesh type					</td>
+				</tr>
+				<tr>
+					<td class="name">siSpherePrimType					</td>
+					<td>Sphere Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siSpiralPrimType					</td>
+					<td>Implicit Spiral Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siSpotInterestPrimType					</td>
+					<td>Spot Interest Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siSpotRootPrimType					</td>
+					<td>Spot Root Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siSquarePrimType					</td>
+					<td>Implicit Square Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siSrfMeshPrimType					</td>
+					<td>NURBS Surface Mesh Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siTetrahedronPrimType					</td>
+					<td>Tetrahedron Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siTorusPrimType					</td>
+					<td>Torus Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siTurbulenceCtrlPrimType					</td>
+					<td>Turbulence Control Primitive type					</td>
+				</tr>
+				<tr>
+					<td class="name">siVolumeDeformType					</td>
+					<td>Volume Deform type (implicit sphere volume)					</td>
+				</tr>
+				<tr>
+					<td class="name">siVortexCtrlType					</td>
+					<td>Vortex Control Object type (magnetic force)					</td>
+				</tr>
+				<tr>
+					<td class="name">siWaveCtrlType					</td>
+					<td>Wave Control Object type					</td>
+				</tr>
+				<tr>
+					<td class="name">siWindType					</td>
+					<td>Wind Force Object type					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Family		</td>
+		<td><a href="#!/url=./si_om/siFamily.html">siFamily</a> or <a href="#!/url=./files/Array.htm">Array</a> of siFamily elements.		</td>
+		<td>
+
+		An array of families defined by siFamily or an empty array if none are required. 
+		The families are used for narrowing down the search, the array can contain 
+		X3DObject families like si3DObjectFamily or primitive families such as 
+		siNurbsSurfaceMeshFamily or siNullPrimitiveFamily. Only the children objects 
+		that match the supplied families are considered. If primitive families are 
+		supplied then only the objects defined with a primitive that belongs to one 
+		of them are considered. The valid families are listed below.
+				<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">si3DObjectFamily					</td>
+					<td>3D Object family					</td>
+				</tr>
+				<tr>
+					<td class="name">siCameraFamily					</td>
+					<td>Camera family					</td>
+				</tr>
+				<tr>
+					<td class="name">siChainElementFamily					</td>
+					<td>Chain Element family					</td>
+				</tr>
+				<tr>
+					<td class="name">siControlObjectFamily					</td>
+					<td>Control Object family					</td>
+				</tr>
+				<tr>
+					<td class="name">siCurveFamily					</td>
+					<td>Curve Geometry family					</td>
+				</tr>
+				<tr>
+					<td class="name">siGeometryFamily					</td>
+					<td>Geometry family					</td>
+				</tr>
+				<tr>
+					<td class="name">siGeometryShaderFamily					</td>
+					<td>Geometry shader family					</td>
+				</tr>
+				<tr>
+					<td class="name">siImplicitGeometryFamily					</td>
+					<td>Implicit Geometry family					</td>
+				</tr>
+				<tr>
+					<td class="name">siLatticeFamily					</td>
+					<td>Lattice family					</td>
+				</tr>
+				<tr>
+					<td class="name">siLightPrimitiveFamily					</td>
+					<td>Light Primitive family					</td>
+				</tr>
+				<tr>
+					<td class="name">siMeshFamily					</td>
+					<td>Mesh Geometry family					</td>
+				</tr>
+				<tr>
+					<td class="name">siNullPrimitiveFamily					</td>
+					<td>Null Primitive family					</td>
+				</tr>
+				<tr>
+					<td class="name">siNurbsCurveListFamily					</td>
+					<td>Nurbs CurveList Geometry family					</td>
+				</tr>
+				<tr>
+					<td class="name">siNurbsSurfaceMeshFamily					</td>
+					<td>Nurbs Surface Mesh Geometry family					</td>
+				</tr>
+				<tr>
+					<td class="name">siSurfaceCurveFamily					</td>
+					<td>Surface Curve Geometry family					</td>
+				</tr>
+				<tr>
+					<td class="name">siSurfaceFamily					</td>
+					<td>Surface Geometry family					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Recursive		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+Recurse if True, otherwise the search is done on the immediate children.			<p class="cell"><span class="hilite">Default Value: </span>
+True			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">#
+# FindChild vs. FindChild2 Python Example
+#
+from win32com.client import constants as const
+Application.NewScene("", False)
+# Create a cube
+Application.CreatePrim("Cube", "MeshSurface", "cube", "")
+root = Application.ActiveSceneRoot
+cube = root.FindChild("cube")
+# Use "FindChild" to get the first child of the cube of "siMeshFamily" family;
+# NOTE: FindChild also considers the parent object if it is of the same family
+child = cube.FindChild("", "",const.siMeshFamily)
+# FindChild returns the cube itself as its first child
+Application.LogMessage("FindChild : " + child.Name)
+# Use "FindChild2" to get the first child of the cube of "siMeshFamily" family;
+# NOTE: FindChild2 always ignore the parent regardless of its family
+child = cube.FindChild2("", "",const.siMeshFamily)
+# FindChild2 returns the first child of the cube, none in this example
+if not child:
+	Application.LogMessage("FindChild2: &amp;lt;none&amp;gt;")
+else:
+	Application.LogMessage("FindChild2: " + child.Name)
+# Expected results:
+# INFO : FindChild : cube
+# INFO : FindChild2: &amp;lt;none&amp;gt;</pre></td></tr>
+</table>
+</div></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

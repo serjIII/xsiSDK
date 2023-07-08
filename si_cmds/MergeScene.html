@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>MergeScene</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>MergeScene</h1>
+         </div>
+
+<h2 class="pagehead">MergeScene</h2>
+
+<h3>Introduced</h3>
+<div><p>v1.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Merges a Softimage scene into the current scene. Creates a new model 
+to hold the merged scene. The new model is selected and inspected.<br /><br />
+This command is accessed through the main menu under File->Merge.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = MergeScene( [FileName], [Name], [Parent], [ShareOptions] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns the new <a href="#!/url=./si_om/Model.html">Model</a> object containing all the elements of the merged scene.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">FileName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ File name of the scene file to load 			<p class="cell"><span class="hilite">Default Value: </span>
+File browser pops up			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Name		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Name of the new model created 			<p class="cell"><span class="hilite">Default Value: </span>
+Scene file name			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Parent		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Parent of the model created 			<p class="cell"><span class="hilite">Default Value: </span>
+Scene root			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ShareOptions		</td>
+		<td><a href="#!/url=./si_om/siImportShareOptions.html">siImportShareOptions</a>		</td>
+		<td>
+
+		Bit field values of type <a href="#!/url=./files/Integer.htm">Integer</a> that specify the different options 
+		for sharing objects when merging a scene.<br /><br />
+		Share the image clips when importing the model. Image clips are identical if they 
+		refer to the same image source and all their parameters are equal, therefore FCurves 
+		on the parameters are ignored for the comparaison. <br /><br />
+		Referenced models share only image clips that are locked by referenced models, or if 
+		the image clip is unused. Standard models share only imageclips that are not locked 
+		at all.<br /><br />
+		Note that the image sources are always shared when importing a model.
+				<p class="cell"><span class="hilite">Default Value: </span>
+siImportShareOptionsAll			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' Demonstrates how to use the MergeScene command to merge the current
+' scene with another scene file. 
+'
+NewScene , False
+' First create an object in the new scene.
+SICreateModel , "MyModel"
+SICreateModel , "MergeRoot", ""
+CreatePrim "Torus", "MeshSurface", "MyTorus", "MyModel"
+' Now merge the scene with a sample scene.
+scene_file = XSIUtils.BuildPath( _
+	Application.InstallationPath(siFactoryPath), _
+	"Data", "XSI_SAMPLES", "Scenes", "Rendering", "Rendertree_Light_Rainbow.scn" _
+)
+MergeScene scene_file, "Rainbow", "MergeRoot"
+RecursiveCheck Application.ActiveSceneRoot, ""
+'---------------------------------------------------------
+' Output from this script:
+' INFO : Scene_Root
+' INFO : ...MyModel
+' INFO : ...MergeRoot
+' INFO : ......Rainbow
+'---------------------------------------------------------
+' Convenience to write model hierarchy using visual cues 
+sub RecursiveCheck( in_root, in_indent ) 
+	Application.LogMessage in_indent &amp; in_root.Name
+	for each mdl in in_root.Models(False)
+		RecursiveCheck mdl, in_indent &amp; "..."
+	next
+end sub</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/OpenScene.html">OpenScene</a> <a href="#!/url=./si_cmds/NewScene.html">NewScene</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>SIObject.Name</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>SIObject.Name</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/SIObject.html">SIObject</a>.Name <img src="images/operator.gif" alt="operator" /></h2>
+
+<h3>Description</h3>
+<div><p> Sets or returns the name of the object as a <a href="#!/url=./files/String.htm">String</a>. The name accessed through this 
+property is the object's name without context. For example, Name and <a href="#!/url=./si_om/SIObject.FullName.html">SIObject.FullName</a> 
+return the same thing for <a href="#!/url=./si_om/X3DObject.html">X3DObject</a> objects (for example, "cube"), but on a 
+<a href="#!/url=./si_om/Primitive.html">Primitive</a> object, Name returns the type of geometry ("Polygon Mesh"), whereas 
+FullName returns the object name string expression including the parent object ("cube.polymsh"). <br /><br />
+For <a href="#!/url=./si_om/ActionDeltaItem.html">ActionDeltaItem</a>s, this property returns the 
+<a href="#!/url=./files/RelativeName.htm">Relative Name</a> because <a href="#!/url=./si_om/Delta.html">Delta</a>s store the 
+relative name instead of the <a href="#!/url=./si_om/SIObject.FullName.html">SIObject.FullName</a> of a parameter so actions can be 
+easily copied from one <a href="#!/url=./si_om/Model.html">Model</a> to another.<br /><br />
+The difference between the various name properties is especially important to remember when you 
+are working with commands, because the Name of the command is not what you use when writing scripts, 
+or what gets logged to the History pane. That information is contained in the 
+<a href="#!/url=./si_om/Command.ScriptingName.html">Command.ScriptingName</a> property.<br /><br />
+Note: Not all objects can be renamed. If you try to set the name on some objects (such as 
+parameters on built-in Softimage parameter/property sets), it doesn't work, but it doesn't raise an 
+error either.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>// get accessor
+String rtn = SIObject.Name;
+// set accessor
+SIObject.Name = String;</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+' This snippet creates a sphere (called 'sphere' by default)
+' and then changes its name to "NewName"
+set oObj = ActiveProject.ActiveScene.Root.AddGeometry("Sphere", "NurbsSurface")
+printName oObj			' default name = "sphere"
+oObj.Name = "NewName"
+printName oObj			' new name = "NewName"
+'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+' This snippet tries to change the name of a built-in 
+' parameter with no luck
+set oParam = oObj.Properties( "Visibility" ).Parameters( "viewvis" )
+printName oParam			' name = "View Visibility"
+oParam.Name = "ThisWontWork"
+printName oParam			' name is still the same
+'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function printName( in_obj )
+	Application.LogMessage in_obj.Name
+end function
+'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+' Output of above script:
+'INFO : "sphere"
+'INFO : "NewName"
+'INFO : "View Visibility"
+'INFO : "View Visibility"</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+' This example demonstrates the differences between the name information you can
+' access in Softimage. Specifically, it shows when you can use the Name, FullName, 
+' ScriptingName, and ScriptName properties and what information they return.
+'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CreateParticleCloud()
+Application.LogMessage "PARTICLE CLOUD INFO.............."
+showNames selection(0), "particle cloud"
+set oCube = activesceneroot.addgeometry( "cube", "meshsurface" )
+Application.LogMessage typename( oCube.parameters(0) )
+Application.LogMessage "OBJECT INFO.............."
+showNames oCube, "oCube"
+Application.LogMessage "PRIMITIVE INFO.............."
+showNames oCube.activeprimitive, "oCube.activeprimitive"
+Application.LogMessage "GEOMETRY INFO.............."
+showNames oCube.activeprimitive.geometry, "oCube.activeprimitive.geometry"
+Application.LogMessage "PARAMETER INFO.............."
+showNames oCube.activeprimitive.parameters(0), "oCube.activeprimitive.parameters(0)"
+Application.LogMessage "PROPERTIES INFO.............."
+showNames oCube.properties(0), "oCube.properties(0)"
+Application.LogMessage "PARAMETER INFO.............."
+showNames oCube.parameters(0), "oCube.parameters(0)"
+Application.LogMessage "COMMAND INFO.............."
+showNames application.commands(0), "application.commands(0)"
+removefromselection oCloud 
+addtoselection oCube 
+set oOps = applyop( "twist" )
+Application.LogMessage "OPERATOR INFO.............."
+showNames oOps(0), "oOps(0)"
+
+'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function showNames( in_ShowMe, in_ErrWhere )
+	Application.LogMessage "-------------------------------------------------------------------"
+	if typename( in_ShowMe ) &lt;&gt; "Nothing" then
+		Application.LogMessage "Name = " &amp; in_ShowMe.Name
+		Application.LogMessage "FullName = " &amp; in_ShowMe.FullName
+		if typename( in_ShowMe ) = "Command" then
+			Application.LogMessage "ScriptingName = " &amp; in_ShowMe.ScriptingName 
+		else
+			Application.LogMessage "ScriptingName is not available for the " _
+				&amp; in_ShowMe.Name &amp; " (it's only for commands)"
+		end if
+		if typename( in_ShowMe ) = "Parameter" then
+			Application.LogMessage "ScriptName = " &amp; in_ShowMe.ScriptName
+		else
+			Application.LogMessage "ScriptName is not available for the " _
+				&amp; in_ShowMe.Name &amp; " (it's only for parameters)"
+		end if
+	else
+		Application.LogMessage "Object required for " &amp; in_ErrWhere
+	end if
+	Application.LogMessage "-------------------------------------------------------------------"
+end function
+'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+' OUTPUT OF THIS SCRIPT IS:
+'INFO : "PARTICLE CLOUD INFO.............."
+'INFO : "-------------------------------------------------------------------"
+'INFO : "Name = cloud"
+'INFO : "FullName = cloud"
+'INFO : "ScriptingName is not available for the cloud (it's only for commands)"
+'INFO : "ScriptName is not available for the cloud (it's only for parameters)"
+'INFO : "-------------------------------------------------------------------"
+'INFO : "Parameter"
+'INFO : "OBJECT INFO.............."
+'INFO : "-------------------------------------------------------------------"
+'INFO : "Name = cube"
+'INFO : "FullName = cube"
+'INFO : "ScriptingName is not available for the cube (it's only for commands)"
+'INFO : "ScriptName is not available for the cube (it's only for parameters)"
+'INFO : "-------------------------------------------------------------------"
+'INFO : "PRIMITIVE INFO.............."
+'INFO : "-------------------------------------------------------------------"
+'INFO : "Name = Polygon Mesh"
+'INFO : "FullName = cube.polymsh"
+'INFO : "ScriptingName is not available for the Polygon Mesh (it's only for commands)"
+'INFO : "ScriptName is not available for the Polygon Mesh (it's only for parameters)"
+'INFO : "-------------------------------------------------------------------"
+'INFO : "GEOMETRY INFO.............."
+'INFO : "-------------------------------------------------------------------"
+'INFO : "Name = polymsh"
+'INFO : "FullName = polymsh"
+'INFO : "ScriptingName is not available for the polymsh (it's only for commands)"
+'INFO : "ScriptName is not available for the polymsh (it's only for parameters)"
+'INFO : "-------------------------------------------------------------------"
+'INFO : "PARAMETER INFO.............."
+'INFO : "-------------------------------------------------------------------"
+'INFO : "Object required for oCube.activeprimitive.parameters(0)"
+'INFO : "-------------------------------------------------------------------"
+'INFO : "PROPERTIES INFO.............."
+'INFO : "-------------------------------------------------------------------"
+'INFO : "Name = Kinematics"
+'INFO : "FullName = cube.kine"
+'INFO : "ScriptingName is not available for the Kinematics (it's only for commands)"
+'INFO : "ScriptName is not available for the Kinematics (it's only for parameters)"
+'INFO : "-------------------------------------------------------------------"
+'INFO : "PARAMETER INFO.............."
+'INFO : "-------------------------------------------------------------------"
+'INFO : "Name = Name"
+'INFO : "FullName = cube.Name"
+'INFO : "ScriptingName is not available for the Name (it's only for commands)"
+'INFO : "ScriptName = Name"
+'INFO : "-------------------------------------------------------------------"
+'INFO : "COMMAND INFO.............."
+'INFO : "-------------------------------------------------------------------"
+'INFO : "Name = Volumic"
+'INFO : "FullName = Volumic"
+'INFO : "ScriptingName = AddProp"
+'INFO : "ScriptName is not available for the Volumic (it's only for parameters)"
+'INFO : "-------------------------------------------------------------------"
+'INFO : "OPERATOR INFO.............."
+'INFO : "-------------------------------------------------------------------"
+'INFO : "Name = Twist Op"
+'INFO : "FullName = cube.polymsh.twistop"
+'INFO : "ScriptingName is not available for the Twist Op (it's only for commands)"
+'INFO : "ScriptName is not available for the Twist Op (it's only for parameters)"
+'INFO : "-------------------------------------------------------------------"</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/SIObject.FullName.html">SIObject.FullName</a> <a href="#!/url=./si_om/Command.ScriptingName.html">Command.ScriptingName</a> <a href="#!/url=./si_om/Parameter.ScriptName.html">Parameter.ScriptName</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>NurbsCurve.EvaluatePosition</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>NurbsCurve.EvaluatePosition</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/NurbsCurve.html">NurbsCurve</a>.EvaluatePosition <img src="images/operator.gif" alt="operator" /></h2>
+
+<h3>Description</h3>
+<div><p> Returns a 3D vector containing the position, tangent in U direction, 
+normal and bi-normal at a given U value. 
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>Object NurbsCurve.EvaluatePosition( Double in_dUValue );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oArray = NurbsCurve.EvaluatePosition( UValue );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>A 1-dimensional <a href="#!/url=./files/Array.htm">Array</a> containing the position, tangent, normal and bi-normal.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">UValue		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+The U Value at which we want to evaluate the curve.		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">set oRoot = Application.ActiveProject.ActiveScene.Root
+set oArc = oRoot.AddGeometry( "Arc", "NurbsCurve" )
+aValues = oArc.ActivePrimitive.Geometry.Curves(0).EvaluatePosition( 3.0 )
+set oPosition = aValues(0)
+logmessage "The position at 3.0 is x :" &amp;  oPosition.x	&amp; " y: " _
+	&amp; oPosition.y &amp; " z: " &amp; oPosition.z
+set oUTangent = aValues(1)
+logmessage "The tangent in U at 3.0 is x :" &amp; oUTangent.x &amp; " y: " _
+	&amp; oUTangent.y &amp; " z: " &amp; oUTangent.z
+set oNormal = aValues(2)
+logmessage "The normal at 3.0 is x :" &amp; oNormal.x &amp; " y: " &amp; oNormal.y _
+	&amp; " z: " &amp; oNormal.z
+set oBiNormal = aValues(3)
+logmessage "The bi-normal at 3.0 is x :" &amp; oBiNormal.x &amp; " y: " _
+	&amp; oBiNormal.y &amp; " z: " &amp; oBiNormal.z
+' Expected result:
+'INFO : The position at 3.0 is x :1.16113870901785 y: 3.82776134292884 z: 0
+'INFO : The tangent in U at 3.0 is x :0.956940009306386 y: -0.290285753334009 z: 0
+'INFO : The normal at 3.0 is x :-0.290285753334009 y: -0.956940009306387 z: 0
+'INFO : The bi-normal at 3.0 is x :0 y: 0 z: -1</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	See also the JScript example for NurbsCurveList.GetClosestCurvePosition2 which demonstrates
+	how to use NurbsCurveList.GetClosestCurvePosition2 and NurbsCurve.EvaluatePosition as an
+	(object model) alternative to the EvaluateCurveAt command.
+*/</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/NurbsCurveList.GetClosestCurvePosition2.html">NurbsCurveList.GetClosestCurvePosition2</a> <a href="#!/url=./si_cmds/EvaluateCurveAt.html">EvaluateCurveAt</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>CustomProperty.AddParameter2</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>CustomProperty.AddParameter2</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/CustomProperty.html">CustomProperty</a>.AddParameter2</h2>
+
+<h3>Description</h3>
+<div><p> Adds a new custom parameter to the custom property. This version has identical behavior to 
+<a href="#!/url=./si_om/CustomProperty.AddParameter.html">CustomProperty.AddParameter</a>.  The only different is that the arguments are rearranged with
+all default arguments at the end to assist JScript developers.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>Parameter CustomProperty.AddParameter2( String in_ScriptName, siVariantType in_ValueType, Object in_DefaultValue, Object in_Min, Object in_Max, Object in_SuggestedMin, Object in_SuggestedMax, siParamClassification in_Classif, Int32 in_Caps, String in_name, String in_LongName, String in_Guid );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = CustomProperty.AddParameter2( ScriptName, ValueType, [DefaultValue], [Min], [Max], [SuggestedMin], [SuggestedMax], [Classification], [Capabilities], [Name], [Description], [ObsoleteArg] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>The newly created <a href="#!/url=./si_om/Parameter.html">Parameter</a> object.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">ScriptName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Name of the custom parameter.  This 
+argument specifies the ScriptName of a parameter and should not contain
+				  any spaces.  
+(See <a href="#!/url=./si_om/Parameter.ScriptName.html">Parameter.ScriptName</a>)
+If the short name or long name parameters are not specified then
+this name is also used as the user visible name and description.
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ValueType		</td>
+		<td><a href="#!/url=./si_om/siVariantType.html">siVariantType</a>		</td>
+		<td>
+ Type of the custom parameter.  The recommended types are siString, 
+siBool, siInt4, siUByte, and siFloat. 
+					(See <a href="#!/url=./si_om/Parameter.ValueType.html">Parameter.ValueType</a>)  
+		</td>
+	</tr>
+	<tr>
+		<td class="name">DefaultValue		</td>
+		<td><a href="#!/url=./files/Variant.htm">Variant</a>		</td>
+		<td>
+Default value of the custom parameter. A default value for a numerical values
+including boolean is 0, the string default is "".
+	(See <a href="#!/url=./si_om/Parameter.Default.html">Parameter.Default</a>)  
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Min		</td>
+		<td><a href="#!/url=./files/Variant.htm">Variant</a>		</td>
+		<td>
+ Minimum value of the custom parameter. siString and siBool types do not require
+a Min value. For all other numerical type the default will be minimum value possible for the 
+type for example all unsigned values will have a min=0.
+					(See <a href="#!/url=./si_om/Parameter.Min.html">Parameter.Min</a>)  
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Max		</td>
+		<td><a href="#!/url=./files/Variant.htm">Variant</a>		</td>
+		<td>
+ Maximum value of the custom parameter. siString and siBool types do not require
+a Max value. For all other numerical type the default will be maximum value possible for the 
+type for example the maximum value for siUByte is 255. 
+					(See <a href="#!/url=./si_om/Parameter.Max.html">Parameter.Max</a>)  
+		</td>
+	</tr>
+	<tr>
+		<td class="name">SuggestedMin		</td>
+		<td><a href="#!/url=./files/Variant.htm">Variant</a>		</td>
+		<td>
+ Suggested minimum value of the custom parameter. siString and siBool types do not require
+a SuggestedMin value. The default suggested minimum value for numerical 
+values will be 0.  The suggested minimum should 
+be equal or larger than the minimum.  This value is used to configure the 
+range of UI controls.
+					(See <a href="#!/url=./si_om/Parameter.SuggestedMin.html">Parameter.SuggestedMin</a>)  
+		</td>
+	</tr>
+	<tr>
+		<td class="name">SuggestedMax		</td>
+		<td><a href="#!/url=./files/Variant.htm">Variant</a>		</td>
+		<td>
+ Suggested maximum value of the custom parameter. siString and siBool types do not require
+a SuggestedMax value. The default suggested maximum value for numerical 
+values will be 100.  The suggested maximum should 
+be equal or smaller than the Maximum.  This value is used to configure the 
+range of UI controls.
+					(See <a href="#!/url=./si_om/Parameter.SuggestedMax.html">Parameter.SuggestedMax</a>)  
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Classification		</td>
+		<td><a href="#!/url=./si_om/siParamClassification.html">siParamClassification</a>		</td>
+		<td>
+ Classification of the custom parameter. 			<p class="cell"><span class="hilite">Default Value: </span>
+siClassifUnknown			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Capabilities		</td>
+		<td>int (see <a href="#!/url=./files/Integer.htm">Integer</a>)		</td>
+		<td>
+ Capabilities of the custom parameter. 
+If you create a custom property parameter that is not inspectable, it will not appear 
+in the interface, but is still available from scripting. If the parameter is read-only, 
+it is greyed out in the interface, but is also available from scripting.
+The siPersistable flag optional and assumed to be enabled for all custom parameters.
+(See <a href="#!/url=./si_om/siCapabilities.html">siCapabilities</a> and <a href="#!/url=./si_om/Parameter.Capabilities.html">Parameter.Capabilities</a>) 
+			<p class="cell"><span class="hilite">Default Value: </span>
+siPersistable			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Name		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ User friendly version of the custom parameter's name. This is the parameter 
+				  name that appears in
+in the Scene Explorer (unless Show Script Names is enabled).  If this argument is
+not specified then the ScriptName argument will be visible to users as the parameter's 
+				  name.
+(See  <a href="#!/url=./si_om/SIObject.Name.html">SIObject.Name</a> and <a href="#!/url=./si_om/Parameter.ScriptName.html">Parameter.ScriptName</a>). 
+				  This string will appear as the parameter label when the custom property is inspected,
+				  unless a specific label is specified in the <a href="#!/url=./si_om/PPGLayout.html">PPGLayout</a>, see 
+				  <a href="#!/url=./si_om/PPGItem.Label.html">PPGItem.Label</a>.
+			<p class="cell"><span class="hilite">Default Value: </span>
+ScriptName is used			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Description		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ A longer description of the Parameter.  This string does not appear is the user interface.
+			<p class="cell"><span class="hilite">Default Value: </span>
+ScriptName is used			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ObsoleteArg		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+It is not necessary to specify this argument, it is ignored. 
+			<p class="cell"><span class="hilite">Default Value: </span>
+""			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'VBScript example : add custom parameters to a custom property
+MAIN()
+sub main()
+	On Error Resume Next
+	set oRoot = Application.ActiveProject.ActiveScene.Root
+	set oSphere = oRoot.AddGeometry("Sphere","NurbsSurface")
+	set oProp = oSphere.AddProperty("Custom_parameter_list",,"FirstCustomProperty")
+	AddCustomParams(oProp)
+	'Show a modeless dialog box with all the parameters that we have added
+	InspectObj oProp
+end sub
+sub AddCustomParams (in_customprop)
+	' String custom parameter
+	set oParam1 = in_customprop.AddParameter2("StrCustomParam", siString, ,,,,,,,, "the string" )
+	write_customprop oParam1
+	' Boolean custom parameter
+	set oParam2 = in_customprop.AddParameter2("BoolCustomParam", siBool, true, ,,,,,, "ShortName", "LongName" )
+	write_customprop oParam2
+	' Integer custom parameter
+	set oParam3 = in_customprop.AddParameter2("Int2CustomParam", siInt2, -1, -5, 5,,, siClassifVisualization, siAnimatable, "ShortName", "LongName" )
+	write_customprop oParam3
+	' Double custom parameter
+	set oParam4 = in_customprop.AddParameter2("DoubleCustomParam", siDouble, 0.695, 0.0123, 10.456,,,,siReadOnly, "ShortName", "LongName" )
+	write_customprop oParam4
+end sub
+sub write_customprop(in_param)
+	LogMessage "Name: " &amp; in_param.Name
+	LogMessage "Class: " &amp; typename(in_param)
+	LogMessage "Type: " &amp; in_param.Type
+	LogMessage "Fullname: " &amp; in_param.FullName
+	LogMessage "Parent: " &amp; in_param.Parent.Name
+	LogMessage "ScriptName : " &amp; in_param.ScriptName
+	LogMessage "Description: " &amp; in_param.Description
+	LogMessage "Capabilities : " &amp; in_param.Capabilities
+	LogMessage "Value : " &amp; in_param.Value
+	LogMessage "ValueType: " &amp; in_param.ValueType
+	LogMessage "Default: " &amp; in_param.Default
+	if ( in_param.ValueType &lt;&gt; siString ) then 
+		LogMessage "Min: " &amp; in_param.Min
+		LogMessage "Max: " &amp; in_param.Max
+		LogMessage "SuggestedMin: " &amp; in_param.SuggestedMin
+		LogMessage "SuggestedMax: " &amp; in_param.SuggestedMax
+	end if 
+end sub</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/CustomProperty.html">CustomProperty</a>,<a href="#!/url=./si_om/CustomProperty.AddParameter.html">CustomProperty.AddParameter</a>,<a href="#!/url=./si_om/Parameter.html">Parameter</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

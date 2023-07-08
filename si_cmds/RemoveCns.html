@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>RemoveCns</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>RemoveCns</h1>
+         </div>
+
+<h2 class="pagehead">RemoveCns</h2>
+
+<h3>Description</h3>
+<div><p>
+Removes the specified constraints between objects. <br /><br />
+Tip: If you want to remove all constraints matching a particular 
+constraint type instead, use the 
+<a href="#!/url=./si_cmds/RemoveCnsType.html">RemoveCnsType</a> command.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>RemoveCns( [ConstrainedObj], [ConstrainingObj], [ForceDeletion] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">ConstrainedObj		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/listexpr.htm">List</a> of objects to be constrained. If you pass in a variable, the command returns a <a href="#!/url=./si_om/XSICollection.html">XSICollection</a> of the constrained objects. 			<p class="cell"><span class="hilite">Default Value: </span>
+Selected objects			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ConstrainingObj		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/listexpr.htm">List</a> of constraining objects. If you pass in a variable, the command returns a <a href="#!/url=./si_om/XSICollection.html">XSICollection</a> of the constrained objects. 			<p class="cell"><span class="hilite">Default Value: </span>
+User is prompted to pick if there is more than one constraining object for a constrained object			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ForceDeletion		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ True to delete all constraints (user is not prompted to pick constraining objects) 			<p class="cell"><span class="hilite">Default Value: </span>
+False			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example creates a little planetary scene and applies 2 constraints
+' from the planet (Position constraints on the ring and the moon). Then
+' it removes only the moon's constraint by using the RemoveCns command
+' and verifies this by printing out a list of constraints on each object
+' before and after removing the constraints.
+'
+' Create a planet that will serve as the constraining object 
+set oPlanet = CreatePrim( "Sphere", "NurbsSurface", "Planet" )
+' Create a moon to be constrained by the planet and scale it 
+set oMoon = CreatePrim( "Sphere", "NurbsSurface", "Moon" )
+Translate oMoon, -6, 4, -5, siRelative, siView, siObj, siXYZ
+Scale oMoon, 0.15, 0.15, 0.15, siAbsolute, siParent, siObj, siXYZ
+' Create a ring to be constrained by the planet and scale it
+set oRing = CreatePrim( "Disc", "NurbsSurface", "Ring" )
+Scale oRing, 2.3, 1, 2.3, siAbsolute, siParent, siObj, siXYZ
+' Apply a Position constraint on the ring and the moon from the planet.
+' (The small sphere and the disc depend on the position of the larger sphere.) 
+' Notice that you have to pass the name of the object instead of its object 
+' variable with this command because the command changes that variable to a 
+' different type
+ApplyCns "Position", oMoon.Name &amp; "," &amp; oRing.Name, "Planet", true
+' Check to see which constraints are currently set 
+getCnsInfo oPlanet
+getCnsInfo oMoon
+getCnsInfo oRing
+' Remove the constraint on the moon but keep the constraint on the ring.
+' Here too you have to pass the name of the object instead of the object
+' variable.
+RemoveCns oMoon.Name, oPlanet.Name
+' Check to see which constraints remain
+getCnsInfo oPlanet
+getCnsInfo oMoon
+getCnsInfo oRing
+' Display the constraint relationship in all the default views and
+' the default camera view. This is the equivalent of turning on 
+' "Relation" and "Relation Info" in the view visibility options.
+SetValue "Views.*.*.camvis.*constraint*", True 
+SetValue "Camera.camvis.*constraint*", True
+' This function just saves us time and typing
+function getCnsInfo( in_constrained_obj )
+	set oFoundCns = in_constrained_obj.Kinematics.Constraints
+	if oFoundCns.Count &gt; 0 then
+		LogMessage "Found the following constraints on the " &amp; in_constrained_obj &amp; ":"
+		for each c in oFoundCns
+			LogMessage vbTab &amp; c.Name
+		next
+	else
+		LogMessage "No constraints found on " &amp; in_constrained_obj
+	end if
+end function
+' Output of the above script:
+' 
+' ...before removing constraint:
+'INFO : "No constraints found on Planet"
+'INFO : "Found the following constraints on the Moon:"
+'INFO : "	Position Cns"
+'INFO : "Found the following constraints on the Ring:"
+'INFO : "	Position Cns"
+' 
+' ...after removing constraint:
+'INFO : "No constraints found on Planet"
+'INFO : "No constraints found on Moon"
+'INFO : "Found the following constraints on the Ring:"
+'INFO : "	Position Cns"</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/RemoveCnsType.html">RemoveCnsType</a> <a href="#!/url=./si_cmds/RemoveAllCns.html">RemoveAllCns</a> <a href="#!/url=./si_cmds/SIApplyConstraint.html">SIApplyConstraint</a> <a href="#!/url=./si_cmds/SIApplyCns.html">SIApplyCns</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

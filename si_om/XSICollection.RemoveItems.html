@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>XSICollection.RemoveItems</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>XSICollection.RemoveItems</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/XSICollection.html">XSICollection</a>.RemoveItems</h2>
+
+<h3>Description</h3>
+<div><p> Removes one or more items to the collection. Compare this method to 
+<a href="#!/url=./si_om/XSICollection.Remove.html">XSICollection.Remove</a>, which only removes a single item 
+at a time and <a href="#!/url=./si_om/XSICollection.RemoveAll.html">XSICollection.RemoveAll</a> which empties 
+the collection completely.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>Object XSICollection.RemoveItems( Object in_newVal );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = XSICollection.RemoveItems( Items );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>The removed items as an <a href="#!/url=./si_om/XSICollection.html">XSICollection</a>.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Items		</td>
+		<td><a href="#!/url=./si_om/XSICollection.html">XSICollection</a>, <a href="#!/url=./files/Array.htm">Array</a> or <a href="#!/url=./files/objectexpr.htm">object name</a>		</td>
+		<td>
+The items to remove. 		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">Dim oColl1		' object pointer for first collection
+Dim oColl2		' object pointer for second collection
+Dim aItems		' array of items to add all at once
+' Create the first collection &amp; populate it 
+Set oColl1 = CreateObject( "XSI.Collection" )
+oColl1.SetAsText "Camera,Light"
+checkContents oColl1
+' Create the second collection &amp; populate it 
+LogMessage "----------------"
+Set oColl2 = CreateObject( "XSI.Collection" )
+oColl2.AddItems oColl1
+' Since the Unique property hasn't been set to True, we can 
+' add another instance of the camera to the collection
+oColl2.Add "Camera"
+checkContents oColl2
+' Remove the light and one instance of the camera
+LogMessage "----------------"
+oColl2.RemoveItems oColl1
+checkContents oColl2
+'--------------------------------------------------
+function checkContents( in_coll )
+	If in_coll.Count &gt; 0 Then
+		LogMessage "Collection now contains " &amp; in_coll.GetAsText 
+	Else
+		LogMessage "Collection is empty."
+	End If
+end function
+'--------------------------------------------------
+' Output of above script:
+'INFO : "Collection now contains Camera,light"
+'INFO : "----------------"
+'INFO : "Collection now contains Camera,light,Camera"
+'INFO : "----------------"
+'INFO : "Collection now contains Camera"</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example demonstrates how to split a collection into 2
+*/
+NewScene( null, false );
+// ----------------------------------------------------
+// Create a collection &amp; populate it
+var oFolks = new ActiveXObject( "XSI.Collection" );
+var oSammy = ActiveSceneRoot.AddNull( "Sammy" );
+oFolks.Add( oSammy );
+var oRoger = ActiveSceneRoot.AddNull( "Roger" );
+oFolks.Add( oRoger );
+var oBelinda = ActiveSceneRoot.AddNull( "Belinda" );
+oFolks.Add( oBelinda );
+var oAgnes = ActiveSceneRoot.AddNull( "Agnes" );
+oFolks.Add( oAgnes );
+// This will tell us that Sammy, Roger, Belinda, and Agnes
+// are all members of the folks collection
+checkContents( oFolks, "oFolks" );
+Application.LogMessage( "----------------" );
+// ----------------------------------------------------
+// Remove Sammy and Roger and save the removed ones
+// in another collection, leaving the original with the
+// two women and the new collection with two men
+var oMen = oFolks.RemoveItems( "Sammy,Roger" );
+checkContents( oFolks, "oFolks" );
+checkContents( oMen, "oMen" );
+//--------------------------------------------------
+function checkContents( in_coll, in_id )
+{
+	if ( in_coll.Count &gt; 0 )
+	{
+		LogMessage( in_id + " collection contains: " + in_coll.GetAsText() );
+	}
+	else
+	{
+		Application.LogMessage( in_id + " collection is empty." );
+	}
+}
+//--------------------------------------------------
+// Output of above script:
+//INFO : "oFolks collection contains: Sammy,Roger,Belinda,Agnes"
+//INFO : "----------------"
+//INFO : "oFolks collection contains: Belinda,Agnes"
+//INFO : "oMen collection contains: Sammy,Roger"</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/XSICollection.Unique.html">XSICollection.Unique</a> <a href="#!/url=./si_om/XSICollection.Remove.html">XSICollection.Remove</a> <a href="#!/url=./si_om/XSICollection.RemoveAll.html">XSICollection.RemoveAll</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,128 @@
+var topic = "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n\
+\n\
+<!-- saved from url=(0024)http://docs.autodesk.com -->\n\
+<html>\n\
+   <head>\n\
+<link href=\"../style/prettify.css\" type=\"text/css\" rel=\"stylesheet\" />\n\
+<script type=\"text/javascript\" src=\"../scripts/prettify.js\"></script><script src=\"../scripts/lib/jquery-1.9.1.min.js\" type=\"text/javascript\"></script>\n\
+      <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n\
+      <meta name=\"product\" content=\"SI\" />\n\
+      <meta name=\"release\" content=\"2015\" />\n\
+      <meta name=\"book\" content=\"Developer\" />\n\
+      <meta name=\"created\" content=\"2014-03-13\" />\n\
+      <meta name=\"topicid\" content=\"GUID-ED964AB6-40CB-45F2-B6C7-2274791434C7\" />\n\
+      <meta name=\"indexterm\" content=\"scripts: interacting with other programs\" />\n\
+      <meta name=\"indexterm\" content=\"ActiveX, interacting with other applications (through scripting)\" />\n\
+      <meta name=\"indexterm\" content=\"Getting Information on Supported Methods and Properties\" />\n\
+      <meta name=\"indexterm\" content=\"Using the Visual Basic Object Browser\" />\n\
+      <meta name=\"indexterm\" content=\"To load the Softimage type library into the VB object browser\" />\n\
+      <meta name=\"indexterm\" content=\"Using the OLE/COM Object Viewer\" />\n\
+      <meta name=\"indexterm\" content=\"Example: sending e-mail\" />\n\
+      <meta name=\"topic-type\" content=\"concept\" />\n\
+      <title>Interacting with Other Applications</title><script type=\"text/javascript\" src=\"../scripts/utils/adsk.redirect.js\"></script></head>\n\
+   <body height=\"100%\"><div class=\"body_content\" id=\"body-content\"><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/ac_common.js\"); });</script><script type=\"text/javascript\">var reflinkid = \"si_cpp\"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on(\'click\', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/multireflink.js\"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$(\"div#WidgetFloaterPanels,link[href*=\'microsofttranslator.com\'],script[src*=\'microsofttranslator.com\'],script[src*=\'bing.com\']\").remove();</script><script type=\'text/javascript\'>$(\"div#navigation,div#breadcrumbs,div#banner\").attr(\"translate\",\"no\"); var mtLocation = ((location && location.href && location.href.indexOf(\'https\') == 0)?\'https://ssl.microsofttranslator.com\':\'http://www.microsofttranslator.com\')+\'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages=\'; yepnope.injectJs(mtLocation, function() {}, { charset:\'utf-8\', type:\'text/javascript\' } );</script><script type=\"text/javascript\">\n\
+ reflinkdata.push([\"set\", \"si_cpp/group__RenderMapDefine.html#ga793ad1cfa149967fe4b97fc66251b831\", \"C++ API Reference\", \"../\"]); \n\
+</script><!-- begin MT -->\n\
+            \n\
+            <div id=\'MicrosoftTranslatorWidget\' class=\'Dark\' style=\'position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden\'></div><div id=\"reflinkdiv\" style=\"display:none; font-family: \'RobotoRegular\', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible\"></div>\n\
+      <div><span class=\"anchor_wrapper\"><a name=\"GUID-ED964AB6-40CB-45F2-B6C7-2274791434C7\"></a></span><div class=\"head\">\n\
+            <h1>Interacting with Other Applications</h1>\n\
+         </div>\n\
+         <p><span class=\"anchor_wrapper\"><a name=\"GUID-927FAAED-AFE5-41CB-8B70-7A0FDC26A0E5\"></a></span>Scripts and programs built with the Autodesk Softimage SDK can interact with any other\n\
+            program that supports ActiveX. This means that the possibilities are endless. For\n\
+            example, you can send e-mail, import and export data from spreadsheets, or do anything\n\
+            that you can do with another ActiveX-compliant program.\n\
+         </p>\n\
+         <div class=\"section\"><span class=\"anchor_wrapper\"><a name=\"WS904238AB06E69B4DA9450EA808760C03-0002\"></a></span> \n\
+            <h2><span class=\"anchor_wrapper\"><a name=\"GUID-B9A3370C-E455-4A37-B172-AA421EF69CE1\"></a></span> Getting Information on Supported Methods and Properties\n\
+            </h2>  \n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-6C8633E6-8113-421F-A896-ECC5A1CF4C62\"></a></span>For specific details on the methods and properties supported by the object classes\n\
+               of other ActiveX-compliant programs, refer to their documentation. However, if there\n\
+               is no documentation available, you can try using the <span class=\"char_link\"><a href=\"#!/url=./files/script_interact.htm#WS904238AB06E69B4DA9450EA808760C03-0003\">Object Browser</a></span> in Microsoft Visual Basic or the <span class=\"char_link\"><a href=\"#!/url=./files/script_interact.htm#WS904238AB06E69B4DA9450EA808760C03-0005\">OLE/COM Object Viewer</a></span>.\n\
+            </p> \n\
+         </div>\n\
+         <div class=\"section\"><span class=\"anchor_wrapper\"><a name=\"WS904238AB06E69B4DA9450EA808760C03-0003\"></a></span> \n\
+            <h2><span class=\"anchor_wrapper\"><a name=\"GUID-1F8B092F-A0DC-4774-A433-96A2F4F40853\"></a></span> Using theVisual Basic Object Browser\n\
+            </h2>  \n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-DDA9D9AF-DD5D-4DD4-807F-6D366297AD4F\"></a></span>You can use the Object Browser provided with Visual Basic to see the properties and\n\
+               methods supported by the various ActiveX-compliant classes installed on your computer.\n\
+            </p> \n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-E9063EB5-9793-4169-A308-A8C3CA80360F\"></a></span>The Visual Basic Object Browser displays the hierarchy of any set of classes (such\n\
+               as the Softimage object model) as a visual cue to help you understand how to use its\n\
+               members. As long as you give Visual Basic access to the library file (*.tlb), which\n\
+               describes the library, including information about inheritance, you can use the Object\n\
+               Browser to load any of the Autodesk Softimage SDK libraries.\n\
+            </p> \n\
+            <div class=\"section\"><span class=\"anchor_wrapper\"><a name=\"WS904238AB06E69B4DA9450EA808760C03-0004\"></a></span> \n\
+               <h3><span class=\"anchor_wrapper\"><a name=\"GUID-D9C0E64F-DE02-4208-99DC-B37D8C4E4920\"></a></span> To load the Softimage type library into the VB object browser\n\
+               </h3>  <span class=\"anchor_wrapper\"><a name=\"GUID-1EF94030-9F58-4B27-8114-7E890304EDA0\"></a></span><ol type=\"1\" start=\"1\">\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-6EF95618-B274-437B-BD76-870EBB363614\"></a></span>From the Project menu in your Visual Basic environment, select <span class=\"MenuCascade\" id=\"GUID-BBE7D8F6-C590-4613-829A-B44BB8303F3F\">References</span>.\n\
+                     </p> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-12B1FE58-B057-4161-B0DF-167B9787E39B\"></a></span>The References window appears.\n\
+                     </p> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-FFE31AA0-AE5D-4C82-BE3E-77BE5EC643A5\"></a></span>Click on the <span class=\"MenuCascade\" id=\"GUID-DDA3AEEC-E017-4D01-A04B-98E4FC1F37C2\">Browse</span> button.\n\
+                     </p> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-059AA000-53A4-452B-87B6-7A382A9C98CE\"></a></span>The Add Reference window appears.\n\
+                     </p> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-60F2C4ED-607E-447D-A369-2E513267EF3D\"></a></span>Select the library you want to browse (for example, <span class=\"code\" translate=\"no\">si3dobjectmodel.tlb</span> has most of the native Softimage objects you would need to access) and click <span class=\"MenuCascade\" id=\"GUID-8DCFB1DD-6BB5-4BDC-A5FA-D5F1F820D85D\">Open</span>.\n\
+                     </p> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-3817E0D5-E21F-470A-B850-114E59233239\"></a></span>The References window appears again with your choice highlighted and selected in the\n\
+                        Available References list box.\n\
+                     </p> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-1568BB97-5FAA-4CFF-9991-1423EAB6DDF8\"></a></span>Click <span class=\"MenuCascade\" id=\"GUID-00744D21-22FD-479D-8B9A-48F5ACEAF8CA\">OK</span> and then right-click on the code window to bring up the pop-up menu.\n\
+                     </p> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-411178FE-EC7A-4B77-A529-36EC169C7926\"></a></span>Click <span class=\"MenuCascade\" id=\"GUID-20F9BB3B-6293-49C2-ACF0-73881DD5EFC3\">Object Browser</span> in the pop-up menu.\n\
+                     </p> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-BE51BDEC-377F-4161-BEE3-4E49D8E9AE38\"></a></span>The Object Browser opens, displaying &lt;All Libraries&gt;.\n\
+                     </p> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-11AD7767-DAC6-469F-ADD7-EFF3760C1801\"></a></span>From the top left drop-down combo box, select <span class=\"MenuCascade\" id=\"GUID-CF3E0A92-3BA6-47E8-8F12-E4D92055A434\">SI3DOBJECTMODELLIB</span> (or whichever Softimage library you installed in the browser).\n\
+                     </p> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-E0D92E49-CF5E-4243-BAB0-E67043CE1842\"></a></span>You can now user the object browser to navigate through the Softimage type library\n\
+                        you installed.\n\
+                     </p> \n\
+                  </li>\n\
+               </ol> \n\
+            </div> \n\
+         </div>\n\
+         <div class=\"section\"><span class=\"anchor_wrapper\"><a name=\"WS904238AB06E69B4DA9450EA808760C03-0005\"></a></span> \n\
+            <h2><span class=\"anchor_wrapper\"><a name=\"GUID-0769C8F0-5FE8-4D0B-A524-8C752A87D234\"></a></span> Using the OLE/COM Object Viewer\n\
+            </h2>  \n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-F951EEE9-1049-41A3-82D0-9BB9CCA23ACF\"></a></span>The OLE/COM Object Viewer is a Windows tool that you can use to see the ActiveX-compliant\n\
+               classes installed on your computer, together with their supported properties and methods.\n\
+               You can download it from: <em class=\"strong\">www.microsoft.com/com/resources/oleview.asp</em></p> \n\
+            <div class=\"section\"><span class=\"anchor_wrapper\"><a name=\"WS904238AB06E69B4DA9450EA808760C03-0006\"></a></span> \n\
+               <h3><span class=\"anchor_wrapper\"><a name=\"GUID-6EF3C66B-D7B4-488B-AB12-3E212B1606B4\"></a></span> Example: sending e-mail\n\
+               </h3>  \n\
+               <p><span class=\"anchor_wrapper\"><a name=\"GUID-0D24C228-B345-4438-84C8-C68096993CB8\"></a></span>The VBScript code that follows can be used to send an e-mail message using Microsoft\n\
+                  Outlook. It could be included in another procedure to, for example, send yourself\n\
+                  a message when a rendering job is finished.\n\
+               </p> \n\
+               <div class=\"codeBlock\"><pre class=\"prettyprint\">\n\
+sub msg( dst, subj, body )\n\
+	dim a, b, olMailitem\n\
+	<a href=\"javascript:void(0)\" data=\"set\" class=\"a_multireflink\">set</a> a = createobject( \"outlook.application\" )\n\
+	<a href=\"javascript:void(0)\" data=\"set\" class=\"a_multireflink\">set</a> b = a.createitem( olMailitem )\n\
+	b.to = dst\n\
+	b.subject = subj\n\
+	b.body = body\n\
+	b.send()\n\
+end sub\n\
+msg \"jdoe@acme_inc.com\",\"Your render\",\"has finished.\"</pre></div> \n\
+            </div> \n\
+         </div>\n\
+         <div class=\"footer-block\"><a href=\"../html/ac.cmtdialog.htm\" class=\"comments-anchor\" target=\"_blank\"><span class=\"comments-link\">Please send us your comment about this page</span></a></div><br /><p class=\"footer-license-block\"><a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\"><img alt=\"Creative Commons License\" style=\"border-width: 0;\" src=\"../images/ccLink.png\" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href=\"http://autodesk.com/creativecommons\" target=\"_blank\">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>\n\
+   </div></body>\n\
+</html>";

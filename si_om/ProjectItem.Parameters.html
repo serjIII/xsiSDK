@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>ProjectItem.Parameters</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>ProjectItem.Parameters</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/ProjectItem.html">ProjectItem</a>.Parameters <img src="images/operator.gif" alt="operator" /></h2>
+
+<h3>Description</h3>
+<div><p> Returns a <a href="#!/url=./si_om/ParameterCollection.html">ParameterCollection</a> containing all <a href="#!/url=./si_om/Parameter.html">Parameter</a> objects on the 
+object that support read access. You can get their value using the <a href="#!/url=./si_om/Parameter.Value.html">Parameter.Value</a> property.
+<br /><br />
+Note: In some cases the parameters of nested objects are also included in the returned collection. You can 
+use the <a href="#!/url=./si_om/SIObject.Parent.html">SIObject.Parent</a> property to test the exact source of each Parameter.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>// get accessor
+ParameterCollection rtn = ProjectItem.Parameters;</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' 
+' This example demonstrates how to access the parameters directly associated with a cube 
+' (ie., these do not include the parameters defined on properties associated with the cube).
+' 
+NewScene , false
+set oRoot = Application.ActiveProject.ActiveScene.Root
+set oCube = oRoot.AddGeometry( "Cube", "MeshSurface" )
+for each oParam in oCube.Parameters
+	Application.LogMessage oParam.FullName
+next
+' Expecte result:
+'INFO : cube.Name
+'INFO : cube.kine.local.blendweight
+'INFO : cube.kine.local.active
+'INFO : cube.kine.local.posx
+'INFO : cube.kine.local.posy
+'INFO : cube.kine.local.posz
+'INFO : cube.kine.local.rotx
+'INFO : cube.kine.local.roty
+'INFO : cube.kine.local.rotz
+'INFO : cube.kine.local.quatw
+'INFO : cube.kine.local.quatx
+'INFO : cube.kine.local.quaty
+'INFO : cube.kine.local.quatz
+'INFO : cube.kine.local.sclx
+'INFO : cube.kine.local.scly
+'INFO : cube.kine.local.sclz
+'INFO : cube.kine.local.sclorix
+'INFO : cube.kine.local.scloriy
+'INFO : cube.kine.local.scloriz
+'INFO : cube.kine.local.cnsscl
+'INFO : cube.kine.local.cnsori
+'INFO : cube.kine.local.cnspos
+'INFO : cube.kine.local.affbyscl
+'INFO : cube.kine.local.affbyori
+'INFO : cube.kine.local.posxmaxactive
+'INFO : cube.kine.local.posxminactive
+'INFO : cube.kine.local.posymaxactive
+'INFO : cube.kine.local.posyminactive
+'INFO : cube.kine.local.poszmaxactive
+'INFO : cube.kine.local.poszminactive
+'INFO : cube.kine.local.rotxmaxactive
+'INFO : cube.kine.local.rotxminactive
+'INFO : cube.kine.local.rotymaxactive
+'INFO : cube.kine.local.rotyminactive
+'INFO : cube.kine.local.rotzmaxactive
+'INFO : cube.kine.local.rotzminactive
+'INFO : cube.kine.local.siscaling
+'INFO : cube.kine.local.rotorder
+'INFO : cube.kine.local.pivotactive
+'INFO : cube.kine.local.pposx
+'INFO : cube.kine.local.pposy
+'INFO : cube.kine.local.pposz
+'INFO : cube.kine.local.protx
+'INFO : cube.kine.local.proty
+'INFO : cube.kine.local.protz
+'INFO : cube.kine.local.psclx
+'INFO : cube.kine.local.pscly
+'INFO : cube.kine.local.psclz
+'INFO : cube.kine.local.pivotcompactive
+'INFO : cube.kine.local.pcposx
+'INFO : cube.kine.local.pcposy
+'INFO : cube.kine.local.pcposz
+'INFO : cube.kine.local.pcrotx
+'INFO : cube.kine.local.pcroty
+'INFO : cube.kine.local.pcrotz
+'INFO : cube.kine.local.pcsclx
+'INFO : cube.kine.local.pcscly
+'INFO : cube.kine.local.pcsclz
+'INFO : cube.kine.local.nposx
+'INFO : cube.kine.local.nposy
+'INFO : cube.kine.local.nposz
+'INFO : cube.kine.local.nrotx
+'INFO : cube.kine.local.nroty
+'INFO : cube.kine.local.nrotz
+'INFO : cube.kine.local.nsclx
+'INFO : cube.kine.local.nscly
+'INFO : cube.kine.local.nsclz
+'INFO : cube.kine.local.nsclorix
+'INFO : cube.kine.local.nscloriy
+'INFO : cube.kine.local.nscloriz
+'INFO : cube.polymsh.geom.subdivu
+'INFO : cube.polymsh.geom.subdivv
+'INFO : cube.polymsh.geom.subdivbase
+'INFO : cube.cube.length</pre></td></tr>
+</table>
+</div></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

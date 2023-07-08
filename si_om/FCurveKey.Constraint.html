@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>FCurveKey.Constraint</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>FCurveKey.Constraint</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/FCurveKey.html">FCurveKey</a>.Constraint</h2>
+
+<h3>Description</h3>
+<div><p> Sets or returns a <a href="#!/url=./files/Boolean.htm">Boolean</a> value indicating whether or not the specified fcurve key 
+constraint is set. The siFCurveKeyConstraint values are of type <a href="#!/url=./files/Long.htm">Long</a> (see 
+<a href="#!/url=./si_om/siFCurveKeyConstraint.html">siFCurveKeyConstraint</a> for a list of possible values).
+<br /><br />
+Warning: Getting and setting this property in Python is not supported. To set a specific constraint 
+in Python, use the "Set" prefix with method syntax: 'fcrvkey.SetConstraint( c.siLockConstraint, true )'. 
+This is demonstrated in the Python example below. To get a specific constraint, use the Python-compliant
+method <a href="#!/url=./si_om/FCurveKey.GetConstraint2.html">FCurveKey.GetConstraint2</a> instead.<br /><br />
+Setting this property may raise an "Access Denied" error. See more information in the FCurveKey object description.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>// get accessor
+Boolean FCurveKey.get_Constraint( siFCurveKeyConstraint in_eConstraint );
+// set accessor
+FCurveKey.set_Constraint( siFCurveKeyConstraint in_eConstraint, Boolean out_pVal );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Constraint		</td>
+		<td><a href="#!/url=./si_om/siFCurveKeyConstraint.html">siFCurveKeyConstraint</a>		</td>
+		<td>
+
+		The type of fcurve key constraint to set or return. You can add these values 
+		together to specify several constraints at once. 
+		<br /><br />
+		For example, use siParameterConstraint + siSameLengthTangentConstraint 
+		to lock all parameters and force left and right tangent lengths to be the same.
+			</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/* 
+	This example illustrates how to create an fcurve with keys and then how to set a 
+	constraint on one of the keys. 
+*/ 
+// ---------------------------------------------------------------------------------
+// Functions and Setup
+// ---------------------------------------------------------------------------------
+function GetConsList(fckey,setchk)
+{
+	var dicConstraintTypes = new ActiveXObject( "Scripting.Dictionary" );
+	dicConstraintTypes.Add( "LockParameter",		siParameterConstraint );
+	dicConstraintTypes.Add( "LeftRightParameter",		siLeftRightValuesConstraint );
+	dicConstraintTypes.Add( "G1Continuous",			siG1ContinuousConstraint );
+	dicConstraintTypes.Add( "LeftRightTangentDirection",	siLeftRightTangentDirectionConstraint );
+	dicConstraintTypes.Add( "LeftRightTangentLength",	siLeftRightTangentLengthConstraint );
+	dicConstraintTypes.Add( "LockAll",			siLockConstraint );
+	dicConstraintTypes.Add( "HorizontalTangent",		siHorizontalTangentConstraint );
+	dicConstraintTypes.Add( "ExtremumHorizontalTangent",	siExtremumHorizontalTangentConstraint );
+	dicConstraintTypes.Add( "AdjustedTangent",		siAdjustedTangentConstraint );
+	dicConstraintTypes.Add( "ZeroLengthTangent",		siZeroLengthTangentConstraint );
+	dicConstraintTypes.Add( "SameLengthTangent",		siSameLengthTangentConstraint );
+	dicConstraintTypes.Add( "NeighborTangent",			siNeighborTangentConstraint );
+	dicConstraintTypes.Add( "MirrorTangent",			siMirrorTangentConstraint );
+	dicConstraintTypes.Add( "AutoPlateauTangent",		siAutoPlateauTangentConstraint );
+	var strlist = "";
+	var vbKeys = dicConstraintTypes.Keys();		// the Dictionary.Keys method returns a safearray
+	var jsKeys = vbKeys.toArray();			// that you can convert with the toArray() method
+	for ( var k=0; k&lt;jsKeys.length; k++ ) {
+		if ( setchk == fckey.Constraint( dicConstraintTypes.Item(jsKeys[k]) ) ) {
+			strlist += jsKeys[k] + " ";
+		}
+	}
+	return strlist;
+}
+// ---------------------------------------------------------------------------------
+// Create new scene
+// ---------------------------------------------------------------------------------
+NewScene( null, false );
+// Create a null
+var n = Application.ActiveSceneRoot.AddNull()
+// Add a custompvar to the null
+var cpset = n.AddProperty( "Custom_parameter_list", false, "CustomPSet" );
+// Add a double parameter to cpset
+var x = cpset.AddParameter3( "X", siDouble, 0, -100, 100, 1 );
+// Create a fcurve on posx
+var fc = x.AddFCurve2( new Array(1,0.5), siStandardFCurve );
+var fckey = fc.Keys(0);
+// ---------------------------------------------------------------------------------
+// Set the siLockConstraint ( time, value &amp; tangents are locked )
+// ---------------------------------------------------------------------------------
+// Set the Constraint property 
+fckey.Constraint( siLockConstraint ) = 1;
+if ( fckey.Constraint(siLockConstraint) ) {
+	Application.LogMessage( "fckey(" + fckey.Index + ") lock all constraints: true" );
+} else {
+	Application.LogMessage( "fckey(" + fckey.Index + ") lock all constraints: false" );
+}
+Application.LogMessage( "fckey(" + fckey.Index + ") constraints set: " + GetConsList(fckey,true) );
+Application.LogMessage( "fckey(" + fckey.Index + ") constraints NOT set: " + GetConsList(fckey,false) );
+// If you try and change the key value when the lock constraint is on it raises 
+// an 'Access Denied' error.
+try {
+	fckey.Value = 5;
+} catch(e) {
+	if ( e.number ) {
+		Application.LogMessage( "fckey(" + fckey.Index + ") set value failed: " + e.description );
+	}
+}
+// ---------------------------------------------------------------------------------
+// Expected results::
+// ---------------------------------------------------------------------------------
+//INFO : fckey(0) lock all constraints: true
+//INFO : fckey(0) constraints set: LockParameter LeftRightParameter G1Continuous LeftRightTangentDirection LeftRightTangentLength LockAll AutoPlateauTangent
+//INFO : fckey(0) constraints NOT set: HorizontalTangent ExtremumHorizontalTangent AdjustedTangent ZeroLengthTangent SameLengthTangent NeighborTangent MirrorTangent
+//INFO : 2009 - fckey(0) set value failed: Access denied</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' 
+' This example illustrates how to create an fcurve with keys and then how to set a constraint 
+' on one of the keys. 
+' 
+' ---------------------------------------------------------------------------------
+' Functions and Setup
+' ---------------------------------------------------------------------------------
+function GetConsList(fckey,setchk)
+	set dicConstraintTypes = CreateObject( "Scripting.Dictionary" )
+	dicConstraintTypes.Add "LockParameter",			siParameterConstraint
+	dicConstraintTypes.Add "LeftRightParameter",		siLeftRightValuesConstraint
+	dicConstraintTypes.Add "G1Continuous",			siG1ContinuousConstraint
+	dicConstraintTypes.Add "LeftRightTangentDirection",	siLeftRightTangentDirectionConstraint
+	dicConstraintTypes.Add "LeftRightTangentLength",	siLeftRightTangentLengthConstraint
+	dicConstraintTypes.Add "LockAll",			siLockConstraint
+	dicConstraintTypes.Add "HorizontalTangent",		siHorizontalTangentConstraint
+	dicConstraintTypes.Add "ExtremumHorizontalTangent",	siExtremumHorizontalTangentConstraint
+	dicConstraintTypes.Add "AdjustedTangent",		siAdjustedTangentConstraint
+	dicConstraintTypes.Add "ZeroLengthTangent",		siZeroLengthTangentConstraint
+	dicConstraintTypes.Add "SameLengthTangent",		siSameLengthTangentConstraint
+	dicConstraintTypes.Add "NeighborTangent",		siNeighborTangentConstraint
+	dicConstraintTypes.Add "MirrorTangent",			siMirrorTangentConstraint
+	dicConstraintTypes.Add "AutoPlateauTangent",	siAutoPlateauTangentConstraint
+	strlist = ""
+	dkeys = dicConstraintTypes.Keys()
+	for each k in dkeys
+		if setchk = fckey.Constraint(dicConstraintTypes.Item(k)) then
+			strlist = strlist &amp; k + " " 
+		end if
+	next
+	GetConsList = strlist
+end function
+' ---------------------------------------------------------------------------------
+' Create new scene
+' ---------------------------------------------------------------------------------
+NewScene , 0
+' Create a null
+set n = Application.ActiveSceneRoot.AddNull()
+' Add a custompset to the null
+set cpset = n.AddProperty( "Custom_parameter_list", , "CustomPSet" )
+' Add a double parameter to cpset
+set x = cpset.AddParameter3( "X", siDouble, 0, -100, 100, 1 )
+' Create a fcurve on posx
+set fc = x.AddFCurve2( array(1,0.5), siStandardFCurve )
+set fckey = fc.Keys(0)
+' ---------------------------------------------------------------------------------
+' Set the siLockConstraint ( time, value &amp; tangents are locked )
+' ---------------------------------------------------------------------------------
+' Set the Constraint property 
+fckey.Constraint( siLockConstraint ) = 1
+if fckey.Constraint( siLockConstraint ) then
+	Application.LogMessage "fckey(" &amp; fckey.Index &amp; ") lock all constraints: true" 
+else
+	Application.LogMessage "fckey(" &amp; fckey.Index &amp; ") lock all constraints: false" 
+end if
+Application.LogMessage "fckey(" &amp; fckey.Index &amp; ") constraints set: " &amp; GetConsList(fckey,true)
+Application.LogMessage "fckey(" &amp; fckey.Index &amp; ") constraints NOT set: " &amp; GetConsList(fckey,false)
+' If you try and change the key value when the lock constraint is on it raises 
+' an 'Access Denied' error.
+on error resume next
+fckey.Value = 5
+if Err.Number then
+	Application.LogMessage "fckey(" &amp; fckey.Index &amp; ") set value failed: " &amp; Err.Description
+end if
+on error goto 0
+' ---------------------------------------------------------------------------------
+' Expected results::
+' ---------------------------------------------------------------------------------
+'INFO : fckey(0) lock all constraints: true
+'INFO : fckey(0) constraints set: LockParameter LeftRightParameter G1Continuous LeftRightTangentDirection LeftRightTangentLength LockAll AutoPlateauTangent
+'INFO : fckey(0) constraints NOT set: HorizontalTangent ExtremumHorizontalTangent AdjustedTangent ZeroLengthTangent SameLengthTangent NeighborTangent MirrorTangent
+'INFO : 2009 - fckey(0) set value failed: Access denied</pre></td></tr>
+</table>
+</div><h4>3. Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python"># 
+# This example illustrates how to create an fcurve with keys and then how to set a constraint 
+# on one of the keys. 
+# 
+# ---------------------------------------------------------------------------------
+# Functions and Setup
+# ---------------------------------------------------------------------------------
+# Get the Softimage constants from win32com.client and error handling from pythoncom
+from win32com.client import constants as c
+from pythoncom import com_error as e
+constrainttypes = [ \
+	(c.siParameterConstraint,			"LockParameter"),\
+	(c.siLeftRightValuesConstraint,		"LeftRightParameter"),\
+	(c.siG1ContinuousConstraint,			"G1Continuous"),\
+	(c.siLeftRightTangentDirectionConstraint,	"LeftRightTangentDirection"),\
+	(c.siLeftRightTangentLengthConstraint,		"LeftRightTangentLength"),\
+	(c.siLockConstraint,				"LockAll"),\
+	(c.siHorizontalTangentConstraint,		"HorizontalTangent"),\
+	(c.siExtremumHorizontalTangentConstraint,	"ExtremumHorizontalTangent"),\
+	(c.siAdjustedTangentConstraint,			"AdjustedTangent"),\
+	(c.siZeroLengthTangentConstraint,		"ZeroLengthTangent"),\
+	(c.siSameLengthTangentConstraint,		"SameLengthTangent"),\
+	(c.siNeighborTangentConstraint,			"NeighborTangent"),\
+	(c.siMirrorTangentConstraint,			"MirrorTangent"),\
+	(c.siAutoPlateauTangentConstraint,		"AutoPlateauTangent") ]
+def GetConsList(fckey,setchk):
+	strlist = ""
+	for ( c, strc ) in constrainttypes :
+		if fckey.Constraint(c) == setchk:
+			strlist += strc 
+			strlist += " " 
+	return strlist
+# ---------------------------------------------------------------------------------
+# Create new scene
+# ---------------------------------------------------------------------------------
+Application.NewScene("", 0)
+# Create a null
+null = Application.GetPrim("Null", "", "", "")
+# Add a custompset to the null
+cpset = null.AddProperty("Custom_parameter_list",0,"CustomPSet")
+# Add a double parameter to cpset
+x = cpset.AddParameter3( "X", c.siDouble, 0, -100, 100, 1 )
+# Create a fcurve on posx
+fc = x.AddFCurve2( [ 1, 0.5 ], c.siStandardFCurve )
+fckey = fc.Keys(0)
+# ---------------------------------------------------------------------------------
+# Set the siLockConstraint ( time, value &amp; tangents are locked )
+# ---------------------------------------------------------------------------------
+# Notice how you have to use 'SetConstraint' for the Constraint property when setting
+fckey.SetConstraint(c.siLockConstraint,1)
+if fckey.Constraint(c.siLockConstraint) :
+	Application.LogMessage( 'fckey(%d) lock all constraints: true' % (fckey.Index) )
+else :
+	Application.LogMessage( 'fckey(%d) lock all constraints: false' % (fckey.Index) )
+Application.LogMessage( 'fckey(%d) constraints set: %s' % (fckey.Index,GetConsList(fckey,1)))
+Application.LogMessage( 'fckey(%d) constraints NOT set: %s' % (fckey.Index,GetConsList(fckey,0)))
+# If you try and change the key value when the lock constraint is on it raises 
+# an 'Access Denied' error.
+try:
+	fckey.Value = 5
+except e, (hr, msg, exc, arg):
+	if exc and exc[2]: msg = exc[2]
+	Application.LogMessage( 'fckey(%d) set value failed: %s' % (fckey.Index,msg))
+# ---------------------------------------------------------------------------------
+# Expected results::
+# ---------------------------------------------------------------------------------
+#INFO : fckey(0) lock all constraints: true
+#INFO : fckey(0) constraints set: LockParameter LeftRightParameter G1Continuous LeftRightTangentDirection LeftRightTangentLength LockAll AutoPlateauTangent
+#INFO : fckey(0) constraints NOT set: HorizontalTangent ExtremumHorizontalTangent AdjustedTangent ZeroLengthTangent SameLengthTangent NeighborTangent MirrorTangent
+#INFO : 2009 - fckey(0) set value failed: Access denied</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/FCurveKey.GetConstraint2.html">FCurveKey.GetConstraint2</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

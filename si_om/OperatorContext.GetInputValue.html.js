@@ -1,0 +1,126 @@
+var topic = "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n\
+<!-- saved from url=(0024)http://docs.autodesk.com -->\n\
+<html>\n\
+   <head>\n\
+<link href=\"../style/prettify.css\" type=\"text/css\" rel=\"stylesheet\" />\n\
+<script type=\"text/javascript\" src=\"../scripts/prettify.js\"></script><script src=\"../scripts/lib/jquery-1.9.1.min.js\" type=\"text/javascript\"></script><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /><script type=\"text/javascript\" src=\"../scripts/utils/adsk.redirect.js\"></script>\n\
+      <title>OperatorContext.GetInputValue</title>\n\
+   \n\
+</head>\n\
+   <body height=\"100%\"><div class=\"body_content\" id=\"body-content\"><style>\n\
+/*  These settings override ones in the default stylesheets\n\
+	used by the merged files that cause problems in combination\n\
+	with the standard HTML help styles and page templates. */\n\
+\n\
+div, div.example, div.tip {\n\
+	 margin:0;\n\
+}\n\
+\n\
+td.example {\n\
+	background: inherit;\n\
+}\n\
+\n\
+/* This fixes a problem with nested pre blocks on an example page */\n\
+pre pre {\n\
+	display:block;\n\
+	padding:0;\n\
+	border-style:none;\n\
+}\n\
+</style><link rel=\"stylesheet\" href=\"si_om/css/en.css\" type=\"text/css\" /><script>$(document).ready(function() { yepnope.injectJs(\"./si_om/lib/utils.js\"); });</script><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/ac_common.js\"); });</script><script type=\"text/javascript\">var reflinkid = \"si_cpp\"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on(\'click\', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/multireflink.js\"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$(\"div#WidgetFloaterPanels,link[href*=\'microsofttranslator.com\'],script[src*=\'microsofttranslator.com\'],script[src*=\'bing.com\']\").remove();</script><script type=\'text/javascript\'>$(\"div#navigation,div#breadcrumbs,div#banner\").attr(\"translate\",\"no\"); var mtLocation = ((location && location.href && location.href.indexOf(\'https\') == 0)?\'https://ssl.microsofttranslator.com\':\'http://www.microsofttranslator.com\')+\'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages=\'; yepnope.injectJs(mtLocation, function() {}, { charset:\'utf-8\', type:\'text/javascript\' } );</script><script type=\"text/javascript\">\n\
+ </script><!-- begin MT -->\n\
+            \n\
+            <div id=\'MicrosoftTranslatorWidget\' class=\'Dark\' style=\'position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden\'></div><div id=\"reflinkdiv\" style=\"display:none; font-family: \'RobotoRegular\', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible\"></div>\n\
+      <div>\n\
+         <div class=\"head\">\n\
+            <h1>OperatorContext.GetInputValue</h1>\n\
+         </div>\n\
+\n\
+<h2 class=\"pagehead\"><a href=\"#!/url=./si_om/OperatorContext.html\">OperatorContext</a>.GetInputValue</h2>\n\
+\n\
+<h3>Introduced</h3>\n\
+<div><p>v5.1</p></div>\n\
+\n\
+<h3>Description</h3>\n\
+<div><p> Returns the value of a given input port on the <a href=\"#!/url=./si_om/CustomOperator.html\">CustomOperator</a>. If the \n\
+connected object is a <a href=\"#!/url=./si_om/Parameter.html\">Parameter</a> this will return the actual value of \n\
+the Parameter value, not the Parameter object.  Otherwise it will return the object that \n\
+represents the input object, and this object can be used to retrieve information about the \n\
+state of the input object. For example if the operator is connected to a \n\
+<a href=\"#!/url=./si_om/Parameter.html\">Parameter</a> of type double this will return a double. And if the operator \n\
+is connected to a Primitive this will return a <a href=\"#!/url=./si_om/Primitive.html\">Primitive</a>.\n\
+<br /><br />\n\
+Note: This method is a convenient and fast approach that hides the existence of \n\
+<a href=\"#!/url=./si_om/InputPort.html\">InputPort</a>s.\n\
+</p></div>\n\
+\n\
+<h3>C# Syntax</h3>\n\
+<div><p><table>\n\
+	<tr>\n\
+		<td class=\"example\"><pre>Object OperatorContext.GetInputValue( Object in_vPortIndexOrName, Object in_vPortGroupIndexOrName, Int32 in_lPortGroupInstance );</pre>		</td>	</tr>\n\
+</table>\n\
+</p></div>\n\
+\n\
+<h3>Scripting Syntax</h3>\n\
+<div><p><table>\n\
+	<tr>\n\
+		<td class=\"example\"><pre>OperatorContext.GetInputValue( PortIndexOrName, [PortGroupIndex], [PortGroupInstance] );</pre>		</td>	</tr>\n\
+</table>\n\
+</p></div>\n\
+\n\
+<h3>Parameters</h3>\n\
+<div><p><table cellpadding=\"5\" cellspacing=\"5\">\n\
+	<tr>\n\
+		<th title=\"Name of the parameter\">Parameter		</th>\n\
+		<th title=\"Data type\">Type		</th>\n\
+		<th title=\"Description of the parameter\">Description		</th>\n\
+	</tr>\n\
+	<tr>\n\
+		<td class=\"name\">PortIndexOrName		</td>\n\
+		<td><a href=\"#!/url=./files/Long.htm\">Long</a> index of the input or <a href=\"#!/url=./files/String.htm\">String</a> name.		</td>\n\
+		<td>\n\
+\n\
+		It is faster to retrieve an input port by its index rather than its name.\n\
+		If the operator was created by the <a href=\"#!/url=./si_cmds/AddCustomOp.html\">AddCustomOp</a> command \n\
+		or <a href=\"#!/url=./si_om/Parameter.AddCustomOp.html\">Parameter.AddCustomOp</a> method then the index is easy \n\
+		to determine based on the order of the inputs in the input argument.  If \n\
+		the operator was built manually then the index can be determined based on \n\
+		the order of calls to <a href=\"#!/url=./si_om/CustomOperator.AddInputPort.html\">CustomOperator.AddInputPort</a> or \n\
+		<a href=\"#!/url=./si_om/CustomOperator.AddIOPort.html\">CustomOperator.AddIOPort</a>.\n\
+			</td>\n\
+	</tr>\n\
+	<tr>\n\
+		<td class=\"name\">PortGroupIndex		</td>\n\
+		<td><a href=\"#!/url=./files/Long.htm\">Long</a> index of the PortGroup or <a href=\"#!/url=./files/String.htm\">String</a> name.		</td>\n\
+		<td>\n\
+\n\
+		Use this parameter for advanced operators that have more than one \n\
+		<a href=\"#!/url=./si_om/PortGroup.html\">PortGroup</a>.  Otherwise it is assumed that the input is on \n\
+		the first group (Group 0).  \n\
+		<br /><br />\n\
+		Tip: It is faster to reference a PortGroup by its index rather than its name.\n\
+				<p class=\"cell\"><span class=\"hilite\">Default Value: </span>\n\
+0			</p>\n\
+		</td>\n\
+	</tr>\n\
+	<tr>\n\
+		<td class=\"name\">PortGroupInstance		</td>\n\
+		<td><a href=\"#!/url=./files/Long.htm\">Long</a>		</td>\n\
+		<td>\n\
+\n\
+		Use this parameter for advanced operators that support having more than one object \n\
+		connecting to a particular <a href=\"#!/url=./si_om/PortGroup.html\">PortGroup</a>. Otherwise it is assumed \n\
+		that the input is on the first group instance.\n\
+				<p class=\"cell\"><span class=\"hilite\">Default Value: </span>\n\
+0			</p>\n\
+		</td>\n\
+	</tr>\n\
+</table>\n\
+</p></div>\n\
+\n\
+<h3>See Also</h3>\n\
+<div><p><a href=\"#!/url=./si_om/Operator.GetInputValue.html\">Operator.GetInputValue</a></p></div>\n\
+\n\
+      <div class=\"footer-block\"><a href=\"../html/ac.cmtdialog.htm\" class=\"comments-anchor\" target=\"_blank\"><span class=\"comments-link\">Please send us your comment about this page</span></a></div><br /></div>\n\
+   </div></body>\n\
+</html>\n\
+";

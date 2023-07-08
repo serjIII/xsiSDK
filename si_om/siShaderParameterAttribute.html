@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>siShaderParameterAttribute</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>siShaderParameterAttribute</h1>
+         </div>
+
+<h2 class="pagehead">siShaderParameterAttribute</h2>
+
+<h3>Introduced</h3>
+<div><p>v9.0 (2011)</p></div>
+
+<h3>Description</h3>
+<div><p>Sets an attribute on the shader parameter definition. For example, to set a filter on a shader parameter
+definition of type reference, use siReferenceFilterAttribute as the attribute name and one of the 
+<a href="#!/url=./si_om/siShaderReferenceFilterType.html">siShaderReferenceFilterType</a> values when calling the SetAttribute method. The filter 
+restricts which items the user can select with the widget.</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>StringModule.siReferenceFilterAttribute                                     // ReferenceFilter
+StringModule.siPropertyFilterAttribute                                      // PropertyFilter
+StringModule.siCustomTypeNameAttribute                                      // CustomTypeName
+StringModule.siShaderFamilyAttribute                                        // ShaderFamily
+StringModule.siDefaultConnectionAttribute                                   // DefaultConnection
+StringModule.siWritableImageAttribute                                       // WritableImage
+StringModule.siWritableImageTypeAttribute                                   // WritableImageType
+StringModule.siRenderTreeNodeColorRAttribute                                // RenderTreeNodeColorR
+StringModule.siRenderTreeNodeColorGAttribute                                // RenderTreeNodeColorG
+StringModule.siRenderTreeNodeColorBAttribute                                // RenderTreeNodeColorB
+StringModule.siUseRenderTreeLayoutPortDisplayNamesAttribute                 // UseRenderTreeLayoutPortDisplayNames
+StringModule.siRecompileMetaSLOnValueChange                                 // RecompileMetaSLOnValueChange
+StringModule.siCAVTangentsAttribute                                         // Tangents
+StringModule.siCAVBinormalsAttribute                                        // Binormals</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<div><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th>Constant		</th>		<th>Value		</th>		<th>Description		</th>	</tr>
+	<tr>
+		<td class="name"><a name="siReferenceFilterAttribute"> </a>siReferenceFilterAttribute		</td>
+		<td class="example">ReferenceFilter		</td>
+		<td>
+Type of filter for a shader's reference 
+		parameter type. Set one of the <a href="#!/url=./si_om/siShaderReferenceFilterType.html">siShaderReferenceFilterType</a> enum values.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPropertyFilterAttribute"> </a>siPropertyFilterAttribute		</td>
+		<td class="example">PropertyFilter		</td>
+		<td>
+Type of filter for a shader's property 
+		parameter type. Set one of the <a href="#!/url=./si_om/siShaderPropertyFilterType.html">siShaderPropertyFilterType</a> enum values.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siCustomTypeNameAttribute"> </a>siCustomTypeNameAttribute		</td>
+		<td class="example">CustomTypeName		</td>
+		<td>
+Type of filter for a shader's custom type. 
+		Set one of the <a href="#!/url=./si_om/siShaderCustomDataType.html">siShaderCustomDataType</a> enum values.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siShaderFamilyAttribute"> </a>siShaderFamilyAttribute		</td>
+		<td class="example">ShaderFamily		</td>
+		<td>
+Type of filter for a shader's family.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siDefaultConnectionAttribute"> </a>siDefaultConnectionAttribute		</td>
+		<td class="example">DefaultConnection		</td>
+		<td>
+Default connection to make when 
+		a shader is dropped on a port or an existing connection. Valid for input and outputs.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siWritableImageAttribute"> </a>siWritableImageAttribute		</td>
+		<td class="example">WritebleImage		</td>
+		<td>
+Type of filter for a writable image.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siWritableImageTypeAttribute"> </a>siWritableImageTypeAttribute		</td>
+		<td class="example">WritableImageType		</td>
+		<td>
+Type of filter for a writable image type.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siRenderTreeNodeColorRAttribute"> </a>siRenderTreeNodeColorRAttribute		</td>
+		<td class="example">RenderTreeNodeColorR		</td>
+		<td>
+Type of filter to match the Red color for a RenderTree node.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siRenderTreeNodeColorGAttribute"> </a>siRenderTreeNodeColorGAttribute		</td>
+		<td class="example">RenderTreeNodeColorG		</td>
+		<td>
+Type of filter to match the Green color for a RenderTree node.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siRenderTreeNodeColorBAttribute"> </a>siRenderTreeNodeColorBAttribute		</td>
+		<td class="example">RenderTreeNodeColorB		</td>
+		<td>
+Type of filter to match the Blue color for a RenderTree node.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUseRenderTreeLayoutPortDisplayNamesAttribute"> </a>siUseRenderTreeLayoutPortDisplayNamesAttribute		</td>
+		<td class="example">UseRenderTreeLayoutPortDisplayNames		</td>
+		<td>
+Controls which display name to use in the Render Tree layout when no layout is given. By default, the ports will use the script name. Set this attribute to true to use the display name from the PPG.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siRecompileMetaSLOnValueChange"> </a>siRecompileMetaSLOnValueChange		</td>
+		<td class="example">RecompileMetaSLOnValueChange		</td>
+		<td>
+When this attribute is set to true and the parameter value changes, the MetaSL viewport shader will be recompiled. This is needed when the number of light casting shadows changes or when switching light types.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siCAVTangentsAttribute"> </a>siCAVTangentsAttribute		</td>
+		<td class="example">Tangents		</td>
+		<td>
+When this attribute is set to true, tangent data will be generated for this property for the MetaSL viewport shader. 		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siCAVBinormalsAttribute"> </a>siCAVBinormalsAttribute		</td>
+		<td class="example">Binormals		</td>
+		<td>
+When this attribute is set to true, binormal data will be generated for this property for the MetaSL viewport shader. 		</td>
+	</tr>
+</table>
+</div>
+
+<h3>Applies To</h3>
+<div><p><a href="#!/url=./si_om/ShaderParamDefOptions.SetAttribute.html">ShaderParamDefOptions.SetAttribute</a> <a href="#!/url=./si_om/MetaShaderRendererDef.RendererOptions.html">MetaShaderRendererDef.RendererOptions</a> <a href="#!/url=./si_cpp/classXSI_1_1ShaderParamDefOptions.html#SetAttribute">ShaderParamDefOptions::SetAttribute</a> <a href="#!/url=./files/cus_shaders_ParamsControls.htm">Refining UI Controls for Parameter Definitions</a></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/siShaderReferenceFilterType.html">siShaderReferenceFilterType</a> <a href="#!/url=./si_om/siShaderPropertyFilterType.html">siShaderPropertyFilterType</a> <a href="#!/url=./si_om/siShaderCustomDataType.html">siShaderCustomDataType</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

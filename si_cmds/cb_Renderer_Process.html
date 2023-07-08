@@ -1,0 +1,844 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Process</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Process</h1>
+         </div>
+
+<h2 class="pagehead">Process</h2>
+
+<hr width="100%" />
+<h3>Description</h3>
+<div><p><a name="Description"> </a>	<p>
+				Fired whenever the rendering engine is requested to perform a process (for example, render a frame). 
+				For sequences, all the frames in a sequence will be called before switching to another render job 
+				(although the render can be terminated before the sequence is done). This guarantees that the renderer 
+				can recycle previous frame's data. 
+			</p>
+	<p>
+				The Process callback uses the <a href="#!/url=./si_cpp/classXSI_1_1RendererContext.html">RendererContext</a> 
+				to retrieve the <a href="#!/url=./si_cpp/classXSI_1_1SceneRenderProperty.html">renderer options property</a>, 
+				get <a href="#!/url=./si_cpp/classXSI_1_1Framebuffer.html">Framebuffer</a> information, and send tile data 
+				back to the Render Manager.
+			</p>
+</p></div>
+
+<hr width="100%" />
+<h3>Applies To</h3>
+<div><p><a name="AppliesTo"> </a><a href="#!/url=./files/cus_render.htm">Custom Renderers</a></p></div>
+
+<hr width="100%" />
+<h3>Syntax</h3>
+<div><p><a name="Syntax"> </a><div class="example"><table>
+<tr>
+<td class="example"><pre class="cplusplus">CStatus &lt;renderer_name&gt;_Process( CRef&amp; in_context )
+{ 
+	... 
+}</pre></td></tr>
+</table>
+</div>	<p><span style="font-family: courier, monospace;">&lt;renderer_name&gt;</span> is the name specified in the call to 
+				<a href="#!/url=./si_cpp/classXSI_1_1PluginRegistrar.html#RegisterRenderer">PluginRegistrar::RegisterRenderer</a>, 
+				with any spaces converted to underscores.
+			</p>
+</p></div>
+
+<hr width="100%" />
+<h3>Parameters</h3>
+<div><p><a name="Parameters"> </a>	<table>		<tr>			<th>Parameter</th>
+			<th>Language</th>
+			<th>Type</th>
+			<th>Description</th>
+</tr>
+		<tr>			<td class="name">in_context</td>
+			<td class="name">C++</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1CRef.html">CRef</a>&</td>
+			<td>A reference to the <a href="#!/url=./si_cpp/classXSI_1_1RendererContext.html">RendererContext</a> object. 
+					<a href="#!/url=./si_cpp/classXSI_1_1Context.html#GetSource">Context::GetSource</a> 
+					returns the <a href="#!/url=./si_cpp/classXSI_1_1Renderer.html">Renderer</a>.</td>
+</tr>
+</table>
+</p></div>
+
+<hr width="100%" />
+<h3>Context Attributes</h3>
+<div><p><a name="ContextAttributes"> </a><a name="ContextAttributes_Renderers"></a>	<table>		<tr>			<th>Attribute</th>
+			<th>Type</th>
+			<th>Description</th>
+</tr>
+		<tr>			<td class="example">RenderID</td>
+			<td>unsigned int</td>
+			<td>
+						The unique identifier for this particular rendering job. Softimage creates a rendering
+						job whenever it needs a rendered output. So a single pass render is one render job,
+						each shaderball image is a render job, each render region is a separate render job, and
+						so forth.
+					</td>
+</tr>
+		<tr>			<td class="example">Process</td>
+			<td><a href="#!/url=./si_om/siRenderProcessType.html">siRenderProcessType</a></td>
+			<td>
+						The process type requested by the render manager.
+					</td>
+</tr>
+		<tr>			<td class="example">RenderType</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1CString.html">CString</a></td>
+			<td>
+						The current type of rendering being performed. For example <span style="font-family: courier, monospace;">"Pass"</span>, 
+						<span style="font-family: courier, monospace;">"Region"</span> or <span style="font-family: courier, monospace;">"Shaderball"</span>.
+					</td>
+</tr>
+		<tr>			<td class="example">Scene</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1CRefArray.html">CRefArray</a> of <a href="#!/url=./si_cpp/classXSI_1_1Model.html">Model</a> objects</td>
+			<td>
+						A list of models that together make up the scene to render. When rendering the current scene, 
+						this is simply the scene root model. When rendering shaderballs this can be a composite of the 
+						hero object (for example, the apple) and the background object (for example, the checkerboard pattern).
+					</td>
+</tr>
+		<tr>			<td class="example">ObjectList</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1CRefArray.html">CRefArray</a> of <a href="#!/url=./si_cpp/classXSI_1_1X3DObject.html">X3DObject</a>s</td>
+			<td>
+						(Optional) A subset of objects to render from the scene root(s) given in the <span style="font-family: courier, monospace;">"Scene"</span> 
+						attribute. These objects override any currently selected object, including the <span style="font-family: courier, monospace;">"SelectionOnly"</span> 
+						only attribute. The <span style="font-family: courier, monospace;">"TrackSelection"</span> attribute also changes its behaviour to enclose 
+						the objects given in this list, rather than the current selection.
+					</td>
+</tr>
+		<tr>			<td class="example">DirtyList</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1CRefArray.html">CRefArray</a> of <a href="#!/url=./si_cpp/classXSI_1_1X3DObject.html">X3DObject</a>s</td>
+			<td>
+						If defined, lists the objects that have been changed since this rendering engine got 
+						called last. If the list is empty, then nothing has changed and the user has most likely
+						just requested a refresh of the render. If the attribute is not defined, then the whole
+						scene can be considered as dirty. Use 
+						<a href="#!/url=./si_cpp/classXSI_1_1RendererContext.html#SetObjectClean">RendererContext::SetObjectClean</a>
+						to selectively remove items from the dirty list so that they don't show up at the next render.
+					</td>
+</tr>
+		<tr>			<td class="example">Lights</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1CRefArray.html">CRefArray</a> of <a href="#!/url=./si_cpp/classXSI_1_1Light.html">Light</a> objects</td>
+			<td>
+						The list of scene lights. This is more of a convenience list and saves the renderer having to traverse 
+						the scene models to grab all the lights and check their visibility, etc..
+					</td>
+</tr>
+		<tr>			<td class="example">Camera</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1Primitive.html">Primitive</a></td>
+			<td>
+						The viewing camera <a href="#!/url=./si_cpp/classXSI_1_1Primitive.html">Primitive</a> for this render. Use 
+						<a href="#!/url=./si_cpp/classXSI_1_1ProjectItem.html#GetParent3DObject">ProjectItem::GetParent3DObject</a> 
+						to get the owner <a href="#!/url=./si_cpp/classXSI_1_1X3DObject.html">X3DObject</a> in order to access the kinematic state and 
+						other properties of the camera.
+					</td>
+</tr>
+		<tr>			<td class="example">Material</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1Material.html">Material</a> or <a href="#!/url=./si_cpp/classXSI_1_1Shader.html">Shader</a></td>
+			<td>
+						The material or shader to use if an object's material has nothing connected to it. This is used for 
+						shaderball previews only. 
+						
+									<div class="tip">
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td class="label">Warning</td>
+					<td class="emph">This attribute is not provided for region and pass rendering.</td>
+				</tr>
+			</table>
+			</div>
+</td>
+</tr>
+		<tr>			<td class="example">ImageWidth</td>
+			<td>unsigned int</td>
+			<td>
+						The width of the image output in pixels.
+					</td>
+</tr>
+		<tr>			<td class="example">ImageHeight</td>
+			<td>unsigned int</td>
+			<td>
+						The height of the image output in pixels.
+					</td>
+</tr>
+		<tr>			<td class="example">CropLeft</td>
+			<td>unsigned int</td>
+			<td>
+						The left offset of the crop rectangle.
+					</td>
+</tr>
+		<tr>			<td class="example">CropBottom</td>
+			<td>unsigned int</td>
+			<td>
+						The bottom offset of the crop rectangle.
+					</td>
+</tr>
+		<tr>			<td class="example">CropWidth</td>
+			<td>unsigned int</td>
+			<td>
+							The width of the crop rectangle.
+					</td>
+</tr>
+		<tr>			<td class="example">CropHeight</td>
+			<td>unsigned int</td>
+			<td>
+						The height of the crop rectangle.
+					</td>
+</tr>
+		<tr>			<td class="example">SelectionOnly</td>
+			<td>bool</td>
+			<td>
+						Only render objects that are selected.
+					</td>
+</tr>
+		<tr>			<td class="example">TrackSelection</td>
+			<td>bool</td>
+			<td>
+						Automatically adjust the crop window to fit the object selection (in screen space). 
+						In this case the specified crop values should be ignored.
+					</td>
+</tr>
+		<tr>			<td class="example">MotionBlur</td>
+			<td>bool</td>
+			<td>
+						Motion blur enabled.
+					</td>
+</tr>
+		<tr>			<td class="example">ShutterSpeed</td>
+			<td>double</td>
+			<td>
+						Shutter open time in frames.
+					</td>
+</tr>
+		<tr>			<td class="example">ShutterOffset</td>
+			<td>double</td>
+			<td>
+						Shutter offset in frames.
+					</td>
+</tr>
+		<tr>			<td class="example">ShutterType</td>
+			<td><a href="#!/url=./si_om/siRenderShutterType.html">siRenderShutterType</a></td>
+			<td>
+						The three shutter types (center, end on frame and start on frame).
+					</td>
+</tr>
+		<tr>			<td class="example">MotionBlurDeformation</td>
+			<td>bool</td>
+			<td>
+						Motion blur affect deformations and not only transforms.
+					</td>
+</tr>
+		<tr>			<td class="example">FileOutput</td>
+			<td>bool</td>
+			<td>
+						Images should be written to disk, otherwise only send fragments.
+					</td>
+</tr>
+		<tr>			<td class="example">SkipExistingFiles</td>
+			<td>bool</td>
+			<td>
+						Skip existing files, if they're deemed rendered already. Locking must be done in order 
+						for two machines not to overwrite each others' files.
+					</td>
+</tr>
+		<tr>			<td class="example">FieldRender</td>
+			<td>bool</td>
+			<td>
+						Field rendering enabled.
+					</td>
+</tr>
+		<tr>			<td class="example">FieldInterleave</td>
+			<td><a href="#!/url=./si_om/siRenderFieldType.html">siRenderFieldType</a></td>
+			<td>
+						Field interleave type ( none, Even/NTSC, Odd/PAL).
+					</td>
+</tr>
+		<tr>			<td class="example">ArchiveFileName</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1CString.html">CString</a></td>
+			<td>
+						The current frame's archive filename to use. For multi-frame archives, 
+						this will be the same filename for all the frames in the sequence. 
+						
+									<div class="tip">
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td class="label">Note</td>
+					<td class="emph">This attribute and the next one are only set if the process 
+						type is <a href="#!/url=./si_om/siRenderProcessType.html#siRenderProcessExportArchive">siRenderProcessExportArchive</a> or 
+						<a href="#!/url=./si_om/siRenderProcessType.html#siRenderProcessExportObjectArchive">siRenderProcessExportObjectArchive</a>.</td>
+				</tr>
+			</table>
+			</div>
+</td>
+</tr>
+		<tr>			<td class="example">ArchiveMultiFrame</td>
+			<td>bool</td>
+			<td>
+						Embed all frames into a single archive file.
+					</td>
+</tr>
+		<tr>			<td class="example">ArchiveDisplayProxies</td>
+			<td>bool</td>
+			<td>
+						The render engine should generate a set of three images for each
+						exported frame. The images are used to show a cardboard-style
+						representation of the object archive contents in the viewport.
+						The three images are generated as projected on the XY, XZ, and YZ
+						axis planes, looking down the -Z, -Y, and -X axes, respectively, in
+						orthographic camera mode. The camera should also be placed be 
+						outside the bounding box in order to capture all the geometry.
+									<div class="tip">
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td class="label">Note</td>
+					<td class="emph">
+							This attribute is only set if the process type is 
+							<a href="#!/url=./si_om/siRenderProcessType.html#siRenderProcessExportObjectArchive">siRenderProcessExportObjectArchive</a>.
+						</td>
+				</tr>
+			</table>
+			</div>
+</td>
+</tr>
+		<tr>			<td class="example">RenderMapList</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1CRefArray.html">CRefArray</a> of <a href="#!/url=./si_cpp/classXSI_1_1Property.html">Property</a> objects</td>
+			<td>
+						The list of RenderMap properties to generate coming from the <a href="#!/url=./si_cmds/RegenerateMaps.html">RegenerateMaps</a> command.
+									<div class="tip">
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td class="label">Note</td>
+					<td class="emph">
+							This attribute is only set if the process type is
+							<a href="#!/url=./si_om/siRenderProcessType.html#siRenderProcessRenderMap">siRenderProcessRenderMap</a>.
+						</td>
+				</tr>
+			</table>
+			</div>
+</td>
+</tr>
+		<tr>			<td class="example">RenderMapTileSize</td>
+			<td>unsigned int</td>
+			<td>
+						The tile size coming from the <a href="#!/url=./si_cmds/RegenerateMaps.html">RegenerateMaps</a> command.
+									<div class="tip">
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td class="label">Note</td>
+					<td class="emph">
+							This attribute is only set if the process type is
+							<a href="#!/url=./si_om/siRenderProcessType.html#siRenderProcessRenderMap">siRenderProcessRenderMap</a>.
+						</td>
+				</tr>
+			</table>
+			</div>
+</td>
+</tr>
+</table>
+</p></div>
+
+<hr width="100%" />
+<h3>Return Value</h3>
+<div><p><a name="ReturnValue"> </a>	<p><a href="#!/url=./files/CStatus.htm">CStatus</a></p>
+	<p>
+				The Process callback should return a status code depending upon whether the render succeeded, 
+				was aborted or there was an internal failure.
+			</p>
+	<table>		<tr>			<th>Status</th>
+			<th>Description</th>
+</tr>
+		<tr>			<td class="example"><a href="#!/url=./si_cpp/classXSI_1_1CStatus.html#OK">CStatus::OK</a></td>
+			<td>
+						Render completed successfully, in other words, all requested data was successfully written 
+						out or passed back to Softimage.
+					</td>
+</tr>
+		<tr>			<td class="example"><a href="#!/url=./si_cpp/classXSI_1_1CStatus.html#Abort">CStatus::Abort</a></td>
+			<td>
+						This can only be returned if the Process callback is responding to a call to the 
+						<a href="#!/url=./si_cmds/cb_Renderer_Abort.html">Abort</a> callback. It should not be returned 
+						under any other circumstances.
+					</td>
+</tr>
+		<tr>			<td class="example"><a href="#!/url=./si_cpp/classXSI_1_1CStatus.html#Fail">CStatus::Fail</a></td>
+			<td>
+						Non-fatal error condition was encountered, such as missing textures, abort request from an event (from the 
+						<a href="#!/url=./si_cpp/classXSI_1_1RendererContext.html#TriggerEvent">RendererContext::TriggerEvent</a> call), etc. 
+						In this case one-shot render operations such as pass renders or exports are canceled. Continuous 
+						render operations (such as render region or shaderballs) simply stop updating until refreshed.
+					</td>
+</tr>
+		<tr>			<td>(any other failure code)</td>
+			<td>
+						Renderer encountered a catastrophic failure. At this point the whole render job is 
+						canceled. If the job was created by the region, the region will close automatically. 
+						If the failure happened to a shaderball, that shaderball stops updating.
+					</td>
+</tr>
+</table>
+</p></div>
+
+<hr width="100%" />
+<h3>Examples</h3>
+<div><p><a name="Examples"> </a><div class="example"><table>
+<tr>
+<td class="example"><pre class="cplusplus">//
+// Example rendering engine
+//
+
+// There is only ever *one* instance of this plug-in running so global variables
+// are "ok".
+
+#include &lt;xsi_application.h&gt;
+#include &lt;xsi_camera.h&gt;
+#include &lt;xsi_context.h&gt;
+#include &lt;xsi_decl.h&gt;
+#include &lt;xsi_longarray.h&gt;
+#include &lt;xsi_math.h&gt;
+#include &lt;xsi_pluginregistrar.h&gt;
+#include &lt;xsi_renderer.h&gt;
+#include &lt;xsi_renderercontext.h&gt;
+#include &lt;xsi_customproperty.h&gt;
+#include &lt;xsi_ppglayout.h&gt;
+#include &lt;xsi_pass.h&gt;
+#include &lt;xsi_project.h&gt;
+#include &lt;xsi_scene.h&gt;
+#include &lt;xsi_passcontainer.h&gt;
+#include &lt;xsi_primitive.h&gt;
+#include &lt;xsi_x3dobject.h&gt;
+
+#define WIN32_LEAN_AND_MEAN
+#include &lt;windows.h&gt;
+
+using namespace XSI; 
+
+SICALLBACK XSILoadPlugin( PluginRegistrar&amp; in_reg )
+{
+	in_reg.PutAuthor(L"Softimage");
+	in_reg.PutName(L"Color Renderer");
+	in_reg.PutEmail(L"support@softimage.com");
+	in_reg.PutURL(L"http://www.softimage.com");
+	in_reg.PutVersion(1,0);
+	in_reg.RegisterProperty( L"Color Renderer Options" );
+	in_reg.RegisterRenderer( L"Color Renderer" );
+
+	return CStatus::OK;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Rendering Engine Section
+
+/*! Abort handling.
+*/
+static bool				g_bAborted;
+HANDLE					g_hAbort;
+CRITICAL_SECTION		g_barrierAbort;
+
+void setAbort( bool in_bAbort )
+{
+	::EnterCriticalSection( &amp;g_barrierAbort );
+	g_bAborted = in_bAbort;
+	if( in_bAbort )
+		::SetEvent( g_hAbort );
+	else
+		::ResetEvent( g_hAbort );
+	::LeaveCriticalSection( &amp;g_barrierAbort );
+}
+
+bool isAborted( )
+{
+	bool		bAbort;
+	::EnterCriticalSection( &amp;g_barrierAbort );
+	bAbort= g_bAborted;
+	::LeaveCriticalSection( &amp;g_barrierAbort );
+
+	return( bAbort );
+}
+
+
+/*! Initialization function for the renderer, called when the
+	plug-in is loaded.
+
+	This is where the rendering engine tells the environment what 
+	process types it can perform (render, export archives etc.), 
+	which property to use for its options and which output formats 
+	it supports (and how those formats are defined).
+
+	The renderer can perform any other one-time initialization here also.
+*/
+SICALLBACK ColorRenderer_Init( CRef &amp;in_ctxt )
+{
+	Context		ctxt( in_ctxt );
+	Renderer	renderer = ctxt.GetSource();
+
+	// Tell the render manager what render processes we support.
+	CLongArray	process;
+	process.Add( siRenderProcessRender );
+	renderer.PutProcessTypes( process );
+
+	// Specify the custom property to use for the renderer options
+	renderer.AddProperty( siRenderPropertyOptions, L"Color Renderer.Color Renderer Options" );
+
+	// Add the Softimage PIC format as an output format.
+	renderer.AddOutputImageFormat( L"Softimage PIC", L"pic" );
+	renderer.AddOutputImageFormatSubType( siRenderChannelColorType, L"RGBA", siImageBitDepthInteger8 );
+
+	// And some arbitrary image format.
+	renderer.AddOutputImageFormat( L"Foo Format", L"foo" );
+	renderer.AddOutputImageFormatSubType( siRenderChannelColorType, L"RGBA", siImageBitDepthInteger8 );
+	renderer.AddOutputImageFormatSubType( siRenderChannelColorType, L"RGBA", siImageBitDepthInteger16 );
+	renderer.AddOutputImageFormatSubType( siRenderChannelColorType, L"RGB", siImageBitDepthInteger8 );
+	renderer.AddOutputImageFormatSubType( siRenderChannelGrayscaleType, L"Gray", siImageBitDepthInteger16 );
+
+	// Create the handles for a thread-safe abort
+	g_bAborted = false;
+	::InitializeCriticalSection( &amp;g_barrierAbort );
+	g_hAbort = ::CreateEvent( NULL, FALSE, FALSE, NULL );
+	
+	return( CStatus::OK );
+}
+
+
+/*! This is called when the plug-in is unloaded.
+	The rendering engine should shut down completely and clean 
+	out any global data. Any rendering jobs using this engine
+	have already been terminated at this point.
+*/
+SICALLBACK ColorRenderer_Term( CRef &amp;in_ctxt )
+{
+	::DeleteObject( g_hAbort );
+	::DeleteCriticalSection( &amp;g_barrierAbort );
+
+	g_hAbort = NULL;
+	::ZeroMemory( &amp;g_barrierAbort, sizeof( g_barrierAbort ) );
+
+	return( CStatus::OK );
+}
+
+class MyFragment : public RendererImageFragment
+{
+public:
+	MyFragment( 
+		unsigned int in_offX, unsigned int in_offY, unsigned int in_width, unsigned int in_height, 
+		double in_color[ 4 ] )
+	{
+		offX = in_offX;
+		offY = in_offY;
+		width = in_width;
+		height = in_height;
+
+		unsigned int		r, g, b, a;
+
+		r = (unsigned int)( in_color[ 0 ] * 255.0 );
+		g = (unsigned int)( in_color[ 1 ] * 255.0 );
+		b = (unsigned int)( in_color[ 2 ] * 255.0 );
+		a = (unsigned int)( in_color[ 3 ] * 255.0 );
+
+		color = ( a &lt;&lt; 24 ) | ( b &lt;&lt; 16 ) | ( g &lt;&lt; 8 ) | ( r );
+	}
+
+	unsigned int GetOffsetX( ) const { return( offX ); }
+	unsigned int GetOffsetY( ) const { return( offY ); }
+	unsigned int GetWidth( ) const { return( width ); }
+	unsigned int GetHeight( ) const { return( height ); }
+	bool GetScanlineRGBA( unsigned int in_uiRow, siImageBitDepth in_eBitDepth, unsigned char *out_pScanline ) const
+	{
+		unsigned int		*pScanline = (unsigned int *)out_pScanline;
+		for( unsigned int i = 0; i &lt; width; i++ )
+			pScanline[ i ] = color;
+
+		return( true );
+	}
+
+private:
+	unsigned int	offX, offY, width, height;
+	unsigned int	color;
+};
+
+/*! This is the main function that gets called by the render manager
+	whenever the rendering engine is requested to perform a process
+	(render a frame, export an archive, etc.).
+
+	It is called with a specialized Context object, called RendererContext.
+	The RendererContext allows to retrieving the renderer options property,
+	getting framebuffer information and sending tile data back to the render 
+	manager.
+*/
+SICALLBACK ColorRenderer_Process( CRef &amp;in_ctxt )
+{
+	setAbort( false );
+
+	RendererContext	ctxt( in_ctxt );
+	Renderer		renderer = ctxt.GetSource();
+
+	// The LockSceneData method *must* be called before accessing any potential
+	// scene data. This is to ensure that multiple threads do not concurrently access
+	// and/or modify the scene data. It is also important that the renderer does *not*
+	// modify any scene data at all. It can modify its own private data but nothing
+	// that is a part of the scene or the current application state, unless explicitly
+	// allowed.
+	if( renderer.LockSceneData() != CStatus::OK )
+		return( CStatus::Abort );
+
+	Primitive			camera_prim = ctxt.GetAttribute( L"Camera" );
+	X3DObject			camera_obj	= camera_prim.GetOwners( )[ 0 ];
+	Camera				camera		= camera_obj;
+	CString				camera_name	= camera_obj.GetName();
+	const wchar_t		*wcsCameraName = camera_name.GetWideString();
+
+	// Get the size of the image to render (in pixels). The origin is defiend as the
+	// bottom-left corner of the image.
+	unsigned int		width, height;
+	width = (ULONG)ctxt.GetAttribute( L"ImageWidth" );
+	height = (ULONG)ctxt.GetAttribute( L"ImageHeight" );
+
+	// Check if there is a crop area defined. If the offset is 0,0 and the crop 
+	// width/height is the same as the image width/height, then no cropping should take
+	// place. The crop window is always fully inside of the rendered image.
+	unsigned int		cropOffsetX, cropOffsetY;
+	unsigned int		cropWidth, cropHeight;
+
+	cropOffsetX = (ULONG)ctxt.GetAttribute( L"CropLeft" );
+	cropOffsetY = (ULONG)ctxt.GetAttribute( L"CropBottom" );
+	cropWidth = (ULONG)ctxt.GetAttribute( L"CropWidth" );
+	cropHeight = (ULONG)ctxt.GetAttribute( L"CropHeight" );
+
+	// Get our render property evaluated at the correct time. If rendering fields, any 
+	// parameter that is animated, needs to be evaluated at the half-frame in between the
+	// current frame and the next frame after. Same goes potentially for motion blur, unless
+	// the renderer is incapable of interpolating the data, in which case it should use
+	// the current frame as a base.
+	CTime		evalTime = ctxt.GetTime();
+
+	Property	myProp = ctxt.GetRendererProperty( evalTime );
+
+	double			color[ 4 ];
+	
+	color[ 0 ] = myProp.GetParameterValue( L"Color_R", evalTime );
+	color[ 1 ] = myProp.GetParameterValue( L"Color_G", evalTime );
+	color[ 2 ] = myProp.GetParameterValue( L"Color_B", evalTime );
+	color[ 3 ] = myProp.GetParameterValue( L"Color_A", evalTime );
+
+	// Unlock the scene data *before* we start rendering and sending tile data back.
+	renderer.UnlockSceneData();
+	
+	// Check after the scene data has been evaluted whether the abort flag is set.
+	if( isAborted() )
+		return( CStatus::Abort );
+
+	// Notify the renderer manager that a new frame is about to begin. This is necessary so
+	// that any recipient tile sink can re-adjust its own size to accommodate.
+	ctxt.NewFrame( width, height );
+
+	unsigned int	 tileSize = 32;
+
+	for( unsigned y = 0; y &lt;= ( cropHeight / tileSize ); y++ )
+	{
+		for( unsigned x = 0; x &lt;= ( cropWidth / tileSize ); x++ )
+		{
+			unsigned int		ox, oy, sx, sy;
+
+			ox = x * tileSize;
+			oy = y * tileSize;
+			sx = tileSize;
+			sy = tileSize;
+
+			if( ( ox + tileSize ) &gt; cropWidth )
+				sx = width - ox;
+			else
+				sx = tileSize;
+
+			if( ( oy + tileSize ) &gt; cropHeight )
+				sy = height - oy;
+			else
+				sy = tileSize;
+
+			MyFragment		fragment( 
+				ox + cropOffsetX, oy + cropOffsetY, sx, sy, color );
+
+			// Send back a new tile.
+			ctxt.NewFragment( fragment );
+
+			DWORD		dwResult = ::WaitForSingleObject( g_hAbort, 40 );
+			if( dwResult != WAIT_TIMEOUT )
+				return( CStatus::Abort );
+		}
+	}
+
+	return( CStatus::OK );
+}
+
+/*! Called by the render manager when the renderer should do a full 
+	cleanup of any data that got created by the Process function. 
+	This is usually called when the current scene is being destroyed,
+	or if the specific render process (region, pass render, export)
+	requests that data be cleaned up after the process has completed.
+*/
+SICALLBACK ColorRenderer_Cleanup( CRef &amp;in_ctxt )
+{
+	Context		ctxt( in_ctxt );
+	Renderer	renderer = ctxt.GetSource();
+	
+	return( CStatus::OK );
+}
+
+
+/*! Called when the render needs to be aborted. The function should
+	trigger an abort and return as quickly as possible. It should
+	*not* refer to any scene data and not perform any processing
+	besides triggering the abort. It is up to the Process function
+	to ensure a clean abort is done upon the receipt of an abort
+	signal.
+*/
+SICALLBACK ColorRenderer_Abort( CRef &amp;in_ctxt )
+{
+	Context		ctxt( in_ctxt );
+	Renderer	renderer = ctxt.GetSource();
+
+	setAbort( true );
+
+	return( CStatus::OK );
+}
+
+
+/*! This function serves two purposes: To return the current "quality"
+	level of the render options and to set a preset for the given
+	"quality" level. The calculated quality level should be simply
+	the value that corresponds to the closest match to a level
+	preset.
+	\note This mechanism might be aborted shortly and replaced by
+		something else that gets handled by Softimage directly.
+*/
+SICALLBACK ColorRenderer_Quality( CRef &amp;in_ctxt )
+{
+	Context		ctxt( in_ctxt );
+	Renderer	renderer = ctxt.GetSource();
+
+	CValue		quality = ctxt.GetAttribute( L"Quality" );
+	Property	prop = ctxt.GetAttribute( L"Property" );
+
+	static const double levels[ 5 ][ 4 ] = {
+		{ 1.0, 0.0, 0.0, 1.0 },
+		{ 0.0, 1.0, 0.0, 1.0 },
+		{ 1.0, 0.0, 1.0, 1.0 },
+		{ 1.0, 0.5, 0.5, 1.0 },
+		{ 0.7, 0.4, 0.3, 0.5 },
+	};
+
+	if( quality.IsEmpty() )
+	{
+		double	color[ 4 ];
+		int		closest = -1;
+		double	maxclose = DBL_MAX;
+
+		color[ 0 ] = prop.GetParameterValue( L"Color_R", CTime() );
+		color[ 1 ] = prop.GetParameterValue( L"Color_G", CTime() );
+		color[ 2 ] = prop.GetParameterValue( L"Color_B", CTime() );
+		color[ 3 ] = prop.GetParameterValue( L"Color_A", CTime() );
+
+		// We're being asked for the quality value (0-4).
+		// Find the closest color match.
+		for( int i = 0; i &lt; 5; i++ )
+		{
+			double		close;
+			double		dist = 0.0;
+
+			for( int j = 0; j &lt; 4; j++ )
+			{
+				dist += ( color[ j ] - levels[ i ][ j ] ) * ( color[ j ] - levels[ i ][ j ] );
+			}
+			close = sqrt( dist );
+			if( close &lt; maxclose )
+			{
+				maxclose = close;
+				closest = i;
+			}
+		}
+
+		ctxt.PutAttribute( L"Quality", closest );
+	}
+	else
+	{
+		// Set a quality value based on the five levels (0-4).
+		prop.PutParameterValue( L"Color_R", levels[ (ULONG)quality ][ 0 ] );
+		prop.PutParameterValue( L"Color_G", levels[ (ULONG)quality ][ 1 ] );
+		prop.PutParameterValue( L"Color_B", levels[ (ULONG)quality ][ 2 ] );
+		prop.PutParameterValue( L"Color_A", levels[ (ULONG)quality ][ 3 ] );
+	}
+
+	return( CStatus::OK );
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Renderer Options Property
+
+SICALLBACK ColorRendererOptions_Define( CRef&amp; in_ctxt )
+{
+	Context ctxt( in_ctxt );
+	CustomProperty oCustomProperty;
+	Parameter oParam;
+	oCustomProperty = ctxt.GetSource();
+	oCustomProperty.AddParameter(L"Color_R",CValue::siDouble,siPersistable,L"",L"",0l,0l,1l,0l,1l,oParam);
+	oCustomProperty.AddParameter(L"Color_G",CValue::siDouble,siPersistable,L"",L"",0l,0l,1l,0l,1l,oParam);
+	oCustomProperty.AddParameter(L"Color_B",CValue::siDouble,siPersistable,L"",L"",0l,0l,1l,0l,1l,oParam);
+	oCustomProperty.AddParameter(L"Color_A",CValue::siDouble,siPersistable,L"",L"",0l,0l,1l,0l,1l,oParam);
+	return CStatus::OK;
+}
+
+SICALLBACK ColorRendererOptions_DefineLayout( CRef&amp; in_ctxt )
+{
+	Context ctxt( in_ctxt );
+	PPGLayout oLayout;
+	PPGItem oItem;
+	oLayout = ctxt.GetSource();
+	oLayout.Clear();
+	oLayout.AddColor(L"Color_R",L"Color",true);
+	return CStatus::OK;
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<hr width="100%" />
+<h3>See Also</h3>
+<div><p><a name="SeeAlso"> </a><ul>
+	<li><a href="#!/url=./si_cmds/cb_Renderer_Init.html">Init (Renderer)</a></li>
+	<li><a href="#!/url=./si_cmds/cb_Renderer_Abort.html">Abort</a></li>
+	<li><a href="#!/url=./si_cmds/cb_Renderer_Quality.html">Quality</a></li>
+	<li><a href="#!/url=./si_cmds/cb_Renderer_Query.html">Query</a></li>
+	<li><a href="#!/url=./si_cmds/cb_Renderer_Cleanup.html">Cleanup</a></li>
+	<li><a href="#!/url=./si_cmds/callbacks.html">Renderer Callbacks</a></li>
+</ul>
+</p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

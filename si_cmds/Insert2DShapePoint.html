@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Insert2DShapePoint</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Insert2DShapePoint</h1>
+         </div>
+
+<h2 class="pagehead">Insert2DShapePoint</h2>
+
+<h3>Introduced</h3>
+<div><p>v3.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Inserts a point in a 2D shape (mask shape). This is the scripting equivalent 
+of selecting the Add Points tool in the ColorCorrect property page and then
+clicking on the outline of the shape to add points to it in the Fx Viewer.<br /><br />
+The difference between Insert2DShapePoint and the <a href="#!/url=./si_cmds/Add2DShapePoint.html">Add2DShapePoint</a> 
+or <a href="#!/url=./si_cmds/Add2DShapePointArray.html">Add2DShapePointArray</a> commands is that Insert2DShapePoint
+adds points to an existing shape, but you use the other commands to define
+the original while creating it.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oLong = Insert2DShapePoint( [Shape], position, x, y );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>The index of the new point as a <a href="#!/url=./files/Long.htm">Long</a>.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Shape		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/paramexpr.htm">Parameter path name</a> for the shape where you are adding the new point.			<p class="cell"><span class="hilite">Default Value: </span>
+Current selection. <br /><br />Note: If the current selection is not a valid list, an error occurs.			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">position		</td>
+		<td><a href="#!/url=./files/Long.htm">Long</a>		</td>
+		<td>
+Index position for the new point in the array of points for the shape.		</td>
+	</tr>
+	<tr>
+		<td class="name">x		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+Specifies the position in X of the new point.		</td>
+	</tr>
+	<tr>
+		<td class="name">y		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+Specifies the position in Y of the new point.		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example demonstrates how to set a garbage matte mask for a 
+' ColorCorrect operator in the FxTree, and then add, move, delete, 
+' and key points on the existing shape.
+'
+' Create a new FxTree 
+set oTree = CreateFxTree()
+' Get the projects path for the current system
+sPath = InstallationPath( siProjectPath )
+set oClip = CreateImageClip( sPath &amp; "\Pictures\noIcon.pic", "NewClip" )
+' Use the clip to create a new image clip operator
+set oOperator = AddImageClipFxOp( oTree, oClip )
+' Add a Color Correct operator to the same tree
+set oCCOp = AddFxOp( oTree, "Color Correct" )
+' Connect the two operators
+ConnectFxOp oOperator, oCCOp, "1" 
+' Since the ConnectFxOp command does not return the new operator,
+' you need to get it from the OperatorCollection on the FxTree object
+for each oMember in oTree.FxOperators
+	if oMember.Name = "ColorCorrect" then
+		set oGBMatteOp = oMember
+		exit for
+	end if
+next
+' Adjust the HSV Offset and Gain levels so you can see the 
+' results of the color correction
+SetValue oGBMatteOp.FullName &amp; ".MasterHueShift," _
+		&amp; oGBMatteOp.FullName &amp; ".MasterOffset," _
+		&amp; oGBMatteOp.FullName &amp; ".MasterGain", _
+		Array(0, 0.820731514055631, 0.852844886888196)
+' Add the 2D shape (mask shape) to the GarbageMatte 
+set oEar = Add2DShape( oGBMatteOp &amp; ".GarbageShapes", "BSpline" )
+Move2DShapePin oEar, 115.5625, 137.5625
+Add2DShapePoint oEar, 98, 198
+Add2DShapePoint oEar, 143, 197
+Add2DShapePoint oEar, 164, 167
+Add2DShapePoint oEar, 170, 135
+Add2DShapePoint oEar, 163, 98
+Add2DShapePoint oEar, 127, 82
+Add2DShapePoint oEar, 101, 91
+Add2DShapePoint oEar, 111, 116
+Add2DShapePoint oEar, 131, 120
+Add2DShapePoint oEar, 147, 124
+Add2DShapePoint oEar, 123, 132
+Add2DShapePoint oEar, 95, 122
+Add2DShapePoint oEar, 72, 120
+Add2DShapePoint oEar, 61, 144
+Add2DShapePoint oEar, 66, 167
+Add2DShapePoint oEar, 77, 188
+' Add a few more points 
+Insert2DShapePoint oEar, 1, 118.967423319817, 197.53405725956
+Insert2DShapePoint oEar, 3, 152.865771740675, 182.906040370464
+Insert2DShapePoint oEar, 5, 166.637735843658, 152.932075500488
+' Move some points
+Move2DShapePoint oEar, 2, 138, 195
+Move2DShapePoint oEar, 12, 137, 123
+' Delete a point
+Delete2DShapePoint oEar, 2
+' Save keys on the 4th through 7th points
+Key2DShapePoints oEar, Array(3, 4, 5, 6)</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/Add2DShape.html">Add2DShape</a> <a href="#!/url=./si_cmds/Add2DShapePoint.html">Add2DShapePoint</a> <a href="#!/url=./si_cmds/Add2DShapePointArray.html">Add2DShapePointArray</a> <a href="#!/url=./si_cmds/Delete2DShapePoint.html">Delete2DShapePoint</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

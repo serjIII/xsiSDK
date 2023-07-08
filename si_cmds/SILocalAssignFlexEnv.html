@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>SILocalAssignFlexEnv</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>SILocalAssignFlexEnv</h1>
+         </div>
+
+<h2 class="pagehead">SILocalAssignFlexEnv</h2>
+
+<h3>Introduced</h3>
+<div><p>v1.0</p></div>
+
+<h3>Description</h3>
+<div><p>Reassigns the points of local flexible envelopes.</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = SILocalAssignFlexEnv( [SubComp], [ConnectionSet], [Interactive], [NbDeformersPerPoint] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns a <a href="#!/url=./si_om/XSICollection.html">XSICollection</a> of the envelope assigment operators.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">SubComp		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ List of points to be reassigned. 			<p class="cell"><span class="hilite">Default Value: </span>
+Current selection			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ConnectionSet		</td>
+		<td><a href="#!/url=./files/cnxset.htm">ConnectionSet</a>		</td>
+		<td>
+Specifies the envelope and the bone.  			<p class="cell"><span class="hilite">Default Value: </span>
+Currently selected objects are used as the main group.<br /><br />Warning: An error occurs if the connection set is invalid. Please verify the connection set required for this operator to avoid breaking your scripts.			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Interactive		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ True to prompt user to pick objects. 			<p class="cell"><span class="hilite">Default Value: </span>
+False			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">NbDeformersPerPoint		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+ The maximum number of deformers that will affect each point during assignment. 			<p class="cell"><span class="hilite">Default Value: </span>
+2			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'This example creates an envelope on "BodyMan" model, with less bones
+'than usual (2 nulls for the body, 1 bone per arm).
+'
+'The default envelope assignment doesn't give a correct separation
+'between the arms and the body, so we will use LocalAssignFlexEnv,
+'SISmoothEnvWght and SymEnvWeight in order to modify the weight assignment.
+NewScene
+GetPresetModel "Man", "Man"
+'Create basic skeletons: 2 for the arms, plus 2 nulls for the body
+Create2DSkeleton -1.9, 17.0, 0, -5.15, 17.0, 0, 0, 0, 0, 4
+Set Null0 = GetPrim("Null")
+Translate Null0, 0, 15.049359948647, 0, siRelative, siView, siObj, siXYZ
+Set Null1 = GetPrim("Null")
+Translate Null1, 0, 3.76822515334527, 0, siRelative, siView, siObj, siXYZ
+DuplicateSymmetry "B:root", True, False, 1, 0, 0, 0, True
+ApplyFlexEnv "Man.Man;root1,bone1,eff1,root,bone,eff,null,null1", False
+'We want the head and the center of the body to be only assigned
+'to the 2 Nulls, so let's do it using SILocalAssignFlexEnv
+'(in non-interactive mode)
+SILocalAssignFlexEnv "Man.Man.pnt[0,2-23,25,26,28-30,34-99,101,103-109,"_
+&amp; "113,116-120,122,124-143,145-203,212-220,222-227,229-250,252-279,"_
+&amp; "281-284,286-295,297-299,302,304-307,310-315,317,319,321,322,324,"_
+&amp; "326-329,332-350,353-359,361,362,365,366,368-379,381,383,385,387,"_
+&amp; "389,391,393,395-414,625,629-694,696,698-704,708,711-715,717,719-738,"_
+&amp; "740-778,787-795,797-802,804-825,827-854,856-859,861-870,872-874,877,"_
+&amp; "879-882,885-890,892,894,896,897,899,901-904,907-925,928-934,936,937,"_
+&amp; "940,941,943-954,956,958,960,962,964,966,968,970-989]",_
+"Man.Man;null,null1", False, 2
+Rotate "bone", 0, 0, 58.5, siRelative, siAdd, siObj, siXYZ
+Translate Null1, 0, 2, 4.0, siRelative, siView, siObj, siXYZ
+'Because of the local reassignment, we can see that the shoulder's weight
+'assignation is no longer smooth. Let's smooth it using SISmoothEnvWght.
+'We increase the smoothing depth for better results.
+Set SmoothOp = SISmoothEnvWght( , "Man.Man.pnt[0,2-23,25,26,28-30,34-99,"_
+&amp; "101,103-109,113,116-120,122,124-143,145-183,186-189,197-203,215,217-219,"_
+&amp; "221,228,229,251,259,271,280,285,287,289,290,292,294,296,298,300,301,303,"_
+&amp; "307-309,316,318,320,322,323,325,330,331,333,338,341,345,349,351,352,360,"_
+&amp; "363,364,366,367,369,371,402-406,409-432,434,436,439-446,625,629-694,696,"_
+&amp; "698-700,702,703,708,711-715,717,719-738,740-778,793,804,834,864,865,867,"_
+&amp; "873,897,908,913,924,941,944,977,980,981,985,986,989]")
+SetValue SmoothOp &amp; ".neighborhooddepth", 3
+Rotate "bone1", 0, 0, 59.625, siRelative, siAdd, siObj, siXYZ
+'The same problem occurs on the right shoulder. Since we have corrected the
+'left shoulder, let's simply mirror the weights from left to right in order
+'to propagate the changes symmetrically.
+Set SymTemplate = CreateSymmetryMappingTemplate("Man.Man", True, 0, True)
+SymEnvWeight , "Man.Man.pnt[0-32,34-101,103-113,115-219,221-224,226-230,"_
+&amp; "233-236,239-262,264-266,268-275,277-285,287-318,320-326,328-354,356-390,"_
+&amp; "392-400,402-621]", SymTemplate</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/SIApplyFlexEnv.html">SIApplyFlexEnv</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

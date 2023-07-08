@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>List of SDK Examples</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link href="examples/doc/shared/examples.css" rel="StyleSheet" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>List of SDK Examples</h1>
+         </div>
+
+<a name="top" id="top"></a>
+<h1>Softimage SDK Examples</h1>
+<p>The Softimage SDK include a wide variety of sample plug-ins
+implemented in C++, C#, JScript, Python and VBScript. The examples include
+self-installing plug-ins (such as commands, properties, filters,
+menus, and custom displays), operators, importers and exporters,
+relational views, realtime shaders, and UFOs.</p>
+<p>The Softimage SDK examples are located in the
+<strong>examples</strong> folder of the Softimage SDK installation
+folder:</p>
+<ul>
+<li><code>%XSISDK_ROOT%\examples</code> (on Windows)</li>
+<li><code>$XSISDK_ROOT/examples</code> (on Linux)</li>
+</ul>
+<p>Most of the SDK examples are included in a workgroup, which
+makes it easy to load and try out the examples and to browse the
+source code.</p>
+<p class="proc-head">To load and run the workgroup examples</p>
+<ol>
+<li>
+<p>Connect to the Softimage SDK workgroup at <span class="workgroupPath">%XSISDK_ROOT%\examples\workgroup</span>.</p>
+<ul>
+<li>In the <strong>Plug-in Manager</strong>, click the
+<strong>Workgroups</strong> tab.</li>
+<li>Click <strong>File</strong> and then click
+<strong>Connect</strong>.</li>
+<li>In the <strong>Connect to Workgroup</strong> dialog box, click
+<strong>Try SDK Example Workgroup.</strong></li>
+</ul>
+</li>
+<li>In the Plug-in Tree, expand the SDK examples workgroup,
+right-click an example add-on and then click <strong>Help</strong>.
+<p>The NetView help page explains how to run the examples and gives
+you single-click access to the example source code.</p>
+</li>
+</ol>
+<hr style="color: #666666; height: 1px; margin-top: 24px;" />
+<h2 style="margin-top: 2px">Workgroup Examples</h2>
+<p class="example"><a href="#!/url=./examples/Addons/CSharpScripting/netview_csharpscripting.htm">C#
+Scripting</a> [ C# ]<br />
+This plug-in shows how to use C# as a scripting language from the
+Scripting Editor. You can use it when you need to test some simple
+C# code in Softimage without having to create a plug-in.</p>
+<p class="example"><a href="#!/url=./examples/Addons/ConstraintOps/netview_ConstraintOps.htm">Constraint
+Operators</a> [ C++, C#, JScript, Python ]<br />
+This add-on shows various self-installed custom operators that
+"constrain" objects together. This sort of operator is common when
+building rigs and is an alternative to the Constraint, Expression
+and Proxy Parameter features of Softimage.</p>
+<p class="example"><a href="#!/url=./examples/Addons/ConverterEvent/netview_ConverterEvent.htm">Converter
+Event</a> [ VBScript ]<br />
+This example shows how to implement import/export converter events
+as a self-installing plug-in with VBScript.</p>
+<p class="example"><a href="#!/url=./examples/Addons/SimpleCommand/netview_SimpleCommand.htm">Custom Command
+Examples</a> [ C++, C#, JScript, Python, VBScript ]<br />
+The Simple Command examples demonstrate how to implement
+self-installing custom commands using various implementation
+languages. The Simple Undoable Command also shows how to implement
+an undoable C++ API custom command.</p>
+<p class="example"><a href="#!/url=./examples/Addons/CustomICENodes/netview_CustomICENodes.htm">Custom
+ICENodes</a> [ C++ ]<br />
+These examples show how to implement custom ICE nodes as
+self-installing plug-ins.</p>
+<p class="example"><a href="#!/url=./examples/Addons/CustomPrimitive/netview_CustomPrimitive.htm">Custom Primitives
+</a> [ C++]<br />
+This example shows how to define custom primitives and use the related callbacks.</p>
+<p class="example"><a href="#!/url=./examples/Addons/ShaderDefinitions/netview_ShaderDefs.htm">Custom Shader
+Definition</a> [ C++, C#, JScript, Python, VBScript ]<br />
+These examples show how to create self-installing custom shader
+definitions.</p>
+<p class="example"><a href="#!/url=./examples/Addons/ShaderParser/netview_ShaderParser.htm">Custom Shader
+Parser</a> [ JScript ]<br />
+This example shows how to create a self-installing custom shader
+language parser.</p>
+<p class="example" /><a href="#!/url=./examples/Addons/CustomTools/netview_CustomTools.htm">Custom Tools [ C++ ]</a><br />
+<p>This addon shows various self-installing custom tools.<br />
+</p>
+<p class="example"><a href="#!/url=./examples/Addons/CustomUITest/netview_CustomUITest.htm">Custom UI Test</a> [
+C++ ]<br />
+This C++ example is a custom display that handles Softimage
+notifications and Win32 messages. The example shows how to define
+the interface and callbacks to Softimage, and how to access the
+notifications that Softimage pushes to the custom display host.</p>
+<p class="example"><a href="#!/url=./examples/Addons/DragAndDrop/netview_DragAndDrop.htm">Drag and Drop Event</a> [
+Python ]<br />
+This python examples demonstrates the use of the siDragAndDrop2 event.
+It shows how to use the event to allow duplicating of 3D objects by dragging from the scene
+explorer and dropping it into position in the viewports.
+</p>
+<p class="example"><a href="#!/url=./examples/Addons/GridData/netview_GridData.htm">GridData</a> [ C++, Python ]<br />
+This example shows how to use grid data object and widget to display object information in the scene and edit them via the Grid control. It shows the various GridData PPG events and how to handle them.</p>
+<p class="example"><a href="#!/url=./examples/Addons/DeformOperators/netview_DeformOperators.htm">Deform
+Operators</a> [ C++, C#, JScript ]<br />
+This example shows how to create deform operators. These are
+operators which change an existing polygon or nurbs mesh.</p>
+<p class="example"><a href="#!/url=./examples/Addons/ImportExport/netview_ImportExport.htm">Import/Export</a> [
+C++ ]<br />
+This example provides a good starting point for writing your own
+importer/exporter using the Softimage C++ API. The example shows
+how to create a user interface for a typical import/export
+application, export geometry using the
+<strong>CGeometryAccessor</strong> class, and import polygon meshes
+using the <strong>CMeshBuilder</strong> class.</p>
+<p class="example"><a href="#!/url=./examples/Addons/ICEAttribute/netview_ICEAttribute.htm">Inspect ICE
+Attributes</a> [ C++ ]<br />
+This example demonstrates how to navigate through the ICE
+attributes of a geometry or property and how to log all attribute
+values. The sample code uses a C++ API class template to log the
+values and operates with generic <strong>ICEAttribute</strong>
+types.</p>
+<p class="example"><a href="#!/url=./examples/Addons/LightFilter/netview_LightFilter.htm">Light Filter</a> [
+JScript ]<br />
+This example shows how to implement a custom filter as a
+self-installing plug-in that handles light objects.</p>
+<p class="example"><a href="#!/url=./examples/Addons/myCache/netview_myCache.htm">myCache Exporter</a> [ C++
+]<br />
+This C++ example demonstrates writing your own exporter for cache
+files. The example uses the MDAttribute as well as the
+CMDAttributeDataArray.</p>
+<p class="example"><a href="#!/url=./examples/Addons/ParticleOp/netview_ParticleOp.htm">ParticleOp</a> [ C++
+]<br />
+This C++ example shows how to write a particle operator that
+manipulates a particle cloud. The particle operator makes the
+particles in a cloud flock together. A custom property page allows
+you to tweak the variables that control the flocking behavior.</p>
+<p class="example"><a href="#!/url=./examples/Addons/PDC_Export/netview_PDC_Export.htm">PDC Export</a> [ C++
+]<br />
+This C++ example demonstrates writing your own exporter for Maya
+PDC cache files. The example uses the MDAttribute as well as the
+CMDAttributeDataArray.</p>
+<p class="example"><a href="#!/url=./examples/Addons/PPGDemos/netview_PPGDemos.htm">PPG Demos</a> [ JScript,
+VBScript ]<br />
+This example is a collection of examples that show how to build
+property pages (PPGs). A toolbar provides access to the different
+demos.</p>
+<p class="example"><a href="#!/url=./examples/Addons/PSetUIDemo/netview_PSetUIDemo.htm">PSet UI Demo</a> [
+JScript ]<br />
+This example shows how to use a custom property (a set of custom
+parameters) to build a user interface for a plug-in.</p>
+<p class="example"><a href="#!/url=./examples/Addons/RealtimeShaders/netview_RealtimeShaders.htm">Realtime Shaders</a> [ C++, CgFx ]<br />
+This add-on shows various real-time effect shaders written with the
+HLSL and CGFX language.</p>
+<p class="example"><a href="#!/url=./examples/Addons/ProjectSelector/netview_projectselector.htm">Project
+Selector</a> [ C#, JScript ]<br />
+This plug-in demonstrates how to use the change project event
+(siOnChangeProject) in JScript.</p>
+<p class="example"><a href="#!/url=./examples/Addons/SampleDisplayCallback/netview_SampleDisplayCallback.htm">Sample
+Display Callback</a> [ C++ ]<br />
+This example contains a Display Callback (MyClearScreenBuffer) and
+a Display Pass (MyCustomPass).</p>
+<p class="example"><a href="#!/url=./examples/Addons/SampleShelves/netview_SampleShelves.htm">Sample Shelves</a>
+[ XML ]<br />
+This example includes a number of different shelves.</p>
+<p class="example"><a href="#!/url=./examples/Addons/SampleRVs/netview_SampleRVs.htm">Sample Relational
+Views</a> [ XML ]<br />
+This example includes a number of different relational views.</p>
+<p class="example"><a href="#!/url=./examples/Addons/Schematic/netview_SchematicDemo.htm">Schematic API [ Python ]</a><br />
+This example shows how to navigate and rearrange a schematic view with the Schematic and SchematicNode API.
+</p>
+<p class="example"><a href="#!/url=./examples/Addons/ShowEdges/netview_ShowEdges.htm">ShowEdges [ C++ ]</a><br />
+This example includes two related examples:</p>
+<ul>
+<li><b>ShowEdges</b> is a basic mental ray shader that draws a
+thick border along the edges of a polygon mesh. ShowEdges renders
+the triangulated version of the mesh that is sent to mental
+ray.</li>
+<li>
+<p><b>Wireframe</b> also draws edges, but it shows the true edges
+(before tesselation). Wireframe uses a UserDataBlob to pass edge
+information to a shader (which shows how to map Softimage user data
+into mental ray user data). A custom operator populates the
+UserDataBlob with the edge information.n An operator is used rather
+than a custom command because whenever the geometry changes,
+Softimage re-evaluates the operator and re-renders the object. The
+operater and the shader are contained in the same DLL/SO.</p>
+</li>
+</ul>
+<p class="example"><a href="#!/url=./examples/Addons/SimpleFilter/netview_SimpleFilter.htm">SimpleFilter</a> [
+C++, C#, JScript, Python, VBScript ]<br />
+This example shows how to implement a custom filter as a
+self-installing plug-in. Softimage installs the custom filter at
+startup and automatically adds it to the filter menu in the Select
+panel of the main command area. When Simple Filter is the active
+selection filter, you cannot select polygon meshes with less than
+fifty vertices. The C# Triangle Filter limits the selection to
+triangles.</p>
+<p class="example"><a href="#!/url=./examples/Addons/SimpleMenu/netview_SimpleMenu.htm">SimpleMenu</a> [ C++,
+JScript, Python, VBScript ]<br />
+This example shows how to add custom menus in Softimage. The
+example includes JScript, VBScript, and C++ versions.</p>
+<p class="example"><a href="#!/url=./examples/Addons/TimerEvent/netview_timertools.htm">TimerEvent</a> [ JScript
+]<br />
+This example demonstrates how to use timer events in Softimage. The
+example includes a JScript version.</p>
+<p class="example"><a href="#!/url=./examples/Addons/VertexColorMixer/netview_VertexColorMixer.htm">VertexColorMixer</a>
+[ C++, SPDL ]<br />
+This example shows how to create an operator that reads from many
+vertex color properties and writes a 'processed' result to a vertex
+color property acting as the mixed result. The code shows how to
+implement port group instances, a feature that allows you to
+connect many objects to the same port group, in this case
+"Group_1".</p>
+<p class="example"><a href="#!/url=./examples/Addons/VertexColors/netview_VertexColors.htm">Vertex Colors</a> [
+C++ ]<br />
+This example is a custom display that provides tools for editing
+vertex colors on polygon meshes.</p>
+<p class="example"><a href="#!/url=./examples/Addons/XSIA/netview_XSIA.htm">XSIA</a>
+[ JScript ]<br />
+This example shows how to implement a custom filter as a
+self-installing plug-in that handles light objects.</p>
+<p class="example"><a href="#!/url=./examples/Addons/XSIGame/netview_XSIGame.htm">XSIGame</a> [ C++, JScript
+]<br />
+This example shows how to integrate a game render window and
+modtool into Softimage.</p>
+<p class="example"><a href="#!/url=./examples/Addons/XSIServer/netview_xsiserver.htm">XSI Server</a> [ C#
+]<br />
+This plugin provides an example of a TCP/IP server implementation
+for Softimage.</p>
+<hr style="color: #666666; height: 1px;" />
+<h2 style="margin-top: 2px">Other Examples</h2>
+<p>In addition to the workgroup examples, you can find these other
+examples in the Softimage SDK <strong>examples</strong> folder.</p>
+<a name="realtimeshaders" id="realtimeshaders"></a>
+<p class="example"><strong>examples\realtimeshaders</strong> [ C++,
+SPDL ]<br />
+Source code for the CG, DirectX, and openGL realtime shaders. Also
+includes the XSI_OGLHelper project, a set of helper functions and
+macros for developing realtime OpenGL shaders.</p>
+<a name="graphicssequencer" id="graphicssequencer"></a>
+<p class="example"><strong>examples\graphicssequencer</strong> [
+C++ ]<br />
+C++ source code for the DX9Display display pass and display
+callback.</p>
+<a name="ufos" id="ufos"></a>
+<p class="example"><strong>examples\UFOs</strong> [ C ]<br />
+The folder examples\ufos contains Media Illusion User Function
+Object plug-ins that are used in the Softimage Illusion FX
+Tree.</p>
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

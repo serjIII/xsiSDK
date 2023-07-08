@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>ImportRefModels</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>ImportRefModels</h1>
+         </div>
+
+<h2 class="pagehead">ImportRefModels</h2>
+
+<h3>Introduced</h3>
+<div><p>v3.5</p></div>
+
+<h3>Description</h3>
+<div><p>
+Imports multiple models as referenced models from .emdl files. This allows you to 
+import characters composed of multiple models, where the envelope is in a different 
+model than the skeleton rig. <br /><br />
+The models' file names are separated by commas. All referenced models are reconnected 
+(for envelopes) to outside objects, if necessary. This is done once all models are loaded. <br /><br />
+Note: This command is not accessible from the UI.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = ImportRefModels( FileName, [Parent], [ExternalCnxMappingTemplate] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns the imported models as an <a href="#!/url=./si_om/XSICollection.html">XSICollection</a>.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">FileName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+File names of the model file to import, separated by commas. 		</td>
+	</tr>
+	<tr>
+		<td class="name">Parent		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Name of the object or model to use as the parent of the imported models.			<p class="cell"><span class="hilite">Default Value: </span>
+"" (or "Scene_Root")			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ExternalCnxMappingTemplate		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		This parameter contains a list of models separated by commas, which is used to resolve the objects 
+		that we try to reconnect at the end of the import of referenced models.<br /><br />
+		Note: All imported models are automatically added at the begining of this parameter.
+			</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">NewScene,false
+' Create 2 models, one envelope and one skeleton rig
+CreatePrim "Sphere", "MeshSurface"
+Create2DSkeleton -4.31164311296239E-02, 4.0721568627451, 0, -4.31164311296239E-02, 3.45098039215692E-02, 0, 0, 0, 0, 4
+AppendBone "eff", -8.62328622592479E-03, -4.00313725490196, 0
+SelectObj "sphere", , True
+ApplyFlexEnv "sphere;root,bone,bone1,eff", False
+CreateModel
+SetValue "Model.Name", "MyEnvelope"
+SelectObj "root", "BRANCH"
+CreateModel
+SetValue "Model.Name", "MyRig"
+' Export each model
+emdlFileEnv = Application.InstallationPath( siUserPath ) &amp; "/Data/MyEnvelope.emdl"
+emdlFileRig = Application.InstallationPath( siUserPath ) &amp; "/Data/MyRig.emdl"
+ExportModel "MyEnvelope", emdlFileEnv
+ExportModel "MyRig", emdlFileRig
+' Delete them since we want to import them as reference
+DeleteObj "B:myrig,B:myenvelope"
+' Now import both models at the same time.
+set oModels = ImportRefModels (emdlFileEnv &amp; "," &amp; emdlFileRig , "", "Referenced_MyRig")</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/ExportModel.html">ExportModel</a> <a href="#!/url=./si_cmds/ImportModel.html">ImportModel</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

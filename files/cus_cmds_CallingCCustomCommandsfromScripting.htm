@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-3CB259E5-9413-4B58-B6D9-39AC1CB84873" />
+      <meta name="indexterm" content="custom commands: calling compiled commands from scripting" />
+      <meta name="indexterm" content="custom commands: returning arrays" />
+      <meta name="indexterm" content="arrays: returning from custom commands" />
+      <meta name="indexterm" content="safe arrays and custom C++ commands" />
+      <meta name="indexterm" content="JScript Example: Calling a C++ command that returns an array" />
+      <meta name="indexterm" content="python: handling arrays" />
+      <meta name="indexterm" content="Python Example: Calling a C++ command that returns an array" />
+      <meta name="indexterm" content="VBScript Example: Calling a C++ command that returns an array" />
+      <meta name="topic-type" content="concept" />
+      <title>Calling C++ Custom Commands from Scripting</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ reflinkdata.push(["CValueArray", "si_cpp/classXSI_1_1CValueArray.html", "C++ API Reference", "../"]); 
+reflinkdata.push(["CRefArray", "si_cpp/classXSI_1_1CRefArray.html", "C++ API Reference", "../"]); 
+reflinkdata.push(["type", "si_cpp/group__RenderMapDefine.html#ga7117e14e60390664f1862525dd6acaf6", "C++ API Reference", "../"]); 
+reflinkdata.push(["set", "si_cpp/group__RenderMapDefine.html#ga793ad1cfa149967fe4b97fc66251b831", "C++ API Reference", "../"]); 
+</script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-3CB259E5-9413-4B58-B6D9-39AC1CB84873"></a></span><div class="head">
+            <h1>Calling C++ Custom Commands from Scripting</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-C49F2603-2BF8-427C-93B7-E30664150F4E"></a></span> When a C++ custom command returns an array, the value received by the caller depends
+               on the scripting language, and whether a <a href="#!/url=./si_cpp/classXSI_1_1CValueArray.html">CValueArray</a> or a <a href="#!/url=./si_cpp/classXSI_1_1CRefArray.html">CRefArray</a> is returned. For example, if a command returns a <span class="code" translate="no"><a href="javascript:void(0)" data="CValueArray" class="a_multireflink">CValueArray</a></span>, then a JScript caller gets a safe array, but if a command returns a <span class="code" translate="no"><a href="javascript:void(0)" data="CRefArray" class="a_multireflink">CRefArray</a></span>, then a JScript caller gets an <a href="#!/url=./si_om/XSICollection.html">XSICollection</a>. 
+            </p><span class="anchor_wrapper"><a name="TABLE_7691E31224D44DA4849EDB59E137DF99"></a></span><div class="table_Ruled">
+               <table cellpadding="0" cellspacing="0" class="ruled">
+                  <colgroup>
+                     <col width="33.33333333333333%" align="left" />
+                     <col width="33.33333333333333%" align="left" />
+                     <col width="33.33333333333333%" align="left" />
+                  </colgroup>
+                  <tr class="ruledHeading">
+                     <th class="table-heading"> <span class="anchor_wrapper"><a name="GUID-7A7F7EF9-6395-4B6F-9C1A-F7D1B4369588"></a></span><p class="table-heading">Language </p> 
+                     </th>
+                     <th class="table-heading" align="left"> <span class="anchor_wrapper"><a name="GUID-A31F254E-4521-4BD6-B31F-C17E63F3DE4B"></a></span><p class="table-heading">CRefArray </p> 
+                     </th>
+                     <th class="table-heading" align="left"> <span class="anchor_wrapper"><a name="GUID-5512F4D5-98DB-4240-A20D-4B21BE8AE2D1"></a></span><p class="table-heading">CValueArray </p> 
+                     </th>
+                  </tr>
+                  <tr class="ruledOddRow">
+                     <td class="table-body"> <span class="anchor_wrapper"><a name="GUID-FE70694F-6679-40B4-9EC3-E9147C8ED0B8"></a></span><p class="table-body">VBScript </p> 
+                     </td>
+                     <td class="table-body" align="left"> <span class="anchor_wrapper"><a name="GUID-53AF8FC4-1035-495C-8BD7-7410D5F4E2FD"></a></span><p class="table-body">XSICollection </p> 
+                     </td>
+                     <td class="table-body" align="left"> <span class="anchor_wrapper"><a name="GUID-220278B6-69F6-43F2-B735-C96BCD107560"></a></span><p class="table-body">XSICollection </p> 
+                     </td>
+                  </tr>
+                  <tr class="ruledEvenRow">
+                     <td class="table-body"> <span class="anchor_wrapper"><a name="GUID-EA589FAB-1165-476E-AFF7-9D2AB2494D55"></a></span><p class="table-body">JScript </p> 
+                     </td>
+                     <td class="table-body" align="left"> <span class="anchor_wrapper"><a name="GUID-8585E7D4-6C04-4B73-A80B-E74D88E26F8A"></a></span><p class="table-body">XSICollection </p> 
+                     </td>
+                     <td class="table-body" align="left"> <span class="anchor_wrapper"><a name="GUID-4E8BD6B0-32F0-492C-91A9-49100A62807C"></a></span><p class="table-body">safe array </p> 
+                     </td>
+                  </tr>
+                  <tr class="ruledOddRow">
+                     <td class="table-body"> <span class="anchor_wrapper"><a name="GUID-297E4842-E006-4691-9A34-B480BE3236A8"></a></span><p class="table-body">Python </p> 
+                     </td>
+                     <td class="table-body" align="left"> <span class="anchor_wrapper"><a name="GUID-28114907-37DD-47F8-B03C-37DAE7508F42"></a></span><p class="table-body">XSICollection instance </p> 
+                     </td>
+                     <td class="table-body" align="left"> <span class="anchor_wrapper"><a name="GUID-71B951B3-7DAC-4E33-8749-8DC751ADFC46"></a></span><p class="table-body">tuple </p> 
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSD74ADB6ECD122649867B3D8C4DDB866E-0042"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-5B6CDC72-239C-484F-9F0D-2CB543FEB792"></a></span> JScript Example: Calling a C++ command that returns an array
+               </h2>  
+               <div class="codeBlock"><pre class="prettyprint">
+//
+// GetValueArray() is a C++ custom command that returns a CValueArray
+//
+
+var aSafeArray = GetValueArray();
+
+var aVBArray = new VBArray( aSafeArray );
+logmessage( typeof( aVBArray ) );
+logmessage( aVBArray.dimensions() );
+
+// Access the VBArray directly
+for (var i=0; i &lt;= aVBArray.ubound(1); i++)
+{
+	Application.LogMessage( aVBArray.getItem(i).fullname );
+}
+
+// Convert the VBArray to a JScript array
+var aJSarray = aVBArray.toArray();
+for (e=new Enumerator(aJSarray);!e.atEnd();e.moveNext())
+{
+	var o = e.item();
+	logmessage( o.fullname );
+}
+
+//
+// GetRefArray() is a C++ custom command that returns a CRefArray
+//
+
+var objects = GetRefArray();
+logmessage( objects.type );	//INFO : XSICollection
+for (e=new Enumerator(objects);!e.atEnd();e.moveNext())
+{
+	var o = e.item();
+	Application.LogMessage( o.fullname );
+}</pre></div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSD74ADB6ECD122649867B3D8C4DDB866E-0043"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-BAC2174B-68AE-48C9-A4A8-7FEA7B0AF687"></a></span> Python Example: Calling a C++ command that returns an array
+               </h2>   
+               <div class="codeBlock"><pre class="prettyprint">
+#
+# GetValueArray is a C++ custom command that returns a CValueArray
+#
+
+objects = Application.GetValueArray()
+
+Application.Logmessage( unicode(<a href="javascript:void(0)" data="type" class="a_multireflink">type</a>(objects)) )#INFO : &lt;<a href="javascript:void(0)" data="type" class="a_multireflink">type</a> 'tuple'&gt;
+
+for o in objects:
+	Application.LogMessage( o.name )
+	Application.Logmessage( unicode(<a href="javascript:void(0)" data="type" class="a_multireflink">type</a>(o)) )#INFO : &lt;<a href="javascript:void(0)" data="type" class="a_multireflink">type</a> 'instance'&gt;
+	Application.LogMessage( Application.classname(o) )
+
+#
+# GetRefArray is a C++ custom command that returns a CRefArray
+#
+
+objects = Application.GetRefArray()
+Application.Logmessage( unicode(<a href="javascript:void(0)" data="type" class="a_multireflink">type</a>(objects)) )#INFO : &lt;<a href="javascript:void(0)" data="type" class="a_multireflink">type</a> 'instance'&gt;
+Application.Logmessage( objects.type )# XSICollection
+
+for o in objects:
+	Application.LogMessage(o.name)
+
+for i in range(objects.Count):
+	Application.LogMessage(objects(i).FullName)</pre></div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSD74ADB6ECD122649867B3D8C4DDB866E-0044"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-ADEB9201-3DD2-4687-9607-86E7B8B3B0B3"></a></span> VBScript Example: Calling a C++ command that returns an array
+               </h2>  
+               <div class="codeBlock"><pre class="prettyprint">
+'
+' GetValueArray() returns a CValueArray
+'
+<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> objects = GetValueArray()
+
+logmessage( typename( objects ) )'INFO : Object
+logmessage( objects.type )'INFO : XSICollection
+
+for each o in objects
+	logmessage o.name
+next
+'
+' GetRefArray() returns a CRefArray
+'
+<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> objects = GetRefArray()
+logmessage typename( objects )'INFO : Object
+logmessage( objects.type )'INFO : XSICollection
+for each o in objects
+	logmessage o.name
+next</pre></div> 
+            </div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

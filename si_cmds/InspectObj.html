@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>InspectObj</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>InspectObj</h1>
+         </div>
+
+<h2 class="pagehead">InspectObj</h2>
+
+<h3>Introduced</h3>
+<div><p>v1.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Loads objects into a property editor. This allows a user to interactively view 
+and edit the parameters of an object. You can use the siModal mode for the Mode 
+parameter to communicate with the user (like a dialog box), as demonstrated in 
+the first example below.<br /><br />
+A property page can display several objects at the same time.  If the objects
+are of different types then they will appear one after another.  For example,
+when inspecting a Sphere, the X3DObject, Primitive and Operator are shown in 
+this fashion.  Alternatively, if the objects are of the same type then they are 
+shown in "multi" mode. This mode is useful for changing a parameter on many 
+objects at the same time.  The examples below show both cases. <br /><br />
+Normally when you inspect an object its nested objects will also be inspected within the same
+frame.  You can limit which nested objects are inspected by using a list of keywords. For
+example, you can just display the Animation property set by specifying siAnimationKeyword 
+in the Keywords parameter.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = InspectObj( [InputObjs], [Keywords], [Title], [Mode], [Throw] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns true if the command was canceled and the Throw argument is set to false. If the command was canceled and the Throw argument was not specified (or is set to true) the command throws an error. Otherwise, it returns false.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">InputObjs		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/listexpr.htm">List</a> of objects to inspect. 			<p class="cell"><span class="hilite">Default Value: </span>
+Current selection.  Note: if the selection contains more than one object then only the first appears.			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Keywords		</td>
+		<td><a href="#!/url=./si_om/Keywords.html">Keywords</a>		</td>
+		<td>
+Specify which property set appears for the specified object (eg., Animation, Hair, IK, Deform, etc.)			<p class="cell"><span class="hilite">Default Value: </span>
+"" (clear current marking)			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Title		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Title of the property editor dialog. Note: the title you use here only appears on the property editor if you use siModal for the Mode parameter.			<p class="cell"><span class="hilite">Default Value: </span>
+Generated from names of input objects.			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Mode		</td>
+		<td><a href="#!/url=./si_om/siInspectMode.html">siInspectMode</a>		</td>
+		<td>
+ Specifies whether the dialog should be locked, recycling, focused, or modal. 			<p class="cell"><span class="hilite">Default Value: </span>
+siRecycle			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Throw		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+True to throw an error if the command is cancelled. <br /><br />Note: If this argument is set to false and the user cancels the command, the command returns true instead of throwing an error.			<p class="cell"><span class="hilite">Default Value: </span>
+True			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' In modal mode, a property editor has Ok and Cancel buttons.
+' Here's how to open a modal property editor
+'
+NewScene , false
+On Error Resume Next
+InspectObj "Light",,"Inspecting Light", siModal
+' Check if user clicked Ok
+if Err.Number = 0 then
+	LogMessage "User has pressed OK in the modal property editor"
+else
+	LogMessage "User has pressed CANCEL in the modal property editor"
+end if
+' Open a property editor and lock it
+InspectObj "Camera",,, siLock
+LogMessage "User has opened a property editor and has locked it"</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+'	This example demonstrates how you can inspect multiple objects on the same Property Page
+'
+NewScene , false
+SelectObj "Scene_Root"
+CreatePrim "Sphere", "MeshSurface"
+'Add a custom property set and a bend operator
+SIAddCustomParameter "sphere", "Param", siDouble, 0, 0, 1, , 5, 0, 1
+ApplyOp "Bend", "sphere", 3, siPersistentOperation
+set myPPGList = CreateObject("XSI.Collection")
+myPPGList.Add "sphere.CustomPSet"
+myPPGList.Add "sphere.polymsh.bendop"
+'The property page will show both the custom property set and 
+'the bend operation.
+InspectObj myPPGList</pre></td></tr>
+</table>
+</div><h4>3. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+'	The following uses InspectObj to inspect several properties 
+'	in a multi-edit fashion
+'
+NewScene , false
+CreatePrim "Sphere", "MeshSurface"
+CreatePrim "Cylinder", "MeshSurface"
+SelectObj "cylinder.kine.global,sphere.kine.global"
+InspectObj 
+LogMessage "The global kinestate of both the sphere and the cylinder"
+LogMessage "are inspected together in a bulk-edit fashion"</pre></td></tr>
+</table>
+</div><h4>4. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' Set up a sphere
+NewScene ,False
+set oSphere = CreatePrim( "Sphere", "MeshSurface" )
+' Open a general property editor 
+InspectObj , siGeneralKeyword
+' Set up a deform on the sphere 
+ApplyOp "Bulge", oSphere, 3, siPersistentOperation
+' Open the Deform property editor for the sphere
+InspectObj , siDeformKeyword
+' Add some animation
+SaveKey oSphere.active
+SetValue "PlayControl.Key", 65
+SetValue "PlayControl.Current", 65
+Translate , 3.9582518712148, 3.40954109797705, -0.340954109797705, siRelative, siView, siObj, siXYZ
+SaveKey oSphere.active 
+' Open the Animation property editor for the sphere
+InspectObj , siAnimationKeyword</pre></td></tr>
+</table>
+</div><h4>5. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+'	Another example demonstrating inspecting objects in multi-edit mode.
+'
+NewScene , false
+SelectObj "Scene_Root"
+set oSphere1 = CreatePrim( "Sphere", "MeshSurface", "FirstSphere")
+set oSphere2 = CreatePrim( "Sphere", "MeshSurface", "SecondSphere")
+set myPPGList = CreateObject("XSI.Collection")
+myPPGList.Add oSphere1.Primitives(1)
+myPPGList.Add oSphere2.Primitives(1)
+'The property page will show just a single Radius control
+'that will control both spheres
+InspectObj myPPGList, "Primitive"</pre></td></tr>
+</table>
+</div><h4>6. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example shows how to create a temporary instance of the Self-Installed 
+	Custom Property called "CustomColor".
+*/
+var oColor = XSIFactory.CreateObject( "CustomColor" )
+bCancelled = InspectObj( oColor,null,"Pick your favorite color",siModal,false ) ;
+if ( !bCancelled )
+{
+	LogMessage( "You picked " + oColor.Color_R.Value + "," + oColor.Color_G.Value + "," + oColor.Color_B.Value ) ;
+}</pre></td></tr>
+</table>
+</div><h4>7. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example demonstrates the use of the Throw argument.
+	When you run this script, make sure you close the dialog using 
+	the X (close) button on the top right or the Cancel button in
+	the main body of the dialog.
+*/
+// Set up a quick dialog in a property page
+NewScene( null, false );
+var pset = SetUpPSet();
+// Canceling here returns 'true'
+var rtn1 = InspectObj( pset, "", "Throw = FALSE", siModal, false );
+LogMessage( "Value returned: " + rtn1 );
+// Canceling here throws an error.
+try
+{
+	var rtn2 = InspectObj( pset, "", "Throw = TRUE", siModal );
+	// This line is never executed if the user presses cancel
+	LogMessage( "Value returned: " + rtn2 );
+}
+catch(e)
+{
+	LogMessage( "User cancelled" );
+}
+// This is a convenience function that sets up the property page apart
+// from the main demo
+function SetUpPSet( )
+{
+	// Create the underlying pset
+	var prop = XSIFactory.CreateObject("CustomProperty");
+	prop.Name = "Jetsam" ;
+	prop.AddParameter3( "SelectOne", siFloat, 0 );
+	// Set up its appearance
+	var pout = prop.PPGLayout;
+	var avals = new Array(
+		"One",		1,
+		"Two",		2,
+		"Three",	3,
+		"Four",		4,
+		"Five",		5
+	);
+	pout.AddEnumControl( "SelectOne", avals, "", siControlCombo );
+	// Return the property set
+	return prop;
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/PPG.html">PPG</a> <a href="#!/url=./si_om/PPGLayout.html">PPGLayout</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,27 @@
+var classXSI_1_1NurbsCurve =
+[
+    [ "NurbsCurve", "classXSI_1_1NurbsCurve.html#aa39626c2ce24b81d94cd69eda713f06f", null ],
+    [ "~NurbsCurve", "classXSI_1_1NurbsCurve.html#a3108373b502ef10946c453de683dfb06", null ],
+    [ "NurbsCurve", "classXSI_1_1NurbsCurve.html#ac5c09b9dcc0046ab0a20005ee0626603", null ],
+    [ "NurbsCurve", "classXSI_1_1NurbsCurve.html#ae2959b2ba2b42405ff3a8d9283455533", null ],
+    [ "IsA", "classXSI_1_1NurbsCurve.html#a6dd5a8a11eee55f434f151d1cd5d29d8", null ],
+    [ "GetClassID", "classXSI_1_1NurbsCurve.html#acc34f4a01f2089e40f7abc7e9d98bf15", null ],
+    [ "operator=", "classXSI_1_1NurbsCurve.html#a26d8f308ca76daddd39d483aff5343fc", null ],
+    [ "operator=", "classXSI_1_1NurbsCurve.html#a776d09aa5ff1d62c7e32059c5047acf7", null ],
+    [ "GetKnots", "classXSI_1_1NurbsCurve.html#ac0019ee10fc0d7657d491d4a8b6aa980", null ],
+    [ "GetControlPoints", "classXSI_1_1NurbsCurve.html#a00bc05abc953afcd3fe0c6825b146946", null ],
+    [ "Get", "classXSI_1_1NurbsCurve.html#a42f6259af7931a3b98ae3b6f5a9a8de6", null ],
+    [ "Set", "classXSI_1_1NurbsCurve.html#aeb04b76aa0644d6c2e9d01beaa4e556e", null ],
+    [ "EvaluatePosition", "classXSI_1_1NurbsCurve.html#ae22938c7c37d3fe4d3c1e2697d20faa6", null ],
+    [ "EvaluateNormalizedPosition", "classXSI_1_1NurbsCurve.html#a258a84e35bee210c6d54c69c2ff6d773", null ],
+    [ "EvaluatePositionFromPercentage", "classXSI_1_1NurbsCurve.html#a7bc3a3838fc1c870d0e93597a4c3f70a", null ],
+    [ "GetDegree", "classXSI_1_1NurbsCurve.html#a28579584318871930ec88b8fb64bc479", null ],
+    [ "GetLength", "classXSI_1_1NurbsCurve.html#acc1903211a46db390d6e9b385f79e15e", null ],
+    [ "GetNormalizedUFromU", "classXSI_1_1NurbsCurve.html#a2d978fb2b708d1f03bf2cbc1b3ed61aa", null ],
+    [ "GetUFromNormalizedU", "classXSI_1_1NurbsCurve.html#a00180dbdd96040897e2013d67567ac4d", null ],
+    [ "GetUFromPercentage", "classXSI_1_1NurbsCurve.html#af080017df83c7e92a265a90675c564fe", null ],
+    [ "GetPercentageFromU", "classXSI_1_1NurbsCurve.html#af8f76d001025258321e2877b1a3b1272", null ],
+    [ "GetIndex", "classXSI_1_1NurbsCurve.html#a3993d8a3481950823a84c8845773d366", null ],
+    [ "GetSubComponent", "classXSI_1_1NurbsCurve.html#a975ed2daa5104b0cbf5d4d58a0ca5e4d", null ],
+    [ "Navigate", "classXSI_1_1NurbsCurve.html#a3f52b3d010229eed00d8d39eabab93ac", null ]
+];

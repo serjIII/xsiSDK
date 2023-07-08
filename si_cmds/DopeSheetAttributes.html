@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>DopeSheet Attributes</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>DopeSheet Attributes</h1>
+         </div>
+
+<h2 class="pagehead">DopeSheet Attributes</h2>
+
+<div>
+	<p>View attribute for the <a href="http://softimage.wiki.softimage.com/xsidocs/animeditor15.htm">DopeSheet</a> (see <a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>).</p>
+<div class="tip">
+<table cellpadding="5" cellspacing="5">
+	<tr>
+		<td class="label">Note</td>
+		<td class="emph">See <a href="#!/url=./si_cmds/ViewAttributes.html#">ViewAttributes</a> for a complete list of types of attributes that you can use when customizing your Relational Views.</td>
+	</tr>
+</table>
+</div>
+</div>
+
+<div><table class="values">
+	<tr>
+		<th>Attribute Name</th>
+		<th>Description</th>
+		<th>Supports</th>
+	</tr>
+	<tr>
+		<td class="example">autosnaptoframes</td>
+		<td>
+Determines whether or not the keys will be kept on frames when scaling regions.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">'false'</td>
+					<td>(Default) Keys will not be snapped to frames. Note: Use the string "false", not the boolean false.					</td>
+				</tr>
+				<tr>
+					<td class="name">'true'</td>
+					<td>The keys will be kept on frames when scaling regions. Note: Use the string "true", not the boolean true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">pasteoperation</td>
+		<td>
+The behavior when copied keys are paste into the current DopeSheet			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">0</td>
+					<td>(Default) New keys will be merged with existing keys.					</td>
+				</tr>
+				<tr>
+					<td class="name">1</td>
+					<td>Existing keys will be replaced by the new keys.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">frameall</td>
+		<td>
+Frames all the keys in the DopeSheet.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;any value&gt;</td>
+					<td>This value is ignored.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> only.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">frameselection</td>
+		<td>
+Frames the selected keys in the DopeSheet.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;any value&gt;</td>
+					<td>This value is ignored.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> only.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">frameplaybackrange</td>
+		<td>
+Frames the playback range in the DopeSheet.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;any value&gt;</td>
+					<td>This value is ignored.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> only.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">displayoptions</td>
+		<td>
+Determines which tracks are displayed in the DopeSheet			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">siMarkedParam</td>
+					<td>Marked parameters are displayed. This value can only be set if "aligntrackswithtreeview" attribute is false.					</td>
+				</tr>
+				<tr>
+					<td class="name">siAnimatedParam</td>
+					<td>(Default) Animated parameters are displayed.					</td>
+				</tr>
+				<tr>
+					<td class="name">siSelectedParam</td>
+					<td>Selected parameters are displayed. This value can only be set if "aligntrackswithtreeview" attribute is false.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">aligntrackswithtreeview</td>
+		<td>
+Determines whether the DopeSheet tracks align with its corresponding node in the tree view on the left.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>(Default) Tracks are aligned to the view.					</td>
+				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>Tracks are not aligned to the view.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">displayscenesummarytrack</td>
+		<td>
+Determines whether the scene summary track is displayed.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>(Default) Scene summary track is not displayed.					</td>
+				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>Scene summary track is displayed.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">displaydopesheetsummarytrack</td>
+		<td>
+Determines whether the DopeSheet summary track is displayed.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>(Default) DopeSheet summary track is displayed.					</td>
+				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>DopeSheet summary track is not displayed.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">phonemekeydisplay</td>
+		<td>
+Determines whether the phoneme keys display mode is active.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>(Default) Phoneme Keys are not displayed.					</td>
+				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>Phoneme keys are displayed.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">phonemeshowinbetweens</td>
+		<td>
+Determines whether the shape key names between the shape keys are displayed in phoneme key display mode.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>(Default) Shape key names between the shape keys are not displayed.					</td>
+				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>Shape key names between the shape keys are displayed.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">phonemekeythreshold</td>
+		<td>
+Determines the weight threshold used by the phoneme key display mode.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;any real value&gt;</td>
+					<td>The threshold value to set.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">ripple</td>
+		<td>
+Determines whether ripple is enabled.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>(Default) Ripple is disabled.					</td>
+				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>Ripple is enabled.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+</table>
+<br />
+
+</div>
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

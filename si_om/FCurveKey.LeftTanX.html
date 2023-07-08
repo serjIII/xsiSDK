@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>FCurveKey.LeftTanX</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>FCurveKey.LeftTanX</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/FCurveKey.html">FCurveKey</a>.LeftTanX</h2>
+
+<h3>Description</h3>
+<div><p> Sets or returns the left tangent X (in frames) of the fcurve key
+relative to the <a href="#!/url=./si_om/FCurveKey.Time.html">FCurveKey.Time</a> value as a 
+<a href="#!/url=./files/Double.htm">Double</a>. <br /><br />
+The left tan x value may be a negative value between a distance which 
+is one third the distance between 2 consecutive key and 0; this 
+guarantees that the curve is valid.<br /><br />
+The left tangent of the first key and the right tangent of the last key
+cannot be changed. If you try to set the tangent for one of these 
+the property does nothing and returns S_FALSE in C++. <br /><br />
+Tangent values only apply to standard function curves (where 
+<a href="#!/url=./si_om/FCurve.Type.html">FCurve.Type</a> = siStandardFCurve), the tangent 
+value 0 is  returned for all other function curve types 
+defined by <a href="#!/url=./si_om/siFCurveType.html">siFCurveType</a>.<br /><br />
+Setting this property may raise an "Access Denied" error. See more information in the FCurveKey object description.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>// get accessor
+Object rtn = FCurveKey.LeftTanX;
+// set accessor
+FCurveKey.LeftTanX = Object;</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example illustrates how to create an fcurve and set the tangents on a specific key
+*/
+// Create new scene
+NewScene( "", false );
+// Create a null
+var nullobj = Application.ActiveSceneRoot.AddNull();
+// Get the posx parameter from the null
+var posx = nullobj.posx;
+// Create an fcurve on posx
+var fc = posx.AddFCurve2();
+// Define some keys (3 key-value pairs)
+var keyvalues = new Array( 0,0, 50,25, 100,50 );
+fc.SetKeys( keyvalues );
+// Get the 1st, 2nd &amp; 3rd FCurveKey objects
+var key0 = fc.Keys(0);
+var key1 = fc.Keys(1);
+var key2 = fc.Keys(2);
+// Make the key non-G1 continuous so it can have different left and right values
+key1.Constraint( siG1ContinuousConstraint ) = false;
+key1.LeftTanX = 0;
+key1.LeftTanY = Math.abs( key1.Value - key0.Value );
+key1.RightTanX = key2.Time - key1.Time;
+key1.RightTanY = 0;
+PrintKeys( fc );
+// Convenience function to print the FCurveKeys
+function PrintKeys( in_fcrv )
+{
+	for ( var i=0; i&lt;in_fcrv.Keys.Count; i++ ) {
+		var fckey = in_fcrv.Keys(i);
+		var str = "key : " + fckey.Index;
+		str += "\n\ttime : " + fckey.Time;
+		str += "\n\tvalue : " + fckey.Value;
+		str += "\n\ttangents : " + fckey.LeftTanX + "," + fckey.LeftTanY + "," + fckey.RightTanX + "," + fckey.RightTanY;
+		str += "\n\tconstraints : " + GetConstraintType( fckey );
+		Application.LogMessage( str );
+	}
+}
+// Convenience function to get the user-friendly string describing the contraint type
+function GetConstraintType( in_fcrvkey )
+{
+	var ConstraintTypes = new Array (
+		new Array (siParameterConstraint,			"LockParameter"),
+		new Array (siLeftRightValuesConstraint,			"LeftRightParameter"),
+		new Array (siG1ContinuousConstraint,			"G1Continuous"),
+		new Array (siLeftRightTangentDirectionConstraint,	"LeftRightTangentDirection"),
+		new Array (siLeftRightTangentLengthConstraint,		"LeftRightTangentLength"),
+		new Array (siLockConstraint,				"LockAll"),
+		new Array (siHorizontalTangentConstraint,		"HorizontalTangent"),
+		new Array (siExtremumHorizontalTangentConstraint,	"ExtremumHorizontalTangent"),
+		new Array (siAdjustedTangentConstraint,			"AdjustedTangent"),
+		new Array (siZeroLengthTangentConstraint,		"ZeroLengthTangent"),
+		new Array (siSameLengthTangentConstraint,		"SameLengthTangent"), 
+		new Array (siNeighborTangentConstraint,			"NeighborTangent"),
+		new Array (siMirrorTangentConstraint,			"MirrorTangent"),
+		new Array (siAutoPlateauTangentConstraint,		"AutoPlateauTangent") 
+	)
+	var str = "";
+	for ( var i=0; i&lt;ConstraintTypes.length; i++ ) {
+		if ( in_fcrvkey.Constraint( ConstraintTypes[i][0] ) ) {
+			str += ConstraintTypes[i][1] + " ";
+		}		 
+	}
+	return str;
+}
+// Expected results:
+//INFO : key : 0
+//	time : 0
+//	value : 0
+//	tangents : -16.666666666666668,0,16.666666666666668,0
+//	constraints : G1Continuous  
+//INFO : key : 1
+//	time : 50
+//	value : 25
+//	tangents : 0,25,50,0
+//	constraints : 
+//INFO : key : 2
+//	time : 100
+//	value : 50
+//	tangents : -16.666666666666664,0,16.666666666666664,0
+//	constraints : G1Continuous</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example illustrates how to create an fcurve and set the tangents on a specific key
+' 
+' Create new scene
+NewScene , false 
+' Create a null
+set nullobj = Application.ActiveSceneRoot.AddNull()
+' Get the posx parameter from the null
+set posx = nullobj.posx
+' Create an fcurve on posx
+set fc = posx.AddFCurve2()
+' Define some keys (3 key-value pairs)
+keyvalues = array( 0,0, 50,25, 100,50 )
+fc.SetKeys keyvalues 
+' Get the 1st, 2nd &amp; 3rd FCurveKey objects
+set key0 = fc.Keys(0)
+set key1 = fc.Keys(1)
+set key2 = fc.Keys(2)
+' Make the key non-G1 continuous so it can have different left and right values
+key1.Constraint( siG1ContinuousConstraint ) = false
+key1.LeftTanX = 0
+key1.LeftTanY = Abs( key1.Value - key0.Value )
+key1.RightTanX = key2.Time - key1.Time
+key1.RightTanY = 0
+PrintKeys fc 
+' Convenience routine to print the FCurveKeys
+sub PrintKeys( in_fcrv )
+	for each fckey in in_fcrv.Keys
+		str = "key : " &amp; fckey.Index
+		str = str &amp; vbCrLf &amp; vbTab &amp; "time : " &amp; fckey.Time
+		str = str &amp; vbCrLf &amp; vbTab &amp; "value : " &amp; fckey.Value
+		str = str &amp; vbCrLf &amp; vbTab &amp; "tangents : " &amp; fckey.LeftTanX &amp; "," &amp; fckey.LeftTanY &amp; "," &amp; fckey.RightTanX &amp; "," &amp; fckey.RightTanY
+		str = str &amp; vbCrLf &amp; vbTab &amp; "constraints : " &amp; GetConstraintType( fckey )
+		Application.LogMessage str 
+	next
+end sub
+' Convenience function to get the user-friendly string describing the contraint type
+function GetConstraintType( in_fcrvkey )
+	set ConstraintTypes = CreateObject( "Scripting.Dictionary" )
+	ConstraintTypes.Add siParameterConstraint, 			"LockParameter"
+	ConstraintTypes.Add siLeftRightValuesConstraint,		"LeftRightParameter"
+	ConstraintTypes.Add siG1ContinuousConstraint,			"G1Continuous"
+	ConstraintTypes.Add siLeftRightTangentDirectionConstraint,	"LeftRightTangentDirection"
+	ConstraintTypes.Add siLeftRightTangentLengthConstraint,		"LeftRightTangentLength"
+	ConstraintTypes.Add siLockConstraint,				"LockAll"
+	ConstraintTypes.Add siHorizontalTangentConstraint,		"HorizontalTangent"
+	ConstraintTypes.Add siExtremumHorizontalTangentConstraint,	"ExtremumHorizontalTangent"
+	ConstraintTypes.Add siAdjustedTangentConstraint,		"AdjustedTangent"
+	ConstraintTypes.Add siZeroLengthTangentConstraint,		"ZeroLengthTangent"
+	ConstraintTypes.Add siSameLengthTangentConstraint,		"SameLengthTangent"
+	ConstraintTypes.Add siNeighborTangentConstraint,		"NeighborTangent"
+	ConstraintTypes.Add siMirrorTangentConstraint,			"MirrorTangent"
+	ConstraintTypes.Add siAutoPlateauTangentConstraint,		"AutoPlateauTangent"
+	str = ""
+	for each k in ConstraintTypes.Keys
+		if in_fcrvkey.Constraint( k ) then
+			str = str &amp; ConstraintTypes(k) &amp; " "
+		end if
+	next
+	GetConstraintType = str
+end function
+' Expected results:
+'INFO : key : 0
+'	time : 0
+'	value : 0
+'	tangents : -16.6666666666667,0,16.6666666666667,0
+'	constraints : G1Continuous  
+'INFO : key : 1
+'	time : 50
+'	value : 25
+'	tangents : 0,25,50,0
+'	constraints : 
+'INFO : key : 2
+'	time : 100
+'	value : 50
+'	tangents : -16.6666666666667,0,16.6666666666667,0
+'	constraints : G1Continuous</pre></td></tr>
+</table>
+</div><h4>3. Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">#
+# This example illustrates how to create an fcurve and set the tangents on a specific key
+# 
+from win32com.client import constants as c
+# Convenience function to get the user-friendly string describing the contraint type
+def GetConstraintType( in_fcrvkey ) :
+	ConstraintTypes = {
+		c.siParameterConstraint:"LockParameter", 
+		c.siLeftRightValuesConstraint:"LeftRightParameter", 
+		c.siG1ContinuousConstraint:"G1Continuous", 
+		c.siLeftRightTangentDirectionConstraint:"LeftRightTangentDirection", 
+		c.siLeftRightTangentLengthConstraint:"LeftRightTangentLength", 
+		c.siLockConstraint:"LockAll", 
+		c.siHorizontalTangentConstraint:"HorizontalTangent", 
+		c.siExtremumHorizontalTangentConstraint:"ExtremumHorizontalTangent", 
+		c.siAdjustedTangentConstraint:"AdjustedTangent", 
+		c.siZeroLengthTangentConstraint:"ZeroLengthTangent", 
+		c.siSameLengthTangentConstraint:"SameLengthTangent",
+		c.siNeighborTangentConstraint:"NeighborTangent",
+		c.siMirrorTangentConstraint:"MirrorTangent",
+		c.siAutoPlateauTangentConstraint:"AutoPlateauTangent"
+	}
+	str = ""
+	for k in ConstraintTypes.keys() :
+		if ( in_fcrvkey.Constraint(k) ) :
+			str += ConstraintTypes[k] + " "
+	return str
+# Convenience function to print the FCurveKeys
+def PrintKeys( in_fcrv ) :
+	for fckey in in_fcrv.Keys :
+		str = "key : %d" % (fckey.Index)
+		str = str + "\n\ttime : %d" % (fckey.Time)
+		str = str + "\n\tvalue : %d" % (fckey.Value)
+		str = str + "\n\ttangents : %d,%d,%d,%d" % (fckey.LeftTanX,fckey.LeftTanY,fckey.RightTanX,fckey.RightTanY)
+		str = str + "\n\tconstraints : " + GetConstraintType( fckey )
+		Application.LogMessage( str )
+	return None
+# Create new scene
+Application.NewScene( "", 0 )
+# Create a null
+nullobj = Application.ActiveSceneRoot.AddNull()
+# Get the posx parameter from the null
+posx = nullobj.posx
+# Create an fcurve on posx
+fc = posx.AddFCurve2()
+# Define some keys (3 key-value pairs)
+keyvalues = [ 0,0, 50,25, 100,50 ]
+fc.SetKeys( keyvalues )
+# Get the 1st, 2nd &amp; 3rd FCurveKey objects
+key0 = fc.Keys(0)
+key1 = fc.Keys(1)
+key2 = fc.Keys(2)
+# Make the key non-G1 continuous so it can have different left and right values
+# (Python can't use the Constraint property as-is, so use SetConstraint as an alias)
+key1.SetConstraint( c.siG1ContinuousConstraint, 0 )
+key1.LeftTanX = 0
+key1.LeftTanY = abs( key1.Value - key0.Value )
+key1.RightTanX = key2.Time - key1.Time
+key1.RightTanY = 0
+PrintKeys( fc )
+# Expected results:
+# INFO : key : 0
+# 	time : 0
+# 	value : 0
+# 	tangents : -16,0,16,0
+# 	constraints : G1Continuous 
+# INFO : key : 1
+# 	time : 50
+# 	value : 25
+# 	tangents : 0,25,50,0
+# 	constraints : 
+# INFO : key : 2
+# 	time : 100
+# 	value : 50
+# 	tangents : -16,0,16,0
+# 	constraints : G1Continuous</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/FCurve.SetKeyTangents.html">FCurve.SetKeyTangents</a> <a href="#!/url=./si_om/FCurveKey.LeftTanY.html">FCurveKey.LeftTanY</a> <a href="#!/url=./si_om/FCurveKey.RightTanY.html">FCurveKey.RightTanY</a> <a href="#!/url=./si_om/FCurveKey.RightTanX.html">FCurveKey.RightTanX</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

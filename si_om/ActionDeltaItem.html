@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>ActionDeltaItem</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>ActionDeltaItem</h1>
+         </div>
+
+<h2 class="pagehead">ActionDeltaItem</h2>
+
+<p><a href="#!/url=./si_om/_hier.html#oh_ActionDeltaItem">Object Hierarchy</a> | Related C++ Class: <a href="#!/url=./si_cpp/classXSI_1_1ActionDeltaItem.html">ActionDeltaItem</a></p>
+
+<h3>Inheritance<h3>
+<p class="level1"><a href="#!/url=./si_om/SIObject.html">SIObject</a></p>
+<p class="level2">ActionDeltaItem</p>
+
+<h3>Introduced</h3>
+<div><p>v6.0</p></div>
+
+<h3>Description</h3>
+<div><p> The ActionDeltaItem object tracks changes made on a parameter that is part of a reference model. 
+Each ActionDeltaItem represents a single change, or modification, to a referenced parameter. So each 
+time there a change to a static value, an fcurve, a constraint, an expression or a group relation, 
+a new ActionDeltaItem is generated. 
+<br /><br />
+You can also create new ActionDeltaItems from a data set using one of these methods: 
+<a href="#!/url=./si_om/ActionDelta.AddConstraintItem.html">ActionDelta.AddConstraintItem</a>, <a href="#!/url=./si_om/ActionDelta.AddExpressionItem.html">ActionDelta.AddExpressionItem</a>, 
+<a href="#!/url=./si_om/ActionDelta.AddFCurveItem.html">ActionDelta.AddFCurveItem</a>, or <a href="#!/url=./si_om/ActionDelta.AddStaticValueItem.html">ActionDelta.AddStaticValueItem</a>.
+<br /><br />
+ActionDeltaItem objects of the same type (see <a href="#!/url=./si_om/siModificationDeltaType.html">siModificationDeltaType</a>) are stored 
+in an <a href="#!/url=./si_om/ActionDelta.html">ActionDelta</a> (<a href="#!/url=./si_om/ActionDeltaItemCollection.html">ActionDeltaItemCollection</a>) which is accessible 
+via the <a href="#!/url=./si_om/ActionDelta.Items.html">ActionDelta.Items</a> property.
+</p></div>
+
+<h3>Methods</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.IsClassOf.html">IsClassOf</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.IsEqualTo.html">IsEqualTo</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Properties</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Application.html">Application</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/ActionDeltaItem.AuditInfo.html">AuditInfo</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Categories.html">Categories</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.FullName.html">FullName</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Help.html">Help</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/ActionDeltaItem.Mute.html">Mute</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Name.html">Name</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.NestedObjects.html">NestedObjects</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Origin.html">Origin</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.OriginPath.html">OriginPath</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Parent.html">Parent</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Type.html">Type</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/ActionDeltaItem.Value.html">Value</a>		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example demonstrates how to assign a new value to an ActionDeltaItem
+*/
+NewScene(null, false);
+// Create a reference model from a cube
+var oRoot = Application.ActiveProject.ActiveScene.Root;
+var oCube = oRoot.AddGeometry("Cube", "MeshSurface");
+var emdlFileRefModel = XSIUtils.BuildPath(Application.InstallationPath(siProjectPath), "Models", "MyModel.emdl"); 
+CreateModelAndConvertToRef(oCube, emdlFileRefModel );
+// Translate the cube that also generate a delta
+Translate(oCube, 2.0, 1.3, 0, siRelative, siView, siObj, siXYZ, null, null, null, null, null, null, null, null, null, 0, null);
+// Get the Delta object
+var oDelta = Dictionary.GetObject("Model.Delta");
+// Get the ActionDeltaItem collection of the first ActionDelta
+var oActionDeltaItemsColl = oDelta.ActionDeltas(0).Items;
+for (var i=0; i&lt;oActionDeltaItemsColl.Count; i++) {
+	 // Print info about the current ActionDeltaItem
+	 Application.LogMessage("ActionSourceItem[" + i + "]");
+	 Application.LogMessage("Name: " + oActionDeltaItemsColl(i).Name)
+	 Application.LogMessage("Type: " + oActionDeltaItemsColl(i).Type)
+	 //Print the current value
+	 Application.LogMessage("Initiale Value: " +oActionDeltaItemsColl(i).Value)
+	 // Change the value of the item
+	 oActionDeltaItemsColl(i).Value = 1.2 * i
+	 // Print the new value
+	 Application.LogMessage("New Value: "+ oActionDeltaItemsColl(i).Value)
+	 Application.LogMessage("");
+}
+// Apply modification on the target reference asset container (the reference model)
+oDelta.Apply()
+// Output of above script:
+//INFO : ActionSourceItem[0]
+//INFO : Name: cube.kine.local.posx
+//INFO : Type: siModificationDeltaStaticValue
+//INFO : Initiale Value: 2
+//INFO : New Value: 0
+//INFO : 
+//INFO : ActionSourceItem[1]
+//INFO : Name: cube.kine.local.posy
+//INFO : Type: siModificationDeltaStaticValue
+//INFO : Initiale Value: 1.3
+//INFO : New Value: 1.2
+//INFO : 
+//INFO : ActionSourceItem[2]
+//INFO : Name: cube.kine.local.posz
+//INFO : Type: siModificationDeltaStaticValue
+//INFO : Initiale Value: 0
+//INFO : New Value: 2.4
+//INFO :</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example demonstrates how to set the name of the item
+*/
+NewScene(null, false);
+// Create a reference model from a cube
+var oRoot = Application.ActiveProject.ActiveScene.Root;
+var oCube = oRoot.AddGeometry("Cube", "MeshSurface");
+var emdlFileRefModel = XSIUtils.BuildPath(Application.InstallationPath(siProjectPath), "Models", "MyModel.emdl"); 
+CreateModelAndConvertToRef(oCube, emdlFileRefModel );
+// Add the Delta object
+var oDelta = AddDelta(oCube.Model);
+// Add an action of type siModificationDeltaStaticValue
+var oDeltaAction = oDelta.AddAction(siModificationDeltaStaticValue)
+// Add the Static value item	
+var oActionDeltaItem = oDeltaAction.AddStaticValueItem(oCube + ".kine.global.posx", 10);
+// Get the relative name for the sclx parameter
+var rp = GetRelativeNameForTarget(oCube.sclx);
+// Replace posx parameter by sclx
+oActionDeltaItem.name = rp;
+// Apply modification on the target reference asset container (the reference model)
+oDelta.Apply()
+// Reload the reference model to reset cube.kine.local.posx value
+UpdateReferencedModel("Model");
+// Convenience function
+function GetRelativeNameForTarget(in_param) {
+	var mdlname = in_param.Model.FullName;
+	if (mdlname == "Scene_Root") {
+		return in_param.FullName;
+	} else {
+		var tmp = in_param.FullName;
+		var re = new RegExp(mdlname + ".", "i");
+		return tmp.replace(re, "");
+	}
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/ActionDelta.html">ActionDelta</a> <a href="#!/url=./si_om/ActionDelta.Items.html">ActionDelta.Items</a> <a href="#!/url=./si_om/ActionDelta.AddFCurveItem.html">ActionDelta.AddFCurveItem</a> <a href="#!/url=./si_om/ActionDelta.AddStaticValueItem.html">ActionDelta.AddStaticValueItem</a> <a href="#!/url=./si_om/ActionDelta.AddExpressionItem.html">ActionDelta.AddExpressionItem</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></h3></h3></div>
+   </div></body>
+</html>

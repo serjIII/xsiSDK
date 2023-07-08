@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-DA9BCB25-CD95-4802-8B33-8C9BD9A28565" />
+      <meta name="indexterm" content="filters: 3D objects" />
+      <meta name="indexterm" content="3D objects: filtering" />
+      <meta name="indexterm" content="filters: Match callbacks" />
+      <meta name="indexterm" content="Match callbacks: 3D objects" />
+      <meta name="indexterm" content="callbacks: Match" />
+      <meta name="indexterm" content="geometry: checking for existence of" />
+      <meta name="indexterm" content="filters: Subset callbacks" />
+      <meta name="indexterm" content="Subset callbacks: 3D objects" />
+      <meta name="indexterm" content="callbacks: Subset" />
+      <meta name="topic-type" content="concept" />
+      <title>Writing 3D Object Filters</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-DA9BCB25-CD95-4802-8B33-8C9BD9A28565"></a></span><div class="head">
+            <h1>Writing 3D Object Filters</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-A01AB7DA-CEC2-4200-A64A-97A71D11ABEC"></a></span> 3D object filters are used to filter objects, such as polygon meshes, surfaces, curves,
+               implicit primitives, control objects, models, nulls, cameras, and lights, that belong
+               to the 3D object family.
+            </p>
+            <p><span class="anchor_wrapper"><a name="GUID-0D8F664E-41EB-4A22-9920-DC5D018BF18A"></a></span>When a user activates a 3D object selection filter, Softimage calls Match for each
+               3D object the user tries to select in a 3D view, the object view, or in the schematic.
+               Softimage does not call Match for non-3D objects, such as Material and ParticleType
+               objects in the schematic. Clicking on those types of objects while a 3D object filter
+               is active triggers a Deselect All command.
+            </p>
+            <p><span class="anchor_wrapper"><a name="GUID-D2195920-E01F-4EFE-B93A-F3675FBF3F43"></a></span>Similarly, when a user applies a 3D object filter to an explorer view, Softimage calls
+               Match for each 3D object currently listed in the view (unless Subset is defined, in
+               which case Softimage calls Subset on the list of 3D objects).
+            </p>
+            <div class="section"><span class="anchor_wrapper"><a name="WSC098C24645EDDE428048CE3C4F46FCA7-0013"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-44EC9DFF-BE6D-4D7E-ACA5-FEEE9307AD2F"></a></span>Match
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-873F3651-CAB5-46B6-858E-77D6B6AA828D"></a></span> When Softimage calls Match, it puts a 3D object in the Input attribute of the context.
+                  To get the input object, you use the Context.GetAttribute() method. The following
+                  example shows how to get the input object and check whether it has less than 50 points.
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+function MySmallMesh_Match( oContext )
+{
+	// Get the object from the Input attribute of the context
+	var o3DObject = oContext.GetAttribute( "Input" );
+
+	// Check if the object matches the filter conditions
+	var bMatch = ( classname( o3DObject ) == "X3DObject" ) &amp;&amp;
+		( o3DObject.ActivePrimitive.Geometry != undefined ) &amp;&amp;
+		( o3DObject.ActivePrimitive.Geometry.Points.Count &lt;= 50 );
+
+	// Return true to keep the object, false to filter the object out
+	return ( bMatch );
+}</pre></div> 
+               <p><span class="anchor_wrapper"><a name="GUID-881E2F63-1AB4-4B25-9B31-8A031DB33121"></a></span>After the filter gets the 3D object from the context, it checks that the object is
+                  an X3DObject. Other members of the 3D object family, such as nulls, cameras, and lights
+                  are filtered out, because they don't have points like polygon meshes, surfaces, and
+                  curves.
+               </p> 
+               <p><span class="anchor_wrapper"><a name="GUID-82951373-D47E-486C-A5E8-4A1428515723"></a></span> Then the filter makes sure the 3D object has geometry before trying to access Points.Count,
+                  because some 3D objects, such as implicit primitives, control objects, and geometry
+                  shader primitives, do not have a Geometry property.
+               </p> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSC098C24645EDDE428048CE3C4F46FCA7-0014"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-5ACA43D4-2474-41AE-B4DB-6009F57D5A3E"></a></span>Subset
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-AC890128-1ECA-4AE3-B9FB-789CE968C4FE"></a></span> Softimage calls the Subset callback when a user applies the 3D object filter to an
+                  explorer view. If you don't provide a Subset callback, Softimage calls Match on each
+                  object and builds the subset collection itself.
+               </p> 
+               <p><span class="anchor_wrapper"><a name="GUID-63AC8011-7A88-4358-BBB0-A9B2DE4A5B84"></a></span>When Softimage calls Subset, it puts an XSICollection in the Input attribute of the
+                  context. The collection contains 3D objects, such as X3DObject, Camera, Light, Null,
+                  Model, and ChainEffector. The job of the Subset callback is to build a new collection
+                  (the subset) that holds only the objects that match the filter conditions, and to
+                  put this new collection in the Output attribute of the context.
+               </p> 
+               <p><span class="anchor_wrapper"><a name="GUID-6487393A-F61C-4E01-A33D-B07058A0E8B8"></a></span>For example, the following Subset callback builds a collection of 3D objects that
+                  have less than 50 points. Note that you need to set the Output attribute even if the
+                  subset is empty. The return value tells Softimage whether or not the subset is empty.
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+function MySmallMesh_Subset( oContext )
+{
+	// Get a new collection to hold the output subset
+	var cloOutput = new ActiveXObject( "XSI.Collection" );
+
+	// Get the collection of objects to filter
+	var cloInput = oContext.GetAttribute( "Input" );
+
+	// Enumerate the objects. If an object matches, add it to the output subset
+	for (var enumerator = new Enumerator(cloInput) ; !enumerator.atEnd(); enumerator.moveNext())
+	{
+		var o3DObject = enumerator.item();
+		if ( object_isamatch( o3DObject ) )
+		{
+			cloOutput.Add( o3DObject );
+		}
+
+	}
+
+	// Put the subset in the Output attribute		
+	oContext.SetAttribute( "Output", cloOutput );
+
+	// Return true if the subset is non-empty
+	return (cloOutput.Count &gt; 0);
+}
+
+// Helper function that checks if a 3D object matches the filter conditions
+function object_isamatch( o )
+{
+	return	(
+		classname( o ) == "X3DObject" &amp;&amp;
+		o.ActivePrimitive.Geometry != undefined &amp;&amp;
+		o.ActivePrimitive.Geometry.Points.Count &lt;= 50
+		) ;
+}</pre></div> 
+            </div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

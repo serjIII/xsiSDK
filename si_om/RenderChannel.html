@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>RenderChannel</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>RenderChannel</h1>
+         </div>
+
+<h2 class="pagehead">RenderChannel</h2>
+
+<p><a href="#!/url=./si_om/_hier.html#oh_RenderChannel">Object Hierarchy</a> | Related C++ Class: <a href="#!/url=./si_cpp/classXSI_1_1RenderChannel.html">RenderChannel</a></p>
+
+<h3>Inheritance<h3>
+<p class="level1"><a href="#!/url=./si_om/SIObject.html">SIObject</a></p>
+<p class="level2">RenderChannel</p>
+
+<h3>Introduced</h3>
+<div><p>v6.0</p></div>
+
+<h3>Description</h3>
+<div><p> A render channel is a container for rendered image data output.
+The channel describes what kind of data can be recorded into it.
+<br /><br />
+There are two types of channels: renderer-provided and user-defined.
+The renderer-provided type consists of channels that are implicitly 
+provided by the rendering engine (such as the main render output 
+and a depth output). 
+<br /><br />
+User-defined channels are used in conjunction with shaders which
+can be set to record any data into those channels, depending on
+their channel type.
+<br /><br />
+The render channels are global to the scene and can be found on the 
+<a href="#!/url=./si_om/SceneRenderProperty.html">SceneRenderProperty</a>.
+</p></div>
+
+<h3>Methods</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.IsClassOf.html">IsClassOf</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.IsEqualTo.html">IsEqualTo</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Properties</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Application.html">Application</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Categories.html">Categories</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/RenderChannel.ChannelType.html">ChannelType</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.FullName.html">FullName</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Help.html">Help</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Name.html">Name</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.NestedObjects.html">NestedObjects</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Origin.html">Origin</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.OriginPath.html">OriginPath</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Parent.html">Parent</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Type.html">Type</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/RenderChannel.UserDefined.html">UserDefined</a>		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">// Create a new render channel to use to pipe a texture
+// into an output framebuffer before shading the object.
+// The create two regions to show the difference.
+NewScene( null, false );
+oScene = ActiveProject.ActiveScene;
+// Create the render channel to pipe into.
+oSceneProp = oScene.PassContainer.Properties( "Scene Render Options" );
+oChannel = oSceneProp.CreateRenderChannel( "TextureBypass", siRenderChannelColorType );
+// Create a framebuffer to output the channel with.
+oScene.ActivePass.CreateFramebuffer( oChannel );
+// Create a textured sphere with a Store In Channel shader
+oSphere = oScene.Root.AddGeometry( "Sphere", "MeshSurface", "TexturedSphere" );
+oMaterial = oSphere.AddMaterial("Blinn");
+oBlinn = oMaterial.Shaders("Blinn");
+oStoreShd = oBlinn.diffuse.ConnectFromPreset( "Render_Channels/Color_StoreInChannel", 
+	siTextureShaderFamily );
+oTextureShd = oStoreShd.input.ConnectFromPreset( "Terrain", siTextureShaderFamily );
+oStoreShd.channel = oChannel.Name;
+// Make sure both viewports are looking at the same thing.
+oVM = Application.Desktop.ActiveLayout.Views( "vm" );
+oVM.SetAttributeValue( "activecamera:a", "Camera" );
+// Create two render regions in viewport A and B.
+// Set the B viewport to view the contents of the
+// "TextureBypass" render channel.
+RenderRegionCreate( siViewportA );
+RenderRegionCreate( siViewportB );
+RenderRegionSetRenderChannel( siViewportB, oChannel.Name );</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/RenderChannelCollection.html">RenderChannelCollection</a> <a href="#!/url=./si_om/Framebuffer.html">Framebuffer</a> <a href="#!/url=./si_om/SceneRenderProperty.html">SceneRenderProperty</a> <a href="#!/url=./si_om/Pass.html">Pass</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></h3></h3></div>
+   </div></body>
+</html>

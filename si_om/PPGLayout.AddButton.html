@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>PPGLayout.AddButton</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>PPGLayout.AddButton</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/PPGLayout.html">PPGLayout</a>.AddButton <img src="images/operator.gif" alt="operator" /></h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p> Adds a button to a layout.  Unlike other controls a button doesn't have to
+be associated with any particular <a href="#!/url=./si_om/Parameter.html">Parameter</a> on the inspected object.
+Instead it basically serves the purpose of executing some script code when
+pressed.
+<br /><br />
+By default, the width of the button is automatically determined based on the
+text of the Label.  However this can be overridden with the siUICX
+attribute. (See <a href="#!/url=./si_om/PPGItem.SetAttribute.html">PPGItem.SetAttribute</a>)
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>PPGItem PPGLayout.AddButton( String in_ScriptName, String in_opt_Label );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = PPGLayout.AddButton( ScriptName, [Label] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p><a href="#!/url=./si_om/PPGItem.html">PPGItem</a></p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">ScriptName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		A unique name for the button, which should not contain any space characters.
+		This name is used to determine the logic subroutine to call when the
+		button is pressed.
+			</td>
+	</tr>
+	<tr>
+		<td class="name">Label		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Label of the button.  If not specified then the ScriptName is displayed.		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example creates a custom property with a single parameter called "Data" and a button.
+	Each time you click the button the value is randomized
+*/
+var oPSet = ActiveSceneRoot.AddProperty( "CustomProperty", false, "ButtonExample" ) ;
+oPSet.AddParameter3( "Data", siDouble, 0, 0, 1 ) ;
+var oLayout = oPSet.PPGLayout
+oLayout.AddRow() ;
+oLayout.AddItem( "Data" ) ;
+oLayout.AddButton( "Randomize" ) ;
+oLayout.EndRow() ;
+oLayout.Logic = Randomize_OnClicked.toString() ;
+oLayout.Language = "JScript" ;
+InspectObj( oPSet ) ;
+function Randomize_OnClicked()
+{
+	PPG.Data.Value = Math.random() ;
+}</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="VBScript">'
+' This example creates a custom property with a single parameter called "Data" and a button.
+' Each time you click the button the value is randomized
+'
+set oPSet = ActiveSceneRoot.AddProperty( "CustomProperty", false, "ButtonExample" )
+oPSet.AddParameter3 "Data", siDouble, 0, 0, 1
+set oLayout = oPSet.PPGLayout
+oLayout.AddRow
+oLayout.AddItem "Data"
+oLayout.AddButton "Randomize"
+oLayout.EndRow
+'Store a little VBScript code to react to the button press.
+'If this code was more sophisticated we could read it out
+'of a file
+oLayout.Logic = "sub Randomize_OnClicked"   &amp; vbCrlf &amp; "   PPG.Data.Value = Rnd" &amp; vbCrlf &amp; "end sub"
+oLayout.Language = "VBScript" 'Optional because this is the default
+InspectObj oPSet</pre></td></tr>
+</table>
+</div><h4>3. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	Example showing how to disable a button
+	Often certain buttons should be disabled if they don't apply in the current context.
+	In this case a button is only enabled if there is text entered in a edit box.  The 
+	button gets enabled and disabled by the SomeText_OnChanged() callback.  This callback
+	is not called as characters are actually entered in the text box, but as soon as that 
+	edit box loses focus (for example if the tab key is pressed )
+*/
+var oPSet = ActiveSceneRoot.AddProperty( "CustomProperty", false, "ButtonExample" ) ;
+oPSet.AddParameter3( "SomeText", siString ) ;
+var oLayout = oPSet.PPGLayout
+oLayout.AddRow() ;
+oLayout.AddItem( "SomeText" ) ;
+var oItem = oLayout.AddButton( "ClickMe", "Click Me" ) ;
+// Set a PPGItem attribute to disable the control
+// (because initially there is no text inside SomeText)
+oItem.SetAttribute( "buttondisable", true ) ;
+oLayout.EndRow() ;
+oLayout.Logic = SomeText_OnChanged.toString() + ClickMe_OnClicked.toString() ;
+oLayout.Language = "JScript" ;
+InspectObj( oPSet ) ;
+// PPG Logic that is provided to the PPG
+function SomeText_OnChanged()
+{
+	// Button will be disabled until some text is entered
+	bDisableButton = ( PPG.SomeText.Value.length == 0 ) ;	
+	// Get the layout
+	oPPGLayout = PPG.PPGLayout ;
+	// Lookup the PPGItem associated with the button
+	oPPGItem = oPPGLayout.Item( "ClickMe" ) ;			
+	bAlreadyDisabled = oPPGItem.GetAttribute( "buttondisable" ) ;
+	if ( bDisableButton != bAlreadyDisabled )
+	{	
+		oPPGItem.SetAttribute( "buttondisable", bDisableButton ) ;	
+		// We only call refresh if we determine the state has
+		// actually changed		
+		PPG.Refresh() ;
+	}
+}
+function ClickMe_OnClicked()
+{
+	// Will never be called if the SomeText is empty
+	XSIUIToolkit.MsgBox( "Value of text is " +  PPG.SomeText.Value ) ;
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/PPGLayout.AddItem.html">PPGLayout.AddItem</a> <a href="#!/url=./si_om/PPGItem.Label.html">PPGItem.Label</a> <a href="#!/url=./si_om/PPGItem.Name.html">PPGItem.Name</a> <a href="#!/url=./si_om/PPG.html">PPG</a> <a href="#!/url=./si_om/PPGLayout.Logic.html">PPGLayout.Logic</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

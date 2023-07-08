@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-E51A38B2-A8F3-498A-AC94-978D73C0DE92" />
+      <meta name="indexterm" content="debugging: custom command and operator plug-ins" />
+      <meta name="indexterm" content="script editot: debugging plug-ins" />
+      <meta name="topic-type" content="concept" />
+      <title>Making Coding Easier</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-E51A38B2-A8F3-498A-AC94-978D73C0DE92"></a></span><div class="head">
+            <h1>Making Coding Easier</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-277F8BE4-BBB9-484C-82C8-B83097468673"></a></span> You can select different commands to modify the contents in the history and editing
+               panes. You can access these commands from the context menus, command bar menus, or
+               using the keyboard shortcuts. 
+            </p>
+            <p><span class="anchor_wrapper"><a name="GUID-1EB390BD-102B-4AEA-B41C-4273CD143CE9"></a></span>These commands make scripting easier in the editing pane and are explained in the
+               following sections. 
+            </p>
+            <div class="section"><span class="anchor_wrapper"><a name="WS7764D933E362064489C22357B4B7178F-0016"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-5296E5FF-EC71-46B9-87B1-EC1B5EC6B600"></a></span>Toggle Comments
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-540C91E5-8A7B-4157-AA1F-425637875F92"></a></span>If you select one or more lines in the editing pane and then select <span class="MenuCascade" id="GUID-34CB9BE6-2D52-4048-B294-56CE659C48E6">Comment/Uncomment <img src="../images/ac.menuaro.gif" /> Comment Selected Lines</span> from the context menu, the selected lines are commented (using the comment characters
+                  for the current language). To remove the comment characters, you can select <span class="MenuCascade" id="GUID-BDBAA250-3193-4010-813D-B0A4E3A8072A">Comment/Uncomment <img src="../images/ac.menuaro.gif" /> Uncomment Selected Lines</span> from the context menu. Alternatively, you can use Ctrl + K to comment the selected
+                  lines, and Shift + Ctrl + K to remove the comment characters. 
+               </p> 
+               <p><span class="anchor_wrapper"><a name="GUID-0E7EA525-BA61-4056-8C22-F91796133BCF"></a></span>This is helpful when you want to run disjointed snippets of code in the editing pane
+                  as shown in the following example. 
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+// I want to run this block
+var root = Application.ActiveSceneRoot;
+var n = Application.ActiveSceneRoot.AddNull();
+PerformSomeOperation(n);
+
+// I do not want to run this if-clause
+// if (n.Name == "null") {
+//	root.AddNull();
+// }
+
+// I want to run this block
+function PerformSomeOperation(in_obj) 
+{
+	 ...
+}</pre></div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS7764D933E362064489C22357B4B7178F-0017"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-FB4BBD5F-BDD0-41E6-9BBC-13733EF9786D"></a></span>Set to &lt;language&gt;
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-10A4D5B0-45C4-4B30-BFBF-BFB5016FB671"></a></span>If you use different languages to implement and test code, the <span class="MenuCascade" id="GUID-E51E9775-4B37-4455-BD27-504331C1EA7C">Set to &lt;language&gt;</span> command is an easy way to switch between languages. 
+               </p> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS7764D933E362064489C22357B4B7178F-0018"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-9694E76A-99C8-48C7-9518-339CBFB8905F"></a></span>Syntax Highlighting
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-A8A7AF36-844E-4D8F-8FF6-ADE456F9626A"></a></span>The supported scripting languages are color coded. For example, in Python the <span class="code" translate="no">def</span> keyword appears in blue, comments in green, and all strings appear in red. 
+               </p> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS7764D933E362064489C22357B4B7178F-0019"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-18D32AFE-0239-4D42-BEBC-E01DF77E7DC5"></a></span>Tools
+               </h2>   
+               <p><span class="anchor_wrapper"><a name="GUID-8A74BE83-AF19-44EC-8762-2D29C3585BE7"></a></span>You can use the commands in the <span class="MenuCascade" id="GUID-721880A4-67A6-4A8A-A010-80389F88BC1D">Tools</span> submenu to create and debug scripts. 
+               </p> <span class="anchor_wrapper"><a name="FIG_A2F244DC63C643F4BB4C5BCF68221D0F"></a></span><div class="figure-anchor"><img src="../images/GUID-955DD7FC-163B-4597-8BA2-18A06FDBBA13-low.jpg" /></div> 
+               <p><span class="anchor_wrapper"><a name="GUID-AB39FE3A-3DB5-4C31-89F5-0BC7D1F173B4"></a></span>The following table describes these commands. 
+               </p> <span class="anchor_wrapper"><a name="TABLE_17514475675541E195A299072892ECEE"></a></span><div class="table_Ruled">
+                  <table cellpadding="0" cellspacing="0" class="ruled">
+                     <colgroup>
+                        <col />
+                        <col />
+                     </colgroup>
+                     <tr class="ruledHeading">
+                        <th class="table-heading">Command </th>
+                        <th class="table-heading">Description </th>
+                     </tr>
+                     <tr class="ruledOddRow">
+                        <td class="table-body"> <span class="MenuCascade" id="GUID-188C7046-6467-4F2A-B251-AF461E0C718C">Add Command</span> 
+                        </td>
+                        <td class="table-body">Launches the <a href="#!/url=./files/cus_cmds_wizard.htm">Custom Command Wizard</a>. You can use the Custom Command Wizard to generate the code for a self-installing
+                           plug-in that contains a custom command. 
+                        </td>
+                     </tr>
+                     <tr class="ruledEvenRow">
+                        <td class="table-body"> <span class="MenuCascade" id="GUID-7E97A267-681E-4896-80A6-3F827F771813">Filename to Clipboard</span> 
+                        </td>
+                        <td class="table-body">Saves the full path and filename of the script file that is currently open in the
+                           script editor to the clipboard. 
+                        </td>
+                     </tr>
+                     <tr class="ruledOddRow">
+                        <td class="table-body"> <span class="MenuCascade" id="GUID-3305896A-656B-4A9F-A003-BC00599EE54E">Set Breakpoint</span> 
+                        </td>
+                        <td class="table-body">Inserts a breakpoint call to the debugger for the current language at the insertion
+                           point (see <a href="#!/url=./files/script_debug.htm">Debugging Scripts</a>). 
+                        </td>
+                     </tr>
+                     <tr class="ruledEvenRow">
+                        <td class="table-body"><span class="MenuCascade" id="GUID-B7724DDD-7B8F-4E21-8106-725783F51E0A">Enable External Script Debugger</span>(for JScript and VBScript only) 
+                        </td>
+                        <td class="table-body">Enables Just In Time (JIT) debugging. JIT debugging invokes the Microsoft Script Debugger
+                           whenever your script either generates an error or contains a breakpoint (see <a href="#!/url=./files/script_debug.htm">Debugging Scripts</a>). 
+                        </td>
+                     </tr>
+                     <tr class="ruledOddRow">
+                        <td class="table-body"> <span class="MenuCascade" id="GUID-55387182-D4B2-4D60-BF04-FB551C813641">Enable Operator Debugging</span> 
+                        </td>
+                        <td class="table-body">When operator debugging is enabled, extra debugging information from the plug-in is
+                           logged to history. 
+                        </td>
+                     </tr>
+                  </table>
+               </div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS7764D933E362064489C22357B4B7178F-0020"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-8CE6F7E5-4C35-4A94-B180-6A3F360FB13F"></a></span>Syntax Help
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-1C14595F-DEA1-4DAE-8137-9A14EF183046"></a></span>You can use the options in the <span class="MenuCascade" id="GUID-DF60A145-6060-4468-8EEF-7C1EDA9D8469">Syntax Help</span> submenu to automatically insert different code snippets into the editing pane. The
+                  code snippets that you can insert are fundamental syntax constructions (standard for-loops,
+                  if-then-else clauses, and so on), intrinsic Softimage object creations (<a href="#!/url=./si_om/XSICollection.html">XSICollection</a>, <a href="#!/url=./si_om/SIVector3.html">SIVector3</a>, and so on), and more advanced constructions such as, JScript and Python custom objects
+                  (depending on the language preference). 
+               </p> <span class="anchor_wrapper"><a name="FIG_5E4A3B8FC9DF4453AC5227F107ED925C"></a></span><div class="figure-anchor"><img src="../images/GUID-F3EA5A09-21DD-423F-9C7F-2F4C8C714D0B-low.jpg" /></div> 
+               <p><span class="anchor_wrapper"><a name="GUID-651741E3-A802-4E00-BB45-80BD44301EBD"></a></span>When you select an option in the <span class="MenuCascade" id="GUID-D6E0FA80-DF80-440D-9ECA-171D54EE294D">Syntax Help</span> submenu, a code snippet in the currently selected language is inserted at the cursor's
+                  insertion point (any selected text is replaced). 
+               </p> 
+               <div><span class="anchor_wrapper"><a name="GUID-FBCAB2B8-ABC3-422F-9B26-304180DA5C69"></a></span><div class="note-note"><span class="label">NOTE:</span>Each option inserts a syntax depending on the language preference. For example, you
+                     can view the different syntax constructions after inserting the <span class="MenuCascade" id="GUID-0B897BC9-BD6C-41E2-A907-48EF1CF61331">Catch Error</span> syntax in VBScript, JScript, and Python. 
+                  </div>
+               </div> 
+            </div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

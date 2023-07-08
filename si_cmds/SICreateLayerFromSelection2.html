@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>SICreateLayerFromSelection2</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>SICreateLayerFromSelection2</h1>
+         </div>
+
+<h2 class="pagehead">SICreateLayerFromSelection2</h2>
+
+<h3>Introduced</h3>
+<div><p>v8.0 (2010)</p></div>
+
+<h3>Description</h3>
+<div><p>
+Creates a new layer and adds the selection to it but does not make the layer current.
+<br /><br />
+This command is similar to the <a href="#!/url=./si_cmds/SICreateLayerFromSelection.html">SICreateLayerFromSelection</a> command except
+that it does not use output arguments so it is safe to use with languages that
+don't support passing arguments by reference, such as JScript and Python.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = SICreateLayerFromSelection2( [PresetObj], [Name], [InputObjs], [LayerGroupName] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns the <a href="#!/url=./si_om/Layer.html">Layer</a>.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">PresetObj		</td>
+		<td><a href="#!/url=./files/String.htm">String</a> or a preset object (for example, an object obtained from <a href="#!/url=./si_cmds/SIGetPreset.html">SIGetPreset</a>)		</td>
+		<td>
+ Layer preset to use 			<p class="cell"><span class="hilite">Default Value: </span>
+"Default_New_Layer"			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">Default_New_Layer					</td>
+					<td>Default new layer					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Name		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Name of the new layer 		</td>
+	</tr>
+	<tr>
+		<td class="name">InputObjs		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/listexpr.htm">List</a> of objects to move to the layer 			<p class="cell"><span class="hilite">Default Value: </span>
+Selected objects			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">LayerGroupName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Name of the layer group that will contain the new layer 			<p class="cell"><span class="hilite">Default Value: </span>
+If not specified, the group containing the current layer will be used.			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">#
+# This example shows how to use the current selection
+# to create a new layer and set that layer to current
+#
+app = Application
+app.NewScene(None, False)
+app.CreatePrim("Cylinder", "MeshSurface")
+app.CreatePrim("Sphere", "MeshSurface")
+app.ToggleSelection("cylinder", None, True)
+# Now create the layer from the selection, put it into a new layer group and make it current
+oNewLayer = app.SICreateLayerFromSelection2(None, "LayerA", None, "GroupA")
+app.SetCurrentLayer(oNewLayer)</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example demonstrates how to create a new layer
+	and set it to be the current layer
+*/
+// Setup
+NewScene( null, false );
+CreatePrim("Cylinder", "MeshSurface", null, null);
+CreatePrim("Sphere", "MeshSurface", null, null);
+ToggleSelection("cylinder", null, true);
+// Get initial settings
+checkCurrLayer();
+// Make a new layer into a new layer group (it is *not* automatically set as current)
+var oNewLayer = SICreateLayerFromSelection2( null, "LayerA", null, "GroupA" );
+checkCurrLayer();
+// Now explicitly set the new layer as current and check again
+SetCurrentLayer( oNewLayer );
+checkCurrLayer();
+function checkCurrLayer()
+{
+	// What is the current layer?
+	var oCurrLayer = GetCurrentLayer()(0);
+	Application.LogMessage( "Current layer is....." + oCurrLayer.FullName );
+	Application.LogMessage( "Current layer is in layer group....." + oCurrLayer.LayerGroupName.Value );
+}
+// Expected result:
+//INFO : Current layer is.....Layers.Layer_Default
+//INFO : Current layer is in layer group.....Group_Default
+//INFO : Current layer is.....Layers.Layer_Default
+//INFO : Current layer is in layer group.....Group_Default
+//INFO : Current layer is.....Layers.LayerA
+//INFO : Current layer is in layer group.....GroupA</pre></td></tr>
+</table>
+</div><h4>3. Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">#
+# This example demonstrates how to 
+# create a layer from a group
+#
+app = Application
+app.NewScene( "", 0 )
+# Create two nulls 
+app.GetPrim( "Null" )
+app.GetPrim( "Null" )
+# Add them to a new group
+oGroup = app.CreateGroup( "NullsGroup", "null*" )
+# Move the group to a new layer into a new layer group
+oNewLayer = app.SICreateLayerFromSelection2( "", "LayerNulls", "", "Group_Nulls" )
+app.SetCurrentLayer( oNewLayer )</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/SICreateLayer.html">SICreateLayer</a> <a href="#!/url=./si_cmds/SICreateLayer2.html">SICreateLayer2</a> <a href="#!/url=./si_cmds/SICreateLayerFromSelection.html">SICreateLayerFromSelection</a> <a href="#!/url=./si_cmds/CreateLayer.html">CreateLayer</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>siICENodeDataType</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>siICENodeDataType</h1>
+         </div>
+
+<h2 class="pagehead">siICENodeDataType</h2>
+
+<h3>Introduced</h3>
+<div><p>v7.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Defines the types of data that can be associated to a ICE node port connection.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>siICENodeDataType.siICENodeDataBool                                         // 1
+siICENodeDataType.siICENodeDataLong                                         // 2
+siICENodeDataType.siICENodeDataFloat                                        // 4
+siICENodeDataType.siICENodeDataVector2                                      // 8
+siICENodeDataType.siICENodeDataVector3                                      // 16
+siICENodeDataType.siICENodeDataVector4                                      // 32
+siICENodeDataType.siICENodeDataQuaternion                                   // 64
+siICENodeDataType.siICENodeDataMatrix33                                     // 128
+siICENodeDataType.siICENodeDataMatrix44                                     // 256
+siICENodeDataType.siICENodeDataColor4                                       // 512
+siICENodeDataType.siICENodeDataGeometry                                     // 1024
+siICENodeDataType.siICENodeDataLocation                                     // 2048
+siICENodeDataType.siICENodeDataExecute                                      // 4096
+siICENodeDataType.siICENodeDataReference                                    // 8192
+siICENodeDataType.siICENodeDataRotation                                     // 16384
+siICENodeDataType.siICENodeDataShape                                        // 32768
+siICENodeDataType.siICENodeDataCustomType                                   // 65536
+siICENodeDataType.siICENodeDataString                                       // 131072
+siICENodeDataType.siICENodeDataIcon                                         // 262144
+siICENodeDataType.siICENodeDataValue                                        // 508927
+siICENodeDataType.siICENodeDataInterface                                    // 1024
+siICENodeDataType.siICENodeDataMultiComp                                    // 17400
+siICENodeDataType.siICENodeDataArithmeticSupport                            // 16894
+siICENodeDataType.siICENodeDataAny                                          // 524287
+siICENodeDataType.siICENodeInputDataAny                                     // 247807
+siICENodeDataType.siICENodeOutputDataAny                                    // 246783</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<div><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th>Constant		</th>		<th>Value		</th>		<th>Description		</th>	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataBool"> </a>siICENodeDataBool		</td>
+		<td class="example">1		</td>
+		<td>
+<a href="#!/url=./files/Boolean.htm">Boolean</a>.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataLong"> </a>siICENodeDataLong		</td>
+		<td class="example">2		</td>
+		<td>
+<a href="#!/url=./files/Long.htm">Long</a>.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataFloat"> </a>siICENodeDataFloat		</td>
+		<td class="example">4		</td>
+		<td>
+<a href="#!/url=./files/Float.htm">Float</a>.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataVector2"> </a>siICENodeDataVector2		</td>
+		<td class="example">8		</td>
+		<td>
+2D vector. For the C++ API, this maps to <a href="#!/url=./si_cpp/classXSI_1_1MATH_1_1CVector2f.html">CVector2f</a>.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataVector3"> </a>siICENodeDataVector3		</td>
+		<td class="example">16		</td>
+		<td>
+3D vector. For the C++ API, this maps to 
+	<a href="#!/url=./si_cpp/classXSI_1_1MATH_1_1CVector3.html">CVector3</a> or <a href="#!/url=./si_cpp/classXSI_1_1MATH_1_1CVector3f.html">CVector3f</a>. For the
+	object model, this maps to <a href="#!/url=./si_om/SIVector3.html">SIVector3</a>.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataVector4"> </a>siICENodeDataVector4		</td>
+		<td class="example">32		</td>
+		<td>
+4D vector. For the C++ API, this maps to 
+	<a href="#!/url=./si_cpp/classXSI_1_1MATH_1_1CVector4.html">CVector4</a> or <a href="#!/url=./si_cpp/classXSI_1_1MATH_1_1CVector4f.html">CVector4f</a>.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataQuaternion"> </a>siICENodeDataQuaternion		</td>
+		<td class="example">64		</td>
+		<td>
+Quaternion. For the C++ API, this maps to 
+	<a href="#!/url=./si_cpp/classXSI_1_1MATH_1_1CQuaternion.html">CQuaternion</a> or <a href="#!/url=./si_cpp/classXSI_1_1MATH_1_1CQuaternionf.html">CQuaternionf</a>. For the
+	object model, this maps to <a href="#!/url=./si_om/SIQuaternion.html">SIQuaternion</a>.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataMatrix33"> </a>siICENodeDataMatrix33		</td>
+		<td class="example">128		</td>
+		<td>
+3x3 matrix. For the C++ API, this maps to 
+	<a href="#!/url=./si_cpp/classXSI_1_1MATH_1_1CMatrix3.html">CMatrix3</a> or <a href="#!/url=./si_cpp/classXSI_1_1MATH_1_1CMatrix3f.html">CMatrix3f</a>. For the
+	object model, this maps to <a href="#!/url=./si_om/SIMatrix3.html">SIMatrix3</a>.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataMatrix44"> </a>siICENodeDataMatrix44		</td>
+		<td class="example">256		</td>
+		<td>
+4x4 matrix. For the C++ API, this maps to 
+	<a href="#!/url=./si_cpp/classXSI_1_1MATH_1_1CMatrix4.html">CMatrix4</a> or <a href="#!/url=./si_cpp/classXSI_1_1MATH_1_1CMatrix4f.html">CMatrix4f</a>. For the
+	object model, this maps to <a href="#!/url=./si_om/SIMatrix4.html">SIMatrix4</a>.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataColor4"> </a>siICENodeDataColor4		</td>
+		<td class="example">512		</td>
+		<td>
+RGBA color. For the C++ API, this maps to 
+	<a href="#!/url=./si_cpp/structXSI_1_1CColor.html">CColor</a> or <a href="#!/url=./si_cpp/classXSI_1_1MATH_1_1CColor4f.html">CColor4f</a>. For the
+	object model, this maps to <a href="#!/url=./si_om/Color.html">Color</a>.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataGeometry"> </a>siICENodeDataGeometry		</td>
+		<td class="example">1024		</td>
+		<td>
+Geometry. Note: this data type is not available for Custom <a href="#!/url=./si_om/ICENode.html">ICENode</a>s output ports.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataLocation"> </a>siICENodeDataLocation		</td>
+		<td class="example">2048		</td>
+		<td>
+Data location. Note: this data type is not available for Custom <a href="#!/url=./si_om/ICENode.html">ICENode</a>s.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataExecute"> </a>siICENodeDataExecute		</td>
+		<td class="example">4096		</td>
+		<td>
+Execution logic. Note: this data type is not available for Custom <a href="#!/url=./si_om/ICENode.html">ICENode</a>s.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataReference"> </a>siICENodeDataReference		</td>
+		<td class="example">8192		</td>
+		<td>
+Reference. Note: this data type is not available for Custom <a href="#!/url=./si_om/ICENode.html">ICENode</a>s.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataRotation"> </a>siICENodeDataRotation		</td>
+		<td class="example">16384		</td>
+		<td>
+Rotation. For the C++ API, this maps to 
+	<a href="#!/url=./si_cpp/classXSI_1_1MATH_1_1CRotation.html">CRotation</a> or <a href="#!/url=./si_cpp/classXSI_1_1MATH_1_1CRotationf.html">CRotationf</a>. For the
+	object model, this maps to <a href="#!/url=./si_om/SIRotation.html">SIRotation</a>.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataShape"> </a>siICENodeDataShape		</td>
+		<td class="example">32768		</td>
+		<td>
+Shape. For the C++ API, this maps to 
+	<a href="#!/url=./si_cpp/classXSI_1_1MATH_1_1CShape.html">CShape</a>. For the object model, this maps to 
+	<a href="#!/url=./si_om/Shape.html">Shape</a>.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataCustomType"> </a>siICENodeDataCustomType		</td>
+		<td class="example">65536		</td>
+		<td>
+Custom data type.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataValue"> </a>siICENodeDataValue		</td>
+		<td class="example">siICENodeDataBool | siICENodeDataLong | siICENodeDataFloat | siICENodeDataVector2 | siICENodeDataVector3 | siICENodeDataVector4 | siICENodeDataQuaternion | siICENodeDataRotation | siICENodeDataMatrix33 | siICENodeDataMatrix44 | siICENodeDataColor4 | siICENodeDataShape | siICENodeDataIcon		</td>
+		<td>
+Value (for internal use).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataString"> </a>siICENodeDataString		</td>
+		<td class="example">131072		</td>
+		<td>
+String type.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataIcon"> </a>siICENodeDataIcon		</td>
+		<td class="example">131072		</td>
+		<td>
+Icon.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataInterface"> </a>siICENodeDataInterface		</td>
+		<td class="example">siICENodeDataGeometry		</td>
+		<td>
+Interface (for internal use).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataMultiComp"> </a>siICENodeDataMultiComp		</td>
+		<td class="example">siICENodeDataVector2 | siICENodeDataVector3 | siICENodeDataVector4 | siICENodeDataQuaternion | siICENodeDataRotation | siICENodeDataMatrix33 | siICENodeDataMatrix44 | siICENodeDataColor4		</td>
+		<td>
+Multi Comp (for internal use).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataArithmeticSupport"> </a>siICENodeDataArithmeticSupport		</td>
+		<td class="example">siICENodeDataLong | siICENodeDataFloat | siICENodeDataVector2 | siICENodeDataVector3 | siICENodeDataVector4 | siICENodeDataQuaternion | siICENodeDataRotation | siICENodeDataMatrix33 | siICENodeDataMatrix44		</td>
+		<td>
+Arithmetic Support (for internal use).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDataAny"> </a>siICENodeDataAny		</td>
+		<td class="example">siICENodeDataBool | siICENodeDataLong | siICENodeDataFloat | siICENodeDataVector2 | siICENodeDataVector3 | siICENodeDataVector4 | siICENodeDataQuaternion | siICENodeDataRotation | siICENodeDataMatrix33 | siICENodeDataMatrix44 | siICENodeDataColor4 | siICENodeDataShape | siICENodeDataIcon | siICENodeDataGeometry | siICENodeDataLocation | siICENodeDataReference | siICENodeDataExecute		</td>
+		<td>
+Any supported type.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeInputDataAny"> </a>siICENodeInputDataAny		</td>
+		<td class="example">siICENodeDataBool | siICENodeDataLong | siICENodeDataFloat | siICENodeDataVector2 | siICENodeDataVector3 | siICENodeDataVector4 | siICENodeDataQuaternion | siICENodeDataRotation | siICENodeDataMatrix33 | siICENodeDataMatrix44 | siICENodeDataColor4 | siICENodeDataShape | siICENodeDataGeometry		</td>
+		<td>
+Any supported type by the input ports on a Custom ICE Node.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeOutputDataAny"> </a>siICENodeOutputDataAny		</td>
+		<td class="example">siICENodeDataBool | siICENodeDataLong | siICENodeDataFloat | siICENodeDataVector2 | siICENodeDataVector3 | siICENodeDataVector4 | siICENodeDataQuaternion | siICENodeDataRotation | siICENodeDataMatrix33 | siICENodeDataMatrix44 | siICENodeDataColor4 | siICENodeDataShape		</td>
+		<td>
+Any supported type by the output ports on a Custom ICE Node. This can be used as input port type definition.		</td>
+	</tr>
+</table>
+</div>
+
+<h3>Applies To</h3>
+<div><p><a href="#!/url=./si_om/ICENodePort.DataType.html">ICENodePort.DataType</a> <a href="#!/url=./si_om/ICEAttribute.DataType.html">ICEAttribute.DataType</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

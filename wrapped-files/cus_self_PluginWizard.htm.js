@@ -1,0 +1,80 @@
+var topic = "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n\
+\n\
+<!-- saved from url=(0024)http://docs.autodesk.com -->\n\
+<html>\n\
+   <head>\n\
+<link href=\"../style/prettify.css\" type=\"text/css\" rel=\"stylesheet\" />\n\
+<script type=\"text/javascript\" src=\"../scripts/prettify.js\"></script><script src=\"../scripts/lib/jquery-1.9.1.min.js\" type=\"text/javascript\"></script>\n\
+      <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n\
+      <meta name=\"product\" content=\"SI\" />\n\
+      <meta name=\"release\" content=\"2015\" />\n\
+      <meta name=\"book\" content=\"Developer\" />\n\
+      <meta name=\"created\" content=\"2014-03-13\" />\n\
+      <meta name=\"topicid\" content=\"GUID-1215E5B3-E55A-4008-92C2-068A11331E12\" />\n\
+      <meta name=\"indexterm\" content=\"wizards\" />\n\
+      <meta name=\"indexterm\" content=\"To generate the code for an empty self-installing plug-in\" />\n\
+      <meta name=\"topic-type\" content=\"concept\" />\n\
+      <title>Getting Started with the Plug-in Wizard</title><script type=\"text/javascript\" src=\"../scripts/utils/adsk.redirect.js\"></script></head>\n\
+   <body height=\"100%\"><div class=\"body_content\" id=\"body-content\"><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/ac_common.js\"); });</script><script type=\"text/javascript\">var reflinkid = \"si_cpp\"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on(\'click\', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/multireflink.js\"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$(\"div#WidgetFloaterPanels,link[href*=\'microsofttranslator.com\'],script[src*=\'microsofttranslator.com\'],script[src*=\'bing.com\']\").remove();</script><script type=\'text/javascript\'>$(\"div#navigation,div#breadcrumbs,div#banner\").attr(\"translate\",\"no\"); var mtLocation = ((location && location.href && location.href.indexOf(\'https\') == 0)?\'https://ssl.microsofttranslator.com\':\'http://www.microsofttranslator.com\')+\'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages=\'; yepnope.injectJs(mtLocation, function() {}, { charset:\'utf-8\', type:\'text/javascript\' } );</script><script type=\"text/javascript\">\n\
+ </script><!-- begin MT -->\n\
+            \n\
+            <div id=\'MicrosoftTranslatorWidget\' class=\'Dark\' style=\'position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden\'></div><div id=\"reflinkdiv\" style=\"display:none; font-family: \'RobotoRegular\', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible\"></div>\n\
+      <div><span class=\"anchor_wrapper\"><a name=\"GUID-1215E5B3-E55A-4008-92C2-068A11331E12\"></a></span><div class=\"head\">\n\
+            <h1>Getting Started with the Plug-in Wizard </h1>\n\
+         </div>\n\
+         <div class=\"bodyProcess\">\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-9E8F506C-4CB1-4A05-8592-6354AAC9B38D\"></a></span>The best way to get started with developing a self-installing plug-in is to use one\n\
+               of the Softimage SDK wizards to generate the initial code. \n\
+            </p>\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-79000E29-18E5-4CEB-A45A-5A0EF5E339A9\"></a></span>For C++ and C#, the wizards also generate a <span class=\"charspan-msgph\" translate=\"no\">Visual Studio 2010</span> or <span class=\"charspan-msgph\" translate=\"no\">Visual Studio 2012</span> project (<span class=\"filePath\" translate=\"no\">.vcxproj</span>), a Visual C++ project (<span class=\"filePath\" translate=\"no\">.cpp</span>), and a GNU makefile. \n\
+            </p>\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-0BA34D81-2C26-41BF-BA39-F84CB748A193\"></a></span>There are specific wizards for <span class=\"char_link\"><a href=\"#!/url=./files/cus_ops_wizard.htm\">operators</a></span>, <span class=\"char_link\"><a href=\"#!/url=./files/cus_cmds_wizard.htm\">commands</a></span>, <span class=\"char_link\"><a href=\"#!/url=./files/cus_ppg_wizard.htm\">properties</a></span>, and others. \n\
+            </p>\n\
+            <div class=\"section\"><span class=\"anchor_wrapper\"><a name=\"WSEFBD9C1CA813C8499600F28142419F26-0006\"></a></span> \n\
+               <h2><span class=\"anchor_wrapper\"><a name=\"GUID-D1325FDA-A860-446F-B3DE-069E68FB4CD4\"></a></span> To generate the code for an empty self-installing plug-in\n\
+               </h2>  <span class=\"anchor_wrapper\"><a name=\"GUID-0979B26B-67B2-4EBA-9528-518DA8B19785\"></a></span><ol type=\"1\" start=\"1\">\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-F934A122-CB9C-4A04-8D6B-4277925989AE\"></a></span>Select <span class=\"MenuCascade\" id=\"GUID-C2591B9F-DFA9-43A3-A54B-3ED9E46445E6\">File <img src=\"../images/ac.menuaro.gif\" /> Plug-in Manager</span>. The Plug-in Manager dialog appears. \n\
+                     </p> \n\
+                     <div><span class=\"anchor_wrapper\"><a name=\"GUID-70B0A063-9DBA-4665-ABAF-4748F33AA92B\"></a></span><div class=\"note-note\"><span class=\"label\">NOTE:</span>In the Tools Development Environment layout, you can click the <span class=\"MenuCascade\" id=\"GUID-98CF4BDC-0E66-4BCC-8685-19B27D24D94F\">Plug-ins</span> tab to switch to the Plug-in Manager view. \n\
+                        </div>\n\
+                     </div> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-4FE3DDD4-57D6-43F9-B726-63BBDD5668FB\"></a></span>Select <span class=\"MenuCascade\" id=\"GUID-DC5CA428-0347-4CEA-B706-76C888372EE4\">File <img src=\"../images/ac.menuaro.gif\" /> New <img src=\"../images/ac.menuaro.gif\" /> Empty Plug-in</span>. \n\
+                     </p> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-A85E5484-FDEA-4FEC-AC65-2D9A58708EFC\"></a></span>The Plug-in Wizard appears. \n\
+                     </p> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-69D93EC8-CF59-4A49-A961-92F98DE52150\"></a></span>In the <span class=\"MenuCascade\" id=\"GUID-F59FBC54-8263-45E4-A915-7D0EBDB892D6\">Plug-in Name</span> box, type a name for the plug-in. \n\
+                     </p> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-0320C663-9DC5-4DA1-9613-017DA0FF96E0\"></a></span>The first character in a plug-in name must be a letter. You can use letters, numbers,\n\
+                        underscore (_) characters, or spaces for the subsequent characters. \n\
+                     </p> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-67DE685A-EE98-4473-AAFA-4DDB99D8013A\"></a></span>If you include spaces in the plug-in name, the wizard replaces the spaces with underscores\n\
+                        when it creates the plug-in file. \n\
+                     </p> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-58FF0D6E-04AF-4F8F-B757-CC5FB73F8CCD\"></a></span>In the <span class=\"MenuCascade\" id=\"GUID-84FA6B7D-99FF-4384-B82E-76C538C4A3B8\">Author</span> box, type a name. \n\
+                     </p> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-C45B16C2-8678-4AFF-8B74-4378C9A1398F\"></a></span>In the <span class=\"MenuCascade\" id=\"GUID-FEE8FF96-11D2-4F6B-A4F3-79A537DF00E9\">Language</span> drop-down list, select the language. \n\
+                     </p> \n\
+                  </li>\n\
+                  <li>In the <span class=\"MenuCascade\" id=\"GUID-570D6968-9675-4F88-85C0-C2B2F63B6FED\">Output Directory</span> box, select or type the location to create the plug-in. \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-769097E6-09B4-43CB-A626-89D53529533A\"></a></span>Click <span class=\"MenuCascade\" id=\"GUID-4EB39880-66EE-4611-874B-DD4F848E8E76\">OK</span> to generate the code. \n\
+                     </p> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-4CDAD859-A4EA-428E-93F4-2EB4B7F2F622\"></a></span>If you selected a scripting language, the wizard also loads the plug-in. \n\
+                     </p> \n\
+                  </li>\n\
+               </ol> \n\
+            </div>\n\
+         </div>\n\
+         <div class=\"footer-block\"><a href=\"../html/ac.cmtdialog.htm\" class=\"comments-anchor\" target=\"_blank\"><span class=\"comments-link\">Please send us your comment about this page</span></a></div><br /><p class=\"footer-license-block\"><a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\"><img alt=\"Creative Commons License\" style=\"border-width: 0;\" src=\"../images/ccLink.png\" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href=\"http://autodesk.com/creativecommons\" target=\"_blank\">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>\n\
+   </div></body>\n\
+</html>";

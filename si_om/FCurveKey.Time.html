@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>FCurveKey.Time</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>FCurveKey.Time</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/FCurveKey.html">FCurveKey</a>.Time</h2>
+
+<h3>Description</h3>
+<div><p> Sets or returns the time (in frames) of the fcurve key. The fcurve key
+time in frames is returned as a double (VT_R8) (see <a href="#!/url=./files/Variant.htm">Variant</a>). 
+<br /><br />
+Setting the key time results in the key being moved in time. If the 
+fcurve is a standard fcurve then the tangents are automatically adjusted.<br /><br />
+Setting this property may raise an "Access Denied" error. See more information in the FCurveKey object description.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>// get accessor
+Object rtn = FCurveKey.Time;
+// set accessor
+FCurveKey.Time = Object;</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example illustrates how to set a fcurve key's time by creating a null with 
+	its local.posx parameter driven by an fcurve 
+*/
+NewScene( null, false );
+// Create a null
+var n = Application.ActiveSceneRoot.AddNull();
+// Get the posx parameter
+var posx = n.posx;
+// Create an fcurve on posx
+var fc = posx.AddFCurve();
+// Define some keys
+var keyvalues = new Array( 0,0, 50,25, 100,50 );
+// Set the keys
+fc.SetKeys( keyvalues );
+// Get 2nd key and set the key time
+var fckey = fc.Keys(1);
+Application.LogMessage( "fckey.Time before = " + fckey.Time );
+fckey.Time = 51;
+Application.LogMessage( "fckey.Time after = " + fckey.Time );
+// Expected results:
+//INFO : fckey.Time before = 50
+//INFO : fckey.Time after = 51</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example illustrates how to set a fcurve key's time by creating a null with 
+' its local.posx parameter driven by an fcurve 
+'
+NewScene , false 
+' Create a null
+set n = Application.ActiveSceneRoot.AddNull()
+' Get the posx parameter
+set posx = n.posx
+' Create an fcurve on posx
+set fc = posx.AddFCurve()
+' Define some keys
+keyvalues = array( 0,0, 50,25, 100,50 )
+' Set the keys
+fc.SetKeys keyvalues 
+' Get 2nd key and set the key time
+set fckey = fc.Keys(1)
+Application.LogMessage "fckey.Time before = " &amp; fckey.Time 
+fckey.Time = 51
+Application.LogMessage "fckey.Time after = " &amp; fckey.Time 
+' Expected results:
+'INFO : fckey.Time before = 50
+'INFO : fckey.Time after = 51</pre></td></tr>
+</table>
+</div><h4>3. Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">#
+# This example illustrates how to set a fcurve key's time by creating a null with 
+# its local.posx parameter driven by an fcurve 
+#
+Application.NewScene( "", 0 )
+# Create a null
+n = Application.ActiveSceneRoot.AddNull()
+# Get the posx parameter
+posx = n.posx
+# Create an fcurve on posx
+fc = posx.AddFCurve()
+# Define some keys
+keyvalues = [ 0,0, 50,25, 100,50 ]
+# Set the keys
+fc.SetKeys( keyvalues )
+# Get 2nd key and set the key time
+fckey = fc.Keys(1)
+Application.LogMessage( "fckey.Time before = " + str(fckey.Time) )
+fckey.Time = 51
+Application.LogMessage( "fckey.Time after = " + str(fckey.Time) )
+# Expected results:
+#INFO : fckey.Time before = 50.0
+#INFO : fckey.Time after = 51.0</pre></td></tr>
+</table>
+</div></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

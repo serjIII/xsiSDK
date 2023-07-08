@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Shader.CreateTextureLayer</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Shader.CreateTextureLayer</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/Shader.html">Shader</a>.CreateTextureLayer</h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p> Creates a new <a href="#!/url=./si_om/TextureLayer.html">TextureLayer</a> belonging to the container (Shader).<br /><br />
+A texture layer is an object which simplifies layering of texture effects on top of shaders and
+materials. Each layer has a set of properties which describe its characteristics (such as color,
+mixing mode, weight) to specify how it will affect the shader ports it drives. The order
+that layers appear under a container indicates the order the layering is applied, similar to the
+way a "mix N colors" shader node works. Texture layer port objects (see
+<a href="#!/url=./si_om/TextureLayer.AddTextureLayerPort.html">TextureLayer.AddTextureLayerPort</a>) are owned by layers, and are used to specify
+which shader ports the layer should affect.  <br /><br />
+Tip: A <a href="#!/url=./si_om/Material.html">Material</a> can also be a texture layer container, and has the same set of 
+related methods. 
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>TextureLayer Shader.CreateTextureLayer( String in_name, Boolean in_bAfter, Object in_varRefLayer );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>Shader.CreateTextureLayer( [Name], [After], [Reference] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Name		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Name of new <a href="#!/url=./si_om/TextureLayer.html">TextureLayer</a>			<p class="cell"><span class="hilite">Default Value: </span>
+"Layer"			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">After		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+
+		True to insert the new texture layer after the reference layer. False to insert
+		it before. If no reference layer, then True will add at the end of the container's list,
+		False will add it at the start. 
+				<p class="cell"><span class="hilite">Default Value: </span>
+True			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Reference		</td>
+		<td><a href="#!/url=./si_om/TextureLayer.html">TextureLayer</a> or <a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		Reference texture layer, to indicate where the newly-added layer should be
+		located in the stack. The layer will be inserted adjacent to (before or after) the
+		reference layer. If not specified, then the new layer will be added at the beginning or
+		the end, depending on the value of the following argument. 
+			</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This JScript example shows creating texture layers on
+	a shader, plus enumerating and removing them.
+*/
+oRoot = ActiveProject.ActiveScene.Root;
+oSph = oRoot.AddGeometry( "Sphere", "MeshSurface" );
+oMat = oSph.AddMaterial( "Phong" );
+oPhong = oMat.Shaders(0);
+// Add a layer at the end (since there are no others the "After"
+// flag is irrelevant).
+oLayers = new Array(3);
+oLayers[0] = oPhong.CreateTextureLayer( "B", true );
+// Add another layer before the other one.
+oLayers[1] = oPhong.CreateTextureLayer( "A", false, oLayers[0] );
+// Create a third layer at the very start.
+oLayers[2] = oPhong.CreateTextureLayer( "base", false );
+Application.LogMessage( "Created " + oPhong.TextureLayers.count + " layers." );
+for ( i = 0; i &lt; oPhong.TextureLayers.Count; i++ )
+{
+	oLayer = oPhong.TextureLayers(i);
+	Application.LogMessage( (i+1) + ": " + oLayer );
+}
+oPhong.RemoveTextureLayer( oLayers[1] );
+oPhong.RemoveTextureLayer( oPhong.FullName + "." + oLayers[2].Name );
+count = oPhong.TextureLayers.Count;
+Application.LogMessage( "Only " + count + " remains after removal." );
+for ( i = 0; i &lt; count; i++ )
+{
+	Application.LogMessage( (i+1) + ": " + oPhong.TextureLayers.Item(i) );
+}
+// This example should log something like:
+//INFO : "Created 3 layers."
+//INFO : "1: sphere.Material.Phong.base"
+//INFO : "2: sphere.Material.Phong.A"
+//INFO : "3: sphere.Material.Phong.B"
+//INFO : "Only 1 remains after removal."
+//INFO : "1: sphere.Material.Phong.B"</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This VBScript example shows creating texture layers on
+' a shader, plus enumerating and removing them.
+'
+set oRoot = ActiveProject.ActiveScene.Root
+set oSph = oRoot.AddGeometry( "Sphere", "MeshSurface" )
+set oMat = oSph.AddMaterial( "Phong" )
+set oPhong = oMat.Shaders(0)
+' Add a layer at the end (since there are no others the "After"
+' flag is irrelevant).
+dim oLayers(2)
+set oLayers(0) = oPhong.CreateTextureLayer( "B", True )
+' Add another layer before the other one.
+set oLayers(1) = oPhong.CreateTextureLayer( "A", False, oLayers(0) )
+' Create a third layer at the very start.
+set oLayers(2) = oPhong.CreateTextureLayer( "base", False )
+LogMessage "Created " &amp; oPhong.TextureLayers.Count &amp; " layers."
+i = 1
+for each oLayer in oPhong.TextureLayers
+	LogMessage i &amp; ": " &amp; oLayer
+	i = i + 1
+next
+oPhong.RemoveTextureLayer oLayers(1)
+oPhong.RemoveTextureLayer oPhong.FullName &amp; "." &amp; oLayers(2).Name
+count = oPhong.TextureLayers.Count
+LogMessage "Only " &amp; count &amp; " remains after removal."
+for i = 0 to count - 1
+	LogMessage i + 1 &amp; ": " &amp; oPhong.TextureLayers.Item(i)
+next
+' This example should log something like:
+'INFO : "Created 3 layers."
+'INFO : "1: sphere.Material.Phong.base"
+'INFO : "2: sphere.Material.Phong.A"
+'INFO : "3: sphere.Material.Phong.B"
+'INFO : "Only 1 remains after removal."
+'INFO : "1: sphere.Material.Phong.B"</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/AddTextureLayer.html">AddTextureLayer</a> <a href="#!/url=./si_om/Shader.AddSharedTextureLayer.html">Shader.AddSharedTextureLayer</a> <a href="#!/url=./si_om/Material.CreateTextureLayer.html">Material.CreateTextureLayer</a> <a href="#!/url=./si_om/Material.AddSharedTextureLayer.html">Material.AddSharedTextureLayer</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

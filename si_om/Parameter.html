@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Parameter</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Parameter</h1>
+         </div>
+
+<h2 class="pagehead">Parameter</h2>
+
+<p><a href="#!/url=./si_om/_hier.html#oh_Parameter">Object Hierarchy</a> | Related C++ Class: <a href="#!/url=./si_cpp/classXSI_1_1Parameter.html">Parameter</a></p>
+
+<h3>Inheritance<h3>
+<p class="level1"><a href="#!/url=./si_om/SIObject.html">SIObject</a></p>
+<p class="level2">Parameter</p>
+
+<h3>Introduced</h3>
+<div><p>v1.5</p></div>
+
+<h3>Description</h3>
+<div><p> Represents a parameter value, which defines an attribute of an object; for example, 
+the angle parameter of the twist operator or the color of a light. Parameters (sometimes 
+called properties), are the 'atomic' elements of a parameter set (the posx in 
+Cone.kine.ltransfo.pos.posx) whose values determine the behavior of something. <br /><br />
+Note: A parameter set (often called a 'property set') is a collection of parameters 
+whose values can determine the appearance, behavior, or simply provide information about 
+an element in a scene. Parameter sets (the <a href="#!/url=./si_om/Property.html">Property</a> object for scripting) 
+define the visual aspect of objects as displayed in the viewport; some provide motion 
+information such as time; and others are used internally to control the way specific 
+operations are performed. <br /><br />
+In the user interface, you can edit and animate the parameters of most parameter sets using property 
+editors. Related parameters are usually displayed as a property page within a property editor. <br /><br />
+In the object model, the Parameter object is a member of the <a href="#!/url=./si_om/ParameterCollection.html">ParameterCollection</a>, 
+which you can get using <a href="#!/url=./si_om/ProjectItem.Parameters.html">ProjectItem.Parameters</a>. For custom-defined parameters, 
+you can create them on the <a href="#!/url=./si_om/CustomProperty.html">CustomProperty</a> object (see 
+<a href="#!/url=./si_om/CustomProperty.AddParameter.html">CustomProperty.AddParameter</a> and <a href="#!/url=./si_om/CustomProperty.AddParameter2.html">CustomProperty.AddParameter2</a>).
+<br /><br />
+Besides representing a regular parameter in Softimage, this object is the base class for a number 
+of specializations, including the <a href="#!/url=./si_om/ArrayParameter.html">ArrayParameter</a>, <a href="#!/url=./si_om/ShaderParameter.html">ShaderParameter</a>, 
+<a href="#!/url=./si_om/ProxyParameter.html">ProxyParameter</a>, etc. 
+<br /><br />For more information, see "Object Hierarchy" in the Softimage user guide. 
+</p></div>
+
+<h3>Methods</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.AddCustomOp.html">AddCustomOp</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.AddExpression.html">AddExpression</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.AddFCurve.html">AddFCurve</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.AddFCurve2.html">AddFCurve2</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.AddScriptedOp.html">AddScriptedOp</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.AddScriptedOpFromFile.html">AddScriptedOpFromFile</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.AnimatedParameters.html">AnimatedParameters</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.Connect.html">Connect</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.ConnectFromFile.html">ConnectFromFile</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.ConnectFromFile2.html">ConnectFromFile2</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.ConnectFromPreset.html">ConnectFromPreset</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.ConnectFromPreset2.html">ConnectFromPreset2</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.ConnectFromProgID.html">ConnectFromProgID</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.ConnectFromProgID2.html">ConnectFromProgID2</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.Disconnect.html">Disconnect</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.Enable.html">Enable</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.GetInstanceValue.html">GetInstanceValue</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.GetValue2.html">GetValue2</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.IsAnimated.html">IsAnimated</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.IsClassOf.html">IsClassOf</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.IsEqualTo.html">IsEqualTo</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.IsLocked.html">IsLocked</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.IsSupportedInstanceValue.html">IsSupportedInstanceValue</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.PutValue2.html">PutValue2</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.SetCapabilityFlag.html">SetCapabilityFlag</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.SetInstanceValue.html">SetInstanceValue</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.SetLock.html">SetLock</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.Show.html">Show</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.UnSetLock.html">UnSetLock</a>		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Properties</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.Animatable.html">Animatable</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Application.html">Application</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.Capabilities.html">Capabilities</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Categories.html">Categories</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.Default.html">Default</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.Description.html">Description</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.FullName.html">FullName</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.HasInstanceValue.html">HasInstanceValue</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Help.html">Help</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.Keyable.html">Keyable</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.LockLevel.html">LockLevel</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.LockType.html">LockType</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.Marked.html">Marked</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.Max.html">Max</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.Min.html">Min</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.Model.html">Model</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Name.html">Name</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.NestedObjects.html">NestedObjects</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Origin.html">Origin</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.OriginPath.html">OriginPath</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.OriginalValue.html">OriginalValue</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.OverridenObject.html">OverridenObject</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.OverridingObject.html">OverridingObject</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.Parameters.html">Parameters</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Parent.html">Parent</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.Parent3DObject.html">Parent3DObject</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.ReadOnly.html">ReadOnly</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.ScriptName.html">ScriptName</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.Source.html">Source</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.Sources.html">Sources</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.SuggestedMax.html">SuggestedMax</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.SuggestedMin.html">SuggestedMin</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.Tags.html">Tags</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Type.html">Type</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.Value.html">Value</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Parameter.ValueType.html">ValueType</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' 
+' This example shows how to loop through all parameters on the object
+'
+NewScene , false
+' Access Parameters Directly Off the Object
+Set oRoot = Application.ActiveProject.ActiveScene.Root
+Set oCube =  oRoot.AddGeometry("Cube", "MeshSurface", "MyCube")
+' Print the names of all parameter exposed by the cube object
+For Each oParameter In oCube.Parameters
+	LogMessage oParameter.ScriptName &amp; " = " &amp; oParameter.Value
+Next
+' Expected results:
+'INFO : "Name = MyCube"
+'INFO : "blendweight = 1"
+'INFO : "active = True"
+'INFO : "posx = 0"
+'INFO : "posy = 0"
+'INFO : "posz = 0"
+'INFO : "rotx = 0"
+'INFO : "roty = 0"
+'INFO : "rotz = 0"
+'INFO : "quatw = 1"
+'INFO : "quatx = 0"
+'INFO : "quaty = 0"
+'INFO : "quatz = 0"
+'INFO : "sclx = 1"
+'INFO : "scly = 1"
+'INFO : "sclz = 1"
+'INFO : "sclorix = 0"
+'INFO : "scloriy = 0"
+'INFO : "scloriz = 0"
+'INFO : "cnsscl = True"
+'INFO : "cnsori = True"
+'INFO : "cnspos = True"
+'INFO : "affbyscl = True"
+'INFO : "affbyori = True"
+'INFO : "posxmaxactive = False"
+'INFO : "posxminactive = False"
+'INFO : "posymaxactive = False"
+'INFO : "posyminactive = False"
+'INFO : "poszmaxactive = False"
+'INFO : "poszminactive = False"
+'INFO : "rotxmaxactive = False"
+'INFO : "rotxminactive = False"
+'INFO : "rotymaxactive = False"
+'INFO : "rotyminactive = False"
+'INFO : "rotzmaxactive = False"
+'INFO : "rotzminactive = False"
+'INFO : "siscaling = True"
+'INFO : "rotorder = 0"
+'INFO : "subdivu = 1"
+'INFO : "subdivv = 1"
+'INFO : "subdivbase = 1"
+'INFO : "length = 8"</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' 
+' This example demonstrates how to get at individual parameters; if you change the value of
+' a parameter you want to access through the UI, you can get its name to use in your script.
+' For example, toggling the View Visibility parameter of a torus logs the following message 
+' to the Script Editor History pane:
+'
+'		SetValue "torus.visibility.viewvis", False
+'
+NewScene , false
+' 
+' 	How to Access Parameters (the Long Way)
+' 
+' First get the camera (Camera object)
+Set oCamera = ActiveSceneRoot.FindChild( , "camera" )
+' Underneath the camera are its properties (Properties returns the PropertyCollection)
+Set oProps = oCamera.Properties
+' Once you have all the property sets (PropertyCollection) you can specify the one you 
+' want (the Property object is returned)
+Set oVis = oProps( "visibility" )
+' Now you have a single Property (property set), so you need to get all the 
+' parameters for that property set (Parameters returns the ParameterCollection)
+Set oParams = oVis.Parameters
+' Again you choose the single parameter you want from the collection (the 
+' Parameter object is returned)
+Set oViewVis = oParams( "viewvis" )
+' 
+' How to Get Parameter Values
+' 
+' And once you have a single Parameter object, you can get it's value...
+bOldValue = oViewVis.Value
+LogMessage "Parameter originally was set to " &amp; oViewVis.Value
+' 
+' How to Set Parameter Values
+' 
+' ...or set it...
+oViewVis.Value = not(bOldValue)
+LogMessage "Parameter has been changed to " &amp; oViewVis.Value
+' 
+' How to Access Parameters (the Short Way)
+' 
+' ...and you can make as many shortcuts as you like, so...
+oCamera.Properties("visibility").Parameters("viewvis").Value = not(bOldValue)
+LogMessage "Parameter is back to " &amp; oViewVis.Value
+' Expected result:
+'INFO : "Parameter originally was set to False"
+'INFO : "Parameter has been changed to True"
+'INFO : "Parameter is back to True"</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/ParameterCollection.html">ParameterCollection</a> <a href="#!/url=./si_om/ProjectItem.Parameters.html">ProjectItem.Parameters</a> <a href="#!/url=./si_om/Property.html">Property</a> <a href="#!/url=./si_om/CustomProperty.html">CustomProperty</a> <a href="#!/url=./si_om/CustomProperty.AddParameter.html">CustomProperty.AddParameter</a> <a href="#!/url=./si_om/CustomProperty.AddParameter2.html">CustomProperty.AddParameter2</a> <a href="#!/url=./si_om/ProjectItem.html">ProjectItem</a> <a href="#!/url=./si_cmds/SIAddCustomParameter.html">SIAddCustomParameter</a> <a href="#!/url=./si_cmds/EditParameterDefinition.html">EditParameterDefinition</a> <a href="#!/url=./si_cmds/RemoveCustomParam.html">RemoveCustomParam</a> <a href="#!/url=./si_cmds/AddProxyParam.html">AddProxyParam</a> <a href="#!/url=./si_cmds/RemoveProxyParam.html">RemoveProxyParam</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></h3></h3></div>
+   </div></body>
+</html>

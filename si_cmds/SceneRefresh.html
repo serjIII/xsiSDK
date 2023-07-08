@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>SceneRefresh</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>SceneRefresh</h1>
+         </div>
+
+<h2 class="pagehead">SceneRefresh</h2>
+
+<h3>Introduced</h3>
+<div><p>v3.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Removes all temporary parameter values for a clean scene refresh. For example, if
+you apply an animation fcurve to an object's position and then change that position
+without setting a new key, you can reset the new temporary parameter values to the 
+previous values by running this command. See the example below for a demonstration.<br /><br />
+This is different from the <a href="#!/url=./si_cmds/Refresh.html">Refresh</a> command, which redraws all 
+3D views for a scene.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>SceneRefresh();</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example sets up an animation fcurve on a null, then sets a temporary value 
+' on one of the animated parameters, and shows how to remove that temporary value
+' using the SceneRefresh command.
+'
+NewScene , false
+' Create a null and store the parameter list we will use to set keys. 
+'---------------
+' Note: We are using a combination of Softimage commands and the object model
+' here. For example, we are using the OM shortcut oNull.posx in the
+' SetValue and SaveKey commands.
+'---------------
+Set oNull = ActiveSceneRoot.AddNull()
+sParams = oNull.posx &amp; "," &amp; oNull.posy &amp; "," &amp; oNull.posz
+' Move the null along the negative X-axis and save a key for frame 1
+Translate oNull, -6.07766990291262, -2.37887869051207E-18, _
+	3.88513203951106E-02, siRelative, siView, siObj, siXYZ
+SaveKey sParams, 1
+' Set a key for frame 90 towards the positive X-axis
+SetValue "PlayControl.Key", 90
+SetValue "PlayControl.Current", 90
+Translate oNull, 14.2301617773766, -0.743180286278171, _
+	7.43180286278171E-02, siRelative, siView, siObj, siXYZ
+SaveKey sParams, 90
+' Go to frame 30 and display the posx value for that frame. 
+SetValue "PlayControl.Key", 30
+SetValue "PlayControl.Current", 30
+Application.LogMessage GetValue( oNull.posx )	'INFO : "-2.52968225317525"
+' Set a temporary value on posx
+SetValue oNull.posx, 2
+' Redisplay the value after setting the posx value but before the scene refresh.
+Application.LogMessage GetValue( oNull.posx )	'INFO : "2"
+' Remove all temporary values
+SceneRefresh
+' Now display the value from the fcurve again after the scene refresh
+Application.LogMessage GetValue( oNull.posx )	'INFO : "-2.52968225317525"</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/Refresh.html">Refresh</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

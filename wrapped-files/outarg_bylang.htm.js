@@ -1,0 +1,129 @@
+var topic = "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n\
+\n\
+<!-- saved from url=(0024)http://docs.autodesk.com -->\n\
+<html>\n\
+   <head>\n\
+<link href=\"../style/prettify.css\" type=\"text/css\" rel=\"stylesheet\" />\n\
+<script type=\"text/javascript\" src=\"../scripts/prettify.js\"></script><script src=\"../scripts/lib/jquery-1.9.1.min.js\" type=\"text/javascript\"></script>\n\
+      <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n\
+      <meta name=\"product\" content=\"SI\" />\n\
+      <meta name=\"release\" content=\"2015\" />\n\
+      <meta name=\"book\" content=\"Developer\" />\n\
+      <meta name=\"created\" content=\"2014-03-13\" />\n\
+      <meta name=\"topicid\" content=\"GUID-3D54D6CB-D81E-471F-9456-88371C402DBE\" />\n\
+      <meta name=\"topic-type\" content=\"concept\" />\n\
+      <title>Output Argument Support by Language</title><script type=\"text/javascript\" src=\"../scripts/utils/adsk.redirect.js\"></script></head>\n\
+   <body height=\"100%\"><div class=\"body_content\" id=\"body-content\"><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/ac_common.js\"); });</script><script type=\"text/javascript\">var reflinkid = \"si_cpp\"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on(\'click\', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/multireflink.js\"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$(\"div#WidgetFloaterPanels,link[href*=\'microsofttranslator.com\'],script[src*=\'microsofttranslator.com\'],script[src*=\'bing.com\']\").remove();</script><script type=\'text/javascript\'>$(\"div#navigation,div#breadcrumbs,div#banner\").attr(\"translate\",\"no\"); var mtLocation = ((location && location.href && location.href.indexOf(\'https\') == 0)?\'https://ssl.microsofttranslator.com\':\'http://www.microsofttranslator.com\')+\'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages=\'; yepnope.injectJs(mtLocation, function() {}, { charset:\'utf-8\', type:\'text/javascript\' } );</script><script type=\"text/javascript\">\n\
+ </script><!-- begin MT -->\n\
+            \n\
+            <div id=\'MicrosoftTranslatorWidget\' class=\'Dark\' style=\'position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden\'></div><div id=\"reflinkdiv\" style=\"display:none; font-family: \'RobotoRegular\', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible\"></div>\n\
+      <div><span class=\"anchor_wrapper\"><a name=\"GUID-3D54D6CB-D81E-471F-9456-88371C402DBE\"></a></span><div class=\"head\">\n\
+            <h1>Output Argument Support by Language</h1>\n\
+         </div>\n\
+         <div class=\"bodyProcess\">\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-0F7C56D0-5BBD-4B72-93DA-594E6FF2FFE5\"></a></span>This table provides a high-level picture of how each implementation language handles\n\
+               <span class=\"char_link\"><a href=\"#!/url=./files/OutArgDefined.htm\">output arguments</a></span> and <span class=\"char_link\"><a href=\"#!/url=./files/scripting_RtnValDefined.htm#WSBAC00627FDA41F4DBFDDFE9988A39246-0026\">return values</a></span> for commands and member functions such as object model methods or C++ API member\n\
+               functions. \n\
+            </p><span class=\"anchor_wrapper\"><a name=\"TABLE_397BBC257E6848E3B0AF6E12976A9047\"></a></span><div class=\"table_Ruled\">\n\
+               <table cellpadding=\"0\" cellspacing=\"0\" class=\"ruled\">\n\
+                  <colgroup>\n\
+                     <col width=\"13.333333333333334%\" align=\"left\" />\n\
+                     <col width=\"6.666666666666667%\" align=\"left\" />\n\
+                     <col width=\"13.333333333333334%\" align=\"left\" />\n\
+                     <col width=\"13.333333333333334%\" align=\"left\" />\n\
+                     <col width=\"13.333333333333334%\" align=\"left\" />\n\
+                     <col width=\"20%\" align=\"left\" />\n\
+                     <col width=\"20%\" align=\"left\" />\n\
+                  </colgroup>\n\
+                  <tr class=\"ruledHeading\">\n\
+                     <th class=\"table-heading\">&nbsp; <span class=\"anchor_wrapper\"><a name=\"GUID-8E7A8E24-845F-46F0-8165-A37489B9D1D5\"></a></span><p class=\"table-heading\" /> \n\
+                     </th>\n\
+                     <th class=\"table-heading\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-4CEF8572-03F5-4078-B549-87D63AE81C92\"></a></span><p class=\"table-heading\">VBScript </p> \n\
+                     </th>\n\
+                     <th class=\"table-heading\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-EEDCE116-8717-4665-B434-55ABA0A6921A\"></a></span><p class=\"table-heading\">Python </p> \n\
+                     </th>\n\
+                     <th class=\"table-heading\" colspan=\"2\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-3DA27591-5A89-46F1-B554-0DC5D38C8F9D\"></a></span><p class=\"table-heading\">JScript </p> \n\
+                     </th>\n\
+                     <th class=\"table-heading\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-B4774461-8A34-47CF-9A8F-92A92EA3A954\"></a></span><p class=\"table-heading\">C# </p> \n\
+                     </th>\n\
+                     <th class=\"table-heading\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-5F5021BA-25AF-4097-8911-AB728DBD9FB5\"></a></span><p class=\"table-heading\">C++ </p> \n\
+                     </th>\n\
+                  </tr>\n\
+                  <tr class=\"ruledOddRow\">\n\
+                     <td class=\"table-body\" colspan=\"7\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-D278130C-48B3-4654-81E4-47030EE01B00\"></a></span><p class=\"table-body\"> <em class=\"strong\">Commands</em> \n\
+                        </p> \n\
+                     </td>\n\
+                  </tr>\n\
+                  <tr class=\"ruledEvenRow\">\n\
+                     <td class=\"table-body\"> <span class=\"anchor_wrapper\"><a name=\"GUID-3F21A511-86BE-4CC2-A348-6DE74C280971\"></a></span><p class=\"table-body\"> <em class=\"mild\">(using only output arguments)</em> \n\
+                        </p> \n\
+                     </td>\n\
+                     <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-7DE59009-2A74-44A7-BAB3-895B131C3B42\"></a></span><p class=\"table-body\"> <em class=\"strong\">yes</em> \n\
+                        </p> \n\
+                     </td>\n\
+                     <td class=\"table-body\" colspan=\"3\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-AF5FDA36-6174-4D48-B9E7-EB054CC18C26\"></a></span><p class=\"table-body\"> <em class=\"strong\">no</em> \n\
+                        </p> <span class=\"anchor_wrapper\"><a name=\"GUID-86E08F92-EBBD-4FD7-B6B2-D0B65D6A4D0F\"></a></span><p class=\"table-body\">(but you can get the output arguments via the returned <span class=\"char_link\"><a href=\"#!/url=./files/ISIVTCollection.htm\">ISIVTCollection</a></span>) \n\
+                        </p> \n\
+                     </td>\n\
+                     <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-01CD8F35-E226-4E50-9757-400361B3244F\"></a></span><p class=\"table-body\"> <em class=\"strong\">no</em> (use the <a href=\"#!/url=./si_om/XSIApplication.ExecuteCommand.html\">XSIApplication.ExecuteCommand</a> method to call the command) \n\
+                        </p> \n\
+                     </td>\n\
+                     <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-18BB3BAF-D403-4BE7-A432-26C8BEEF9D76\"></a></span><p class=\"table-body\"> <em class=\"strong\">yes</em> (see <a href=\"#!/url=./files/cpp_understand_CallingCommandsfromC.htm\">Calling Commands from C++</a>) \n\
+                        </p> \n\
+                     </td>\n\
+                  </tr>\n\
+                  <tr class=\"ruledOddRow\">\n\
+                     <td class=\"table-body\"> <span class=\"anchor_wrapper\"><a name=\"GUID-AB850B46-3ABC-4F05-AF03-F896608E130E\"></a></span><p class=\"table-body\"> <em class=\"mild\">(both output arguments and return values)</em> \n\
+                        </p> \n\
+                     </td>\n\
+                     <td class=\"table-body\" align=\"left\">&nbsp; <span class=\"anchor_wrapper\"><a name=\"GUID-EF26F0F0-8311-47E2-B4B9-390EF853F147\"></a></span><p class=\"table-body\" /> \n\
+                     </td>\n\
+                     <td class=\"table-body\" colspan=\"4\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-9C709161-3C53-41EC-8CF3-166700F49CD7\"></a></span><p class=\"table-body\"> <em class=\"strong\">no</em> (but there are a couple of <span class=\"char_link\"><a href=\"#!/url=./files/RtnValProblem.htm#WS9C9BD4629A5724409D1790B9C5DB9AC3-001B\">Strategies and Workarounds</a></span>) \n\
+                        </p> \n\
+                     </td>\n\
+                     <td class=\"table-body\" align=\"left\">&nbsp; <span class=\"anchor_wrapper\"><a name=\"GUID-80FC93A7-65BB-4BDD-B610-AC42ACDEA6CF\"></a></span><p class=\"table-body\" /> \n\
+                     </td>\n\
+                  </tr>\n\
+                  <tr class=\"ruledEvenRow\">\n\
+                     <td class=\"table-body\" colspan=\"7\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-D3338EFF-A758-4E0D-A860-0257439B6111\"></a></span><p class=\"table-body\"> <em class=\"strong\">Member Functions (OM methods or C++ API functions)</em> \n\
+                        </p> \n\
+                     </td>\n\
+                  </tr>\n\
+                  <tr class=\"ruledOddRow\">\n\
+                     <td class=\"table-body\"> <span class=\"anchor_wrapper\"><a name=\"GUID-6FE1354F-DF75-4520-B434-549D1CE2294B\"></a></span><p class=\"table-body\"> <em class=\"mild\">(using only output arguments)</em> \n\
+                        </p> \n\
+                     </td>\n\
+                     <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-F9BA4F8B-22CE-402C-8D8D-5D49A2DEB494\"></a></span><p class=\"table-body\"> <em class=\"strong\">yes</em> \n\
+                        </p> \n\
+                     </td>\n\
+                     <td class=\"table-body\" rowspan=\"2\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-A1CEA696-4722-4A71-B57F-E1E474978604\"></a></span><p class=\"table-body\"> <em class=\"strong\">yes</em> (see <a href=\"#!/url=./files/script_python_GettingOutputArgumentsfromMethods.htm\">Getting Output Arguments from Methods</a>) \n\
+                        </p> \n\
+                     </td>\n\
+                     <td class=\"table-body\" colspan=\"2\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-1E3B358F-51B9-42C6-A00B-3FF90CE3A8E8\"></a></span><p class=\"table-body\"> <em class=\"strong\">no</em> \n\
+                        </p> <span class=\"anchor_wrapper\"><a name=\"GUID-DAA1849F-6A8A-43B7-B064-10A28A7CC713\"></a></span><p class=\"table-body\">(but you can get the output arguments via the returned <span class=\"char_link\"><a href=\"#!/url=./files/ISIVTCollection.htm\">ISIVTCollection</a></span>) \n\
+                        </p> \n\
+                     </td>\n\
+                     <td class=\"table-body\" rowspan=\"2\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-3CB19357-0BF4-4E5E-91E6-A1719172E958\"></a></span><p class=\"table-body\"> <em class=\"strong\">yes</em> \n\
+                        </p> <span class=\"anchor_wrapper\"><a name=\"GUID-3783E254-17C0-45E6-AE86-0954A8BCD23C\"></a></span><p class=\"table-body\">(see <a href=\"#!/url=./files/csharp_understand_CallingObjectModelMembers.htm\">Calling Object Model Methods</a>) \n\
+                        </p> \n\
+                     </td>\n\
+                     <td class=\"table-body\" rowspan=\"2\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-E5FBDED6-8AEF-4A28-8453-C617183DCB80\"></a></span><p class=\"table-body\"> <em class=\"strong\">yes</em> \n\
+                        </p> \n\
+                     </td>\n\
+                  </tr>\n\
+                  <tr class=\"ruledEvenRow\">\n\
+                     <td class=\"table-body\"> <span class=\"anchor_wrapper\"><a name=\"GUID-47F3BD1D-A6FF-4815-8FD8-2F9032E4AEE7\"></a></span><p class=\"table-body\"> <em class=\"mild\">(both output arguments and return values)</em> \n\
+                        </p> \n\
+                     </td>\n\
+                     <td class=\"table-body\" align=\"left\">&nbsp; <span class=\"anchor_wrapper\"><a name=\"GUID-49641802-E978-4D80-AD43-A02DE13CF448\"></a></span><p class=\"table-body\" /> \n\
+                     </td>\n\
+                     <td class=\"table-body\" colspan=\"2\" align=\"left\">&nbsp;</td>\n\
+                     <td class=\"table-body\" align=\"left\">&nbsp;</td>\n\
+                     <td class=\"table-body\" align=\"left\">&nbsp;</td>\n\
+                  </tr>\n\
+               </table>\n\
+            </div>\n\
+         </div>\n\
+         <div class=\"footer-block\"><a href=\"../html/ac.cmtdialog.htm\" class=\"comments-anchor\" target=\"_blank\"><span class=\"comments-link\">Please send us your comment about this page</span></a></div><br /><p class=\"footer-license-block\"><a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\"><img alt=\"Creative Commons License\" style=\"border-width: 0;\" src=\"../images/ccLink.png\" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href=\"http://autodesk.com/creativecommons\" target=\"_blank\">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>\n\
+   </div></body>\n\
+</html>";

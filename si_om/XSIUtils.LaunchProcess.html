@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>XSIUtils.LaunchProcess</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>XSIUtils.LaunchProcess</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/XSIUtils.html">XSIUtils</a>.LaunchProcess</h2>
+
+<h3>Introduced</h3>
+<div><p>v5.0</p></div>
+
+<h3>Description</h3>
+<div><p> Launches an external process such as a batch file, external text editor or command prompt. <br /><br />
+On Linux this method is identical to the <a href="#!/url=./si_cmds/System.html">System</a> command except that no message is logged 
+in the Script History window. On Windows the <a href="#!/url=./si_cmds/System.html">System</a> command will pop up a temporary command 
+prompt, but this method will not.  For further details please refer to the Win32 documentation for CreateProcess.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>Int32 XSIUtils.LaunchProcess( String in_AppAndCommandLineArgs, Boolean in_bBlock, Object& in_Directory );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oLong = XSIUtils.LaunchProcess( CommandLine, [Blocking], [StartupDirectory] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p><a href="#!/url=./files/Long.htm">Long</a> - When blocking is set to true the exit code of the child process is returned</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">CommandLine		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		The executable name and any command line options.  Be sure to use extra quote characters if there
+		are space characters in any path or filename in the string.  For example the quotes in 
+		'"C:\My Programs\myeditor.exe"' prevent Softimage from trying to execute an executable named 'C:\My.exe'.
+			</td>
+	</tr>
+	<tr>
+		<td class="name">Blocking		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+
+		If blocking is set to true then Softimage will not return from this method until the child process 
+		has finished execution.
+				<p class="cell"><span class="hilite">Default Value: </span>
+false			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">StartupDirectory		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		An initial directory for the process.  When not set the Process will launch with the same
+		directory as the current Softimage working directory.  This option is useful when launching 
+		command prompts.
+			</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+'	This example launchs a command prompt with the directory set 
+'	to the current user path
+'
+' The new command prompt inherits all the environmental variables
+' from Softimage so it will behave like a Softimage command prompt
+startDir = Application.InstallationPath( siUserPath )
+bBlocking = false 		' We don't want the command prompt to freeze Softimage
+if Application.Platform = "Win32" then
+	XSIUtils.LaunchProcess "cmd /C start cmd /K title Softimage Command Prompt", bBlocking, startDir  
+else
+	XSIUtils.LaunchProcess "xterm", bBlocking, startDir
+end if</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example shows how the XSIUtils.LaunchProcess method can be used to execute an 
+	external process. In this case it shows spdlcheck can be used to test a spdl directly 
+	from within scripting.
+*/
+if ( Application.Platform == "Win32" )
+{
+	var slash = "\\" ;	
+}
+else
+{
+	var slash = "/" ;
+}
+// Path to one of the spdl files that ships with Softimage
+var twistSpdl = Application.InstallationPath( siFactoryPath ) + slash + "Application" 
+			+ slash + "spdl" + slash + "twistop.spdl" ;
+var strResults = SpdlCheckFile( twistSpdl ) ;
+if ( strResults == "" )
+{
+	LogMessage( "Spdl is OK" ) ;
+}
+else
+{
+	LogMessage( "Spdl is busted:\n" + strResults ) ;
+}
+// Helper function that runs spdlcheck on the provided file path. 
+// Returns:
+//  - an empty string if the spdl is ok.  
+//  - the error details output by spdlcheck if there is a problem.
+function SpdlCheckFile( in_file )
+{			
+	// We will launch "spdlcheck" and tell it to output
+	// its results into a temporary file	
+	var tmpFile = Application.InstallationPath( siUserPath ) + slash
+			+ "spdlcheckoutput.tmp" ;
+	var cmd = "spdlcheck -nologo -noverbose -out \"" + tmpFile + "\" \"" + in_file + "\"";
+	Logmessage( "This command line will be executed:\n" + cmd ) ;
+	// Specify true for the blocking argument so that our script waits until spdlcheck
+	// has finished before trying to read the output file
+	XSIUtils.LaunchProcess( cmd, true ) ;
+	var oFSO = new ActiveXObject( "Scripting.FileSystemObject" ) ;
+	var oTextFile = oFSO.OpenTextFile(tmpFile, 1 ) ;
+	// We expect a string like:
+	// "Compilation succeeded c:\Softimage\&lt;....&gt;\Application\spdl\twistop.spdl (XSI Object)"
+	fileAsStr = oTextFile.ReadAll() ;
+	oTextFile.Close() ;
+	oFSO.DeleteFile( tmpFile ) ;
+	// If we find the string "Compilation succeeded" then we would know that 
+	// we were successful
+	if ( -1 != fileAsStr.search( /Compilation succeeded/ ) )
+	{
+		return "" ;
+	}
+	// Return the error details
+	return fileAsStr ;
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/System.html">System</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>CreateValueMap</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>CreateValueMap</h1>
+         </div>
+
+<h2 class="pagehead">CreateValueMap</h2>
+
+<h3>Introduced</h3>
+<div><p>v1.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Traverses two hierarchies, computes the differences in their transformations, 
+and outputs the differences to global value mapping template of the first 
+hierarchy. Value-mapping templates provide a way for you to automatically 
+modify the animation values in an action when you create clips. For example, 
+you can add an offset so that two characters don't try to walk in the same 
+place at the same time. Similar to connection-mapping templates, value-mapping 
+templates let you map out information before you perform an action. <br /><br />
+Each model can have multiple value-mapping templates and each of these 
+templates can be active or not. The order of templates is the order of 
+their creation, as listed in the explorer. You can automatically create a 
+template that contains the offsets of the current transformation values 
+between two objects or you can create an empty value-mapping template and 
+then add rules manually. <br /><br />
+Important: The two hierarchies must have the exact same topology, that is, 
+the same number of children and the same subtree structure.<br /><br />
+Note: This command uses <a href="#!/url=./files/OutArgDefined.htm">output arguments</a>. C# and some 
+scripting languages (such as JScript, PerlScript and Python) don't support arguments passed by reference so you 
+need to use the best workaround for your situation:
+<br /><br />
+For scripting languages this command returns an <a href="#!/url=./files/ISIVTCollection.htm">ISIVTCollection</a> 
+which you can use to get the output arguments. 
+<br /><br />
+For C# you can use the <a href="#!/url=./si_om/XSIApplication.ExecuteCommand.html">XSIApplication.ExecuteCommand</a> method to call this command. ExecuteCommand 
+packs the output arguments into a C# System.Object containing an <a href="#!/url=./files/Array.htm">Array</a> of the output arguments (see
+<a href="#!/url=./files/csharp_understand_CallingCommandsfromCSharp.htm">Calling Commands from C#</a>).
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>CreateValueMap( [Obj1], [Obj2], [Mode], [Scope], [UseNames], [MappingTemplate] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Obj1		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/objectexpr.htm">Root</a> 
+	of the target hierarchy on which to create the value map.<br /><br />
+	Note: The mixer under this object's model will be the owner of the newly 
+	created value map. 			<p class="cell"><span class="hilite">Default Value: </span>
+User is prompted to pick			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Obj2		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/objectexpr.htm">Root</a> of the hierarchy used as the reference pose 			<p class="cell"><span class="hilite">Default Value: </span>
+User is prompted to pick			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Mode		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+ Specifies the portions of the pose that will be considered 
+	when evaluating the differences for the value map.			<p class="cell"><span class="hilite">Default Value: </span>
+4 (all differences)			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>Put no data into the template.					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>Put scaling differences into the template					</td>
+				</tr>
+				<tr>
+					<td class="name">2					</td>
+					<td>Put rotation differences into the template					</td>
+				</tr>
+				<tr>
+					<td class="name">3					</td>
+					<td>Put translation differences into the template					</td>
+				</tr>
+				<tr>
+					<td class="name">4					</td>
+					<td>Put all differences into the template					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Scope		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+ Specifies whether to compute differences for local or global transformations 			<p class="cell"><span class="hilite">Default Value: </span>
+1 (local)			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>Put global transform data into the template.					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>Put local transform data into the template.					</td>
+				</tr>
+				<tr>
+					<td class="name">2					</td>
+					<td>Put both local and global transform data into the template.					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">UseNames		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ Specifies how to compare the hierarchies. 			<p class="cell"><span class="hilite">Default Value: </span>
+False			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">False					</td>
+					<td>Use topology-based hiearchy matching.					</td>
+				</tr>
+				<tr>
+					<td class="name">True					</td>
+					<td>Use name comparison-based hiearchy matching.					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">MappingTemplate		</td>
+		<td><a href="#!/url=./si_om/Property.html">Property</a>		</td>
+		<td>
+ Returns the new mapping template. 		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' This example illustrates various mapping template commands,
+' for both connection and value mapping templates -- in particular
+' how to create them and look at the data contained in them.
+NewScene , False
+' Create some objects for our example.
+set oParent = CreatePrim( "Sphere", "MeshSurface", "Parent" )
+set oChild = CreatePrim( "Cone", "MeshSurface", "Child", oParent )
+posParams = "/kine.local.posx,kine.local.posy,kine.local.posz"
+' Animate the sphere moving horizontally and the
+' cone (child) moving down.
+SetPositionKey oParent, 1, -5, 0, 0
+SetPositionKey oParent, 50, 5, 0, 0
+SetPositionKey oChild, 1, 0, 0, 0
+SetPositionKey oChild, 50, 0, -2, 0
+' Store an Action of this animation (on both objects).
+set oSource = StoreAction( , oParent &amp; "," &amp; oChild &amp; posParams, 2, _
+			"Fun", True, 1, 50 )
+' We want to map the animation to another "character", so we will
+' use a connection mapping template.  CreateConnectionMap can look
+' at identical hierarchies and automatically build an appropriate
+' map.  (or you could build it yourself manually or using scripting)
+' Here we'll build a hierarchy and use the auto-matching capability...
+set oParent2 = CreatePrim( "Cube", "MeshSurface", "Top" )
+set oChild2 = CreatePrim( "Cylinder", "MeshSurface", "Bottom", oParent2 )
+' Translate it so we can demonstrate value mapping templates.
+Translate oParent2, 2, 5, 0, siAbsolute, siView, siObj, siXYZ
+Translate oChild2, 2, -5, 0, siAbsolute, siView, siObj, siXYZ
+' Instantiate a clip driving the objects on which the animation was
+' originally authored, for comparison.
+set oClip = AddClip( "Scene_Root", oSource, , , 1, "Original" )
+' Now create the connection map so we can apply the original animation
+' on the other hierarchy.  Also, create a value map which will build
+' offset expressions using the pose differences between the objects.
+CreateConnectionMap oParent2, oParent, oCnxMap
+CreateValueMap oParent2, oParent, 3, 1, False, oValMap
+' Instantiate a clip which uses the connection map to remap to the
+' second set of objects.  Also use the value map to create a clip
+' effect with the appropriate offset for the second hierarchy.
+set oClip = AddClip( "Scene_Root", oSource, , , 1, "Remapped", oCnxMap, oValMap )
+' Let's take a look at the connection and value mapping templates
+' that were created and used.
+DumpTemplateInfo oCnxMap
+DumpTemplateInfo oValMap
+' Finally, a clip itself can be treated as a (value) mapping template.
+' Let's look at one...
+DumpTemplateInfo oClip &amp; ".actionclip"
+'==================================================
+' Helper method to key an object somewhere at a given frame.
+'==================================================
+sub SetPositionKey( in_oObj, in_frame, in_posX, in_posY, in_posZ )
+	Translate in_oObj, in_posX, in_posY, in_posZ, siAbsolute, siParent, siObj, siXYZ
+	SaveKey in_oObj &amp; posParams, in_frame
+end sub
+'==================================================
+' Helper method to dump some mapping template info.
+'==================================================
+sub DumpTemplateInfo( in_Templ )
+	' Get the actual object referenced by name in the argument.
+	set oTempl = GetValue( in_Templ )
+	msg = "Template: " &amp; oTempl.fullname &amp; Chr(10)
+	numRules = GetNumMappingRules( in_Templ )
+	if oTempl.type = "actionclip" then
+		msg = msg &amp; "(Clip acting as value map)" &amp; Chr(10)
+		bSupportsActive = true
+	else
+		bSupportsActive = false
+	end if
+	for i = 1 to numRules
+		GetMappingRule in_Templ, i, param, expr, active
+		msg = msg &amp; Chr(9) &amp; "Rule " &amp; i &amp; ": "
+		if bSupportsActive then
+			if active then
+				msg = msg &amp; "( active ) "
+			else
+				msg = msg &amp; "(inactive) "
+			end if
+		end if
+		msg = msg &amp; param &amp; " -&gt; " &amp; expr &amp; Chr(10)
+	next
+	LogMessage msg 
+end sub
+' Running this script should log the following:
+' ---------------------------------------------
+'INFO : "Template: Mixer.MappingTemplate
+'	Rule 1: Parent -&gt; Top
+'	Rule 2: Child -&gt; Bottom
+'"
+'INFO : "Template: Mixer.ValueMappingTemplate
+'	Rule 1: Top.kine.local.posx -&gt; this + -3.000000
+'	Rule 2: Top.kine.local.posy -&gt; this + 5.000000
+'	Rule 3: Top.kine.local.posz -&gt; 
+'	Rule 4: Bottom.kine.local.posx -&gt; 
+'	Rule 5: Bottom.kine.local.posy -&gt; this + -8.000000
+'	Rule 6: Bottom.kine.local.posz -&gt; 
+'"
+'INFO : "Template: Mixer.Mixer_Anim_Track1.Remapped.actionclip
+'(Clip acting as value map)
+'	Rule 1: ( active ) Top.kine.local.posx -&gt; this+-3.000000
+'	Rule 2: ( active ) Top.kine.local.posy -&gt; this+5.000000
+'	Rule 3: ( active ) Top.kine.local.posz -&gt; 
+'	Rule 4: ( active ) Bottom.kine.local.posx -&gt; 
+'	Rule 5: ( active ) Bottom.kine.local.posy -&gt; this+-8.000000
+'	Rule 6: ( active ) Bottom.kine.local.posz -&gt; 
+'"</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' Create first hierarchy
+CreatePrim "Cone", "NurbsSurface", "MyCone"
+CreatePrim "Cylinder", "NurbsSurface", "MyCylinder", "MyCone"
+SetValue "MyCylinder.cylinder.height", 2
+' Create second hierarchy translated from the first one
+CreatePrim "Cone", "NurbsSurface", "MyCone1"
+Translate , 5, 0, 0, siAbsolute, siParent, SiObj, siX
+CreatePrim "Cylinder", "NurbsSurface", "MyCylinder1", "MyCone1"
+Translate , , , , siAbsolute, siParent
+' Create a value map.
+' Put local translation differences into the template,
+' and use topology based hierarchy matching, starting
+' with MyCone1 as the reference.
+CreateValueMap "MyCone", "MyCone1", 3, 1, False
+' Although it appears that nothing has happened,
+' a value-mapping template was indeed created for MyCone.
+' You can check for it in the
+' Mixer &gt; Templates &gt; Value Mapping folder in the explorer.
+' If you open the Value Mapping Template, you will see a translation
+' of -5 along the X axis for MyCone relative to MyCone1</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/AddMappingRule.html">AddMappingRule</a> <a href="#!/url=./si_cmds/CreateConnectionMap.html">CreateConnectionMap</a> <a href="#!/url=./si_cmds/DeleteMappingRule.html">DeleteMappingRule</a> <a href="#!/url=./si_cmds/GetMappingRule.html">GetMappingRule</a> <a href="#!/url=./si_cmds/GetNumMappingRules.html">GetNumMappingRules</a> <a href="#!/url=./si_cmds/SetMappingRule.html">SetMappingRule</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

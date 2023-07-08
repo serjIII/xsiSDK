@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>PPGItem.UIItems</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>PPGItem.UIItems</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/PPGItem.html">PPGItem</a>.UIItems <img src="images/operator.gif" alt="operator" /></h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p> Returns or sets the list of items and values associated with a control as a 1-dimensional 
+<a href="#!/url=./files/Array.htm">Array</a> of Label/Value pairs (<a href="#!/url=./files/Variant.htm">Variant</a>s). This property is 
+used by controls which display items from a fixed list of choices (for example 
+siControlCombo, siControlCheck, siControlRadio, and siControlIconList). Each label is a 
+string and the value is a variant whose type should match the 
+<a href="#!/url=./si_om/Parameter.ValueType.html">Parameter.ValueType</a> of the associated parameter.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>// get accessor
+Object rtn = PPGItem.UIItems;
+// set accessor
+PPGItem.UIItems = Object;</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">// Example demonstrating how sophisticated UI can
+// be built using the PPGLayout API.
+//
+// It demonstrates how the PPGItem.UIItems
+// property can be used to store a list of objects
+// for a multi-selection ListBox Control. 
+//
+// There are two listboxes.  The first shows all the
+// X3DObjects under the Scene Root.  The user
+// can move items from this list into a list of selected 
+// objects.  This example could be adapted in various 
+// ways, for example it could use the PickObject command.
+Main() ;
+function Main()
+{
+	// Create a simple custom property set
+	var oCustomProperty = ActiveSceneRoot.AddProperty( 
+							"CustomProperty", 
+							false, 
+							"ObjectList" ) ;
+	oCustomProperty.AddParameter( "AllObjects", siString ) ;
+	oCustomProperty.AddParameter( "SelObjects", siString ) ;
+	// Establish the layout
+	// Which will be two list controls with 2 buttons 
+	// in between
+	var oLayout = oCustomProperty.PPGLayout
+	oLayout.AddRow() ;
+	  oLayout.AddGroup( "", false, 45) ;
+		AddListBox( oLayout, "AllObjects" ) ;
+	  oLayout.EndGroup() ;
+	  oLayout.AddGroup( "", false, 10) ;
+	    oLayout.Addbutton( "Add", "&gt;&gt;" ) ;
+	    oLayout.Addbutton( "Remove", "&lt;&lt;" ) ;        
+	  oLayout.EndGroup() ;
+	  oLayout.AddGroup( "", false, 45) ;
+	AddListBox( oLayout, "SelObjects" ) ;
+	  oLayout.EndGroup() ;
+	oLayout.EndRow() ;
+	oLayout.Language = "JScript" ;
+	oLayout.Logic = Add_OnClicked.toString() + 
+			Remove_OnClicked.toString() + 
+			MoveSelected.toString() ;
+	// Populate the "AllObjects" list control
+	AddSceneItemsToList( oLayout, "AllObjects" ) ;
+	// Let the user play with the UI
+	if ( !InspectObj( oCustomProperty, null,null ,siModal, false ) )
+	{
+		DoSomethingWithSelectedObjects( oCustomProperty ) ;
+	}
+	// Cleanup
+	DeleteObj( oCustomProperty ) ;
+}
+function AddListBox( in_oLayout, in_Name )
+{
+	// Insert a ListBox into the layout
+	var oItem = in_oLayout.AddItem( in_Name, "", "ListBox" ) ;
+	oItem.SetAttribute( "CY", 100 ) ;
+	oItem.SetAttribute( "NoLabel", true ) ;
+	//Note: Multi-selection list box control only applies to string parameter.
+	oItem.SetAttribute( siUIMultiSelectionListBox, true ) ;
+}
+function AddSceneItemsToList( in_oLayout, in_Name )
+{
+	// Populate the specified list with the
+	// names of objects in the scene
+	var oSceneItems = ActiveSceneRoot.FindChildren() ;
+	var aItems = new Array( oSceneItems.Count * 2 ) ;
+	for ( i = 0 ; i &lt; oSceneItems.Count ; i++ )
+	{
+		// Both label and value will be the same string
+		aItems[i * 2] = oSceneItems.Item(i).Name ;
+		aItems[i * 2 + 1] = oSceneItems.Item(i).Name ;			
+	}
+	var oItem = in_oLayout.Item(in_Name);
+	oItem.UIItems = aItems ;
+}
+function DoSomethingWithSelectedObjects( in_oPSet )
+{
+	oPPGItem = in_oPSet.PPGLayout.Item( "SelObjects" ) ;
+	// This is bit of an unusual scenario:
+	// Rather than using the Parameter Value, which is
+	// equal to the last Selected item in the list,
+	// we are interested in the entire list of items in the 
+	// layout.  Note: because this data is part of the layout,
+	// not the Parameter, it is not persisted as part of
+	// the scene and is shared by all instances.
+	var vbItems = new VBArray(oPPGItem.UIItems);
+	var aItems = vbItems.toArray();
+	for ( i = 0 ; i &lt; aItems.length ; i+= 2 )
+	{
+		logmessage( "Object " + aItems[i] + " was selected" ) ;
+	}
+}
+//Property Page Event code - this code executes
+//as the script logic of the Property Page.
+function Add_OnClicked()
+{
+	MoveSelected( "AllObjects", "SelObjects" ) ;
+}
+function Remove_OnClicked()
+{
+	MoveSelected( "SelObjects", "AllObjects" ) ;
+}
+function MoveSelected( in_FromList, in_ToList )
+{
+	// Figure out what was selected by the user
+	strSel = PPG.Inspected(0).Parameters(in_FromList).Value ;
+	if ( strSel.length == 0 )
+	{	
+		logmessage( "Please select an item" ) ;
+		return ;
+	}
+	var oLayout = PPG.PPGLayout ;
+	var oToList = oLayout.Item( in_ToList ) ;
+	var oFromList = oLayout.Item( in_FromList ) ;
+	var vbItems = new VBArray(oToList.UIItems);
+	var aItems = vbItems.toArray();
+	//The value associated with Multi-selection list box is
+	//a string which is separated with semicolons.
+	var splitSel = strSel.split(";");
+	for( i = 0; i &lt; splitSel.length; ++i)
+	{
+		// Add the string to the "ToList"	
+		// Check if the item is already in the list
+		var bIsInTheList = false;
+		for ( j = 0 ; j &lt; aItems.length ; j+=2 )
+		{
+			if ( aItems[j] == splitSel[i] )
+			{
+				logmessage( splitSel[i] + " is already in the list", siWarning ) ;
+				bIsInTheList = true;
+				break;
+			}
+		}
+		if(! bIsInTheList)
+		{
+			// Push the item to end of the list
+			var cntExistingItems = aItems.length
+			aItems[cntExistingItems] = splitSel[i] ; // Label
+			aItems[cntExistingItems+1] = splitSel[i] ; // Value
+			oToList.UIItems = aItems ;
+		}
+	}
+	// Remove the item from the "FromList"
+	vbItems = new VBArray(oFromList.UIItems);
+	var aCurrentItems = vbItems.toArray() ;
+	var aNewItems = new Array() ;
+	// Fill in the new array with everything except
+	// for the selected item
+	for ( i = 0 ; i &lt; aCurrentItems.length; i++ )
+	{
+		var bIsInTheList = false;
+		for( j = 0; j &lt; splitSel.length; j++)
+		{
+			if ( aCurrentItems[i] == splitSel[j] )
+			{
+				bIsInTheList = true;
+				break;
+			}
+		}
+		if(!bIsInTheList)
+		{
+			aNewItems[aNewItems.length] = aCurrentItems[i] ;
+		}
+	}
+	oFromList.UIItems = aNewItems ;
+	// Reset the selection
+	if ( aNewItems.length &gt; 0 )
+	{
+		PPG.Inspected(0).Parameters(in_FromList).Value = aNewItems[0];
+	}
+	else
+	{
+		PPG.Inspected(0).Parameters(in_FromList).Value = "" ;
+	}
+	// A refresh is required to show the change
+	PPG.Refresh() ;
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/PPGLayout.AddEnumControl.html">PPGLayout.AddEnumControl</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

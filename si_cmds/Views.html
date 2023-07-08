@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script>
+<script type="text/javascript" src="../scripts/lib/jquery-1.9.1.min.js"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title></title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css"/><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div>
+      <div>
+         <div class="head">
+            <h1></h1>
+         </div>
+
+<h2 class="pagehead"></h2>
+
+<div><table class="values">
+	<tr>
+		<th>Views</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>Animation Editor</td>
+		<td>Opens the Animation Editor (multiple instances supported). See also <a href="#!/url=./si_cmds/OpenAnimationEditor.html">OpenAnimationEditor</a>.		</td>
+	</tr>
+	<tr>
+		<td>Animation Layer Manager</td>
+		<td>Opens the Animation Layer Manager (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Animation Mixer</td>
+		<td>Opens the Animation Mixer (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Animation Panel</td>
+		<td>Opens the Animation Panel (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>Attribute Transfer</td>
+		<td>Opens the Attribute Transfer (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Audio Output Monitor</td>
+		<td>Opens the Audio Output Monitor (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>Browser</td>
+		<td>Opens the Browser (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Command Line</td>
+		<td>Opens the Command Line (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>Compound Version Manager</td>
+		<td>Opens the Compound Version Manager (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Constraint Panel</td>
+		<td>Opens the Constraint Panel (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>Context Properties</td>
+		<td>Opens the Context Properties (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>Context Switcher</td>
+		<td>Opens the Context Switcher (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>Custom Display Host</td>
+		<td>Opens the Custom Display Host (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Custom Parameter Set Editor</td>
+		<td>Opens the Custom Parameter Set Editor (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Debug Notification</td>
+		<td>Opens the Debug Notification (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>DopeSheet</td>
+		<td>Opens the DopeSheet (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Edit Panel</td>
+		<td>Opens the Edit Panel (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>Explorer</td>
+		<td>Opens the Explorer (multiple instances supported). See also <a href="#!/url=./si_cmds/OpenXSIExplorer.html">OpenXSIExplorer</a> and <a href="#!/url=./si_cmds/OpenTransientExplorer.html">OpenTransientExplorer</a>.		</td>
+	</tr>
+	<tr>
+		<td>Expression Editor</td>
+		<td>Opens the Expression Editor (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>FCurve Editor</td>
+		<td>Opens the FCurve Editor (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Fx Color Selector</td>
+		<td>Opens the Fx Color Selector (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Fx Operator Selector</td>
+		<td>Opens the Fx Operator Selector (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Fx Paint Brush List</td>
+		<td>Opens the Fx Paint Brush List (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Fx Tree</td>
+		<td>Opens the Fx Tree (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Fx Viewer</td>
+		<td>Opens the Fx Viewer (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Hair Panel</td>
+		<td>Opens the Hair Panel (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>ICE Tree</td>
+		<td>Opens the ICE Tree (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Image Clip Viewer</td>
+		<td>Opens the Image Clip Viewer (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Keyable Parameters Editor</td>
+		<td>Opens the Keyable Parameters Editor (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Keying Panel</td>
+		<td>Opens the Keying Panel (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Layer Panel</td>
+		<td>Opens the Layer Panel (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>Lip Sync</td>
+		<td>Opens the Lip Sync (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Material Manager</td>
+		<td>Opens the Material Manager (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Material Panel</td>
+		<td>Opens the Material Panel (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Menu Window</td>
+		<td>Opens the Menu Window (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Mini Transform Panel</td>
+		<td>Opens the Mini Transform Panel (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Netview</td>
+		<td>Opens the Netview (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Object View</td>
+		<td>Opens the Object View (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Parameter Connection Editor</td>
+		<td>Opens the Parameter Connection Editor (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Playback Panel</td>
+		<td>Opens the Playback Panel (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>Plugin Manager</td>
+		<td>Opens the Plugin Manager (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>Preset Manager</td>
+		<td>Opens the Preset Manager (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Property Editor</td>
+		<td>Opens the Property Editor (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Property Panel</td>
+		<td>Opens the Property Panel (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Quick Scene Search</td>
+		<td>Opens the Quick Scene Search (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>Relational View</td>
+		<td>Opens the Relational View (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Relational View Editor</td>
+		<td>Opens the Relational View Editor (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Render Preview</td>
+		<td>Opens the Render Preview (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Render Tree</td>
+		<td>Opens the Render Tree (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Render View</td>
+		<td>Opens the Render View (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Render Viewer</td>
+		<td>Opens the Render Viewer (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>Scene Debugger</td>
+		<td>Opens the Scene Debugger (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>Scene Layer Manager</td>
+		<td>Opens the Scene Layer Manager (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Scene Search</td>
+		<td>Opens the Scene Search (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Schematic</td>
+		<td>Opens the Schematic (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Script Editor</td>
+		<td>Opens the Script Editor (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>Script History</td>
+		<td>Opens the Script History (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Scripted Operator Editor</td>
+		<td>Opens the Scripted Operator Editor (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>Selection Panel</td>
+		<td>Opens the Selection Panel (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>Shader Code Editor</td>
+		<td>Opens the Shader Code Editor (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>Shader Version Manager</td>
+		<td>Opens the Shader Version Manager (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Shaderball Viewer</td>
+		<td>Opens the Shaderball Viewer (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Shape Manager</td>
+		<td>Opens the Shape Manager (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Shelf</td>
+		<td>Opens the Shelf (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Snap Panel</td>
+		<td>Opens the Snap Panel (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>SpreadSheet</td>
+		<td>Opens the SpreadSheet (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Standalone DopeSheet</td>
+		<td>Opens the Standalone DopeSheet (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Synoptic Editor</td>
+		<td>Opens the Synoptic Editor (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Synoptic View</td>
+		<td>Opens the Synoptic View (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Text Editor</td>
+		<td>Opens the Text Editor (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Texture Editor</td>
+		<td>Opens the Texture Editor (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Texture Layer Editor</td>
+		<td>Opens the Texture Layer Editor (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Timeline</td>
+		<td>Opens the Timeline (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Timeline 3D</td>
+		<td>Opens the Timeline 3D (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Timerange</td>
+		<td>Opens the Timerange (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Toolbar Panel</td>
+		<td>Opens the Toolbar Panel (single instance only). <br/><br/>Hint: If you need to change the menu once this toolbar is visible, use the <a href="#!/url=./si_cmds/SwitchToolbar.html">SwitchToolbar</a> command.		</td>
+	</tr>
+	<tr>
+		<td>Transformation Panel</td>
+		<td>Opens the Transformation Panel (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>User Canvas</td>
+		<td>Opens the User Canvas (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>User Canvas Editor</td>
+		<td>Opens the User Canvas Editor (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>View Manager</td>
+		<td>Opens the View Manager (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>Viewer</td>
+		<td>Opens the Viewer (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>Weight Editor</td>
+		<td>Opens the Weight Editor (multiple instances supported). 		</td>
+	</tr>
+	<tr>
+		<td>Weight Paint Panel</td>
+		<td>Opens the Weight Paint Panel (single instance only). 		</td>
+	</tr>
+	<tr>
+		<td>XSI Explorer</td>
+		<td>Opens the XSI Explorer (multiple instances supported). <br/><br/>Note: If you want to open the XSI Explorer with specific objects appearing in the Viewer pane, use the <a href="#!/url=./si_cmds/OpenXSIExplorer.html">OpenXSIExplorer</a> command instead.		</td>
+	</tr>
+</table>
+<br/>
+
+</div>
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br></div>
+   </div></body>
+</html>

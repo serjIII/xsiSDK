@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>ClusterElementCollection.ItemsByIndex</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>ClusterElementCollection.ItemsByIndex</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/ClusterElementCollection.html">ClusterElementCollection</a>.ItemsByIndex <img src="images/operator.gif" alt="operator" /></h2>
+
+<h3>Description</h3>
+<div><p> Sets or returns cluster element values by index.<br /><br />
+In the case of a <a href="#!/url=./si_om/Cluster.html">Cluster</a>s this provides read-only access to a 1-dimensional 
+<a href="#!/url=./files/Array.htm">Array</a> of the associated geometry indices (<a href="#!/url=./files/Integer.htm">Integer</a>s) for the 
+requested cluster indices. The size of this array is the same as the number of requested indices.<br /><br />
+In the case of a <a href="#!/url=./si_om/ClusterProperty.html">ClusterProperty</a>, this allows you to get or set a 2-dimensional 
+<a href="#!/url=./files/Array.htm">Array</a> containing the data on the requested cluster indices (<a href="#!/url=./files/Double.htm">Double</a>s). 
+The size of the first dimension depends on the ClusterProperty. For example for a weight map there 
+is only 1 element but for an envelope weight map the size is equal to the number of deformers.  The 
+size of the second dimension is the same as the number of requested indices.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>// get accessor
+Object ClusterElementCollection.get_ItemsByIndex( Object vIndices );
+// set accessor
+ClusterElementCollection.set_ItemsByIndex( Object vIndices, Object pVal );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Indices		</td>
+		<td><a href="#!/url=./files/Array.htm">Array</a>		</td>
+		<td>
+Array of element indicies		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example shows how to use ItemsByIndex on a Cluster
+'
+dim oRoot, oGrid, oCluster, aValues, iElement
+set oRoot = Application.ActiveProject.ActiveScene.Root
+set oGrid = oRoot.AddGeometry("Grid","MeshSurface")
+set oCluster = oGrid.ActivePrimitive.Geometry.AddCluster( _
+					siPolygonCluster, "PolygonClusterOnGrid", _
+					array(59,60,61))
+'Ask for items 0,1,2 of the cluster - which corresponds to
+'pnt 59,60,61.  In fact this is the entire cluster.
+aValues = oCluster.Elements.ItemsByIndex( Array(0,1,2) )
+'Show the ranges of the returned 1-dimensional array
+LogMessage "lbound(aValues,1) = " &amp; lbound(aValues,1)
+LogMessage "ubound(aValues,1) = " &amp; ubound(aValues,1)
+'Print out the geometry indices of the requested cluster
+'elements
+for iIndex=lbound(aValues,1) to ubound(aValues,1)
+	iElement = aValues(iIndex)
+	LogMessage "element(" &amp; iIndex &amp; ") = " &amp; _
+			oCluster.type &amp; "(" &amp; iElement &amp; ") "
+next
+' Output of above script:
+'INFO : "lbound(aValues,1) = 0"
+'INFO : "ubound(aValues,1) = 2"
+'INFO : "element(0) = poly(59) "
+'INFO : "element(1) = poly(60) "
+'INFO : "element(2) = poly(61) "</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example demonstrates how to use ClusterElementCollection.ItemsByIndex to read 
+' and write values on a VertexColor ClusterProperty object
+'
+NewScene ,false
+set oSphere = ActiveSceneRoot.AddGeometry("Sphere","MeshSurface")
+SelectObj oSphere
+'This command will create a complete sample cluster
+'and a cluster property called MyVertexColor
+CreateVertexColorSupport , "MyVertexColor"
+set oClusters = oSphere.ActivePrimitive.Geometry.Clusters
+set oVertexColors = oClusters(0).LocalProperties( "MyVertexColor" )
+'Get the RGB values on sample point 2 and 3.
+'This returns a 2-dimensional array, with the RGBA values
+'for the two samples we request.
+ElArray = oVertexColors.Elements.ItemsByIndex( Array( 2, 3 ) )
+'Set the G value at Sample 2
+ElArray( 1, 0 ) = 0.0
+'Set the B value at Sample 2
+ElArray( 2, 0 ) = 0.5
+'Set the R value at Sample 3
+ElArray( 0, 1 ) = 0.3
+'Set the A value at Sample 3
+ElArray( 3, 1 ) = 0.2
+'Assign our changes back
+oVertexColors.Elements.ItemsByIndex( Array( 2, 3 ) ) = ElArray
+'Double check by looking at the entire array
+AllRGBAValues = oVertexColors.Elements.Array
+logmessage "G Value at Sample 2: " &amp; Round( AllRGBAValues( 1, 2 ), 1 )
+logmessage "B Value at Sample 2: " &amp; Round( AllRGBAValues( 2, 2 ), 1 )
+logmessage "R Value at Sample 3: " &amp; Round( AllRGBAValues( 0, 3 ), 1 )
+logmessage "A Value at Sample 3: " &amp; Round( AllRGBAValues( 3, 3 ), 1 )
+'Output of this script:
+'INFO : "G Value at Sample 2: 0"
+'INFO : "B Value at Sample 2: 0.5"
+'INFO : "R Value at Sample 2: 0.3"
+'INFO : "A Value at Sample 2: 0.2"</pre></td></tr>
+</table>
+</div></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

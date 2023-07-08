@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-43B96777-1CE1-457A-8723-86F4FD54D0FE" />
+      <meta name="indexterm" content="special parameters on expressions" />
+      <meta name="topic-type" content="concept" />
+      <title>Expressions</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-43B96777-1CE1-457A-8723-86F4FD54D0FE"></a></span><div class="head">
+            <h1>Expressions</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-91FE4F6D-8863-42A2-8552-8D9D15D2F8FD"></a></span>Expressions in a general sense are mathematical formulas that combine numbers, variables,
+               operators, functions and other expressions, do not contain an equal sign (=), and
+               evaluate to a numerical or boolean value, fcurve, or graph.
+            </p>
+            <p><span class="anchor_wrapper"><a name="GUID-E15B1B70-BAD2-49EF-BC52-F52C617834D3"></a></span>Expressions in Softimage are a type of <span class="char_link"><a href="#!/url=./files/DataSource.htm">DataSource</a></span> that can be applied to a <a href="#!/url=./si_om/Parameter.html">Parameter</a> or <a href="#!/url=./si_cpp/classXSI_1_1Parameter.html">Parameter</a> to drive its value (animate it). At its core is the <em class="mild">expression definition</em>, which contains a mathematical formula (an expression in the general sense) stored
+               in a string. Expression definitions can be constructed from the set of functions,
+               operators, variables, and constants available from the <a href="http://softimage.wiki.softimage.com/sdkdocs/ExprRef.htm">Expression Reference</a>. For example, to link object A's Y rotation to object B's X translation, you would
+               set an expression on the <span class="code" translate="no">A.kine.local.roty</span> parameter using this expression definition:
+            </p>
+            <p><span class="anchor_wrapper"><a name="GUID-302717C0-4128-4EAA-A78D-09EBF062B407"></a></span> <span class="code" translate="no">"l_fcv(B.kine.local.posx)"</span> 
+            </p>
+            <div><span class="anchor_wrapper"><a name="GUID-59E0ABFE-7DED-4DAE-A370-27B468F64191"></a></span><div class="note-tip"><span class="label">TIP:</span> 
+                  <p><span class="anchor_wrapper"><a name="GUID-DDEFBC96-DF64-4080-A0B5-C76D59AF1ABC"></a></span>For a complete listing of all functions and tokens available to use as part of your
+                     expression definition, see <a href="http://softimage.wiki.softimage.com/sdkdocs/ExprRef.htm">Expression Reference</a>.
+                  </p> 
+               </div>
+            </div>
+            <p><span class="anchor_wrapper"><a name="GUID-638EE508-5C9D-4C7E-95EA-408D191F1065"></a></span>In the UI the animation expression appears as a a special Expression operator nested
+               under its owner's parameter node in the explorer. It acts like a special kind of property
+               which can be inspected and contains a set of parameters which contain data related
+               to the expression (for example, the expression definition is contained in the Definition
+               parameter).
+            </p>
+            <div><span class="anchor_wrapper"><a name="GUID-56AD1E92-4A48-4E3E-9C43-76F60ADE46DB"></a></span><div class="note-note"><span class="label">NOTE:</span> 
+                  <p><span class="anchor_wrapper"><a name="GUID-76B72CBC-8C72-40AB-AF7E-48753F76C341"></a></span>For more information on animating with expressions in Softimage via the UI, see the
+                     Softimage user guide.
+                  </p> 
+               </div>
+            </div>
+            <p><span class="anchor_wrapper"><a name="GUID-F3D35329-70E3-489A-9C20-95D0177CE268"></a></span>From the perspective of the SDK, an <a href="#!/url=./si_om/Expression.html">Expression</a> or <a href="#!/url=./si_cpp/classXSI_1_1Expression.html">Expression</a> object is a kind of a stunted <a href="#!/url=./si_om/Operator.html">Operator</a> or <a href="#!/url=./si_cpp/classXSI_1_1Operator.html">Operator</a> object. You can access the set of parameters affecting the driven parameters using
+               the <a href="#!/url=./si_om/Operator.InputPorts.html">Operator.InputPorts</a> or Operator::GetInputPorts property, but port groups are not fully supported.
+            </p>
+            <div><span class="anchor_wrapper"><a name="GUID-811EB6BC-EE96-4AD1-8DDA-ECC49B4E7F67"></a></span><div class="note-note"><span class="label">NOTE:</span> 
+                  <p><span class="anchor_wrapper"><a name="GUID-F4DD10AA-FB92-4DF0-96B2-98360E63E170"></a></span>You cannot directly use more than one animation source (for example, keyframes <em class="mild">and</em> an expression) on the same parameter. To combine animation sources, you must store
+                     actions for use in the animation mixer.
+                  </p> 
+               </div>
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS00FA839CE9F5F148906F76DDEF5331DD-000C"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-CE2430B3-7197-421A-A8E4-619A12737473"></a></span> Special Parameters on the Expression Property
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-F0C3E53E-C816-4922-8DD2-7E3D7048E882"></a></span>Parameters driven by expressions have four extra parameters nested under the <a href="#!/url=./si_om/Expression.html">Expression</a> or <a href="#!/url=./si_cpp/classXSI_1_1Expression.html">Expression</a> object which are accessible by iterating over the Expression's <a href="#!/url=./si_om/ParameterCollection.html">ParameterCollection</a> or <a href="#!/url=./si_cpp/classXSI_1_1CParameterRefArray.html">ParameterCollection</a>. These parameters contain this information:
+               </p> 
+               <div class="table_Ruled">
+                  <table cellpadding="0" cellspacing="0" class="ruled">
+                     <colgroup>
+                        <col align="left" />
+                        <col align="left" />
+                     </colgroup>
+                     <tr class="ruledHeading">
+                        <th class="table-heading"> <span class="anchor_wrapper"><a name="GUID-75F9DC5D-2D55-453E-B5C9-38DAC4177EE3"></a></span><p class="table-heading">Parameter</p> 
+                        </th>
+                        <th class="table-heading" align="left"> <span class="anchor_wrapper"><a name="GUID-A6EA31CE-B05F-4E3B-922D-29F73B50230F"></a></span><p class="table-heading">Description</p> 
+                        </th>
+                     </tr>
+                     <tr class="ruledOddRow">
+                        <td class="table-body"> <span class="anchor_wrapper"><a name="GUID-AE7409A3-9E18-452D-B178-7BA8501B7FED"></a></span><p class="table-body"> <span class="code" translate="no">Active</span> 
+                           </p> 
+                        </td>
+                        <td class="table-body" align="left"> <span class="anchor_wrapper"><a name="GUID-1A5064F3-F93F-483D-8F31-29827849AE15"></a></span><p class="table-body">True by default; setting this parameter to false mutes the link.</p> 
+                        </td>
+                     </tr>
+                     <tr class="ruledEvenRow">
+                        <td class="table-body"> <span class="anchor_wrapper"><a name="GUID-1A9841C2-159A-4366-BC22-8C79EE05BCFC"></a></span><p class="table-body"> <span class="code" translate="no">Target</span> 
+                           </p> 
+                        </td>
+                        <td class="table-body" align="left"> <span class="anchor_wrapper"><a name="GUID-C510CADA-45C2-4C4E-8869-5672B15083B8"></a></span><p class="table-body">Returns the name of the target parameter (that is, the parameter that owns the expression).
+                              Read only.
+                           </p> 
+                        </td>
+                     </tr>
+                     <tr class="ruledOddRow">
+                        <td class="table-body"> <span class="anchor_wrapper"><a name="GUID-2BB81450-F628-4252-8C84-4645882590E3"></a></span><p class="table-body"> <span class="code" translate="no">Definition</span> 
+                           </p> 
+                        </td>
+                        <td class="table-body" align="left"> <span class="anchor_wrapper"><a name="GUID-A6AF303B-9C2A-49A3-B2D7-B1E3C74A2BAA"></a></span><p class="table-body">This is the real meat of the expression: you can change this string definition if
+                              you need to change the link or even remove the link entirely.
+                           </p> 
+                        </td>
+                     </tr>
+                     <tr class="ruledEvenRow">
+                        <td class="table-body"> <span class="anchor_wrapper"><a name="GUID-9D7AF7EC-9C3F-44C0-8212-900E5823DDE7"></a></span><p class="table-body"> <span class="code" translate="no">Comment</span> 
+                           </p> 
+                        </td>
+                        <td class="table-body" align="left"> <span class="anchor_wrapper"><a name="GUID-AAE9F1ED-DE2D-4EF0-9087-824D5A879AC5"></a></span><p class="table-body">Nothing specified by default.</p> 
+                        </td>
+                     </tr>
+                  </table>
+               </div> 
+               <div><span class="anchor_wrapper"><a name="GUID-39C01436-9BB7-4A7F-9D24-0D1FEA4C9E07"></a></span><div class="note-note"><span class="label">NOTE:</span> 
+                     <p><span class="anchor_wrapper"><a name="GUID-5490F84B-56A1-4C2F-853B-401BEE927980"></a></span>Depending on what kind of expression is controlling the parameter, there may also
+                        be other parameters that appear. If the expression defines a linked parameter, you
+                        will have access to an <a href="#!/url=./si_om/FCurve.html">FCurve</a> or <a href="#!/url=./si_cpp/classXSI_1_1FCurve.html">FCurve</a> via the <a href="#!/url=./si_om/Parameter.Source.html">Parameter.Source</a> or Parameter::GetSource property. For multi-linked parameters, the Interpolation
+                        <a href="#!/url=./si_om/Property.html">Property</a> or <a href="#!/url=./si_cpp/classXSI_1_1Property.html">Property</a> is available instead. For more information, see <a href="http://softimage.wiki.softimage.com/sdkdocs/ExprRef.htm">Expression Reference</a>.
+                     </p> 
+                  </div>
+               </div> 
+            </div>
+         </div><span class="noindex">
+            <div class="topic-list">
+               <h4 class="related">Topics in this section</h4>
+               <ul class="jumplist">
+                  <li class="topiclist-litem"><a href="#!/url=./files/dev_Expressions_Creating.htm"> Creating Expressions</a></li>
+                  <li class="topiclist-litem"><a href="#!/url=./files/dev_Expressions_Accessing.htm"> Accessing Expressions</a></li>
+               </ul>
+            </div></span><div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

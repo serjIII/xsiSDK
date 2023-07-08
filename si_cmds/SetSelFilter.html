@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>SetSelFilter</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>SetSelFilter</h1>
+         </div>
+
+<h2 class="pagehead">SetSelFilter</h2>
+
+<h3>Introduced</h3>
+<div><p>v1.0</p></div>
+
+<h3>Description</h3>
+<div><p>Sets the selection filter and activates the selection tool.</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>SetSelFilter( [SelFilter] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">SelFilter		</td>
+		<td><a href="#!/url=./si_om/FilterConstant.html">FilterConstant</a>		</td>
+		<td>
+ Selection filter that specifies what type of elements to select. 			<p class="cell"><span class="hilite">Default Value: </span>
+Current selection filter			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example demonstrates how to set the Edge filter 
+' with the SetSelFilter command using the string value.
+'
+SetSelFilter "Edge" 
+' Alternatively you could use the matching string constant:
+SetSelFilter siEdgeFilter</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">//
+// This example demonstrates how to set the Polygon filter 
+// with the SetSelFilter command using the string constant.
+//
+SetSelFilter(siPolygonFilter);
+// Alternatively you could use the matching string value:
+SetSelFilter("Polygon");</pre></td></tr>
+</table>
+</div><h4>3. Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">#
+# This example demonstrates how to set the Polygon filter 
+# with the SetSelFilter command using the string constant.
+#
+from win32com.client import constants 
+Application.SetSelFilter(constants.siCameraFilter)
+# Alternatively you could use the matching string value:
+Application.SetSelFilter("Camera")</pre></td></tr>
+</table>
+</div><h4>4. C# Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="csharp">// 
+// This example demonstrates how to use the SetSelFilter command in C# to change
+// the selection filter to limit selection to scene objects. Depending on the
+// value of the inUseString input argument, either the string itself (true) or
+// the string constant representing the string (false) will be used to call SetSelFilter.
+// 
+// Tip: You need to compile the generated code before you can load the plug-in.
+// After you compile the plug-in, you can load it by clicking Update All in the Plugin Manager.
+// 
+using System;
+using Softimage.XSIOM; // Softimage object model
+using Softimage.XSIMath;
+using Softimage.XSIUtil;
+public class Base
+{
+	CXSIApplicationClass m_xsi;
+	CXSIFactoryClass m_fact;
+	CXSIUtilsClass m_utils;
+	protected Base()
+	{
+		m_xsi = new CXSIApplicationClass();
+		m_fact = new CXSIFactoryClass();
+		m_utils = new CXSIUtilsClass();
+	}
+	protected XSIApplication GetXSI()
+	{
+		return m_xsi;
+	}
+}
+public class XSIPlugin : Base
+{
+	public bool Load( PluginRegistrar in_reg )
+	{
+		in_reg.Author = "SDK Documentation";
+		in_reg.Name = "SetSceneObjectSelFilterPlugin";
+		in_reg.Major = 1;
+		in_reg.Minor = 0;
+		in_reg.RegisterCommand("SetSceneObjectSelFilter", "SetSceneObjectSelFilter");
+		return true;
+	}
+	public bool Unload( PluginRegistrar in_reg )
+	{
+		String strPluginName = null;
+		strPluginName = in_reg.Name;
+		return true;
+	}
+}
+public class SetSceneObjectSelFilter : Base
+{
+	public bool Init( Context in_ctxt )
+	{
+		Command oCmd = null;
+		oCmd = (Command)in_ctxt.Source;
+		oCmd.Description = "Demonstrates how to set the Selection Filter in Softimage to Scene Object";
+		oCmd.Tooltip = "Set Selection Filter to SceneObject";
+		oCmd.SetFlag((int)siCommandCapabilities.siCannotBeUsedInBatch, true);
+		oCmd.ReturnValue = false;
+		ArgumentCollection oArgs = oCmd.Arguments;
+		oArgs.Add("inUseString", siArgumentFlags.siArgumentInput, false, siVariantType.siBool);
+		return true;
+	}
+	// In C# you have to use the XSIApplication.ExecuteCommand method to invoke
+	// a command, so we are just implementing a command stub to simplify the call
+	// in the Execute function.
+	public void SetSelFilter(String SelFilter)
+	{
+		XSIApplication app = this.GetXSI();
+		// The SetSelFilter command takes only one argument: 'SelFilter', which
+		// can be either the siObjectFilter string constant or the string to 
+		// which it refers: 'sceneobject'
+		object[] oCmdArgs = new object[1];
+		oCmdArgs[0] = SelFilter;
+		app.ExecuteCommand("SetSelFilter", oCmdArgs);
+	}
+	public bool Execute(Context in_ctxt)
+	{
+		Command oCmd = null;
+		oCmd = (Command)in_ctxt.Source;
+		// Set the selection filter to scene object. Whether we use the string
+		// constant or the actual string depends on the value of inUseString.  
+		ArgumentCollection oArgs = oCmd.Arguments;
+		if ((bool)oArgs[0].Value == true)
+		{
+			SetSelFilter("SceneObject");
+		} 
+		else
+		{
+			// All string constants are members of the StringModule
+			SetSelFilter(StringModule.siObjectFilter);
+		}
+		return true;
+	}
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/ActivatePolygonSelTool.html">ActivatePolygonSelTool</a> <a href="#!/url=./si_cmds/ActivatePolygonSelToolWithNoObjStateChange.html">ActivatePolygonSelToolWithNoObjStateChange</a> <a href="#!/url=./si_cmds/ActivateVertexSelTool.html">ActivateVertexSelTool</a> <a href="#!/url=./si_cmds/ActivateVertexSelToolWithNoObjStateChange.html">ActivateVertexSelToolWithNoObjStateChange</a> <a href="#!/url=./si_cmds/ActivateSampledPointSelTool.html">ActivateSampledPointSelTool</a> <a href="#!/url=./si_cmds/ActivateSampledPointSelToolWithNoObjStateChange.html">ActivateSampledPointSelToolWithNoObjStateChange</a> <a href="#!/url=./si_cmds/ActivateObjectSelTool.html">ActivateObjectSelTool</a> <a href="#!/url=./si_cmds/ActivateObjectSelToolWithNoObjStateChange.html">ActivateObjectSelToolWithNoObjStateChange</a> <a href="#!/url=./si_cmds/SelectObjectFilter.html">SelectObjectFilter</a> <a href="#!/url=./si_cmds/SelectVertexFilter.html">SelectVertexFilter</a> <a href="#!/url=./si_cmds/SelectSampledPointFilter.html">SelectSampledPointFilter</a> <a href="#!/url=./si_cmds/SelectPolygonFilter.html">SelectPolygonFilter</a> <a href="#!/url=./si_cmds/SelectEdgeFilter.html">SelectEdgeFilter</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

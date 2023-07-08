@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-6FB31361-A81F-4D3B-892B-87460FE77515" />
+      <meta name="indexterm" content="objects: invalid (in scripting)" />
+      <meta name="indexterm" content="objects: empty (in scripting)" />
+      <meta name="indexterm" content="empty collections (what to watch out for)" />
+      <meta name="indexterm" content="collections (scripting): invalid" />
+      <meta name="indexterm" content="Returning Values and Objects" />
+      <meta name="indexterm" content="Returning Data Values" />
+      <meta name="indexterm" content="values: returning data values" />
+      <meta name="indexterm" content="data values, returning" />
+      <meta name="indexterm" content="return values: data values" />
+      <meta name="indexterm" content="Returning Objects" />
+      <meta name="indexterm" content="values: returning objects" />
+      <meta name="indexterm" content="objects: return values (in scripting)" />
+      <meta name="indexterm" content="return values: objects" />
+      <meta name="indexterm" content="Example: Returning objects using scripting commands" />
+      <meta name="indexterm" content="Example: Returning objects using the object model" />
+      <meta name="indexterm" content="Simple Objects versus Collections" />
+      <meta name="indexterm" content="return values: objects vs. collections" />
+      <meta name="indexterm" content="collections (scripting): vs. objects" />
+      <meta name="indexterm" content="objects: vs. collections (in scripting)" />
+      <meta name="indexterm" content="To check whether the return value is an object or a collection" />
+      <meta name="topic-type" content="concept" />
+      <title>What to Watch Out for with Objects and Collections</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-6FB31361-A81F-4D3B-892B-87460FE77515"></a></span><div class="head">
+            <h1>What to Watch Out for with Objects and Collections</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-8F28CF7A-860D-4198-8026-EFD3474FD817"></a></span>Commands and methods generally behave in one of two ways:
+            </p><span class="anchor_wrapper"><a name="GUID-9627C5FD-BBD9-4E25-8944-A41EC176610F"></a></span><ol type="1" start="1">
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-BAEF5772-6365-475A-A1F3-FAAA7D3F5BB7"></a></span>They always return a valid object or collection. For example:
+                  </p> 
+                  <ul>
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-67DD6578-AFBF-4EE0-BA78-78BD4D3926CF"></a></span>The <a href="#!/url=./si_cmds/GetPrimCamera.html">GetPrimCamera</a> command or <a href="#!/url=./si_om/X3DObject.AddCamera.html">AddCamera</a> method adds a camera to the scene and returns the new camera. The return value is
+                           always a valid object because the method always creates a new camera.
+                        </p> 
+                     </li>
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-D7A80DED-23C1-4EAF-A7CA-D3E6DEE72829"></a></span>The <a href="#!/url=./si_om/Geometry.Points.html">Geometry.Points</a> property gets the collection of points from the object's geometry. The return value
+                           is always a valid collection because the any object implementing this property always
+                           contains a collection of points.
+                        </p> 
+                     </li>
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-61941901-5F55-43F8-B0BC-6EC57FB55CA2"></a></span>The <a href="#!/url=./si_om/X3DObject.FindChildren.html">FindChildren</a> and <a href="#!/url=./si_om/X3DObjectCollection.Filter.html">Filter</a> methods always return valid collections that match the criteria specified. Even when
+                           it has no members, it still returns an empty but valid collection, unlike the <a href="#!/url=./si_cmds/SIFilter.html">SIFilter</a> command.
+                        </p> 
+                     </li>
+                  </ul> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-D1A84063-24D3-4C85-8CDB-367C821BF1F0"></a></span>They may return an invalid object or collection. For example:
+                  </p> 
+                  <ul>
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-2E644EAE-FFD3-4D87-AF30-99B143AEF1B7"></a></span>The <a href="#!/url=./si_cmds/SIFilter.html">SIFilter</a> command takes an existing list as input and returns a subset of its members as a
+                           new collection that matches the criteria specified. If nothing matches the criteria,
+                           no valid collection is created. This behavior is different from the <a href="#!/url=./si_om/X3DObjectCollection.Filter.html">Filter</a> methods which return a valid, empty collection if the criteria are not met.
+                        </p> 
+                     </li>
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-A94594F0-A3DB-498D-BF85-568EB12DEF77"></a></span>The <a href="#!/url=./si_om/X3DObject.FindChild.html">FindChild</a> or <a href="#!/url=./si_om/X3DObjectCollection.Find.html">Find</a> method takes input objects and returns the first thing that matches the criteria
+                           specified. If nothing matches, no valid object is returned.
+                        </p> 
+                     </li>
+                  </ul> 
+               </li>
+            </ol>
+            <div><span class="anchor_wrapper"><a name="GUID-3AA4BFE4-0820-4EFE-83C7-0752139A19B6"></a></span><div class="note-important"><span class="label">IMPORTANT:</span> 
+                  <p><span class="anchor_wrapper"><a name="GUID-EC2315CC-D4D5-419D-BE17-E097CABC294E"></a></span>As you may suspect, your script will fail if you try to use an invalid object or collection
+                     (nothing). For this reason, you need to test the return value before trying to work
+                     with it any further. For more information, see <span class="char_link"><a href="#!/url=./files/script_data_MakingSureReturnedValuesareValid.htm">Making Sure Returned Values are Valid</a></span>.
+                  </p> 
+               </div>
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSBAC00627FDA41F4DBFDDFE9988A39246-002B"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-F5AC5B0A-7069-4405-BF2A-773FA01252F7"></a></span> Returning Values and Objects
+               </h2>  
+               <div class="section"><span class="anchor_wrapper"><a name="WSBAC00627FDA41F4DBFDDFE9988A39246-002C"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-E279711B-7202-4418-B49C-F049F2FBC8ED"></a></span> Returning Data Values
+                  </h3>     
+                  <p><span class="anchor_wrapper"><a name="GUID-A6677136-EB7A-4241-BC3A-56A4CE9266D3"></a></span>Some commands and methods test objects to see whether a certain condition is true,
+                     so they return a <em class="strong">boolean</em> value which represents either True or False. For example, the <a href="#!/url=./si_cmds/IsAnimated.html">IsAnimated</a> command checks to see whether the object has animated parameters and the <a href="#!/url=./si_om/SIObject.IsEqualTo.html">SIObject.IsEqualTo</a> method checks to see whether the object is the same as some other item.
+                  </p> 
+                  <p><span class="anchor_wrapper"><a name="GUID-A6781D1E-D6B8-406F-9108-9E6AC56AB5AE"></a></span>There are many others that perform some kind of mathematical calculation, so they
+                     return a numerical value. For example, the <a href="#!/url=./si_cmds/GetNbTriangles.html">GetNbTriangles</a> command returns the number of triangles (as a <em class="strong">long</em>) on a given object and the <a href="#!/url=./si_om/XSIMath.DegreesToRadians.html">XSIMath.DegreesToRadians</a> method converts an angle in degrees to radians (as a <em class="strong">double</em>).
+                  </p> 
+                  <div><span class="anchor_wrapper"><a name="GUID-0C7236E5-D50E-4F32-AE5E-4F10FE66BF88"></a></span><div class="note-note"><span class="label">NOTE:</span> 
+                        <p><span class="anchor_wrapper"><a name="GUID-E1E7D910-76D9-4E94-B1C8-EC989B7D0B75"></a></span>For more information on types, see <span class="char_link"><a href="#!/url=./files/script_data_Whatisxd4Typexd5.htm">What is ÔType'?</a></span>.
+                        </p> 
+                     </div>
+                  </div> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WSBAC00627FDA41F4DBFDDFE9988A39246-002D"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-66CAFE04-4016-4BEC-AB06-C88C49BE9094"></a></span> Returning Objects
+                  </h3>     
+                  <p><span class="anchor_wrapper"><a name="GUID-098D1A6F-93FB-426A-A7E4-A39258A8B5C9"></a></span>Most methods and some commands create individual scene items, so they return the name
+                     of the newly created object. For example, the <a href="#!/url=./si_cmds/CreatePrim.html">CreatePrim</a> command and the <a href="#!/url=./si_om/X3DObject.AddGeometry.html">X3DObject.AddGeometry</a> method both create 3D objects of the specified geometry type.
+                  </p> 
+                  <div><span class="anchor_wrapper"><a name="GUID-5D30E8D8-E002-46F3-A5DF-2E9D028A6898"></a></span><div class="note-tip"><span class="label">TIP:</span> 
+                        <p><span class="anchor_wrapper"><a name="GUID-7576EC2E-F154-4565-90AF-EE391792E26E"></a></span>In these cases, if you are using VBScript you need to use the <em class="strong">Set</em> keyword before the variable name to get an object. For example, the <a href="#!/url=./si_cmds/CreatePrim.html">CreatePrim</a> command returns the primitive it creates. With the Set keyword, you get a pointer
+                           to the object (as an <a href="#!/url=./si_om/X3DObject.html">X3DObject</a>):
+                        </p> 
+                        <div class="codeBlock"><pre class="prettyprint">
+Set oObj = CreatePrim( "Arc", "NurbsCurve" )
+' TypeName(oObj) returns 'X3DObject'</pre></div> 
+                        <p><span class="anchor_wrapper"><a name="GUID-A46E70CA-8DF0-4098-805F-A842D6F1E663"></a></span>Without the Set keyword, you get the name of the new object because the default property
+                           of an <a href="#!/url=./si_om/X3DObject.html">X3DObject</a> is the <a href="#!/url=./si_om/SIObject.Name.html">Name</a> property:
+                        </p> 
+                        <div class="codeBlock"><pre class="prettyprint">
+sRtn = CreatePrim( "Arc", "NurbsCurve" )
+' TypeName(sRtn) returns 'String'</pre></div> 
+                        <p><span class="anchor_wrapper"><a name="GUID-A8F06D5F-EFC9-4181-B296-A7F16E2AB825"></a></span>Other languages, such as JScript, implicitly assign the object type to the variable,
+                           so there is no need to use a special keyword.
+                        </p> 
+                        <div class="codeBlock"><pre class="prettyprint">
+// ClassName(oObj) will return 'X3DObject'
+var oObj = CreatePrim( "Arc", "NurbsCurve );</pre></div> 
+                     </div>
+                  </div> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WSBAC00627FDA41F4DBFDDFE9988A39246-002E"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-5E361C17-A99A-44E7-AD7F-7F3B738E87FD"></a></span> Example: Returning objects using scripting commands
+                     </h4>  
+                     <div class="codeBlock"><pre class="prettyprint">
+' Using the Set keyword allows you to create variables 
+' that point to objects.
+Set oSphere = CreatePrim("Sphere", "NurbsSurface")</pre></div> 
+                  </div> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WSBAC00627FDA41F4DBFDDFE9988A39246-002F"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-28CC4F91-C50C-49F1-94D7-08F9559E6F7E"></a></span> Example: Returning objects using the object model
+                     </h4>  
+                     <div class="codeBlock"><pre class="prettyprint">
+Set oRoot = ActiveProject.ActiveScene.Root
+Set oSphere = oRoot.AddGeometry("Sphere", "NurbsSurface", "sphere")
+LogMessage oSphere.Name &amp; " has a position in X of " &amp; oSphere.posx.Value</pre></div> 
+                  </div> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WSBAC00627FDA41F4DBFDDFE9988A39246-0030"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-F8454DC5-ECD4-4B3B-829E-BBC584575FC4"></a></span> Simple Objects versus Collections
+                  </h3>     
+                  <p><span class="anchor_wrapper"><a name="GUID-1E851327-A5C8-492B-A79F-53496B296CEA"></a></span>When you get a returned object, it is important to remember that it could be either
+                     a simple object or a collection. This affects how you test and use the returned object
+                     — for example, simple objects have <a href="#!/url=./si_om/SIObject.Name.html">Name</a> and <a href="#!/url=./si_om/SIObject.Type.html">Type</a> properties, while collections have <a href="#!/url=./si_om/SIObjectCollection.Count.html">Count</a> and <a href="#!/url=./si_om/SIObjectCollection.Item.html">Item</a> properties.
+                  </p> 
+                  <p><span class="anchor_wrapper"><a name="GUID-7B34A1F9-AC93-4F6B-8C9B-5FF3DA01E716"></a></span>The default property for an object is the <a href="#!/url=./si_om/SIObject.Name.html">Name</a> property, which means that when you use an object variable <span class="code" translate="no">oSphere</span> in a code statement, it can be interpreted either as <span class="code" translate="no">oSphere</span> or as <span class="code" translate="no">oSphere.Name</span>, depending on the context:
+                  </p> 
+                  <div class="codeBlock"><pre class="prettyprint">
+' These two LogMessage statements are equivalent
+' since LogMessage is looking for a string
+Set oSphere = CreatePrim( "Sphere", "NurbsSurface" )
+LogMessage oSphere
+LogMessage oSphere.Name</pre></div> 
+                  <div><span class="anchor_wrapper"><a name="GUID-0AD008B1-F558-4B0C-8506-1E62E3B318E4"></a></span><div class="note-note"><span class="label">NOTE:</span> 
+                        <p><span class="anchor_wrapper"><a name="GUID-F067812B-F2B8-4CD3-BC24-5A1B3BDD6CC9"></a></span>For more information about objects, see <a href="#!/url=./files/dev_intro_AbouttheStructureofXSIxd5sAPIs.htm">About the Structure of the Softimage APIs</a>.
+                        </p> 
+                     </div>
+                  </div> 
+                  <p><span class="anchor_wrapper"><a name="GUID-8009AAAE-6619-4AAF-89DF-E62729AFE9CA"></a></span>The default property for a collection is the <a href="#!/url=./si_om/SIObjectCollection.Item.html">Item</a> property, which means that when you use an object variable <span class="code" translate="no">oOwners</span> in a code statement, it can be interpreted either as <span class="code" translate="no">oOwners</span> or as <span class="code" translate="no">oOwners.Item</span>, depending on the context:
+                  </p> 
+                  <div class="codeBlock"><pre class="prettyprint">
+' These four LogMessage statements are also equivalent
+' because the Item actually identifies the object 
+' that is the first member of the collection, both
+' are interpreted as oOwners.Item(0).Name
+Set oSphere = CreatePrim( "Sphere", "NurbsSurface" )
+Set oOwners = oSphere.Owners
+LogMessage oOwners(0)
+LogMessage oOwners(0).Name
+LogMessage oOwners.Item(0)
+LogMessage oOwners.Item(0).Name</pre></div> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WSBAC00627FDA41F4DBFDDFE9988A39246-0031"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-BCA58CF5-8DA7-4719-83C3-456D99836A8E"></a></span> To check whether the return value is an object or a collection
+                     </h4>  
+                     <p><span class="anchor_wrapper"><a name="GUID-AB79FDEB-5CA2-4294-A7E3-E6BF4C08F262"></a></span>The following code tests to see whether a mystery object is a collection or a simple
+                        object.
+                     </p> 
+                     <div class="codeBlock"><pre class="prettyprint">
+' Continue processing if there is an error in the next block
+On Error Resume Next
+
+' Test to see if it is a collection
+myCount = mysteryObj.Count
+if (Err.Number = 0) then 
+	if (myCount = 0) then
+		LogMessage "Empty collection."
+	else
+		LogMessage "Collection contains:"
+		for each myItem in mysteryObj
+			LogMessage myItem.Name &amp; " is a " &amp; myItem.Type
+		next
+	end if
+	
+' Test to see if it is a simple object
+else
+	Err.Clear
+	myName = mysteryObj.Name
+	if (Err.Number = 0) then
+		LogMessage "Object: " &amp; myName &amp; " is a " &amp; mysteryObj.Type
+	else
+		LogMessage "Unknown"
+	end if
+end if
+
+'Stop processing if there is an error in the remainder of the script
+Err.Clear
+On Error GoTo 0</pre></div> 
+                  </div> 
+               </div> 
+            </div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

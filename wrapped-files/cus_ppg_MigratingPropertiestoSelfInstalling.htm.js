@@ -1,0 +1,89 @@
+var topic = "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n\
+\n\
+<!-- saved from url=(0024)http://docs.autodesk.com -->\n\
+<html>\n\
+   <head>\n\
+<link href=\"../style/prettify.css\" type=\"text/css\" rel=\"stylesheet\" />\n\
+<script type=\"text/javascript\" src=\"../scripts/prettify.js\"></script><script src=\"../scripts/lib/jquery-1.9.1.min.js\" type=\"text/javascript\"></script>\n\
+      <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n\
+      <meta name=\"product\" content=\"SI\" />\n\
+      <meta name=\"release\" content=\"2015\" />\n\
+      <meta name=\"book\" content=\"Developer\" />\n\
+      <meta name=\"created\" content=\"2014-03-13\" />\n\
+      <meta name=\"topicid\" content=\"GUID-49D16046-088B-4B7F-B6A8-E603C5E39BCD\" />\n\
+      <meta name=\"indexterm\" content=\"custom properties: migrating\" />\n\
+      <meta name=\"topic-type\" content=\"concept\" />\n\
+      <title>Migrating Properties to Self-Installing</title><script type=\"text/javascript\" src=\"../scripts/utils/adsk.redirect.js\"></script></head>\n\
+   <body height=\"100%\"><div class=\"body_content\" id=\"body-content\"><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/ac_common.js\"); });</script><script type=\"text/javascript\">var reflinkid = \"si_cpp\"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on(\'click\', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/multireflink.js\"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$(\"div#WidgetFloaterPanels,link[href*=\'microsofttranslator.com\'],script[src*=\'microsofttranslator.com\'],script[src*=\'bing.com\']\").remove();</script><script type=\'text/javascript\'>$(\"div#navigation,div#breadcrumbs,div#banner\").attr(\"translate\",\"no\"); var mtLocation = ((location && location.href && location.href.indexOf(\'https\') == 0)?\'https://ssl.microsofttranslator.com\':\'http://www.microsofttranslator.com\')+\'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages=\'; yepnope.injectJs(mtLocation, function() {}, { charset:\'utf-8\', type:\'text/javascript\' } );</script><script type=\"text/javascript\">\n\
+ </script><!-- begin MT -->\n\
+            \n\
+            <div id=\'MicrosoftTranslatorWidget\' class=\'Dark\' style=\'position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden\'></div><div id=\"reflinkdiv\" style=\"display:none; font-family: \'RobotoRegular\', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible\"></div>\n\
+      <div><span class=\"anchor_wrapper\"><a name=\"GUID-49D16046-088B-4B7F-B6A8-E603C5E39BCD\"></a></span><div class=\"head\">\n\
+            <h1>Migrating Properties to Self-Installing</h1>\n\
+         </div>\n\
+         <div class=\"bodyProcess\">\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-987BF2A1-4454-487C-B755-520965154793\"></a></span>You can use the Custom Property Wizard to migrate custom properties (for example,\n\
+               SPDL-based properties) to self-installing properties.\n\
+            </p>\n\
+            <div class=\"section\"><span class=\"anchor_wrapper\"><a name=\"WS34BA39B437A993419C80CAB58E3BEFA1-001C\"></a></span> \n\
+               <h2><span class=\"anchor_wrapper\"><a name=\"GUID-A6A78113-4C5D-444A-BA4A-42482C3BAEC0\"></a></span> To migrate a property\n\
+               </h2>  <span class=\"anchor_wrapper\"><a name=\"GUID-64DED84D-12C2-4338-AF4A-1D3D47A73FD8\"></a></span><ol type=\"1\" start=\"1\">\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-2E35AD73-DA08-4316-8E94-27A6326FA4BC\"></a></span>Open the property page for a property. Right-click the header bar and choose <span class=\"MenuCascade\" id=\"GUID-A44834BB-CF42-4752-9552-33ED9297BBC8\">Migrate to Self-installed</span>.\n\
+                     </p> <img src=\"../images/GUID-4C90701D-D0AC-4094-8F10-38D05E0F1794-low.png\" /> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-88DB6704-8C0B-4296-A625-69260D45DB34\"></a></span>The Custom Property Wizard appears.\n\
+                     </p> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-A673A5A8-38D2-4661-B555-F1400CBE26F8\"></a></span>In the Custom Property Wizard:\n\
+                     </p> \n\
+                     <ul>\n\
+                        <li> \n\
+                           <p><span class=\"anchor_wrapper\"><a name=\"GUID-42C2646B-BC23-4D9C-8CF7-A58E8F83879C\"></a></span>Specify a name for the self-installing property.\n\
+                           </p> \n\
+                        </li>\n\
+                        <li> \n\
+                           <p><span class=\"anchor_wrapper\"><a name=\"GUID-B2C8ACC8-11E7-4393-AC45-48A0EFFE5D26\"></a></span>Choose the language you want to use (for example, JScript or C++).\n\
+                           </p> \n\
+                        </li>\n\
+                        <li> \n\
+                           <p><span class=\"anchor_wrapper\"><a name=\"GUID-D16C2C7E-A14D-45A0-8A51-9709CD9E34B1\"></a></span>Choose the output folder for the generated code. By default, the code is generated\n\
+                              in the Application\\Plugins folder of the User location.\n\
+                           </p> \n\
+                        </li>\n\
+                        <li> \n\
+                           <p><span class=\"anchor_wrapper\"><a name=\"GUID-B70E93B6-B8E3-48B6-9AAC-7C0CDD629BAD\"></a></span>Check the parameter definitions that the wizard created based on the existing (non-self-installing)\n\
+                              property.\n\
+                           </p> \n\
+                        </li>\n\
+                        <li> \n\
+                           <p><span class=\"anchor_wrapper\"><a name=\"GUID-A690DF80-84C0-495A-9605-507BA6808715\"></a></span>On the <span class=\"MenuCascade\" id=\"GUID-8083D8E9-2ADC-4A49-822E-0021C68A0CC5\">Layout</span> tab, redefine the layout of the property page.\n\
+                           </p> \n\
+                        </li>\n\
+                     </ul> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-C87843FD-822F-4909-9337-DD1312DCB7BA\"></a></span>Generate the code.\n\
+                     </p> \n\
+                  </li>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-E793CD64-B1F3-49D4-9275-1942E1405D4B\"></a></span>In the generated scripted code, edit the generated <a href=\"#!/url=./si_cmds/cb_Property_PPGEvent.html\">PPGEvent</a>, <a href=\"#!/url=./si_cmds/cb_Property_OnChanged.html\">OnChanged</a>, <a href=\"#!/url=./si_cmds/cb_Property_OnClicked.html\">OnClicked</a>, OnClosed, and <a href=\"#!/url=./si_cmds/cb_Property_OnTab.html\">OnTab</a> callbacks to reimplement any property page logic. For C# and C++ code generated by\n\
+                        the wizard, edit the generated <a href=\"#!/url=./si_cmds/cb_Property_OnClicked.html\">OnClicked</a> callback.\n\
+                     </p> \n\
+                  </li>\n\
+               </ol> \n\
+               <p><span class=\"anchor_wrapper\"><a name=\"GUID-261606A4-3522-442A-AAF4-9311282F9F10\"></a></span> <em class=\"strong\">Notes</em> \n\
+               </p> \n\
+               <ul>\n\
+                  <li> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-166183CC-7C08-466A-81DC-2CBFCA847006\"></a></span>You can also start the Custom Property Wizard and then select the property you want\n\
+                        to migrate. To select the custom property to migrate, you can either type the property\n\
+                        name in the Model Property box, or click click <span class=\"MenuCascade\" id=\"GUID-40C3288C-EAA5-4B3C-8EB5-29493FC68EF1\"> <img src=\"../images/GUID-9C395550-4D3B-45D0-BA13-1273A20DD935-low.png\" /> </span> and then pick the property.\n\
+                     </p> \n\
+                  </li>\n\
+               </ul> \n\
+            </div>\n\
+         </div>\n\
+         <div class=\"footer-block\"><a href=\"../html/ac.cmtdialog.htm\" class=\"comments-anchor\" target=\"_blank\"><span class=\"comments-link\">Please send us your comment about this page</span></a></div><br /><p class=\"footer-license-block\"><a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\"><img alt=\"Creative Commons License\" style=\"border-width: 0;\" src=\"../images/ccLink.png\" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href=\"http://autodesk.com/creativecommons\" target=\"_blank\">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>\n\
+   </div></body>\n\
+</html>";

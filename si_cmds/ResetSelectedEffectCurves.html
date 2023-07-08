@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>ResetSelectedEffectCurves</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>ResetSelectedEffectCurves</h1>
+         </div>
+
+<h2 class="pagehead">ResetSelectedEffectCurves</h2>
+
+<h3>Introduced</h3>
+<div><p>v1.5</p></div>
+
+<h3>Description</h3>
+<div><p>Resets the effect curves for the selected object(s) in the 
+selected action clips This will only be called (for now) from the effect 
+contextual menu.<br /><br />
+Note: The object where the action clip is defined must be selected before calling this command.<br /><br /></p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>ResetSelectedEffectCurves( Clip );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Clip		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Selected Clips 			<p class="cell"><span class="hilite">Default Value: </span>
+Current selection			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example shows how to create an offset clip effect.
+' First, an animation is created on the sphere, and 
+' a CreateOffsetEffect is created on the action clip.
+' Then, offset keys are added to the Fcurve of the clip effect.
+' 
+' At the end, ResetSelectedEffectCurves will be called to reset all infos
+' on the effect of the current selected object, 
+' but keeping the effect.
+'
+NewScene
+CreatePrim "Sphere", "NurbsSurface", "MySphere"
+SetValue "PlayControl.Out", 40
+' Setting a key frame on XPos at frame 1
+SaveKey "MySphere.kine.local.posx", 1, -9.0
+' Setting a key frame on XPos at frame 10
+SaveKey "MySphere.kine.local.posx", 10, 3.0
+' Setting a key frame on XPos at frame 30
+SaveKey "MySphere.kine.local.posx", 30,-3.0
+' Setting a key frame on XPos at frame 40
+SaveKey "MySphere.kine.local.posx", 40, 9.0
+' Return to frame 1
+SetValue "PlayControl.Current", 1
+' Store fcurve into source Actions
+StoreAction "MySphere", "MySphere.kine.local.posX", 2, "XPosAction" , True, 1, 40, True, False
+' Add a track into the mixer, and add action clip to it.
+AddTrack "Scene_Root", "Scene_Root", 0
+AddClip "Scene_Root", "Sources.Animation.XPosAction", , "Mixer.Mixer_Anim_Track", 0
+' Create an Offset Effect on XPosActionClip
+CreateOffsetEffect "Mixer.Mixer_Anim_Track.XPosAction_Clip"
+' Goto Frame 15 and set the XPos of the sphere to -3.75.
+' When calling cmd SaveOffsetKeys, the system will save
+' into the fcurve of offset clip effect the difference
+' between the XPos value in the clip, and -3.75
+SetValue "PlayControl.Current", 15
+Translate "MySphere", -3.75, 0, 0, siAbsolute, siParent, siObj, siX
+SaveOffsetKeys "Mixer.Mixer_Anim_Track.XPosAction_Clip",siAllParamsInClip , 15
+' Create another offset key (key on the fcurve of the clip effect)
+' at frame 30
+SetValue "PlayControl.Current", 30
+Translate "MySphere", 2, 0, 0, siAbsolute, siParent, siObj, siX
+SaveOffsetKeys "Mixer.Mixer_Anim_Track.XPosAction_Clip", siAllParamsInClip, 30
+SelectObj "MySphere"
+' Now reset the offset effect curve created.
+ResetSelectedEffectCurves "Mixer.Mixer_Anim_Track.XPosAction_Clip"
+''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' To see the result, go to the animation mixer, 
+' right-click the XPosAction_Clip, and select Animation Editor
+''''''''''''''''''''''''''''''''''''''''''''''''''''''</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/CreateOffsetEffect.html">CreateOffsetEffect</a> <a href="#!/url=./si_cmds/CreateScaleEffect.html">CreateScaleEffect</a> <a href="#!/url=./si_cmds/RemoveEffect.html">RemoveEffect</a> <a href="#!/url=./si_cmds/ResetAllEffectCurves.html">ResetAllEffectCurves</a> <a href="#!/url=./si_cmds/ResetEffectAtFrame.html">ResetEffectAtFrame</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

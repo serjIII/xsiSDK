@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-79D92AB0-E67E-49B4-8371-70BA5AA34AF8" />
+      <meta name="indexterm" content="object model: using arrays" />
+      <meta name="indexterm" content="scripting: arrays" />
+      <meta name="indexterm" content="arrays (in scripting): using" />
+      <meta name="indexterm" content="Working with Return Value Arrays" />
+      <meta name="indexterm" content="VBScript: safearrays" />
+      <meta name="indexterm" content="VBScript Example: Looping through a returned array" />
+      <meta name="indexterm" content="JScript: safearrays" />
+      <meta name="indexterm" content="JScript and One-Dimensional (Flat) SafeArrays" />
+      <meta name="indexterm" content="JScript and Multiple Dimensions" />
+      <meta name="indexterm" content="JScript Example: Looping through a returned Array (via VBArray)" />
+      <meta name="indexterm" content="JScript Example: Managing a returned 2-dimensional VBArray with a GridData object" />
+      <meta name="indexterm" content="Python Example: Looping through a returned array" />
+      <meta name="topic-type" content="concept" />
+      <title>Using (Native) Arrays</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ reflinkdata.push(["index", "si_cpp/group__RenderMapDefine.html#gadca2b0ae15c62d8023e6645c3404056c", "C++ API Reference", "../"]); 
+</script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-79D92AB0-E67E-49B4-8371-70BA5AA34AF8"></a></span><div class="head">
+            <h1>Using (Native) Arrays</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-577FF878-4075-4891-B306-F6788CC9897B"></a></span>Even though each scripting language uses its own unique implementation of an array,
+               all share certain commonalities. For example, an array in any language is a list of
+               values or objects and each language provides a set of tools to add and remove items.
+               
+            </p>
+            <p><span class="anchor_wrapper"><a name="GUID-58A77A7D-B5C9-4089-A755-956616B0D990"></a></span>Most script writers probably use build and manipulate arrays for their own purposes,
+               but many Softimage functions either take arrays as input or return arrays as output,
+               so it's important to understand how to work with arrays and Softimage smoothly. The
+               following sections show how to use arrays with different scripting languages. 
+            </p>
+            <div class="section"><span class="anchor_wrapper"><a name="WS51A0B8DF367E804591A913DDA18BECD3-0004"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-EB901E56-3144-4498-A88D-18DB9A9D85A5"></a></span> Working with Return Value Arrays
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-A01F4543-6180-4ED9-8D95-AA210077703D"></a></span>Some commands, methods, and properties return an array of values. Depending on the
+                  scripting language you use, you may get either a Visual Basic safe array or an array
+                  of arrays. For example, if you run the command GetMarking() from VBScript or JScript,
+                  you get a Visual Basic safe array, and from Python, you get a tuple. 
+               </p> 
+               <p><span class="anchor_wrapper"><a name="GUID-F663BEEE-96FB-499A-884F-E04BAED7792C"></a></span> In VBScript, the <em class="mild">native</em> array is called a SafeArray, which is the standard array used inside Variants and
+                  for Automation scripting objects like the Softimage object model. For scripting languages
+                  other than VBScript, different strategies must used: 
+               </p> <span class="anchor_wrapper"><a name="UL_8A3810413F0348C9A7E6A0C4A24A6B70"></a></span><ul>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-A20816E7-8841-4952-AC9B-D852B22C9DFC"></a></span> <span class="char_link"><a href="#!/url=./files/script_arrays_UsingNativeArrays.htm#WS51A0B8DF367E804591A913DDA18BECD3-0007">JScript</a></span> 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-4ECE39CD-7399-4667-BB0B-9CA2488ACB9C"></a></span> <span class="char_link"><a href="#!/url=./files/script_arrays_UsingNativeArrays.htm#WS51A0B8DF367E804591A913DDA18BECD3-000F">Python</a></span> 
+                     </p> 
+                  </li>
+               </ul> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS51A0B8DF367E804591A913DDA18BECD3-0005"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-A3ADB710-5075-4F87-BD39-37C917D3ADE2"></a></span>VBScript
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-F9C3EF93-8DD7-4367-A5DD-3E3063D6C40F"></a></span>Since SafeArrays are native to VBScript, you can work with a returned array using
+                  the standard VBScript methods (see http://msdn.microsoft.com/ for more information).
+                  
+               </p> 
+               <div class="section"><span class="anchor_wrapper"><a name="WS51A0B8DF367E804591A913DDA18BECD3-0006"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-B7E9C266-EB16-43A8-AB9D-50FB6D446A88"></a></span> VBScript Example: Looping through a returned array
+                  </h3>  
+                  <div class="codeBlock"><pre class="prettyprint">
+Dim arrMarkedParams, strItem, i
+GetPrim "Null"
+SetMarking "kine.local.pos,kine.global.pos"
+AddToMarking "kine.local.ori"
+arrMarkedParams = GetMarking()
+for i=0 to UBound(arrMarkedParams)
+   strItem = arrMarkedParams(i)
+   LogMessage "Value of item at <a href="javascript:void(0)" data="index" class="a_multireflink">index</a> " &amp; i " = &amp; strItem
+next
+
+' Expected result:
+'INFO : Value of item at <a href="javascript:void(0)" data="index" class="a_multireflink">index</a> 0 = kine.local.pos
+'INFO : Value of item at <a href="javascript:void(0)" data="index" class="a_multireflink">index</a> 1 = kine.global.pos
+'INFO : Value of item at <a href="javascript:void(0)" data="index" class="a_multireflink">index</a> 2 = kine.local.ori</pre></div> 
+               </div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS51A0B8DF367E804591A913DDA18BECD3-0007"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-B9CD8A7A-24B3-498F-8985-A2C15F7EE5C3"></a></span>JScript
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-2AF98201-2DFB-4053-B7F9-442DA23BDF21"></a></span>There are some restrictions in working with returned arrays in JScript, because while
+                  JScript has its own native Array object, it is not a SafeArray and it does not support
+                  more than one dimension. However, many parts of the Softimage interface allow you
+                  to provide JScript arrays instead of SafeArrays. For example, you can pass in a native
+                  JScript array to <a href="#!/url=./si_om/Envelope.SetDeformerWeights.html">Envelope.SetDeformerWeights</a> (<em class="strong">Weights</em> parameter) but <a href="#!/url=./si_om/Envelope.GetDeformerWeights.html">Envelope.GetDeformerWeights</a> returns a SafeArray (see the example for Envelope.SetDeformerWeights. 
+               </p> 
+               <p><span class="anchor_wrapper"><a name="GUID-F9515D87-27C9-4E7A-A0BB-C3410FD9B07F"></a></span>In addition, JScript also provides a special kind of object called a <em class="strong">VBArray</em>. The VBArray object provides functions that allow you to read from a SafeArray (for
+                  example, access to multiple dimensions, upper- and lower-bounds) and also provides
+                  a handy method called <em class="strong">toArray</em>(), which converts the VBArray to a native JScript <em class="strong">Array</em>. 
+               </p> 
+               <p><span class="anchor_wrapper"><a name="GUID-C94E6AF5-9D0F-4AB7-A113-E0D08520F261"></a></span>Most scripters prefer to work with a JScript array even if they only need to read
+                  the values, because converting a VBArray to a JScript array is very simple (<span class="code" translate="no">var jsArray = vbArray.toArray();</span>) and the JScript Array object has many more methods that are useful to work with
+                  (the VBArray is really only designed to provide basic access to the data). 
+               </p> 
+               <div><span class="anchor_wrapper"><a name="GUID-B7CA1704-E99B-4247-B97B-5EFC6DEE5205"></a></span><div class="note-note"><span class="label">NOTE:</span> 
+                     <p><span class="anchor_wrapper"><a name="GUID-88095782-BE5D-4BFF-85DB-CCA61579DF11"></a></span>For information on the methods available with either of these array objects, see http://msdn.microsoft.com/en-us/library/k4h76zbx(VS.85).aspx.
+                        
+                     </p> 
+                  </div>
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WS51A0B8DF367E804591A913DDA18BECD3-0008"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-81F898EF-AEEE-4FC1-BE0D-E75034A68961"></a></span> JScript and One-Dimensional (Flat) SafeArrays
+                  </h3>  
+                  <p><span class="anchor_wrapper"><a name="GUID-9E7B4B4B-E075-4B95-8E9B-72FC0D729ACD"></a></span>Reading and writing one-dimensional arrays is not a problem, since JScript Array objects
+                     are one-dimensional: 
+                  </p> <span class="anchor_wrapper"><a name="UL_FFBE14B83D334B83AAE2AFC8AB8564F7"></a></span><ul>
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-B5D59E6D-33FE-41FB-8FCE-10E094896326"></a></span>For reading, simply convert the returned SafeArray into a JScript array with the <span class="code" translate="no">VBArray.toArray()</span> method. 
+                        </p> 
+                     </li>
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-FD357157-FF2D-4720-B4FB-101DCA578FE7"></a></span>For writing, use a JScript array either converted from a VBArray or created from scratch
+                           with the <span class="code" translate="no">new Array()</span> constructor. Functions that take a one-dimensional SafeArray as input will accept
+                           JScript arrays and convert them automatically. 
+                        </p> 
+                        <div><span class="anchor_wrapper"><a name="GUID-F9C24E6C-C721-43FA-8452-F98B6EBB08E0"></a></span><div class="note-tip"><span class="label">TIP:</span> 
+                              <p><span class="anchor_wrapper"><a name="GUID-E876AF4B-D350-408F-9DB0-0ED7AF57395F"></a></span>See <span class="char_link"><a href="#!/url=./files/script_arrays_UsingNativeArrays.htm#WS51A0B8DF367E804591A913DDA18BECD3-000A">JScript Example: Looping through a returned Array (via VBArray)</a></span> for an example that demonstrates how to convert and read a one-dimensional SafeArray
+                                 in JScript. 
+                              </p> 
+                              <p><span class="anchor_wrapper"><a name="GUID-2B1C9564-40A8-4A96-B20D-61AD8D180EE8"></a></span>See the JScript example on the <a href="#!/url=./si_om/Envelope.SetDeformerWeights.html">Envelope.SetDeformerWeights</a> reference page for an example of how to convert a one-dimensional SafeArray to a
+                                 JScript array, modify it, and then write it back via Envelope.GetDeformerWeights.
+                                 
+                              </p> 
+                           </div>
+                        </div> 
+                     </li>
+                  </ul> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WS51A0B8DF367E804591A913DDA18BECD3-0009"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-59F850B0-64F0-4380-8C2E-DAB88AB1DF4F"></a></span> JScript and Multiple Dimensions
+                  </h3>  
+                  <p><span class="anchor_wrapper"><a name="GUID-0C7E5CC8-B730-4A67-A580-AC7386839B47"></a></span>SafeArrays support the notion of multiple dimensions. Softimage generally uses 1-dimensional
+                     (flat) arrays, but will occasionally use a 2-dimensional arrays, which are often characterized
+                     as tables or spreadsheet grids. The first dimension represents the rows, the second
+                     dimension represents the columns, and each entry represents a cell. 
+                  </p> 
+                  <p><span class="anchor_wrapper"><a name="GUID-24AB23E4-276D-4B65-AA7D-9871D2DC2B1D"></a></span>For example, <a href="#!/url=./si_om/ClusterElementCollection.html">ClusterElementCollection</a>s can be used to map <a href="#!/url=./si_om/ClusterProperty.html">ClusterProperty</a> UV data to specific <a href="#!/url=./si_om/Cluster.html">Cluster</a>s, which are managed as a 2-dimensional array where each row represents the clusters'
+                     component indices and each column represents each of the RGBA vertex color values
+                     for that cluster. 
+                  </p> 
+                  <p><span class="anchor_wrapper"><a name="GUID-18EE9820-DEC9-4E68-80F4-5834793CCB48"></a></span>The JScript (native) array is always one-dimensional; that is, one long list of values
+                     or references instead of a table or grid of values. For reading the returned values,
+                     you can use the methods of the VBArray object (see <span class="char_link"><a href="#!/url=./files/script_arrays_UsingNativeArrays.htm#WS51A0B8DF367E804591A913DDA18BECD3-0008">JScript and One-Dimensional (Flat) SafeArrays</a></span>) to access the data. 
+                  </p> 
+                  <div><span class="anchor_wrapper"><a name="GUID-D83C4694-E49F-4000-9BA5-1E93BDD5F16B"></a></span><div class="note-note"><span class="label">NOTE:</span> 
+                        <p><span class="anchor_wrapper"><a name="GUID-A1E89E8B-0C9D-4CCC-AC17-EB7A456DE8F0"></a></span>If you decide to convert the SafeArray to a JScript array, you need to know that the
+                           extra dimensions of the SafeArray are folded into the (flat) JScript array by appending
+                           each successive dimension to the first one. 
+                        </p> 
+                     </div>
+                  </div> 
+                  <p><span class="anchor_wrapper"><a name="GUID-23599A50-CC01-430A-B2DE-09B3D5E418F7"></a></span>Because Softimage commands, methods, and properties always return a SafeArray in JScript,
+                     you need to use one of the following workaround: 
+                  </p> <span class="anchor_wrapper"><a name="UL_91D658B8888E4926B35BA9AB6E5B37E7"></a></span><ul>
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-02C4C81F-152A-4DBF-A23B-91C406378AAF"></a></span>Store it in a <a href="#!/url=./si_om/GridData.html">GridData</a> object, which simulates a 2-dimensional SafeArray. For more information, see <span class="char_link"><a href="#!/url=./files/script_arrays_UsingtheGridDataObject.htm">Using the GridData Object</a></span>. 
+                        </p> 
+                     </li>
+                     <li> 
+                        <p><span class="anchor_wrapper"><a name="GUID-A3606C50-3758-4F31-A199-06E03BE502DC"></a></span>Encapsulate the returned SafeArray in a <em class="strong">VBArray</em> object: 
+                        </p> 
+                     </li>
+                  </ul> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WS51A0B8DF367E804591A913DDA18BECD3-000A"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-0C741658-9A59-4D90-ABAA-993B4802261A"></a></span> JScript Example: Looping through a returned Array (via VBArray)
+                     </h4>  
+                     <p><span class="anchor_wrapper"><a name="GUID-DC8ECD03-2044-4EE1-BD1F-7DB7496DAB48"></a></span>This example demonstrates how to convert and read a one-dimensional SafeArray in JScript.
+                        
+                     </p> 
+                     <div class="codeBlock"><pre class="prettyprint">
+GetPrim( "Null" );
+SetMarking( "kine.local.pos,kine.global.pos" );
+AddToMarking( "kine.local.ori" );
+
+// GetMarking() returns a VBArray, which you can 
+// convert to a JS Array with the toArray() function
+var vbaMarkings = <em class="strong">new VBArray(</em> GetMarking() <em class="strong">)</em>;
+var jsaMarkings = vbaMarkings.<em class="strong">toArray()</em>;
+for ( var i=0; i&lt;jsaMarkings.length; i++ ) {
+	LogMessage( jsaMarkings[i] );
+}
+
+// Expected result:
+//INFO : kine.local.pos
+//INFO : kine.global.pos
+//INFO : kine.local.ori</pre></div> 
+                     <div><span class="anchor_wrapper"><a name="GUID-0BADB417-F48C-4C2A-A48B-EBC59054EBC3"></a></span><div class="note-tip"><span class="label">TIP:</span> 
+                           <p><span class="anchor_wrapper"><a name="GUID-D13EE313-8ED2-499E-B953-B18B5C782F18"></a></span>The example above demonstrates how to convert the returned SafeArray to a JScript
+                              array step by step: 
+                           </p> 
+                           <div class="codeBlock"><pre class="prettyprint">
+var vbaMarkings = <em class="strong">new VBArray(</em> GetMarking() <em class="strong">)</em>;
+var jsaMarkings = vbaMarkings.<em class="strong">toArray()</em>;</pre></div> 
+                           <p><span class="anchor_wrapper"><a name="GUID-C7E4AFF0-42E0-4B90-B993-B4157B1E95F5"></a></span>You can also use the following shortcut in place of the above two lines: 
+                           </p> 
+                           <div class="codeBlock"><pre class="prettyprint">
+var jsaMarkings = GetMarking().<em class="strong">toArray()</em>;</pre></div> 
+                        </div>
+                     </div> 
+                  </div> 
+                  <div class="section"><span class="anchor_wrapper"><a name="WS51A0B8DF367E804591A913DDA18BECD3-000B"></a></span> 
+                     <h4><span class="anchor_wrapper"><a name="GUID-D0AC186E-A345-48D9-8318-CA085814B040"></a></span> JScript Example: Managing a returned 2-dimensional VBArray with a GridData object
+                     </h4>  
+                     <p><span class="anchor_wrapper"><a name="GUID-64B4F88B-5866-4F61-BF41-E2ACA10C5539"></a></span>These are two excerpts from a longer example (see <a href="#!/url=./si_om/ClusterElementCollection.Array.html">ClusterElementCollection.Array</a>) in which a grid is created and vertex colors are applied. The GridData is then used
+                        to display the values of the cluster properties by inspecting the GridData object.
+                        
+                     </p> 
+                     <p><span class="anchor_wrapper"><a name="GUID-BBA7600A-F9D8-4C63-9928-12FC2A9359FF"></a></span>This snippet begins with getting a pointer to the cluster properties on the color
+                        vertex property: 
+                     </p> 
+                     <div class="codeBlock"><pre class="prettyprint">
+// Returns a ClusterElementCollection
+var cls_prop_elems = vertexcolor.Elements;
+
+// Returns a VBArray
+var vbValues = cls_prop_elems.Array;
+Application.LogMessage( "# of dimensions: " + vbValues.dimensions() );
+for ( var d=1; d&lt;=vbValues.dimensions(); d++ ) {
+   Application.LogMessage( "range of dimension " + d + ": " + vbValues.lbound(d) + ".." + vbValues.ubound(d) );
+}
+
+// Display info
+var gridtable = MakeMeAPPG( vbValues );
+InspectObj( gridtable, "", "", siModal, false );
+
+// Change info
+grid_mod = gridtable.Parameters("VertexColorChart").Value;
+grid_mod.SetCell( 0, 0, 1.23 );
+DeleteObj( gridtable );
+gridtable = MakeMeAPPG( grid_mod.Data );
+
+// Re-display modified info
+InspectObj( gridtable, "", "", siModal, false );</pre></div> 
+                     <p><span class="anchor_wrapper"><a name="GUID-31A81D6B-5991-469B-AFBC-D643C2940BFE"></a></span>This snippet demonstrates how to construct a custom property with a GridData parameter,
+                        where the GridData acts like a 2-dimensional array. 
+                     </p> 
+                     <div class="codeBlock"><pre class="prettyprint">
+// ***************************************
+//
+// 		Functions to support PPG
+//
+function MakeMeAPPG( in_SafeArray )
+{
+   var gprop = ActiveSceneRoot.AddProperty( "CustomProperty", false, "Visual2DArray" );			
+   var gparam = gprop.AddGridParameter( "VertexColorChart" );
+   var ugrid = gparam.Value;
+	
+   // Set bounds of this grid
+   ugrid.ColumnCount = in_SafeArray.ubound(1)+1;
+   ugrid.RowCount = in_SafeArray.ubound(2)+1;
+   ugrid.Data = in_SafeArray;
+	
+   // Set up the labels
+   var tmp = new Array( "R", "G", "B", "A" );
+   for ( var c=0; c&lt;ugrid.ColumnCount; c++ ) {
+      ugrid.SetColumnLabel( c, tmp[c]) ;
+   }
+   for ( var r=0; r&lt;ugrid.RowCount; r++ ) {
+      ugrid.SetRowLabel( r, "Cluster " + r.toString() );
+   }
+	
+   // Return the Property Set (not the Grid itself)
+   return gprop;
+}
+</pre></div> 
+                  </div> 
+               </div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS51A0B8DF367E804591A913DDA18BECD3-000F"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-3E860E73-2F4F-40A8-9290-3BD4BE7FE198"></a></span>Python
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-86C22767-C15C-48EE-9A40-B8E2B48422D0"></a></span>Since Python (using the ActiveX Scripting Engine) converts all SafeArrays to tuples
+                  automatically. Tuples are one of two types of arrays available in Python: 
+               </p> <span class="anchor_wrapper"><a name="UL_BC91A47FE0F541CD8743971CB44CD1FB"></a></span><ul>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-DF23F1CB-5A9E-4966-9C9D-815FC61DEC49"></a></span> <em class="mild">tuples</em>—fixed sequences which are often used to return multiple values from functions, roughly
+                        equivalent to VBScript's <em class="mild">static</em> arrays. 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-EE9DB700-11E7-4759-971A-966DF9A67B65"></a></span> <em class="mild">lists</em>—dynamic arrays of values, roughly equivalent to VBScript's <em class="mild">dynamic</em> arrays. 
+                     </p> 
+                  </li>
+               </ul> 
+               <p><span class="anchor_wrapper"><a name="GUID-25CC7493-9DBD-4D24-9A8B-84DE915CDB3E"></a></span>Python provides a wide variety of very powerful functions for working with tuples
+                  and lists. For more information, refer to one of the Python sites mentioned in <a href="#!/url=./files/script_intro_WheretoFindMoreInformation.htm">Where to Find More Information</a>. 
+               </p> 
+               <div><span class="anchor_wrapper"><a name="GUID-E52986E3-EB0C-48C7-963E-D26FF969B19A"></a></span><div class="note-note"><span class="label">NOTE:</span> 
+                     <p><span class="anchor_wrapper"><a name="GUID-E8D099F8-A2F5-4A87-9F41-CFD76CE7A3FC"></a></span>If you need to do any serious array manipulation (especially working with multi-dimensional
+                        arrays and matrices), you should use the Numerical Python extension. For more information,
+                        see http://sourceforge.net/projects/numpy. 
+                     </p> 
+                  </div>
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WS51A0B8DF367E804591A913DDA18BECD3-0010"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-6E732DA2-6D21-4B7A-BEB1-1DF4A52FA3ED"></a></span> Python Example: Looping through a returned array
+                  </h3>  
+                  <div class="codeBlock"><pre class="prettyprint">
+Application.GetPrim( "Null" )
+Application.SetMarking( "kine.local.pos,kine.global.pos" )
+Application.AddToMarking( "kine.local.ori" )
+markings = Application.GetMarking()
+i = 0
+for mrk in markings
+   Application.LogMessage( "Value of item at <a href="javascript:void(0)" data="index" class="a_multireflink">index</a> " + str(i) + " = " + mrk )
+   i = i + 1
+
+# Expected result:
+#INFO : Value of item at <a href="javascript:void(0)" data="index" class="a_multireflink">index</a> 0 = kine.local.pos
+#INFO : Value of item at <a href="javascript:void(0)" data="index" class="a_multireflink">index</a> 1 = kine.global.pos
+#INFO : Value of item at <a href="javascript:void(0)" data="index" class="a_multireflink">index</a> 2 = kine.local.ori</pre></div> 
+               </div> 
+            </div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

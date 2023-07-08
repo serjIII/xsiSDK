@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>ApplyGenOp</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>ApplyGenOp</h1>
+         </div>
+
+<h2 class="pagehead">ApplyGenOp</h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Applies a generator operator and returns the newly created operator(s). (A generator operator is an operator 
+which creates new geometry, such as the Loft, 
+CrvStitch, and 
+SrfFillet operators.)  The newly generated 
+objects are also available via one of the following methods:<br /><br />
+(1) Use the output argument OutputObjs (only available for VBScript because most languages cannot cope with
+both an output argument and a return value--see the note below).<br /><br />
+(2) Use <a href="#!/url=./si_om/Operator.OutputPorts.html">Operator.OutputPorts</a> first on the output operator and then use <a href="#!/url=./si_om/Port.Target2.html">Port.Target2</a> 
+on an item of the returned collection (as demonstrated in the JScript example below.<br /><br />
+Warning: If you use the OutputPorts/Target2 method of getting the newly generated objects, remember that you can 
+only access the output ports on an operator if it was applied in persistent mode (ie., don't freeze it until 
+you get a pointer to the target object).<br /><br />
+You can also use the generic <a href="#!/url=./si_cmds/ApplyOp.html">ApplyOp</a> command to apply a generator operator; however, if you want to hide or
+delete the input objects (original geometry) or you want the new geometry to be a polymsh, you must use this command.<br /><br />
+Note: This command uses <a href="#!/url=./files/OutArgDefined.htm">output arguments</a>. C# and some 
+scripting languages (such as JScript, PerlScript and Python) don't support arguments passed by reference. Normally 
+you can get the output arguments via either <a href="#!/url=./si_om/XSIApplication.ExecuteCommand.html">XSIApplication.ExecuteCommand</a> method (C#) or the 
+<a href="#!/url=./files/ISIVTCollection.htm">ISIVTCollection</a> (scripting languages), but this command
+already returns a value.<br /><br />
+The only available workaround in this case is to create a VBScript custom command which returns both the output
+arguments and the return value in one array. For details, see 
+<a href="#!/url=./files/RtnValProblem.htm">What Happens when the Function Already Returns a Value?</a>.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = ApplyGenOp( PresetObj, [Target], [ConnectionSet], [ConnectType], [ImmediateMode], [GenOpInputsDisposal], [OutputObjs] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>
+Returns an <a href="#!/url=./si_om/XSICollection.html">XSICollection</a> that contains the newly created operators.<br /><br />
+Note: If you apply the operator in ImmediateMode (which immediately freezes it), you still get a collection of 
+the operators applied, but they are invalid (not connected to anything in the scene).
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">PresetObj		</td>
+		<td><a href="#!/url=./files/String.htm">String</a> or a preset object (see <a href="#!/url=./si_cmds/SIGetPreset.html">SIGetPreset</a>)		</td>
+		<td>
+Generator and Converter Operators		</td>
+	</tr>
+	<tr>
+		<td class="name">Target		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		Geometry type of the output surface for the following surface-from-curves types of operators:<br /><br />
+		"Birail", "CrvNet", "Extrusion", "ExtrusionAlongAxis", "ExtrusionTwoProfiles", "FourSided", "Loft",
+		"Revolution", and "RevolutionAroundAxis"
+				<p class="cell"><span class="hilite">Default Value: </span>
+NurbsSurface			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">MeshSurface					</td>
+					<td>Mesh surface geometry					</td>
+				</tr>
+				<tr>
+					<td class="name">NurbsSurface					</td>
+					<td>Nurbs surface geometry					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ConnectionSet		</td>
+		<td><a href="#!/url=./files/cnxset.htm">ConnectionSet</a>		</td>
+		<td>
+
+		Specifies the objects connected to an operator.  
+		required for the specific operator you are using.<br /><br />
+		Note: Because this is an in/out parameter, any string (variable or value) you pass into this parameter is 
+		automatically converted to a ConnectionSet.
+				<p class="cell"><span class="hilite">Default Value: </span>
+
+		Currently selected objects are used as the main group.<br /><br />
+		Warning: An error occurs if the connection set is invalid. Please verify the connection set required for the 
+		operator you are using to avoid breaking your scripts.
+				</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ConnectType		</td>
+		<td><a href="#!/url=./si_om/siBranchFlag.html">siBranchFlag</a>		</td>
+		<td>
+ Specifies the type of connection (node or branch). 			<p class="cell"><span class="hilite">Default Value: </span>
+siUnspecified			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ImmediateMode		</td>
+		<td><a href="#!/url=./si_om/siOperationMode.html">siOperationMode</a>		</td>
+		<td>
+Specifies whether or not the operator should be immediately frozen.			<p class="cell"><span class="hilite">Default Value: </span>
+siPersistentOperation			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">GenOpInputsDisposal		</td>
+		<td><a href="#!/url=./si_om/siGeneratorInputsDisposalMode.html">siGeneratorInputsDisposalMode</a>		</td>
+		<td>
+Specifies what to do with the input objects after the operation is performed.			<p class="cell"><span class="hilite">Default Value: </span>
+siKeepGenOpInputs			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">siKeepGenOpInputs					</td>
+					<td>The inputs will be kept					</td>
+				</tr>
+				<tr>
+					<td class="name">siHideGenOpInputs					</td>
+					<td>The inputs will be hidden					</td>
+				</tr>
+				<tr>
+					<td class="name">siDeleteGenOpInputs					</td>
+					<td>The inputs will be deleted					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">OutputObjs		</td>
+		<td><a href="#!/url=./si_om/XSICollection.html">XSICollection</a>		</td>
+		<td>
+ Returns a collection of <a href="#!/url=./si_om/X3DObject.html">X3DObject</a> object(s) created by the generator operator.		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example demonstrates how to get the newly generated object after
+	applying one of the generator ops with the ApplyGenOp command. 
+	It also demonstrates how to extract the newly applied operator
+	object from the special ISIVTCollection which is a workaround for 
+	languages like JScript that don't support output arguments. 
+*/
+NewScene( null, false );
+// Use a Nurbs disc to apply the Fit Surface operator 
+var original_3dobject = CreatePrim( "Disc", "NurbsSurface" );
+original_3dobject.innerradius.Value = 0.5;
+Application.LogMessage( original_3dobject.Name + " is a " + ClassName(original_3dobject) );
+// Get the ISIVTCollection back from this command. In this example, it contains 
+// only one object (our operator), so we can just use this shortcut
+// NB: You cannot use siImmediateOperation for the ImmediateMode parameter if you
+//     want to get at the new object, because a frozen operator is invalid.
+var new_srffit_op = ApplyGenOp( "SrfFit", "NurbsSurface", original_3dobject, 
+	siUnspecified, siPersistentOperation, siKeepGenOpInputs, null)(0);
+Application.LogMessage( new_srffit_op.Name + " is a " + ClassName(new_srffit_op) );
+// You can change the operator's parameters to tweak the new surface mesh
+new_srffit_op.Parameters( "upoints" ).Value = 5;
+new_srffit_op.Parameters( "upoints" ).Value = 5;
+new_srffit_op.Parameters( "udeg" ).Value = 1;
+new_srffit_op.Parameters( "vdeg" ).Value = 1;
+// You can also get the newly generated object 
+var newly_generated_object = new_srffit_op.OutputPorts(0).Target2.Parent;
+Application.LogMessage( newly_generated_object.Name + " is a " + ClassName(newly_generated_object) );
+// Output of above script:
+//INFO : disc is a X3DObject
+//INFO : Fit surface is a Operator
+//INFO : surfmsh is a X3DObject</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+'	This example demonstrates how to merge two mesh objects together and automatically delete the originals.
+'
+CreatePrim "Grid", "MeshSurface"
+Duplicate "grid", , 2, 1, 1, 0, 0, 1, 0, 1, , , , , , , , , , , 0
+Translate , 8.31067961165049, -8.32607541679225E-18, 0.135979621382887, siRelative, siView, siObj, siXYZ
+SelectObj "grid", , True
+AddToSelection "grid1", , True
+ApplyGenOp "MeshMerge", , , 3, siImmediateOperation, siDeleteGenOpInputs</pre></td></tr>
+</table>
+</div><h4>3. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+'	This example demonstrates how to create surfaces from curves. It creates two polymsh objects and two 
+'	srfmesh objects from the same input curves.
+'
+NewScene , false
+Dim oMeshRev, oMeshExt
+Dim oNurbsRev, oNurbsExt
+' Create the two curves to use to create surfaces
+CreatePrim "Circle", "NurbsCurve"
+CreatePrim "Circle", "NurbsCurve"
+SetValue "circle1.circle.radius", 2
+Translate "circle1", 7, 0, 0, siAbsolute, siParent, siObj, siX
+' Create NURBS surfaces of revolution and extrusion.
+ApplyGenOp "RevolutionAroundAxis", "NurbsSurface", "circle1", 3, siPersistentOperation, siKeepGenOpInputs, oNurbsRev
+Translate , 16, 0, 0, siAbsolute, siParent, siObj, siX
+Translate , 0, 8, 0, siAbsolute, siParent, siObj, siY
+ApplyGenOp "Extrusion", "NurbsSurface", "circle1;circle", 3, siPersistentOperation, siKeepGenOpInputs, oNurbsExt
+Translate , 16, 0, 0, siAbsolute, siParent, siObj, siX
+' Create Mesh surfaces of revolution and extrusion.
+ApplyGenOp "RevolutionAroundAxis", "MeshSurface", "circle1", 3, siPersistentOperation, siKeepGenOpInputs, oMeshRev
+Translate , -12, 0, 0, siAbsolute, siParent, siObj, siX
+Translate , 0, 8, 0, siAbsolute, siParent, siObj, siY
+ApplyGenOp "Extrusion", "MeshSurface", "circle1;circle", 3, siPersistentOperation, siKeepGenOpInputs, oMeshExt
+Translate , -12, 0, 0, siAbsolute, siParent, siObj, siX
+' Move a point on input circle to show the effect on all created surfaces from curve.
+Translate "circle1.pnt[12]", 0.0, 2, 0.0, siRelative, siView, siObj, siXYZ
+SetDisplayMode "Camera", "shaded"
+' Select output and log information about created surfaces.
+SelectObj oMeshRev,,True
+AddToSelection oMeshExt,,True
+AddToSelection oNurbsRev,,True
+AddToSelection oNurbsExt,,True
+Application.LogMessage "Mesh Created from Revolution: " &amp; oMeshRev
+Application.LogMessage "Mesh Created from Extrusion: " &amp; oMeshExt
+Application.LogMessage "NURBS Created from Revolution: " &amp; oNurbsRev
+Application.LogMessage "NURBS Created from Extrusion: " &amp; oNurbsExt
+' Running this script should log the following:
+' ---------------------------------------------
+'INFO : "Mesh Created from Revolution: polymsh"
+'INFO : "Mesh Created from Extrusion: polymsh1"
+'INFO : "NURBS Created from Revolution: surfmsh"
+'INFO : "NURBS Created from Extrusion: surfmsh1"</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/ApplyOperator.html">ApplyOperator</a> <a href="#!/url=./si_cmds/ApplyOp.html">ApplyOp</a> <a href="#!/url=./si_cmds/ApplyTopoOp.html">ApplyTopoOp</a> <a href="#!/url=./si_cmds/ApplyHairOp.html">ApplyHairOp</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

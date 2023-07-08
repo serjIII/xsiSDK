@@ -1,0 +1,978 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>FCurve Editor Attributes</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>FCurve Editor Attributes</h1>
+         </div>
+
+<h2 class="pagehead">FCurve Editor Attributes</h2>
+
+<div>
+	<p>View attribute for the <a href="http://softimage.wiki.softimage.com/xsidocs/fcurves_ViewingFunctionCurves.htm">FCurve Editor</a> (see <a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>).</p>
+<div class="tip">
+<table cellpadding="5" cellspacing="5">
+	<tr>
+		<td class="label">Note</td>
+		<td class="emph">See <a href="#!/url=./si_cmds/ViewAttributes.html#">ViewAttributes</a> for a complete list of types of attributes that you can use when customizing your Relational Views.</td>
+	</tr>
+</table>
+</div>
+</div>
+
+<div><table class="values">
+	<tr>
+		<th>Attribute Name</th>
+		<th>Description</th>
+		<th>Supports</th>
+	</tr>
+	<tr>
+		<td class="example">ripple</td>
+		<td>
+Determines whether or not existing keys are pushed ahead on the timeline when you parse keys on an fcurve or when you scale a region of keys.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>(Default) Turns off ripple mode. Note: Use the boolean false.					</td>
+				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>Turns on ripple mode. Note: Use the boolean true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">snaptogrid</td>
+		<td>
+Determines whether or not the FCurve editor will use the snap-to-grid feature.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">'false'</td>
+					<td>(Default) No snapping to grid. Note: Use the string "false", not the boolean false.					</td>
+				</tr>
+				<tr>
+					<td class="name">'true'</td>
+					<td>Use the snap-to-grid feature. Note: Use the string "true", not the boolean true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">snaptoframe</td>
+		<td>
+Determines whether or not the FCurve editor will use the snap-to-frame feature.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">'false'</td>
+					<td>(Default) No snapping to frame. Note: Use the string "false", not the boolean false.					</td>
+				</tr>
+				<tr>
+					<td class="name">'true'</td>
+					<td>Use the snap-to-frame feature. Note: Use the string "true", not the boolean true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">snapslopes</td>
+		<td>
+Determines whether or not the slope handles on key points will snap when manipulated.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">'false'</td>
+					<td>(Default) No snapping slope handles on key points. Note: Use the string "false", not the boolean false.					</td>
+				</tr>
+				<tr>
+					<td class="name">'true'</td>
+					<td>The slope handles on key points will snap when manipulated. Note: Use the string "true", not the boolean true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">autosnaptoframes</td>
+		<td>
+Determines whether or not the keys will be kept on frames when scaling regions.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">'false'</td>
+					<td>(Default) Keys will not be snapped to frames. Note: Use the string "false", not the boolean false.					</td>
+				</tr>
+				<tr>
+					<td class="name">'true'</td>
+					<td>The keys will be kept on frames when scaling regions. Note: Use the string "true", not the boolean true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">selectedcurves</td>
+		<td>
+Returns or sets the selected FCurve objects as a comma delimited string containing the full name of the FCurve's parent. If nothing is selected, it returns an empty string.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;string&gt;</td>
+					<td>The Parent's <a href="#!/url=./si_om/SIObject.FullName.html">SIObject.FullName</a> of FCurve Object(s).					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">frameall</td>
+		<td>
+Frames all displayed fcurves.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;any value&gt;</td>
+					<td>This value is ignored.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> only.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">frameselection</td>
+		<td>
+Frames selection.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;any value&gt;</td>
+					<td>This value is ignored.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> only.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">frameplaybackrange</td>
+		<td>
+Frames all the fcurves within the time span specified by the timeline.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;any value&gt;</td>
+					<td>This value is ignored.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> only.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">frameselectedkeys</td>
+		<td>
+Frames selected keys.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;any value&gt;</td>
+					<td>This value is ignored.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> only.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">frameselectedcurves</td>
+		<td>
+Frames selected fcurves.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;any value&gt;</td>
+					<td>This value is ignored.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> only.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">frameregion</td>
+		<td>
+Frames a region.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;any value&gt;</td>
+					<td>This value is ignored.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> only.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">centercurrenttime</td>
+		<td>
+Centers the fcurve graph around the timeline cursor's position, when the timeline cursor is visible.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;any value&gt;</td>
+					<td>This value is ignored.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> only.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">autoframe</td>
+		<td>
+Determines whether or not animation editor will frame all fcurves automatically.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>(Default) Disables the automatic framing. Note: Use the boolean false.					</td>
+				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>Enables the automatic framing. Note: Use the boolean true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">interactiveupdate</td>
+		<td>
+Determines whether or not to see the effect of the changes in viewports as you edit the fcurves.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>(Default) "Interactive update" option is off. Note: Use the boolean false.					</td>
+				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>"Interactive update" option is on. Note: Use the boolean true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">showbuffercurves</td>
+		<td>
+Determines whether or not to display a temporary copy of the original function curve that has been saved into a buffer.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>(Default) Don't show the buffer curves. Note: Use the boolean false.					</td>
+				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>Shows the buffer curves. Note: Use the boolean true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">displaynormalized</td>
+		<td>
+Determines whether or not to display the normalized fcurves.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>(Default) Displays non-normalized fcurves. Note: Use the boolean false.					</td>
+				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>Displays normalized fcurves. Note: Use the boolean true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">classicmode</td>
+		<td>
+Switches between Suite and Classic Mode.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>Suite Mode is active which is designed to be used if you're running the Suite version of Softimage. Note: Use the boolean false.					</td>
+				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>(Default) Classic Mode is on to provide all tools that you are used to as a seasoned Softimage user. Note: Use the boolean true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">hle</td>
+		<td>
+Determines whether or not to enable the high-level editing (HLE) tool.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>(Default) Disables the high-level editing (HLE) tool. Note: Use the binary false.					</td>
+				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>Enables the high-level editing (HLE) tool. Note: Use the binary true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">hlecompensation</td>
+		<td>
+Determines whether or not to enable the high-level editing (HLE) compensation mode, when the HLE tool is activated.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>(Default) Disables the high-level editing (HLE) compensation mode. Note: Use the binary false.					</td>
+				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>Enables the high-level editing (HLE) compensation mode. Note: Use the binary true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">hleoperation</td>
+		<td>
+Determines which high-level editing (HLE) operation the HLE tool uses, when enabled.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">siHLEOperationRelativeOffset</td>
+					<td>The HLE tool uses the Relative Offset operation.					</td>
+				</tr>
+				<tr>
+					<td class="name">siHLEOperationAbsoluteOffset</td>
+					<td>(Default) The HLE tool uses the Absolute Offset operation.					</td>
+				</tr>
+				<tr>
+					<td class="name">siHLEOperationAbsoluteScaling</td>
+					<td>The HLE tool uses the Absolute Scaling operation.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">displayoptions</td>
+		<td>
+Determines which fcurves are displayed in the graph by default.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">siAllParam</td>
+					<td>Displays fcurves for all parameters of the selected object.					</td>
+				</tr>
+				<tr>
+					<td class="name">siMarkedParam</td>
+					<td>Displays fcurves only for the object's marked parameters.					</td>
+				</tr>
+				<tr>
+					<td class="name">siAnimatedParam</td>
+					<td>(Default) Displays fcurves only for the object's animated parameters.					</td>
+				</tr>
+				<tr>
+					<td class="name">siSelectedParam</td>
+					<td>Displays fcurves only for the object's selected parameters.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">isolatecurve</td>
+		<td>
+Determines whether or not to isolate the selected fcurves so that only they appear in the graph.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>(Default) Disables the isolating feature. Note: Use the boolean false.					</td>
+				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>Isolates the selected fcurves. Note: Use the boolean true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">clearallcurves</td>
+		<td>
+Hides all fcurves associated with the selected object without collapsing the animation explorer.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;any value&gt;</td>
+					<td>This value is ignored.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> only.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">hidecurve</td>
+		<td>
+Hides the selected fcurves. This also deselects the fcurves.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;any value&gt;</td>
+					<td>This value is ignored.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> only.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">unhideallcurves</td>
+		<td>
+Displays all hidden fcurves.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;any value&gt;</td>
+					<td>This value is ignored.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> only.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">keysonunselectedcurves</td>
+		<td>
+Determines whether or not to display keys on all unselected curves.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>(Default) Hides keys on all unselected curves. Note: Use the boolean false.					</td>
+				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>Shows keys on all unselected curves. Note: Use the boolean true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">slopesonunselectedkeys</td>
+		<td>
+Determines whether or not to display the slope handles of all unselected keys on a selected curve.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>(Default) Hides slope handles of all unselected keys. Note: Use the boolean false.					</td>
+				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>Shows slope handles of all unselected keys. Note: Use the boolean true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">showlabels</td>
+		<td>
+Determines whether or not to display labels on all selected curves.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>(Default) Hides the curve and axis labels. Note: Use the boolean false.					</td>
+				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>Shows the curve and axis labels. Note: Use the boolean true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">keyscoordinates</td>
+		<td>
+Determines whether or not to display the X and Y coordinate values for each selected key.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>Hides the coordinate values. Note: Use the boolean false.					</td>
+				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>(Default) Shows the coordinate values. Note: Use the boolean true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">grid</td>
+		<td>
+Determines whether or not to display the X and Y axis grid lines.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>Hides the grid lines. Note: Use the boolean false.					</td>
+				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>(Default) Shows the grid lines. Note: Use the boolean true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">rulers</td>
+		<td>
+Determines whether or not to display the rulers on the horizontal X(time) and vertical Y(value) axes.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>Hides both X and Y axes. Note: Use the boolean false.					</td>
+				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>(Default) Shows both X and Y axes. Note: Use the boolean true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">timecursorvisible</td>
+		<td>
+Determines whether or not to display the red playback cursor in the fcurve graph.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>Hides the playback cursor. Note: Use the boolean false.					</td>
+				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>(Default) Shows the playback cursor. Note: Use the boolean true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">timecursorselectable</td>
+		<td>
+Determines whether or not the red playback cursor is selectable in the fcurve graph.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>(Default) Only can drag the cursor in the timeline area. Note: Use the boolean false.					</td>
+				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>Makes the playback cursor available in the graph so that you can also select and drag it in graph area. Note: Use the boolean true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">metacurveregion</td>
+		<td>
+Determines whether or not to display a bar below the graph showing an overview representation of all the keys of the selected fcurves. 			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>(Default) Hides the metacurve region. Note: Use the boolean false.					</td>
+				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>Shows the metacurve region. Note: Use the boolean true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">localtime</td>
+		<td>
+Determines whether or not to display the corresponding time of the animation between the action in the animation mixer and the fcurve editor.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">false</td>
+					<td>(Default) Disables this feature. Note: Use the boolean false.					</td>
+				</tr>
+				<tr>
+					<td class="name">true</td>
+					<td>Shows the local time of where the original action source is being evaluated in fcurve editor, and shows whether this point is in relation to the global time of the scene in Mixer. Note: Use the boolean true.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">framerange</td>
+		<td>
+Returns or sets the frame range in frame values.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;start&gt;,&lt;end&gt;</td>
+					<td>Frame range, specified by a comma-delimited string containing the start and end frame values.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">timerange</td>
+		<td>
+Returns or sets the frame range in time values.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;start&gt;,&lt;end&gt;</td>
+					<td>Frame range, specified by a comma-delimited string containing the start and end time values.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">valuerange</td>
+		<td>
+Returns or sets the minimum/maximum values (Y axis) range.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;minimum&gt;,&lt;maximum&gt;</td>
+					<td>Value range, specified by a comma-delimited string containing the minimum and maximum values (Y axis).					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">displayedcurves</td>
+		<td>
+Returns or sets the displayed FCurve objects as a comma delimited string containing the full name of the FCurve's parent. If nothing is displayed, it returns an empty string.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;string&gt;</td>
+					<td>The Parent's <a href="#!/url=./si_om/SIObject.FullName.html">SIObject.FullName</a> of FCurve Object(s).					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">selectedkeysatframes</td>
+		<td>
+
+					Returns or sets the selected keys of FCurve objects as a string. The string format is the following: "<first fcurve's="" parent="" full="" name="">,<first frame="">,<second frame="">;<second fcurve's="" parent="" full="" name="">,<first frame="">,<second frame="">". For example:
+					<div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">// Selects keys at frame 1 and frame 25 of the local posx of the cone object and the frame 50 of the local sclx of the Model.sphere object.
+myView.SetAttributeValue( "selectedkeysatframes", "cone.kine.local.posx,1,25;Model.sphere.local.kine.sclx,50" );</pre></td></tr>
+</table>
+</div>			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;string&gt;</td>
+					<td>A string representing the selected keys in a context of frame values (X axis).					</td>
+				</tr>
+			</table>
+		</second></first></second></second></first></first></td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">selectedkeysattimes</td>
+		<td>
+
+					Returns or sets the selected keys of FCurve objects as a string. The string format is the following: "<first fcurve's="" parent="" full="" name="">,<first time="">,<second time="">;<second fcurve's="" parent="" full="" name="">,<first time="">,<second time="">". For example:
+					<div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">// Selects keys at time 0.5 and time 4 of the local posx of the cone object and the time 8 of the local sclx of the Model.sphere object.
+myView.SetAttributeValue( "selectedkeysattimes", "cone.kine.local.posx,0.5,4;Model.sphere.local.kine.sclx,8" );</pre></td></tr>
+</table>
+</div>			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;string&gt;</td>
+					<td>A string representing the selected keys in a context of time values (X axis).					</td>
+				</tr>
+			</table>
+		</second></first></second></second></first></first></td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">savebuffer</td>
+		<td>
+Saves the buffer copy of the edited curve, when buffer curves option is active.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;any value&gt;</td>
+					<td>This value is ignored.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> only.
+				</td>
+	</tr>
+	<tr>
+		<td class="example">swapbuffer</td>
+		<td>
+Swaps between the edited curve and its buffer copy, when buffer curves option is active.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;any value&gt;</td>
+					<td>This value is ignored.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> only.
+				</td>
+	</tr>
+</table>
+<br />
+
+</div>
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

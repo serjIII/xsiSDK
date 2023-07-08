@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>MakeTail</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>MakeTail</h1>
+         </div>
+
+<h2 class="pagehead">MakeTail</h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Creates a tail rig from a collection of guide objects, or a guide curve. A tail (light green chain) 
+is controlled by a set of one-bone control chains (dark green). The control chain roots (cubes) can 
+be manipulated for animation control of the rig, while the control chain effectors (hidden) are 
+connected to springs for a dyanmics effect. The number of guide objects / curve control points 
+determines the number of control chains, while the NbTailBones argument determines the number of 
+bones in the tail.<br /><br />
+Optionally a shadow rig can be attached to the tail. Shadow objects will be created for each chain 
+element in the tail, and pose constrained to the tail objects. Shadow rigs can be used to plot 
+animation off of a rig. 
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oTail = MakeTail( Parent, GuideObjectCollection, [NbTailBones], [ShadowType], [ShadowParent], [CharacterSetName], [ShadowCharacterSetName] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns a <a href="#!/url=./files/CDKTail.htm">Tail</a> JScript object.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Parent		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The object to which the new tail will be parented. If null, the scene root will be used.		</td>
+	</tr>
+	<tr>
+		<td class="name">GuideObjectCollection		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		A collection of guide objects or a curve used to create the tail. At least three guide 
+		objects are required, or if a curve is used the curve must have
+		at least three control points.
+			</td>
+	</tr>
+	<tr>
+		<td class="name">NbTailBones		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+The number of bones on the tracing chain.			<p class="cell"><span class="hilite">Default Value: </span>
+2			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ShadowType		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+The type of shadow rig to attach. Shadow rigs can be used to transfer or remap animation.			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>No shadow					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>SI|3D Skeleton shadow rig					</td>
+				</tr>
+				<tr>
+					<td class="name">2					</td>
+					<td>XSI Skeleton shadow rig					</td>
+				</tr>
+				<tr>
+					<td class="name">3					</td>
+					<td>Null shadow rig					</td>
+				</tr>
+				<tr>
+					<td class="name">4					</td>
+					<td>Box shadow rig					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ShadowParent		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Parent of the shadow rig hiearchy. If empty, no shadow rig is generated.		</td>
+	</tr>
+	<tr>
+		<td class="name">CharacterSetName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The name of the character set that should be used for this chain; it gets stored in a Custom PSet for use.			<p class="cell"><span class="hilite">Default Value: </span>
+""			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ShadowCharacterSetName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The name of the shadow character set that should be used for this chain.			<p class="cell"><span class="hilite">Default Value: </span>
+""			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example creates a 10-bone tail with a box shadow.
+*/
+var guidecoll = new ActiveXObject("XSI.Collection");
+var lXfm = XSIMath.CreateTransform();
+for(var i=0;i&lt;5;i++)
+{
+	guidecoll.Add( GetPrim("Null", "Guide_Tail") ); 
+	lXfm.SetTranslationFromValues(2*i,0,0);
+	guidecoll(i).Kinematics.Global.Transform = lXfm;
+}
+var tail = MakeTail(null,        //Parent (if null uses scene root)
+		guidecoll,          //Guide Objects
+		10,                 //Nb Tail Bones
+		4,                  //Shadow type (4=box shadow)
+		ActiveSceneRoot);   //Shadow parent
+DumpTail(tail);
+function DumpTail(inTail)
+{
+	logmessage ("Data in the tail object:");
+	logmessage ("------------------------");
+	logmessage ("Nb Points     : " + inTail.nbPoints);
+	logmessage ("Control Chains: " + inTail.ControlChains);
+	logmessage ("Control Root  : " + inTail.Root);
+	logmessage ("Trace Chain   : " + inTail.TraceChain);
+	logmessage ("Trace Root    : " + inTail.TraceRoot);
+	logmessage ("Hidden        : " + inTail.Hidden);
+	logmessage ("Envelope      : " + inTail.Envelope);
+	logmessage ("Shadow Start  : " + inTail.ShadowStart);
+	logmessage ("Shadow Ends   : " + inTail.ShadowEnds);
+	logmessage ("Shadow Objects: " + inTail.Shadows);
+}
+//
+// Output from running this example:
+//
+//INFO : Data in the tail object:
+//INFO : ------------------------
+//INFO : Nb Points     : 5
+//INFO : Control Chains: root,bone,eff,root1,bone1,eff1,root2,bone2,eff2,root3,bone3,eff3
+//INFO : Control Root  : root
+//INFO : Trace Chain   : root4,Tail1,Tail2,Tail3,Tail4,Tail5,Tail6,Tail7,Tail8,Tail9,Tail10,Tail11
+//INFO : Trace Root    : root4
+//INFO : Hidden        : eff,eff1,eff2,eff3
+//INFO : Envelope      : Tail1,Tail2,Tail3,Tail4,Tail5,Tail6,Tail7,Tail8,Tail9,Tail10,Tail11
+//INFO : Shadow Start  : Tail12
+//INFO : Shadow Ends   : Tail21
+//INFO : Shadow Objects: Tail12,Tail13,Tail14,Tail15,Tail16,Tail17,Tail18,Tail19,Tail20,Tail21
+//</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/MakeTorso.html">MakeTorso</a> <a href="#!/url=./si_cmds/MakeBelly.html">MakeBelly</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

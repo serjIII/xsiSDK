@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>MakeControlSplines</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>MakeControlSplines</h1>
+         </div>
+
+<h2 class="pagehead">MakeControlSplines</h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Attaches controllers to a curve or curves, giving layered deformation with precise control over evenly 
+distributed slides and offsets.  Especially useful for spline based facial setups.<br /><br />
+Three controllers are created for each control point on the curve. Point controllers move the control points
+of the curve. Path controllers are path constrained to the curve at evenly spaced length percentages. Offset controls
+are used for additional translation (like pinching of wrinkes in facial expressions) or twising along a curve. 
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oControlSpline = MakeControlSplines( CurveCollection, [NbDivisions], [Scale], Parent, [PointMarkerType], [PathMarkerType], [OffsetMarkerType], [PointColor], [PathColor], [OffsetColor], [InputFromUI] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns a <a href="#!/url=./files/CDKControlSpline.htm">ControlSpline</a> JScript object.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">CurveCollection		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		A collection of curves to attach controllers to. A single curve can also be passed. 
+		If multilple curves are passed they are searched for matching start and end points 
+		to share point markers.
+			</td>
+	</tr>
+	<tr>
+		<td class="name">NbDivisions		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+The number of equally spaced divisions along the curve to place path markers.			<p class="cell"><span class="hilite">Default Value: </span>
+6			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Scale		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+The scale at which to draw the controllers.			<p class="cell"><span class="hilite">Default Value: </span>
+1.0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Parent		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The parent for the point marker objects. If empty the scene root is used.		</td>
+	</tr>
+	<tr>
+		<td class="name">PointMarkerType		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+The type of control object for the points of the curves.			<p class="cell"><span class="hilite">Default Value: </span>
+5 (diamond)			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>No controller					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>Null Controller					</td>
+				</tr>
+				<tr>
+					<td class="name">2					</td>
+					<td>Cube Controller					</td>
+				</tr>
+				<tr>
+					<td class="name">3					</td>
+					<td>Square Controller					</td>
+				</tr>
+				<tr>
+					<td class="name">4					</td>
+					<td>Pyramid Controller					</td>
+				</tr>
+				<tr>
+					<td class="name">5					</td>
+					<td>Diamond Controller					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">PathMarkerType		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+The type of control object divided along the curve.			<p class="cell"><span class="hilite">Default Value: </span>
+1 (null)			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>No controller					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>Null Controller					</td>
+				</tr>
+				<tr>
+					<td class="name">2					</td>
+					<td>Cube Controller					</td>
+				</tr>
+				<tr>
+					<td class="name">3					</td>
+					<td>Square Controller					</td>
+				</tr>
+				<tr>
+					<td class="name">4					</td>
+					<td>Pyramid Controller					</td>
+				</tr>
+				<tr>
+					<td class="name">5					</td>
+					<td>Diamond Controller					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">OffsetMarkerType		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+
+		The type of control object which is a child of the PathMarkers for position and 
+		roll offsets. Offsets are not be made if the PathMakerType is set to 0.
+				<p class="cell"><span class="hilite">Default Value: </span>
+2 (cube)			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>No controller					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>Null Controller					</td>
+				</tr>
+				<tr>
+					<td class="name">2					</td>
+					<td>Cube Controller					</td>
+				</tr>
+				<tr>
+					<td class="name">3					</td>
+					<td>Square Controller					</td>
+				</tr>
+				<tr>
+					<td class="name">4					</td>
+					<td>Pyramid Controller					</td>
+				</tr>
+				<tr>
+					<td class="name">5					</td>
+					<td>Diamond Controller					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">PointColor		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+The type of shadow rig to constrain to the spine.			<p class="cell"><span class="hilite">Default Value: </span>
+377 (light green)			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">PathColor		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+The type of shadow rig to constrain to the spine.			<p class="cell"><span class="hilite">Default Value: </span>
+65 (dark green)			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">OffsetColor		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+The color of the offset control objects.			<p class="cell"><span class="hilite">Default Value: </span>
+560 (blue)			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">InputFromUI		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+Allows the above parameters to be selected from a dialog box.			<p class="cell"><span class="hilite">Default Value: </span>
+false			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">var curve = SICreateCurve("crvlist", 3, 0);
+SIAddPointOnCurveAtEnd("crvlist", -5, 0, 0, false, 0);
+SIAddPointOnCurveAtEnd("crvlist", -3, 0, -4, false, 0);
+SIAddPointOnCurveAtEnd("crvlist", 2, 0, -6, false, 0);
+SIAddPointOnCurveAtEnd("crvlist", 5, 0, -3, false, 0);
+SIAddPointOnCurveAtEnd("crvlist", 5, 0, 2, false, 0);
+MakeControlSplines(curve);</pre></td></tr>
+</table>
+</div></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

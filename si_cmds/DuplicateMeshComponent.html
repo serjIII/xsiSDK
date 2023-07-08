@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>DuplicateMeshComponent</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>DuplicateMeshComponent</h1>
+         </div>
+
+<h2 class="pagehead">DuplicateMeshComponent</h2>
+
+<h3>Introduced</h3>
+<div><p>v1.5</p></div>
+
+<h3>Description</h3>
+<div><p>Duplicates (aka: extrudes) a mesh component</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>DuplicateMeshComponent( [ConnectionSet], [ImmediateMode], [Length], [NbSubdivs], [Merge], [Tx], [Ty], [Tz], [Rx], [Ry], [Rz], [Sx], [Sy], [Sz], [DuplicatePolygons] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">ConnectionSet		</td>
+		<td><a href="#!/url=./files/cnxset.htm">ConnectionSet</a>		</td>
+		<td>
+ Specifies the components to duplicate (extrude).  			<p class="cell"><span class="hilite">Default Value: </span>
+Currently selected objects are used as the main group.<br /><br />Warning: An error occurs if the connection set is invalid. Please verify the connection set required for this operator to avoid breaking your scripts.			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ImmediateMode		</td>
+		<td><a href="#!/url=./si_om/siOperationMode.html">siOperationMode</a>		</td>
+		<td>
+Specifies whether or not the operator should be immediately frozen.			<p class="cell"><span class="hilite">Default Value: </span>
+siPersistentOperation			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Length		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Length of the extrusion 			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">NbSubdivs		</td>
+		<td><a href="#!/url=./files/Long.htm">Long</a>		</td>
+		<td>
+ Number of subdivisions to use 			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Merge		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ Whether or not adjacent components should be handled as a whole or independently 			<p class="cell"><span class="hilite">Default Value: </span>
+1			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Tx		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Translation in X to apply to each subdivision 			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Ty		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Translation in Y to apply to each subdivision 			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Tz		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Translation in Z to apply to each subdivision 			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Rx		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Euler Rotation in X to apply to each subdivision 			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Ry		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Euler Rotation in Y to apply to each subdivision 			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Rz		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Euler Rotation in Z to apply to each subdivision 			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Sx		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Scaling in X to apply to each subdivision 			<p class="cell"><span class="hilite">Default Value: </span>
+1			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Sy		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Scaling in Y to apply to each subdivision 			<p class="cell"><span class="hilite">Default Value: </span>
+1			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Sz		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Scaling in Z to apply to each subdivision 			<p class="cell"><span class="hilite">Default Value: </span>
+1			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">DuplicatePolygons		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ Specifies if polygons should be duplicated (TRUE) or extruded (FALSE) 			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'This example will duplicate  an edge.
+newscene
+'Create 4 spheres and place them
+CreatePrim "Sphere", "MeshSurface", "Sphere1"
+CreatePrim "Sphere", "MeshSurface", "Sphere2"
+CreatePrim "Sphere", "MeshSurface", "Sphere3"
+CreatePrim "Sphere", "MeshSurface", "Sphere4"
+Translate "Sphere1", -8, 8,  0, siAbsolute, siParent, siObj, siXYZ
+Translate "Sphere2",  8, 8,  0, siAbsolute, siParent, siObj, siXYZ
+Translate "Sphere3", -8, -8, 0, siAbsolute, siParent, siObj, siXYZ
+Translate "Sphere4",  8, -8, 0, siAbsolute, siParent, siObj, siXYZ
+'Duplicate polygons (extrude) along common normal.
+'Duplicate is 10 SOFTIMAGE units long and has 10 subdivisions.
+'First case polygons are merged
+'Second case, they are not merged.  Note how they move along their local normal
+DuplicateMeshComponent "sphere1.poly[12,13,20,21]", siUnspecified, 10, 10, True
+DuplicateMeshComponent "sphere1.poly[10,18]", siUnspecified, 10, 10, False
+'Same basic duplication as previous but with translation in X of 1 unit at each step.
+'X translation is applied in the local reference frame of the selected polygons.
+DuplicateMeshComponent "sphere2.poly[12,13,20,21]", siUnspecified, 10, 10, True, 1,0,0
+DuplicateMeshComponent "sphere2.poly[10,18]", siUnspecified, 10, 10, False, 1,0,0
+'Same basic duplication as previous but with rotation around Y axis of 10 degrees (normal to the polygons).
+'Y axis rotation is applied in the local reference frame of the selected polygons.
+DuplicateMeshComponent "sphere3.poly[12,13,20,21]", siUnspecified, 10, 10, True, 1, 0, 0, 0, 10, 0
+DuplicateMeshComponent "sphere3.poly[10,18]", siUnspecified, 10, 10, False, 1, 0, 0, 0, 10, 0
+'Same basic duplication as previous but with scaling factor of 0.8 in X and Z of 0.8.
+'X and Z scaling is applied in the local reference frame of the selected polygons.
+DuplicateMeshComponent "sphere4.poly[12,13,20,21]", siUnspecified, 10, 10, True, 1, 0, 0, 0, 10, 0, 0.8, 1, 0.8
+DuplicateMeshComponent "sphere4.poly[10,18]", siUnspecified, 10, 10, False, 1, 0, 0, 0, 10, 0, 0.8, 1, 0.8
+'Duplicate also applies to other components: points and edges
+DuplicateMeshComponent "sphere1.pnt[100]", siUnspecified, 10, 10
+DuplicateMeshComponent "sphere2.edge[204]", siUnspecified, 10, 10
+'Duplicated objects can be mixed. Here we apply duplicate to points and edges.
+DuplicateMeshComponent "sphere3.pnt[100], sphere3.edge[204]", siUnspecified, 10, 10</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/ApplyTopoOp.html">ApplyTopoOp</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

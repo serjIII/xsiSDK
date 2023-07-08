@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>DataRepository.GetConnectionStackInfo</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>DataRepository.GetConnectionStackInfo</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/DataRepository.html">DataRepository</a>.GetConnectionStackInfo</h2>
+
+<h3>Introduced</h3>
+<div><p>v5.1</p></div>
+
+<h3>Description</h3>
+<div><p> Returns information in XML format about which objects read from and write to an object.
+The connection stack is called the <a href="#!/url=./si_om/ConstructionHistory.html">ConstructionHistory</a> in the context 
+of a Primitive.  
+<br /><br />
+The connection stack can contain connections to <a href="#!/url=./si_om/Operator.html">Operator</a>s, 
+<a href="#!/url=./si_om/FCurve.html">FCurve</a>s, <a href="#!/url=./si_om/Shader.html">Shader</a>s and other objects, so it is more 
+than just a "Operator Stack".  The order of the objects in the connection stack is 
+important because it determines the order in which the scene is evaluated.  For example, 
+if a scripted operator reads from a Primitive above a deform operator that reads and writes 
+to the Primitive, then the scripted operator will read the deformed version of the geometry, 
+not the original version.
+<br /><br />
+This method returns low-level information, including the presence of hidden objects, that is 
+intended for internal Softimage usage.  It is exposed in the SDK primarily to help users write 
+and debug <a href="#!/url=./si_om/CustomOperator.html">CustomOperator</a>s.
+<br /><br />
+The format of the XML may change in the future.  Currently it returns the following possible 
+attributes:
+<br /><br />
+object - <a href="#!/url=./si_om/SIObject.FullName.html">SIObject.FullName</a> of the object.  Empty if there is no active connection.
+<br /><br />
+type - "in" or "out".  If "in" it means that the object being queried is reading data from the 
+connected object.
+<br /><br />
+localparameter - Some connections read and write to a specific <a href="#!/url=./si_om/Parameter.html">Parameter</a>.  In that
+case this contains the <a href="#!/url=./si_om/Parameter.ScriptName.html">Parameter.ScriptName</a>.
+<br /><br />
+remoteparameter - If the connection is to a specific parameter on the connected object, then this 
+contains its <a href="#!/url=./si_om/Parameter.ScriptName.html">Parameter.ScriptName</a>.
+<br /><br />
+hidden - "true" if the object has the siNotInspectable capability.  See <a href="#!/url=./si_om/ProjectItem.Capabilities.html">ProjectItem.Capabilities</a>.
+<br /><br />
+region - For internal use.
+<br /><br />
+datacopy - For internal use.  This is the internal handle to the object, for example "0x1c9f0448".  
+The value of this handle serves no meaningful purpose in the context of the SDK.  Softimage may create 
+several temporary "datacopies" of an individual object to assist in the clean evaluation of the scene.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>String DataRepository.GetConnectionStackInfo( Object in_object );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oString = DataRepository.GetConnectionStackInfo( Object );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>XML <a href="#!/url=./files/String.htm">String</a>, containing the connections in a top-to-bottom ordering.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Object		</td>
+		<td>Softimage Object		</td>
+		<td>
+
+		Object to query, for example a <a href="#!/url=./si_om/Property.html">Property</a> or <a href="#!/url=./si_om/Primitive.html">Primitive</a>. 
+		Connections are managed at the object level, not the <a href="#!/url=./si_om/Parameter.html">Parameter</a> level.
+			</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example demonstrates how to use DataRepository.GetConnectionStackInfo
+	to find which objects read from a particular object.
+*/
+NewScene( null, false ) ;
+CreatePrim( "Sphere", "MeshSurface" );
+ApplyOp( "Twist", "sphere", 3, siPersistentOperation, null, 0 );
+SetSelFilter( "Vertex" );
+AddToSelection( "sphere.pnt[26,33]", null, true );
+Translate( null, 1, 0.2, -1.2, siRelative, siView, siObj, siXYZ );
+SelectObj( "Sphere.polymsh" ) ;
+// Get the connection information
+var oDR = XSIUtils.DataRepository ;
+opInfo = oDR.GetConnectionStackInfo( Selection(0) )
+// This line would dump the actual XML content:
+//Application.LogMessage( "\n----------------\nRAW XML OUTPUT\n------------------\n" + opInfo ) ;
+// Get the list of output objects
+aOutputs = GetOutputObjects( opInfo ) ;
+Application.LogMessage( "Objects that read from the Sphere primitive:\n" + aOutputs.join("\n") ) ;
+// Helper function to load the XML data using the Microsoft
+// implementation of the DOM (see msdn.microsoft.com for documentation)
+function ParseXML( strXML )
+{
+	var oXMLParser = new ActiveXObject( "Microsoft.XMLDOM" ) 
+	oXMLParser.async = false	
+	oXMLParser.loadXML( opInfo ) ;
+	if (oXMLParser.parseError.errorCode != 0) 
+	{
+		Application.LogMessage( "Invalid XML " + oXMLParser.parseError.reason , siError ) ;	
+		return null ;
+	}
+	// the xsi_file node
+	// If this is NULL we must have failed to load the XML
+	var oTopNode = oXMLParser.documentElement ;
+	return oTopNode ;
+}
+// Go through the connection information and determine which connected
+// operators/objects are reading from the object
+//
+// opInfo is the XML string returned by calling DataRespository.GetOperatorStackInfo
+function GetOutputObjects( opInfo )
+{
+	aOutputs = new Array() ;
+	var oTopNode = ParseXML( opInfo ) ;
+	if ( oTopNode == null ) 
+		return aOutputs ;
+	var oConnections = oTopNode.childNodes ;
+	for ( var i = 0 ; i &lt; oConnections.length ; i++ )
+	{
+		oConnection= oConnections.item(i) ;
+		oObjNode = oConnection.selectSingleNode( "object" ) ;
+		strObj = oObjNode.text ;				
+		oTypeNode = oConnection.selectSingleNode( "type" ) ;
+		if ( oTypeNode != null &amp;&amp; oTypeNode.text == "out" )
+			aOutputs[aOutputs.length] = strObj ;
+	}						
+	return aOutputs ;
+}
+//Example output:
+//
+//INFO : Objects that read from the Sphere primitive:
+//sphere.polymsh.secondaryshapemarker
+//sphere.polymsh.animationmarker
+//sphere.polymsh.shapemarker
+//sphere.polymsh.modelingmarker
+//sphere.polymsh.movecomponentop
+//sphere.polymsh.cls.Point_INTERNAL.AddToClsOp
+//sphere.polymsh.twistop
+//sphere.polymsh.cls.default_Point.SetClsOp</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example demonstrates how to use DataRepository.GetConnectionStackInfo
+	to find which objects are influenced by a parameter.
+*/
+// Create simple scene
+NewScene( null, false );
+var oSphere = ActiveSceneRoot.AddGeometry( "Sphere", "MeshSurface", "sphere" ) ;
+var oSphereGlobalPosx = oSphere.Kinematics.Global.posx ;
+// posy parameter on light will be driven by posx parameter of the sphere.
+// (This creates an Expression object between the two parameters)
+CopyPaste( oSphereGlobalPosx, null, "light.kine.global.posy", 1 );
+// posz parameter will also be driven by the posx parameter
+CopyPaste( oSphereGlobalPosx, null, "light.kine.global.posz", 1 );
+aDependentData = FindDataDrivenByParameter( oSphereGlobalPosx )
+for ( var i = 0 ; i &lt; aDependentData.length ; i++ )
+{
+	Application.LogMessage( aDependentData[i] ) ;
+}
+// Get the connection information for a particular parameter.  It returns an 
+// array of strings with the full name of the expression operator or other 
+// object that is reading the value of the in_Parameter argument
+function FindDataDrivenByParameter( in_Parameter )
+{
+	var aConnections = [] ;
+	// Connection information is managed at the Object level, not Parameter level
+	var oObj = in_Parameter.Parent ;
+	var oDR = XSIUtils.DataRepository ;
+	opInfo = oDR.GetConnectionStackInfo( oObj )
+	var oXMLParser = new ActiveXObject( "Microsoft.XMLDOM" ) 
+	oXMLParser.async = false	
+	oXMLParser.loadXML( opInfo ) ;
+	var oTopNode = oXMLParser.documentElement ;
+	var oConnections = oTopNode.childNodes ;
+	for ( var i = 0 ; i &lt; oConnections.length ; i++ )
+	{
+		var oConnection = oConnections(i) ;
+		oObjNode = oConnection.selectSingleNode( "object" ) ;
+		if ( oObjNode == null )
+			continue ; // Not connected to anything
+		// See if this is a connection to the parameter we are interested in
+		oParameterNode = oConnection.selectSingleNode( "localparameter" ) ;
+		if ( oParameterNode != null )
+		{
+			strConnectedParameter = oParameterNode.text ;
+			if ( strConnectedParameter == in_Parameter.ScriptName )
+			{				
+				// Found a connection to this parameter 
+				strType = oConnection.selectSingleNode( "type" ).text ;
+				if ( strType == "out" )
+				{
+					aConnections[aConnections.length] =oObjNode.text
+				}
+				// Tip if the type was "in" then it means that the connection is controlling the
+				// value of this parameter, e.g. a FCurve, expression, operator. This information
+				// can also be retrieved with Parameter.Source
+			}
+		}	
+	}	
+	return aConnections ;
+}
+//Output of this example:
+//INFO : light.kine.global.pos.posz.Expression
+//INFO : light.kine.global.Expression</pre></td></tr>
+</table>
+</div></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>siFileType</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>siFileType</h1>
+         </div>
+
+<h2 class="pagehead">siFileType</h2>
+
+<h3>Description</h3>
+<div><p>
+This enum is used to determine the type of a file for the 
+<a href="#!/url=./si_cmds/cb_Event_OnEvent.html#ctxt_siOnBeginFileExport">OnBeginFileExport</a>,
+<a href="#!/url=./si_cmds/cb_Event_OnEvent.html#ctxt_siOnBeginFileImport">OnBeginFileImport</a>, 
+<a href="#!/url=./si_cmds/cb_Event_OnEvent.html#ctxt_siOnEndFileExport">OnEndFileExport</a>,
+<a href="#!/url=./si_cmds/cb_Event_OnEvent.html#ctxt_siOnEndFileImport">OnEndFileImport</a>,
+<a href="#!/url=./si_cmds/cb_Event_OnEvent.html#ctxt_siOnCustomFileExport">OnCustomFileExport</a>, and 
+<a href="#!/url=./si_cmds/cb_Event_OnEvent.html#ctxt_siOnCustomFileImport">OnCustomFileImport</a> events.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>siFileType.siFileTypeDefault                                                // 0
+siFileType.siFileTypeScene                                                  // 1
+siFileType.siFileTypeModel                                                  // 2
+siFileType.siFileTypeImage                                                  // 3
+siFileType.siFileTypeAudio                                                  // 4
+siFileType.siFileTypeSI3D                                                   // 5
+siFileType.siFileTypeScript                                                 // 6
+siFileType.siFileTypeFcurve                                                 // 7
+siFileType.siFileTypeExpression                                             // 8
+siFileType.siFileTypeRenderPicture                                          // 9
+siFileType.siFileTypeAction                                                 // 10
+siFileType.siFileTypeShader                                                 // 11
+siFileType.siFileTypeBackup                                                 // 12
+siFileType.siFileTypeMI                                                     // 13
+siFileType.siFileTypeIgnore                                                 // 14
+siFileType.siFileTypeSimulation                                             // 15
+siFileType.siFileTypeReferencedModel                                        // 16
+siFileType.siFileTypeQuery                                                  // 17
+siFileType.siFileTypeSynoptic                                               // 18
+siFileType.siFileTypeDotXSI                                                 // 19
+siFileType.siFileTypeRenderMap                                              // 20
+siFileType.siFileTypeAddon                                                  // 21
+siFileType.siFileTypeMatLib                                                 // 22
+siFileType.siFileTypeThumbnail                                              // 23
+siFileType.siFileTypeMixer                                                  // 24
+siFileType.siFileTypeIges                                                   // 25
+siFileType.siFileTypeComposites                                             // 26
+siFileType.siFileTypeDelta                                                  // 27
+siFileType.siFileTypeCache                                                  // 28
+siFileType.siFileTypeICECompounds                                           // 29
+siFileType.siFileTypeRTCompounds                                            // 30
+siFileType.siFileTypeCustom                                                 // 31
+siFileType.siFileTypeLast                                                   // 32</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<div><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th>Constant		</th>		<th>Value		</th>		<th>Description		</th>	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeDefault"> </a>siFileTypeDefault		</td>
+		<td class="example">0		</td>
+		<td>
+Unknown type.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeScene"> </a>siFileTypeScene		</td>
+		<td class="example">1		</td>
+		<td>
+Scene.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeModel"> </a>siFileTypeModel		</td>
+		<td class="example">2		</td>
+		<td>
+Model.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeImage"> </a>siFileTypeImage		</td>
+		<td class="example">3		</td>
+		<td>
+Image.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeAudio"> </a>siFileTypeAudio		</td>
+		<td class="example">4		</td>
+		<td>
+Audio.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeSI3D"> </a>siFileTypeSI3D		</td>
+		<td class="example">5		</td>
+		<td>
+SI3D scenes.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeScript"> </a>siFileTypeScript		</td>
+		<td class="example">6		</td>
+		<td>
+Script.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeFcurve"> </a>siFileTypeFcurve		</td>
+		<td class="example">7		</td>
+		<td>
+Animation file.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeExpression"> </a>siFileTypeExpression		</td>
+		<td class="example">8		</td>
+		<td>
+Expression.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeRenderPicture"> </a>siFileTypeRenderPicture		</td>
+		<td class="example">9		</td>
+		<td>
+Rendered Pictures.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeAction"> </a>siFileTypeAction		</td>
+		<td class="example">10		</td>
+		<td>
+Action files (.eani).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeShader"> </a>siFileTypeShader		</td>
+		<td class="example">11		</td>
+		<td>
+Shader file.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeBackup"> </a>siFileTypeBackup		</td>
+		<td class="example">12		</td>
+		<td>
+Scene Backup.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeMI"> </a>siFileTypeMI		</td>
+		<td class="example">13		</td>
+		<td>
+Mental Image (.mi) file.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeIgnore"> </a>siFileTypeIgnore		</td>
+		<td class="example">14		</td>
+		<td>
+Internal info.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeSimulation"> </a>siFileTypeSimulation		</td>
+		<td class="example">15		</td>
+		<td>
+Simulation cache.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeReferencedModel"> </a>siFileTypeReferencedModel		</td>
+		<td class="example">16		</td>
+		<td>
+Referenced model.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeQuery"> </a>siFileTypeQuery		</td>
+		<td class="example">17		</td>
+		<td>
+Query.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeSynoptic"> </a>siFileTypeSynoptic		</td>
+		<td class="example">18		</td>
+		<td>
+Synoptic.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeDotXSI"> </a>siFileTypeDotXSI		</td>
+		<td class="example">19		</td>
+		<td>
+dotXSI.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeRenderMap"> </a>siFileTypeRenderMap		</td>
+		<td class="example">20		</td>
+		<td>
+Render Map.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeAddon"> </a>siFileTypeAddon		</td>
+		<td class="example">21		</td>
+		<td>
+Addon.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeMatLib"> </a>siFileTypeMatLib		</td>
+		<td class="example">22		</td>
+		<td>
+Material Library.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeThumbnail"> </a>siFileTypeThumbnail		</td>
+		<td class="example">23		</td>
+		<td>
+Thumbnail.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeMixer"> </a>siFileTypeMixer		</td>
+		<td class="example">24		</td>
+		<td>
+Mixer (.mixer).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeIges"> </a>siFileTypeIges		</td>
+		<td class="example">25		</td>
+		<td>
+IGES.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeComposites"> </a>siFileTypeComposites		</td>
+		<td class="example">26		</td>
+		<td>
+		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeDelta"> </a>siFileTypeDelta		</td>
+		<td class="example">27		</td>
+		<td>
+Model Delta.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeCache"> </a>siFileTypeCache		</td>
+		<td class="example">28		</td>
+		<td>
+Cache file.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeICECompounds"> </a>siFileTypeICECompounds		</td>
+		<td class="example">29		</td>
+		<td>
+ICE Compound file.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeRTCompounds"> </a>siFileTypeRTCompounds		</td>
+		<td class="example">30		</td>
+		<td>
+RT Compound file.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeCustom"> </a>siFileTypeCustom		</td>
+		<td class="example">31		</td>
+		<td>
+Custom.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileTypeLast"> </a>siFileTypeLast		</td>
+		<td class="example">32		</td>
+		<td>
+Number of items total.		</td>
+	</tr>
+</table>
+</div>
+
+<h3>Applies To</h3>
+<div><p><a href="#!/url=./si_cmds/cb_Event_OnEvent.html#ctxt_siOnBeginFileExport">OnBeginFileExport</a> <a href="#!/url=./si_cmds/cb_Event_OnEvent.html#ctxt_siOnBeginFileImport">OnBeginFileImport</a> <a href="#!/url=./si_cmds/cb_Event_OnEvent.html#ctxt_siOnEndFileExport">OnEndFileExport</a> <a href="#!/url=./si_cmds/cb_Event_OnEvent.html#ctxt_siOnEndFileImport">OnEndFileImport</a> <a href="#!/url=./si_cmds/cb_Event_OnEvent.html#ctxt_siOnCustomFileExport">OnCustomFileExport</a> <a href="#!/url=./si_cmds/cb_Event_OnEvent.html#ctxt_siOnCustomFileImport">OnCustomFileImport</a> <a href="#!/url=./files/cus_events_ContextAttributes.htm">Context Attributes</a></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./files/cus_events.htm">Custom Events</a> <a href="#!/url=./si_cmds/callbacks.html">OnEvent callback</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>X3DObject.Children</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>X3DObject.Children</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/X3DObject.html">X3DObject</a>.Children</h2>
+
+<h3>Description</h3>
+<div><p> Returns an <a href="#!/url=./si_om/X3DObjectCollection.html">X3DObjectCollection</a> containing all <a href="#!/url=./si_om/X3DObject.html">X3DObject</a> 
+children parented under the object.  No recursive search is performed, in other words only 
+direct children are returned, not children of children.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>// get accessor
+X3DObjectCollection rtn = X3DObject.Children;</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">set oRoot = Application.ActiveProject.ActiveScene.Root
+oRoot.AddGeometry "Sphere", "MeshSurface"
+oRoot.AddNull
+for each oChild in oRoot.Children
+	Application.LogMessage oChild.Name &amp; ", " &amp; oChild.Type
+next
+' Expected results:
+'INFO : Camera_Root, CameraRoot
+'INFO : light, light
+'INFO : sphere, polymsh
+'INFO : null, null</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	Compare this example with the similar example 
+	for X3DObject.FindChildren
+*/
+// Create a sample scene
+NewScene( null, false ) ;
+var oRoot = Application.ActiveSceneRoot;
+var oNull = oRoot.AddNull( "MyNull" ) ;
+var oSphere = oRoot.AddGeometry( "Sphere", "MeshSurface", "MySphere" ) ;
+var oNestedSphere = oNull.AddNull( "NestedNull" ) ;
+var oConeInModel = oRoot.AddGeometry( "Cone", "NurbsSurface", "ConeInMdl" ) ;
+var oModel = oRoot.AddModel(oConeInModel, "MyModel") ;
+// The X3DObject.Children collection returns all X3DObjects 
+// but it is not recursive.
+PrintChildren( "Children of SceneRoot:", oRoot.Children ) ;
+PrintChildren( "Children of Null:", oNull.Children ) ;
+PrintChildren( "Children of Model:", oModel.Children ) ;
+// Expected result:
+//INFO : Children of SceneRoot:
+//INFO :		Camera_Root
+//INFO :		light
+//INFO :		MyNull
+//INFO :		MySphere
+//INFO :		MyModel
+//INFO : ----------------------------
+//INFO : Children of Null:
+//INFO :		NestedNull
+//INFO : ----------------------------
+//INFO : Children of Model:
+//INFO :		MyModel.ConeInMdl
+//INFO : ----------------------------
+// Helper function showing the contents of a collection
+function PrintChildren( in_msg, in_oChildren )
+{
+	Application.LogMessage( in_msg ) ;
+	for ( var i=0 ; i&lt;in_oChildren.Count; i++ ) {
+		Application.LogMessage( "\t" + in_oChildren.Item(i).FullName ) ;
+	}
+	Application.LogMessage( "----------------------------" ) ;
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/X3DObject.FindChildren.html">X3DObject.FindChildren</a> <a href="#!/url=./si_om/X3DObject.FindChildren2.html">X3DObject.FindChildren2</a> <a href="#!/url=./si_om/X3DObject.FindChild.html">X3DObject.FindChild</a> <a href="#!/url=./si_om/X3DObject.FindChild2.html">X3DObject.FindChild2</a> <a href="#!/url=./si_cmds/EnumElements.html">EnumElements</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>TransferShapeAnimation</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>TransferShapeAnimation</h1>
+         </div>
+
+<h2 class="pagehead">TransferShapeAnimation</h2>
+
+<h3>Introduced</h3>
+<div><p>v5.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Transfers shape animation from the specified source object to the destination object. The
+animation to be transferred is contained within the Animation <a href="#!/url=./si_om/Mixer.html">Mixer</a> and 
+includes any pre-existing mapping connected on the origin <a href="#!/url=./si_om/ShapeKey.html">ShapeKey</a>s. <br /><br />
+In order for this command to work you need to specify a source object, a destination object 
+and two lists of shape key cluster properties. The lists of shape keys should be of the same 
+length and the order is important as it is specifying the mapping between the source 
+ShapeKeys and the destination ShapeKeys. <br /><br />
+If there is no cluster shape combiner operator on the destination object it will be added. If 
+there is already some shape animation corresponding to the destination shape key list, it will
+be deleted.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>TransferShapeAnimation( SourceObject, DestinationObject, SourceShapeKeys, DestinationShapeKeys );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">SourceObject		</td>
+		<td><a href="#!/url=./si_om/X3DObject.html">X3DObject</a>		</td>
+		<td>
+ Object from which the shape animation will originate. 		</td>
+	</tr>
+	<tr>
+		<td class="name">DestinationObject		</td>
+		<td><a href="#!/url=./si_om/X3DObject.html">X3DObject</a>		</td>
+		<td>
+ Object to which the shape animation will be transferred. 		</td>
+	</tr>
+	<tr>
+		<td class="name">SourceShapeKeys		</td>
+		<td><a href="#!/url=./si_om/XSICollection.html">XSICollection</a>		</td>
+		<td>
+ The collection of shape keys on the source object that contain the animation you want to transfer.		</td>
+	</tr>
+	<tr>
+		<td class="name">DestinationShapeKeys		</td>
+		<td><a href="#!/url=./si_om/XSICollection.html">XSICollection</a>		</td>
+		<td>
+ The collection of shape keys on the destination object that will receive the animation you want to transfer.		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example demonstrates how to transfer shape animation from one object to the other
+*/
+NewScene( null, false );
+// Create source animation object
+CreatePrim("Cone", "MeshSurface", null, null);
+SetValue("Context.constructionmode", 1, null);
+ActivateVertexSelTool(null);
+SelectGeometryComponents("cone.pnt[1,4,7,10,13,16,19,22,LAST]");
+Translate(null, -3.98256016551092, 0, 0, siRelative, siGlobal, siObj, siXYZ, null, null, siXYZ, null, null, null, null, null, null, 1);
+SaveShapeKey("cone.pnt[1,4,7,10,13,16,19,22,LAST]", null, null, 1, null, null, null, null, siShapeObjectReferenceMode);
+SetValue("PlayControl.Key", 30, null);
+SetValue("PlayControl.Current", 30, null);
+SelectGeometryComponents("cone.pnt[1,4,7,10,13,16,19,22,LAST]");
+Translate(null, -3.98256016551092, 0, 0, siRelative, siGlobal, siObj, siXYZ, null, null, siXYZ, null, null, null, null, null, null, 1);
+SaveShapeKey("cone.polymsh.cls.Shape", null, null, 30, null, null, null, null, siShapeObjectReferenceMode);
+SelectObj("cone.polymsh.cls.Shape.ShapeKey1", null, null);
+SelectObj("cone.polymsh.cls.Shape.ShapeKey", null, null);
+SetValue("PlayControl.Key", 27, null);
+SetValue("PlayControl.Current", 27, null);
+// Create destination animation object
+CreatePrim("Cylinder", "MeshSurface", null, null);
+CreateModel(null, null, null, null);
+SelectObj("Model.cylinder", null, true);
+ActivateVertexSelTool(null);
+SelectGeometryComponents("Model.cylinder.pnt[4-6,10,39,40]");
+Translate(null, -2.92834449479742, 0, 0, siRelative, siGlobal, siObj, siXYZ, null, null, siXYZ, null, null, null, null, null, null, 1);
+StoreShapeKey("Model.cylinder.pnt[4-6,10,39,40]", null, siShapeObjectReferenceMode, 27, 0, 0, siShapeContentPrimaryShape, false);
+SelectFilter("object");
+Translate(null, 2.05775559093871, 0, 0, siRelative, siGlobal, siObj, siXYZ, null, null, siXYZ, null, null, null, null, null, null, 1);
+Translate(null, 0, 2.8035894047944, 0, siRelative, siGlobal, siObj, siXYZ, null, null, siXYZ, null, null, null, null, null, null, 1);
+SaveShapeKey("Model.cylinder.polymsh.cls.Shape", null, null, 27, null, null, null, null, siShapeObjectReferenceMode);
+Selection.SetAsText("cone,Model.cylinder");
+// Gather data to transfer
+var oSource = Selection(0);
+var oDestination = Selection(1);
+var oSourceList = new ActiveXObject("XSI.Collection") ;
+var oSourceClusterProperties = oSource.ActivePrimitive.Geometry.Clusters(0).Properties;
+for ( var i=0; i&lt;oSourceClusterProperties.Count; i++ ) {
+	if ( oSourceClusterProperties(i).IsClassOf(siShapeKeyID) ) {
+		oSourceList.Add(oSourceClusterProperties(i));
+	}
+}
+var oDestList = new ActiveXObject("XSI.Collection");
+var oDestClusterProperties = oDestination.ActivePrimitive.Geometry.Clusters(0).Properties;
+for ( var i=0; i&lt;oDestClusterProperties.Count; i++ ) {
+	if ( oDestClusterProperties(i).IsClassOf(siShapeKeyID) ) {
+		oDestList.Add(oDestClusterProperties(i));
+	}
+}
+TransferShapeAnimation(oSource, oDestination, oSourceList, oDestList);</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/TransferShapeAnimationAcrossGenOp.html">TransferShapeAnimationAcrossGenOp</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

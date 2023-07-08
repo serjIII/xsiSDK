@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>CopyAnimationAcrossGenerator</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>CopyAnimationAcrossGenerator</h1>
+         </div>
+
+<h2 class="pagehead">CopyAnimationAcrossGenerator</h2>
+
+<h3>Introduced</h3>
+<div><p>v5.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Copies the shape and envelope animation from the generator operator inputs
+to the generated object. This includes the installation of the envelope and shape combiner
+operators on the generated primitive, and the copy of shape animation (tracks and clips).<br /><br />
+If the generator is connected over the modeling marker, it will be reconnected automatically 
+in modeling construction mode.<br /><br />
+If none of the input primitives' envelope weight properties and shape key properties were 
+transfered before the command was executed, the command will automatically transfer them all 
+before copying the animation. However, if only some of input primitives' envelope weight properties 
+or shape key properties were transfered before the command was executed, then the decision to transfer 
+or not the remaining ones will depend on the TransferRemainingShapesAndEnvelopes argument.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>CopyAnimationAcrossGenerator( Operator, [ReadPosition], [TransferRemainingShapesAndEnvelopes] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Operator		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Specifies the generator operator to modify		</td>
+	</tr>
+	<tr>
+		<td class="name">ReadPosition		</td>
+		<td><a href="#!/url=./si_om/siConstructionMode.html">siConstructionMode</a>		</td>
+		<td>
+Specifies which construction stack to read from.			<p class="cell"><span class="hilite">Default Value: </span>
+siConstructionModeModeling			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">TransferRemainingShapesAndEnvelopes		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+
+		What to do with any transfered shapes and/or envelope weight properties when the
+		command will reconnect the generator over the primary shape/animation construction 
+		mode. It is usually preferred to undo these transfers, since otherwise there could 
+		be a double deformation (the envelope is applied to the input and the generated object).
+				<p class="cell"><span class="hilite">Default Value: </span>
+2			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>Yes					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>No					</td>
+				</tr>
+				<tr>
+					<td class="name">2					</td>
+					<td>Prompt the user					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example creates 2 spheres with animation (shapes and envelopes), merges them and manually transfers 
+	only one of the envelopes. Then, using CopyAnimationAcrossGenerator, it copies the animation with 
+	TransferRemainingShapesAndEnvelopes = 1, and then TransferRemainingShapesAndEnvelopes = 0.
+*/
+NewScene(null, null);
+//Create an enveloped sphere that has an applied shape key
+Sphere1 = CreatePrim("Sphere", "MeshSurface", null, null);
+NullPrim1 = GetPrim("Null", null, null, null);
+SetSelFilter("Vertex");
+SelectGeometryComponents("sphere.pnt[44-50]");
+Translate(null, 0, 0, -4.83347471775276, siRelative, siView, siObj, siXYZ, null, null, null, null, null, null, null, null, null, 1);
+StoreShapeKey("sphere.pnt[44-50]", "", siShapeObjectReferenceMode, 1, 0, 0, siShapeContentPrimaryShape);
+ApplyFlexEnv(Sphere1 + ";" + NullPrim1, false, 2);
+SelectObj(NullPrim1, null, true);
+Translate(null, -3.20599401067148, 0, 0, siRelative, siView, siObj, siXYZ, null, null, null, null, null, null, null, null, null, 0);
+//Create a second enveloped sphere
+Sphere2 = CreatePrim("Sphere", "MeshSurface", null, null);
+NullPrim2 = GetPrim("Null", null, null, null);
+ApplyFlexEnv(Sphere2 + ";" + NullPrim2, false, 2);
+SelectObj(NullPrim2, null, null);
+Translate(null, 6.77561899920499, 0, -1.00435838290967, siRelative, siView, siObj, siXYZ, null, null, null, null, null, null, null, null, null, 2);
+//Generate a new object from the merge of the two spheres
+SetValue("Context.constructionmode", 0, null);
+ApplyGenOp("MeshMerge", "", Sphere1 + "," + Sphere2, 3, siPersistentOperation, siKeepGenOpInputs, null);
+Translate(null, 5.54342092599887, 0, 8.39090426346892, siRelative, siView, siObj, siXYZ, null, null, null, null, null, null, null, null, null, 2);
+//Transfer manually only one of the envelope weight props of the input spheres
+TransferClusterPropertiesAcrossGenOp("polymsh.polymsh.mergemesh", "polymsh", "sphere.polymsh.cls.EnvelopWeightCls.Envelope_Weights", "Envelope_Weights", true);
+//Copy the animation without transfering the envelope weight props that were not transfered
+CopyAnimationAcrossGenerator("polymsh.polymsh.mergemesh", 0, 1 /*don't transfer remaining envelopes*/);
+//Copy the animation and transfer the envelope weight props that were not transfered
+CopyAnimationAcrossGenerator("polymsh.polymsh.mergemesh", 0, 0 /*transfer remaining envelopes*/);</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/TransferPropertiesAcrossGenOp.html">TransferPropertiesAcrossGenOp</a> <a href="#!/url=./si_cmds/TransferPropertiesAcrossGenOp.html">TransferPropertiesAcrossGenOp</a> <a href="#!/url=./si_cmds/TransferClusterPropertiesAcrossGenOp.html">TransferClusterPropertiesAcrossGenOp</a> <a href="#!/url=./si_cmds/TransferAllPropertiesAcrossGenOp.html">TransferAllPropertiesAcrossGenOp</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

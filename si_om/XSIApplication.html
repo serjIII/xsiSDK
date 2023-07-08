@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>XSIApplication</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>XSIApplication</h1>
+         </div>
+
+<h2 class="pagehead">XSIApplication</h2>
+
+<p><a href="#!/url=./si_om/_hier.html#oh_XSIApplication">Object Hierarchy</a></p>
+
+<h3>Inheritance<h3>
+<p class="level1"><a href="#!/url=./si_om/SIObject.html">SIObject</a></p>
+<p class="level2"><a href="#!/url=./si_om/Application.html">Application</a></p>
+<p class="level3">XSIApplication</p>
+
+<h3>Introduced</h3>
+<div><p>v1.5</p></div>
+
+<h3>Description</h3>
+<div><p> The XSIApplication object derives from the <a href="#!/url=./si_om/Application.html">Application</a>; its properties and methods are 
+specific to Softimage, whereas <a href="#!/url=./si_om/Application.html">Application</a> contains only generic properties and methods. 
+XSIApplication manages access to high-level objects such as the Softimage active <a href="#!/url=./si_om/Project.html">Project</a>, 
+<a href="#!/url=./si_om/Selection.html">Selection</a> object, Softimage <a href="#!/url=./si_om/Command.html">Command</a> objects, etc.<br /><br /> 
+XSIApplication is an intrinsic object that represents the running instance of the Softimage application.
+An intrinsic (global) object is one that you can refer to by name in your code without creating an 
+instance of it first; in this case the name is Application. In other words, script writers can assume that 
+there is a global variable with the name 'Application' of type 'XSIApplication'. <br /><br />
+However, within NetView scripts this object is not available as an intrinsic so it is neccessary to 
+explicitly create an instance of the <a href="#!/url=./si_om/XSIApplication.html">XSIApplication</a> object. The scripting syntax for 
+explicitly creating an XSIApplication object within NetView is illustrated below in the examples. <br /><br />
+In normal (non-Netview) VBScript and JScript code it is possible to drop the "Application." prefix and 
+call methods and properties of this object directly. For example calling "LogMessage" is actually a short 
+form for "Application.LogMessage".  This syntactic shortcut is not available to Python or PerlScript. <br /><br />
+It is also possible to invoke all Softimage <a href="#!/url=./si_om/Command.html">Command</a>s as if they were methods of XSIApplication.
+This is the best way to invoke commands inside Python and PerlScript and for all script languages that run 
+inside Netview.
+</p></div>
+
+<h3>Methods</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.ActivateWorkgroup.html">ActivateWorkgroup</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.AddCommand.html">AddCommand</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.AddWorkgroup.html">AddWorkgroup</a>		</td>		<td class="members"><a href="#!/url=./si_om/Application.ClassName.html">ClassName</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.CloseUndo.html">CloseUndo</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.CreateAddon.html">CreateAddon</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.CreateCommand.html">CreateCommand</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.CreateProject.html">CreateProject</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.CreateProject2.html">CreateProject2</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.ExecuteCommand.html">ExecuteCommand</a>		</td>		<td class="members"><a href="#!/url=./si_om/Application.ExecuteScript.html">ExecuteScript</a>		</td>		<td class="members"><a href="#!/url=./si_om/Application.ExecuteScriptCode.html">ExecuteScriptCode</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.ExecuteScriptCommand.html">ExecuteScriptCommand</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.FindObjects2.html">FindObjects2</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.GetCommandByScriptingName.html">GetCommandByScriptingName</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.GetCustomPropertyCount.html">GetCustomPropertyCount</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.GetInstallationPath2.html">GetInstallationPath2</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.GetObjectFromID.html">GetObjectFromID</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.GetObjectFromID2.html">GetObjectFromID2</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.GetShaderDef.html">GetShaderDef</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.InstallAddon.html">InstallAddon</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.IsClassOf.html">IsClassOf</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.IsEqualTo.html">IsEqualTo</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.LoadPlugin.html">LoadPlugin</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/Application.LogMessage.html">LogMessage</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.OpenUndo.html">OpenUndo</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.RegisterShaderCustomParameterType.html">RegisterShaderCustomParameterType</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.RegisterShaderFamily.html">RegisterShaderFamily</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.RemoveCommand.html">RemoveCommand</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.RemoveWorkgroup.html">RemoveWorkgroup</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.RescanWorkgroups.html">RescanWorkgroups</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.UnInstallAddon.html">UnInstallAddon</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.UnloadPlugin.html">UnloadPlugin</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.UpdatePlugins.html">UpdatePlugins</a>		</td>		<td class="members"><a href="#!/url=./si_om/Application.Version.html">Version</a>		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Properties</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.ActiveProject2.html">ActiveProject2</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.ActiveProject3.html">ActiveProject3</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.ActiveSceneRoot.html">ActiveSceneRoot</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.ActiveToolName.html">ActiveToolName</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Application.html">Application</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Categories.html">Categories</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.Commands.html">Commands</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.Desktop.html">Desktop</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.Devices.html">Devices</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.Dictionary.html">Dictionary</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.EventInfos.html">EventInfos</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.FCurveSelection.html">FCurveSelection</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.Filters.html">Filters</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.FullName.html">FullName</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Help.html">Help</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.InstallationPath.html">InstallationPath</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.Interactive.html">Interactive</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.IsUndoing.html">IsUndoing</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.License.html">License</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Name.html">Name</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.NestedObjects.html">NestedObjects</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Origin.html">Origin</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.OriginPath.html">OriginPath</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Parent.html">Parent</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.Platform.html">Platform</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.Plugins.html">Plugins</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.Preferences.html">Preferences</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.Renderers.html">Renderers</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.Selection.html">Selection</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.ShaderDefinitions.html">ShaderDefinitions</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/Application.StatusBar.html">StatusBar</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Type.html">Type</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/XSIApplication.Workgroups.html">Workgroups</a>		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+'	hello world from vbscript
+'
+Application.LogMessage "Hello Softimage world"
+'In vbscript we don't need to specify 
+'the Application. prefix
+LogMessage "Shortcut of Hello World"</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' How to create an instance of the Application Object
+' from VBScript for use within a NetView html page.
+'
+Dim oApplication
+set oApplication = CreateObject("XSI.Application") 
+'Use SIObject.Application to convert from Application object 
+'to XSIApplication
+Dim oXSIApplication
+set oXSIApplication = oApplication.Application
+oXSIApplication.Application.LogMessage "Hello from Netview"</pre></td></tr>
+</table>
+</div><h4>3. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	hello world from jscript
+*/
+Application.LogMessage("Hello Softimage world");
+//This shortcut is equivalent
+LogMessage("Hello from ShortCut code");</pre></td></tr>
+</table>
+</div><h4>4. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	How to create an instance of the Application Object
+	from JScript for use within a NetView html page.
+*/
+var oApplication = new ActiveXObject("XSI.Application"); 
+var oXSIApplication = oApplication.Application;
+oXSIApplication.LogMessage( "There are " + oXSIApplication.Plugins.Count + " plugins installed" ) ;</pre></td></tr>
+</table>
+</div><h4>5. Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">#
+#	hello world from pythonscript
+#
+Application.LogMessage("Hello Softimage world")</pre></td></tr>
+</table>
+</div><h4>6. Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">#Python script example, using the global Application
+#object to invoke the NewScene command.
+Application.NewScene( "",0 )</pre></td></tr>
+</table>
+</div><h4>7. Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">#
+#	How to create an instance of the Application Object
+#	from pythonscript for use within a NetView html page.
+#
+# Normally you create a instance of an automation object using:
+# import win32com.client;
+# o=win32com.client.Dispatch('XSI.Application')	
+# however win32com is not a trusted module so you get around
+# this by defining a vbscript function called getXSIApp() 
+# that returns the Application object.
+try :
+	Application = window.getXSIApp()
+except :
+	print("No browser")
+# Note: Python is not a fully functional choice for web programming.
+# We recommend writing the Python code as Softimage Custom Commands
+# which are invoked using a little JScript or VBScript embedded in the
+# html.</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/Application.html">Application</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></h3></h3></div>
+   </div></body>
+</html>

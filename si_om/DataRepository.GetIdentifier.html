@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>DataRepository.GetIdentifier</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>DataRepository.GetIdentifier</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/DataRepository.html">DataRepository</a>.GetIdentifier</h2>
+
+<h3>Description</h3>
+<div><p>Returns the object identifier, model identifier, GUID, ClassID, or SPDL file of the specifed object.</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>Object DataRepository.GetIdentifier( Object in_varObject, siObjectIdentifierType in_idType );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oString = DataRepository.GetIdentifier( Object, [Type] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p><a href="#!/url=./files/String.htm">String</a> or <a href="#!/url=./files/Integer.htm">Integer</a></p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Object		</td>
+		<td>Object or <a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Object on which the information should be retrieved.		</td>
+	</tr>
+	<tr>
+		<td class="name">Type		</td>
+		<td><a href="#!/url=./si_om/siObjectIdentifierType.html">siObjectIdentifierType</a>		</td>
+		<td>
+Type of identifier to be returned.			<p class="cell"><span class="hilite">Default Value: </span>
+siObjectIdentifier (object id)			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">NewScene , false
+set oDatabase = XSIUtils.DataRepository
+set oCube = CreatePrim( "Cube", "MeshSurface" )
+Application.LogMessage oDatabase.GetIdentifier( oCube )
+Application.LogMessage oDatabase.GetIdentifier( oCube, siObjectGUID )
+' Select an object out of model and in a model
+SelectObj "Views.ViewA.UserCamera.camera,Cube,Scene_Root"
+set oSelection = Application.Selection
+for each oItem in oSelection
+	Application.LogMessage oItem.name &amp; " has ID " &amp; oDatabase.GetIdentifier( oItem , siModelIdentifier )
+	Application.LogMessage oItem.name &amp; " has ID " &amp; oDatabase.GetIdentifier( oItem )
+next
+'INFO : 60
+'INFO : {76BD459D-0C6F-4AC6-8489-1F0AD4E31079}
+'INFO : Camera has ID -1
+'INFO : Camera has ID 97
+'INFO : cube has ID 416
+'INFO : cube has ID 60
+'INFO : Scene_Root has ID 416
+'INFO : Scene_Root has ID 416</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	Example demonstrating how to determine the Class ID and the SPDL file of an object.
+	It also demonstrates how to use the Class ID to find all objects of a particular type in the scene.
+*/
+NewScene( null, false ) ;
+GetPrimLight("Point.Preset", "Point", "");
+GetPrimLight("Spot.Preset", "Spot", "");
+GetPrimLight("Spot.Preset", "Spot", "");
+GetPrimLight("Infinite.Preset", "Infinite", "");
+// Get information about about one of the lights
+var oDataRep = XSIUtils.DataRepository ;
+var oLight = Dictionary.GetObject( "Point.light" )
+var classID = oDataRep.GetIdentifier( oLight, siObjectCLSID );
+// Now that we know the ClassID from one light we can discover all the 
+// lights in the scene
+var oLightsXSICollection = FindObjects( null, classID ) ;
+Application.LogMessage( "Info about lights in the scene:" ) ;
+for ( var i = 0 ; i &lt; oLightsXSICollection.Count ; i++ )
+{
+	var oLight = oLightsXSICollection.Item(i) ;
+	classID = oDataRep.GetIdentifier( oLight, 3 );
+	var objectGuid = oDataRep.GetIdentifier( oLight, siObjectGUID );
+	var	spdlFile = oDataRep.GetIdentifier( oLight, siSpdlFile ) ;
+	// Each light has a different Object GUID but they 
+	// all share the same SPDL file and Class ID
+	Application.LogMessage( "Name: " + oLight + "\t\tType: " + oLight.Type ) ;
+	Application.LogMessage( "ClassID: " + classID ) ;
+	Application.LogMessage( "Object GUID: " + objectGuid ) ;
+	Application.LogMessage( "SPDL File: " + spdlFile + "\n" ) ;
+}
+// Output of this example is similar to the following (SPDL path and Object GUID may differ):
+// 
+//INFO : "Info about lights in the scene:"
+//INFO : "Name: Point.light		Type: light"
+//INFO : "ClassID: {F3705C30-5204-11D0-8298-00A0243E366B}"
+//INFO : "Object GUID: {6AB2367F-1714-4F63-9AD8-334EB405F6FB}"
+//INFO : "SPDL File: s:\Application\spdl\C3DLightPoint.spdl
+//"
+//INFO : "Name: Infinite.light		Type: light"
+//INFO : "ClassID: {F3705C30-5204-11D0-8298-00A0243E366B}"
+//INFO : "Object GUID: {BC839168-AB8A-4913-B8DE-801A9CD570C7}"
+//INFO : "SPDL File: s:\Application\spdl\C3DLightPoint.spdl
+//"
+//INFO : "Name: light.light		Type: light"
+//INFO : "ClassID: {F3705C30-5204-11D0-8298-00A0243E366B}"
+//INFO : "Object GUID: {1667B7C6-6347-4FB2-81FC-B91557C9F35D}"
+//INFO : "SPDL File: s:\Application\spdl\C3DLightPoint.spdl
+//"
+//INFO : "Name: Spot1.light		Type: light"
+//INFO : "ClassID: {F3705C30-5204-11D0-8298-00A0243E366B}"
+//INFO : "Object GUID: {B7E88791-0899-407C-9C13-3E426564136D}"
+//INFO : "SPDL File: s:\Application\spdl\C3DLightPoint.spdl
+//"
+//INFO : "Name: Spot.light		Type: light"
+//INFO : "ClassID: {F3705C30-5204-11D0-8298-00A0243E366B}"
+//INFO : "Object GUID: {42171148-C315-4D96-AC79-C423AF977B1F}"
+//INFO : "SPDL File: s:\Application\spdl\C3DLightPoint.spdl</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/FindObjects.html">FindObjects</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

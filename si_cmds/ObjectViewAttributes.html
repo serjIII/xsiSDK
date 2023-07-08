@@ -1,0 +1,467 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Object View Attributes</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Object View Attributes</h1>
+         </div>
+
+<h2 class="pagehead">Object View Attributes</h2>
+
+<h3>Introduced</h3>
+<div><p>v5.0</p></div>
+
+<div>
+	<p>View attributes for the <a href="http://softimage.wiki.softimage.com/xsidocs/objectview1.htm">Object View</a>. Some of these attributes are available for <a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> but some are only available for <a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a>. Check the third column in the table.</p>
+<div class="tip">
+<table cellpadding="5" cellspacing="5">
+	<tr>
+		<td class="label">Note</td>
+		<td class="emph">See <a href="#!/url=./si_cmds/ViewAttributes.html#">ViewAttributes</a> for a complete list of types of attributes that you can use when customizing your Relational Views.</td>
+	</tr>
+</table>
+</div>
+</div>
+
+<div><table class="values">
+	<tr>
+		<th>Attribute Name</th>
+		<th>Description</th>
+		<th>Supports</th>
+	</tr>
+	<tr>
+		<td class="example">autoalign</td>
+		<td>
+If set to "true", the camera automatically aligns along the default view axis whenever the view is updated.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">'true'</td>
+					<td>(Default) Enables the Auto Align Camera option. Note: Use the string "true", not the boolean true.					</td>
+				</tr>
+				<tr>
+					<td class="name">'false'</td>
+					<td>Disables the Auto Align Camera option. Note: Use the string "false", not the boolean false.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">autoframe</td>
+		<td>
+If set to "true", the camera automatically frames the selection whenever the view is updated.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">'true'</td>
+					<td>(Default) Enables the Auto Frame Camera option. Note: Use the string "true", not the boolean true.					</td>
+				</tr>
+				<tr>
+					<td class="name">'false'</td>
+					<td>Disables the Auto Frame Camera option. Note: Use the string "false", not the boolean false.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">autoselect</td>
+		<td>
+Modifies the behaviour of the Auto Align Camera option so that the camera alignment axis is controlled by the maximum area of the bounding box. In other words, the camera view is set to front/top/right based on the area of the bounding box in that view.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">'true'</td>
+					<td>Enables the Auto Select View option. Note: Use the string "true", not the boolean true.					</td>
+				</tr>
+				<tr>
+					<td class="name">'false'</td>
+					<td>(Default) Disables the Auto Select View option. Note: Use the string "false", not the boolean false.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">camera</td>
+		<td>
+The name of a camera to use. 			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">default</td>
+					<td>User (default)					</td>
+				</tr>
+				<tr>
+					<td class="name">user</td>
+					<td>User (default)					</td>
+				</tr>
+				<tr>
+					<td class="name">render</td>
+					<td>Render Pass					</td>
+				</tr>
+				<tr>
+					<td class="name">render pass</td>
+					<td>Render Pass					</td>
+				</tr>
+				<tr>
+					<td class="name">&lt;any scene camera name&gt;</td>
+					<td>The name of any camera in the scene					</td>
+				</tr>
+				<tr>
+					<td class="name">&lt;any spotlight name&gt;</td>
+					<td>The name of any spotlight in the scene					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">compensate</td>
+		<td>
+Controls whether the camera is adjusted to compensate for changes to the selection. In other words, when this option is enabled, the camera is locked to the selection while it is animated, transformed, and so on.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">'true'</td>
+					<td>(Default) Enables the Camera Compensation option. Note: Use the string "true", not the boolean true.					</td>
+				</tr>
+				<tr>
+					<td class="name">'false'</td>
+					<td>Disables the Camera Compensation option. Note: Use the string "false", not the boolean false.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">displayall</td>
+		<td>
+Displays all visible scene objects in the object view, instead of just the selection.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">'true'</td>
+					<td>Enables the Display All Objects option. Note: Use the string "true", not the boolean true.					</td>
+				</tr>
+				<tr>
+					<td class="name">'false'</td>
+					<td>(Default) Disables the Display All Objects option. Note: Use the string "false", not the boolean false.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">displaymode</td>
+		<td>
+Get or set the default display mode to use when the object view is opened.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">bounding box</td>
+					<td>Bounding Box					</td>
+				</tr>
+				<tr>
+					<td class="name">wireframe</td>
+					<td>Wireframe (default)					</td>
+				</tr>
+				<tr>
+					<td class="name">depth cue</td>
+					<td>DepthCue					</td>
+				</tr>
+				<tr>
+					<td class="name">hidden line removal</td>
+					<td>Hidden Line					</td>
+				</tr>
+				<tr>
+					<td class="name">constant</td>
+					<td>Constant					</td>
+				</tr>
+				<tr>
+					<td class="name">shaded</td>
+					<td>Shaded					</td>
+				</tr>
+				<tr>
+					<td class="name">textured</td>
+					<td>Textured					</td>
+				</tr>
+				<tr>
+					<td class="name">textured decal</td>
+					<td>Textured Decal					</td>
+				</tr>
+				<tr>
+					<td class="name">high quality</td>
+					<td>High Quality					</td>
+				</tr>
+				<tr>
+					<td class="name">opengl</td>
+					<td>OpenGL					</td>
+				</tr>
+				<tr>
+					<td class="name">&lt;any custom display mode&gt;</td>
+					<td>The name of any custom display mode					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">holdselection</td>
+		<td>
+Controls whether to show the last selection when nothing is selected in Object View.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">'true'</td>
+					<td>(Default) Hold the last selection. Note: Use the string "true", not the boolean true.					</td>
+				</tr>
+				<tr>
+					<td class="name">'false'</td>
+					<td>Don't hold the last selection. Note: Use the string "false", not the boolean false.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">localview</td>
+		<td>
+Controls whether the top/bottom/front/back/left/right views are based on the reference object (i.e. the first object in the display list) or whether they are global views.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">'true'</td>
+					<td>(Default) Enables the Local Camera View option. Note: Use the string "true", not the boolean true.					</td>
+				</tr>
+				<tr>
+					<td class="name">'false'</td>
+					<td>Disables the Local Camera View option. Note: Use the string "false", not the boolean false.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">lockstatus</td>
+		<td>
+Controls the state of the lock selection button in the toolbar.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">'true'</td>
+					<td>Locks the selection in the object view.					</td>
+				</tr>
+				<tr>
+					<td class="name">'false'</td>
+					<td>Unlocks the selection in the object view. This means that the object view display will change when the selection changes.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">modifycameras</td>
+		<td>
+When the View is set to a scene camera or spotlight, changing the selection modifies the camera/light's position based on changes in the object view.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">'true'</td>
+					<td>Enables the Modify Scene Cameras option. Note: Use the string "true", not the boolean true.					</td>
+				</tr>
+				<tr>
+					<td class="name">'false'</td>
+					<td>(Default) Disables the Modify Scene Cameras option. Note: Use the string "false", not the boolean false.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">rotatecomp</td>
+		<td>
+When Camera Compensation is activated, this option allows you to toggle the compensation for rotation. <br /><br />For example, this is useful if you want to track an object, but you don't want the camera to rotate with it.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">'true'</td>
+					<td>(Default) Enables the Compensate > Rotation option. Note: Use the string "true", not the boolean true.					</td>
+				</tr>
+				<tr>
+					<td class="name">'false'</td>
+					<td>Disables the Compensate > Rotation option. Note: Use the string "false", not the boolean false.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">scalecomp</td>
+		<td>
+When Camera Compensation is activated, this option allows you to toggle the compensation for scaling. <br /><br />For example, this is useful if you want to track an object, but you don't want the camera to scale with it.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">'true'</td>
+					<td>(Default) Enables the Compensate > Scaling option. Note: Use the string "true", not the boolean true.					</td>
+				</tr>
+				<tr>
+					<td class="name">'false'</td>
+					<td>Disables the Compensate > Scaling option. Note: Use the string "false", not the boolean false.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">targetcontent</td>
+		<td>
+The name of an object to view by default when the object view is opened. When the view is opened, it displays this element if it exists. The displayed object may change as you select objects unless the object view is locked. <br /><br />If the view is driven by a relationship, this content can be replaced dynamically.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;name of a scene item&gt;</td>
+					<td>The <a href="#!/url=./si_om/SIObject.FullName.html">SIObject.FullName</a> of the object to display (by default, the current selection is used).					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">translatecomp</td>
+		<td>
+When Camera Compensation is activated, this option allows you to toggle the compensation for translation. <br /><br />For example, this is useful if you want to track an object, but you don't want the camera to translate with it.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">'true'</td>
+					<td>(Default) Enables the Compensate > Translation option. Note: Use the string "true", not the boolean true.					</td>
+				</tr>
+				<tr>
+					<td class="name">'false'</td>
+					<td>Disables the Compensate > Translation option. Note: Use the string "false", not the boolean false.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">view</td>
+		<td>
+The default point of view to use when the object view is opened. 			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">top</td>
+					<td>View from the top					</td>
+				</tr>
+				<tr>
+					<td class="name">bottom</td>
+					<td>View from the bottom					</td>
+				</tr>
+				<tr>
+					<td class="name">front</td>
+					<td>View from the front					</td>
+				</tr>
+				<tr>
+					<td class="name">back</td>
+					<td>View from the back					</td>
+				</tr>
+				<tr>
+					<td class="name">right</td>
+					<td>View from the right					</td>
+				</tr>
+				<tr>
+					<td class="name">left</td>
+					<td>View from the left					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+</table>
+<br />
+
+</div>
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

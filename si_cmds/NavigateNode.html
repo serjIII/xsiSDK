@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>NavigateNode</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>NavigateNode</h1>
+         </div>
+
+<h2 class="pagehead">NavigateNode</h2>
+
+<h3>Introduced</h3>
+<div><p>v1.5</p></div>
+
+<h3>Description</h3>
+<div><p> 
+Navigates through the given object or component, given the specified 
+navigation filter and direction.  Returns the corresponding object or 
+component.<br /><br />
+Note:  To select an element, use <a href="#!/url=./si_cmds/SelectNeighborObj.html">SelectNeighborObj</a> instead.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = NavigateNode( [Source], [NavDirection], [NavLoop], [NavFilter], [NavSubFilter], [OutputObj] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>
+The node at the requested position or InputObj if there is no such node.  
+<br /><br />Note : Only the first matching node is returned.
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Source		</td>
+		<td><a href="#!/url=./files/listexpr.htm">Selection List</a>		</td>
+		<td>
+Starting point of the navigation.			<p class="cell"><span class="hilite">Default Value: </span>
+Current selection			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">NavDirection		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+
+Specifies how to navigate (ie. Up to the parent, down to the child or 
+sideways to a sibling).
+			<p class="cell"><span class="hilite">Default Value: </span>
+siParentNode			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">siParentNode					</td>
+					<td>Retrieve the parent					</td>
+				</tr>
+				<tr>
+					<td class="name">siChildNode					</td>
+					<td>Retrieve the child					</td>
+				</tr>
+				<tr>
+					<td class="name">siNextNode					</td>
+					<td>Retrieve the next sibling					</td>
+				</tr>
+				<tr>
+					<td class="name">siPreviousNode					</td>
+					<td>Retrieve the previous sibling					</td>
+				</tr>
+				<tr>
+					<td class="name">siFirstNode					</td>
+					<td>Retrieve the first sibling					</td>
+				</tr>
+				<tr>
+					<td class="name">siLastNode					</td>
+					<td>Retrieve the last sibling					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">NavLoop		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+
+Specifies whether to return to the begining of the hierarchy and continue searching 
+when the end is reached or stop searching at the end.
+			<p class="cell"><span class="hilite">Default Value: </span>
+False			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">False					</td>
+					<td>Do not loop through the hierarchy					</td>
+				</tr>
+				<tr>
+					<td class="name">True					</td>
+					<td>Loop through the hierarchy					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">NavFilter		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+Type of object we want back.  Default filtering is always used regardless of this value when NavDirection is siParentNode or siChildNode. 			<p class="cell"><span class="hilite">Default Value: </span>
+11 : Same type as input			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>Scene					</td>
+				</tr>
+				<tr>
+					<td class="name">2					</td>
+					<td>3D Object					</td>
+				</tr>
+				<tr>
+					<td class="name">3					</td>
+					<td>Operator					</td>
+				</tr>
+				<tr>
+					<td class="name">4					</td>
+					<td>Primitive					</td>
+				</tr>
+				<tr>
+					<td class="name">5					</td>
+					<td>Container or attribute					</td>
+				</tr>
+				<tr>
+					<td class="name">6					</td>
+					<td>Cluster					</td>
+				</tr>
+				<tr>
+					<td class="name">7					</td>
+					<td>Subcomponent					</td>
+				</tr>
+				<tr>
+					<td class="name">8					</td>
+					<td>Group					</td>
+				</tr>
+				<tr>
+					<td class="name">9					</td>
+					<td>Any COM Obj					</td>
+				</tr>
+				<tr>
+					<td class="name">10					</td>
+					<td>Any type					</td>
+				</tr>
+				<tr>
+					<td class="name">11					</td>
+					<td>Same Type as input					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">NavSubFilter		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+SubType of object we want.  This is used in conjunction with the NavFilter argument.			<p class="cell"><span class="hilite">Default Value: </span>
+1: Same type as input.			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>Any type					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>Same Type as input					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">OutputObj		</td>
+		<td>Object derived from <a href="#!/url=./si_om/SIObject.html">SIObject</a> (for example, <a href="#!/url=./si_om/Parameter.html">Parameter</a> or <a href="#!/url=./si_om/Property.html">Property</a> or <a href="#!/url=./si_om/X3DObject.html">X3DObject</a>)		</td>
+		<td>
+
+		The node at the requested position.  If there is no such node, the node specified by the 
+		InputObj parameter is returned.
+		<br /><br />
+		Note : Only the first matching node is returned.
+			</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' Returns the children of the current selection in a collection
+' Ouput: XSICollection	| Children of the selected object
+Function GetChildren()
+	Set childColl = CreateObject( "XSI.Collection" )
+	If Selection.Count &lt;&gt; 1 Then
+		MsgBox "You must select an object in order to get its children.", vbExclamation, "GetChildren"
+	Else
+		Set oSelected = Selection(0)
+		SetUserPref "SCR_CMDLOG_ENABLED", False
+		' get the first child
+		Set oChild = NavigateNode( oSelected, siChildNode )
+		Set oCurrent = oChild
+		' if there is at least one child
+		If	StrComp( oSelected, oChild ) &lt;&gt; 0 Then
+			' Add the child and its siblings to the collection
+			Do 
+				childColl.Add oCurrent
+				set oCurrent = NavigateNode( oCurrent, siNextNode, True, 10 )
+			Loop Until StrComp( oCurrent, oChild ) = 0
+		End If
+		SetUserPref "SCR_CMDLOG_ENABLED", True
+	End If
+	Set GetChildren = childColl
+End Function
+' Displays the content of a collection in the scripting
+' log
+' Input: oColl	| Collection to display
+Sub DisplayCollectionContent( ByRef oColl )
+	Dim message
+	message = "The collection contains the following elements:" &amp; vbLF &amp; vbLF
+	For Each element In oColl
+		message = message &amp; element &amp; vbLf
+	Next
+	LogMessage message
+End Sub
+' Create a new scene with a null then display its children
+NewScene ,False
+GetPrim "Null", "MyNull"
+DisplayCollectionContent( GetChildren() )
+'Output of the above script:
+'INFO : "The collection contains the following elements:
+' 
+' MyNull.Name
+' MyNull.null
+' MyNull.AmbientLighting
+' MyNull.Scene_Material
+' MyNull.geomapprox
+' MyNull.display
+' MyNull.kine
+' MyNull.visibility
+' MyNull.kine
+' MyNull.display
+' MyNull.visibility
+' MyNull.Children
+'"</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' Create a sphere and a cone :
+oSphere = CreatePrim( "Sphere", "MeshSurface" )
+oCone = CreatePrim( "Cone", "MeshSurface" )
+ParentObj oSphere, oCone 
+'
+' Navigate in the 3D object hierarchy.
+'
+LogMessage " --- Object Navigation ---"
+' First, from the sphere, navigate "up" to get the scene root:
+rtn = NavigateNode( oSphere, 1, , , 0 )
+LogMessage "From " &amp; oSphere &amp; ", we obtained " &amp; rtn 
+' Now navigate "down" from the sphere:
+rtn = NavigateNode( oSphere, 2, , 11, 0 )
+LogMessage "From " &amp; oSphere &amp; ", we obtained " &amp; rtn 
+'
+' Now, navigate amongst newly created clusters.
+'
+LogMessage "--- Cluster Navigation ---"
+oCls1 = CreateCluster( oSphere &amp; ".pnt[25-27,31-34,38-41]" )
+oCls2 = CreateCluster( oSphere &amp; ".pnt[3-6,11-13,52-55]" )
+' From the first cluster, get the second one:
+rtn = NavigateNode( oCls1, 3, True )
+LogMessage "From " &amp; oCls1 &amp; ", we obtained " &amp; rtn 
+' From the previously obtained cluster, return the next one.
+' If the next one doesn't exist, make sure we loop.
+LogMessage "We have now reached the end of the cluster list."
+newrtn = NavigateNode( rtn, 3, True, 6, 1 )
+LogMessage "From " &amp; rtn &amp; ", we loop and we obtained " &amp; newrtn 
+' Same as above but this time, we will not "loop".
+newrtn = NavigateNode( rtn, 3, False, 6, 1 )
+LogMessage "From " &amp; rtn &amp; ", we DON'T loop and we obtained " &amp; newrtn 
+' Running this script should log the following:
+' ---------------------------------------------
+'INFO : " --- Object Navigation ---"
+'INFO : "From sphere, we obtained Scene_Root"
+'INFO : "From sphere, we obtained sphere.Name"
+'INFO : "--- Cluster Navigation ---"
+'INFO : "From sphere.polymsh.cls.Point, we obtained sphere.polymsh.cls.Point1"
+'INFO : "We have now reached the end of the cluster list."
+'INFO : "From sphere.polymsh.cls.Point1, we loop and we obtained sphere.polymsh.cls.Point"
+'INFO : "From sphere.polymsh.cls.Point1, we DON'T loop and we obtained sphere.polymsh.cls.Point1"</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/SelectNeighborObj.html">SelectNeighborObj</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

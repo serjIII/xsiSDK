@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>EditParameterDefinition</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>EditParameterDefinition</h1>
+         </div>
+
+<h2 class="pagehead">EditParameterDefinition</h2>
+
+<h3>Introduced</h3>
+<div><p>v1.5</p></div>
+
+<h3>Description</h3>
+<div><p>
+Edits the definition of a custom parameter. Skipped arguments 
+are left unchanged.<br /><br />
+For proxy parameters it is possible to adjust the parameter 
+name and suggested range using this command, which leaves the 
+master parameter unaffected.<br /><br />
+It is also possible to adjust proxy parameters capabilities,
+which lead to also update the master parameters capabilities.
+However the Min and Max attributes 
+of a proxy parameter should be left the same as the master 
+parameter's Min and Max values.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>EditParameterDefinition( [InputObj], [ParamName], [VarType], [MinValue], [MaxValue], [SuggMin], [SuggMax], [ScriptName], [Description], [Capabilities] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">InputObj		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/listexpr.htm">List</a> of custom parameters. 			<p class="cell"><span class="hilite">Default Value: </span>
+Marked parameters			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ParamName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Name of the custom parameter. This appears on the property page when the object is inspected and in the scene explorer (unless "Show script names" is enabled).		</td>
+	</tr>
+	<tr>
+		<td class="name">VarType		</td>
+		<td><a href="#!/url=./si_om/siVariantType.html">siVariantType</a>		</td>
+		<td>
+(Obsolete) It is not necessary to specify this argument, it is ignored.			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">MinValue		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+Minimum value of the parameter 		</td>
+	</tr>
+	<tr>
+		<td class="name">MaxValue		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+Maximum value of the parameter 		</td>
+	</tr>
+	<tr>
+		<td class="name">SuggMin		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Suggested minimum value of the parameter (for UI controls) 		</td>
+	</tr>
+	<tr>
+		<td class="name">SuggMax		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Suggested maximum value of the parameter (for UI controls) 		</td>
+	</tr>
+	<tr>
+		<td class="name">ScriptName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Scripting version of the parameter name.  There should not be any space characters in the string.		</td>
+	</tr>
+	<tr>
+		<td class="name">Description		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ A longer, descriptive version of the parameter name.		</td>
+	</tr>
+	<tr>
+		<td class="name">Capabilities		</td>
+		<td><a href="#!/url=./si_om/siCapabilities.html">siCapabilities</a>		</td>
+		<td>
+Determines the capabilities of the parameter (see the <a href="#!/url=./si_om/siCapabilities.html">siCapabilities</a> enum for more details)		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example creates a new custom property set and a new
+' parameter on a dummy null and then changes its definition.
+' The parameter information is logged to the Script Editor
+' History Pane so you can see what has changed.
+'
+' Create a null to hold the new custom property set
+set oDummy = GetPrim( "Null" )
+' Add custom property set called Emotions to the dummy
+AddProp "Custom_parameter_list", , , "Emotions"
+' Add custom parameter Happiness to the Emotions property set
+SIAddCustomParameter "null.Emotions", "Happiness", _
+			siDouble, 0.000, 0.000, 1.000, , siAnimatable, 0.000, 1.000, , "The happiness param"
+' What does it look like before editing the definition?
+printParamInfo oDummy.Properties( "Emotions" ).Parameters(0)
+' Update the minimum and maximum values of Happiness
+EditParameterDefinition oDummy &amp; ".Emotions.Happiness", "Sadness Param", , _
+			-100, 100, -100, 100, "Sadness", "The sadness param", _
+			siAnimatable + siKeyable
+' What does it look like afterwards?
+printParamInfo oDummy.Properties( "Emotions" ).Parameters(0)
+' Convenience function--saves time and typing
+function printParamInfo( in_parameter )
+	LogMessage in_parameter &amp; " information:"
+	LogMessage "-------------------------------------"
+	LogMessage vbTab &amp; "Default value: " &amp; vbTab &amp; vbTab &amp; vbTab &amp; in_parameter.Default
+	LogMessage vbTab &amp; "Description: " &amp; vbTab &amp; vbTab &amp; vbTab &amp; in_parameter.Description
+	LogMessage vbTab &amp; "Is " &amp; in_parameter.ScriptName &amp; " marked?: " &amp; vbTab &amp; vbTab &amp; in_parameter.Marked
+	LogMessage vbTab &amp; "SuggestedMin value: " &amp; vbTab &amp; vbTab &amp; in_parameter.SuggestedMin
+	LogMessage vbTab &amp; "SuggestedMax value: " &amp; vbTab &amp; vbTab &amp; in_parameter.SuggestedMax
+	LogMessage vbTab &amp; "Actual Min value: " &amp; vbTab &amp; vbTab &amp; in_parameter.Min
+	LogMessage vbTab &amp; "Actual Max value: " &amp; vbTab &amp; vbTab &amp; in_parameter.Max
+	LogMessage vbTab &amp; "ScriptName: " &amp; vbTab &amp; vbTab &amp; vbTab &amp; in_parameter.ScriptName
+	LogMessage vbTab &amp; "Name: " &amp; vbTab &amp; vbTab &amp; vbTab &amp; vbTab &amp; in_parameter.Name
+	LogMessage vbTab &amp; "Capabilities: " &amp; vbTab &amp; vbTab &amp; vbTab &amp; in_parameter.Capabilities
+	LogMessage vbTab &amp; "Is " &amp; in_parameter.ScriptName &amp; " animatable?: " &amp; vbTab &amp; in_parameter.Animatable
+	LogMessage vbTab &amp; "Is " &amp; in_parameter.ScriptName &amp; " keyable?: " &amp; vbTab &amp; vbTab &amp; in_parameter.Keyable
+	LogMessage vbTab &amp; "Is " &amp; in_parameter.ScriptName &amp; " read-only?:  " &amp; vbTab &amp; in_parameter.ReadOnly
+	LogMessage vbTab &amp; "Value Type: " &amp; vbTab &amp; vbTab &amp; vbTab &amp; in_parameter.ValueType &amp; " (" &amp; TypeName( in_parameter ) &amp; ")"
+	LogMessage vbTab &amp; "Actual Value: " &amp; vbTab &amp; vbTab &amp; vbTab &amp; in_parameter.Value
+end function 
+
+' Output of above script:
+' ...before editing the parameter definition:
+'INFO : null.Emotions.Happiness information:"
+'INFO : -------------------------------------"
+'INFO : 	Default value: 				0
+'INFO : 	Description: 				The happiness param
+'INFO : 	Is Happiness marked?: 		False
+'INFO : 	SuggestedMin value: 		0
+'INFO : 	SuggestedMax value: 		1
+'INFO : 	Actual Min value: 			0
+'INFO : 	Actual Max value: 			1
+'INFO : 	ScriptName: 				Happiness
+'INFO : 	Name: 						Happiness
+'INFO : 	Capabilities: 				5
+'INFO : 	Is Happiness animatable?: 	True
+'INFO : 	Is Happiness keyable?: 		False
+'INFO : 	Is Happiness read-only?: 	False
+'INFO : 	Value Type: 				5 (Parameter)
+'INFO : 	Actual Value: 				0
+'
+' ...afterwards:
+'INFO : null.Emotions.Sadness information:
+'INFO : -------------------------------------
+'INFO : 	Default value: 				0
+'INFO : 	Description: 				The sadness param
+'INFO : 	Is Sadness marked?: 		False
+'INFO : 	SuggestedMin value: 		-100
+'INFO : 	SuggestedMax value: 		100
+'INFO : 	Actual Min value: 			-100
+'INFO : 	Actual Max value: 			100
+'INFO : 	ScriptName: 				Sadness
+'INFO : 	Name: 						Sadness Param
+'INFO : 	Capabilities: 				2053
+'INFO : 	Is Sadness animatable?:		True
+'INFO : 	Is Sadness keyable?: 		True
+'INFO : 	Is Sadness read-only?: 		False
+'INFO : 	Value Type: 				5 (Parameter)
+'INFO : 	Actual Value: 				0</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/SIAddCustomParameter.html">SIAddCustomParameter</a> <a href="#!/url=./si_cmds/RemoveCustomParam.html">RemoveCustomParam</a> <a href="#!/url=./si_om/Parameter.html">Parameter</a> <a href="#!/url=./si_om/CustomProperty.html">CustomProperty</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

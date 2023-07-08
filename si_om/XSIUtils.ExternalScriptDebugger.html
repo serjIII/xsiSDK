@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>XSIUtils.ExternalScriptDebugger</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>XSIUtils.ExternalScriptDebugger</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/XSIUtils.html">XSIUtils</a>.ExternalScriptDebugger</h2>
+
+<h3>Introduced</h3>
+<div><p>v5.0</p></div>
+
+<h3>Description</h3>
+<div><p> Sets or returns the <a href="#!/url=./files/Boolean.htm">Boolean</a> value on the registry key 
+(HKEY_CURRENT_USER\Software\Microsoft\Windows Script\Settings\JITDebug) that controls whether the 
+external script debugger starts when a script error occurs in Softimage.<br /><br />
+Script debugging requires a debugger such as Microsoft Script Debugger or the Microsoft Visual Studio 
+.Net debugger.<br /><br />
+The debugger starts when a script error occurs, or when a VBScript stop statement or JScript 
+debugger statement is executed.<br /><br />
+You cannot edit your scripting code in the debugger, but you can often solve tough scripting problems
+by checking variable values and stepping through code line by line and viewing variable values.<br /><br />
+Typically, it is more convenient to enable the external debugger only when you want to debug your scripts, and 
+to disable it during normal use. If you leave the debugger enabled, errors that are normally handled by Softimage may
+stop execution of your script. For example, clicking Cancel on a modal property page can raise an error that is
+normally handled by Softimage, but which will start the debugger if it is enabled.<br /><br />
+Tip: You can enable the external debugger from the script editor (for VBScript and JScript code). In the editing pane, 
+right-click and then click Tools > Enable External Debugger.<br /><br />
+Note: ExternalScriptDebugger does not apply to Python scripts (which have their own debugger), Linux, or 
+Netview-based script code. It is a global setting, so it may also cause "Just-In-Time Debugger" messages
+to appear when viewing Web pages in Internet Explorer.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>// get accessor
+Boolean rtn = XSIUtils.ExternalScriptDebugger;
+// set accessor
+XSIUtils.ExternalScriptDebugger = Boolean;</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This script demonstrates how XSIUtils.EnableScriptDebugger works when 
+	a simple runtime error occurs.
+*/
+XSIUtils.ExternalScriptDebugger = true ;
+// Runtime error - calling a function that doesn't exist
+// will open the debugger
+BogusFunction() ;</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This script demonstrates how XSIUtils.EnableScriptDebugger works with 
+	exception handling.
+*/
+XSIUtils.ExternalScriptDebugger = true ;
+// Try/catch is great for robust code,
+// but because it handles script errors it
+// can be harder to debug
+try {
+	BogusFunction() ;
+} catch(e) {
+	Application.LogMessage( "Caught error before debugger sees it" ) ;
+}
+// If you want to find out where inside a try/catch
+// the error actually happens, you can either temporarily
+// comment out the try/catch, or step through the
+// code line by line by adding a temporary call
+// to "debugger"
+try {
+	debugger ;
+	BogusFunction() ;
+} catch(e) {
+	Application.LogMessage( "Code jumps here, but you are already in debugger" ) ;
+}</pre></td></tr>
+</table>
+</div><h4>3. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' 	This script demonstrates how the XSIUtils.EnableScripDebugger works with 
+'	a simple runtime error.
+'
+option explicit
+XSIUtils.ExternalScriptDebugger = true
+' Runtime error - uninitialized variable
+' starts the script debugger
+' (the error is caught because option explicit is enabled)
+x = 45</pre></td></tr>
+</table>
+</div><h4>4. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' Demonstration of how "on error resume next"
+' interfers with the script debugger
+'
+' 	This script demonstrates how "on error resume next" interferes with the 
+'	XSIUtils.EnableScriptDebugger.
+'
+option explicit
+XSIUtils.ExternalScriptDebugger = true
+' This On Error statement means that VBscript 
+' ignores the undefined variable name, even
+' though Option Explicit is on
+on error resume next
+x = 45
+' The error info is stored in the "err"
+' global object
+Application.LogMessage err.description
+' To debug this sort of code, try temporarily
+' commenting out all "On Error Resume Next" statements, 
+' or set a break point (with the "stop" keyword)
+' and step line by line through the code
+stop 
+x = 45</pre></td></tr>
+</table>
+</div><h4>5. Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">#
+#	This script demonstrates how Python ignores the ExternalScriptDebugger
+#
+XSIUtils.ExternalScriptDebugger = 1
+# So if you uncomment this line it 
+# will just log an error inside Softimage
+#Foobar()
+# However you can open a debugger like this
+import pywin.debugger
+pywin.debugger.brk()
+# And then step to reach this error within
+# the debugger
+Foobar()</pre></td></tr>
+</table>
+</div></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>ApplyOp</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>ApplyOp</h1>
+         </div>
+
+<h2 class="pagehead">ApplyOp</h2>
+
+<h3>Introduced</h3>
+<div><p>v1.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Applies an operator to one or several objects, returns any objects created by the operator, and opens the newly applied operator's 
+property page. This is a generic command that can apply any type of operator (hair, deform, generator, topology, custom, etc.). <br /><br />
+You can also use commands that are specific to the type of operator you are applying. For example, the <a href="#!/url=./si_cmds/ApplyGenOp.html">ApplyGenOp</a> 
+command can be used to apply generator operators (such as the Birail or 
+Loft operators). Some operators have their own commands, such as the 
+HairCombOp which can be applied with the <a href="#!/url=./si_cmds/ApplyHairCombOp.html">ApplyHairCombOp</a>. <br /><br />
+This command supports group-level <a href="#!/url=./files/cnxset.htm">ConnectionSet</a>s only. To specify a
+port-level ConnectionSet, use the <a href="#!/url=./si_cmds/ApplyOperator.html">ApplyOperator</a> command instead.<br /><br />
+Tip: These type-specific commands often have features that are specialized for the type of operator you are applying. For example, the
+ApplyGenOp command gives the option of applying the operator in immediate or persistent mode and another option for what to do with
+the input (original) objects after the new geometry has been generated, whereas this command does not provide those options.<br /><br />
+Note: This command uses <a href="#!/url=./files/OutArgDefined.htm">output arguments</a>. C# and some 
+scripting languages (such as JScript, PerlScript and Python) don't support arguments passed by reference. Normally 
+you can get the output arguments via either <a href="#!/url=./si_om/XSIApplication.ExecuteCommand.html">XSIApplication.ExecuteCommand</a> method (C#) or the 
+<a href="#!/url=./files/ISIVTCollection.htm">ISIVTCollection</a> (scripting languages), but this command
+already returns a value.<br /><br />
+The only available workaround in this case is to create a VBScript custom command which returns both the output
+arguments and the return value in one array. For details, see 
+<a href="#!/url=./files/RtnValProblem.htm">What Happens when the Function Already Returns a Value?</a>.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = ApplyOp( PresetObj, [ConnectionSet], [ConnectType], [ImmediateMode], [OutputObjs], [ConstructionMode] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns an <a href="#!/url=./si_om/XSICollection.html">XSICollection</a> that contains a list of the created operators.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">PresetObj		</td>
+		<td><a href="#!/url=./files/String.htm">String</a> or a preset object (for example, an object obtained from <a href="#!/url=./si_cmds/SIGetPreset.html">SIGetPreset</a>)		</td>
+		<td>
+ Operator Preset. 		</td>
+	</tr>
+	<tr>
+		<td class="name">ConnectionSet		</td>
+		<td><a href="#!/url=./files/cnxset.htm">ConnectionSet</a>		</td>
+		<td>
+ Specifies the objects connected to an operator. <br /><br />Note: Because this is an in/out parameter, any string (variable or value) you pass into this parameter is automatically converted to a ConnectionSet object.			<p class="cell"><span class="hilite">Default Value: </span>
+Currently selected objects are used as the main group.<br /><br />Warning: An error occurs if the connection set is invalid. Please verify the connection set required for this operator to avoid breaking your scripts.			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ConnectType		</td>
+		<td><a href="#!/url=./si_om/siBranchFlag.html">siBranchFlag</a>		</td>
+		<td>
+ Specifies the type of connection (node or branch). 			<p class="cell"><span class="hilite">Default Value: </span>
+siUnspecified			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ImmediateMode		</td>
+		<td><a href="#!/url=./si_om/siOperationMode.html">siOperationMode</a>		</td>
+		<td>
+Specifies whether or not the operator should be immediately frozen.			<p class="cell"><span class="hilite">Default Value: </span>
+siPersistentOperation			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">OutputObjs		</td>
+		<td><a href="#!/url=./si_om/XSICollection.html">XSICollection</a>		</td>
+		<td>
+ Returns the primitives created by the operator. For example, Loft creates a primitive surface. 		</td>
+	</tr>
+	<tr>
+		<td class="name">ConstructionMode		</td>
+		<td><a href="#!/url=./si_om/siConstructionMode.html">siConstructionMode</a>		</td>
+		<td>
+ Specifies in which construction mode the operator will be applied. 			<p class="cell"><span class="hilite">Default Value: </span>
+Use the current construction mode			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example illustrates how to create
+' loft operators
+'
+'
+' Use Loft to create a surface from 2 curves
+'
+set curve1 = CreatePrim( "Arc", "NurbsCurve" )
+translate curve1, , , 2
+set curve2 = CreatePrim( "Arc", "NurbsCurve" )
+set oplist = ApplyOp( "Loft", curve1 &amp; "," &amp; curve2,,,createdobjects )
+set loftop = oplist(0)
+' change the subdivision level in U
+setvalue loftop &amp; ".subdivu", 19
+'
+' Loft onto an existing surface
+'
+set surface = createdobjects(0)
+surface.name = "Surface_created_by_lofting_2_curves"
+set curve1 = CreatePrim( "Arc", "NurbsCurve" )
+translate curve1, , , 2
+set curve2 = CreatePrim( "Arc", "NurbsCurve" )
+set surface = CreatePrim( "Grid", "NurbsSurface", "Loft_into_existing_surface" )
+' Freeze the surface so that the object can be used to contain a
+' new lofted surface
+FreezeObj surface
+set oplist = ApplyOp( "Loft", curve1 &amp; "," &amp; curve2 &amp; ";" &amp; surface )
+set surface = oplist(0)
+surface.name = "Surface_created_by_lofting_2_curves"</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/* 
+	Example showing how to retrieve the newly created operator
+	when ApplyOp is called on a single object
+*/
+// Create primitive
+oCube = activesceneroot.addgeometry( "Cube", "MeshSurface" );
+// Call command to apply a Taper deformer and 
+// retrieve the newly created operator
+oColl = ApplyOp( "Taper", oCube, 3, 0, null, 0 ) ;
+// Because there is only 1 input object (oCube)
+// we know there is only one operator created
+var oOp = oColl(0);
+// Modify the Amplitude Parameter
+oOp.ampl = 0.25 ;</pre></td></tr>
+</table>
+</div><h4>3. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">// Create empty collection to store objects that
+// we want to apply the operator to
+oInputCollection = XSIFactory.CreateObject( "XSI.Collection" );
+// Create primitive
+oInputCollection.add( activesceneroot.addgeometry( "Cube", "MeshSurface" ) );
+oInputCollection.add( activesceneroot.addgeometry( "Sphere", "MeshSurface" ) );
+// Call command to apply a Taper deformer and populate collection with its return value
+oOps = ApplyOp( "Taper", oInputCollection, 3, 0, null, 0 ) ;
+// Validate result
+for( var i=0; i &lt; oOps.count; i++ )
+{
+// Get operator
+oOp = oOps(i);
+logmessage( oOp.fullname );
+}
+//Expected results:
+//INFO : cube.polymsh.taperop
+//INFO : sphere.polymsh.taperop</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/ApplyOperator.html">ApplyOperator</a> <a href="#!/url=./si_cmds/ApplyGenOp.html">ApplyGenOp</a> <a href="#!/url=./si_cmds/ApplyTopoOp.html">ApplyTopoOp</a> <a href="#!/url=./si_cmds/ApplyHairOp.html">ApplyHairOp</a> <a href="#!/url=./si_om/Operator.html">Operator</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

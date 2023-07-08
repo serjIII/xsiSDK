@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>MakeForearmRoll</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>MakeForearmRoll</h1>
+         </div>
+
+<h2 class="pagehead">MakeForearmRoll</h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Creates roll nulls along the length of a bone. When used as deformers on an envelope they evenly distribute twist
+along the length of a bone giving a more natural skin deformation.<br /><br />
+The start and end rotations are determined differently for a forearm roll and bicep roll (<a href="#!/url=./si_cmds/MakeBicepRoll.html">MakeBicepRoll</a>). 
+In forearm roll, the starting rotation is the forearm's rotation minus any spin, calculated using the bicep's rotation. The end 
+rotation is the next bone's rotation (wrist) with spin. Roll division rotations are then interpolated between the start and end.
+In the case of bicep roll the bicep bone is used for both start and end rotations. The start rotation is the bone's rotation minus spin,
+the end rotation is its rotation with spin.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oForeArmRoll = MakeForearmRoll( Bicep, Forearm, ArmEff, HandEff, HandBone, [Prefix], [NbDivisions], [RollOffset] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns a <a href="#!/url=./files/CDKForeArmRoll.htm">ForeArmRoll</a> JScript object.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Bicep		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The chain element before the forearm, used to calculate the unspun forearm rotation.		</td>
+	</tr>
+	<tr>
+		<td class="name">Forearm		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The object to which the roll nulls will be parented.		</td>
+	</tr>
+	<tr>
+		<td class="name">ArmEff		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Effector of the chain that contains the bicep and forearm.		</td>
+	</tr>
+	<tr>
+		<td class="name">HandEff		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The effector of the wrist chain.		</td>
+	</tr>
+	<tr>
+		<td class="name">HandBone		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The wrist or hand bone, used to calculate the end rotation.		</td>
+	</tr>
+	<tr>
+		<td class="name">Prefix		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Prefix added to the name of the new dividers.		</td>
+	</tr>
+	<tr>
+		<td class="name">NbDivisions		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+The number of roll divisions. If the value is zero no roll is created.			<p class="cell"><span class="hilite">Default Value: </span>
+3			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">RollOffset		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+
+		Offset in degrees to roll the forearm.  The roll has a range of -180 to 180 and this lets you place the seam of that roll.
+		The value is driving a custom parameter that will be placed under the Hand Bone to interactively control this value.
+				<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This script creates an arm, then puts roll division
+	on the forearm.
+*/
+var guidecoll = new ActiveXObject("XSI.Collection");
+guidecoll.Add( GetPrim("Null", "ShoulderGuide") ); 
+guidecoll.Add( GetPrim("Null", "ElbowGuide") ); 
+guidecoll.Add( GetPrim("Null", "HandGuide") ); 
+var lXfm = guidecoll(0).Kinematics.Global.Transform
+var lPos = XSIMath.CreateVector3();
+/*
+	Right Arm
+*/
+lXfm.SetTranslationFromValues(0,0,0);
+guidecoll(0).Kinematics.Global.Transform = lXfm;
+lXfm.SetTranslationFromValues(4,0,-2);
+guidecoll(1).Kinematics.Global.Transform = lXfm;
+lXfm.SetTranslationFromValues(8,0,0);
+guidecoll(2).Kinematics.Global.Transform = lXfm;
+var RArm = MakeArm(ActiveSceneRoot, guidecoll, "R",null, 0,0,0,null ,null, 0);
+/*
+	Add a Hand
+*/
+var lPosStart = XSIMath.CreateVector3();
+var lPosEnd = XSIMath.CreateVector3();
+lPosStart.Set(8,0,0);
+lPosEnd.Set(9,0,0);
+var HandChain = ActiveSceneRoot.Add2DChain(lPosStart, lPosEnd);
+var ForeArmRoll = MakeForearmRoll(	RArm.Root.Bones(0),	//bicep
+					RArm.Root.Bones(1), 	//forearm
+					RArm.Eff,		//arm effector
+					HandChain.Effector,	//hand effector
+					HandChain.Bones(0),	//hand
+					"R");			//new object name prefix
+DumpForearmRoll(ForeArmRoll );
+function DumpForearmRoll(inForeArmRoll )
+{
+	logmessage ("Data in the returned arm object:");
+	logmessage ("-------------------------------");
+	logmessage ("Sliders   : " + inForeArmRoll.Sliders);
+	logmessage ("RollOffset: " + inForeArmRoll.RollOffset.value);
+	logmessage ("#Divisions: " + inForeArmRoll.Nb);
+	for(var b=0;b&lt;ForeArmRoll.Divisions.count;b++)
+		{logmessage ("  RollDif" + b + ": " + inForeArmRoll.Divisions(b));}
+}
+//results of running this script:
+//INFO : "Data in the returned arm object:"
+//INFO : "-------------------------------"
+//INFO : "Sliders   : bone.Roll_Compensation"
+//INFO : "RollOffset: 0"
+//INFO : "#Divisions: 3"
+//INFO : "  RollDif0: RElbow"
+//INFO : "  RollDif1: RForearmRoll"
+//INFO : "  RollDif2: RForearmRoll1"
+//</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/MakeBicepRoll.html">MakeBicepRoll</a> <a href="#!/url=./si_cmds/MakeArm.html">MakeArm</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

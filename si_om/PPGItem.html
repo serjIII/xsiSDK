@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>PPGItem</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>PPGItem</h1>
+         </div>
+
+<h2 class="pagehead">PPGItem</h2>
+
+<p><a href="#!/url=./si_om/_hier.html#oh_PPGItem">Object Hierarchy</a> | Related C++ Class: <a href="#!/url=./si_cpp/classXSI_1_1PPGItem.html">PPGItem</a></p>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p> This object represents a component of the user interface of a Property Page.  
+Normally a PPGItem represents a user interface control that is directly 
+related to a <a href="#!/url=./si_om/Parameter.html">Parameter</a> of the object that is inspected.
+For example a PPGItem of type siControlString would display the
+value of a <a href="#!/url=./files/String.htm">String</a> parameter.  Similarly a 
+PPGItem of type siControlFCurve would show the FCurve contained inside 
+a FCurve Parameter.  The connection between the control and its associated 
+Parameter is established based on the <a href="#!/url=./si_om/PPGItem.Name.html">PPGItem.Name</a>.<br /><br />
+Other PPGItems do not directly correspond to a parameter, for example Buttons,
+Tabs and Groups.<br /><br />
+Each PPGItem exposes a series of "attributes" that can be used to tweak its appearance.
+Some of the most common attributes are exposed directly as properties of the object,
+for example <a href="#!/url=./si_om/PPGItem.Label.html">PPGItem.Label</a>, whereas the more specialized or uncommon
+attributes can be accessed via <a href="#!/url=./si_om/PPGItem.GetAttribute.html">PPGItem.GetAttribute</a>.<br /><br />
+PPGItem objects are accessible via the <a href="#!/url=./si_om/PPGLayout.html">PPGLayout</a> of a
+<a href="#!/url=./si_om/ProjectItem.html">ProjectItem</a>.
+</p></div>
+
+<h3>Methods</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/PPGItem.GetAttribute.html">GetAttribute</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/PPGItem.SetAttribute.html">SetAttribute</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Properties</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/PPGItem.Label.html">Label</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/PPGItem.LabelMinPixels.html">LabelMinPixels</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/PPGItem.LabelPercentage.html">LabelPercentage</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/PPGItem.Name.html">Name</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/PPGItem.Type.html">Type</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/PPGItem.UIItems.html">UIItems</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/PPGItem.WidthPercentage.html">WidthPercentage</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'example demonstrating using the PPGItem 
+'object to set the Labels of an object.
+dim oPSet,oPPGLayout, oItem
+set oPSet=ActiveSceneRoot.AddProperty("CustomProperty",false,"Demo")
+oPSet.AddParameter3 "Check1", siBool
+oPSet.AddParameter3 "Check2", siBool
+set oPPGLayout = oPSet.PPGLayout
+oPPGLayout.AddGroup "", true
+oPPGLayout.AddRow
+oPPGLayout.AddItem "Check1"
+set oItem = oPPGLayout.AddItem( "Check2" )
+oItem.Label = "Check Box 2"
+oPPGLayout.EndRow
+oPPGLayout.EndGroup
+'We can look up and change the items afterwards
+set oItem = oPPGLayout.Item( "Check1" )
+oItem.Label = "Check Box 1"
+'Show our PPG
+InspectObj oPSet</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">//example building a layout with two Controls for selecting a 
+//filepath and one for selecting a folder.
+var oPSet=ActiveSceneRoot.AddProperty("CustomProperty",false,"Demo") ;
+oPSet.AddParameter3( "ExportFile", siString ) ;
+oPSet.AddParameter3( "ImportFile", siString ) ;
+oPSet.AddParameter3( "FolderPicker", siString ) ;
+var oPPGLayout = oPSet.PPGLayout ;
+var oItem = oPPGLayout.AddItem( "ExportFile","Export Filename",siControlFilePath ) ;
+// You can use the string directly, or the typdef siUIInitialDir (see siPPGItemAttribute enum)
+oItem.SetAttribute( "initialdir", "project" ) ;
+oItem.SetAttribute( siUIFileFilter, "Text files (*.txt)|*.txt|All Files (*.*)|*.*||" ) ;
+var oItem = oPPGLayout.AddItem( "ImportFile","",siControlFilePath ) ;
+oItem.SetAttribute( siUIFileFilter, 
+				"spdl files (*.spdl)|*.spdl|" +
+				"xsiaddon files (*.xsiaddon)|*.xsiaddon|" +
+				"All Files (*.*)|*.*||" );
+oItem.SetAttribute( siUIOpenFile, true ) ;
+oItem.SetAttribute( siUIInitialDir, "factory" ) ;
+oItem.SetAttribute( siUISubFolder, "Application/spdl" ) ;
+oItem.SetAttribute( siUIFileMustExist, true );
+var oItem = oPPGLayout.AddItem( "FolderPicker", "", "Folder" );
+oItem.SetAttribute( siUIInitialDir, "user" ) ;
+InspectObj( oPSet );</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/PPGLayout.html">PPGLayout</a> <a href="#!/url=./si_om/PPGLayout.AddItem.html">PPGLayout.AddItem</a> <a href="#!/url=./si_om/PPGLayout.Item.html">PPGLayout.Item</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>FCurve.ExtendCycle</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>FCurve.ExtendCycle</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/FCurve.html">FCurve</a>.ExtendCycle</h2>
+
+<h3>Introduced</h3>
+<div><p>v6.0</p></div>
+
+<h3>Description</h3>
+<div><p> Extends the fcurve to include the given number of cycles before/after.<br /><br />
+The cycle length is defined by the start/end keys and the
+current extrapolation for the fcurve (<a href="#!/url=./si_om/FCurve.Extrapolation.html">FCurve.Extrapolation</a>)
+is taken into account when generating the new cycles. Therefore, the
+method will fail if the fcurve has less than two keys. <br /><br />
+Calling this method may raise an "Access Denied" error. See more information in the FCurve object description.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>FCurve.ExtendCycle( Int32 in_CyclesBefore, Int32 in_CyclesAfter );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>FCurve.ExtendCycle( [CyclesBefore], [CyclesAfter] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">CyclesBefore		</td>
+		<td><a href="#!/url=./files/Long.htm">Long</a>		</td>
+		<td>
+The number of cycles to extend before the fcurve.			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">CyclesAfter		</td>
+		<td><a href="#!/url=./files/Long.htm">Long</a>		</td>
+		<td>
+The number of cycles to extend after the fcurve.			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">// 
+// This example illustrates how to extend an fcurve to include cycles before/after
+// Create a new scene
+NewScene(null, false);
+// Create a null
+oNull = Application.GetPrim("Null");
+// Get the posx parameter of the null
+oPosX = oNull.posx
+// Create array of time-value pairs
+aKeys = new Array( 0.00, 5.00,
+				1.00, 6.00,
+				2.00, 7.00,
+				3.00, 8.00,
+				4.00, 9.00,
+				5.00, 10.00 );
+// Create an empty FCurve
+oFCurve = oPosX.AddFCurve2( null, siStandardFCurve );
+// Set the fcurve keys
+oFCurve.SetKeys( aKeys );
+// Set the extrapolation for this fcurve
+oFCurve.Extrapolation = siPeriodicRelativeExtrapolation;
+Application.LogMessage( 'Before ExtendCycle:', siInfo );
+for (var i = 0; i &lt; oFCurve.Keys.Count; i++) 
+{
+	Application.LogMessage( 'Time: ' + oFCurve.Keys(i).Time + ', Value: ' + oFCurve.Keys(i).Value, siInfo );
+}
+// Extend one cycle before and after
+oFCurve.ExtendCycle( 1, 1 );
+Application.LogMessage( 'After ExtendCycle:', siInfo );
+for (var i = 0; i &lt; oFCurve.Keys.Count; i++) 
+{
+	Application.LogMessage( 'Time: ' + oFCurve.Keys(i).Time + ', Value: ' + oFCurve.Keys(i).Value, siInfo );
+}
+// Produces the following output:
+//
+//INFO : Before ExtendCycle:
+//INFO : Time: 0, Value: 5
+//INFO : Time: 1, Value: 6
+//INFO : Time: 2, Value: 7
+//INFO : Time: 3, Value: 8
+//INFO : Time: 4, Value: 9
+//INFO : Time: 5, Value: 10
+//INFO : After ExtendCycle:
+//INFO : Time: -5, Value: 0
+//INFO : Time: -4, Value: 1
+//INFO : Time: -3, Value: 2
+//INFO : Time: -2, Value: 3
+//INFO : Time: -1, Value: 4
+//INFO : Time: 0, Value: 5
+//INFO : Time: 1, Value: 6
+//INFO : Time: 2, Value: 7
+//INFO : Time: 3, Value: 8
+//INFO : Time: 4, Value: 9
+//INFO : Time: 5, Value: 10
+//INFO : Time: 6, Value: 11
+//INFO : Time: 7, Value: 12
+//INFO : Time: 8, Value: 13
+//INFO : Time: 9, Value: 14
+//INFO : Time: 10, Value: 15</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/FCurve.Extrapolation.html">FCurve.Extrapolation</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

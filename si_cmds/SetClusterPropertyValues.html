@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>SetClusterPropertyValues</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>SetClusterPropertyValues</h1>
+         </div>
+
+<h2 class="pagehead">SetClusterPropertyValues</h2>
+
+<h3>Introduced</h3>
+<div><p>v9.0 (2011)</p></div>
+
+<h3>Description</h3>
+<div><p>
+Sets the values of a cluster property.<br /><br />
+The offsets array designates the cluster elements offsets to modify. Specifying an empty value or
+an empty array will modify all cluster elements offsets with the specified values.<br /><br />
+The values array designated the values to set for the specified cluster element offsets. The size of
+values array must match one of the following: the size of an element size (e.g. RGBA = 4 values) or the size
+of the number of offsets specified multiplicated by the size of an element size (e.g. 2 offsets * RGB = 6 values).
+In the first case, the specified values will be set to all the specified cluster element offsets, while in the
+case, the specified values will be applied to their corresponding specified cluster element offset.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>SetClusterPropertyValues( ClusterProp, Offsets, Values, [Mode], [ClampValues] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">ClusterProp		</td>
+		<td><a href="#!/url=./si_om/ClusterProperty.html">ClusterProperty</a>		</td>
+		<td>
+Cluster property to modify		</td>
+	</tr>
+	<tr>
+		<td class="name">Offsets		</td>
+		<td><a href="#!/url=./si_om/Array.html">Array</a>		</td>
+		<td>
+Array of cluster element offsets to modify		</td>
+	</tr>
+	<tr>
+		<td class="name">Values		</td>
+		<td><a href="#!/url=./si_om/Array.html">Array</a>		</td>
+		<td>
+Array of values to set for the specified cluster element offsets		</td>
+	</tr>
+	<tr>
+		<td class="name">Mode		</td>
+		<td><a href="#!/url=./si_om/siSetValueMode.html">siSetValueMode</a>		</td>
+		<td>
+Specifies the mathematical mode when setting a new value to a current value.			<p class="cell"><span class="hilite">Default Value: </span>
+siSetValueModeAbsolute			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ClampValues		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+
+		True to clamp values<br /><br />
+		Currently, only meaningful when setting values on WeightMap properties, which have a minimum and a maximum parameters.
+				<p class="cell"><span class="hilite">Default Value: </span>
+false			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example shows how to set values on cluster elements of a WeightMap
+'
+' Create a WeightMap on a sphere
+NewScene , False
+CreatePrim "Sphere", "MeshSurface"
+dim oWMapColl, oWMap, oWMapArray
+set oWMapColl = CreateWeightMap
+set oWMap = oWMapColl.Item(0)
+SetClusterPropertyValues oWMap, Array(0, 1), Array(0.25, 0.5)
+oWMapArray = oWMap.Elements.Array
+LogMessage( "Setting different values on the first and second cluster elements" )
+LogMessage( "WeightMap value for cluster element 0 : " &amp; oWMapArray( 0 , 0 ) )
+LogMessage( "WeightMap value for cluster element 1 : " &amp; oWMapArray( 0 , 1 ) )
+SetClusterPropertyValues oWMap, Array(10, 20, 30), 0.75
+oWMapArray = oWMap.Elements.Array
+LogMessage( "Setting the same value on many cluster elements" )
+LogMessage( "WeightMap value for cluster element 10 : " &amp; oWMapArray( 0 , 10 ) )
+LogMessage( "WeightMap value for cluster element 20 : " &amp; oWMapArray( 0 , 20 ) )
+LogMessage( "WeightMap value for cluster element 30 : " &amp; oWMapArray( 0 , 30 ) )
+SetClusterPropertyValues oWMap, , Array(0.25), siSetValueModeAdditive
+oWMapArray = oWMap.Elements.Array
+LogMessage( "Adds the same value on all cluster elements" )
+LogMessage( "WeightMap value for cluster element 0  : " &amp; oWMapArray( 0 , 0 ) )
+LogMessage( "WeightMap value for cluster element 1  : " &amp; oWMapArray( 0 , 1 ) )
+LogMessage( "WeightMap value for cluster element 10 : " &amp; oWMapArray( 0 , 10 ) )
+LogMessage( "WeightMap value for cluster element 20 : " &amp; oWMapArray( 0 , 20 ) )
+LogMessage( "WeightMap value for cluster element 30 : " &amp; oWMapArray( 0 , 30 ) )
+SetClusterPropertyValues oWMap, 10, -2, siSetValueModeAbsolute, True
+SetClusterPropertyValues oWMap, 20, -2, siSetValueModeAbsolute, False
+oWMapArray = oWMap.Elements.Array
+LogMessage( "Playing with the ClampValues argument" )
+LogMessage( "WeightMap value for cluster element 0  : " &amp; oWMapArray( 0 , 0 ) )
+LogMessage( "WeightMap value for cluster element 1  : " &amp; oWMapArray( 0 , 1 ) )
+LogMessage( "WeightMap value for cluster element 10 : " &amp; oWMapArray( 0 , 10 ) )
+LogMessage( "WeightMap value for cluster element 20 : " &amp; oWMapArray( 0 , 20 ) )
+LogMessage( "WeightMap value for cluster element 30 : " &amp; oWMapArray( 0 , 30 ) )
+' Output:
+' INFO : Setting different values on the first and second cluster elements
+' INFO : WeightMap value for cluster element 0 : 0.25
+' INFO : WeightMap value for cluster element 1 : 0.5
+' INFO : Setting the same value on many cluster elements
+' INFO : WeightMap value for cluster element 10 : 0.75
+' INFO : WeightMap value for cluster element 20 : 0.75
+' INFO : WeightMap value for cluster element 30 : 0.75
+' INFO : Adds the same value on all cluster elements
+' INFO : WeightMap value for cluster element 0  : 0.5
+' INFO : WeightMap value for cluster element 1  : 0.75
+' INFO : WeightMap value for cluster element 10 : 1
+' INFO : WeightMap value for cluster element 20 : 1
+' INFO : WeightMap value for cluster element 30 : 1
+' INFO : Playing with the ClampValues argument
+' INFO : WeightMap value for cluster element 0  : 0.5
+' INFO : WeightMap value for cluster element 1  : 0.75
+' INFO : WeightMap value for cluster element 10 : 0
+' INFO : WeightMap value for cluster element 20 : -2
+' INFO : WeightMap value for cluster element 30 : 1</pre></td></tr>
+</table>
+</div><h4>2. Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">#
+# This example shows how to set values on cluster elements of a CAV
+#
+from win32com.client import constants as c
+# Create a CAV on a sphere
+app = Application
+app.NewScene("", False)
+app.CreatePrim("Sphere", "MeshSurface", "", "")
+oCAVColl = app.CreateVertexColorSupport("", "", "", "")
+oCAV = app.Dictionary.GetObject("sphere.polymsh.cls.UV_Cluster_AUTO.Vertex_Color")
+app.ChangeVertexColorDatatype(oCAV, 1)
+app.SetClusterPropertyValues(oCAV, [0, 1], [0.25, 0.5, 0.75, 1, 1, 0.75, 0.5, 0.25])
+oCAVArray = oCAV.Elements.Array
+app.LogMessage( "Setting different values on the first and second cluster elements" )
+app.LogMessage( "--------------------------------------" )
+app.LogMessage( "CAV value for cluster element 0, Red    : " + str(oCAVArray[ 0 ][ 0 ]) )
+app.LogMessage( "CAV value for cluster element 0, Green  : " + str(oCAVArray[ 1 ][ 0 ]) )
+app.LogMessage( "CAV value for cluster element 0, Blue   : " + str(oCAVArray[ 2 ][ 0 ]) )
+app.LogMessage( "CAV value for cluster element 0, Alpha  : " + str(oCAVArray[ 3 ][ 0 ]) )
+app.LogMessage( "--------------------------------------" )
+app.LogMessage( "CAV value for cluster element 1, Red    : " + str(oCAVArray[ 0 ][ 1 ]) )
+app.LogMessage( "CAV value for cluster element 1, Green  : " + str(oCAVArray[ 1 ][ 1 ]) )
+app.LogMessage( "CAV value for cluster element 1, Blue   : " + str(oCAVArray[ 2 ][ 1 ]) )
+app.LogMessage( "CAV value for cluster element 1, Alpha  : " + str(oCAVArray[ 3 ][ 1 ]) )
+app.SetClusterPropertyValues(oCAV, [10, 20, 30], [0.5, 1, 0.25, 0.75])
+oCAVArray = oCAV.Elements.Array
+app.LogMessage( "Setting the same value on many cluster elements" )
+app.LogMessage( "--------------------------------------" )
+app.LogMessage( "CAV value for cluster element 10, Red   : " + str(oCAVArray[ 0 ][ 10 ]) )
+app.LogMessage( "CAV value for cluster element 10, Green : " + str(oCAVArray[ 1 ][ 10 ]) )
+app.LogMessage( "CAV value for cluster element 10, Blue  : " + str(oCAVArray[ 2 ][ 10 ]) )
+app.LogMessage( "CAV value for cluster element 10, Alpha : " + str(oCAVArray[ 3 ][ 10 ]) )
+app.LogMessage( "--------------------------------------" )
+app.LogMessage( "CAV value for cluster element 20, Red   : " + str(oCAVArray[ 0 ][ 20 ]) )
+app.LogMessage( "CAV value for cluster element 20, Green : " + str(oCAVArray[ 1 ][ 20 ]) )
+app.LogMessage( "CAV value for cluster element 20, Blue  : " + str(oCAVArray[ 2 ][ 20 ]) )
+app.LogMessage( "CAV value for cluster element 20, Alpha : " + str(oCAVArray[ 3 ][ 20 ]) )
+app.LogMessage( "--------------------------------------" )
+app.LogMessage( "CAV value for cluster element 30, Red   : " + str(oCAVArray[ 0 ][ 30 ]) )
+app.LogMessage( "CAV value for cluster element 30, Green : " + str(oCAVArray[ 1 ][ 30 ]) )
+app.LogMessage( "CAV value for cluster element 30, Blue  : " + str(oCAVArray[ 2 ][ 30 ]) )
+app.LogMessage( "CAV value for cluster element 30, Alpha : " + str(oCAVArray[ 3 ][ 30 ]) )
+app.SetClusterPropertyValues(oCAV, None, [0.75, 0.25, 1, 0.5])
+oCAVArray = oCAV.Elements.Array
+app.LogMessage( "Setting the same value on all cluster elements" )
+app.LogMessage( "--------------------------------------" )
+app.LogMessage( "CAV value for cluster element 0, Red    : " + str(oCAVArray[ 0 ][ 0 ]) )
+app.LogMessage( "CAV value for cluster element 0, Green  : " + str(oCAVArray[ 1 ][ 0 ]) )
+app.LogMessage( "CAV value for cluster element 0, Blue   : " + str(oCAVArray[ 2 ][ 0 ]) )
+app.LogMessage( "CAV value for cluster element 0, Alpha  : " + str(oCAVArray[ 3 ][ 0 ]) )
+app.LogMessage( "--------------------------------------" )
+app.LogMessage( "CAV value for cluster element 1, Red    : " + str(oCAVArray[ 0 ][ 1 ]) )
+app.LogMessage( "CAV value for cluster element 1, Green  : " + str(oCAVArray[ 1 ][ 1 ]) )
+app.LogMessage( "CAV value for cluster element 1, Blue   : " + str(oCAVArray[ 2 ][ 1 ]) )
+app.LogMessage( "CAV value for cluster element 1, Alpha  : " + str(oCAVArray[ 3 ][ 1 ]) )
+app.LogMessage( "--------------------------------------" )
+app.LogMessage( "CAV value for cluster element 10, Red   : " + str(oCAVArray[ 0 ][ 10 ]) )
+app.LogMessage( "CAV value for cluster element 10, Green : " + str(oCAVArray[ 1 ][ 10 ]) )
+app.LogMessage( "CAV value for cluster element 10, Blue  : " + str(oCAVArray[ 2 ][ 10 ]) )
+app.LogMessage( "CAV value for cluster element 10, Alpha : " + str(oCAVArray[ 3 ][ 10 ]) )
+app.LogMessage( "--------------------------------------" )
+app.LogMessage( "CAV value for cluster element 20, Red   : " + str(oCAVArray[ 0 ][ 20 ]) )
+app.LogMessage( "CAV value for cluster element 20, Green : " + str(oCAVArray[ 1 ][ 20 ]) )
+app.LogMessage( "CAV value for cluster element 20, Blue  : " + str(oCAVArray[ 2 ][ 20 ]) )
+app.LogMessage( "CAV value for cluster element 20, Alpha : " + str(oCAVArray[ 3 ][ 20 ]) )
+app.LogMessage( "--------------------------------------" )
+app.LogMessage( "CAV value for cluster element 30, Red   : " + str(oCAVArray[ 0 ][ 30 ]) )
+app.LogMessage( "CAV value for cluster element 30, Green : " + str(oCAVArray[ 1 ][ 30 ]) )
+app.LogMessage( "CAV value for cluster element 30, Blue  : " + str(oCAVArray[ 2 ][ 30 ]) )
+app.LogMessage( "CAV value for cluster element 30, Alpha : " + str(oCAVArray[ 3 ][ 30 ]) )
+app.SetClusterPropertyValues(oCAV, [10, 20, 30], [-10, None, None, None], c.siSetValueModeAddPercentage)
+oCAVArray = oCAV.Elements.Array
+app.LogMessage( "Removing a 10% of the Red channel on many cluster elements" )
+app.LogMessage( "--------------------------------------" )
+app.LogMessage( "CAV value for cluster element 10, Red   : " + str(oCAVArray[ 0 ][ 10 ]) )
+app.LogMessage( "CAV value for cluster element 10, Green : " + str(oCAVArray[ 1 ][ 10 ]) )
+app.LogMessage( "CAV value for cluster element 10, Blue  : " + str(oCAVArray[ 2 ][ 10 ]) )
+app.LogMessage( "CAV value for cluster element 10, Alpha : " + str(oCAVArray[ 3 ][ 10 ]) )
+app.LogMessage( "--------------------------------------" )
+app.LogMessage( "CAV value for cluster element 20, Red   : " + str(oCAVArray[ 0 ][ 20 ]) )
+app.LogMessage( "CAV value for cluster element 20, Green : " + str(oCAVArray[ 1 ][ 20 ]) )
+app.LogMessage( "CAV value for cluster element 20, Blue  : " + str(oCAVArray[ 2 ][ 20 ]) )
+app.LogMessage( "CAV value for cluster element 20, Alpha : " + str(oCAVArray[ 3 ][ 20 ]) )
+app.LogMessage( "--------------------------------------" )
+app.LogMessage( "CAV value for cluster element 30, Red   : " + str(oCAVArray[ 0 ][ 30 ]) )
+app.LogMessage( "CAV value for cluster element 30, Green : " + str(oCAVArray[ 1 ][ 30 ]) )
+app.LogMessage( "CAV value for cluster element 30, Blue  : " + str(oCAVArray[ 2 ][ 30 ]) )
+app.LogMessage( "CAV value for cluster element 30, Alpha : " + str(oCAVArray[ 3 ][ 30 ]) )
+# Output:
+# INFO : Setting different values on the first and second cluster elements
+# INFO : --------------------------------------
+# INFO : CAV value for cluster element 0, Red    : 0.25
+# INFO : CAV value for cluster element 0, Green  : 0.5
+# INFO : CAV value for cluster element 0, Blue   : 0.75
+# INFO : CAV value for cluster element 0, Alpha  : 1.0
+# INFO : --------------------------------------
+# INFO : CAV value for cluster element 1, Red    : 1.0
+# INFO : CAV value for cluster element 1, Green  : 0.75
+# INFO : CAV value for cluster element 1, Blue   : 0.5
+# INFO : CAV value for cluster element 1, Alpha  : 0.25
+# INFO : Setting the same value on many cluster elements
+# INFO : --------------------------------------
+# INFO : CAV value for cluster element 10, Red   : 0.5
+# INFO : CAV value for cluster element 10, Green : 1.0
+# INFO : CAV value for cluster element 10, Blue  : 0.25
+# INFO : CAV value for cluster element 10, Alpha : 0.75
+# INFO : --------------------------------------
+# INFO : CAV value for cluster element 20, Red   : 0.5
+# INFO : CAV value for cluster element 20, Green : 1.0
+# INFO : CAV value for cluster element 20, Blue  : 0.25
+# INFO : CAV value for cluster element 20, Alpha : 0.75
+# INFO : --------------------------------------
+# INFO : CAV value for cluster element 30, Red   : 0.5
+# INFO : CAV value for cluster element 30, Green : 1.0
+# INFO : CAV value for cluster element 30, Blue  : 0.25
+# INFO : CAV value for cluster element 30, Alpha : 0.75
+# INFO : Setting the same value on all cluster elements
+# INFO : --------------------------------------
+# INFO : CAV value for cluster element 0, Red    : 0.75
+# INFO : CAV value for cluster element 0, Green  : 0.25
+# INFO : CAV value for cluster element 0, Blue   : 1.0
+# INFO : CAV value for cluster element 0, Alpha  : 0.5
+# INFO : --------------------------------------
+# INFO : CAV value for cluster element 1, Red    : 0.75
+# INFO : CAV value for cluster element 1, Green  : 0.25
+# INFO : CAV value for cluster element 1, Blue   : 1.0
+# INFO : CAV value for cluster element 1, Alpha  : 0.5
+# INFO : --------------------------------------
+# INFO : CAV value for cluster element 10, Red   : 0.75
+# INFO : CAV value for cluster element 10, Green : 0.25
+# INFO : CAV value for cluster element 10, Blue  : 1.0
+# INFO : CAV value for cluster element 10, Alpha : 0.5
+# INFO : --------------------------------------
+# INFO : CAV value for cluster element 20, Red   : 0.75
+# INFO : CAV value for cluster element 20, Green : 0.25
+# INFO : CAV value for cluster element 20, Blue  : 1.0
+# INFO : CAV value for cluster element 20, Alpha : 0.5
+# INFO : --------------------------------------
+# INFO : CAV value for cluster element 30, Red   : 0.75
+# INFO : CAV value for cluster element 30, Green : 0.25
+# INFO : CAV value for cluster element 30, Blue  : 1.0
+# INFO : CAV value for cluster element 30, Alpha : 0.5
+# INFO : Removing a 10% of the Red channel on many cluster elements
+# INFO : --------------------------------------
+# INFO : CAV value for cluster element 10, Red   : 0.675
+# INFO : CAV value for cluster element 10, Green : 0.25
+# INFO : CAV value for cluster element 10, Blue  : 1.0
+# INFO : CAV value for cluster element 10, Alpha : 0.5
+# INFO : --------------------------------------
+# INFO : CAV value for cluster element 20, Red   : 0.675
+# INFO : CAV value for cluster element 20, Green : 0.25
+# INFO : CAV value for cluster element 20, Blue  : 1.0
+# INFO : CAV value for cluster element 20, Alpha : 0.5
+# INFO : --------------------------------------
+# INFO : CAV value for cluster element 30, Red   : 0.675
+# INFO : CAV value for cluster element 30, Green : 0.25
+# INFO : CAV value for cluster element 30, Blue  : 1.0
+# INFO : CAV value for cluster element 30, Alpha : 0.5</pre></td></tr>
+</table>
+</div></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,734 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>OnEvent</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>OnEvent</h1>
+         </div>
+
+<h2 class="pagehead">OnEvent</h2>
+
+<hr width="100%" />
+<h3>Description</h3>
+<div><p><a name="Description"> </a>	<p>
+				Fired when an event occurs. For example, the OnEvent callback for a <a href="#!/url=./si_om/siEventID.html#siOnBeginNewScene">siOnBeginNewScene</a> event 
+				is fired when a new scene is created with File > New Scene, the Project Manager, or the 
+				<a href="#!/url=./si_cmds/NewScene.html">NewScene</a> command. 
+			</p>
+</p></div>
+
+<hr width="100%" />
+<h3>Applies To</h3>
+<div><p><a name="AppliesTo"> </a>	<p>
+				Events registered with <a href="#!/url=./si_om/PluginRegistrar.RegisterEvent.html">PluginRegistrar.RegisterEvent</a> (for <a href="#!/url=./si_om/EventInfo.html">EventInfo</a>s). or 
+				<a href="#!/url=./si_om/PluginRegistrar.RegisterTimerEvent.html">PluginRegistrar.RegisterTimerEvent</a> (for <a href="#!/url=./si_om/TimerEvent.html">TimerEvent</a>s). 
+			</p>
+</p></div>
+
+<hr width="100%" />
+<h3>Supported Events</h3>
+<div><p><a name="SupportedEvents"> </a>	<p>See <a href="#!/url=./si_om/siEventID.html">siEventID</a> for a list of supported events.</p>
+</p></div>
+
+<hr width="100%" />
+<h3>Syntax</h3>
+<div><p><a name="Syntax"> </a><div class="example"><table>
+<tr>
+<td class="example"><pre class="csharp">public class &lt;event_name&gt;
+{
+	public bool OnEvent( Context in_context )
+	{
+		...
+	}
+}</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="cplusplus">CStatus &lt;event_name&gt;_OnEvent( CRef&amp; in_context )
+{ 
+	... 
+}</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">function &lt;event_name&gt;_OnEvent( in_context )
+{ 
+	... 
+}</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">def &lt;event_name&gt;_OnEvent( in_context ):
+	...</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">Function &lt;event_name&gt;_OnEvent( in_context )
+	...
+End Function</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="perlscript">sub &lt;event_name&gt;_OnEvent 
+{ 
+	my $in_context = shift; 
+}</pre></td></tr>
+</table>
+</div>	<p><span style="font-family: courier, monospace;">&lt;event_name&gt;</span> is the name specified in the call to <a href="#!/url=./si_om/PluginRegistrar.RegisterEvent.html">PluginRegistrar.RegisterEvent</a>, 
+				with any spaces converted to underscores. For example, if you register the event with the name <span style="font-family: courier, monospace;">"My New Scene"</span>, then the 
+				callback name is <span style="font-family: courier, monospace;">"My_New_Scene_OnEvent"</span>.
+			</p>
+</p></div>
+
+<hr width="100%" />
+<h3>Parameters</h3>
+<div><p><a name="Parameters"> </a>	<table>		<tr>			<th>Parameter</th>
+			<th>Language</th>
+			<th>Type</th>
+			<th>Description</th>
+</tr>
+		<tr>			<td class="name">in_context</td>
+			<td>Scripting and C#</td>
+			<td><a href="#!/url=./si_om/Context.html">Context</a></td>
+			<td><a href="#!/url=./si_om/Context.Source.html">Context.Source</a> returns the event <a href="#!/url=./si_om/PluginItem.html">PluginItem</a>.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td>C++</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1CRef.html">CRef</a>&</td>
+			<td>A reference to the <a href="#!/url=./si_cpp/classXSI_1_1Context.html">Context</a> object.</td>
+</tr>
+</table>
+</p></div>
+
+<hr width="100%" />
+<h3>Context Attributes</h3>
+<div><p><a name="ContextAttributes"> </a><a name="ContextAttributes_Events"></a>	<table>		<tr>			<th>Event</th>
+			<th>Attribute</th>
+			<th>Description</th>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnActivate">siOnActivate</a><a name="ctxt_siOnActivate"></a></td>
+			<td class="example">State</td>
+			<td>Boolean value which indicates whether the application has been activated (true) or deactivated (false).</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnBeginCommand">siOnBeginCommand</a><a name="ctxt_siOnBeginCommand"></a></td>
+			<td class="example">Command</td>
+			<td>
+						Fired when a <a href="#!/url=./si_om/Command.html">Command</a> is about to be executed. The event can be used to abort the command execution, modify 
+						the command argument values or launch other commands. 
+					</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnEndCommand">siOnEndCommand</a><a name="ctxt_siOnEndCommand"></a></td>
+			<td class="example">Command</td>
+			<td>
+						Fired when a <a href="#!/url=./si_om/Command.html">Command</a> has been executed. The event can be used to access the command return value or output argument values. 
+						Contrary to other event types, this event is always fired when the current command has been aborted by a previous event.
+					</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">Aborted</td>
+			<td>
+						Boolean denoting whether the command was aborted.
+					</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">ReturnValue</td>
+			<td>
+						Value returned by the command (if any).
+					</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnBeginFileExport">siOnBeginFileExport</a><a name="ctxt_siOnBeginFileExport"></a><br /><br /><a href="#!/url=./si_om/siEventID.html#siOnEndFileExport">siOnEndFileExport</a><a name="ctxt_siOnEndFileExport"></a></td>
+			<td class="example">Input</td>
+			<td>The objects being exported:
+								<ul>
+				<li><a href="#!/url=./si_om/ActionSource.html">ActionSource</a> for siFileTypeAction</li>
+				<li><a href="#!/url=./si_om/Library.html">Library</a> for siFileTypeMatLib</li>
+				<li><a href="#!/url=./si_om/Mixer.html">Mixer</a> for siFileTypeMixer</li>
+				<li><a href="#!/url=./si_om/Model.html">Model</a> for siFileTypeModel</li>
+				<li><a href="#!/url=./si_om/XSICollection.html">XSICollection</a> for siFileTypedotXSI and siFileTypeIGES file types</li>
+				<li>Custom objects for siFileTypeCustom</li>
+			</ul>
+</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">FileName</td>
+			<td>The full path name of the exported file.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">FileType</td>
+			<td>An <a href="#!/url=./si_om/siFileType.html">siFileType</a> value that specifies the type of file being exported. Possible values are:
+								<ul>
+				<li><a href="#!/url=./si_om/siFileType.html#siFileTypeAction">siFileTypeAction</a></li>
+				<li><a href="#!/url=./si_om/siFileType.html#siFileTypeCustom">siFileTypeCustom</a></li>
+				<li><a href="#!/url=./si_om/siFileType.html#siFileTypedotXSI">siFileTypedotXSI</a></li>
+				<li><a href="#!/url=./si_om/siFileType.html#siFileTypeIGES">siFileTypeIGES</a></li>
+				<li><a href="#!/url=./si_om/siFileType.html#siFileTypeMatLib">siFileTypeMatLib</a></li>
+				<li><a href="#!/url=./si_om/siFileType.html#siFileTypeMixer">siFileTypeMixer</a></li>
+				<li><a href="#!/url=./si_om/siFileType.html#siFileTypeModel">siFileTypeModel</a></li>
+			</ul>
+</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnBeginFileImport">siOnBeginFileImport</a><a name="ctxt_siOnBeginFileImport"></a><br /><br /><a href="#!/url=./si_om/siEventID.html#siOnEndFileImport">siOnEndFileImport</a><a name="ctxt_siOnEndFileImport"></a></td>
+			<td class="example">FileName</td>
+			<td>The full path name of the file to import.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">FileType</td>
+			<td>An <a href="#!/url=./si_om/siFileType.html">siFileType</a> value that specifies the type of file being imported. Possible values are:
+								<ul>
+				<li><a href="#!/url=./si_om/siFileType.html#siFileTypeAction">siFileTypeAction</a></li>
+				<li><a href="#!/url=./si_om/siFileType.html#siFileTypeCustom">siFileTypeCustom</a></li>
+				<li><a href="#!/url=./si_om/siFileType.html#siFileTypedotXSI">siFileTypedotXSI</a></li>
+				<li><a href="#!/url=./si_om/siFileType.html#siFileTypeIGES">siFileTypeIGES</a></li>
+				<li><a href="#!/url=./si_om/siFileType.html#siFileTypeMatLib">siFileTypeMatLib</a></li>
+				<li><a href="#!/url=./si_om/siFileType.html#siFileTypeMixer">siFileTypeMixer</a></li>
+				<li><a href="#!/url=./si_om/siFileType.html#siFileTypeModel">siFileTypeModel</a></li>
+			</ul>
+</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">Parent</td>
+			<td>The parent of the model created during import, empty if not specified.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">Reference</td>
+			<td>Specifies whether a reference model is being imported. Applies only when importing .emdl (siFileTypeModel), 
+					.xsi (siFileTypedotXSI) files and custom files (siFileTypeCustom).</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">Name</td>
+			<td>The name of the reference model created during the import, if there is one. This field will be blank for dotXSI imported models.</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnBeginFrame">siOnBeginFrame</a><a name="ctxt_siOnBeginFrame"></a><br /><br /><a href="#!/url=./si_om/siEventID.html#siOnEndFrame">siOnEndFrame</a><a name="ctxt_siOnEndFrame"></a><br /><br /><a href="#!/url=./si_om/siEventID.html#siOnBeginSequence">siOnBeginSequence</a><a name="ctxt_siOnBeginSequence"></a><br /><br /><a href="#!/url=./si_om/siEventID.html#siOnEndSequence">siOnEndSequence</a><a name="ctxt_siOnEndSequence"></a><br /><br /><a href="#!/url=./si_om/siEventID.html#siOnRenderAbort">siOnRenderAbort</a><a name="ctxt_siOnRenderAbort"></a></td>
+			<td class="example">RenderType</td>
+			<td>A <a href="#!/url=./si_om/siRenderType.html">siRenderType</a> value that specifies the type of render operation being performed:
+								<ul>
+				<li><a href="#!/url=./si_om/siRenderType.html#siRenderSequence">siRenderSequence</a></li>
+				<li><a href="#!/url=./si_om/siRenderType.html#siRenderFramePreview">siRenderFramePreview</a></li>
+				<li><a href="#!/url=./si_om/siRenderType.html#siRenderExportArchive">siRenderExportArchive</a></li>
+			</ul>
+</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">FileName</td>
+			<td>List of file names being rendered.<br /><br />
+					The file names given are resolved from the file name template before being passed to the event handler.
+					The file name template is specified in the individual <a href="#!/url=./si_om/Framebuffer.html">Framebuffer</a> object of each <a href="#!/url=./si_om/Pass.html">Pass</a> property.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">Frame</td>
+			<td>The frame number of the frame being rendered.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">Sequence</td>
+			<td>Frame sequence number. The sequence number represents the number of frames rendered so far. 
+					For example, if frames 20 to 30 are being rendered, then the sequence number for frame 20 is 1, and 
+					the sequence number for frame 30 is 11.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">RenderField</td>
+			<td>
+						A <a href="#!/url=./si_om/siRenderFieldType.html">siRenderFieldType</a> value that specifies whether field rendering is enabled:
+									<ul>
+				<li><a href="#!/url=./si_om/siRenderFieldType.html#siRenderFieldNone">siRenderFieldNone</a></li>
+				<li><a href="#!/url=./si_om/siRenderFieldType.html#siRenderFieldOdd">siRenderFieldOdd</a></li>
+				<li><a href="#!/url=./si_om/siRenderFieldType.html#siRenderFieldEven">siRenderFieldEven</a></li>
+			</ul>
+</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">RenderError</td>
+			<td>						
+						A <a href="#!/url=./si_om/siRenderErrorType.html">siRenderErrorType</a> value that specifies the type of render error:
+									<ul>
+				<li><a href="#!/url=./si_om/siRenderingErrorType.html#siRenderNoError">siRenderNoError</a></li>
+				<li><a href="#!/url=./si_om/siRenderingErrorType.html#siRenderAbort">siRenderAbort</a></li>
+				<li><a href="#!/url=./si_om/siRenderingErrorType.html#siRenderFailure">siRenderFailure</a></li>
+			</ul>
+
+						Available with <a href="#!/url=./si_om/siEventID.html#siOnRenderAbort">siOnRenderAbort</a> only.<br /><br /></td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnBeginRenderPass">siOnBeginRenderPass</a><a name="ctxt_siOnBeginRenderPass"></a><br /><br /><a href="#!/url=./si_om/siEventID.html#siOnEndRenderPass">siOnEndRenderPass</a><a name="ctxt_siOnEndRenderPass"></a></td>
+			<td class="example">Pass</td>
+			<td>The pass object that is about to get rendered.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">Frames</td>
+			<td>An array of frames (times) that are about to get rendered.</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnBeginPassChange">siOnBeginPassChange</a><a name="ctxt_siOnBeginPassChange"></a><br /><br /><a href="#!/url=./si_om/siEventID.html#siOnEndPassChange">siOnEndPassChange</a><a name="ctxt_siOnEndPassChange"></a></td>
+			<td class="example">SourcePass</td>
+			<td>The name of the old pass to switch from.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">TargetPass</td>
+			<td>The name of the new pass to switch to.</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnBeginSceneOpen">siOnBeginSceneOpen</a><a name="ctxt_siOnBeginSceneOpen"></a><br /><br /><a href="#!/url=./si_om/siEventID.html#siOnEndSceneOpen">siOnEndSceneOpen</a><a name="ctxt_siOnEndSceneOpen"></a><br /><br /><a href="#!/url=./si_om/siEventID.html#siOnBeginSceneSaveAs">siOnBeginSceneSaveAs</a><a name="ctxt_siOnBeginSceneSaveAs"></a><br /><br /><a href="#!/url=./si_om/siEventID.html#siOnEndSceneSaveAs">siOnEndSceneSaveAs</a><a name="ctxt_siOnEndSceneSaveAs"></a><br /><br /><a href="#!/url=./si_om/siEventID.html#siOnBeginSceneSave2">siOnBeginSceneSave2</a><a name="ctxt_siOnBeginSceneSave2"></a><br /><br /><a href="#!/url=./si_om/siEventID.html#siOnEndSceneSave2">siOnEndSceneSave2</a><a name="ctxt_siOnEndSceneSave2"></a><br /><br /><a href="#!/url=./si_om/siEventID.html#siOnBeginSceneSaveBackup">siOnBeginSceneSaveBackup</a><a name="ctxt_siOnBeginSceneSaveBackup"></a><br /><br /><a href="#!/url=./si_om/siEventID.html#siOnEndSceneSaveBackup">siOnEndSceneSaveBackup</a><a name="ctxt_siOnEndSceneSaveBackup"></a></td>
+			<td class="example">FileName</td>
+			<td>Full path name of the scene.</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnBeginScrubbing">siOnBeginScrubbing</a><a name="ctxt_siOnBeginScrubbing"></a><br /><br /><a href="#!/url=./si_om/siEventID.html#siOnEndScrubbing">siOnEndScrubbing</a><a name="ctxt_siOnEndScrubbing"></a></td>
+			<td class="example">Objects</td>
+			<td>
+						An array of parameter object(s) being set.
+					</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">Value</td>
+			<td>
+						The parameter value to set. The siOnBeginScrubbing callback receives the current parameter(s) value and the siOnEndScrubbing callback receives the new parameter(s) value.
+					</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">Frame</td>
+			<td>
+						The frame number at which the parameter(s) is being set.
+					</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnChangeProject">siOnChangeProject</a><a name="ctxt_siOnChangeProject"></a></td>
+			<td class="example">NewProjectPath</td>
+			<td>The newly activated project path.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">OldProjectPath</td>
+			<td>The path of the previously active project.</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnConnectShader">siOnConnectShader</a><a name="ctxt_siOnConnectShader"></a><br /><br /><a href="#!/url=./si_om/siEventID.html#siOnDisconnectShader">siOnDisconnectShader</a><a name="ctxt_siOnDisconnectShader"></a></td>
+			<td class="example">Source</td>
+			<td>
+						An output <a href="#!/url=./si_om/Parameter.html">Parameter</a> object on a <a href="#!/url=./si_om/Shader.html">Shader</a> that is being 
+						connected to or disconnected from another shader object's input parameter.
+					</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">SourceProgID</td>
+			<td>A string id that was used to create the source shader object.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">Target</td>
+			<td>
+						An input <a href="#!/url=./si_om/Parameter.html">Parameter</a> object on a <a href="#!/url=./si_om/Shader.html">Shader</a> that is being 
+						connected to or disconnected from another shader object's output parameter.
+					</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">TargetProgID</td>
+			<td>A string id that was used to create the target shader object.</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnCreateShader">siOnCreateShader</a><a name="ctxt_siOnCreateShader"></a></td>
+			<td class="example">Shader</td>
+			<td>
+						The <a href="#!/url=./si_om/Shader.html">Shader</a> object that just got created.
+					</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">ProgID</td>
+			<td>A string id that was used to create the shader.</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnCreateShaderDef">siOnCreateShaderDef</a><a name="ctxt_siOnCreateShaderDef"></a></td>
+			<td class="example">ShaderDef</td>
+			<td>
+						The <a href="#!/url=./si_om/ShaderDef.html">ShaderDef</a> object that just got created.
+					</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">ProgID</td>
+			<td>
+						A string id that uniquely identifies the shader definition. For more information, see
+						<a href="#!/url=./files/cus_shaders_ProgID.htm">Instantiating Shader Definitions and the ProgID</a>.
+					</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnPreDefineShaderDef">siOnPreDefineShaderDef</a><a name="ctxt_siOnPreDefineShaderDef"></a></td>
+			<td class="example">ShaderDef</td>
+			<td>
+						The <a href="#!/url=./si_om/ShaderDef.html">ShaderDef</a> object that just got created.
+					</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">ProgID</td>
+			<td>
+						A string id that uniquely identifies the shader definition. For more information, see
+						<a href="#!/url=./files/cus_shaders_ProgID.htm">Instantiating Shader Definitions and the ProgID</a>.
+					</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnPreParseShaderDef">siOnPreParseShaderDef</a><a name="ctxt_siOnPreParseShaderDef"></a></td>
+			<td class="example">ShaderDef</td>
+			<td>
+						The <a href="#!/url=./si_om/ShaderDef.html">ShaderDef</a> object that just got created.
+					</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">ProgID</td>
+			<td>
+						A string id that uniquely identifies the shader definition. For more information, see
+						<a href="#!/url=./files/cus_shaders_ProgID.htm">Instantiating Shader Definitions and the ProgID</a>.
+					</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnCustomFileExport">siOnCustomFileExport</a><a name="ctxt_siOnCustomFileExport"></a></td>
+			<td class="example">Target</td>
+			<td>The objects to be exported.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">FileName</td>
+			<td>The full path name of the custom exported file.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">FileType</td>
+			<td>An <a href="#!/url=./si_om/siFileType.html">siFileType</a> value that specifies the type of file being exported.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">Frame</td>
+			<td>Frame at which to export the specified objects.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">UserData</td>
+			<td>
+						Any data that needs to be accessible to the custom converter export event callback. The data is set when exporting
+						with Crosswalk or when exporting attributes with the <a href="#!/url=./si_cmds/CacheObjectsIntoFile.html">CacheObjectsIntoFile</a> command. In the context
+						of Crosswalk, the data is set with the name of the current Crosswalk custom property. With CacheObjectsIntoFile, the user 
+						data is set with the <span style="font-family: courier, monospace;">Attributes</span> argument (i.e. comma-separated list) that is passed in to the command.</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnCustomFileImport">siOnCustomFileImport</a><a name="ctxt_siOnCustomFileImport"></a></td>
+			<td class="example">Target</td>
+			<td>The parent of the content imported from the custom file.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">FileName</td>
+			<td>The full path name of the custom file to import.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">FileType</td>
+			<td>An <a href="#!/url=./si_om/siFileType.html">siFileType</a> value that specifies the type of file being imported.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">Frame</td>
+			<td>Frame at which to import the contents of the custom file</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">UserData</td>
+			<td>
+						Any data that needs to be accessible to the custom converter import event callback. The data is set in the 
+						context of Crosswalk with the name of the current Crosswalk custom property.
+					</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnCustomShaderExport">siOnCustomShaderExport</a><a name="ctxt_siOnCustomShaderExport"></a></td>
+			<td class="example">Target</td>
+			<td>The objects to be exported.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">Filename</td>
+			<td>The full path name of the custom exported shader.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">Displayname</td>
+			<td>
+						Name of the shader definition as it appears in the Preset Manager. For more information, see 
+						<a href="#!/url=./si_cmds/cus_shaders_PresetMgr.html">Populating the Preset Manager</a>.
+					</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">Category</td>
+			<td>
+						Category in the Preset Manager for the shader definition. For more information, see 
+						<a href="#!/url=./si_cmds/cus_shaders_PresetMgr.html">Populating the Preset Manager</a>.
+					</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnDragAndDrop">siOnDragAndDrop</a><a name="ctxt_siOnDragAndDrop"></a></td>
+			<td class="example">DragAndDropAction</td>
+			<td> A <a href="#!/url=./si_om/siDragAndDropAction.html">siDragAndDropAction</a> value that specifies the type of action that needs to be processed by the callback:
+									<ul>
+				<li><a href="#!/url=./si_om/siDragAndDropAction.html#siSourceDragAction">siSourceDragAction</a></li>
+				<li><a href="#!/url=./si_om/siDragAndDropAction.html#siSourceDropAction">siSourceDropAction</a></li>
+			</ul>
+</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">DragSource</td>
+			<td> The source object that is being dragged / dropped.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">DragSourceID</td>
+			<td> A <a href="#!/url=./si_om/siVariantType.html">siVariantType</a> value that specifies the identification of the source object that is being dragged / dropped. The only supported type is <span style="font-family: courier, monospace;">siString</span> for now. </td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">DragSourceSupported</td>
+			<td> Output argument. When the <span style="font-family: courier, monospace;">DragAndDropAction</span> parameter is equal to <a href="#!/url=./si_om/siDragAndDropAction.html#siSourceDragAction">siSourceDragAction</a>, the callback should set this variable to true if the source is supported. False by default.</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnDragAndDrop2">siOnDragAndDrop2</a><a name="ctxt_siOnDragAndDrop2"></a></td>
+			<td class="example">DragAndDropAction</td>
+			<td> A <a href="#!/url=./si_om/siDragAndDropAction2.html">siDragAndDropAction2</a> value that specifies the type of action that needs to be processed by the callback:
+									<ul>
+				<li><a href="#!/url=./si_om/siDragAndDropAction2.html#siDragOverAction">siDragOverAction</a></li>
+				<li><a href="#!/url=./si_om/siDragAndDropAction2.html#siDropAction">siDropAction</a></li>
+				<li><a href="#!/url=./si_om/siDragAndDropAction2.html#siDragEnterAction">siDragEnterAction</a></li>
+				<li><a href="#!/url=./si_om/siDragAndDropAction2.html#siDragLeaveAction">siDragLeaveAction</a></li>
+			</ul>
+</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">DragSourceObjects</td>
+			<td> Array of source objects being dragged. Can be an array of Softimage SDK objects or strings.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">DragTargetObjects</td>
+			<td> Array of targets over which the source is being dragged, consisting of Softimage SDK objects.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">DragTargetView</td>
+			<td>
+						The <a href="#!/url=./si_om/View.html">View</a> in which the drag and drop 2 operation occurs.
+					</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">DragMouseCoordinates</td>
+			<td> Array (2 elements) representing the mouse coordinates (x,y) in the view client space.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">Drag3DCoordinates</td>
+			<td>
+						Array (3 elements) representing the 3D coordinates (x,y,z) with respect to the mouse position.
+						Only valid when the <span style="font-family: courier, monospace;">DragTargetView</span> attribute object is a viewport.
+					</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">DragModifiers</td>
+			<td><a href="#!/url=./si_om/siDragModifiers.html">siDragModifiers</a> flags specifying the combination of modifiers currently being applied:
+									<ul>
+				<li><a href="#!/url=./si_om/siDragModifiers.html#siDragModifierLButton">siDragModifierLButton</a></li>
+				<li><a href="#!/url=./si_om/siDragModifiers.html#siDragModifierRButton">siDragModifierRButton</a></li>
+				<li><a href="#!/url=./si_om/siDragModifiers.html#siDragModifierShift">siDragModifierShift</a></li>
+				<li><a href="#!/url=./si_om/siDragModifiers.html#siDragModifierCtrl">siDragModifierCtrl</a></li>
+				<li><a href="#!/url=./si_om/siDragModifiers.html#siDragModifierMButton">siDragModifierMButton</a></li>
+				<li><a href="#!/url=./si_om/siDragModifiers.html#siDragModifierAlt">siDragModifierAlt</a></li>
+			</ul>
+</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">DragSourceSupported</td>
+			<td>
+						Output argument. When the <span style="font-family: courier, monospace;">DragAndDropAction</span> attribute is equal to
+						<a href="#!/url=./si_om/siDragAndDropAction.html#siDragOverAction">siDragOverAction</a>, the callback should set this
+						output attribute to true if the source is supported. false is the value by default for
+						this output attribute. If true is returned under these circumstances, Softimage will
+						launch a siOnDragAndDrop2 event when the source is dropped
+						(with a <span style="font-family: courier, monospace;">DragAndDropAction</span> equal to
+						<a href="#!/url=./si_om/siDragAndDropAction.html#siDropAction">siDropAction</a>. If false is returned, then
+						Softimage will determine internally whether the siDropAction will be called or not.
+						In other words, returning false has the same effect as if no siDragAndDrop2 event was
+						connected. It is only possible to add support for new source / target combination with
+						this output attribute.
+						Note: The event callback code should return a consistent value for this attribute. In
+						other words, if a sources / targets pair yields a true DragSourceSupported return attribute
+						for a siOnDragOverAction call, it should also return true for the siDropAction call.
+					</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">DragDropEffect</td>
+			<td>
+						Output argument. When the <span style="font-family: courier, monospace;">DragSourceSupported</span> attribute is equal to
+						true, this attribute will control the icon used for the mouse pointer. Possible values are:
+									<ul>
+				<li><a href="#!/url=./si_om/siDropEffect.html#siDropEffectCopy">siDropEffectCopy</a></li>
+				<li><a href="#!/url=./si_om/siDropEffect.html#siDropEffectMove">siDropEffectMove</a></li>
+				<li><a href="#!/url=./si_om/siDropEffect.html#siDropEffectLink">siDropEffectLink</a></li>
+			</ul>
+</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnKeyUp">siOnKeyUp</a><a name="ctxt_siOnKeyUp"></a><br /><br /><a href="#!/url=./si_om/siEventID.html#siOnKeyDown">siOnKeyDown</a><a name="ctxt_siOnKeyDown"></a></td>
+			<td class="example">KeyCode</td>
+			<td>The <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/winui/WinUI/WindowsUserInterface/UserInput/VirtualKeyCodes.asp">virtual key code</a> 
+					(in decimal) of the key that caused the event.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">ShiftMask</td>
+			<td>Specifies the state of the Shift, Alt, and Ctrl modifier keys when the key was pressed.<br /><br />ShiftMask 
+					is an integer value that is the sum of the siKeyboardState values for the modifier keys pressed.<br /><br />For 
+					example, if Shift+Ctrl+Alt is pressed, ShiftMask is equal to siShiftMask + siCtrlMask + siAltMask.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">Consumed</td>
+			<td>Specifies whether the event propagates up to Softimage.<br /><br />If an handler consumes the event, the event is 
+					not passed on to Softimage. By default, events are not consumed.<br /><br />Set this attribute to true with 
+					<a href="#!/url=./si_om/Context.SetAttribute.html">Context.SetAttribute</a> if you don't want Softimage to process the key.</td>
+</tr>
+		<tr>			<td class="name"><a name="ctxt_siOnNestedObjectsChange"><object idref="siEventID#siOnNestedObjectsChange"></object></a></td>
+			<td class="example">Objects</td>
+			<td>Collection of <a href="#!/url=./si_om/SIObject.html">SIObject</a> whose children or other nested objects may have changed since the last UI update.</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnObjectAdded">siOnObjectAdded</a><a name="ctxt_siOnObjectAdded"></a></td>
+			<td class="example">Objects</td>
+			<td>The list of objects that were added.</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnObjectRemoved">siOnObjectRemoved</a><a name="ctxt_siOnObjectRemoved"></a></td>
+			<td class="example">ObjectNames</td>
+			<td>The list containing the names of the removed objects.</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnSelectionChange">siOnSelectionChange</a><a name="ctxt_siOnSelectionChange"></a></td>
+			<td class="example">ChangeType</td>
+			<td>A <a href="#!/url=./si_om/siSelectionChangeType.html">siSelectionChangeType</a> value that specifies how the selection list changed:
+								<ul>
+				<li><a href="#!/url=./si_om/siSelectionChangeType.html#siAddedToSelection">siAddedToSelection</a> if one or more objects were added to the selection</li>
+				<li><a href="#!/url=./si_om/siSelectionChangeType.html#siRemovedFromSelection">siRemovedFromSelection</a> if one or more objects were removed from the selection.</li>
+			</ul>
+</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnSourcePathChange">siOnSourcePathChange</a><a name="ctxt_siOnSourcePathChange"></a></td>
+			<td class="example">FileName</td>
+			<td>Full path name of the source file. The event can change this path using <a href="#!/url=./si_om/Context.SetAttribute.html">Context.SetAttribute</a> on the event's context. If you change the path, the source uses that path instead of the original path. All path validation proceeds as usual though.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">SourceType</td>
+			<td>A <a href="#!/url=./si_om/siSourcePathType.html">siSourcePathType</a> value that specifies the type of source:
+								<ul>
+				<li><a href="#!/url=./si_om/siSourcePathType.html#siSourcePathImageSource">siSourcePathImageSource</a></li>
+				<li><a href="#!/url=./si_om/siSourcePathType.html#siSourcePathWritableImageSource">siSourcePathWritableImageSource</a></li>
+				<li><a href="#!/url=./si_om/siSourcePathType.html#siSourcePathModelSource">siSourcePathModelSource</a></li>
+			</ul>
+</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnTimeChange">siOnTimeChange</a><a name="ctxt_siOnTimeChange"></a></td>
+			<td class="example">Frame</td>
+			<td>Current frame number.</td>
+</tr>
+		<tr>			<td class="name"><a name="ctxt_siOnTimeTransportChange"><object idref="siEventID#siOnTimeTransportChange"></object></a></td>
+			<td class="example">TimeTransportName</td>
+			<td>String handle assign to instance of TimeTransport object. Used to determine if the time transport event came from this plug-in or another plug-in.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">CurrentState</td>
+			<td>Current state of time transport. This is a mask of the current states defined by the siTimeTransportState enumeration type.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">CurrentTime</td>
+			<td>Current time in seconds.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">TimeFormat</td>
+			<td>Time format used by time transport. PlayControl Enumerate type. Use CTime::ConvertFromPlayControlFormat(lFormat) to convert to CTime type.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">TimeFormatRate</td>
+			<td>Time format rate used by time transport only applicable for user defined time.</td>
+</tr>
+		<tr>			<td class="name"><a href="#!/url=./si_om/siEventID.html#siOnValueChange">siOnValueChange</a><a name="ctxt_siOnValueChange"></a></td>
+			<td class="example">Object</td>
+			<td>The object that was changed.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">FullName</td>
+			<td>The full name of the object that was changed.</td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td class="example">PreviousValue</td>
+			<td>The value of the object before it was changed. 			<div class="tip">
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td class="label">Note</td>
+					<td class="emph">This is only available for the <a href="#!/url=./si_om/Parameter.html">Parameter</a> object type.</td>
+				</tr>
+			</table>
+			</div>
+</td>
+</tr>
+</table>
+</p></div>
+
+<hr width="100%" />
+<h3>Return Value</h3>
+<div><p><a name="ReturnValue"> </a>	<p><a href="#!/url=./files/Boolean.htm">Boolean</a></p>
+	<p>
+				True to abort the operation that triggered the event, and False to continue. PerlScript and some versions of 
+				Python (prior to 2.2.1) do not define the True and False keywords, so use 1 for True and 0 for False.
+			</p>
+	<p><span style="font-family: courier, monospace;">CStatus::OK</span> to abort the operation, and <span style="font-family: courier, monospace;">CStatus::False</span> (or any other CStatus 
+				value except OK) to continue.
+			</p>
+</p></div>
+
+<hr width="100%" />
+<h3>Examples</h3>
+<div><p><a name="Examples"> </a><div class="example"><table>
+<tr>
+<td class="example"><pre class="cplusplus">// C++ code generated by the Event Wizard
+#include &lt;xsi_application.h&gt;
+#include &lt;xsi_context.h&gt;
+#include &lt;xsi_pluginregistrar.h&gt;
+#include &lt;xsi_status.h&gt;
+using namespace XSI; 
+
+SICALLBACK XSILoadPlugin( PluginRegistrar&amp; in_reg )
+{
+ in_reg.PutAuthor(L"sblair");
+ in_reg.PutName(L"NewEvent Plug-in");
+ in_reg.PutEmail(L"");
+ in_reg.PutURL(L"");
+ in_reg.PutVersion(1,0);
+ in_reg.RegisterEvent(L"siOnSelectionChangeEvent",siOnSelectionChange);
+ //RegistrationInsertionPoint - do not remove this line
+
+ return CStatus::OK;
+}
+
+SICALLBACK XSIUnloadPlugin( const PluginRegistrar&amp; in_reg )
+{
+ CString strPluginName = in_reg.GetName();
+ Application().LogMessage(strPluginName + L" has been unloaded.");
+ return CStatus::OK;
+}
+
+// Callback for the siOnSelectionChangeEvent event.
+
+SICALLBACK siOnSelectionChangeEvent_OnEvent( CRef&amp; in_ctxt )
+{
+ Context ctxt( in_ctxt );
+ Application().LogMessage(L"siOnSelectionChangeEvent_OnEvent called");
+
+ Application().LogMessage(L"ChangeType: " + CString(ctxt.GetAttribute(L"ChangeType")));
+
+//  TODO: Put your code here.
+
+//  Returns CStatus::False if you don't want to abort the event.
+ return CStatus::False;
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<hr width="100%" />
+<h3>See Also</h3>
+<div><p><a name="SeeAlso"> </a><ul>
+	<li><a href="#!/url=./si_cmds/callbacks.html">Custom Display (View) Callbacks</a></li>
+</ul>
+</p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

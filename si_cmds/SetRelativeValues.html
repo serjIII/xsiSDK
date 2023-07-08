@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>SetRelativeValues</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>SetRelativeValues</h1>
+         </div>
+
+<h2 class="pagehead">SetRelativeValues</h2>
+
+<h3>Description</h3>
+<div><p>
+Sets a key on the parameter function curve if the parameter is single-linked (l_fcv) or
+sets a set of relative values in the Interpolator object if the parameter is multiple-linked (l_interp) or object's orientation linked (l_interpOri).<br /><br />
+An Interpolator object is created when linking a parameter with multiple driving parameters or with an object's orientation.
+It is used to access and store sets of relative values.<br /><br />
+If A is single-linked with B, then there is a link function curve that animates 
+the value of A as the value of B changes. On this function curve, the Y 
+axis represents values of A, and the X axis represents values of B. 
+SetRelativeValues "A" sets a key on this function curve using the current 
+values of A and B.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>SetRelativeValues( [InputObj] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">InputObj		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/paramexpr.htm">Parameter</a> that is linked with (controlled by) another parameter. 			<p class="cell"><span class="hilite">Default Value: </span>
+Currently selected and marked parameters			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' This example shows that relative values of a single-linked parameter (l_fcv) are represented by an FCurve function.
+NewScene, false
+CreatePrim "Cone", "MeshSurface"
+CreatePrim "Cube", "MeshSurface"
+SetExpr "cube.kine.local.posx", "l_fcv( cone.kine.global.posx )"
+SetValue "cone.kine.local.posx", 1
+SetValue "cube.kine.local.posx", 2.5
+SetRelativeValues "cube.kine.local.posx"
+SetValue "cone.kine.local.posx", 3
+SetValue "cube.kine.local.posx", 4
+SetRelativeValues "cube.kine.local.posx"
+OpenView "Animation Editor"</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' This example shows that relative values of a multiple-linked parameter (l_interp) are stored in the Interpolator object.
+NewScene, false
+CreatePrim "Cone", "MeshSurface"
+CreatePrim "Cube", "MeshSurface"
+SetExpr "cube.kine.local.posx", "l_interp( cone.kine.global.posx, cone.kine.global.posy )"
+SetValue "cone.kine.local.posx", 1.5
+SetValue "cone.kine.local.posy", 2
+SetValue "cube.kine.local.posx", 2.5
+SetRelativeValues "cube.kine.local.posx"
+SetValue "cone.kine.local.posx", 3
+SetValue "cone.kine.local.posy", 3.5
+SetValue "cube.kine.local.posx", 4
+SetRelativeValues "cube.kine.local.posx"
+numKeys = GetNumRelativeValues( "cube.kine.local.Expression.Interpolator" )
+Application.LogMessage "The Interpolator object has " &amp; numKeys &amp; " sets of relative values"
+for i = 0 to numKeys - 1
+	Application.LogMessage "---------------------------"
+	Application.LogMessage "Relative values set #" &amp; i &amp; ":"
+	values = GetRelativeValue( "cube.kine.local.Expression.Interpolator", i )
+	j = 0
+	for each item in values
+		if (j = 0) then
+			Application.LogMessage "Controlled value = " &amp; item
+		else
+			Application.LogMessage "Controlling #" &amp; j &amp; " value = " &amp; item
+		end if
+		j = j + 1
+	next
+next
+' INFO : The Interpolator object has 3 sets of relative values
+' INFO : ---------------------------
+' INFO : Relative values set #0:
+' INFO : Controlled value = 0
+' INFO : Controlling #1 value = 0
+' INFO : Controlling #2 value = 0
+' INFO : ---------------------------
+' INFO : Relative values set #1:
+' INFO : Controlled value = 2.5
+' INFO : Controlling #1 value = 1.5
+' INFO : Controlling #2 value = 2
+' INFO : ---------------------------
+' INFO : Relative values set #2:
+' INFO : Controlled value = 4
+' INFO : Controlling #1 value = 3
+' INFO : Controlling #2 value = 3.5</pre></td></tr>
+</table>
+</div><h4>3. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' This example shows how to deal with sets of relative values with an object's orientation linked parameter (l_interpOri).
+NewScene , False
+CreatePrim "Cone", "MeshSurface"
+CreatePrim "Cube", "MeshSurface"
+SetExpr "cube.kine.local.posx", "l_interpOri( cone.kine.local.rotx, cone.kine.local.roty, cone.kine.local.rotz )"
+SetValue "cube.kine.local.posx", 2.5
+SetValue "cone.kine.local.rotx", 45
+SetRelativeValues "cube.kine.local.posx"
+SetValue "cube.kine.local.posx", 5.5
+SetValue "cone.kine.local.rotx", 90
+SetRelativeValues "cube.kine.local.posx"
+numKeys = GetNumRelativeValues( "cube.kine.local.Expression.Interpolator" )
+Application.LogMessage "The Interpolator object has " &amp; numKeys &amp; " sets of relative values"
+for i = 0 to numKeys - 1
+	Application.LogMessage "---------------------------"
+	Application.LogMessage "Relative values set #" &amp; i &amp; ":"
+	values = GetRelativeValue( "cube.kine.local.Expression.Interpolator", i )
+	Application.LogMessage "Controlled value (cube.kine.local.posx) : " &amp; values(0)
+	set quaternion = XSIMath.CreateQuaternion( values(1), values(2), values(3), values(4) )
+	eulerValues = quaternion.GetXYZAngleValues2()
+	Application.LogMessage "Controlling #1 value (cone.kine.local.rotx) : " &amp; XSIMath.RadiansToDegrees( eulerValues(0) )
+	Application.LogMessage "Controlling #2 value (cone.kine.local.roty) : " &amp; XSIMath.RadiansToDegrees( eulerValues(1) )
+	Application.LogMessage "Controlling #3 value (cone.kine.local.rotz) : " &amp; XSIMath.RadiansToDegrees( eulerValues(2) )
+next
+' INFO : The Interpolator object has 3 sets of relative values
+' INFO : ---------------------------
+' INFO : Relative values set #0:
+' INFO : Controlled value (cube.kine.local.posx) : 0
+' INFO : Controlling #1 value (cone.kine.local.rotx) : 0
+' INFO : Controlling #2 value (cone.kine.local.roty) : 0
+' INFO : Controlling #3 value (cone.kine.local.rotz) : 0
+' INFO : ---------------------------
+' INFO : Relative values set #1:
+' INFO : Controlled value (cube.kine.local.posx) : 2.5
+' INFO : Controlling #1 value (cone.kine.local.rotx) : 45
+' INFO : Controlling #2 value (cone.kine.local.roty) : 0
+' INFO : Controlling #3 value (cone.kine.local.rotz) : 0
+' INFO : ---------------------------
+' INFO : Relative values set #2:
+' INFO : Controlled value (cube.kine.local.posx) : 5.5
+' INFO : Controlling #1 value (cone.kine.local.rotx) : 90
+' INFO : Controlling #2 value (cone.kine.local.roty) : 0
+' INFO : Controlling #3 value (cone.kine.local.rotz) : 0</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/AddExpr.html">AddExpr</a> <a href="#!/url=./si_cmds/SetExpr.html">SetExpr</a> <a href="#!/url=./si_cmds/GetRelativeValue.html">GetRelativeValue</a> <a href="#!/url=./si_cmds/GetNumRelativeValues.html">GetNumRelativeValues</a> <a href="#!/url=./si_cmds/RemoveRelativeValue.html">RemoveRelativeValue</a> <a href="#!/url=./si_cmds/RemoveAnimation.html">RemoveAnimation</a> <a href="#!/url=./si_om/Expression.html">Expression</a> <a href="#!/url=./si_om/Parameter.html">Parameter</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

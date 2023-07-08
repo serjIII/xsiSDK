@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>ClipEffect</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>ClipEffect</h1>
+         </div>
+
+<h2 class="pagehead">ClipEffect</h2>
+
+<p><a href="#!/url=./si_om/_hier.html#oh_ClipEffect">Object Hierarchy</a> | Related C++ Class: <a href="#!/url=./si_cpp/classXSI_1_1ClipEffect.html">ClipEffect</a></p>
+
+<h3>Inheritance<h3>
+<p class="level1"><a href="#!/url=./si_om/SIObject.html">SIObject</a></p>
+<p class="level2">ClipEffect</p>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p> The ClipEffect object represents the set of effects associated with a clip. Each ClipEffect
+object contains one item corresponding to a <a href="#!/url=./si_om/MappedItem.html">MappedItem</a>. These 
+<a href="#!/url=./si_om/ClipEffectItem.html">ClipEffectItem</a>s contain expressions that control the clip without affecting 
+the <a href="#!/url=./si_om/Source.html">Source</a> on which the clip was instantiated. For example, you can create a
+walk cycle with a progressive offset by using an expression similar to this: '(cid * 10) + this'<br /><br />
+ClipEffects are available from the Clip object using the <a href="#!/url=./si_om/Clip.Effect.html">Clip.Effect</a> property.
+</p></div>
+
+<h3>Methods</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.IsClassOf.html">IsClassOf</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.IsEqualTo.html">IsEqualTo</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Properties</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Application.html">Application</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Categories.html">Categories</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.FullName.html">FullName</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Help.html">Help</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/ClipEffect.IsActive.html">IsActive</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/ClipEffect.IsPoseEffectActive.html">IsPoseEffectActive</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/ClipEffect.Items.html">Items</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Name.html">Name</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.NestedObjects.html">NestedObjects</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Origin.html">Origin</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.OriginPath.html">OriginPath</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Parent.html">Parent</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/ClipEffect.PoseEffect.html">PoseEffect</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/ClipEffect.TimeReference.html">TimeReference</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Type.html">Type</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/ClipEffect.Variables.html">Variables</a>		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">oRoot = Application.ActiveSceneRoot
+oCube = oRoot.AddGeometry("Cube", "MeshSurface")	
+#Creating the first animation source
+oSource = Application.StoreAction(oRoot, "cube.kine.local.posx,cube.kine.local.posy,cube.kine.local.posz", 
+	1, "StoredStaticPose", 1, 1, 5, 0, 0)
+#Creating the first clip
+oClip = Application.AddClip(oRoot, oSource)	
+for i in range(oClip.MappedItems.Count):
+	oCurrMappedItem = oClip.MappedItems(i)
+	oParam = oCurrMappedItem.Destination
+	if oParam.FullName == "cube.kine.local.posy":
+		Application.SetMappingRule(oClip.FullName + ".ActionClip",oParam,"frame",i+1)
+		break
+Application.LogMessage("The expression associated with the posy item is " 
+	+ oCurrMappedItem.ClipEffectItem.Expression)</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example demonstrates how to get at the ClipEffect objects by creating some 
+	sources and clips with clip effects and then finding them again through the mapped 
+	items on the clips in the mixer.
+*/
+NewScene( ActiveProject, false );
+// Set up some sources and clips in the scene (see end of example for details)
+CreateFCurveAction( ActiveSceneRoot );
+// Get all the clips in the mixer and then the sources
+var clips = ActiveSceneRoot.Mixer.Clips;
+for ( var i=0; i&lt;clips.Count; i++ ) {
+	// Look at their mapped items, but avoid the audio clips
+	if ( clips(i).Type != siClipAudioType &amp;&amp; clips(i).MappedItems ) {
+		var clp = clips(i);
+		LogMessage( "Found " + clp.MappedItems.Count + " mapped items(s)" );
+		for ( var j=0; j&lt;clp.MappedItems.Count; j++ ) {
+			var mapping = clp.MappedItems(j);
+			if ( mapping.ClipEffectItem.Expression != "" ) {
+				LogMessage( "\t...this clip has a clip effect item matching this expression:" );
+				LogMessage( "\t\t" + mapping.ClipEffectItem.Expression );
+			}
+			LogMessage( "\t...destination parameter: " + mapping.Destination );
+		}
+	}
+}
+// Expected results:
+//INFO : Found 3 mapped items(s)
+//INFO : 	...this clip has a clip effect item matching this expression:
+//INFO : 		this+5
+//INFO : 	...destination parameter: null.kine.local.sclx
+//INFO : 	...destination parameter: null.kine.local.scly
+//INFO : 	...destination parameter: null.kine.local.sclz
+// Convenience function
+function CreateFCurveAction( in_model )
+{
+	var obj = in_model.AddNull();
+	// Set FCurves on the null's scaling
+	var keys = new Array( 5, 1.2,  20, 1.7,  45, 2.0,  90, 2.5 );
+	obj.sclx.AddFCurve2( keys );
+	var keyfactor = Math.random() * 10;
+	var posfactor = Math.random();
+	for ( var i=0; i&lt;keys.length; i=i+2 ) {
+		keys[i] = keys[i] + keyfactor;
+		keys[i+1] = keys[i+1] * posfactor;
+	}
+	obj.scly.AddFCurve2( keys );
+	var keyfactor = Math.random() * 10;
+	var posfactor = Math.random();
+	for ( var i=0; i&lt;keys.length; i=i+2 ) {
+		keys[i] = keys[i] - keyfactor;
+		keys[i+1] = keys[i+1] * posfactor;
+	}
+	obj.sclz.AddFCurve2( keys );
+	// Get list of parameters to mark
+	var params = obj.sclx.FullName + ",";
+	params += obj.scly.FullName + ",";
+	params += obj.sclz.FullName;
+	// Make the FCurves into an Action
+	var src = StoreAction( in_model, params, 2, "StoredAnimFCrvAction" );
+	var clip = AddClip( in_model, src );
+	// Add some clip effects to it
+	var toclip = clip+".ActionClip";
+	var rtn = GetMappingRule( toclip, 0 );
+	var from = rtn.Value( "From" );
+	SetMappingRule( toclip, from, "this+5", 1 );
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/ClipEffectItem.html">ClipEffectItem</a> <a href="#!/url=./si_om/Clip.Effect.html">Clip.Effect</a> <a href="#!/url=./si_cmds/GetMappingRule.html">GetMappingRule</a> <a href="#!/url=./si_cmds/SetMappingRule.html">SetMappingRule</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></h3></h3></div>
+   </div></body>
+</html>

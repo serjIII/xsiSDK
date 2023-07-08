@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>OpenXSIExplorer</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>OpenXSIExplorer</h1>
+         </div>
+
+<h2 class="pagehead">OpenXSIExplorer</h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Opens the XSI Explorer with the viewer (right-hand side) set to the input view.
+The explorer tree (left-hand side) shows the input object(s) with the input 
+objects already selected.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = OpenXSIExplorer( [Scope], [Viewer], [InputObjs], [ShowToolbar], Title, [Reuse] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>
+Returns the new XSI Explorer view as an <a href="#!/url=./si_om/View.html">View</a> object.
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Scope		</td>
+		<td><a href="#!/url=./si_om/siExplorerScope.html">siExplorerScope</a>		</td>
+		<td>
+The tree scope to show in the Explorer 			<p class="cell"><span class="hilite">Default Value: </span>
+siExplorerScopeDefault			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Viewer		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Which viewer to show in the XSI Explorer (for example "Object View").			<p class="cell"><span class="hilite">Default Value: </span>
+None - the XSI Explorer will default to the last viewer shown			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">Schematic					</td>
+					<td>Schematic					</td>
+				</tr>
+				<tr>
+					<td class="name">Object View					</td>
+					<td>Object View					</td>
+				</tr>
+				<tr>
+					<td class="name">Render Tree					</td>
+					<td>Render Tree					</td>
+				</tr>
+				<tr>
+					<td class="name">Explorer					</td>
+					<td>Explorer					</td>
+				</tr>
+				<tr>
+					<td class="name">Texture Editor					</td>
+					<td>Texture Editor					</td>
+				</tr>
+				<tr>
+					<td class="name">Image Clip Viewer					</td>
+					<td>Image Clip Viewer					</td>
+				</tr>
+				<tr>
+					<td class="name">Property Editor					</td>
+					<td>Property Editor					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">InputObjs		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/listexpr.htm">List</a> of objects (for example "cone").			<p class="cell"><span class="hilite">Default Value: </span>
+Currently selected objects			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ShowToolbar		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+Should we show the XSI Explorer toolbar?			<p class="cell"><span class="hilite">Default Value: </span>
+True			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Title		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Special window title (can be empty for default title).			<p class="cell"><span class="hilite">Default Value: </span>
+""			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Reuse		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+Set to true to reuse the OpenXSIExplorer with focus; otherwise, a new copy of OpenXSIExplorer is opened.			<p class="cell"><span class="hilite">Default Value: </span>
+True			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'Create an object and set a key on it
+CreatePrim "Cone", "MeshSurface"
+Translate , -7.92963227268228, 5.31226706028277, -0.531226706028277, siRelative, siView, siObj, siXYZ
+SaveKey "cone.kine.local.posx,cone.kine.local.posy,cone.kine.local.posz", 1
+'Open the XSI Explorer with the default viewer
+OpenXSIExplorer
+'Open the XSI Explorer with the Object Viewer as the viewer and automatically show the input object
+OpenXSIExplorer "Object View", "cone"</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/OpenView.html">OpenView</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

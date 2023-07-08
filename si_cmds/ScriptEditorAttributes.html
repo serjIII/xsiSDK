@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Script Editor and Text Editor Attributes</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Script Editor and Text Editor Attributes</h1>
+         </div>
+
+<h2 class="pagehead">Script Editor and Text Editor Attributes</h2>
+
+<h3>Introduced</h3>
+<div><p>v5.0</p></div>
+
+<div>
+	<p>View attributes for the 
+			<a href="#!/url=./files/script_editor.htm">Script Editor and Text Editor</a>.  Both 
+			views are identical, except that only a single instance of the Text Editor can exist at a time, and the Script Editor 
+			includes the Script History window.</p>
+	<p>Not all attributes support both setting and getting. Check the third column in the table.</p>
+<div class="tip">
+<table cellpadding="5" cellspacing="5">
+	<tr>
+		<td class="label">Note</td>
+		<td class="emph">See <a href="#!/url=./si_cmds/ScintillaAttributes.html#">ScintillaAttributes</a> for an additional set of the attributes that are supported by all the text based editors.</td>
+	</tr>
+</table>
+</div>
+<div class="tip">
+<table cellpadding="5" cellspacing="5">
+	<tr>
+		<td class="label">Note</td>
+		<td class="emph">See <a href="#!/url=./si_cmds/ViewAttributes.html#">ViewAttributes</a> for a complete list of types of attributes that you can use when customizing your Relational Views.</td>
+	</tr>
+</table>
+</div>
+</div>
+
+<div><table class="values">
+	<tr>
+		<th>Attribute Name</th>
+		<th>Description</th>
+		<th>Supports</th>
+	</tr>
+	<tr>
+		<td class="example">entrypoint</td>
+		<td>
+A search string. The script editor automatically scrolls to the first line containing this string, if found. The string can be in any position in the document (it is not necessary to specify the start of the line).			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;any string&gt;</td>
+					<td>Any string in the specified file.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> only.</td>
+	</tr>
+	<tr>
+		<td class="example">filename</td>
+		<td>
+The path and name of a text or script file to open when the script editor is displayed.<br /><br /> See the <a href="#!/url=./si_om/ViewCollection.html">ViewCollection</a> object for an example using this attribute.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;any valid path and filename&gt;</td>
+					<td>Any path and filename pointing to a file on your system (including <a href="#!/url=./files/UNCPath.htm">UNC</a> paths). For example, "C:\temp\dump_values.vbs" or "\\sysadmin\public\create_rigs_for_jennifer.pls"					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> and <a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a>.</td>
+	</tr>
+	<tr>
+		<td class="example">newfilename</td>
+		<td>
+Creates a new file in the script editor and optionally set the content with code.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;any valid scripting code&gt;</td>
+					<td>Optional source code to set the editor with. If no code is passed the editor is just reset with a blank file.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> only.</td>
+	</tr>
+	<tr>
+		<td class="example">savefilename</td>
+		<td>
+Saves the content of the editor in a specified filename.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;any valid path and filename&gt;</td>
+					<td>Any path and filename pointing to a file on your system (including <a href="#!/url=./files/UNCPath.htm">UNC</a> paths). For example, "C:\temp\dump_values.vbs" or "\\sysadmin\public\create_rigs_for_jennifer.pls"					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> only.</td>
+	</tr>
+	<tr>
+		<td class="example">errorlinenum</td>
+		<td>
+This property draws a red border around the specified line and makes sure that it is visible.  The first line of the file is considered line 1 (not 0).			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;a number&gt;</td>
+					<td>Line number in the file.  Use 0 to clear the error line.					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.SetAttributeValue.html">View.SetAttributeValue</a> only.</td>
+	</tr>
+	<tr>
+		<td class="example">historyline</td>
+		<td>
+Returns the current line of the script history, or if there is a selection it returns that instead. This attribute is only available on the Script Editor view, not the Text Editor view.  
+				It is also available on the Script History view when the Script History exists in the layout as a view of its own.			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>
+					</td>					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>
+					</td>				</tr>
+				<tr>
+					<td class="name">&lt;a string&gt;</td>
+					<td>A string to append to the end of the script or text file					</td>
+				</tr>
+			</table>
+		</td>
+		<td class="sa">
+<a href="#!/url=./si_om/View.GetAttributeValue.html">View.GetAttributeValue</a> only.</td>
+	</tr>
+</table>
+<br />
+
+</div>
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

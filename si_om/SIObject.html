@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>SIObject</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>SIObject</h1>
+         </div>
+
+<h2 class="pagehead">SIObject</h2>
+
+<p><a href="#!/url=./si_om/_hier.html#oh_SIObject">Object Hierarchy</a> | Related C++ Class: <a href="#!/url=./si_cpp/classXSI_1_1SIObject.html">SIObject</a></p>
+
+<h3>Introduced</h3>
+<div><p>v1.0</p></div>
+
+<h3>Description</h3>
+<div><p> SIObject exposes properties and methods that are supported by practically every object in the 
+Softimage Object Model, such as the name of the object, its type and parent. <br /><br />
+Some very basic Softimage objects do not support SIObject, for example <a href="#!/url=./si_om/GridData.html">GridData</a>, 
+<a href="#!/url=./si_om/SIVector3.html">SIVector3</a> and <a href="#!/url=./si_om/Image.html">Image</a> (see the <a href="#!/url=./si_om/_hier.html#oh_HierarchyMap">Object Hierarchy</a> 
+for a complete list.  For this reason some caution must be used to avoid assuming that all objects 
+support <a href="#!/url=./si_om/SIObject.Name.html">SIObject.Name</a> and <a href="#!/url=./si_om/SIObject.Type.html">SIObject.Type</a>.
+</p></div>
+
+<h3>Methods</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/SIObject.IsClassOf.html">IsClassOf</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/SIObject.IsEqualTo.html">IsEqualTo</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Properties</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/SIObject.Application.html">Application</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/SIObject.Categories.html">Categories</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/SIObject.FullName.html">FullName</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/SIObject.Help.html">Help</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/SIObject.Name.html">Name</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/SIObject.NestedObjects.html">NestedObjects</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/SIObject.Origin.html">Origin</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/SIObject.OriginPath.html">OriginPath</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/SIObject.Parent.html">Parent</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/SIObject.Type.html">Type</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+'	This example outputs an object's properties
+'
+Option Explicit
+MAIN()
+sub main()
+	On Error Resume Next
+	' Create the scene
+	dim oObj
+	set oObj = ActiveProject.ActiveScene.Root.AddGeometry("Sphere", "NurbsSurface")
+	LogSIObject oObj
+end sub
+'------------------------------------------------------------------------------
+' NAME:		LogSIObject
+'
+' INPUT:
+'
+' DESCRIPTION: logs SIObject properties
+'------------------------------------------------------------------------------
+sub LogSIObject(in_obj)
+	Application.LogMessage "Name: " &amp; in_obj.Name
+	Application.LogMessage "Class: " &amp; typename(in_obj)
+	Application.LogMessage "Type: " &amp; in_obj.Type
+	Application.LogMessage "Fullname: " &amp; in_obj.FullName
+	Application.LogMessage "Parent: " &amp; in_obj.Parent.Name
+	Application.LogMessage "Application : " &amp; in_obj.Application.Name
+	Application.LogMessage "Is Equal To Parent ? " &amp; in_obj.IsEqualTo(in_obj.Parent)
+	Application.LogMessage "Is Equal To Self ? " &amp; in_obj.IsEqualTo(in_obj)	
+end sub</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' These objects all support SIObject
+Application.LogMessage IsSIObject( ActiveSceneRoot )
+Application.LogMessage IsSIObject( Dictionary.GetObject( "Camera" ) )
+Application.LogMessage IsSIObject( CreateObject( "XSI.Application" ) )
+Application.LogMessage IsSIObject( ActiveSceneRoot.AddNull() )
+' A string cannot be accepted without conversion
+Application.LogMessage IsSIObject( "Camera" )
+' XSICollection and GridData do not support SIObject
+Application.LogMessage IsSIObject( CreateObject( "XSI.Collection" ) )
+Application.LogMessage IsSIObject( XSIFactory.CreateGridData )
+function IsSIObject( in_obj )
+	' One way to test if an object supports
+	' SIObject is to call a method and see if
+	' there is a scripting error.
+	' Careful use of "on error resume next"
+	' prevents the entire script form halting
+	dim strFullName
+	on error resume next
+	strFullName = in_obj.Fullname
+	if ( err &lt;&gt; 0 ) then
+		IsSIObject = false
+	else
+		IsSIObject = true    	
+	end if
+	' Turn error checking back on
+	on error goto 0
+end function
+' The above example logs the following results:
+'INFO : True
+'INFO : True
+'INFO : True
+'INFO : True
+'INFO : False
+'INFO : False
+'INFO : False</pre></td></tr>
+</table>
+</div></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

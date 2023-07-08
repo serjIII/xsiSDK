@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Texture.GetTransformValues</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Texture.GetTransformValues</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/Texture.html">Texture</a>.GetTransformValues</h2>
+
+<h3>Introduced</h3>
+<div><p>v3.5</p></div>
+
+<h3>Description</h3>
+<div><p> Calculates the UVW values based on the current OGL hardware display settings for the material.
+The values are read from cluster properties, and the following texture objects are used in the calculation:<br /><br />
+- Texture projection definition<br /><br />
+- Texture shader<br /><br />
+- Image clip<br /><br />
+You use bit flags to specify the texture transformation effects you want to apply. Note that some texture 
+transformation effects are approximations. For example, GetTransformValues cannot resample the surface to create
+the additional sample points required by texture repeats.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>Object Texture.GetTransformValues( Int32 );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oVariant = Texture.GetTransformValues( Flags );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>A <a href="#!/url=./files/Variant.htm">Variant</a> containing an <a href="#!/url=./files/Array.htm">Array</a> of <a href="#!/url=./files/Double.htm">Double</a> values. This
+array is in the same order as the <a href="#!/url=./si_om/Material.CurrentUV.html">Material.CurrentUV</a>.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Flags		</td>
+		<td><a href="#!/url=./files/Long.htm">Long</a>		</td>
+		<td>
+<a href="#!/url=./si_om/siTextureEffectsComputation.html">siTextureEffectsComputation</a> bit flags that specify the result of the transformation 
+		you want to compute. To apply multiple effects, add the constant values together. For example, to set 
+		all the flags, use the decimal value 127, which is the sum of all the flag constants.
+			</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example shows how to use this Texture.GetTransformValues to bake the UVW effects directly in the cluster property
+' This is done on the object material and assumes only one TextureProjection definition.
+'
+' Create scene content
+NewScene , false
+set oGrid = CreatePrim( "Grid", "MeshSurface" )
+SetValue oGrid &amp; ".polymsh.geom.subdivu", 2
+SetValue oGrid &amp; ".polymsh.geom.subdivv", 1
+ApplyShader ,,,, siLetLocalMaterialsOverlap
+BlendInPresetsInsp ,,, True, True
+CreateProjection oGrid, siTxtPlanarXZ, siTxtDefaultSpherical, "Texture_Support", "Texture_Projection"
+SetInstanceDataValue , oGrid &amp; ".Material.Phong.ambient_blend.Image.tspace_id", "Texture_Projection"
+' Set a translation in U of 0.5
+SetValue oGrid &amp; ".polymsh.cls.Texture_Coordinates_AUTO.Texture_Projection.Texture_Projection_Def.projtrsu", 0.5
+' Freeze everything ;-)
+FreezeCurrentUV 127
+sub FreezeCurrentUV( in_lFlags )
+	set oMy3DObject = Application.Selection(0)
+	if TypeName(oMy3DObject) &lt;&gt; "X3DObject" then
+		Application.LogMessage "The command won't perform it should be connected to an X3DObject"
+	else
+		if TypeName(oMy3DObject.ActivePrimitive.Geometry) = "PolygonMesh" then
+			set oMaterial = oMy3DObject.Material
+			set oClusterProperty = oMaterial.CurrentUV
+			set oTexture = oMaterial.CurrentTexture
+			if TypeName(oTexture) &lt;&gt; "Nothing" then
+				aUVWValues = oTexture.GetTransformValues( in_lFlags )
+				FreezeUVWValues oClusterProperty, aUVWValues
+				SetDefaultValues oMaterial, oTexture, oClusterProperty, in_lflags
+			else
+				Application.LogMessage "There's no current texture"
+			end if
+		else
+			Application.LogMessage "The command won't perform it should be connected to a PolygonMesh object"
+		end if
+	end if
+end sub
+' The array is already in cluster offset order
+sub FreezeUVWValues(in_oClusterProperty, in_aUVWValues)
+	aOLDUVWValues = in_oClusterProperty.Elements.Array
+	for i = 0 to ubound(aOLDUVWValues,2)
+		aOLDUVWValues(0,i) = in_aUVWValues(i*3)
+		aOLDUVWValues(1,i) = in_aUVWValues(i*3 + 1)
+		aOLDUVWValues(2,i) = in_aUVWValues(i*3 + 2)
+	next
+	in_oClusterProperty.Elements.Array = aOLDUVWValues
+end sub
+' Reset the default values, so to remove the actions of those effects on the
+' Texture projection cluster property.
+sub SetDefaultValues(in_oMaterial, in_oTexture, in_oClusterProperty, in_lflags)
+	if in_lflags and siTextureComputeTransformation then
+		strClusterProperty = in_oClusterProperty.FullName
+		' Set translation
+		SetValue strClusterProperty &amp; ".Texture_Projection_Def.projtrsu", 0
+		SetValue strClusterProperty &amp; ".Texture_Projection_Def.projtrsv", 0
+		SetValue strClusterProperty &amp; ".Texture_Projection_Def.projtrsw", 0
+		' Set scaling
+		SetValue strClusterProperty &amp; ".Texture_Projection_Def.projsclu", 1
+		SetValue strClusterProperty &amp; ".Texture_Projection_Def.projsclv", 1
+		SetValue strClusterProperty &amp; ".Texture_Projection_Def.projsclw", 1
+		' Set rotation
+		SetValue strClusterProperty &amp; ".Texture_Projection_Def.projrotu", 0
+		SetValue strClusterProperty &amp; ".Texture_Projection_Def.projrotv", 0
+		SetValue strClusterProperty &amp; ".Texture_Projection_Def.projrotw", 0
+	end if
+	if in_lflags and siTextureComputeWrapping then
+		strClusterProperty = in_oClusterProperty.FullName
+		' Set wrapping
+		SetValue strClusterProperty &amp; ".Texture_Projection_Def.wrap_u", false
+		SetValue strClusterProperty &amp; ".Texture_Projection_Def.wrap_v", false
+		SetValue strClusterProperty &amp; ".Texture_Projection_Def.wrap_w", false
+	end if
+	if in_lflags and siTextureComputeRepeats then
+		strTexture = in_oTexture.FullName
+		SetValue strTexture &amp; ".repeats.x", 1
+		SetValue strTexture &amp; ".repeats.y", 1
+		SetValue strTexture &amp; ".repeats.z", 1
+	end if
+	if in_lflags and siTextureComputeUVRemap then
+		strTexture = in_oTexture.FullName
+		SetValue strTexture &amp; ".min.x", 0
+		SetValue strTexture &amp; ".min.y", 0
+		SetValue strTexture &amp; ".min.z", 0
+		SetValue strTexture &amp; ".max.x", 1
+		SetValue strTexture &amp; ".max.y", 1
+		SetValue strTexture &amp; ".max.z", 1
+	end if
+	if in_lflags and siTextureComputeAlternate then
+		strTexture = in_oTexture.FullName
+		SetValue strTexture &amp; ".alt_x", 0
+		SetValue strTexture &amp; ".alt_y", 0
+	end if
+	if in_lflags and siTextureComputeCropping then
+		set oImageClip = in_oMaterial.CurrentImageClip
+		strImageClip = oImageClip.FullName
+		SetValue strImageClip &amp; ".Xmin", 0
+		SetValue strImageClip &amp; ".Ymin", 0
+		SetValue strImageClip &amp; ".Xmax", 1
+		SetValue strImageClip &amp; ".Ymax", 1
+	end if
+	if in_lflags and siTextureComputeFlip then
+		set oImageClip = in_oMaterial.CurrentImageClip
+		strImageClip = oImageClip.FullName
+		SetValue strImageClip &amp; ".FlipX", False
+		SetValue strImageClip &amp; ".FlipY", False
+	end if
+end sub</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">// This example demonstrated the relationship
+// between Texture.GetTransformValues, the Texture Projection
+// and the Cluster Property
+var sProjectionName = "MyProjection" ;
+var oCylinder = CreateCylinderWithMaterial() ;
+var oCurrentTexture = oCylinder.Material.CurrentTexture ;
+logmessage( "Current Texture: " + oCurrentTexture.FullName  ) ;
+logmessage( "Current UV: " + oCylinder.Material.CurrentUV.FullName ) ;
+logmessage( "Current ImageClip: " + oCylinder.Material.CurrentImageClip  ) ;
+logmessage( "-------------Before applying a repeat----------" ) ;
+PrintTransformValues( oCurrentTexture ) ;
+// Now actually apply a transformation at the Texture level 
+oCurrentTexture.Parameters( "repeats" ).Parameters("x").Value = 2 ;
+logmessage( "-------------After applying a repeat----------" ) ;
+PrintTransformValues( oCurrentTexture ) ;
+// Show that the raw data was not affected
+logmessage( "-------------Raw UV----------" ) ;
+PrintRawProjectionData( oCylinder ) ;
+SetDisplayMode("Camera", "texturedecal");
+function CreateCylinderWithMaterial()
+{
+	// Function to create a sample scene.  It has a Cylinder
+	// with a simple render tree of an image connected to a Phong.
+	// To simplify the example it does not load a specific image 
+	// clip so it is using the default noIcon image.
+	// Create a cylinder
+	newscene(null,false) ;
+	var oCylinder = ActiveSceneRoot.AddGeometry( "Cylinder", "MeshSurface" ) ;
+	// Reduce the size of the geometry to reduce the amount of UV values we will print out
+	var oGeometryParams = GetValue( oCylinder + ".polymsh.geom" ).Parameters
+	oGeometryParams("subdivu").Value = 2
+	oGeometryParams("subdivv").Value = 1
+	oGeometryParams("subdivbase").Value = 1
+	var oMaterial = oCylinder.AddMaterial( "Phong" ) ;
+	var oPhong = oMaterial.Shaders(0) 
+	var oPhongParams = oPhong.Parameters ;
+	// Create a texture node and connect it to both ambient and diffuse
+	var oTextureShader = oPhongParams( "ambient" ).ConnectFromPreset("Image", siTextureShaderFamily) ;
+	oPhongParams( "diffuse" ).Connect( oTextureShader ) ;
+	// At this point the texture will not draw because there is 
+	// no projection to map the 2D onto the 3D
+	// This command creates the projection and the support
+	CreateProjection(
+			oCylinder, 
+			siTxtCylindrical, 
+			siTxtDefaultCylindrical, 
+			"MySupport",      // Name to give new support
+			sProjectionName,   // Name to give new projection
+			null, 
+			null, 
+			null);
+	// Connect the projection
+	oTextureShader.Parameters("tspace_id").SetInstanceValue( oCylinder,sProjectionName ) ;
+	return oCylinder ;
+}
+function PrintRawProjectionData( in_oObj )
+{
+	// Find the ClusterProperty that contains the raw UVW values 
+	// of the current texture
+	var oTextureClusterProperty = in_oObj.Material.CurrentUV ;
+	PrintUVWClusterProperty( oTextureClusterProperty ) ;
+}
+function PrintUVWClusterProperty( in_oTextureClusterProperty )
+{
+	// Print the UVW cluster property.  It shows how to read
+	// the 2-Dimensional data with JScript VBArray object
+	logmessage( "Contents of " + in_oTextureClusterProperty.FullName ) ;
+	var aRawUVValues = new VBArray( in_oTextureClusterProperty.Elements.Array ) ;
+	for ( i = 0 ; i &lt;= aRawUVValues.ubound(2) ; i++ )
+	{
+		logmessage( "UVW["+i+"] = " 
+			+ XSIRound( aRawUVValues.getItem( 0, i ), 2) + "," +
+			+ XSIRound( aRawUVValues.getItem( 1, i ), 2) + "," +
+			+ XSIRound( aRawUVValues.getItem( 2, i ), 2)) ;				
+	}
+}
+function PrintTransformValues( in_oTexture )
+{
+	// Print the transformed UVW values associated with the texture
+	// It shows how the data is structured as a flattened 1D array
+	logmessage( "Fully transformed contents of " +  in_oTexture.FullName ) ;
+	aTransformedTexture = new VBArray(in_oTexture.GetTransformValues(127)) ;
+	// We have a 1 dimensional array, with the U,V,W values flattened
+	cntItems = ( aTransformedTexture.ubound(1) + 1 ) / 3 ;
+	for ( i = 0 ; i &lt; cntItems ; i++ )
+	{
+		logmessage( "UVW["+i+"] = " 
+			+ XSIRound( aTransformedTexture.getItem( 3*i ), 2) + "," +
+			+ XSIRound( aTransformedTexture.getItem( 3*i+1 ), 2) + "," +
+			+ XSIRound( aTransformedTexture.getItem( 3*i+2 ), 2)) ;
+	}
+}
+// Output:
+//
+//INFO : Current Texture: cylinder.Material.Phong.Image
+//INFO : Current UV: cylinder.polymsh.cls.Texture_Coordinates_AUTO.MyProjection
+//INFO : Current ImageClip: Clips.noIcon_pic
+//INFO : -------------Before applying a repeat----------
+//INFO : Fully transformed contents of cylinder.Material.Phong.Image
+//INFO : UVW[0] = 0.61,0,0
+//INFO : UVW[1] = 0.25,0,0
+//INFO : UVW[2] = 0.75,0,0
+//...snip...
+//INFO : UVW[28] = 1.25,1,0
+//INFO : UVW[29] = 0.75,1,0
+//INFO : -------------After applying a repeat----------
+//INFO : Fully transformed contents of cylinder.Material.Phong.Image
+//INFO : UVW[0] = 1.23,0,0
+//INFO : UVW[1] = 0.5,0,0
+//INFO : UVW[2] = 1.5,0,0
+//...snip...
+//INFO : UVW[28] = 1.5,1,0
+//INFO : UVW[29] = 0.5,1,0
+//INFO : -------------Raw UV----------
+//INFO : Contents of cylinder.polymsh.cls.Texture_Coordinates_AUTO.MyProjection
+//INFO : UVW[0] = 0.61,0,0
+//INFO : UVW[1] = 0.25,0,0
+//INFO : UVW[2] = 0.75,0,0
+//...snip...
+//INFO : UVW[28] = 1.25,1,0
+//INFO : UVW[29] = 0.75,1,0</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/Cluster.html">Cluster</a> <a href="#!/url=./si_om/ClusterProperty.html">ClusterProperty</a> <a href="#!/url=./si_om/ClusterElementCollection.Array.html">ClusterElementCollection.Array</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

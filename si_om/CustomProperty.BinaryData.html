@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>CustomProperty.BinaryData</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>CustomProperty.BinaryData</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/CustomProperty.html">CustomProperty</a>.BinaryData <img src="images/operator.gif" alt="operator" /></h2>
+
+<h3>Introduced</h3>
+<div><p>v3.0</p></div>
+
+<h3>Description</h3>
+<div><p> Returns or sets the binary representation of the CustomProperty. This data is a compact representation, 
+encoded in a BSTR (see <a href="#!/url=./files/String.htm">String</a>).  This is a byte string, containing binary information.  
+This string does not contain human readable text.  C++ developers are responsible for freeing this string 
+with ::SysFreeString, whereas script writers have the luxury of automatic resource management.Unlike a 
+Preset, only the actual values are stored in the binary representation, this is done for memory efficiency.  
+Animation is not preserved in the Binary Data - it stores a snapshot of the <a href="#!/url=./si_om/Parameter.Value.html">Parameter.Value</a>s. 
+The binary representation is well suited for storing inside a <a href="#!/url=./si_om/UserDataItem.html">UserDataItem</a> using 
+<a href="#!/url=./si_om/UserDataItem.Value.html">UserDataItem.Value</a>.  This functionality allows you to easily store per-component data 
+inside a <a href="#!/url=./si_om/UserDataMap.html">UserDataMap</a>, but to view and edit this data using an associated Custom Property set.
+<br /><br />
+You should not attempt to set the binary representation on a custom property object which is different from 
+the custom property from which the binary representation was retrieved.  In particular the number of 
+parameters, the order of the parameters and the type of the parameters must match.  If the custom property 
+is different the API call will fail or will result in the custom property set being filled with bogus values.  
+However it is possible to rearrange the order in which parameters are displayed on the property page for a 
+Custom Property. (by editing the spdl file "Layout" section), without any incorrect results.
+<br /><br />
+In the case of animated parameters the value recorded in the binary representation will be the value at the 
+current frame.  Similarily, the current value of any proxy parameters will be recorded in the binary 
+representation.
+<br /><br />
+Normally SDK developers will not need to be concerned with the internal format of this binary data.  However, 
+the following information will be useful in cases where the data will be generated or processed outside of Softimage.
+The binary representation begins with a two byte header that serve as a "magic number" for error handling purposes.
+The rest of the buffer is a concatenation of the raw values of the properties of the custom property, in exactly 
+the order they were originally added to the custom property, and stored in little endian byte order. For example, 
+a double takes up 8 bytes, a float 4 bytes and a unsigned char (siUByte) takes 1 byte. Strings start with a 
+32-bit count of the number of characters, followed by the 16-bit unicode representation of each character, with 
+no string termination character.  For the case of an Parameter that is an object instead of a simple type, such 
+as an FCurve, there is a 32-bit buffer size followed by a binary representation of the object.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>// get accessor
+String rtn = CustomProperty.BinaryData;
+// set accessor
+CustomProperty.BinaryData = String;</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' This example demonstrates how the BinaryData property could be used to roll back 
+' changes that a user might have made on a custom property set. The property set is 
+' shown as a modal dialog, with OK/CANCEL buttons and if the user clicks Cancel we 
+' restore the property set values back to their original values.
+'
+dim oRoot, oPropSet
+' Set up the example
+set oRoot = Application.ActiveProject.ActiveScene.Root
+set oPropSet = oRoot.AddProperty("Custom_parameter_list", , "ExamplePSet")
+SIAddCustomParameter oPropSet, "TestVal", siDouble, 5, 0, 10
+call ModalInspectCustomProperty(oPropSet)
+' Convenience routine to do the work
+sub ModalInspectCustomProperty( in_oPropertySet )
+	dim strOriginalValues
+	strOriginalValues = in_oPropertySet.BinaryData
+	' If cancel is pressed then Inspect object will fail.  This "on error" 
+	' statement says that we want to handle the error rather than have the 
+	' whole script fail.
+	on error resume next
+	InspectObj in_oPropertySet, , , siModal
+	if ( err &lt;&gt; 0 ) then
+		' User pressed cancel - roll back any changes that they made
+		in_oPropertySet.BinaryData = strOriginalValues
+	end if
+end sub</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">// 
+// This example shows how FCurves can be stored inside a UserDataMap,
+// and edited via a Custom Property. It demonstrates: (a) how to create 
+// a single script plug-in; (b) how to use a templated UserDataMap object 
+// to store data on points; (c) how to use CustomProperty.BinaryData to 
+// store and retrieve FCurves represented as strings; and (d) how to use 
+// the PPGLayout to build dynamic user interfaces (with no SPDL).
+// 
+BuildSampleScene() ;
+function BuildSampleScene()
+{
+	NewScene(null, false);
+	var oGrid = ActiveSceneRoot.AddGeometry("Grid", "MeshSurface", "GridWithUserData");
+	oGrid.subdivu = 1;
+	oGrid.subdivv = 1;
+	var oCluster = oGrid.ActivePrimitive.Geometry.AddCluster("pnt");
+	var oUserDataMap = oCluster.AddProperty("UserDataMap", false, "FCurveData");
+	var oCustomProperty = CreateUserDataTemplate(oCluster);
+	oUserDataMap.Template = oCustomProperty;
+	InspectObj(oCustomProperty);
+	SelectObj(oGrid, null, true);
+	SetSelFilter("Point");
+}
+function CreateUserDataTemplate( in_oCluster )
+{
+	var oCustomProperty = in_oCluster.AddProperty("CustomProperty", false, "DataTemplate");
+	oCustomProperty.AddFCurveParameter("CurveData");
+	var oLayout = oCustomProperty.PPGLayout;
+	var oLayoutItem = oLayout.AddFCurve("CurveData", 150);
+	oLayout.AddRow();
+	oLayout.AddButton("ReadFromSelection", "Read from selected Point");
+	oLayout.AddButton("SaveFromSelection", "Save on selected Point(s)");
+	oLayout.AddButton("Instructions");
+	oLayout.EndRow() ;
+	oLayout.Language = "JScript";
+	oLayout.Logic = ReadFromSelection_OnClicked.toString() + 
+			SaveFromSelection_OnClicked.toString() +
+			Instructions_OnClicked.toString() +
+			GetSelectedPoints.toString() + 
+			GetUserDataMap.toString();
+	return oCustomProperty;
+}
+//
+// The following code is Logic code for the Property Page
+//
+function GetSelectedPoints()
+{
+	// Find out what points are selected. They are returned as an array of 
+	// Cluster Indices (-1 is returned in the array if the selected point 
+	// is not part of the cluster)
+	var oSubComp = null;
+	for ( var i=0; i&lt;Selection.Count; i++) {
+		var oObj = Selection(i);	
+		if (oObj.Type == "pntSubComponent") {
+			oSubComp = oObj.SubComponent;
+			break;
+		}
+	}
+	if (oSubComp == null) {
+		Application.LogMessage("Please select a point");
+		return null;
+	}
+	// (We could also double check that the points are selected on the
+	// right object using the parent property!)
+	var aVBSelectedElements = new VBArray(oSubComp.ElementArray);
+	var aGeometryIndices = aVBSelectedElements.toArray();
+	// Index on a cluster is not necessarily identical to a 
+	// geometry index.  Use the Cluster object to do a lookup	
+	var oThisCustomProperty = PSet.Inspected.Item(0);
+	var oCluster = oThisCustomProperty.Parent;		
+	for ( var j=0; j&lt;aGeometryIndices.length; j++) {
+		aGeometryIndices[j] = oCluster.FindIndex(aGeometryIndices[j]);
+	}
+	return aGeometryIndices;	
+}
+function GetUserDataMap()
+{
+	// Find the UserDataMap associated with this Custom Property
+	// We know they are both nested under the same Cluster
+	// and what the name of the User Data Map is
+	var oThisCustomProperty = PSet.Inspected.Item(0);
+	var oCluster = oThisCustomProperty.Parent;		
+	return oCluster.Properties.Item("FCurveData");
+}
+function ReadFromSelection_OnClicked()
+{
+	var aSelectedElements = GetSelectedPoints();
+	if (aSelectedElements == null || aSelectedElements.length == 0) {
+		return;
+	}
+	// If more than one item is selected we only look at the first one
+	var clusterIndex  = aSelectedElements[0];	
+	if (clusterIndex == -1) {
+		Application.LogMessage("The selected index is not part of the cluster");
+		return;
+	}
+	var oUserDataMap = GetUserDataMap();
+	if ( oUserDataMap.IsEmpty(clusterIndex) ) {
+		Application.LogMessage("There is no user data stored on this item yet");
+		return; 
+	}
+	// Transfer the data from the UserDataMap
+	// to the ClusterProperty
+	var oThisCustomProperty = PSet.Inspected.Item(0);
+	oThisCustomProperty.BinaryData = oUserDataMap.ItemValue(clusterIndex);
+}
+function SaveFromSelection_OnClicked()
+{
+	var aSelectedElements = GetSelectedPoints();
+	if (!aSelectedElements || !aSelectedElements.length) {
+		Application.LogMessage("You must select at least one point in order to save this fcurve");
+		return;
+	}
+	var oThisCustomProperty = PSet.Inspected.Item(0);	
+	binarySnapShotOfCustomProperty = oThisCustomProperty.BinaryData;
+	var oUserDataMap = GetUserDataMap() ;
+	for ( var k=0; k&lt;aSelectedElements.length; k++) {
+		if (aSelectedElements[k] != -1) {
+			oUserDataMap.ItemValue(aSelectedElements[k]) = binarySnapShotOfCustomProperty;
+		}
+	}			
+}
+function Instructions_OnClicked()
+{
+	// There are lots of different ways to show information to a user, for example popping 
+	// up netview, showing a message box, or putting static text right on the dialog.
+	// 
+	// For demonstration purposes we create a temporary custom pset with a multiline edit 
+	// box, which we fill with text. This doesn't have ideal usability but shows some of 
+	// the potential for doing totally dynamic UI
+	var oInfoPSet = ActiveSceneRoot.AddProperty("CustomProperty", false, "Info");
+	var oParameter = oInfoPSet.AddParameter3("Info", siString);
+	oParameter.ReadOnly = true;
+	oParameter.Value = "Plug-in Instructions\r\n\r\n" +						
+	  "This example demonstrates how to store FCurves as User Data.\r\n" +
+	  "Each of the 4 vertices of the Grid can store a different Curve\r\n\r\n" +
+	  "To view the FCurve on a vertex, select it and press the \r\n" +
+	  "'Read from Selected Point' button.\r\n\r\n" +
+	  "To set the fcurve, change the fcurve in the view, " +
+	  "select one or more points\r\n" +
+	  "and then press the 'Save on selected Point(s)' button"  	  
+	var oLayoutItem = oInfoPSet.PPGLayout.AddString("Info", "", true, 300);
+	oLayoutItem.SetAttribute("ValueOnly", true);
+	InspectObj(oInfoPSet, null, null, siModal, false);
+	DeleteObj(oInfoPSet);
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/UserDataItem.html">UserDataItem</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

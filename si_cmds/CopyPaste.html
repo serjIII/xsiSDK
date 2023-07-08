@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>CopyPaste</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>CopyPaste</h1>
+         </div>
+
+<h2 class="pagehead">CopyPaste</h2>
+
+<h3>Introduced</h3>
+<div><p>v1.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Pastes a copy of something without going through the clipboard. This is the scripting 
+equivalent of a drag-and-drop operation. You can use this command to move items that
+already exist in the scene (for example, reparenting a scene object) or to paste
+items that are sitting in the TransientObjectContainer (for example, instances of 
+built-in property sets such as the Annotation). 
+<br /><br />
+Note: The CopyPaste command is the only way to transfer things from the TransientObjectContainer 
+to the current scene, because the TransientObjectContainer is inaccessible from the UI. 
+<br /><br />
+Warning: Prior to v7.0, you could also use this command to create a shader from preset 
+and copy it to the TransientObjectContainer until you were ready to connect it in the
+RenderTree. However, this command no longer supports that functionality: now you must 
+create a temporary copy of the shader in the scene's material library 
+("Sources.Materials.DefaultLib.Scene_Material") using the <a href="#!/url=./si_cmds/CreateShaderFromPreset.html">CreateShaderFromPreset</a>
+command instead. See the <a href="#!/url=./si_cmds/ReplaceShader.html">ReplaceShader</a> reference page for an example.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>CopyPaste( [Source], [FileName], Target, [Mode] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Source		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/objectexpr.htm">Object</a> to copy 		</td>
+	</tr>
+	<tr>
+		<td class="name">FileName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ File or preset to import in the scene 		</td>
+	</tr>
+	<tr>
+		<td class="name">Target		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Target <a href="#!/url=./files/objectexpr.htm">object</a>		</td>
+	</tr>
+	<tr>
+		<td class="name">Mode		</td>
+		<td>vbCopyPaste constant or <a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+The (VisualBasic) mode to copy paste.			<p class="cell"><span class="hilite">Default Value: </span>
+vbDefaultCopyPaste			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">vbDefaultCopyPaste (0)					</td>
+					<td>Use the default mode of copy paste.					</td>
+				</tr>
+				<tr>
+					<td class="name">vbCutSource (1)					</td>
+					<td>Cut and paste					</td>
+				</tr>
+				<tr>
+					<td class="name">vbCopySource (2)					</td>
+					<td>Copy and paste					</td>
+				</tr>
+				<tr>
+					<td class="name">vbLinkSource (3)					</td>
+					<td>Link source to destination.					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">#
+# Example of creating a temporary custom property (aka custom pset)
+# which can be written to before actually depositing in the scene
+# 
+app = Application
+from win32com.client import constants as c
+app.NewScene( "", 0 )
+# Demonstrate how you can use it to create a built-in custom pset
+presetFullPath = XSIUtils.BuildPath( 
+	app.InstallationPath(c.siFactoryPath), 
+	"Data", "DSPresets", "Properties", "Annotation.Preset"
+)
+oAnnotation = app.CreateObjectFromPreset2( presetFullPath, "Notes" )
+if ( oAnnotation ) :
+	# Even though it only exists on the clipboard you can still populate it
+	app.InspectObj( oAnnotation, "", "Annotation Test", "siModal", 0 )
+	# Notice how the owner of this annotation doesn't have to 
+	# exist until you are ready to cut-and-paste it
+	oNull = app.ActiveSceneRoot.AddModel("", "Jerry")
+	app.CopyPaste(oAnnotation, "", oNull, 1)
+	# Just to prove that it exists any modifications 
+	for oParam in oNull.Properties("Notes").Parameters :
+		app.LogMessage( oParam.Name + ": " + str(oParam.Value) )
+else :
+	app.LogMessage( "Couldn't create Annotatation property." )
+# Expected results (similar to):
+# INFO : Title: 
+# INFO : Text: need to refine right bicep
+# INFO : Keyword: modeling
+# INFO : Flag 1: False
+# INFO : Flag 2: True</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example demonstrates how to use the CopyPaste command to 
+	reparent scene objects by physically moving objects under 
+	their new parents (a la drag-and-drop in the UI).
+*/
+// Create a new scene with 4 nulls
+var app = Application;
+NewScene(null, false);
+GetPrim("Null");
+GetPrim("Null");
+GetPrim("Null");
+GetPrim("Null");
+// Reparent null2 and null3 under null1
+CopyPaste("null3", null, "null1", 1);
+CopyPaste("null2", null, "null1", 1);
+// Reparent null under null2
+CopyPaste("null", null, "null2", 1);
+// Print the visual hierarchy
+ShowMeTheHierarchy(app.ActiveSceneRoot, "");
+// Expected results:
+// INFO : Camera_Root
+// INFO : ...Camera
+// INFO : ...Camera_Interest
+// INFO : light
+// INFO : null1
+// INFO : ...null3
+// INFO : ...null2
+// INFO : ......null
+// Convenience function to print out a graphical representation 
+// of the hierarchy in the scene starting at the specified object
+function ShowMeTheHierarchy(in_parent, in_depth)
+{
+	var kid = new Enumerator(in_parent.Children);
+	for (; !kid.atEnd(); kid.moveNext()) {
+		app.LogMessage(in_depth + kid.item().FullName);
+		if (kid.item().Children.Count) {
+			ShowMeTheHierarchy(kid.item(), in_depth + "...");
+		}
+	}
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/Copy.html">Copy</a> <a href="#!/url=./si_cmds/Cut.html">Cut</a> <a href="#!/url=./si_cmds/Paste.html">Paste</a> <a href="#!/url=./si_cmds/CopyAnimation.html">CopyAnimation</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>SIMatrix4.Get2</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>SIMatrix4.Get2</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/SIMatrix4.html">SIMatrix4</a>.Get2</h2>
+
+<h3>Description</h3>
+<div><p> Returns the 16 components of this matrix in an array. The values in the array are ordered the same as the 
+<a href="#!/url=./si_om/SIMatrix4.Get.html">SIMatrix4.Get</a> output parameters. This is the layout of the matrix:<br /><br />
+	| m0  m1  m2  m3  |<br /><br />
+	| m4  m5  m6  m7  |<br /><br />
+	| m8  m9  m10 m11 |<br /><br />
+	| m12 m13 m14 m15 |<br /><br />
+Note: This method must be used with scripting languages that don't support arguments passed by reference 
+such as JScript. For more information on getting output arguments, see 
+<a href="#!/url=./files/OutputArgArrays.htm">About Output Argument Arrays</a>.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>Object SIMatrix4.Get2();</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oArray = SIMatrix4.Get2();</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p><a href="#!/url=./files/Array.htm">Array</a> ordered as m0, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14, m15.</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">NewScene,false
+CreatePrim "Cube", "MeshSurface"
+Translate , 10, 20, 30, siAbsolute, siParent, siObj, siXYZ
+set om = XSIMath.CreateMatrix4
+selection(0).Kinematics.Global.Transform.GetMatrix4 om
+Application.LogMessage "SIMatrix4.Value(i,j)"
+Application.LogMessage om(0,0) &amp; " " &amp; om(0,1) &amp; " " &amp; om(0,2) &amp; " " &amp; om(0,3)
+Application.LogMessage om(1,0) &amp; " " &amp; om(1,1) &amp; " " &amp; om(1,2) &amp; " " &amp; om(1,3)
+Application.LogMessage om(2,0) &amp; " " &amp; om(2,1) &amp; " " &amp; om(2,2) &amp; " " &amp; om(2,3)
+Application.LogMessage om(3,0) &amp; " " &amp; om(3,1) &amp; " " &amp; om(3,2) &amp; " " &amp; om(3,3)
+Application.LogMessage ""
+Application.LogMessage "array = SIMatrix4.Get2"
+m = om.Get2
+Application.LogMessage m(0) &amp; " " &amp; m(1) &amp; " " &amp; m(2) &amp; " " &amp; m(3)
+Application.LogMessage m(4) &amp; " " &amp; m(5) &amp; " " &amp; m(6) &amp; " " &amp; m(7)
+Application.LogMessage m(8) &amp; " " &amp; m(9) &amp; " " &amp; m(10) &amp; " " &amp; m(11)
+Application.LogMessage m(12) &amp; " " &amp; m(13) &amp; " " &amp; m(14) &amp; " " &amp; m(15)
+Application.LogMessage ""
+Application.LogMessage "SIMatrix4.Get m0, m1, m2..."
+om.Get m(0),m(1),m(2),m(3),m(4),m(5),m(6),m(7),m(8),m(9),m(10),m(11),m(12),m(13),m(14),m(15)
+Application.LogMessage m(0) &amp; " " &amp; m(1) &amp; " " &amp; m(2) &amp; " " &amp; m(3)
+Application.LogMessage m(4) &amp; " " &amp; m(5) &amp; " " &amp; m(6) &amp; " " &amp; m(7)
+Application.LogMessage m(8) &amp; " " &amp; m(9) &amp; " " &amp; m(10) &amp; " " &amp; m(11)
+Application.LogMessage m(12) &amp; " " &amp; m(13) &amp; " " &amp; m(14) &amp; " " &amp; m(15)
+'INFO : "SIMatrix4.Value(j,i)"
+'INFO : "1 0 0 0"
+'INFO : "0 1 0 0"
+'INFO : "0 0 1 0"
+'INFO : "10 20 30 1"
+'INFO : ""
+'INFO : "array = SIMatrix4.Get2"
+'INFO : "1 0 0 0"
+'INFO : "0 1 0 0"
+'INFO : "0 0 1 0"
+'INFO : "10 20 30 1"
+'INFO : ""
+'INFO : "SIMatrix4.Get m0, m1, m2..."
+'INFO : "1 0 0 0"
+'INFO : "0 1 0 0"
+'INFO : "0 0 1 0"
+'INFO : "10 20 30 1"</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">// create a null and translate, rotate and scale it
+GetPrim("Null", null, null);
+Translate(null, 1.73296599336766, 3.21359046016228, -0.321359046016228, siRelative, siView, siObj, siXYZ, null, null, null, null, null);
+Rotate(null, -102.375, 0, 0, siRelative, siLocal, siObj, siXYZ, null, null, null);
+Rotate(null, 0, -22.5, 0, siRelative, siLocal, siObj, siXYZ, null, null, null);
+Scale(null, 1.55705996131528, 1.55705996131528, 1.55705996131528, siRelative, siLocal, siObj, siXYZ, null, null, null);
+// get object from selection
+var o = selection(0);
+// get global transform from object
+var t = o.kinematics.global.transform;
+var m = XSIMath.CreateMatrix4();
+t.getmatrix4( m );
+var vbArr = new VBArray( m.Get2() );
+var jsArr = vbArr.toArray();
+var cCrLf = String.fromCharCode(13,10);
+Application.LogMessage( cCrLf +
+	"|" + round(jsArr[0],3)  + " " + round(jsArr[1],3)  + " " + round(jsArr[2],3)  + " " + round(jsArr[3],3)  + "|" + cCrLf +
+	"|" + round(jsArr[4],3)  + " " + round(jsArr[5],3)  + " " + round(jsArr[6],3)  + " " + round(jsArr[7],3)  + "|" + cCrLf +
+	"|" + round(jsArr[8],3)  + " " + round(jsArr[9],3)  + " " + round(jsArr[10],3) + " " + round(jsArr[11],3) + "|" + cCrLf +
+	"|" + round(jsArr[12],3) + " " + round(jsArr[13],3) + " " + round(jsArr[14],3) + " " + round(jsArr[15],3) + "|" + cCrLf );
+function round( n, numdecplaces ) 
+{
+	var f = Math.pow(10, numdecplaces );
+	return Math.round(n * f)/f;
+}
+//INFO : "
+//|1.439 0.582 -0.128 0|
+//|0 -0.334 -1.521 0|
+//|-0.596 1.405 -0.308 0|
+//|1.733 3.214 -0.321 1|   
+//"</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/SIMatrix4.Get.html">SIMatrix4.Get</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

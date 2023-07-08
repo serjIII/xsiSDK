@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>AddScriptedOpFromFile</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>AddScriptedOpFromFile</h1>
+         </div>
+
+<h2 class="pagehead">AddScriptedOpFromFile</h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Creates a runtime scripted operator whose definition is saved within the scene. A runtime 
+scripted operator is one that is embedded within the scene and doesn't require the installation of 
+a SPDL file or Self-Installed Custom Operator.<br /><br />
+The implementation of the scripted operator comes from a specified file (on disk). To specify 
+an implementation on the fly (eg., in a string variable), use the <a href="#!/url=./si_cmds/AddScriptedOp.html">AddScriptedOp</a>
+command instead.  Once instantiated the operator will store a copy of the code
+and not refer to the contents of the specified file anymore.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = AddScriptedOpFromFile( OutputObjs, FileName, InputObjs, [Name], [Language], [ConstructionMode] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns an <a href="#!/url=./si_om/CustomOperator.html">CustomOperator</a> that contains a runtime-designed scripted operator</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">OutputObjs		</td>
+		<td><a href="#!/url=./files/listexpr.htm">List</a>		</td>
+		<td>
+List of objects or parameters to connect the output ports too.		</td>
+	</tr>
+	<tr>
+		<td class="name">FileName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The script filename containing the implementation of the scripted operator.		</td>
+	</tr>
+	<tr>
+		<td class="name">InputObjs		</td>
+		<td><a href="#!/url=./files/listexpr.htm">List</a>		</td>
+		<td>
+List of objects or parameters to be connected to input ports.		</td>
+	</tr>
+	<tr>
+		<td class="name">Name		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The name of the new operator			<p class="cell"><span class="hilite">Default Value: </span>
+ScriptedOp			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Language		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The script language of the operator.			<p class="cell"><span class="hilite">Default Value: </span>
+Value from Application.Preferences.Scripting.Language			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ConstructionMode		</td>
+		<td><a href="#!/url=./si_om/siConstructionMode.html">siConstructionMode</a>		</td>
+		<td>
+Specifies which construction mode the operator will be applied. This only applies to output connections made to <a href="#!/url=./si_om/Geometry.html">Geometry</a> objects, 
+the mode will be ignored for all other types of connections.
+			<p class="cell"><span class="hilite">Default Value: </span>
+Use the current construction mode			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example demonstrates how to create and connect a scripted operator
+	that constrains the local posx of an object to the value of 2.
+*/
+// ------------------------------------------------------------
+//
+//	This is an easy way to specify the code as a string:
+//	define it as a regular function as part of this
+//	example and then use the JScript function toString()
+//	to set the contents of the new implementation file.
+//
+function fred_Update( ctx, out ) 
+{ 
+	LogMessage( "fred::Update()" );
+	out.Value = 2;
+}
+// Create the script file on disk using the JScript FileSystemObject 
+// utility (consult a JScript scripting guide for more details).
+var file_loc = InstallationPath( siUserPath ) + "\\Data\\Scripts\\fred_sop.js";
+var fso = new ActiveXObject( "Scripting.FileSystemObject" );
+var ts = fso.CreateTextFile( file_loc, true );
+ts.Write( fred_Update.toString() );
+ts.Close();
+// ------------------------------------------------------------
+//
+//	Set up the null and apply the scripted operator to
+//	its posx parameter. Print the value of the posx
+//	parameter before and after.
+//
+// Create scene and apply operator
+NewScene( null, false );
+GetPrim( "null" );
+// Get the value of posx before applying the operator
+Application.LogMessage( "posx = " + GetValue( "null.kine.local.posx" ) );
+// Create and apply the operator to the null's posx
+var op = AddScriptedOpFromFile( "null.kine.local.posx", file_loc, null, "fred" );
+// Get the constrained value
+Application.LogMessage( "posx = " + GetValue( "null.kine.local.posx" ) );
+// ------------------------------------------------------------
+//
+//	Since the scripted operator is returned, we can use
+//	the methods and properties of the Operator object.
+//
+// Log details of operator
+Application.LogMessage( "Scripted Operator: " + op.FullName );
+Application.LogMessage( "\tClassName: " + ClassName(op) );
+Application.LogMessage( "\tType: "+ op.Type );
+Application.LogMessage( "\tLanguage: "+ op.Language );
+Application.LogMessage( "\tAlwaysEvaluate: "+ op.AlwaysEvaluate );
+Application.LogMessage( "\tDebug: "+ op.Debug );
+Application.LogMessage( "\tMute: "+ op.Mute );
+Application.LogMessage( "\tFileName: "+ op.FileName );
+Application.LogMessage( "\tCode: "+ op.Code );
+// ------------------------------------------------------------
+//
+//	Output of this example. Notice that Code returns the
+//	contents of the implementation file:
+//
+//INFO : "posx = 0"
+//
+//INFO : "fred::Update()"
+//INFO : "posx = 2"
+//INFO : "Scripted Operator: null.kine.local.fred"
+//INFO : "	ClassName: CustomOperator"
+//INFO : "	Type: fred"
+//INFO : "	Language: JScript"
+//INFO : "	AlwaysEvaluate: false"
+//INFO : "	Debug: 0"
+//INFO : "	Mute: false"
+//INFO : "	FileName: &lt;your_user_path&gt;\Data\Scripts\fred_sop.js"
+//INFO : "	Code: function fred_Update( ctx, out ) 
+//{ 
+//	LogMessage( "fred::Update()" );
+//
+//	out.Value = 2;
+//}"</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/ApplyOp.html">ApplyOp</a> <a href="#!/url=./si_cmds/AddScriptedOp.html">AddScriptedOp</a> <a href="#!/url=./si_cmds/AddCustomOp.html">AddCustomOp</a> <a href="#!/url=./si_cmds/ConvertScriptedOp.html">ConvertScriptedOp</a> <a href="#!/url=./si_om/ProjectItem.AddScriptedOpFromFile.html">ProjectItem.AddScriptedOpFromFile</a> <a href="#!/url=./si_om/CustomOperator.html">CustomOperator</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

@@ -1,0 +1,27 @@
+var classXSI_1_1CRefArray =
+[
+    [ "CRefArray", "classXSI_1_1CRefArray.html#ad942d47f2fc5488491eab1b6c2a3f527", null ],
+    [ "CRefArray", "classXSI_1_1CRefArray.html#aadbe7c020bc7cd2807958a3e03144da6", null ],
+    [ "~CRefArray", "classXSI_1_1CRefArray.html#a1b0f9457402865643a9f7a1cf33c707d", null ],
+    [ "operator=", "classXSI_1_1CRefArray.html#a578bdcdee20c7e76626cc81f8cfb4d34", null ],
+    [ "operator+=", "classXSI_1_1CRefArray.html#a82e1ed16d1f3208c61b60b8a8846cd7f", null ],
+    [ "operator[]", "classXSI_1_1CRefArray.html#a332ce71dcafd67d265df9fb12481daa7", null ],
+    [ "operator[]", "classXSI_1_1CRefArray.html#a44c1e5a45c3aeaa1217adc6fbaeccc4e", null ],
+    [ "GetItem", "classXSI_1_1CRefArray.html#a52d3e64b2147598316a824665e587f85", null ],
+    [ "GetItem", "classXSI_1_1CRefArray.html#ac291428eb08ba0567bf7601c6827f942", null ],
+    [ "Add", "classXSI_1_1CRefArray.html#a6e17e1b3670289fcb09943e75a934fb9", null ],
+    [ "GetCount", "classXSI_1_1CRefArray.html#a922e4c0f3b9c356806a07bd1f1b34736", null ],
+    [ "IsA", "classXSI_1_1CRefArray.html#af61b38a30d8bab877beebad331601094", null ],
+    [ "GetClassID", "classXSI_1_1CRefArray.html#acc34f4a01f2089e40f7abc7e9d98bf15", null ],
+    [ "GetClassIDName", "classXSI_1_1CRefArray.html#ac347619969a79eb8afc0adf6ea9394ba", null ],
+    [ "IsValid", "classXSI_1_1CRefArray.html#a1d57f75f79e9178bdd17e38a23720d56", null ],
+    [ "operator bool", "classXSI_1_1CRefArray.html#aa385aa18f5e42db5a415c25a90f4193d", null ],
+    [ "Filter", "classXSI_1_1CRefArray.html#af52af7957fb07a15210e51faba4176c8", null ],
+    [ "Find", "classXSI_1_1CRefArray.html#a75676e362da2004576788d05c8cbeb4c", null ],
+    [ "Set", "classXSI_1_1CRefArray.html#acb58b1fecf704752ebcf59a50444cf37", null ],
+    [ "Set", "classXSI_1_1CRefArray.html#a8e9fcb3f49aa0647625c63badb5d5cda", null ],
+    [ "Remove", "classXSI_1_1CRefArray.html#a553f83804976fcf663a4b65adb905cc6", null ],
+    [ "Clear", "classXSI_1_1CRefArray.html#a666736fbd0ebb8dc7e6ff3392423d6c0", null ],
+    [ "GetAsText", "classXSI_1_1CRefArray.html#aa6bc9a7b39751a8415262efb422a87b3", null ],
+    [ "Resize", "classXSI_1_1CRefArray.html#a97599ffb24626fe615ad31b40cf1a29f", null ]
+];

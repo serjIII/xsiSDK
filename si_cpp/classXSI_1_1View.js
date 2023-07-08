@@ -1,0 +1,28 @@
+var classXSI_1_1View =
+[
+    [ "View", "classXSI_1_1View.html#aae516995a475f0de12b3d1a147945bb9", null ],
+    [ "~View", "classXSI_1_1View.html#aca0fee82e5ee0d139ca4b895a4facdb2", null ],
+    [ "View", "classXSI_1_1View.html#a24d4da9205229aa6db831cc46529db5b", null ],
+    [ "View", "classXSI_1_1View.html#a0f4eb28b4342f838df773ffdb14b5bdc", null ],
+    [ "IsA", "classXSI_1_1View.html#a6dd5a8a11eee55f434f151d1cd5d29d8", null ],
+    [ "GetClassID", "classXSI_1_1View.html#acc34f4a01f2089e40f7abc7e9d98bf15", null ],
+    [ "operator=", "classXSI_1_1View.html#aa7bb56bb1d21d64679b7da45488c1b99", null ],
+    [ "operator=", "classXSI_1_1View.html#ad144c3d8862659d19e2195eb1121b973", null ],
+    [ "GetViews", "classXSI_1_1View.html#a1367acad67c9f3df9b9928827c073e92", null ],
+    [ "FindView", "classXSI_1_1View.html#ab60928cee1fa5016a46d09e20ad25cd6", null ],
+    [ "GetState", "classXSI_1_1View.html#a87c1f0af440c8e57c2b77180d3317a05", null ],
+    [ "PutState", "classXSI_1_1View.html#abba18375b8250e42dab502327bae5831", null ],
+    [ "GetVisible", "classXSI_1_1View.html#ac471767063ecd3f3ef715e3872da5c37", null ],
+    [ "PutVisible", "classXSI_1_1View.html#a10f443d417629cb03c46838b5b93e4a4", null ],
+    [ "GetFloating", "classXSI_1_1View.html#ab11dfe69a460ad3bd4de84787b861260", null ],
+    [ "GetAttributeValue", "classXSI_1_1View.html#a8a22b0e704a932da8bebf26fe2337c26", null ],
+    [ "PutAttributeValue", "classXSI_1_1View.html#a1212b87c9f8d3f92f94c97aa4e38a6f2", null ],
+    [ "BeginEdit", "classXSI_1_1View.html#aac5720942494f6e61cf8916d7f4291dc", null ],
+    [ "EndEdit", "classXSI_1_1View.html#ab35a6bff195de38750a8b7950fd59cfc", null ],
+    [ "Move", "classXSI_1_1View.html#a0cfb140443398eed59f113de5f38e9c6", null ],
+    [ "Resize", "classXSI_1_1View.html#a230bfa311d1c47f3a5c5a6f070cf0e2a", null ],
+    [ "GetRectangle", "classXSI_1_1View.html#af57402946a7cb56a33c4345545fdc084", null ],
+    [ "Refresh", "classXSI_1_1View.html#ae9fc0c2798e1899ba2a6fec41f99103f", null ],
+    [ "Rearrange", "classXSI_1_1View.html#a000fad607f037735bd4dad2c85bb89d5", null ],
+    [ "GetMemoCameras", "classXSI_1_1View.html#affde40046f482d6e81aa7aa472bf5091", null ]
+];

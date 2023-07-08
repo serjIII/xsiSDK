@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>GridWidget</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>GridWidget</h1>
+         </div>
+
+<h2 class="pagehead">GridWidget</h2>
+
+<p><a href="#!/url=./si_om/_hier.html#oh_GridWidget">Object Hierarchy</a> | Related C++ Class: <a href="#!/url=./si_cpp/classXSI_1_1GridWidget.html">GridWidget</a></p>
+
+<h3>Introduced</h3>
+<div><p>v4.2</p></div>
+
+<h3>Description</h3>
+<div><p> The GridWidget object represents the user interface control that
+shows a <a href="#!/url=./si_om/GridData.html">GridData</a> object inside a Property Page.
+It exposes information that is transitive and directly related to the
+state of the control itself rather than the underlying GridData.
+For example, this object exposes information about which cells the
+user has clicked on.<br /><br />
+Unlike the actual GridData content, the selection state is lost when
+the Property Page (<a href="#!/url=./si_om/PPG.html">PPG</a>) is closed and then reopened.<br /><br />
+Note: The layout of the GridData on the property page is defined by the 
+<a href="#!/url=./si_om/PPGItem.html">PPGItem</a> object that represents the GridData on the 
+<a href="#!/url=./si_om/PPGLayout.html">PPGLayout</a> for that property page. For example, the 
+siUIGridSelectionMode attribute controls whether cells are selected 
+individually, by row or column, or not at all (see <a href="#!/url=./si_om/siPPGItemAttribute.html">siPPGItemAttribute</a>).
+</p></div>
+
+<h3>Methods</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/GridWidget.AddToSelection.html">AddToSelection</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/GridWidget.ClearSelection.html">ClearSelection</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/GridWidget.GetSelection.html">GetSelection</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/GridWidget.IsCellSelected.html">IsCellSelected</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/GridWidget.IsColumnSelected.html">IsColumnSelected</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/GridWidget.IsRowSelected.html">IsRowSelected</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/GridWidget.SortColumn.html">SortColumn</a>		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example demontrates a typical use of the 
+	GridWidget object - as a way of allowing users to 
+	delete rows or columns from a GridData object
+*/
+var oProp = ActiveSceneRoot.AddProperty( "CustomProperty", 
+				false, "GridWidgetDemo" );			
+var oParameter = oProp.AddGridParameter( "DemoGrid" ) ;
+var oGridData = oParameter.Value ;
+oGridData.ColumnCount = 3
+oGridData.RowCount = 20
+// Fill in some initial values
+for ( i = 0 ; i &lt; oGridData.RowCount ; i++ )
+	for ( j = 0 ; j &lt; oGridData.ColumnCount ; j++ )
+		oGridData.SetCell( j, i, i + "." + j ) ;
+var oPPGLayout = oProp.PPGLayout
+var oGridPPGItem = oPPGLayout.AddItem( "DemoGrid" )
+oGridPPGItem.SetAttribute( siUINoLabel, true );
+oGridPPGItem.SetAttribute( siUIGridSelectionMode, siSelectionHeader );
+oGridPPGItem.SetAttribute( siUIGridColumnWidths, "25:100:75:100" );
+oGridPPGItem.SetAttribute( siUIGridReadOnlyColumns, "1" );
+oPPGLayout.AddRow() ;
+oPPGLayout.AddButton( "DeleteRow", "Delete Selected Row(s)" ) ;
+oPPGLayout.AddButton( "DeleteColumn", "Delete Selected Column(s)" ) ;
+oPPGLayout.EndRow() ;
+oPPGLayout.Language = "JScript" ;
+oPPGLayout.Logic = DeleteRow_OnClicked.toString() + 
+	DeleteColumn_OnClicked.toString() ; 
+InspectObj( oProp ) ;
+function DeleteRow_OnClicked()
+{
+	var oGridData = PPG.DemoGrid.Value ;
+	oGridData.BeginEdit() ;
+	var oGridWidget = oGridData.GridWidget
+	// shift the rows upwards to overwrite the selected rows
+	var writePos = 0 ;
+	for ( var readPos = 0  ; readPos &lt; oGridData.RowCount ; readPos++ )
+	{
+		if ( !oGridWidget.IsRowSelected(readPos) )
+		{
+			if ( readPos != writePos )
+			{
+				oGridData.SetRowValues( 
+							writePos, 
+							oGridData.GetRowValues( readPos ) ) ;
+			}
+			writePos++ ;
+		}
+	}
+	// Shrink the GridData
+	oGridData.RowCount = writePos ;
+	oGridData.EndEdit() ;	
+}
+function DeleteColumn_OnClicked()
+{
+	var oGridData = PPG.DemoGrid.Value ;
+	oGridData.BeginEdit() ;
+	var oGridWidget = oGridData.GridWidget
+	// shift the rows upwards to overwrite the selected rows
+	var writePos = 0 ;
+	for ( var readPos = 0  ; readPos &lt; oGridData.ColumnCount ; readPos++ )
+	{
+		if ( !oGridWidget.IsColumnSelected(readPos) )
+		{
+			if ( readPos != writePos )
+			{
+				oGridData.SetColumnValues( 
+							writePos, 
+							oGridData.GetColumnValues( readPos ) ) ;
+			}
+			writePos++ ;
+		}
+	}
+	// Shrink the GridData
+	oGridData.ColumnCount = writePos ;
+	oGridData.EndEdit() ;	
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/GridData.html">GridData</a> <a href="#!/url=./si_om/GridData.GridWidget.html">GridData.GridWidget</a> <a href="#!/url=./si_om/PPG.html">PPG</a> <a href="#!/url=./si_om/siPPGItemAttribute.html">siPPGItemAttribute</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

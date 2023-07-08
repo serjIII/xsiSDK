@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Parameter.Disconnect</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Parameter.Disconnect</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/Parameter.html">Parameter</a>.Disconnect</h2>
+
+<h3>Introduced</h3>
+<div><p>v2.0</p></div>
+
+<h3>Description</h3>
+<div><p> Disconnects any <a href="#!/url=./si_om/Shader.html">Shader</a> or animation connected to the parameter.  
+Animation that can be removed with this method includes <a href="#!/url=./si_om/FCurve.html">FCurve</a>s, 
+<a href="#!/url=./si_om/Expression.html">Expression</a>s and <a href="#!/url=./si_om/Operator.html">Operator</a>s.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>DataSource Parameter.Disconnect();</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oDataSource = Parameter.Disconnect();</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Previously connected <a href="#!/url=./files/DataSource.htm">DataSource</a>.  Note: The returned object is 
+valid if it is a <a href="#!/url=./si_om/Shader.html">Shader</a>, but not if it is an <a href="#!/url=./si_om/FCurve.html">FCurve</a>.</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example illustrates how to disconnect a shader from the photon parameter of a material.
+'
+NewScene , false
+set grid = Application.ActiveSceneRoot.AddGeometry( "Cube","MeshSurface" )
+set mat = grid.AddMaterial( "Phong" )
+set photon = mat.Parameters("Photon")
+set shader = photon.Disconnect()</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' 
+' Demonstration of using Disconnect to remove an FCurve from a Parameter
+' 
+NewScene , false
+set oCube = Application.ActiveSceneRoot.AddGeometry( "Cube", "MeshSurface" )
+set oPosXParam = oCube.PosX
+dim aValues
+aValues = Array( 0.00, 5.00, 1.00, 6.00, 2.00, 7.00, 3.00, 8.00 )
+oPosXParam.AddFCurve2( aValues )
+set oFCurve = oPosXParam.Source
+Application.LogMessage "Expected value at frame 10: " &amp; oFCurve.Eval( 10 )  
+' Disconnect the FCurve
+set oFCurve = oPosXParam.Disconnect
+' You can still evalute the fcurve but it doesn't belong to the parameter
+Application.LogMessage "FCurve value at Frame 10:" &amp; oFCurve.Eval( 10 )  
+' Prove that the FCurve is gone.
+Application.LogMessage "Source driving Parameter value: " &amp; TypeName( oPosXParam.Source ) 
+SetValue "PlayControl.Current", 10
+Application.LogMessage( "Parameter value with no FCurve: " &amp; oPosXParam.Value ) 
+' Expected output
+'INFO : Expected value at frame 10: 8
+'INFO : FCurve value at Frame 10:8
+'INFO : Source driving Parameter value: Nothing
+'INFO : Parameter value with no FCurve: 5</pre></td></tr>
+</table>
+</div><h4>3. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	Demonstrates deleting an FCurve with Parameter.Disconnect
+*/
+NewScene( null, false ) ;
+var oCube = Application.ActiveSceneRoot.AddGeometry( "Cube", "MeshSurface" ) ;
+var oPosXParam = oCube.PosX
+aValues = new Array( 0.00, 5.00, 1.00, 6.00, 2.00, 7.00, 3.00, 8.00 ) ;
+oPosXParam.AddFCurve2( aValues ) ;
+Application.LogMessage( oPosXParam.Source == null ) ;
+oPosXParam.Disconnect();
+Application.LogMessage( oPosXParam.Source == null ) ;
+// Expected results:
+//INFO: false
+//INFO: true</pre></td></tr>
+</table>
+</div><h4>4. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	Demonstration of removing an expression with Parameter.Disconnect
+*/
+NewScene( null, false ) ;
+var oCube = Application.ActiveSceneRoot.AddGeometry( "Cube","MeshSurface" ) ;
+var oLocalKine = oCube.Kinematics.Local
+var oPosXParam = oLocalKine.PosX
+var oPosYParam = oLocalKine.PosY
+oPosXParam.AddExpression( oPosYParam.FullName + " * 2.0" ) ;
+Application.LogMessage( "Before disconnecting:" ) ;
+Application.LogMessage( "Source: " + oPosXParam.Source.Type  ) ;
+Application.LogMessage( "Number of Animated parameters: " + oCube.AnimatedParameters().Count ) ;
+oPosXParam.Disconnect();
+Application.LogMessage( "After disconnecting:" ) ;
+Application.LogMessage( "Source is null? " + ( oPosXParam.Source == null ) ) ;
+Application.LogMessage( "Number of Animated parameters: " + oCube.AnimatedParameters().Count ) ;
+//INFO : Before disconnecting:
+//INFO : Source: Expression
+//INFO : Number of Animated parameters: 1
+//INFO : After disconnecting:
+//INFO : Source is null? true
+//INFO : Number of Animated parameters: 0</pre></td></tr>
+</table>
+</div><h4>5. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	Example of removing an Operator using Parameter.Disconnect
+*/
+NewScene( null, false );
+var obj = Application.ActiveSceneRoot.AddNull();
+obj.posx.AddScriptedOp( myexpr_Update.toString(), obj.posy, "myexpr", "JScript" );
+// Invoke the custom operator
+obj.posy = 26 ;
+// posx will have been changed to 20 by the operator
+Application.LogMessage( "Value of posx:" + obj.posx.Value ) ;
+obj.posx.Disconnect() ;
+// Change the value of posy again
+// However because there is no operator 
+// now it will have no effect on posx
+obj.posy = 18 ;
+Application.LogMessage( "No source anymore? " + (obj.posx.Source == null) ) ;
+Application.LogMessage( "Value of posx " + obj.posx.Value ) ;
+//Expected output:
+//INFO : Value of posx:20
+//INFO : No source anymore? true
+//INFO : Value of posx 20
+function myexpr_Update( ctx, out, inposy )
+{
+	var posYVal = inposy.Value ;
+	if ( posYVal &lt; 20 )	
+		out.Value = inposy;
+	else
+		out.Value = 20 ;	
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/RemoveAnimation.html">RemoveAnimation</a> <a href="#!/url=./si_om/Parameter.Source.html">Parameter.Source</a> <a href="#!/url=./si_om/Parameter.Connect.html">Parameter.Connect</a> <a href="#!/url=./si_om/Parameter.ConnectFromFile.html">Parameter.ConnectFromFile</a> <a href="#!/url=./si_om/Parameter.ConnectFromPreset.html">Parameter.ConnectFromPreset</a> <a href="#!/url=./si_om/Parameter.ConnectFromProgID.html">Parameter.ConnectFromProgID</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

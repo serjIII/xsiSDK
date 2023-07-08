@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-5954B7C9-7257-4439-84A5-450BBD004A74" />
+      <meta name="indexterm" content="custom commands: overview" />
+      <meta name="indexterm" content="JScript Example: Skeleton code for a custom command" />
+      <meta name="indexterm" content="C++ Example: Skeleton code for a C++ custom command" />
+      <meta name="indexterm" content="Callbacks (commands)" />
+      <meta name="indexterm" content="Init callback: custom commands" />
+      <meta name="indexterm" content="custom commands: Init callback" />
+      <meta name="indexterm" content="Execute callback: custom commands" />
+      <meta name="indexterm" content="custom commands: Execute callback" />
+      <meta name="indexterm" content="Execute" />
+      <meta name="topic-type" content="concept" />
+      <title>What is a Custom Command?</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ reflinkdata.push(["xsi_application.h", "si_cpp/xsi__application_8h.html", "C++ API Reference", "../"]); 
+reflinkdata.push(["xsi_context.h", "si_cpp/xsi__context_8h.html", "C++ API Reference", "../"]); 
+reflinkdata.push(["xsi_pluginregistrar.h", "si_cpp/xsi__pluginregistrar_8h.html", "C++ API Reference", "../"]); 
+reflinkdata.push(["xsi_status.h", "si_cpp/xsi__status_8h.html", "C++ API Reference", "../"]); 
+reflinkdata.push(["xsi_argument.h", "si_cpp/xsi__argument_8h.html", "C++ API Reference", "../"]); 
+reflinkdata.push(["xsi_command.h", "si_cpp/xsi__command_8h.html", "C++ API Reference", "../"]); 
+reflinkdata.push(["xsi_menu.h", "si_cpp/xsi__menu_8h.html", "C++ API Reference", "../"]); 
+</script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-5954B7C9-7257-4439-84A5-450BBD004A74"></a></span><div class="head">
+            <h1>What is a Custom Command?</h1>
+         </div>
+         <p><span class="anchor_wrapper"><a name="GUID-138A1F5A-CEDB-4EC6-AB1A-2D828D25C88E"></a></span> A custom command is a reusable block of scripting or C++ code that performs a specific
+            task. A custom command can be run by other commands and scripts, by menu items, by
+            keyboard shortcuts, and by toolbar buttons. 
+         </p>
+         <p><span class="anchor_wrapper"><a name="GUID-375B96B7-45C8-4A91-A44A-29E49C720491"></a></span>In a self-installing plug-in, a custom command is implemented by two callbacks: <a href="#!/url=./si_cmds/cb_Command_Init.html">Init</a> and <a href="#!/url=./si_cmds/cb_Command_Execute.html">Execute</a>. For custom commands implemented with the C++ API, you can also handle undoing and
+            redoing changes to user data with the <a href="#!/url=./si_cmds/cb_Command_Undo.html">Undo</a>, <a href="#!/url=./si_cmds/cb_Command_Redo.html">Redo</a>, and <a href="#!/url=./si_cmds/cb_Command_TermUndoRedo.html">TermUndoRedo</a> callbacks. 
+         </p>
+         <div class="section"><span class="anchor_wrapper"><a name="WSD74ADB6ECD122649867B3D8C4DDB866E-0004"></a></span> 
+            <h2><span class="anchor_wrapper"><a name="GUID-A2CED56F-30EE-4018-81E3-BB4289850166"></a></span> JScript Example: Skeleton code for a custom command
+            </h2>  
+            <div class="codeBlock"><pre class="prettyprint">
+//------------------------------------------------------------------
+// Install callback for the plug-in
+//------------------------------------------------------------------
+function XSILoadPlugin( in_reg )
+{
+	in_reg.Author = "Command Wizard User";
+	in_reg.Name = "MyCommands";
+	in_reg.Major = 1;
+	in_reg.Minor = 0;
+	// Register a command named "MyCommand"
+	in_reg.RegisterCommand("MyCommand","MyCommand");
+	return true;
+}
+
+//------------------------------------------------------------------
+// Initialize the command named "MyCommand"
+//------------------------------------------------------------------
+function MyCommand_Init( ctxt )
+{
+	// Get the Command object from the Context object
+	var oCmd;
+	oCmd = ctxt.Source;
+
+	// Set some basic command properties
+	oCmd.Description = "A skeleton command";
+	oCmd.Tooltip = "My command";
+
+	// The command returns a value
+	oCmd.ReturnValue = true;
+
+	// Get the ArgumentCollection
+	var oArgs;
+	oArgs = oCmd.Arguments;
+
+	// Add an argument
+	oArgs.Add("Arg0",siArgumentInput);
+	return true;
+}
+
+//------------------------------------------------------------------
+// Implement the command named "MyCommand"
+//------------------------------------------------------------------
+function MyCommand_Execute( Arg0 )
+{
+// TODO: Put your command implementation here.
+	return true;
+}</pre></div> 
+         </div>
+         <div class="section"><span class="anchor_wrapper"><a name="WSD74ADB6ECD122649867B3D8C4DDB866E-0005"></a></span> 
+            <h2><span class="anchor_wrapper"><a name="GUID-7C7034B4-1DA9-4437-9EBE-F9D93D13BC65"></a></span> C++ Example: Skeleton code for a C++ custom command
+            </h2>  
+            <div class="codeBlock"><pre class="prettyprint">
+#include &lt;<a href="javascript:void(0)" data="xsi_application.h" class="a_multireflink">xsi_application.h</a>&gt;
+#include &lt;<a href="javascript:void(0)" data="xsi_context.h" class="a_multireflink">xsi_context.h</a>&gt;
+#include &lt;<a href="javascript:void(0)" data="xsi_pluginregistrar.h" class="a_multireflink">xsi_pluginregistrar.h</a>&gt;
+#include &lt;<a href="javascript:void(0)" data="xsi_status.h" class="a_multireflink">xsi_status.h</a>&gt;
+#include &lt;<a href="javascript:void(0)" data="xsi_argument.h" class="a_multireflink">xsi_argument.h</a>&gt;
+#include &lt;<a href="javascript:void(0)" data="xsi_command.h" class="a_multireflink">xsi_command.h</a>&gt;
+#include &lt;<a href="javascript:void(0)" data="xsi_menu.h" class="a_multireflink">xsi_menu.h</a>&gt;
+using namespace XSI; 
+
+//------------------------------------------------------------------
+// Install callback for the plug-in
+//------------------------------------------------------------------
+XSIPLUGINCALLBACK CStatus XSILoadPlugin( PluginRegistrar&amp; in_reg )
+{
+	in_reg.PutAuthor(L"Command Wizard User");
+	in_reg.PutName(L"MyNewCPPCommandPlugin");
+	in_reg.PutVersion(1,0);
+	// Register a command named "MyCPPCommand"
+	in_reg.RegisterCommand(L"MyCPPCommand",L"MyCPPCommand");
+	return CStatus::OK;
+}
+
+//------------------------------------------------------------------
+// Initialize the command named "MyCommand"
+//------------------------------------------------------------------
+XSIPLUGINCALLBACK CStatus MyCPPCommand_Init( CRef&amp; in_ctxt )
+{
+	// Construct a Context from the CRef
+	Context ctxt( in_ctxt );
+	// Get the Command object from the Context
+	Command oCmd;
+	oCmd = ctxt.GetSource();
+
+	// Set some basic command properties
+	oCmd.PutDescription(L"My CPP Command");
+	oCmd.PutTooltip(L"MyCPPCommand");
+
+	// The command returns a value
+	oCmd.EnableReturnValue(true);
+
+	// Add an argument
+	ArgumentArray oArgs;
+	oArgs = oCmd.GetArguments();
+	oArgs.Add(L"Arg0");
+
+	return CStatus::OK;
+}
+
+//------------------------------------------------------------------
+// Implement the command named "MyCPPCommand"
+//------------------------------------------------------------------
+XSIPLUGINCALLBACK CStatus MyCPPCommand_Execute( CRef&amp; in_ctxt )
+{
+	// Construct a Context from the CRef
+	Context ctxt( in_ctxt );
+
+	// Get the arguments from the Context
+	CValueArray args = ctxt.GetAttribute(L"Arguments");
+	CValue Arg0 = args[0];
+
+	// ...
+
+	// Put a return value in the Context
+	ctxt.PutAttribute( L"ReturnValue", Arg0 );
+
+	return CStatus::OK;
+}</pre></div> 
+         </div>
+         <div class="section"><span class="anchor_wrapper"><a name="WSD74ADB6ECD122649867B3D8C4DDB866E-0006"></a></span> 
+            <h2><span class="anchor_wrapper"><a name="GUID-57786611-B673-4C87-99FB-A876A3D0D904"></a></span> Callbacks
+            </h2>  
+            <div class="section"><span class="anchor_wrapper"><a name="WSD74ADB6ECD122649867B3D8C4DDB866E-0007"></a></span> 
+               <h3><span class="anchor_wrapper"><a name="GUID-551571EE-473E-4ED4-951C-D050ECAA7D04"></a></span> Init
+               </h3>   
+               <p><span class="anchor_wrapper"><a name="GUID-83CB153B-C491-4DB6-9414-369F64398E52"></a></span>Softimage calls the <a href="#!/url=./si_cmds/cb_Command_Init.html">Init</a> callback when the plug-in is loaded. The <span class="code" translate="no">Init</span> callback is where you define the command: 
+               </p> <span class="anchor_wrapper"><a name="UL_0F73F7CA533C4D0984A231FD6CD1D54D"></a></span><ul>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-703475DF-D93D-49C6-8242-BFBC9769F821"></a></span>What capabilities does the command support? Can it be assigned a keyboard shortcut?
+                        Logged to the command history? Used in batch mode? 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-CA61DE6D-6AA5-492B-8286-9FD97514BFE3"></a></span>Does the command return a value? 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-4B06BC9D-79F3-4AEE-B44F-7A939198AFFE"></a></span>What arguments does the command take? 
+                     </p> 
+                  </li>
+               </ul> 
+               <div class="codeBlock"><pre class="prettyprint">
+function MyNewCommand_Init( ctxt )
+{
+	var oCmd;
+	oCmd = ctxt.Source;
+	oCmd.Description = "A simple command";
+	oCmd.Tooltip = "Do nothing";
+
+	// Set the command capabilities
+	oCmd.SetFlag(siSupportsKeyAssignment,false);	// true by default
+	oCmd.SetFlag(siCannotBeUsedInBatch,true);	// false by default
+	oCmd.SetFlag(siNoLogging,true);			// false by default
+
+	// Allow the command to return values
+	oCmd.ReturnValue = true;
+
+	// Add a single argument
+	var oArgs;
+	oArgs = oCmd.Arguments;
+	oArgs.Add("Arg0",siArgumentInput);
+
+	return true;
+}</pre></div> 
+            </div> 
+            <div class="section"><span class="anchor_wrapper"><a name="WSD74ADB6ECD122649867B3D8C4DDB866E-0008"></a></span> 
+               <h3><span class="anchor_wrapper"><a name="GUID-960495D3-CF88-49AE-A6E4-6B1B67ECBCBA"></a></span> Execute
+               </h3>    
+               <p><span class="anchor_wrapper"><a name="GUID-0F584585-4F5B-4F79-AC5C-AADBB33E514D"></a></span>The <a href="#!/url=./si_cmds/cb_Command_Execute.html">Execute</a> callback implements the command. Softimage calls <span class="code" translate="no">Execute</span> every time the command is invoked. 
+               </p> 
+               <p><span class="anchor_wrapper"><a name="GUID-A6B2538F-F1B3-40F1-966D-975E35954566"></a></span>If you use a scripting language to implement the command, the Execute callback function
+                  has the same arguments and return value as the command: 
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+function MyNewCommand_Execute( Arg0 )
+{
+	Application.LogMessage("MyNewCommand_Execute");
+
+	// TODO: Implement the command
+
+	// Return something
+	return Arg0;
+}</pre></div> 
+               <p><span class="anchor_wrapper"><a name="GUID-14D03CF0-D278-4FE3-90EC-AE7E142F6570"></a></span>In C++, the command arguments and return value are stored as attributes in the callback
+                  context: 
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+XSIPLUGINCALLBACK CStatus MyCPPCommand_Execute( CRef&amp; in_ctxt )
+{
+	Context ctxt( in_ctxt );
+	CValueArray args = <em class="strong">ctxt.GetAttribute(L"Arguments");</em>
+	CValue Arg0 = args[0];
+
+	// TODO: Implement the command
+
+	// Return a value
+	ctxt.<em class="strong">PutAttribute( L"ReturnValue", Arg0 );</em>
+
+	return CStatus::OK;
+}</pre></div> 
+               <p><span class="anchor_wrapper"><a name="GUID-26642ACE-6699-4E15-94FA-935C9B6D5140"></a></span>See the <a href="#!/url=./examples/Addons/SimpleCommand/netview_SimpleCommand.htm">Custom Command</a> example that demonstrates how to implement the self-installing custom commands. This
+                  example is located in the examples folder of the Softimage SDK installation directory.
+                  
+               </p> 
+            </div> 
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

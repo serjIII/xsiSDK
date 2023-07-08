@@ -1,0 +1,1752 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>siClassID</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>siClassID</h1>
+         </div>
+
+<h2 class="pagehead">siClassID</h2>
+
+<h3>Description</h3>
+<div><p>
+The class ID of Softimage objects. This enumerator is used by the C++ API to manage references 
+between the object model and C++. For example, the CRef::IsA function uses the class ID
+to determine whether or not the class type is compatible with the underlying reference object.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>siClassID.siObjectID                                                        // 0
+siClassID.siUnknownClassID                                                  // 0
+siClassID.siSIObjectID                                                      // 1
+siClassID.siOGLMaterialID                                                   // 2
+siClassID.siOGLTextureID                                                    // 3
+siClassID.siOGLLightID                                                      // 4
+siClassID.siApplicationID                                                   // 5
+siClassID.siArgumentID                                                      // 6
+siClassID.siCommandID                                                       // 7
+siClassID.siClipID                                                          // 8
+siClassID.siShapeClipID                                                     // 9
+siClassID.siSubComponentID                                                  // 10
+siClassID.siFacetID                                                         // 11
+siClassID.siNurbsSurfaceID                                                  // 12
+siClassID.siPointID                                                         // 13
+siClassID.siControlPointID                                                  // 14
+siClassID.siNurbsCurveControlPointID                                        // 15
+siClassID.siNurbsCurveListControlPointID                                    // 16
+siClassID.siNurbsSurfaceControlPointID                                      // 17
+siClassID.siNurbsCurveID                                                    // 18
+siClassID.siSampleID                                                        // 19
+siClassID.siNurbsSampleID                                                   // 20
+siClassID.siPolygonNodeID                                                   // 21
+siClassID.siGeometryID                                                      // 22
+siClassID.siNurbsSurfaceMeshID                                              // 23
+siClassID.siNurbsCurveListID                                                // 24
+siClassID.siPolygonMeshID                                                   // 25
+siClassID.siSegmentID                                                       // 26
+siClassID.siConnectionPointID                                               // 27
+siClassID.siConstructionHistoryID                                           // 28
+siClassID.siDictionaryID                                                    // 29
+siClassID.siEventInfoID                                                     // 30
+siClassID.siFCurveID                                                        // 31
+siClassID.siNestedFCurveID                                                  // 32
+siClassID.siFCurveKeyID                                                     // 33
+siClassID.siFileBrowserID                                                   // 34
+siClassID.siImageID                                                         // 35
+siClassID.siMappedItemID                                                    // 36
+siClassID.siPortID                                                          // 37
+siClassID.siInputPortID                                                     // 38
+siClassID.siSelectionID                                                     // 39
+siClassID.siStaticSourceID                                                  // 40
+siClassID.siTriangleID                                                      // 41
+siClassID.siTriangleVertexID                                                // 42
+siClassID.siUpdateContextID                                                 // 43
+siClassID.siParameterID                                                     // 44
+siClassID.siCompoundParameterID                                             // 45
+siClassID.siProjectID                                                       // 46
+siClassID.siProjectItemID                                                   // 47
+siClassID.siActionSourceID                                                  // 48
+siClassID.siExpressionID                                                    // 49
+siClassID.siImageClipID                                                     // 50
+siClassID.siSceneID                                                         // 51
+siClassID.siShaderID                                                        // 52
+siClassID.siOperatorID                                                      // 53
+siClassID.siEnvelopeID                                                      // 54
+siClassID.siPrimitiveID                                                     // 55
+siClassID.siParticleCloudPrimitiveID                                        // 56
+siClassID.siPropertyID                                                      // 57
+siClassID.siClusterPropertyID                                               // 58
+siClassID.siConstraintID                                                    // 59
+siClassID.siConstraintWithUpVectorID                                        // 60
+siClassID.siCustomPropertyID                                                // 61
+siClassID.siJointID                                                         // 62
+siClassID.siKinematicsID                                                    // 63
+siClassID.siMaterialID                                                      // 64
+siClassID.siStaticKinematicStateID                                          // 65
+siClassID.siSceneItemID                                                     // 66
+siClassID.siClusterID                                                       // 67
+siClassID.siGroupID                                                         // 68
+siClassID.siLayerID                                                         // 69
+siClassID.siPassID                                                          // 70
+siClassID.siUserGroupID                                                     // 71
+siClassID.siX3DObjectID                                                     // 72
+siClassID.siParticleCloudID                                                 // 73
+siClassID.siModelID                                                         // 74
+siClassID.siChainElementID                                                  // 75
+siClassID.siChainRootID                                                     // 76
+siClassID.siChainBoneID                                                     // 77
+siClassID.siChainEffectorID                                                 // 78
+siClassID.siDirectedID                                                      // 79
+siClassID.siCameraID                                                        // 80
+siClassID.siLightID                                                         // 81
+siClassID.siNullID                                                          // 82
+siClassID.siRigID                                                           // 83
+siClassID.siCameraRigID                                                     // 84
+siClassID.siLightRigID                                                      // 85
+siClassID.siKinematicStateID                                                // 86
+siClassID.siTrackID                                                         // 87
+siClassID.siUserDataMapID                                                   // 88
+siClassID.siFxTreeID                                                        // 89
+siClassID.siFxOperatorID                                                    // 90
+siClassID.siTriangleCollectionID                                            // 91
+siClassID.siTriangleVertexCollectionID                                      // 92
+siClassID.siSampleCollectionID                                              // 93
+siClassID.siPolygonNodeCollectionID                                         // 94
+siClassID.siPointCollectionID                                               // 95
+siClassID.siFacetCollectionID                                               // 97
+siClassID.siVertexID                                                        // 98
+siClassID.siVertexCollectionID                                              // 99
+siClassID.siEdgeID                                                          // 100
+siClassID.siEdgeCollectionID                                                // 101
+siClassID.siPolygonFaceID                                                   // 102
+siClassID.siPolygonFaceCollectionID                                         // 103
+siClassID.siDataSourceID                                                    // 104
+siClassID.siAnimationSourceID                                               // 105
+siClassID.siOutputPortID                                                    // 106
+siClassID.siProxyParameterID                                                // 107
+siClassID.siDeviceCollectionID                                              // 108
+siClassID.siDeviceID                                                        // 109
+siClassID.siChannelID                                                       // 110
+siClassID.siKnotCollectionID                                                // 111
+siClassID.siControlPointCollectionID                                        // 112
+siClassID.siNurbsCurveCollectionID                                          // 113
+siClassID.siNurbsSurfaceCollectionID                                        // 114
+siClassID.siNurbsSampleCollectionID                                         // 115
+siClassID.siTextureID                                                       // 116
+siClassID.siUserDataBlobID                                                  // 117
+siClassID.siParticleID                                                      // 118
+siClassID.siAddonID                                                         // 119
+siClassID.siPPGLayoutID                                                     // 120
+siClassID.siPPGItemID                                                       // 121
+siClassID.siPreferencesID                                                   // 122
+siClassID.siParticleTypeID                                                  // 123
+siClassID.siParticleAttributeID                                             // 124
+siClassID.siGridDataID                                                      // 125
+siClassID.siTextureLayerID                                                  // 126
+siClassID.siTextureLayerPortID                                              // 127
+siClassID.siCustomOperatorID                                                // 128
+siClassID.siPortGroupID                                                     // 129
+siClassID.siDesktopID                                                       // 130
+siClassID.siLayoutID                                                        // 131
+siClassID.siUIObjectID                                                      // 132
+siClassID.siUIPersistableID                                                 // 133
+siClassID.siViewID                                                          // 134
+siClassID.siArrayParameterID                                                // 135
+siClassID.siViewContextID                                                   // 137
+siClassID.siContextID                                                       // 138
+siClassID.siPPGEventContextID                                               // 139
+siClassID.siClipEffectID                                                    // 140
+siClassID.siClipEffectItemID                                                // 141
+siClassID.siShapeKeyID                                                      // 142
+siClassID.siSourceID                                                        // 143
+siClassID.siTimeControlID                                                   // 144
+siClassID.siTransitionID                                                    // 145
+siClassID.siAnimationSourceItemID                                           // 146
+siClassID.siClipContainerID                                                 // 147
+siClassID.siArgumentHandlerID                                               // 148
+siClassID.siMenuID                                                          // 149
+siClassID.siMenuItemID                                                      // 150
+siClassID.siPluginID                                                        // 151
+siClassID.siPluginItemID                                                    // 152
+siClassID.siPluginRegistrarID                                               // 153
+siClassID.siFilterID                                                        // 154
+siClassID.siUIToolkitID                                                     // 155
+siClassID.siProgressBarID                                                   // 156
+siClassID.siParamDefID                                                      // 157
+siClassID.siFactoryID                                                       // 158
+siClassID.siCommandCollectionID                                             // 159
+siClassID.siArgumentCollectionID                                            // 160
+siClassID.siGraphicSequencerContextID                                       // 161
+siClassID.siClipRelationID                                                  // 162
+siClassID.siMixerID                                                         // 163
+siClassID.siLibraryID                                                       // 164
+siClassID.siSimulationEnvironmentID                                         // 165
+siClassID.siGridWidgetID                                                    // 166
+siClassID.siGeometryAccessorID                                              // 167
+siClassID.siEnvelopeWeightID                                                // 168
+siClassID.siMeshBuilderID                                                   // 169
+siClassID.siSegmentCollectionID                                             // 170
+siClassID.siFileReferenceID                                                 // 171
+siClassID.siClusterPropertyBuilderID                                        // 172
+siClassID.siMaterialLibraryID                                               // 173
+siClassID.siHairPrimitiveID                                                 // 174
+siClassID.siRenderHairAccessorID                                            // 175
+siClassID.siPointLocatorDataID                                              // 176
+siClassID.siCollectionItemID                                                // 177
+siClassID.siOperatorContextID                                               // 178
+siClassID.siPointCloudID                                                    // 179
+siClassID.siRigidBodyAccessorID                                             // 180
+siClassID.siRigidConstraintAccessorID                                       // 181
+siClassID.siDeltaID                                                         // 182
+siClassID.siActionDeltaID                                                   // 183
+siClassID.siActionDeltaItemID                                               // 184
+siClassID.siTimerEventID                                                    // 185
+siClassID.siPassContainerID                                                 // 186
+siClassID.siRenderChannelID                                                 // 187
+siClassID.siSceneRenderPropertyID                                           // 188
+siClassID.siFramebufferID                                                   // 189
+siClassID.siRendererContextID                                               // 190
+siClassID.siRendererID                                                      // 191
+siClassID.siTimeTransportID                                                 // 192
+siClassID.siTimeTransportContextID                                          // 193
+siClassID.siICENodeID                                                       // 194
+siClassID.siICECompoundNodeID                                               // 195
+siClassID.siICENodePortID                                                   // 196
+siClassID.siICETreeID                                                       // 197
+siClassID.siICENodeContainerID                                              // 198
+siClassID.siICENodeInputPortID                                              // 199
+siClassID.siICENodeOutputPortID                                             // 200
+siClassID.siICEDataProviderNodeID                                           // 201
+siClassID.siICEDataModifierNodeID                                           // 202
+siClassID.siICENodeDefID                                                    // 203
+siClassID.siICENodeContextID                                                // 204
+siClassID.siICEAttributeID                                                  // 205
+siClassID.siPartitionID                                                     // 206
+siClassID.siOverrideID                                                      // 207
+siClassID.siHardwareShaderContextID                                         // 208
+siClassID.siValueMapID                                                      // 209
+siClassID.siShaderParamDefID                                                // 210
+siClassID.siShaderParamDefOptionsID                                         // 211
+siClassID.siShaderballOptionsID                                             // 212
+siClassID.siShaderParamDefContainerID                                       // 213
+siClassID.siMetaShaderRendererDefID                                         // 214
+siClassID.siShaderDefID                                                     // 215
+siClassID.siShaderStructParamDefID                                          // 216
+siClassID.siShaderArrayParamDefID                                           // 217
+siClassID.siShaderParameterID                                               // 218
+siClassID.siShaderArrayItemParameterID                                      // 219
+siClassID.siShaderArrayParameterID                                          // 220
+siClassID.siShaderCompoundParameterID                                       // 221
+siClassID.siRenderTreeNodeID                                                // 222
+siClassID.siShaderBaseID                                                    // 223
+siClassID.siShaderContainerID                                               // 224
+siClassID.siShaderCompoundID                                                // 225
+siClassID.siShaderCommentID                                                 // 226
+siClassID.siShaderDefManagerID                                              // 227
+siClassID.siHardwareSurfaceID                                               // 228
+siClassID.siGraphicDriverID                                                 // 229
+siClassID.siHairGeometryID                                                  // 230
+siClassID.siPointCloudGeometryID                                            // 231
+siClassID.siSchematicNodeID                                                 // 232
+siClassID.siSchematicID                                                     // 233
+siClassID.siSchematicNodeCollectionID                                       // 234
+siClassID.siUVPropertyID                                                    // 235
+siClassID.siToolContextID                                                   // 236
+siClassID.siPickBufferID                                                    // 237
+siClassID.siMemoCameraID                                                    // 238
+siClassID.siMemoCameraCollectionID                                          // 239
+siClassID.siAnnotationID                                                    // 250
+siClassID.siCustomPrimitiveID                                               // 251
+siClassID.siCustomPrimitiveContextID                                        // 252</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<div><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th>Constant		</th>		<th>Value		</th>		<th>Description		</th>	</tr>
+	<tr>
+		<td class="name"><a name="siActionDeltaID"> </a>siActionDeltaID		</td>
+		<td class="example">183		</td>
+		<td>
+ActionDelta object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siActionDeltaItemID"> </a>siActionDeltaItemID		</td>
+		<td class="example">184		</td>
+		<td>
+ActionDeltaItem object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siActionSourceID"> </a>siActionSourceID		</td>
+		<td class="example">48		</td>
+		<td>
+ActionSource object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siAddonID"> </a>siAddonID		</td>
+		<td class="example">119		</td>
+		<td>
+Addon object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siAnimationSourceID"> </a>siAnimationSourceID		</td>
+		<td class="example">105		</td>
+		<td>
+AnimationSource object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siAnimationSourceItemID"> </a>siAnimationSourceItemID		</td>
+		<td class="example">146		</td>
+		<td>
+AnimationSourceItem object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siAnnotationID"> </a>siAnnotationID		</td>
+		<td class="example">250		</td>
+		<td>
+Annotation object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siApplicationID"> </a>siApplicationID		</td>
+		<td class="example">5		</td>
+		<td>
+Application object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siArgumentCollectionID"> </a>siArgumentCollectionID		</td>
+		<td class="example">160		</td>
+		<td>
+Argument Collection id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siArgumentHandlerID"> </a>siArgumentHandlerID		</td>
+		<td class="example">148		</td>
+		<td>
+Argument Handler object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siArgumentID"> </a>siArgumentID		</td>
+		<td class="example">6		</td>
+		<td>
+Argument object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siArrayParameterID"> </a>siArrayParameterID		</td>
+		<td class="example">135		</td>
+		<td>
+ArrayParameter object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siCameraID"> </a>siCameraID		</td>
+		<td class="example">80		</td>
+		<td>
+Camera object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siCameraRigID"> </a>siCameraRigID		</td>
+		<td class="example">84		</td>
+		<td>
+CameraRig object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siChainBoneID"> </a>siChainBoneID		</td>
+		<td class="example">77		</td>
+		<td>
+ChainBone object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siChainEffectorID"> </a>siChainEffectorID		</td>
+		<td class="example">78		</td>
+		<td>
+ChainEffector object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siChainElementID"> </a>siChainElementID		</td>
+		<td class="example">75		</td>
+		<td>
+ChainElement object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siChainRootID"> </a>siChainRootID		</td>
+		<td class="example">76		</td>
+		<td>
+ChainRoot object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siChannelID"> </a>siChannelID		</td>
+		<td class="example">110		</td>
+		<td>
+Channel object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siClipContainerID"> </a>siClipContainerID		</td>
+		<td class="example">147		</td>
+		<td>
+ClipContainer object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siClipEffectID"> </a>siClipEffectID		</td>
+		<td class="example">140		</td>
+		<td>
+ClipEffect object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siClipEffectItemID"> </a>siClipEffectItemID		</td>
+		<td class="example">141		</td>
+		<td>
+ClipEffectItem object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siClipID"> </a>siClipID		</td>
+		<td class="example">8		</td>
+		<td>
+Clip object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siClipRelationID"> </a>siClipRelationID		</td>
+		<td class="example">162		</td>
+		<td>
+ClipRelation object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siClusterID"> </a>siClusterID		</td>
+		<td class="example">67		</td>
+		<td>
+Cluster object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siClusterPropertyBuilderID"> </a>siClusterPropertyBuilderID		</td>
+		<td class="example">172		</td>
+		<td>
+ClusterPropertyBuilder object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siClusterPropertyID"> </a>siClusterPropertyID		</td>
+		<td class="example">58		</td>
+		<td>
+ClusterProperty object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siCollectionItemID"> </a>siCollectionItemID		</td>
+		<td class="example">177		</td>
+		<td>
+CollectionItem object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siCommandCollectionID"> </a>siCommandCollectionID		</td>
+		<td class="example">159		</td>
+		<td>
+Command object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siCommandID"> </a>siCommandID		</td>
+		<td class="example">7		</td>
+		<td>
+Command object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siCompoundParameterID"> </a>siCompoundParameterID		</td>
+		<td class="example">45		</td>
+		<td>
+CompoundParameter object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siConnectionPointID"> </a>siConnectionPointID		</td>
+		<td class="example">27		</td>
+		<td>
+ConnectionPoint object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siConstraintID"> </a>siConstraintID		</td>
+		<td class="example">59		</td>
+		<td>
+Constraint object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siConstraintWithUpVectorID"> </a>siConstraintWithUpVectorID		</td>
+		<td class="example">60		</td>
+		<td>
+ConstraintWithUpVector object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siConstructionHistoryID"> </a>siConstructionHistoryID		</td>
+		<td class="example">28		</td>
+		<td>
+ConstructionHistory object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siContextID"> </a>siContextID		</td>
+		<td class="example">138		</td>
+		<td>
+Context object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlPointCollectionID"> </a>siControlPointCollectionID		</td>
+		<td class="example">112		</td>
+		<td>
+ControlPointCollection object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siControlPointID"> </a>siControlPointID		</td>
+		<td class="example">14		</td>
+		<td>
+ControlPoint object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siCustomOperatorID"> </a>siCustomOperatorID		</td>
+		<td class="example">128		</td>
+		<td>
+CustomOperator object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siCustomPrimitiveID"> </a>siCustomPrimitiveID		</td>
+		<td class="example">251		</td>
+		<td>
+CustomPrimitive object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siCustomPrimitiveContextID"> </a>siCustomPrimitiveContextID		</td>
+		<td class="example">252		</td>
+		<td>
+CustomPrimitiveContext object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siCustomPropertyID"> </a>siCustomPropertyID		</td>
+		<td class="example">61		</td>
+		<td>
+CustomProperty object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siDataSourceID"> </a>siDataSourceID		</td>
+		<td class="example">104		</td>
+		<td>
+DataSource object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siDeltaID"> </a>siDeltaID		</td>
+		<td class="example">182		</td>
+		<td>
+Delta object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siDesktopID"> </a>siDesktopID		</td>
+		<td class="example">130		</td>
+		<td>
+Desktop object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siDeviceCollectionID"> </a>siDeviceCollectionID		</td>
+		<td class="example">108		</td>
+		<td>
+Device collection object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siDeviceID"> </a>siDeviceID		</td>
+		<td class="example">109		</td>
+		<td>
+Device object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siDictionaryID"> </a>siDictionaryID		</td>
+		<td class="example">29		</td>
+		<td>
+Dictionary object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siDirectedID"> </a>siDirectedID		</td>
+		<td class="example">79		</td>
+		<td>
+Directed object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siEdgeCollectionID"> </a>siEdgeCollectionID		</td>
+		<td class="example">101		</td>
+		<td>
+EdgeCollection object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siEdgeID"> </a>siEdgeID		</td>
+		<td class="example">100		</td>
+		<td>
+Edge object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siEnvelopeID"> </a>siEnvelopeID		</td>
+		<td class="example">54		</td>
+		<td>
+Envelope object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siEnvelopeWeightID"> </a>siEnvelopeWeightID		</td>
+		<td class="example">168		</td>
+		<td>
+EnvelopeWeight property object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siEventInfoID"> </a>siEventInfoID		</td>
+		<td class="example">30		</td>
+		<td>
+EventInfo object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siExpressionID"> </a>siExpressionID		</td>
+		<td class="example">49		</td>
+		<td>
+Expression object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFacetCollectionID"> </a>siFacetCollectionID		</td>
+		<td class="example">97		</td>
+		<td>
+FacetCollection object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFacetID"> </a>siFacetID		</td>
+		<td class="example">11		</td>
+		<td>
+Facet object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFactoryID"> </a>siFactoryID		</td>
+		<td class="example">158		</td>
+		<td>
+Factory object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFCurveID"> </a>siFCurveID		</td>
+		<td class="example">31		</td>
+		<td>
+FCurve object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFCurveKeyID"> </a>siFCurveKeyID		</td>
+		<td class="example">33		</td>
+		<td>
+FCurveKey object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileBrowserID"> </a>siFileBrowserID		</td>
+		<td class="example">34		</td>
+		<td>
+FileBrowser object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFileReferenceID"> </a>siFileReferenceID		</td>
+		<td class="example">171		</td>
+		<td>
+X3DObject object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFilterID"> </a>siFilterID		</td>
+		<td class="example">154		</td>
+		<td>
+Filter object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFramebufferID"> </a>siFramebufferID		</td>
+		<td class="example">189		</td>
+		<td>
+Framebuffer object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFxOperatorID"> </a>siFxOperatorID		</td>
+		<td class="example">90		</td>
+		<td>
+FxOperator object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siFxTreeID"> </a>siFxTreeID		</td>
+		<td class="example">89		</td>
+		<td>
+FxTree object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siGeometryAccessorID"> </a>siGeometryAccessorID		</td>
+		<td class="example">167		</td>
+		<td>
+Geometry accessor object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siGeometryID"> </a>siGeometryID		</td>
+		<td class="example">22		</td>
+		<td>
+Geometry object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siGraphicDriverID"> </a>siGraphicDriverID		</td>
+		<td class="example">229		</td>
+		<td>
+Graphic Driver object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siGraphicSequencerContextID"> </a>siGraphicSequencerContextID		</td>
+		<td class="example">161		</td>
+		<td>
+Graphic Sequencer Core id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siGridDataID"> </a>siGridDataID		</td>
+		<td class="example">125		</td>
+		<td>
+GridData object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siGridWidgetID"> </a>siGridWidgetID		</td>
+		<td class="example">166		</td>
+		<td>
+GridWidget object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siGroupID"> </a>siGroupID		</td>
+		<td class="example">68		</td>
+		<td>
+Group object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siHairGeometryID"> </a>siHairGeometryID		</td>
+		<td class="example">230		</td>
+		<td>
+HairGeometry object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siHairPrimitiveID"> </a>siHairPrimitiveID		</td>
+		<td class="example">174		</td>
+		<td>
+HairPrimitive object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siHardwareShaderContextID"> </a>siHardwareShaderContextID		</td>
+		<td class="example">208		</td>
+		<td>
+Hardware Shader Context Object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siHardwareSurfaceID"> </a>siHardwareSurfaceID		</td>
+		<td class="example">228		</td>
+		<td>
+HardwareSurface object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICEAttributeID"> </a>siICEAttributeID		</td>
+		<td class="example">205		</td>
+		<td>
+ICEAttribute object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICECompoundNodeID"> </a>siICECompoundNodeID		</td>
+		<td class="example">195		</td>
+		<td>
+ICECompoundNode object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICEDataModifierNodeID"> </a>siICEDataModifierNodeID		</td>
+		<td class="example">202		</td>
+		<td>
+ICEDataModifierNode object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICEDataProviderNodeID"> </a>siICEDataProviderNodeID		</td>
+		<td class="example">201		</td>
+		<td>
+ICEDataProviderNode object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeContainerID"> </a>siICENodeContainerID		</td>
+		<td class="example">198		</td>
+		<td>
+ICENodeContainer object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeContextID"> </a>siICENodeContextID		</td>
+		<td class="example">204		</td>
+		<td>
+ICENodeContext object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeDefID"> </a>siICENodeDefID		</td>
+		<td class="example">203		</td>
+		<td>
+ICENodeDef object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeID"> </a>siICENodeID		</td>
+		<td class="example">194		</td>
+		<td>
+ICENode object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeInputPortID"> </a>siICENodeInputPortID		</td>
+		<td class="example">199		</td>
+		<td>
+ICENodeInputPort object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodeOutputPortID"> </a>siICENodeOutputPortID		</td>
+		<td class="example">200		</td>
+		<td>
+ICENodeOutputPort object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICENodePortID"> </a>siICENodePortID		</td>
+		<td class="example">196		</td>
+		<td>
+ICENodePort object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siICETreeID"> </a>siICETreeID		</td>
+		<td class="example">197		</td>
+		<td>
+ICETree object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siImageClipID"> </a>siImageClipID		</td>
+		<td class="example">50		</td>
+		<td>
+ImageClip object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siImageID"> </a>siImageID		</td>
+		<td class="example">35		</td>
+		<td>
+Image object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siInputPortID"> </a>siInputPortID		</td>
+		<td class="example">38		</td>
+		<td>
+InputPort object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siJointID"> </a>siJointID		</td>
+		<td class="example">62		</td>
+		<td>
+Joint object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siKinematicsID"> </a>siKinematicsID		</td>
+		<td class="example">63		</td>
+		<td>
+Kinematics object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siKinematicStateID"> </a>siKinematicStateID		</td>
+		<td class="example">86		</td>
+		<td>
+KinematicState object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siKnotCollectionID"> </a>siKnotCollectionID		</td>
+		<td class="example">111		</td>
+		<td>
+KnotCollection object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siLayerID"> </a>siLayerID		</td>
+		<td class="example">69		</td>
+		<td>
+Layer object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siLayoutID"> </a>siLayoutID		</td>
+		<td class="example">131		</td>
+		<td>
+Layout object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siLibraryID"> </a>siLibraryID		</td>
+		<td class="example">164		</td>
+		<td>
+Library id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siLightID"> </a>siLightID		</td>
+		<td class="example">81		</td>
+		<td>
+Light object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siLightRigID"> </a>siLightRigID		</td>
+		<td class="example">85		</td>
+		<td>
+LightRigobject id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMappedItemID"> </a>siMappedItemID		</td>
+		<td class="example">36		</td>
+		<td>
+MappedItem object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMaterialID"> </a>siMaterialID		</td>
+		<td class="example">64		</td>
+		<td>
+Material object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMaterialLibraryID"> </a>siMaterialLibraryID		</td>
+		<td class="example">173		</td>
+		<td>
+MaterialLibrary id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMemoCameraID"> </a>siMemoCameraID		</td>
+		<td class="example">238		</td>
+		<td>
+MemoCamera object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMemoCameraCollectionID"> </a>siMemoCameraCollectionID		</td>
+		<td class="example">239		</td>
+		<td>
+MemoCameraCollection object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuID"> </a>siMenuID		</td>
+		<td class="example">149		</td>
+		<td>
+Menu object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuItemID"> </a>siMenuItemID		</td>
+		<td class="example">150		</td>
+		<td>
+MenuItem object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMeshBuilderID"> </a>siMeshBuilderID		</td>
+		<td class="example">169		</td>
+		<td>
+MeshBuilder object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMetaShaderRendererDefID"> </a>siMetaShaderRendererDefID		</td>
+		<td class="example">214		</td>
+		<td>
+MetaShaderRendererDef object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMixerID"> </a>siMixerID		</td>
+		<td class="example">163		</td>
+		<td>
+Mixer object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siModelID"> </a>siModelID		</td>
+		<td class="example">74		</td>
+		<td>
+Model object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siNestedFCurveID"> </a>siNestedFCurveID		</td>
+		<td class="example">32		</td>
+		<td>
+NestedFCurve object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siNullID"> </a>siNullID		</td>
+		<td class="example">82		</td>
+		<td>
+Null object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siNurbsCurveCollectionID"> </a>siNurbsCurveCollectionID		</td>
+		<td class="example">113		</td>
+		<td>
+NurbsCurveCollection object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siNurbsCurveControlPointID"> </a>siNurbsCurveControlPointID		</td>
+		<td class="example">15		</td>
+		<td>
+NurbsCurveControlPoint object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siNurbsCurveID"> </a>siNurbsCurveID		</td>
+		<td class="example">18		</td>
+		<td>
+NurbsCurve object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siNurbsCurveListControlPointID"> </a>siNurbsCurveListControlPointID		</td>
+		<td class="example">16		</td>
+		<td>
+NurbsCurveListControlPoint object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siNurbsCurveListID"> </a>siNurbsCurveListID		</td>
+		<td class="example">24		</td>
+		<td>
+NurbsCurveList object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siNurbsSampleCollectionID"> </a>siNurbsSampleCollectionID		</td>
+		<td class="example">115		</td>
+		<td>
+NurbsSampleCollection object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siNurbsSampleID"> </a>siNurbsSampleID		</td>
+		<td class="example">20		</td>
+		<td>
+NurbsSample object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siNurbsSurfaceCollectionID"> </a>siNurbsSurfaceCollectionID		</td>
+		<td class="example">114		</td>
+		<td>
+NurbsSurfaceCollection object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siNurbsSurfaceControlPointID"> </a>siNurbsSurfaceControlPointID		</td>
+		<td class="example">17		</td>
+		<td>
+NurbsSurfaceControlPoint object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siNurbsSurfaceID"> </a>siNurbsSurfaceID		</td>
+		<td class="example">12		</td>
+		<td>
+NurbsSurfaceFace object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siNurbsSurfaceMeshID"> </a>siNurbsSurfaceMeshID		</td>
+		<td class="example">23		</td>
+		<td>
+NurbsSurfaceMesh object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siObjectID"> </a>siObjectID		</td>
+		<td class="example">0		</td>
+		<td>
+Generic object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siOGLLightID"> </a>siOGLLightID		</td>
+		<td class="example">4		</td>
+		<td>
+OGLLight object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siOGLMaterialID"> </a>siOGLMaterialID		</td>
+		<td class="example">2		</td>
+		<td>
+OGLMaterial object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siOGLTextureID"> </a>siOGLTextureID		</td>
+		<td class="example">3		</td>
+		<td>
+OGLTexture object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siOperatorContextID"> </a>siOperatorContextID		</td>
+		<td class="example">178		</td>
+		<td>
+Operator context object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siOperatorID"> </a>siOperatorID		</td>
+		<td class="example">53		</td>
+		<td>
+Operator object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siOutputPortID"> </a>siOutputPortID		</td>
+		<td class="example">106		</td>
+		<td>
+OuptputPort object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siOverrideID"> </a>siOverrideID		</td>
+		<td class="example">207		</td>
+		<td>
+Override object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siParamDefID"> </a>siParamDefID		</td>
+		<td class="example">157		</td>
+		<td>
+ParamDef object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siParameterID"> </a>siParameterID		</td>
+		<td class="example">44		</td>
+		<td>
+Parameter object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siParticleAttributeID"> </a>siParticleAttributeID		</td>
+		<td class="example">124		</td>
+		<td>
+ParticleAttribute object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siParticleCloudID"> </a>siParticleCloudID		</td>
+		<td class="example">73		</td>
+		<td>
+ParticleCloud object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siParticleCloudPrimitiveID"> </a>siParticleCloudPrimitiveID		</td>
+		<td class="example">56		</td>
+		<td>
+ParticleCloudPrimitive object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siParticleID"> </a>siParticleID		</td>
+		<td class="example">118		</td>
+		<td>
+Particle object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siParticleTypeID"> </a>siParticleTypeID		</td>
+		<td class="example">123		</td>
+		<td>
+ParticleType object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPartitionID"> </a>siPartitionID		</td>
+		<td class="example">206		</td>
+		<td>
+Partition object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPassContainerID"> </a>siPassContainerID		</td>
+		<td class="example">186		</td>
+		<td>
+PassContainer object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPassID"> </a>siPassID		</td>
+		<td class="example">70		</td>
+		<td>
+Pass object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPluginID"> </a>siPluginID		</td>
+		<td class="example">151		</td>
+		<td>
+Plugin object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPluginItemID"> </a>siPluginItemID		</td>
+		<td class="example">152		</td>
+		<td>
+PluginItem object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPluginRegistrarID"> </a>siPluginRegistrarID		</td>
+		<td class="example">153		</td>
+		<td>
+PluginRegistrar object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPointCloudID"> </a>siPointCloudID		</td>
+		<td class="example">179		</td>
+		<td>
+PointCloud object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPointCloudGeometryID"> </a>siPointCloudGeometryID		</td>
+		<td class="example">231		</td>
+		<td>
+PointCloudGeometry object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPointCollectionID"> </a>siPointCollectionID		</td>
+		<td class="example">95		</td>
+		<td>
+PointCollection object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPointID"> </a>siPointID		</td>
+		<td class="example">13		</td>
+		<td>
+Point object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPointLocatorDataID"> </a>siPointLocatorDataID		</td>
+		<td class="example">176		</td>
+		<td>
+PointLocatorData object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPolygonFaceCollectionID"> </a>siPolygonFaceCollectionID		</td>
+		<td class="example">103		</td>
+		<td>
+PolygonFaceCollection object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPolygonFaceID"> </a>siPolygonFaceID		</td>
+		<td class="example">102		</td>
+		<td>
+PolygonFace object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPolygonMeshID"> </a>siPolygonMeshID		</td>
+		<td class="example">25		</td>
+		<td>
+PolygonMesh object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPolygonNodeCollectionID"> </a>siPolygonNodeCollectionID		</td>
+		<td class="example">94		</td>
+		<td>
+PolygonNodeCollection object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPolygonNodeID"> </a>siPolygonNodeID		</td>
+		<td class="example">21		</td>
+		<td>
+PolygonNode object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPortGroupID"> </a>siPortGroupID		</td>
+		<td class="example">129		</td>
+		<td>
+PortGroup object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPortID"> </a>siPortID		</td>
+		<td class="example">37		</td>
+		<td>
+Port object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPPGEventContextID"> </a>siPPGEventContextID		</td>
+		<td class="example">139		</td>
+		<td>
+PPGEventContext id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPPGItemID"> </a>siPPGItemID		</td>
+		<td class="example">121		</td>
+		<td>
+PPGItem object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPPGLayoutID"> </a>siPPGLayoutID		</td>
+		<td class="example">120		</td>
+		<td>
+PPGLayout object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPreferencesID"> </a>siPreferencesID		</td>
+		<td class="example">122		</td>
+		<td>
+Preferences object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPrimitiveID"> </a>siPrimitiveID		</td>
+		<td class="example">55		</td>
+		<td>
+Primitive object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siProgressBarID"> </a>siProgressBarID		</td>
+		<td class="example">156		</td>
+		<td>
+ProgressBar object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siProjectID"> </a>siProjectID		</td>
+		<td class="example">46		</td>
+		<td>
+Project object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siProjectItemID"> </a>siProjectItemID		</td>
+		<td class="example">47		</td>
+		<td>
+ProjectItem object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPropertyID"> </a>siPropertyID		</td>
+		<td class="example">57		</td>
+		<td>
+Property object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siProxyParameterID"> </a>siProxyParameterID		</td>
+		<td class="example">107		</td>
+		<td>
+Proxy Parameter object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siPickBufferID"> </a>siPickBufferID		</td>
+		<td class="example">237		</td>
+		<td>
+PickBuffer object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siRenderChannelID"> </a>siRenderChannelID		</td>
+		<td class="example">187		</td>
+		<td>
+RenderChannel object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siRendererContextID"> </a>siRendererContextID		</td>
+		<td class="example">190		</td>
+		<td>
+RendererContext object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siRendererID"> </a>siRendererID		</td>
+		<td class="example">191		</td>
+		<td>
+Renderer object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siRenderHairAccessorID"> </a>siRenderHairAccessorID		</td>
+		<td class="example">175		</td>
+		<td>
+RenderHairAccessor object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siRenderTreeNodeID"> </a>siRenderTreeNodeID		</td>
+		<td class="example">222		</td>
+		<td>
+RenderTreeNode object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siRigID"> </a>siRigID		</td>
+		<td class="example">83		</td>
+		<td>
+Rig object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siRigidBodyAccessorID"> </a>siRigidBodyAccessorID		</td>
+		<td class="example">180		</td>
+		<td>
+RigidBodyAccessor object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siRigidConstraintAccessorID"> </a>siRigidConstraintAccessorID		</td>
+		<td class="example">181		</td>
+		<td>
+RigidConstraintAccessor object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSampleCollectionID"> </a>siSampleCollectionID		</td>
+		<td class="example">93		</td>
+		<td>
+SampleCollection object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSampleID"> </a>siSampleID		</td>
+		<td class="example">19		</td>
+		<td>
+Sample object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSceneID"> </a>siSceneID		</td>
+		<td class="example">51		</td>
+		<td>
+Scene object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSceneItemID"> </a>siSceneItemID		</td>
+		<td class="example">66		</td>
+		<td>
+SceneItem object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSceneRenderPropertyID"> </a>siSceneRenderPropertyID		</td>
+		<td class="example">188		</td>
+		<td>
+SceneRenderProperty object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSchematicID"> </a>siSchematicID		</td>
+		<td class="example">233		</td>
+		<td>
+Schematic object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSchematicNodeID"> </a>siSchematicNodeID		</td>
+		<td class="example">232		</td>
+		<td>
+SchematicNode object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSchematicNodeCollectionID"> </a>siSchematicNodeCollectionID		</td>
+		<td class="example">234		</td>
+		<td>
+SchematicNodeCollection object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSegmentID"> </a>siSegmentID		</td>
+		<td class="example">26		</td>
+		<td>
+Segment object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSelectionID"> </a>siSelectionID		</td>
+		<td class="example">39		</td>
+		<td>
+Selection object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siShaderID"> </a>siShaderID		</td>
+		<td class="example">52		</td>
+		<td>
+Shader object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siShaderArrayItemParameterID"> </a>siShaderArrayItemParameterID		</td>
+		<td class="example">219		</td>
+		<td>
+ShaderArrayItemParameter object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siShaderArrayParamDefID"> </a>siShaderArrayParamDefID		</td>
+		<td class="example">217		</td>
+		<td>
+ShaderArrayParamDef object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siShaderArrayParameterID"> </a>siShaderArrayParameterID		</td>
+		<td class="example">220		</td>
+		<td>
+ShaderArrayParameter object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siShaderballOptionsID"> </a>siShaderballOptionsID		</td>
+		<td class="example">212		</td>
+		<td>
+ShaderballOptions object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siShaderBaseID"> </a>siShaderBaseID		</td>
+		<td class="example">223		</td>
+		<td>
+ShaderBase object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siShaderCommentID"> </a>siShaderCommentID		</td>
+		<td class="example">226		</td>
+		<td>
+ShaderComment object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siShaderCompoundID"> </a>siShaderCompoundID		</td>
+		<td class="example">225		</td>
+		<td>
+ShaderCompound object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siShaderCompoundParameterID"> </a>siShaderCompoundParameterID		</td>
+		<td class="example">221		</td>
+		<td>
+ShaderCompoundParameter object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siShaderContainerID"> </a>siShaderContainerID		</td>
+		<td class="example">224		</td>
+		<td>
+ShaderContainer object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siShaderDefID"> </a>siShaderDefID		</td>
+		<td class="example">215		</td>
+		<td>
+ShaderDef object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siShaderDefManagerID"> </a>siShaderDefManagerID		</td>
+		<td class="example">227		</td>
+		<td>
+ShaderDefManager object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siShaderParamDefID"> </a>siShaderParamDefID		</td>
+		<td class="example">210		</td>
+		<td>
+ShaderParamDef object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siShaderParamDefContainerID"> </a>siShaderParamDefContainerID		</td>
+		<td class="example">213		</td>
+		<td>
+ShaderParamDefContainer object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siShaderParamDefOptionsID"> </a>siShaderParamDefOptionsID		</td>
+		<td class="example">211		</td>
+		<td>
+ShaderParamDefOptions object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siShaderParameterID"> </a>siShaderParameterID		</td>
+		<td class="example">218		</td>
+		<td>
+ShaderParameter object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siShaderStructParamDefID"> </a>siShaderStructParamDefID		</td>
+		<td class="example">216		</td>
+		<td>
+ShaderStructParamDef object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siShapeClipID"> </a>siShapeClipID		</td>
+		<td class="example">9		</td>
+		<td>
+ShapeClip object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siShapeKeyID"> </a>siShapeKeyID		</td>
+		<td class="example">142		</td>
+		<td>
+ShapeKey object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSimulationEnvironmentID"> </a>siSimulationEnvironmentID		</td>
+		<td class="example">165		</td>
+		<td>
+SimulationEnvironment object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSIObjectID"> </a>siSIObjectID		</td>
+		<td class="example">1		</td>
+		<td>
+SIObject object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSourceID"> </a>siSourceID		</td>
+		<td class="example">143		</td>
+		<td>
+Source object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siStaticKinematicStateID"> </a>siStaticKinematicStateID		</td>
+		<td class="example">65		</td>
+		<td>
+StaticKinematicState object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siStaticSourceID"> </a>siStaticSourceID		</td>
+		<td class="example">40		</td>
+		<td>
+StaticSource object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siSubComponentID"> </a>siSubComponentID		</td>
+		<td class="example">10		</td>
+		<td>
+SubComponent object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siTextureID"> </a>siTextureID		</td>
+		<td class="example">116		</td>
+		<td>
+Texture object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siTextureLayerID"> </a>siTextureLayerID		</td>
+		<td class="example">126		</td>
+		<td>
+TextureLayer object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siTextureLayerPortID"> </a>siTextureLayerPortID		</td>
+		<td class="example">127		</td>
+		<td>
+TextureLayerPort object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siTimeControlID"> </a>siTimeControlID		</td>
+		<td class="example">144		</td>
+		<td>
+TimeControl object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siTimeTransportID"> </a>siTimeTransportID		</td>
+		<td class="example">192		</td>
+		<td>
+TimeTransport object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siTimeTransportContextID"> </a>siTimeTransportContextID		</td>
+		<td class="example">193		</td>
+		<td>
+TimeTransportContext object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siTimerEventID"> </a>siTimerEventID		</td>
+		<td class="example">185		</td>
+		<td>
+TimerEvent object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siToolContextID"> </a>siToolContextID		</td>
+		<td class="example">236		</td>
+		<td>
+ToolContext object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siTrackID"> </a>siTrackID		</td>
+		<td class="example">87		</td>
+		<td>
+Track object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siTransitionID"> </a>siTransitionID		</td>
+		<td class="example">145		</td>
+		<td>
+Transition object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siTriangleCollectionID"> </a>siTriangleCollectionID		</td>
+		<td class="example">91		</td>
+		<td>
+TriangleCollection object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siTriangleID"> </a>siTriangleID		</td>
+		<td class="example">41		</td>
+		<td>
+Triangle object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siTriangleVertexCollectionID"> </a>siTriangleVertexCollectionID		</td>
+		<td class="example">92		</td>
+		<td>
+TriangleVertexCollection object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siTriangleVertexID"> </a>siTriangleVertexID		</td>
+		<td class="example">42		</td>
+		<td>
+TriangleVertex object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIObjectID"> </a>siUIObjectID		</td>
+		<td class="example">132		</td>
+		<td>
+UIObject object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIPersistableID"> </a>siUIPersistableID		</td>
+		<td class="example">133		</td>
+		<td>
+UIPersistable object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUIToolkitID"> </a>siUIToolkitID		</td>
+		<td class="example">155		</td>
+		<td>
+UIToolkit object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUnknownClassID"> </a>siUnknownClassID		</td>
+		<td class="example">0		</td>
+		<td>
+Unknown object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUpdateContextID"> </a>siUpdateContextID		</td>
+		<td class="example">43		</td>
+		<td>
+UpdateContext object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUserDataBlobID"> </a>siUserDataBlobID		</td>
+		<td class="example">117		</td>
+		<td>
+UserDataBlob object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUserDataMapID"> </a>siUserDataMapID		</td>
+		<td class="example">88		</td>
+		<td>
+UserDataMap object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUserGroupID"> </a>siUserGroupID		</td>
+		<td class="example">71		</td>
+		<td>
+UserGroup object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siUVPropertyID"> </a>siUVPropertyID		</td>
+		<td class="example">235		</td>
+		<td>
+UVProperty property object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siValueMapID"> </a>siValueMapID		</td>
+		<td class="example">209		</td>
+		<td>
+ValueMap object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siVertexCollectionID"> </a>siVertexCollectionID		</td>
+		<td class="example">99		</td>
+		<td>
+VertexCollection object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siVertexID"> </a>siVertexID		</td>
+		<td class="example">98		</td>
+		<td>
+Vertex object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siViewContextID"> </a>siViewContextID		</td>
+		<td class="example">137		</td>
+		<td>
+X3DObject object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siViewID"> </a>siViewID		</td>
+		<td class="example">134		</td>
+		<td>
+View object id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siX3DObjectID"> </a>siX3DObjectID		</td>
+		<td class="example">72		</td>
+		<td>
+X3DObject object id.		</td>
+	</tr>
+</table>
+</div>
+
+<h3>Applies To</h3>
+<div><p><a href="#!/url=./si_om/CustomOperator.AddInputPortByClassID.html">CustomOperator.AddInputPortByClassID</a> <a href="#!/url=./si_om/CustomOperator.AddIOPortByClassID.html">CustomOperator.AddIOPortByClassID</a> <a href="#!/url=./si_om/CustomOperator.AddOutputPortByClassID.html">CustomOperator.AddOutputPortByClassID</a> <a href="#!/url=./si_om/SIObject.IsClassOf.html">SIObject.IsClassOf</a> <a href="#!/url=./si_cpp/classXSI_1_1CRef.html#GetClassID">CRef::GetClassID</a> <a href="#!/url=./si_cpp/classXSI_1_1CRef.html#IsA">CRef::IsA</a> <a href="#!/url=./si_cpp/classXSI_1_1CustomOperator.html#AddInputPortByClassID">CustomOperator::AddInputPortByClassID</a> <a href="#!/url=./si_cpp/classXSI_1_1CustomOperator.html#AddIOPortByClassID">CustomOperator::AddIOPortByClassID</a> <a href="#!/url=./si_cpp/classXSI_1_1CustomOperator.html#AddOutputPortByClassID">CustomOperator::AddOutputPortByClassID</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

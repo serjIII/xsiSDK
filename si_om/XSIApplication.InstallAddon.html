@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>XSIApplication.InstallAddon</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>XSIApplication.InstallAddon</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/XSIApplication.html">XSIApplication</a>.InstallAddon</h2>
+
+<h3>Description</h3>
+<div><p> Installs an .xsiaddon file in Softimage. An add-on file is a set of customized items (like layout, toolbar, 
+preset, etc.) that are packaged in a single file. You can package, install and uninstall an add-on 
+through the Softimage object model.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>XSIApplication.InstallAddon( String in_bszFileName, siInstallationPath in_eInstallDir, Boolean in_bBatch );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>XSIApplication.InstallAddon( FileName, [InstallDir], [NoUI] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">FileName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+File path of the add-on file to install.		</td>
+	</tr>
+	<tr>
+		<td class="name">InstallDir		</td>
+		<td><a href="#!/url=./si_om/siInstallationPath.html">siInstallationPath</a>		</td>
+		<td>
+
+		Destination directory, where the add-on is installed. <br /><br /> 
+		siUserAddonPath and siWorkgroupAddonPath are the recommended values. If 
+		siUnknownPath is specified then the add-on will be installed at the default 
+		location specified inside the add-on file.<br /><br />
+		Note: In the case of multiple workgroups, this method always installs
+		to the first workgroup in the list. 
+				<p class="cell"><span class="hilite">Default Value: </span>
+siUnknownPath			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">NoUI		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+
+		Use this optional parameter to avoid displaying the warning message boxes that
+		are shown during the installation of certain addons.  This is automatically set 
+		when running Softimage in batch mode.
+				<p class="cell"><span class="hilite">Default Value: </span>
+false			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">//
+// This example demonstrates how to install an add-on package.
+//
+// Get the first available workgroup as the add-on destination 
+var sPath = Application.InstallationPath( siWorkgroupPath );
+if ( !sPath ) {
+	// If the workgroup doesn't already exist, then add it
+	var tmppath = XSIUtils.BuildPath( Application.InstallationPath(siUserPath), "TempWorkgrp" );
+	var fso = new ActiveXObject( "Scripting.FileSystemObject" );
+	if ( !fso.FolderExists(tmppath) ) { fso.CreateFolder(tmppath); }
+	Application.AddWorkgroup( tmppath );
+	sPath = Application.InstallationPath( siWorkgroupPath );
+}
+var sHTMLName = makeHTMLPage();
+// Create the add-on package object
+var oAddOn = Application.CreateAddon();
+// Add the HTML page to the add-on package
+oAddOn.AddOtherItem( sHTMLName );
+// Save the package in the Addons directory
+sPath = XSIUtils.BuildPath( sPath, "Addons" );
+XSIUtils.EnsureFolderExists( sPath );
+var sAddOnFileName = XSIUtils.BuildPath( sPath, "myHelpPkg.xsiaddon" );
+oAddOn.Save( sAddOnFileName );
+Application.LogMessage( "Created add-on file: " + sAddOnFileName );
+// Install the add-on package containing the HTML page
+Application.InstallAddOn( sAddOnFileName, siWorkgroupAddonPath );
+// Comment out the following line if you want to see the add-on file 
+// (you will have to uninstall the add-on manually):
+Application.UnInstallAddon( sAddOnFileName );
+// **********************************
+// This function just provide the means to remove the details of 
+// creating the HTML page. 
+function makeHTMLPage()
+{
+	// Build the filename &amp; path
+	var sUserPath = Application.InstallationPath( siUserPath );
+	var sHelpFileName = XSIUtils.BuildPath( sUserPath, "Data", "HelpMe.html" );
+	// Create a standard hello world script file
+	var fso = new ActiveXObject( "Scripting.FileSystemObject" );
+	var fHWFile = fso.CreateTextFile( sHelpFileName );
+	fHWFile.WriteLine( "&lt;html&gt;" );
+	fHWFile.WriteLine( "&lt;head&gt;" );
+	fHWFile.WriteLine( "\t&lt;title&gt;Help Page for Testing Add-ons&lt;/title&gt;" );
+	fHWFile.WriteLine( "&lt;/head&gt;" );
+	fHWFile.WriteLine( "&lt;body&gt;" );
+	fHWFile.WriteLine( "\n&lt;p&gt;Help! I'm trapped inside this HTML code!&lt;/p&gt;" );
+	fHWFile.WriteLine( "&lt;/body&gt;" );
+	fHWFile.WriteLine( "&lt;/html&gt;" );
+	fHWFile.Close();
+	// Return the name of the new html page
+	return sHelpFileName;
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/XSIApplication.UnInstallAddon.html">XSIApplication.UnInstallAddon</a> <a href="#!/url=./si_om/XSIApplication.CreateAddon.html">XSIApplication.CreateAddon</a> <a href="#!/url=./si_cmds/PackageAddon.html">PackageAddon</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

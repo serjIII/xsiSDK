@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-B0C2C321-8033-4B64-A78C-078EF32EFC34" />
+      <meta name="indexterm" content="wizards: creating filters" />
+      <meta name="topic-type" content="concept" />
+      <title>Creating a Filter</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-B0C2C321-8033-4B64-A78C-078EF32EFC34"></a></span><div class="head">
+            <h1>Creating a Filter</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-1DE49B82-4190-4A3F-82C3-FE13A970F99E"></a></span> You can use a wizard to generate the code for a self-installing plug-in that contains
+               a custom filter. In addition to generating the skeleton code for the plug-in and the
+               filter, the wizard can also generate the code required to add the filter to a menu.
+            </p>
+            <div class="section"><span class="anchor_wrapper"><a name="WSC098C24645EDDE428048CE3C4F46FCA7-000F"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-17BFBD4E-FA0A-4943-9072-10C196504EF2"></a></span>To create a self-installing filter
+               </h2> <span class="anchor_wrapper"><a name="GUID-998B0DB1-0DD5-4BB2-8EEF-7F571D2B20D4"></a></span><ol type="1" start="1">
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-02BCC675-8093-4BBC-8C77-05E5B0074DFB"></a></span>Click <span class="MenuCascade" id="GUID-598C618A-2348-4169-BB20-CF11665A54BC">File</span><img src="../images/ac.menuaro.gif" /><span class="MenuCascade" id="GUID-E64AD7A3-8E4D-43C5-859C-C0B56ADE264A">Plug-ins</span> to open the Plug-in Manager.
+                     </p> 
+                     <div><span class="anchor_wrapper"><a name="GUID-F616A240-5088-4025-ADE6-7EFCA8BB8520"></a></span><div class="note-tip"><span class="label">TIP:</span> 
+                           <p><span class="anchor_wrapper"><a name="GUID-DA8E1E3D-6951-4916-9FB3-8D2263483387"></a></span>In the Tools Development Environment layout, click the <span class="MenuCascade" id="GUID-E1FBC338-FD9A-44B7-8DF4-AC6760F9E032">Plug-ins</span> tab to switch to the Plug-in Manager view.
+                           </p> 
+                        </div>
+                     </div> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-A94C86E4-962F-4EDD-BBF8-B184B5DD48BB"></a></span>Do one of the following:
+                     </p> 
+                     <ul>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-4AC5D8A5-DA2C-4335-8CEF-E4F72EA72373"></a></span>To create the filter in the User location, click <span class="MenuCascade" id="GUID-565C0051-3F8E-4F8F-834C-28FAA73570EA">File</span><img src="../images/ac.menuaro.gif" /><span class="MenuCascade" id="GUID-71196BAB-BF81-4237-A773-41364678B544">New</span><img src="../images/ac.menuaro.gif" /><span class="MenuCascade" id="GUID-13BF22E3-BC9D-4E31-BAB9-DEA8A4757125">Filter</span>.
+                           </p> 
+                        </li>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-97CD70D0-A816-4D10-BF41-6E2300EC6F62"></a></span>To create the filter in a different location (such as a workgroup or an Add-on directory),
+                              expand the location in the Plug-in Tree, right-click the <span class="MenuCascade" id="GUID-C686CDA5-52B6-41E1-99E6-D4A62FF8F3D4">Plugins</span> folder and click <span class="MenuCascade" id="GUID-764A0E44-ECE8-47BD-AAD3-A030EA5AADF0">New</span><img src="../images/ac.menuaro.gif" /><span class="MenuCascade" id="GUID-DA22C5E2-A302-42B8-8805-95D32C698D8D">Filter</span>.
+                           </p> 
+                        </li>
+                     </ul> 
+                     <p><span class="anchor_wrapper"><a name="GUID-574CB121-B17A-4138-B9F1-9DF60685F142"></a></span>The custom filter wizard appears.
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-E136CE97-9FBC-4368-8D23-C75121352F5A"></a></span>In the <span class="MenuCascade" id="GUID-022771B5-7B63-4F3A-97E9-AC2869B7E768">Name</span> box, type a name for the plug-in.
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-6E43BE15-C4E9-4308-8B66-CD5D82954135"></a></span>In the <span class="MenuCascade" id="GUID-CB855854-A41E-401A-A00F-296962B18101">File</span> name box, type a valid file name (the extension and path are added automatically
+                        by the wizard).
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-F2F3E1E8-ECBA-488D-A750-9F1DD5FFB031"></a></span>From the <span class="MenuCascade" id="GUID-D8ECD60A-53B9-4937-A314-3DB4866F1610">Coding Language</span> list, select the language you want to generate.
+                     </p> <img src="../images/GUID-D4826CD8-1AE3-4FDA-B49F-6DC99DA573A9-low.png" /> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-380FC444-C9CD-49A0-AF61-CAB34E7B4509"></a></span>In the <span class="MenuCascade" id="GUID-DD07CF7F-B5BE-42F4-903D-20AF16B41697">Filter</span><img src="../images/ac.menuaro.gif" /><span class="MenuCascade" id="GUID-13C03883-CA37-476A-AD2A-4997F43BA841">Name</span> box, you can type a different name for the filter. By default, the plug-in name is
+                        used as the name of the filter.
+                     </p> 
+                     <p><span class="anchor_wrapper"><a name="GUID-FE4D4D63-A535-4ADA-AAEC-51BB0ABDF5A7"></a></span>The first character in the user filter name should be a letter. Subsequent characters
+                        can be letters, numbers, or underscore (_) characters.
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-8458B2FF-CD61-447E-B0BD-1BC63627F205"></a></span>From the <span class="MenuCascade" id="GUID-FE063A63-B3BA-42AE-B6EC-EAD002EEAFAD">Filter</span><img src="../images/ac.menuaro.gif" /><span class="MenuCascade" id="GUID-B40A0EAE-C9DB-4C14-8677-C2D4C066E5C8">Type</span> list, select the <span class="char_link"><a href="#!/url=./files/cus_filters_WhatisaCustomFilter.htm">type of filter</a></span> you want to generate. The values in the list correspond to the <a href="#!/url=./si_om/siFilterType.html">siFilterType enum</a>.
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-86161887-8146-4CF4-8028-317592E927F7"></a></span>You can also choose to also generate any of the <span class="MenuCascade" id="GUID-5C4B6257-FBE1-43FE-BF71-D9B34C1447F9">Filter</span><img src="../images/ac.menuaro.gif" /><span class="MenuCascade" id="GUID-839126F6-0675-4BE1-ACB4-F93DB428D57A">Optional Callbacks</span> by checking any of these boxes:
+                     </p> 
+                     <ul>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-F20F8543-BDA8-490C-9C5B-800F5BC2B06F"></a></span> <a href="#!/url=./si_cmds/cb_Filter_Subset.html">Subset</a> 
+                           </p> 
+                        </li>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-1ABAF340-CBB7-467D-96FB-8B63206AF4B1"></a></span> <a href="#!/url=./si_cmds/cb_Filter_IsApplicable.html">IsApplicable</a> 
+                           </p> 
+                        </li>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-68F61725-FAF7-4E56-ACB0-577527B3B4BB"></a></span> <a href="#!/url=./si_cmds/cb_Filter_Init.html">Init</a> 
+                           </p> 
+                        </li>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-DEA92B8C-D62C-458F-BCA7-DE81AF9EDB74"></a></span> <a href="#!/url=./si_cmds/cb_Plugin_Term.html">Term</a> 
+                           </p> 
+                        </li>
+                     </ul> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-471B01A2-635A-4E4A-B3B7-7DA0BE692FE2"></a></span>Click <span class="MenuCascade" id="GUID-08B93D9C-40D7-4960-A544-BB024188A155">Generate Code</span>.
+                     </p> 
+                  </li>
+               </ol> 
+            </div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

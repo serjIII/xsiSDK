@@ -1,0 +1,438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Parse</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Parse</h1>
+         </div>
+
+<h2 class="pagehead">Parse</h2>
+
+<hr width="100%" />
+<h3>Description</h3>
+<div><p><a name="Description"> </a>	<p>
+				Populates the shader definition with information from the associated file. This is the second pass at parsing the 
+				associated file, since the <a href="#!/url=./si_cmds/cb_ShaderParser_ParseInfo.html">ParseInfo</a> callback first parses it 
+				to compile enough information to register the shader definition and populate the preset manager.
+			</p>
+	<p>
+				This callback is fired when a shader implemented with this parser's language is instantiated. 
+			</p>
+</p></div>
+
+<hr width="100%" />
+<h3>Applies To</h3>
+<div><p><a name="AppliesTo"> </a><a href="#!/url=./files/cus_shaders.htm">Custom Shaders</a></p></div>
+
+<hr width="100%" />
+<h3>Syntax</h3>
+<div><p><a name="Syntax"> </a><div class="example"><table>
+<tr>
+<td class="example"><pre class="csharp">public class &lt;plugin-item_name&gt;
+{
+	public bool Parse( Context in_context )
+	{
+		...
+	}
+}</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="cplusplus">CStatus &lt;plugin-item_name&gt;_Parse( CRef&amp; in_context ) 
+{ 
+	... 
+}</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">function &lt;plugin-item_name&gt;_Parse( in_context ) 
+{ 
+	... 
+}</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">def &lt;plugin-item_name&gt;_Parse( in_context ):
+	...</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">Function &lt;plugin-item_name&gt;_Parse( in_context )
+	...
+End Function</pre></td></tr>
+</table>
+</div><div class="example"><table>
+<tr>
+<td class="example"><pre class="perlscript">sub &lt;plugin-item_name&gt;_Parse 
+{ 
+	my $in_context = shift; 
+}</pre></td></tr>
+</table>
+</div>	<p><span style="font-family: courier, monospace;">&lt;plugin-item-name&gt;</span> is the parser name specified in the call to 
+				<a href="#!/url=./si_om/PluginRegistrar.RegisterShaderLanguageParser.html">PluginRegistrar.RegisterShaderLanguageParser</a> with any spaces converted to underscores. For example, if you 
+				register a parser in a plug-in called <span style="font-family: courier, monospace;">"My Parser"</span>, the callback function names 
+				start with <span style="font-family: courier, monospace;">"My_Parser"</span>. 
+			</p>
+</p></div>
+
+<hr width="100%" />
+<h3>Parameters</h3>
+<div><p><a name="Parameters"> </a>	<table>		<tr>			<th>Parameter</th>
+			<th>Language</th>
+			<th>Type</th>
+			<th>Description</th>
+</tr>
+		<tr>			<td class="name">in_context</td>
+			<td>Scripting and C#</td>
+			<td><a href="#!/url=./si_om/Context.html">Context</a></td>
+			<td><a href="#!/url=./si_om/Context.GetAttribute.html">Context.GetAttribute</a>("Definition") returns the <a href="#!/url=./si_om/ShaderDef.html">ShaderDef</a>. </td>
+</tr>
+		<tr>			<td class="name"></td>
+			<td>C++</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1CRef.html">CRef</a>& </td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1Context.html#GetAttribute">Context::GetAttribute</a>("Definition") 
+						returns a reference to the <a href="#!/url=./si_cpp/classXSI_1_1ShaderDef.html">ShaderDef</a>.
+					</td>
+</tr>
+</table>
+</p></div>
+
+<hr width="100%" />
+<h3>Context Attributes</h3>
+<div><p><a name="ContextAttributes"> </a><a name="ContextAttributes_ShaderParse"></a>	<table>		<tr>			<th>Attribute</th>
+			<th>Get/Set</th>
+			<th>Description</th>
+</tr>
+		<tr>			<td class="example">Filename</td>
+			<td>Sets a <a href="#!/url=./files/String.htm">String</a> or <a href="#!/url=./si_cpp/classXSI_1_1CString.html">CString</a></td>
+			<td>The full path to the file to pre-parse.</td>
+</tr>
+		<tr>			<td class="example">Definition</td>
+			<td>Returns or sets a <a href="#!/url=./si_om/ShaderDef.html">ShaderDef</a></td>
+			<td>The shader definition to populate/query.</td>
+</tr>
+		<tr>			<td class="example">Errors</td>
+			<td>Returns a <a href="#!/url=./files/String.htm">String</a> or <a href="#!/url=./si_cpp/classXSI_1_1CString.html">CString</a></td>
+			<td>The parser can output parse errors.</td>
+</tr>
+		<tr>			<td class="example">Warnings</td>
+			<td>Returns a <a href="#!/url=./files/String.htm">String</a> or <a href="#!/url=./si_cpp/classXSI_1_1CString.html">CString</a></td>
+			<td>The parser can output parse warnings.</td>
+</tr>
+</table>
+</p></div>
+
+<hr width="100%" />
+<h3>Example</h3>
+<div><p><a name="Examples"> </a><div class="example"><table>
+<tr>
+<td class="example"><pre class="cplusplus">SICALLBACK UtShaderLanguageParser_Parse( CRef&amp; in_ctxt  )
+{
+	XSI::Application app;
+	XSI::Factory fact = app.GetFactory();
+
+	/*	For this example, we use a very simple format to define the shader.
+		First line represents the prog id.
+		Following lines have this format:
+			Type space Input space Texturable space PortName
+			color|float|boolean|integer|vector2|vector3|vector4 in|out on|off $PortName
+		Until a line with a single dot is found.
+		Then, 2 strings separated by a space give the MR function name and library.			*/
+	XSI::Context ctxt(in_ctxt);
+	XSI::CString strFilename = ctxt.GetAttribute( L"FileName" );
+	XSI::ShaderDef shaderDef = ctxt.GetAttribute( L"Definition" );
+
+	// We'll just check if our user attribute is there
+	{
+		XSI::CValue valDune;
+		valDune = shaderDef.GetAttributes().GetAttribute( L"{F2EF07FE-1B57-4245-BF08-F5556212BFDF}" );
+		assert( !valDune.IsEmpty() );
+	}
+
+	std::ifstream in( strFilename.GetAsciiString() );
+	if(!in) 
+	{
+		ctxt.PutAttribute( L"Errors", L"Cannot open file: " + strFilename + L"\n" );
+		return CStatus::Fail;
+	}
+
+	char buf[255];
+
+	// Skip First Line
+	in.getline( buf, 255 );
+
+	XSI::ShaderParamDefOptions optTexturableInput = fact.CreateShaderParamDefOptions();
+	optTexturableInput.SetTexturable(true);
+
+	// Port Defs 
+	XSI::ShaderStructParamDef currentStructDef;
+	while( in.getline( buf, 255 ).eof()==false )
+	{
+		if( strlen( buf ) &gt; 0 )
+		{
+			CSIString str(buf);
+			std::vector&lt;CSIString&gt; tokens;
+			str.Split( L" ", tokens );
+
+			// Strip the enum tokens
+			XSI::CValue valEnumValues;
+			{
+				CSIString strEnumValues;
+				std::vector&lt;CSIString&gt;::iterator itEraseStart = tokens.end();
+				bool bStartedEnum=false;
+				for( std::vector&lt;CSIString&gt;::iterator it=tokens.begin(); it!=tokens.end(); ++it )
+				{
+					// Skip the enum token
+					if( *it == L"enum" )
+					{
+						
+						itEraseStart = it;
+						bStartedEnum = true;
+					}
+					// Gather the enum tokens and remove them from the token list
+					else if( bStartedEnum )
+					{
+						
+						std::vector&lt;CSIString&gt; enumTokens;
+						it-&gt;Split( L"=", enumTokens );
+						if( enumTokens.size() == 2 )
+						{
+							//Replace '_' by ' '
+							for( ULONG i=0; i&lt;enumTokens[0].Length(); ++i )
+							{
+								if( ((LPCWSTR)enumTokens[0])[i] == L'_' )
+								{
+									enumTokens[0].SetAt( i, L' ' );
+								}
+							}
+
+							strEnumValues += enumTokens[0];
+							strEnumValues += L",";
+							strEnumValues += enumTokens[1];
+							strEnumValues += L";";
+						}
+					}
+				}
+			
+				if( bStartedEnum )
+				{
+					if( itEraseStart!=tokens.end() )
+						tokens.erase( itEraseStart, tokens.end() );
+
+					if( !strEnumValues.IsEmpty() )
+					{
+						valEnumValues = (LPCWSTR)strEnumValues;
+					}
+				}
+			}
+			
+
+			if( tokens.size()==1  )
+			{
+				if( str==L"." )
+					break;
+				else if( str==L"endstruct")
+					currentStructDef=CRef();
+			}
+			else if( tokens.size()==4 )
+			{
+				XSI::CString strParamName = (LPCWSTR)tokens[3];
+				
+				CSIString strType = tokens[0];
+
+				bool bIsInput= tokens[1]==L"in";
+				bool bTexturable= tokens[2]==L"on";
+				bool bIsArray =false;
+
+				if( strType.Right(2) == L"[]" )
+				{
+					bIsArray = true;
+					strType.TruncateRight(2);
+				}
+				
+				XSI::siShaderParameterType eType = siScalarParameterType;
+				if( strType == L"color"  )
+					eType = siColorParameterType;
+				if( strType == L"float" )
+					eType = siScalarParameterType;
+				else if( strType == L"vector2" )
+					eType = siVector2ParameterType;
+				else if( strType == L"vector3" )
+					eType = siVectorParameterType;
+				else if( strType == L"vector4" )
+					eType = siVector4ParameterType;
+				else if( strType == L"boolean" )
+					eType = siBooleanParameterType;
+				else if( strType == L"integer" )
+					eType = siIntegerParameterType;
+				else if( strType == L"reference" )
+					eType = siReferenceParameterType;
+				else if ( strType == L"matrix4")
+					eType = siMatrixParameterType;
+				else if ( strType == L"matrix3")
+					eType = siMatrix3ParameterType;
+				else if ( strType == L"string")
+					eType = siStringParameterType;
+				else if ( strType == L"quaternion")
+					eType = siQuaternionParameterType;
+				else if ( strType == L"fcurve")
+					eType = siProfileCurveParameterType;
+				else if ( strType == L"gradient")
+					eType = siGradientParameterType;
+				else if ( strType == L"texture")
+					eType = siTextureParameterType;
+				else if ( strType == L"tspace")
+					eType = siTextureSpaceParameterType;
+				else if ( strType == L"struct" &amp;&amp; !currentStructDef.IsValid() )
+					eType = siStructParameterType;
+
+				// Now add the port.
+				XSI::ShaderParamDef paramDef;
+
+				bTexturable &amp;= bIsInput;
+
+				XSI::ShaderParamDefContainer pdefContainer;
+				if( currentStructDef.IsValid() )
+					pdefContainer = currentStructDef.GetSubParamDefs();
+				else if( bIsInput )
+					pdefContainer = shaderDef.GetInputParamDefs();
+				else
+					pdefContainer = shaderDef.GetOutputParamDefs();
+
+
+				if( !bIsArray )
+				{
+					paramDef = pdefContainer.AddParamDef( strParamName, eType, bTexturable ? optTexturableInput :CRef() );
+
+					if( eType == siStructParameterType )
+					{
+						currentStructDef = paramDef;
+					}
+				}
+				else
+				{
+					paramDef = pdefContainer.AddArrayParamDef( strParamName, eType, bTexturable ? optTexturableInput :CRef() );
+
+					XSI::ShaderArrayParamDef arrayDef = paramDef;
+					
+					XSI::ShaderParamDef itemDef = arrayDef.GetArrayItemDef();
+					
+					if( eType == siStructParameterType )
+					{
+						currentStructDef = itemDef;
+					}
+				}
+
+				// Set the enum values
+				if( !valEnumValues.IsEmpty() )
+					paramDef.GetAttributes().SetAttribute( L"PPGPortEnumValues", valEnumValues );
+				
+				// Set tspace filter
+				if( strType==L"tspace" )
+				{
+					paramDef.GetAttributes().SetAttribute( siPropertyFilterAttribute, (LONG)siUVPropertyFilter );
+				}
+			}
+		}
+	}
+
+	if( in.getline( buf, 255 ).eof()==true )
+	{
+		CSIString str(buf);
+		std::vector&lt;CSIString&gt; tokens;
+		str.Split( L" ", tokens );
+		
+		// Fill MR MetaShaderDef
+		if( tokens.size()==2 || tokens.size()==3 )
+		{
+			// Texture type can connect to anything.
+			shaderDef.AddType( L"texture" );
+
+			XSI::MetaShaderRendererDef rendererDef = shaderDef.AddRendererDef( L"Mental Ray");
+			rendererDef.PutSymbolName( (LPCWSTR)tokens[0] );
+			rendererDef.PutCodePath( (LPCWSTR)tokens[1] );
+
+			CValue valVersion;
+
+			if( tokens.size()==2 )
+			{
+				valVersion=(LONG)1;
+			}
+			else
+			{
+				valVersion = (LPCWSTR)tokens[2];
+				valVersion.ChangeType( XSI::CValue::siInt8 );
+			}
+
+			XSI::AttributeMap rendererOptions = rendererDef.GetRendererOptions();
+			rendererOptions.SetAttribute( L"version", valVersion );
+
+			// Hardcoded options by shader types.
+			if( tokens[0] == L"sib_uvwgen" )
+			{
+				rendererOptions.SetAttribute( L"derivative1", L"on" );
+				rendererOptions.SetAttribute( L"derivative2", L"on" );
+			}
+		}
+		else
+		{
+			ctxt.PutAttribute( L"Errors", L"Cannot find the DLL Code Section.\n" );
+			in.close();
+			return CStatus::Fail;
+		}
+	}
+	else
+	{
+		ctxt.PutAttribute( L"Errors", L"Cannot find the DLL Code Section.\n" );
+		in.close();
+		return CStatus::Fail;
+	}
+	
+	in.close();
+	return CStatus::OK;
+}</pre></td></tr>
+</table>
+</div></p></div>
+
+<hr width="100%" />
+<h3>See Also</h3>
+<div><p><a name="SeeAlso"> </a><ul>
+	<li><a href="#!/url=./si_om/PluginRegistrar.RegisterShaderLanguageParser.html">PluginRegistrar.RegisterShaderLanguageParser</a></li>
+	<li><a href="#!/url=./si_cmds/cb_ShaderParser_ParseInfo.html">ParseInfo</a></li>
+	<li><a href="#!/url=./si_cmds/cb_ShaderParser_QueryParserSettings.html">QueryParserSettings</a></li>
+	<li><a href="#!/url=./si_cmds/callbacks.html">Shader Parser Callbacks</a></li>
+</ul>
+</p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

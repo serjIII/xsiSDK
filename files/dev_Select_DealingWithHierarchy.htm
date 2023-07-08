@@ -1,0 +1,437 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-0B1FC90B-4298-41FF-AE0A-B43DF3D31C32" />
+      <meta name="topic-type" content="concept" />
+      <title>Dealing with Hierarchy</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ reflinkdata.push(["set", "si_cpp/group__RenderMapDefine.html#ga793ad1cfa149967fe4b97fc66251b831", "C++ API Reference", "../"]); 
+</script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-0B1FC90B-4298-41FF-AE0A-B43DF3D31C32"></a></span><div class="head">
+            <h1>Dealing with Hierarchy</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-5CC3E595-AD43-4AD4-952E-D1C66AB2D2CC"></a></span>Selection recognizes four different levels of object hierarchy, or <em class="mild">selection modes</em>. Selection modes are important for certain operations (such as applying operators),
+               as they change the scope of these operations: 
+            </p><span class="anchor_wrapper"><a name="UL_772824BE2DA04155B4CAB86B41B9F15C"></a></span><ul>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-7818F43B-5FC8-4B02-9F6F-F8751B9AB2D2"></a></span> <em class="strong">Node:</em> the specified 3d object is selected and subsequent operations are performed on only
+                     on that object. 
+                  </p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-9695F2C9-FD4A-4AE9-A3D6-0BEFB717E164"></a></span> <em class="strong">Branch:</em> the specified 3d object is selected and subsequent operations are performed on the
+                     specified 3d object as well as its children. 
+                  </p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-436FE38C-78AF-43BB-B820-51263B78141B"></a></span> <em class="strong">Tree:</em> the highest 3D object in the hierarchy under the specified 3D object's model is selected
+                     and subsequent operations are performed on the newly selected object as well as its
+                     children. 
+                  </p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-07C242DE-8631-4FB6-A009-515E5EC6425B"></a></span> <em class="strong">Model:</em> the model containing the specified 3D object is selected and subsequent operations
+                     are performed on the newly selected object as well as its children. 
+                  </p> 
+               </li>
+            </ul>
+            <div><span class="anchor_wrapper"><a name="GUID-D64519F0-4CD0-4641-9AA3-54E77A879248"></a></span><div class="note-note"><span class="label">NOTE:</span> 
+                  <p><span class="anchor_wrapper"><a name="GUID-1039606D-52FD-4583-9961-52EAEF875BC7"></a></span>For general information about hierarchy selection in Softimage, see Selecting Objects
+                     in a Hierarchy in the Softimage User's guide. 
+                  </p> 
+               </div>
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSBAD267DAFDEB0A4CB722B5BE63CEBF6C-0023"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-FA1B4A78-A2D3-4702-8D99-090B2EED788F"></a></span>Specifying Hierarchy while Selecting
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-E30F2CBF-A768-4269-899C-3FE246ED1BDE"></a></span>Both the <a href="#!/url=./si_cmds/SelectObj.html">SelectObj</a> command or the <a href="#!/url=./si_om/Selection.Add.html">Selection.Add</a> or Selection::Add method provide a parameter which allows you to specify one of the
+                  hierarchical modes: 
+               </p> <span class="anchor_wrapper"><a name="UL_A0D9CD7BE4DB41B1BF1ED8416C9E4E9D"></a></span><ul>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-FE7551BF-6D4D-4C3B-9245-5EA84431F99A"></a></span> <span class="char_link"><a href="#!/url=./files/dev_Select_DealingWithHierarchy.htm#WSBAD267DAFDEB0A4CB722B5BE63CEBF6C-0029">JScript Example: Hierarchical selection with the SelectObj command</a></span> 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-98B4E5AD-1A3E-49C5-B5DB-0307062DC288"></a></span> <span class="char_link"><a href="#!/url=./files/dev_Select_DealingWithHierarchy.htm#WSBAD267DAFDEB0A4CB722B5BE63CEBF6C-002A">Python Example: Hierarchical selection with the Selection.Add method</a></span> 
+                     </p> 
+                  </li>
+               </ul> 
+               <div><span class="anchor_wrapper"><a name="GUID-9C3E16C1-629C-46EF-97E2-0B2CD7F6D979"></a></span><div class="note-note"><span class="label">NOTE:</span> 
+                     <p><span class="anchor_wrapper"><a name="GUID-75A368BD-AB9E-4A0D-A502-CE4E7A1D3FC6"></a></span>There are several other commands which support the hierarchical keywords: <a href="#!/url=./si_cmds/AddToSelection.html">AddToSelection</a>, <a href="#!/url=./si_cmds/ToggleSelection.html">ToggleSelection</a>, <a href="#!/url=./si_cmds/SelectNeighborObj.html">SelectNeighborObj</a>. 
+                     </p> 
+                     <p><span class="anchor_wrapper"><a name="GUID-0A43ED2F-FA88-40D0-90CC-88E77E77D4C3"></a></span>There are also a few convenience commands which you can use to specify a hierarchical
+                        selection: <a href="#!/url=./si_cmds/SelectBranch.html">SelectBranch</a>, <a href="#!/url=./si_cmds/SelectTree.html">SelectTree</a>, <a href="#!/url=./si_cmds/SelectModel.html">SelectModel</a>. 
+                     </p> 
+                  </div>
+               </div> 
+               <div><span class="anchor_wrapper"><a name="GUID-0BE9845A-6436-4946-B1F3-B2C616376AF6"></a></span><div class="note-tip"><span class="label">TIP:</span> 
+                     <p><span class="anchor_wrapper"><a name="GUID-B2C687F3-5BCB-4700-A66D-DB4DAD23D61C"></a></span>There is also another way to specify whether an item is branch-selected, independent
+                        of the selection: 
+                     </p> <span class="anchor_wrapper"><a name="UL_97AA3B03E65F4CF5ADA52A53648557A5"></a></span><ul>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-CE613F4C-CB85-42D3-9898-EBF5D1CE35AA"></a></span>When running a command that takes a <span class="char_link"><a href="#!/url=./files/objectexpr.htm">string expression</a></span> to identify an object, prefix its name with <span class="code" translate="no">"B:"</span>. See <span class="char_link"><a href="#!/url=./files/dev_Select_DealingWithHierarchy.htm#WSBAD267DAFDEB0A4CB722B5BE63CEBF6C-002B">VBScript Example: Deleting a null in Branch</a></span> for an example using this technique. 
+                           </p> 
+                        </li>
+                     </ul> 
+                  </div>
+               </div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSBAD267DAFDEB0A4CB722B5BE63CEBF6C-0024"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-8038E96A-D842-45F5-814C-3DAF648B2354"></a></span>Deleting Objects with Hierarchy
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-2C524DDA-F401-4523-81F5-787048FF2A9D"></a></span>Most of the time deleting objects is a simple matter of passing the name of object
+                  to the <a href="#!/url=./si_cmds/DeleteObj.html">DeleteObj</a> command. But if the object contains other 3D object(s), you need to follow special
+                  procedures: 
+               </p> <span class="anchor_wrapper"><a name="UL_065A6FE627934C408FD95E8DF9AA2893"></a></span><ul>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-61131D8E-45DC-4A6E-931D-69C4E6263E85"></a></span>If the object you want to delete is a model or a null, you must branch-delete it in
+                        order to remove it and its children. If you don't branch-delete the model or null,
+                        nothing happens. 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-6F91D790-D00B-4F77-A629-D34C2126B55F"></a></span>If the object you want to delete is any other 3D object (sphere, cone, etc.) and you
+                        branch-delete it, the object and all contained nodes are removed. If you node-delete
+                        it, the object is removed and replaced by a null with the same name (in order to preserve
+                        the hierarchy for the contained nodes. 
+                     </p> 
+                  </li>
+               </ul> 
+               <p><span class="anchor_wrapper"><a name="GUID-BFE9A5B4-E987-41D3-92B3-8861A7A5F860"></a></span>To branch-delete an object you must either select it in branch and run the <a href="#!/url=./si_cmds/DeleteObj.html">DeleteObj</a> command without any arguments or use the <span class="code" translate="no">"B:"</span> branch prefix with the name of the object to delete. For example: 
+               </p> 
+               <div class="section"><span class="anchor_wrapper"><a name="WSBAD267DAFDEB0A4CB722B5BE63CEBF6C-0025"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-233A0DA7-3DBB-4B4F-9EE5-ABB2FCA529EB"></a></span>JScript Example: Deleting a Model (Node vs. Branch)
+                  </h3> 
+                  <div class="codeBlock"><pre class="prettyprint">
+// Create a simple model containing a sphere
+NewScene(null, false);
+var sph = CreatePrim("Sphere", "MeshSurface");
+var mdl = CreateModel(sph, "LocalModel")(0);
+Application.LogMessage(Application.ActiveSceneRoot.Models.GetAsText());
+// INFO : LocalModel
+
+// First node-delete it (nothing happens)
+DeleteObj(mdl);
+Application.LogMessage(Application.ActiveSceneRoot.Models.GetAsText());
+// INFO : LocalModel
+
+// Then try branch-deleting it (it is removed)
+SelectObj(mdl, "BRANCH")// models must be branch-selected when deleting
+DeleteObj();
+Application.LogMessage(Application.ActiveSceneRoot.Models.GetAsText());
+// INFO :
+</pre></div> 
+                  <div><span class="anchor_wrapper"><a name="GUID-DAF6F098-4CFE-4281-B903-1E49B3004EE1"></a></span><div class="note-note"><span class="label">NOTE:</span> 
+                        <p><span class="anchor_wrapper"><a name="GUID-18550BBA-BABC-469E-A652-A69FF0A44209"></a></span>For an example demonstrating how to use the <span class="code" translate="no">"B:"</span> prefix with the <a href="#!/url=./si_cmds/DeleteObj.html">DeleteObj</a> command, see <span class="char_link"><a href="#!/url=./files/dev_Select_DealingWithHierarchy.htm#WSBAD267DAFDEB0A4CB722B5BE63CEBF6C-002B">VBScript Example: Deleting a null in Branch</a></span>. 
+                        </p> 
+                     </div>
+                  </div> 
+               </div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSBAD267DAFDEB0A4CB722B5BE63CEBF6C-0026"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-CB971E1F-819C-4016-ABFE-BEBE950ACBE5"></a></span>Testing the Selection for Hierarchy
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-CA2E0374-F1DF-4D3C-BBB0-F4C50E61B53D"></a></span>Every 3d object stores its own <a href="#!/url=./si_om/ProjectItem.BranchFlag.html">ProjectItem.BranchFlag</a> or ProjectItem::GetBranchFlag that remembers whether or not the object is node-selected
+                  or not. In other words, if the object is selected in branch, tree, or model, the branch
+                  flag is set to <span class="code" translate="no">1</span>. If the object is node-selected only, the branch flag is set to <span class="code" translate="no">0</span>. 
+               </p> 
+               <div><span class="anchor_wrapper"><a name="GUID-89681D70-8378-49EC-B439-97B142D881C9"></a></span><div class="note-important"><span class="label">IMPORTANT:</span> 
+                     <p><span class="anchor_wrapper"><a name="GUID-1E43C9EE-3D1F-489E-A841-7CABDE78359C"></a></span>Remember that parameters and compound properties cannot be selected at all: their
+                        owning 3dobject is selected and they are considered to be marked. In the SDK, parameters
+                        derive from the <a href="#!/url=./si_om/SIObject.html">SIObject</a> or <a href="#!/url=./si_cpp/classXSI_1_1SIObject.html">SIObject</a> class, but it is the <a href="#!/url=./si_om/ProjectItem.html">ProjectItem</a> or <a href="#!/url=./si_cpp/classXSI_1_1ProjectItem.html">ProjectItem</a> class which implements the <a href="#!/url=./si_om/ProjectItem.BranchFlag.html">ProjectItem.BranchFlag</a> or ProjectItem::GetBranchFlag property. 
+                     </p> 
+                  </div>
+               </div> 
+               <p><span class="anchor_wrapper"><a name="GUID-1254BA69-58A2-4DB5-BDC2-1E20D7C9CF5A"></a></span>For a demonstration of testing the selection for hierarchy in Python, see <span class="char_link"><a href="#!/url=./files/dev_Select_DealingWithHierarchy.htm#WSBAD267DAFDEB0A4CB722B5BE63CEBF6C-002C">Python Example: Testing selected items for Hierarchy</a></span>. 
+               </p> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSBAD267DAFDEB0A4CB722B5BE63CEBF6C-0027"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-AA895950-102A-40DC-9B67-DDDCD599EBAD"></a></span>Hierarchy and SubComponents
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-30A01098-7799-4BA3-9E23-625F665B372F"></a></span>Points, edges, polygons, etc. do not support any hierarchical modes because they are
+                  individual SubComponents. Hierarchy is really only important in terms of operations
+                  that work on scene items, such as applying operators in branch. 
+               </p> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSBAD267DAFDEB0A4CB722B5BE63CEBF6C-0028"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-ACE05304-3107-4D02-AEE1-2855DDEA2EB6"></a></span>Examples
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-5D387AA0-AC23-4053-A192-F94E7A6157A4"></a></span>The following examples are available: 
+               </p> <span class="anchor_wrapper"><a name="UL_C14B65CE247044F4A92C894B48142A4A"></a></span><ul>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-C80F5E15-A4F1-46A6-8B31-E5F805CE8E7B"></a></span> <span class="char_link"><a href="#!/url=./files/dev_Select_DealingWithHierarchy.htm#WSBAD267DAFDEB0A4CB722B5BE63CEBF6C-0029">JScript Example: Hierarchical selection with the SelectObj command</a></span> 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-199B27EE-3801-4B24-ACDA-0232492D772E"></a></span> <span class="char_link"><a href="#!/url=./files/dev_Select_DealingWithHierarchy.htm#WSBAD267DAFDEB0A4CB722B5BE63CEBF6C-002A">Python Example: Hierarchical selection with the Selection.Add method</a></span> 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-506F7851-58FE-4B91-AE04-73065A36728E"></a></span> <span class="char_link"><a href="#!/url=./files/dev_Select_DealingWithHierarchy.htm#WSBAD267DAFDEB0A4CB722B5BE63CEBF6C-0025">JScript Example: Deleting a Model (Node vs. Branch)</a></span> 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-9D47B9CB-659F-43D5-A465-B6A2ADEBBEF6"></a></span> <span class="char_link"><a href="#!/url=./files/dev_Select_DealingWithHierarchy.htm#WSBAD267DAFDEB0A4CB722B5BE63CEBF6C-002B">VBScript Example: Deleting a null in Branch</a></span> 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-9B900774-B154-4CF7-B85D-D3F8E327FB15"></a></span> <span class="char_link"><a href="#!/url=./files/dev_Select_DealingWithHierarchy.htm#WSBAD267DAFDEB0A4CB722B5BE63CEBF6C-002C">Python Example: Testing selected items for Hierarchy</a></span> 
+                     </p> 
+                  </li>
+               </ul> 
+               <div class="section"><span class="anchor_wrapper"><a name="WSBAD267DAFDEB0A4CB722B5BE63CEBF6C-0029"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-A7D9D48C-0853-4FC7-80C1-5EF311BF663E"></a></span>JScript Example: Hierarchical selection with the SelectObj command
+                  </h3> 
+                  <p><span class="anchor_wrapper"><a name="GUID-60A405AF-5739-44F3-8091-511DEA86CC64"></a></span>This example demonstrates how to use the <a href="#!/url=./si_cmds/SelectObj.html">SelectObj</a> command to select an object in different hierchical modes: 
+                  </p> 
+                  <div class="codeBlock"><pre class="prettyprint">
+// Set up a scene with lots of hierarchy 
+SetUpScene();
+
+// Try the different modes with the SelectObj command
+
+SelectObj("Herman.Larm", "NODE");
+Application.LogMessage(Selection.GetAsText());
+// INFO : Herman.LArm
+
+SelectObj("Herman.Larm", "BRANCH");
+Application.LogMessage(Selection.GetAsText());
+// INFO : Herman.LArm
+
+SelectObj("Herman.Larm", "TREE");
+Application.LogMessage(Selection.GetAsText());
+// INFO : Herman.Arms
+
+SelectObj("Herman.Larm", "MODEL");
+Application.LogMessage(Selection.GetAsText());
+// INFO : Herman
+
+
+// --------------------------
+//	Convenience function
+//
+function SetUpScene()
+{
+	NewScene(null, false);
+
+	// Topmost level
+	CreateModel("", "Herman");
+
+	// General body parts
+	GetPrim("Null", "Head", "Herman");
+	GetPrim("Null", "Chest", "Herman");
+	GetPrim("Null", "Arms", "Herman");
+	GetPrim("Null", "Torso", "Herman");
+	GetPrim("Null", "Legs", "Herman");
+
+	// Individual body parts
+	GetPrim("Null", "LArm", "Herman.Arms");
+	GetPrim("Null", "RArm", "Herman.Arms");
+
+	// Specific body parts
+	CreatePrim("Sphere", "MeshSurface", "Bicep", "Herman.Larm");
+	Scale("Herman.Bicep", 0.35, 1, 0.35, siAbsolute, siPivot, siObj, siXZ);
+}</pre></div> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WSBAD267DAFDEB0A4CB722B5BE63CEBF6C-002A"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-02982CA0-8996-4166-9634-C34152F13C13"></a></span>Python Example: Hierarchical selection with the Selection.Add method
+                  </h3> 
+                  <p><span class="anchor_wrapper"><a name="GUID-161B6A44-4ADB-4213-B598-5F08B178B59A"></a></span>You could also use the <a href="#!/url=./si_om/siSelectMode.html">siSelectMode</a> values with <a href="#!/url=./si_om/Selection.Add.html">Selection.Add</a> or Selection::Add instead of the <a href="#!/url=./si_cmds/SelectObj.html">SelectObj</a> command: 
+                  </p> 
+                  <div class="codeBlock"><pre class="prettyprint">
+from win32com.client import constants as xsi
+app = Application
+
+# --------------------------
+#	Convenience function
+#
+def SetUpScene() :
+	Application.NewScene("", 0)
+
+	# Topmost level
+	Application.CreateModel("", "Herman")
+
+	# General body parts
+	Application.GetPrim("Null", "Head", "Herman")
+	Application.GetPrim("Null", "Chest", "Herman")
+	Application.GetPrim("Null", "Arms", "Herman")
+	Application.GetPrim("Null", "Torso", "Herman")
+	Application.GetPrim("Null", "Legs", "Herman")
+
+	# Individual body parts
+	oRefObj = app.GetPrim("Null", "LArm", "Herman.Arms")
+	Application.GetPrim("Null", "RArm", "Herman.Arms")
+
+	# Specific body parts
+	Application.CreatePrim("Sphere", "MeshSurface", "Bicep", "Herman.Larm")
+	Application.Scale("Herman.Bicep", 0.35, 1, 0.35, "siAbsolute", "siPivot", "siObj", "siXZ")
+	
+	return oRefObj
+
+
+# --------------------------
+#	Hierarchical selection
+#
+# Set up a scene with lots of hierarchy 
+o3DSceneItem = SetUpScene()
+
+# Try the different modes with the Selection.Add method
+oSel = app.Selection
+
+oSel.Clear()
+oSel.Add(o3DSceneItem, xsi.siSelectNode)
+app.LogMessage(oSel.GetAsText())
+# INFO : Herman.LArm
+
+oSel.Clear()
+oSel.Add(o3DSceneItem, xsi.siSelectBranch)
+app.LogMessage(oSel.GetAsText())
+# INFO : Herman.LArm
+
+oSel.Clear()
+oSel.Add(o3DSceneItem, xsi.siSelectTree)
+app.LogMessage(oSel.GetAsText())
+# INFO : Herman.Arms
+
+oSel.Clear()
+oSel.Add(o3DSceneItem, xsi.siSelectModel)
+app.LogMessage(oSel.GetAsText())
+# INFO : Herman
+</pre></div> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WSBAD267DAFDEB0A4CB722B5BE63CEBF6C-002B"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-C3BFE98D-31C6-4919-8E53-DA136520EBD7"></a></span>VBScript Example: Deleting a null in Branch
+                  </h3> 
+                  <p><span class="anchor_wrapper"><a name="GUID-77F6A65F-155E-4A15-A3F3-6FE694ADF640"></a></span>This example demonstrates how to delete an object and all its children by prefixing
+                     the object's string expression with the <span class="code" translate="no">"B:"</span> branch designation: 
+                  </p> 
+                  <div class="codeBlock"><pre class="prettyprint">
+<a href="javascript:void(0)" data="set" class="a_multireflink">set</a> app = Application
+NewScene , false
+
+GetPrim "Null", "top"
+GetPrim "Null", "middle_1", "top"
+GetPrim "Null", "middle_2", "top"
+GetPrim "Null", "middle_3", "top"
+GetPrim "Null", "mid_2_bottom_1", "middle_2"
+GetPrim "Null", "way_low", "mid_2_bottom_1"
+GetPrim "Null", "mid_2_bottom_2", "middle_2"
+GetPrim "Null", "mid_3_bottom", "middle_3"
+
+SelectAll
+app.LogMessage "There are currently " &amp; app.Selection.Count &amp; " item(s) selected."
+for each sel_item in app.Selection
+	app.LogMessage sel_item.Name
+next
+' INFO : There are currently 12 item(s) selected.
+' INFO : Camera_Root
+' INFO : Camera
+' INFO : Camera_Interest
+' INFO : light
+' INFO : top
+' INFO : middle_1
+' INFO : middle_2
+' INFO : mid_2_bottom_1
+' INFO : way_low
+' INFO : mid_2_bottom_2
+' INFO : middle_3
+' INFO : mid_3_bottom
+
+
+' Now delete the entire middle_2 branch
+DeleteObj "B:middle_2"
+app.LogMessage "There are currently " &amp; app.Selection.Count &amp; " item(s) selected."
+for each sel_item in app.Selection
+	app.LogMessage sel_item.Name
+next
+' INFO : There are currently 8 item(s) selected.
+' INFO : Camera_Root
+' INFO : Camera
+' INFO : Camera_Interest
+' INFO : light
+' INFO : top
+' INFO : middle_1
+' INFO : middle_3
+' INFO : mid_3_bottom
+</pre></div> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WSBAD267DAFDEB0A4CB722B5BE63CEBF6C-002C"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-152C5D57-FB06-48FC-8340-FD9E941B0905"></a></span>Python Example: Testing selected items for Hierarchy
+                  </h3> 
+                  <p><span class="anchor_wrapper"><a name="GUID-C669DFBD-4EE8-4C3B-B3A2-BF9D1BC60CDB"></a></span>This example demonstrates how to iterate over the selection and test whether or not
+                     each item is node-selected: 
+                  </p> 
+                  <div class="codeBlock"><pre class="prettyprint">
+app = Application
+
+# --------------------------
+#	Convenience function
+#
+def SetUpMultiLevelNulls() :
+	app.NewScene("", 0)
+	app.CreateModel("", "TopDog")
+	
+	# Create a hierarchy to test
+	app.CreateModel("", "NextLevel")
+	app.GetPrim("Null", "HigherLevel", "NextLevel")
+	targetObj = app.GetPrim("Null", "MidLevel", "NextLevel.HigherLevel")
+	app.GetPrim("Null", "LowerLevel", "NextLevel.MidLevel")
+	app.GetPrim("Null", "BottomFeeder", "NextLevel.LowerLevel")
+	app.CreateModel(app.ActiveSceneRoot.Models(0), "TopDog")
+
+	
+	return targetObj
+
+
+# --------------------------
+#	Hierarchical selection
+#
+def TestSelection() :
+	for thing in app.Selection :
+		if ( thing.BranchFlag ) :
+			app.LogMessage( thing.Name + " is selection in BRANCH" )
+		else :
+			app.LogMessage( thing.Name + " is selection in NODE" )
+
+
+# --------------------------
+#	Logging results
+#
+# NODE-selected
+refObj = SetUpMultiLevelNulls()
+app.SelectObj( refObj.FullName )
+TestSelection()	# INFO : MidLevel is selection in NODE
+
+# BRANCH-selected
+refObj = SetUpMultiLevelNulls()
+app.SelectObj( "B:" + refObj.FullName )
+TestSelection()	# INFO : MidLevel is selection in BRANCH
+
+# TREE-selected
+refObj = SetUpMultiLevelNulls()
+app.SelectObj( "B:" + refObj.FullName, "TREE" )
+TestSelection()	# INFO : HigherLevel is selection in BRANCH
+
+# MODEL-selected
+refObj = SetUpMultiLevelNulls()
+app.SelectObj( "B:" + refObj.FullName, "MODEL" )
+TestSelection()	# INFO : NextLevel is selection in BRANCH
+</pre></div> 
+               </div> 
+            </div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

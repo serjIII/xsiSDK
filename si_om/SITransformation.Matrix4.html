@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>SITransformation.Matrix4</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>SITransformation.Matrix4</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/SITransformation.html">SITransformation</a>.Matrix4</h2>
+
+<h3>Introduced</h3>
+<div><p>v5.1</p></div>
+
+<h3>Description</h3>
+<div><p> Sets or returns the <a href="#!/url=./si_om/SIMatrix4.html">SIMatrix4</a> representation of the values of this transformation 
+(the matrix is created automatically).
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>// get accessor
+SIMatrix4 rtn = ISITransformation.Matrix4;
+// set accessor
+ISITransformation.Matrix4 = SIMatrix4;</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example demonstrates how to use the Matrix4 property to return the matrix representation 
+	of the transformation as an SIMatrix4 (without having to explicitly create it first) as well as 
+	how to set new values for the transformation using a 4x4 matrix.
+*/
+var t1 = XSIMath.CreateTransform();
+// The Matrix4 property takes care of creating oMat4 as an SIMatrix4 of the transformation
+var oMat4 = t1.Matrix4;
+// Now set some values on the matrix and then save it back onto the transformation
+oMat4.Set(4.0, 0.0, 0.0, 0.0, 0.0, 3.0, 0.0, 0.0, 0.0, 0.0, 2.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+t1.Matrix4 = oMat4;
+// Get a new matrix
+var oMat4Dest = t1.Matrix4;
+vbArr = new VBArray( oMat4Dest.Get2() );
+jsArr = vbArr.toArray();
+// Display Matrix
+var lineSize = 4;
+Application.LogMessage( "The 16 matrix values" );
+for ( i=0; i&lt;lineSize; i++ ) {
+	var mgsString  = "";
+	for ( j=0; j&lt;lineSize; j++ ) {
+		mgsString += "m" + i + "" + j + " " + jsArr[ i*lineSize + j ] + "  ";
+	}
+	Application.LogMessage ( mgsString );
+}
+// Expected results:
+//INFO : The 16 matrix values
+//INFO : m00 4  m01 0  m02 0  m03 0  
+//INFO : m10 0  m11 3  m12 0  m13 0  
+//INFO : m20 0  m21 0  m22 2  m23 0  
+//INFO : m30 0  m31 0  m32 0  m33 1</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/SITransformation.GetMatrix4.html">SITransformation.GetMatrix4</a> <a href="#!/url=./si_om/SITransformation.SetMatrix4.html">SITransformation.SetMatrix4</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

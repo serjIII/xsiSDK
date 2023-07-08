@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>FCurveKey.Locked</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>FCurveKey.Locked</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/FCurveKey.html">FCurveKey</a>.Locked</h2>
+
+<h3>Description</h3>
+<div><p> Sets or returns the locked state of the <a href="#!/url=./si_om/FCurve.html">FCurve</a> key as a <a href="#!/url=./files/Boolean.htm">Boolean</a>.<br /><br />
+Setting this property may raise an "Access Denied" error. See more information in the FCurveKey object description.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>// get accessor
+Boolean rtn = FCurveKey.Locked;
+// set accessor
+FCurveKey.Locked = Boolean;</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This example displays the properties of an fcurve's keys
+*/
+NewScene( null, false );
+var oCube = Application.ActiveSceneRoot.AddGeometry( "Cube","MeshSurface" );
+var aValues = new Array( 0,5, 1,6, 2,7, 3,8, 4,9, 5,10 );
+var oFCurve = oCube.PosX.AddFCurve2( aValues );
+// Write the fcurve keys
+for ( var k=0; k&lt;oFCurve.Keys.Count; k++ ) {
+	var fckey = oFCurve.Keys(k);
+	Application.LogMessage( fckey.Name + " Value: " + fckey.Value );
+	Application.LogMessage( fckey.Name + " Locked: " + fckey.Locked );
+	Application.LogMessage( fckey.Name + " Left: " + fckey.Left );
+	Application.LogMessage( fckey.Name + " Right: " + fckey.Right );
+	Application.LogMessage( fckey.Name + " LeftTanX: " + fckey.LeftTanX );
+	Application.LogMessage( fckey.Name + " LeftTanY: " + fckey.LeftTanY );
+	Application.LogMessage( fckey.Name + " RightTanX: " + fckey.RightTanX );
+	Application.LogMessage( fckey.Name + " RightTanY: " + fckey.RightTanY );
+	Application.LogMessage( fckey.Name + " Interpolation: " + fckey.Interpolation );
+	Application.LogMessage( fckey.Name + " Constraint(siParameterConstraint): " + fckey.Constraint(siParameterConstraint) );
+	Application.LogMessage( fckey.Name + " Time: " + fckey.Time );
+}
+// Expected results:
+//INFO :  Value: 5
+//INFO :  Locked: false
+//INFO :  Left: 5
+//INFO :  Right: 5
+//INFO :  LeftTanX: -0.3333333333333333
+//INFO :  LeftTanY: 0
+//INFO :  RightTanX: 0.3333333333333333
+//INFO :  RightTanY: 0
+//INFO :  Interpolation: 3
+//INFO :  Constraint(siParameterConstraint): false
+//INFO :  Time: 0
+//INFO :  Value: 6
+//
+//INFO :  Locked: false
+//INFO :  Left: 6
+//INFO :  Right: 6
+//INFO :  LeftTanX: -0.33333333333333326
+//INFO :  LeftTanY: -0.33333333333333303
+//INFO :  RightTanX: 0.33333333333333326
+//INFO :  RightTanY: 0.33333333333333303
+//INFO :  Interpolation: 3
+//INFO :  Constraint(siParameterConstraint): false
+//INFO :  Time: 1
+// etc.</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example displays the properties of an fcurve's keys
+'
+NewScene , false
+set oCube = Application.ActiveSceneRoot.AddGeometry("Cube","MeshSurface")
+dim aValues
+aValues = array(0.00, 5.00, 1.00, 6.00, 2.00, 7.00, 3.00, 8.00, 4.00, 9.00, 5.00, 10.00)
+set oFCurve = oCube.PosX.AddFCurve2( aValues)
+' Write the fcurve keys
+for each k in oFCurve.Keys
+	Application.LogMessage k.Name &amp;" Value: " &amp; k.Value
+	Application.LogMessage k.Name &amp;" Locked: " &amp; k.Locked
+	Application.LogMessage k.Name &amp;" Left: " &amp; k.Left
+	Application.LogMessage k.Name &amp;" Right: " &amp; k.Right
+	Application.LogMessage k.Name &amp;" LeftTanX: " &amp; k.LeftTanX
+	Application.LogMessage k.Name &amp;" LeftTanY: " &amp; k.LeftTanY
+	Application.LogMessage k.Name &amp;" RightTanX: " &amp; k.RightTanX
+	Application.LogMessage k.Name &amp;" RightTanY: " &amp; k.RightTanY
+	Application.LogMessage k.Name &amp;" Interpolation: " &amp; k.Interpolation
+	Application.LogMessage k.Name &amp;" Constraint(siParameterConstraint): " &amp; k.Constraint(siParameterConstraint)
+	Application.LogMessage k.Name &amp;" Time: " &amp; k.Time
+next
+' Expected results:
+'INFO :  Value: 5
+'INFO :  Locked: False
+'INFO :  Left: 5
+'INFO :  Right: 5
+'INFO :  LeftTanX: -0.333333333333333
+'INFO :  LeftTanY: 0
+'INFO :  RightTanX: 0.333333333333333
+'INFO :  RightTanY: 0
+'INFO :  Interpolation: 3
+'INFO :  Constraint(siParameterConstraint): False
+'INFO :  Time: 0
+'
+'INFO :  Value: 6
+'INFO :  Locked: False
+'INFO :  Left: 6
+'INFO :  Right: 6
+'INFO :  LeftTanX: -0.333333333333333
+'INFO :  LeftTanY: -0.333333333333333
+'INFO :  RightTanX: 0.333333333333333
+'INFO :  RightTanY: 0.333333333333333
+'INFO :  Interpolation: 3
+'INFO :  Constraint(siParameterConstraint): False
+'INFO :  Time: 1
+' etc.</pre></td></tr>
+</table>
+</div><h4>3. Python Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="python">#
+# This example displays the properties of an fcurve's keys
+#
+from win32com.client import constants as c
+Application.NewScene( "", 0 )
+oCube = Application.ActiveSceneRoot.AddGeometry( "Cube","MeshSurface" )
+aValues = [ 0,5, 1,6, 2,7, 3,8, 4,9, 5,10 ]
+oFCurve = oCube.PosX.AddFCurve2( aValues )
+# Write the fcurve keys
+for fckey in oFCurve.Keys :
+	Application.LogMessage( fckey.Name + " Value: " + str(fckey.Value) )
+	Application.LogMessage( fckey.Name + " Locked: " + str(fckey.Locked) )
+	Application.LogMessage( fckey.Name + " Left: " + str(fckey.Left) )
+	Application.LogMessage( fckey.Name + " Right: " + str(fckey.Right) )
+	Application.LogMessage( fckey.Name + " LeftTanX: " + str(fckey.LeftTanX) )
+	Application.LogMessage( fckey.Name + " LeftTanY: " + str(fckey.LeftTanY) )
+	Application.LogMessage( fckey.Name + " RightTanX: " + str(fckey.RightTanX) )
+	Application.LogMessage( fckey.Name + " RightTanY: " + str(fckey.RightTanY) )
+	Application.LogMessage( fckey.Name + " Interpolation: " + str(fckey.Interpolation) )
+	Application.LogMessage( fckey.Name + " Constraint(siParameterConstraint): " + str(fckey.Constraint(c.siParameterConstraint)) )
+	Application.LogMessage( fckey.Name + " Time: " + str(fckey.Time) )
+# Expected results:
+#INFO :  Value: 5.0
+#INFO :  Locked: False
+#INFO :  Left: 5.0
+#INFO :  Right: 5.0
+#INFO :  LeftTanX: -0.333333333333
+#INFO :  LeftTanY: 0.0
+#INFO :  RightTanX: 0.333333333333
+#INFO :  RightTanY: 0.0
+#INFO :  Interpolation: 3
+#INFO :  Constraint(siParameterConstraint): False
+#INFO :  Time: 0.0
+#
+#INFO :  Value: 6.0
+#INFO :  Locked: False
+#INFO :  Left: 6.0
+#INFO :  Right: 6.0
+#INFO :  LeftTanX: -0.333333333333
+#INFO :  LeftTanY: -0.333333333333
+#INFO :  RightTanX: 0.333333333333
+#INFO :  RightTanY: 0.333333333333
+#INFO :  Interpolation: 3
+#INFO :  Constraint(siParameterConstraint): False
+#INFO :  Time: 1.0
+# etc.</pre></td></tr>
+</table>
+</div></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

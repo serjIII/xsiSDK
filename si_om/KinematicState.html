@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>KinematicState</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>KinematicState</h1>
+         </div>
+
+<h2 class="pagehead">KinematicState</h2>
+
+<p><a href="#!/url=./si_om/_hier.html#oh_KinematicState">Object Hierarchy</a> | Related C++ Class: <a href="#!/url=./si_cpp/classXSI_1_1KinematicState.html">KinematicState</a></p>
+
+<h3>Inheritance<h3>
+<p class="level1"><a href="#!/url=./si_om/SIObject.html">SIObject</a></p>
+<p class="level2"><a href="#!/url=./si_om/Parameter.html">Parameter</a></p>
+<p class="level3">KinematicState</p>
+
+<h3>Description</h3>
+<div><p> The KinematicState object represents the current pose of a <a href="#!/url=./si_om/X3DObject.html">X3DObject</a> object 
+whereas the base pose of an object is represented by the <a href="#!/url=./si_om/StaticKinematicState.html">StaticKinematicState</a>
+property.
+<br /><br />
+The transformation state of the KinematicState object is accessible both through the
+<a href="#!/url=./si_om/KinematicState.Transform.html">KinematicState.Transform</a> property and through its 
+<a href="#!/url=./si_om/ParameterCollection.html">ParameterCollection</a>.  Both expose the same transformation data,
+but the KinematicState.Transform is convenient for mathematical manipulation
+(see <a href="#!/url=./si_om/XSIMath.html">XSIMath</a>), while the ParameterCollection exposes the
+transform as it is shown on the KinematicState property page.
+</p></div>
+
+<h3>Methods</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/Parameter.AddCustomOp.html">AddCustomOp</a>		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.AddExpression.html">AddExpression</a>		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.AddFCurve.html">AddFCurve</a>		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.AddFCurve2.html">AddFCurve2</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/Parameter.AddScriptedOp.html">AddScriptedOp</a>		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.AddScriptedOpFromFile.html">AddScriptedOpFromFile</a>		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.AnimatedParameters.html">AnimatedParameters</a>		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.Connect.html">Connect</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/Parameter.ConnectFromFile.html">ConnectFromFile</a>		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.ConnectFromFile2.html">ConnectFromFile2</a>		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.ConnectFromPreset.html">ConnectFromPreset</a>		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.ConnectFromPreset2.html">ConnectFromPreset2</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/Parameter.ConnectFromProgID.html">ConnectFromProgID</a>		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.ConnectFromProgID2.html">ConnectFromProgID2</a>		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.Disconnect.html">Disconnect</a>		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.Enable.html">Enable</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/Parameter.GetInstanceValue.html">GetInstanceValue</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/KinematicState.GetTransform2.html">GetTransform2</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.GetValue2.html">GetValue2</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.IsAnimated.html">IsAnimated</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.IsClassOf.html">IsClassOf</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.IsEqualTo.html">IsEqualTo</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.IsLocked.html">IsLocked</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.IsSupportedInstanceValue.html">IsSupportedInstanceValue</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/KinematicState.PutTransform2.html">PutTransform2</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.PutValue2.html">PutValue2</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.SetCapabilityFlag.html">SetCapabilityFlag</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.SetInstanceValue.html">SetInstanceValue</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/Parameter.SetLock.html">SetLock</a>		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.Show.html">Show</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.UnSetLock.html">UnSetLock</a>		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Properties</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/Parameter.Animatable.html">Animatable</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Application.html">Application</a>		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.Capabilities.html">Capabilities</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Categories.html">Categories</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/Parameter.Default.html">Default</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.Description.html">Description</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.FullName.html">FullName</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.HasInstanceValue.html">HasInstanceValue</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Help.html">Help</a>		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.Keyable.html">Keyable</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.LockLevel.html">LockLevel</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.LockType.html">LockType</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/Parameter.Marked.html">Marked</a>		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.Max.html">Max</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.Min.html">Min</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.Model.html">Model</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Name.html">Name</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.NestedObjects.html">NestedObjects</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Origin.html">Origin</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.OriginPath.html">OriginPath</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/Parameter.OriginalValue.html">OriginalValue</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.OverridenObject.html">OverridenObject</a>		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.OverridingObject.html">OverridingObject</a>		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.Parameters.html">Parameters</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Parent.html">Parent</a>		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.Parent3DObject.html">Parent3DObject</a>		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.ReadOnly.html">ReadOnly</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.ScriptName.html">ScriptName</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/Parameter.Source.html">Source</a>		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.Sources.html">Sources</a>		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.SuggestedMax.html">SuggestedMax</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.SuggestedMin.html">SuggestedMin</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/Parameter.Tags.html">Tags</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/KinematicState.Transform.html">Transform</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Type.html">Type</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/Parameter.Value.html">Value</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/Parameter.ValueType.html">ValueType</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	Example of using the SITransformation to read the local
+	and global transforms of an object
+*/
+NewScene(null,false) ;
+var oNull = Application.ActiveSceneRoot.AddNull( "ParentNull" ) ;
+//Change the position and rotation of the null
+//by providing a new transform
+oNewLocalTransform = XSIMath.CreateTransform() ;
+// Change posx, posy
+oNewLocalTransform.SetTranslationFromValues( 10, 20, 0 ) ;
+// set rotx to 90 degrees (pi/2 radians)
+oNewLocalTransform.SetRotationFromXYZAnglesValues( XSIMath.pi / 2, 0, 0 ) ; 
+oNull.Kinematics.Local.Transform = oNewLocalTransform ;
+PrintLocalGlobalTransforms( oNull ) ;
+var oNullChild = oNull.AddNull( "ChildNull" ) ;
+PrintLocalGlobalTransforms( oNullChild ) ;
+// Show but the local and global SRT of an object
+function PrintLocalGlobalTransforms( in_obj )
+{
+	Application.LogMessage( "--------" + in_obj.Name + "---------" ) ;
+	var oLocalSITranformation = in_obj.Kinematics.Local.Transform ;
+	Application.LogMessage( "Local Transform" ) ;
+	PrintTransformation( oLocalSITranformation ) ;
+	Application.LogMessage( "" ) ;
+	Application.LogMessage( "Global Transform" ) ;
+	var oGlobalSITranformation = in_obj.Kinematics.Global.Transform ;
+	PrintTransformation( oGlobalSITranformation ) ;
+	Application.LogMessage( "" ) ;	
+}
+// Show the "SRT: of a SITransformation object
+function PrintTransformation( in_oTransform )
+{
+	var oVector = XSIMath.CreateVector3();
+	in_oTransform.GetScaling( oVector ) ;
+	PrintVector( "Scaling:", oVector ) ;
+	// In Radians
+	in_oTransform.GetRotationXYZAngles( oVector ) ;
+	PrintVector( "Rotation:", oVector ) ;
+	in_oTransform.GetTranslation( oVector ) ;
+	PrintVector( "Translation:", oVector ) ;
+}
+// Print a vector.  Values are rounded to 3 decimal places
+function PrintVector( in_Prefix, in_oVec )
+{
+	Application.LogMessage( in_Prefix + " " + 
+			XSIRound(in_oVec.x,3) + ", " + 
+			XSIRound(in_oVec.y,3) + ", " + 
+			XSIRound(in_oVec.z,3) ) ;
+}
+//Output: (note how the local transform of
+//the Child null is relative to the center 
+//of the parent null)
+//
+//INFO : --------ParentNull---------
+//INFO : Local Transform
+//INFO : Scaling: 1, 1, 1
+//INFO : Rotation: 1.571, 0, 0
+//INFO : Translation: 10, 20, 0
+//INFO : 
+//INFO : Global Transform
+//INFO : Scaling: 1, 1, 1
+//INFO : Rotation: 1.571, 0, 0
+//INFO : Translation: 10, 20, 0
+//INFO : 
+//INFO : --------ChildNull---------
+//INFO : Local Transform
+//INFO : Scaling: 1, 1, 1
+//INFO : Rotation: -1.571, 0, 0
+//INFO : Translation: -10, 0, 20
+//INFO : 
+//INFO : Global Transform
+//INFO : Scaling: 1, 1, 1
+//INFO : Rotation: 0, 0, 0
+//INFO : Translation: 0, 0, 0</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	Example of using the ParameterCollection of
+	a KinematicState object
+*/
+var oNull = ActiveSceneRoot.AddNull( "Null" ) ;
+// The transform can be set through the parameters
+// of the kinematicstate object
+var oLocalKinematics = oNull.Kinematics.Local ;
+oLocalKinematics.Parameters( "posx" ).Value = 10 ;
+oLocalKinematics.Parameters( "posy" ).Value = 20 ;
+oLocalKinematics.Parameters( "rotx" ).Value = 90 ;
+oLocalKinematics.Parameters( "sclz" ).Value = 3 ;
+// All the SRT values, plus many more parameters can 
+// be read via the parameter collection
+var oAllParameters = oLocalKinematics.Parameters ;
+for ( var i = 0 ; i &lt; oAllParameters.Count ; i++ )
+{
+	Application.LogMessage( oAllParameters(i).ScriptName + ":" + 
+				oAllParameters(i).Value ) ;
+}
+//Output:
+//INFO : blendweight:1
+//INFO : active:true
+//INFO : posx:10
+//INFO : posy:20
+//INFO : posz:0
+//INFO : rotx:90
+//INFO : roty:0
+//INFO : rotz:0
+//INFO : quatw:0.7071067811865476
+//INFO : quatx:0.7071067811865475
+//INFO : quaty:0
+//INFO : quatz:0
+//INFO : sclx:1
+//INFO : scly:1
+//INFO : sclz:3
+//INFO : sclorix:0
+//INFO : scloriy:0
+//INFO : scloriz:0
+//INFO : cnsscl:true
+//INFO : cnsori:true
+//INFO : cnspos:true
+//INFO : affbyscl:true
+//INFO : affbyori:true
+//INFO : posxmaxactive:false
+//INFO : posxminactive:false
+//INFO : posymaxactive:false
+//INFO : posyminactive:false
+//INFO : poszmaxactive:false
+//INFO : poszminactive:false
+//INFO : rotxmaxactive:false
+//INFO : rotxminactive:false
+//INFO : rotymaxactive:false
+//INFO : rotyminactive:false
+//INFO : rotzmaxactive:false
+//INFO : rotzminactive:false
+//INFO : siscaling:true
+//INFO : rotorder:0
+//INFO : pivotactive:true
+//INFO : pposx:0
+//INFO : pposy:0
+//INFO : pposz:0
+//INFO : protx:0
+//INFO : proty:0
+//INFO : protz:0
+//INFO : psclx:1
+//INFO : pscly:1
+//INFO : psclz:1
+//INFO : pivotcompactive:true
+//INFO : pcposx:0
+//INFO : pcposy:0
+//INFO : pcposz:0
+//INFO : pcrotx:0
+//INFO : pcroty:0
+//INFO : pcrotz:0
+//INFO : pcsclx:1
+//INFO : pcscly:1
+//INFO : pcsclz:1
+//INFO : nposx:0
+//INFO : nposy:0
+//INFO : nposz:0
+//INFO : nrotx:0
+//INFO : nroty:0
+//INFO : nrotz:0
+//INFO : nsclx:1
+//INFO : nscly:1
+//INFO : nsclz:1
+//INFO : nsclorix:0
+//INFO : nscloriy:0
+//INFO : nscloriz:0</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/Kinematics.Global.html">Kinematics.Global</a> <a href="#!/url=./si_om/Kinematics.Local.html">Kinematics.Local</a> <a href="#!/url=./si_om/StaticKinematicState.html">StaticKinematicState</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></h3></h3></div>
+   </div></body>
+</html>

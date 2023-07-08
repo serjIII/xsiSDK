@@ -1,0 +1,92 @@
+var topic = "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n\
+\n\
+<!-- saved from url=(0024)http://docs.autodesk.com -->\n\
+<html>\n\
+   <head>\n\
+<link href=\"../style/prettify.css\" type=\"text/css\" rel=\"stylesheet\" />\n\
+<script type=\"text/javascript\" src=\"../scripts/prettify.js\"></script><script src=\"../scripts/lib/jquery-1.9.1.min.js\" type=\"text/javascript\"></script>\n\
+      <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n\
+      <meta name=\"product\" content=\"SI\" />\n\
+      <meta name=\"release\" content=\"2015\" />\n\
+      <meta name=\"book\" content=\"Developer\" />\n\
+      <meta name=\"created\" content=\"2014-03-13\" />\n\
+      <meta name=\"topicid\" content=\"GUID-4808F9BD-AB47-486D-AD31-BF48DC6E83BD\" />\n\
+      <meta name=\"indexterm\" content=\"navigation: finding 3D objects\" />\n\
+      <meta name=\"topic-type\" content=\"concept\" />\n\
+      <title>Finding 3D Objects</title><script type=\"text/javascript\" src=\"../scripts/utils/adsk.redirect.js\"></script></head>\n\
+   <body height=\"100%\"><div class=\"body_content\" id=\"body-content\"><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/ac_common.js\"); });</script><script type=\"text/javascript\">var reflinkid = \"si_cpp\"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on(\'click\', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/multireflink.js\"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$(\"div#WidgetFloaterPanels,link[href*=\'microsofttranslator.com\'],script[src*=\'microsofttranslator.com\'],script[src*=\'bing.com\']\").remove();</script><script type=\'text/javascript\'>$(\"div#navigation,div#breadcrumbs,div#banner\").attr(\"translate\",\"no\"); var mtLocation = ((location && location.href && location.href.indexOf(\'https\') == 0)?\'https://ssl.microsofttranslator.com\':\'http://www.microsofttranslator.com\')+\'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages=\'; yepnope.injectJs(mtLocation, function() {}, { charset:\'utf-8\', type:\'text/javascript\' } );</script><script type=\"text/javascript\">\n\
+ </script><!-- begin MT -->\n\
+            \n\
+            <div id=\'MicrosoftTranslatorWidget\' class=\'Dark\' style=\'position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden\'></div><div id=\"reflinkdiv\" style=\"display:none; font-family: \'RobotoRegular\', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible\"></div>\n\
+      <div><span class=\"anchor_wrapper\"><a name=\"GUID-4808F9BD-AB47-486D-AD31-BF48DC6E83BD\"></a></span><div class=\"head\">\n\
+            <h1> Finding 3D Objects</h1>\n\
+         </div>\n\
+         <div class=\"bodyProcess\">\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-16BF8DAD-1180-46B7-A48C-61992BAA170E\"></a></span>You can use one of these methods to find children of the scene root: \n\
+            </p><span class=\"anchor_wrapper\"><a name=\"TABLE_9381CDCBF12B4721ACB222BAAE7B9714\"></a></span><div class=\"table_Ruled\">\n\
+               <table cellpadding=\"0\" cellspacing=\"0\" class=\"ruled\">\n\
+                  <colgroup>\n\
+                     <col align=\"left\" />\n\
+                     <col align=\"left\" />\n\
+                     <col align=\"left\" />\n\
+                  </colgroup>\n\
+                  <tr class=\"ruledHeading\">\n\
+                     <th class=\"table-heading\"> <span class=\"anchor_wrapper\"><a name=\"GUID-02769C52-2C9A-411F-BE48-B4BC7A0E3F40\"></a></span><p class=\"table-heading\">How to find children </p> \n\
+                     </th>\n\
+                     <th class=\"table-heading\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-E2D8A4DF-7105-47DE-8760-17DD5F509E34\"></a></span><p class=\"table-heading\">Object Model </p> \n\
+                     </th>\n\
+                     <th class=\"table-heading\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-EA6F975A-120E-43F1-A891-8DCBAECB8390\"></a></span><p class=\"table-heading\">C++ API </p> \n\
+                     </th>\n\
+                  </tr>\n\
+                  <tr class=\"ruledOddRow\">\n\
+                     <td class=\"table-body\"> <span class=\"anchor_wrapper\"><a name=\"GUID-E3A53E51-9C0F-409C-975A-8A855E91619C\"></a></span><p class=\"table-body\">Look for an object using its name, type or family. Returns the first one found. </p> \n\
+                     </td>\n\
+                     <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-404B12EA-65F2-43E2-8925-B18CCFE97B97\"></a></span><p class=\"table-body\"> <a href=\"#!/url=./si_om/X3DObject.FindChild.html\">X3DObject.FindChild</a> \n\
+                        </p> \n\
+                     </td>\n\
+                     <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-781154E0-480C-41D6-9633-9AFAD3907F81\"></a></span><p class=\"table-body\"> <a href=\"#!/url=./si_cpp/classXSI_1_1X3DObject.html#FindChild\">X3DObject::FindChild</a> \n\
+                        </p> \n\
+                     </td>\n\
+                  </tr>\n\
+                  <tr class=\"ruledEvenRow\">\n\
+                     <td class=\"table-body\"> <span class=\"anchor_wrapper\"><a name=\"GUID-CD4ABD0B-6853-405E-824B-C41CD7D8935A\"></a></span><p class=\"table-body\">Look for a collection of objects using name, type or family. Returns all objects that\n\
+                           match the search criteria. \n\
+                        </p> \n\
+                     </td>\n\
+                     <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-90368856-D2C6-4289-B354-CCF518ECEE02\"></a></span><p class=\"table-body\"> <a href=\"#!/url=./si_om/X3DObject.FindChildren.html\">X3DObject.FindChildren</a> \n\
+                        </p> \n\
+                     </td>\n\
+                     <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-8DF2617F-8DDD-4243-A814-5F54FA37D0A4\"></a></span><p class=\"table-body\"> <a href=\"#!/url=./si_cpp/classXSI_1_1X3DObject.html#FindChildren\">X3DObject::FindChildren</a> \n\
+                        </p> \n\
+                     </td>\n\
+                  </tr>\n\
+                  <tr class=\"ruledOddRow\">\n\
+                     <td class=\"table-body\"> <span class=\"anchor_wrapper\"><a name=\"GUID-08E40693-D99D-4128-A64B-B76ED058AC3A\"></a></span><p class=\"table-body\">Use the <em class=\"strong\">Find</em> methods (available on most collectons in the object model and on the <a href=\"#!/url=./si_cpp/classXSI_1_1CRefArray.html\">CRefArray</a> class in the C++ API) to find the first object matching the type specified. \n\
+                        </p> \n\
+                     </td>\n\
+                     <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-E028D490-1BB5-4BF3-AED1-A65A9D5F0278\"></a></span><p class=\"table-body\"><a href=\"#!/url=./si_om/X3DObjectCollection.Find.html\">X3DObjectCollection.Find</a>, etc. \n\
+                        </p> \n\
+                     </td>\n\
+                     <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-59EB6A31-3BA9-4EA6-B285-3D1AEB21E001\"></a></span><p class=\"table-body\"> <a href=\"#!/url=./si_cpp/classXSI_1_1CRefArray.html#Find\">CRefArray::Find</a> \n\
+                        </p> \n\
+                     </td>\n\
+                  </tr>\n\
+                  <tr class=\"ruledEvenRow\">\n\
+                     <td class=\"table-body\"> <span class=\"anchor_wrapper\"><a name=\"GUID-F674FE52-1668-4A6F-B13A-139439F97F19\"></a></span><p class=\"table-body\">Use the <em class=\"strong\">Filter</em> methods to get the subset of the collection that matches the filter criterion. You\n\
+                           can use the object\'s type, its family or a full or partial path (using wildcards).\n\
+                           \n\
+                        </p> \n\
+                     </td>\n\
+                     <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-DD1F1EC9-25C2-45B5-B478-DE14126DD998\"></a></span><p class=\"table-body\"><a href=\"#!/url=./si_om/X3DObjectCollection.Filter.html\">X3DObjectCollection.Filter</a>, etc. \n\
+                        </p> \n\
+                     </td>\n\
+                     <td class=\"table-body\" align=\"left\"> <span class=\"anchor_wrapper\"><a name=\"GUID-DD6E0600-C79E-45A1-B9E4-9F11D3CFA59E\"></a></span><p class=\"table-body\"> <a href=\"#!/url=./si_cpp/classXSI_1_1CRefArray.html#Filter\">CRefArray::Filter</a> \n\
+                        </p> \n\
+                     </td>\n\
+                  </tr>\n\
+               </table>\n\
+            </div>\n\
+         </div>\n\
+         <div class=\"footer-block\"><a href=\"../html/ac.cmtdialog.htm\" class=\"comments-anchor\" target=\"_blank\"><span class=\"comments-link\">Please send us your comment about this page</span></a></div><br /><p class=\"footer-license-block\"><a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\"><img alt=\"Creative Commons License\" style=\"border-width: 0;\" src=\"../images/ccLink.png\" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href=\"http://autodesk.com/creativecommons\" target=\"_blank\">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>\n\
+   </div></body>\n\
+</html>";

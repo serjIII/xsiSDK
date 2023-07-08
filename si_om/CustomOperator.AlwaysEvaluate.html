@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>CustomOperator.AlwaysEvaluate</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>CustomOperator.AlwaysEvaluate</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/CustomOperator.html">CustomOperator</a>.AlwaysEvaluate</h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p> Returns or sets whether the custom operator is always evaluated on each request for data
+as a <a href="#!/url=./files/Boolean.htm">Boolean</a> (true to always evaluate). This property is off by default, 
+which means that Softimage will not consider the custom operator as needing a new evaluation unless 
+the operator's input or parameters change. However this optimization is not suitable for some 
+simulation-style operators, in which case this property should be set to true. 
+<br /><br />
+Note: Because of the "lazy-evaluation" pull model of Softimage this property does not guarantee that 
+the operator will actual evaluate at each frame - it is still necessary for the UI, a script, 
+rendering or some dependent object to request the operator's output.
+<br /><br />
+The recommended callback for setting this property in a Self-Installed Custom Operator is in 
+the _Define callback.
+<br /><br />
+Note: You can read this property from within the update function of a custom operator but setting 
+this property is blocked.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>// get accessor
+Boolean rtn = CustomOperator.AlwaysEvaluate;
+// set accessor
+CustomOperator.AlwaysEvaluate = Boolean;</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">NewScene( null, false );
+var null1 = GetPrim("null");
+SetExpr( null1.posx, "10");
+var sop = null1.posx.AddScriptedOp( MyExpr_Update.toString(), null,"MyExpr", "JScript" );
+SetValue( "PlayControl.Current", 3, null );
+sop.AlwaysEvaluate = true;
+val = GetValue( "null.kine.local.posx" );
+Application.LogMessage( val );
+SetValue( "PlayControl.Current", 4, null );
+val = GetValue( "null.kine.local.posx" );
+Application.LogMessage( val );
+// Force scene to reevaluate 
+sop.AlwaysEvaluate = false;
+Refresh();
+SetValue( "PlayControl.Current", 5, null );
+val = GetValue( "null.kine.local.posx" );
+Application.LogMessage( val );
+// Scripted operator's update function
+function MyExpr_Update(ctx,out)
+{
+	Application.LogMessage( "MyExpr_Update: " + out.name );
+	out.Value = ctx.CurrentFrame;
+}
+// Expected results:
+//INFO : MyExpr_Update: Outposx
+//INFO : 3
+//INFO : MyExpr_Update: Outposx
+//INFO : 4
+//INFO : MyExpr_Update: Outposx
+//INFO : 4</pre></td></tr>
+</table>
+</div></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

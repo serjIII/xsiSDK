@@ -1,0 +1,594 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Command</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Command</h1>
+         </div>
+
+<h2 class="pagehead">Command</h2>
+
+<p><a href="#!/url=./si_om/_hier.html#oh_Command">Object Hierarchy</a> | Related C++ Class: <a href="#!/url=./si_cpp/classXSI_1_1Command.html">Command</a></p>
+
+<h3>Inheritance<h3>
+<p class="level1"><a href="#!/url=./si_om/SIObject.html">SIObject</a></p>
+<p class="level2">Command</p>
+
+<h3>Introduced</h3>
+<div><p>v2.0</p></div>
+
+<h3>Description</h3>
+<div><p> Represents a Softimage command (either built-in or custom). This object encapsulates 
+information on a command such as the name, category, arguments, where it is implemented etc. 
+Custom commands behave just like built-in Softimage commands--they are logged in the 
+history window and can be exposed to scripting. <br /><br />
+The <a href="#!/url=./si_om/XSIApplication.Commands.html">XSIApplication.Commands</a> property provides access to all the 
+built-in and custom commands installed in the system.  
+For example, to get the definition of the Translate command, 
+you can use 'set oCmd = Commands( "Translate" )'.<br /><br />
+Note that the Commands property finds commands by <a href="#!/url=./si_om/SIObject.Name.html">SIObject.Name</a>, not by 
+<a href="#!/url=./si_om/Command.ScriptingName.html">Command.ScriptingName</a>. You can find the Name of a command by running it and then 
+checking the Edit menu (where the Name of the last executed command always appears after 'Repeat' 
+and 'Undo').  You can also iterate over the entire collection of commands (see the first example below).<br /><br />
+To find a command by its scripting name, use <a href="#!/url=./si_om/XSIApplication.GetCommandByScriptingName.html">XSIApplication.GetCommandByScriptingName</a>.
+You can find the ScriptingName of a command by running it and then checking the command log.<br /><br />
+Commands are primarily called from scripts, in which case they are invoked by
+calling the <a href="#!/url=./si_om/Command.ScriptingName.html">Command.ScriptingName</a> with the scripting syntax
+for calling a function, in effect they appear as if they are "helper functions" 
+available to the script writer.  For example to call the custom command "Foo" from
+jscript the syntax is "Foo( arg1, arg2 );"
+For scripts embedded inside Netview pages this syntax 
+does not work, however all commands can be called as methods on the <a href="#!/url=./si_om/Application.html">Application</a> 
+object (for example oApplication.Foo( arg1, arg2 ) ;).  It is also possible
+to invoke a command through the <a href="#!/url=./si_om/Command.Execute.html">Command.Execute</a> method.<br /><br />
+You can also place commands in toolbars (see <a href="#!/url=./si_cmds/CreateToolbarButton.html">CreateToolbarButton</a>).  
+And there are two ways to place custom commands in Softimage menus.  The first is through the 
+command category (see <a href="#!/url=./si_om/siCommandCategory.html">siCommandCategory</a>) and the
+second, more powerful approach, is through the <a href="#!/url=./si_om/Menu.html">Menu</a> API.<br /><br />
+The <a href="#!/url=./si_om/Argument.html">Argument</a>s that a command accepts is part of its definition.
+All commands have a fixed number of arguments, and 
+they are passed to the callback implementing the command in 
+the order that they are defined in the <a href="#!/url=./si_om/ArgumentCollection.html">ArgumentCollection</a>.
+It is possible to define a default value and an <a href="#!/url=./si_om/ArgumentHandler.html">ArgumentHandler</a> 
+for each argument, so commands are often invoked without specifying each 
+argument value explicitly.<br /><br />
+Softimage supports three possible ways to define a custom command: the embedded command,
+the plug-in based command and the v1.5 command.  They are all based
+on the same Command object API but they have some subtle differences. <br /><br />
+The embedded approach, which is new with v4.0, involves storing the implementation code
+of the command directly inside the definition.  (See <a href="#!/url=./si_om/Command.Code.html">Command.Code</a>).  
+This approach is convenient for simple commands and is the approach demonstrated widely 
+in the examples under the Command and Argument objects.  The command definition is 
+persisted in a .DSDynamicCommandMap file
+and can also be transferred to other machines by packaging it inside a xsiaddon file.
+Commands of this sort can be created interactively with <a href="#!/url=./si_cmds/CreateAndEditCommand.html">CreateAndEditCommand</a>.
+The command definition can be changed interactively by calling <a href="#!/url=./si_cmds/EditCommand.html">EditCommand</a>.
+It can be destroyed by calling <a href="#!/url=./si_om/XSIApplication.RemoveCommand.html">XSIApplication.RemoveCommand</a>.<br /><br />
+The plug-in based approach, also new with v4.0, involves implementing the definition 
+and implementation of the custom command inside a self-installed plug-in   
+(see <a href="#!/url=./si_om/PluginRegistrar.RegisterCommand.html">PluginRegistrar.RegisterCommand</a>,
+the example in <a href="#!/url=./si_om/Command.Enabled.html">Command.Enabled</a> and the SimpleCommand example that is
+part of the installation).  This approach is 
+ideal for complex scripts and supports the C++ API.  Because multiple commands,
+<a href="#!/url=./si_om/Menu.html">Menu</a>s, <a href="#!/url=./si_om/CustomProperty.html">CustomProperty</a> objects and other elements 
+can all be implemented inside the same <a href="#!/url=./si_om/Plugin.html">Plugin</a> module it is often possible 
+to write an entire sophisticated tool inside a single script file or dll.
+A command defined in this fashion is not persisted inside the .DSDynamicCommandMap file,
+instead its definition is regenerated by calling the Init callback each time the application is started.
+To edit the command definition, change the code inside the Init callback and 
+reload the plug-in.  To remove the custom command, remove the plug-in script or dll.<br /><br />
+The older workflow, which was introduced in v1.5, is still fully supported.  The steps to
+defining a custom command with this approach are the following:<br /><br />
+	(1) Create a command object with <a href="#!/url=./si_om/XSIApplication.CreateCommand.html">XSIApplication.CreateCommand</a><br /><br />
+	(2) Define the properties of the Command object using its properties. For example, 
+		<a href="#!/url=./si_om/Command.Language.html">Command.Language</a>, <a href="#!/url=./si_om/Command.ReturnValue.html">Command.ReturnValue</a>, 
+		<a href="#!/url=./si_om/Command.SetFlag.html">Command.SetFlag</a>, etc.<br /><br />
+	(3) Add any arguments you want to specify with <a href="#!/url=./si_om/ArgumentCollection.Add.html">ArgumentCollection.Add</a>
+		or <a href="#!/url=./si_om/ArgumentCollection.AddObjectArgument.html">ArgumentCollection.AddObjectArgument</a>
+		For example, myCommand.Arguments.Add "myArgName", siArgumentInput, true, siBool.<br /><br />
+	(4) Create the script file on disk (<a href="#!/url=./si_om/Command.FileName.html">Command.FileName</a>) and 
+		create a function (<a href="#!/url=./si_om/Command.Handler.html">Command.Handler</a>).  This function takes
+		the same number of arguments as were specified in the <a href="#!/url=./si_om/ArgumentCollection.html">ArgumentCollection</a>
+		and it can return a value if <a href="#!/url=./si_om/Command.ReturnValue.html">Command.ReturnValue</a> is true.<br /><br />
+	(5) Register the command in Softimage by using <a href="#!/url=./si_om/XSIApplication.AddCommand.html">XSIApplication.AddCommand</a>.<br /><br />
+(6) The command is now available to be invoked. Softimage automatically stores the command definition
+so the command remains available in future Softimage sessions.<br /><br />
+(7) To change the definition of the command either call <a href="#!/url=./si_om/XSIApplication.RemoveCommand.html">XSIApplication.RemoveCommand</a>
+and follow steps 2-5 again, or else call <a href="#!/url=./si_om/Command.Update.html">Command.Update</a>.<br /><br />
+(8) To remove the command from Softimage, use <a href="#!/url=./si_om/XSIApplication.RemoveCommand.html">XSIApplication.RemoveCommand</a>.<br /><br />
+Note: For instructions on how to package a custom command as an add-on, see  
+<a href="#!/url=./files/cus_addons_AddonPackages.htm">Add-on Packages</a>.
+</p></div>
+
+<h3>Methods</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Command.Execute.html">Execute</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Command.GetFlag.html">GetFlag</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.IsClassOf.html">IsClassOf</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.IsEqualTo.html">IsEqualTo</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Command.SetFlag.html">SetFlag</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Command.Update.html">Update</a>		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Properties</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Application.html">Application</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Command.Arguments.html">Arguments</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Command.Builtin.html">Builtin</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Command.CannotBeUsedInBatch.html">CannotBeUsedInBatch</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Categories.html">Categories</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Command.Category.html">Category</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Command.Code.html">Code</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Command.Description.html">Description</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Command.Enabled.html">Enabled</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Command.FileName.html">FileName</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.FullName.html">FullName</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Command.Handler.html">Handler</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Help.html">Help</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Command.IsNotLogged.html">IsNotLogged</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Command.Language.html">Language</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Name.html">Name</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.NestedObjects.html">NestedObjects</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Origin.html">Origin</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.OriginPath.html">OriginPath</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Parent.html">Parent</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Command.ReturnValue.html">ReturnValue</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Command.ScriptingName.html">ScriptingName</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Command.SupportsKeyAssignment.html">SupportsKeyAssignment</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Command.Tooltip.html">Tooltip</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Type.html">Type</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/Command.UID.html">UID</a>		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">// JScript Custom Command overview - Embedded Approach
+InstallCommands();
+DemoCommands() ;
+// Comment out this line if you want to experiment with the 
+// commands created in this example
+CleanupCommands();
+function InstallCommands()
+{
+	// Remove any existing copies of the demo commands
+	CleanupCommands() ;
+	// each command needs to be defined.
+	// (Softimage will not forget this information
+	// until they are removed with a call to CleanupCommands() ;
+	//
+	// Define Command #1 : CommandHelloWorld
+	//
+	var cmd = Application.CreateCommand( "CommandHelloWorld" )
+	cmd.ScriptingName = "CommandHelloWorld" ;
+	cmd.Language = "JScript" ;
+	cmd.ReturnValue = false ;
+	cmd.Handler = "HelloWorld" ; 
+	cmd.Code = HelloWorld.toString() ; // Embed the code directly in the definition
+	Application.AddCommand( cmd ) ;
+	//
+	// Define Command #2 : CommandSimple
+	//
+	cmd = Application.CreateCommand( "CommandSimple" )
+	cmd.ScriptingName = "CommandSimple" ;
+	cmd.Language = "JScript" ;
+	cmd.ReturnValue = true ;
+	cmd.Handler = "Simple" ; 
+	cmd.Code = Simple.toString() ; // Embed the code directly in the definition
+	// You must mention the arguments you want.
+	// The name is not important but must be unique
+	cmd.Arguments.Add("a")
+	cmd.Arguments.Add("b")	
+	Application.AddCommand( cmd )
+	//
+	// Define Command #3 : CommandSimpleObjectArg
+	//
+	cmd = Application.CreateCommand( "CommandSimpleObjectArg" )
+	cmd.ScriptingName = "CommandSimpleObjectArg" ;
+	cmd.Language = "JScript" ;
+	cmd.ReturnValue = true ;
+	cmd.Handler = "SimpleObjectArg" ; 
+	cmd.Code = SimpleObjectArg.toString() ; // Embed the code directly in the definition
+	cmd.Arguments.AddObjectArgument("obj");
+	Application.AddCommand( cmd )
+}
+function DemoCommands()
+{
+	// It is simple to execute a custom command, especially one
+	// like this with no return value or arguments.
+	// Will log "Hello World"
+	CommandHelloWorld() ;
+	// Will log "15"
+	logmessage( CommandSimple( 5, 10 ) );
+	// Will log "concat"
+	logmessage( CommandSimple( "con","cat" ) ) ;
+	newscene( null, false ) ;
+	var oSphere = ActiveSceneRoot.AddGeometry("Sphere", "NurbsSurface") ;
+	//Will log:
+	//INFO : "Name of the input object sphere"
+	//INFO : "grid"		
+	logmessage( CommandSimpleObjectArg( oSphere ) ) ;
+	//Softimage can also turn an string to an object:
+	//INFO : "Name of the input object grid"
+	//INFO : "grid1"
+	logmessage( CommandSimpleObjectArg( "grid" ) ) ;
+}
+function CleanupCommands()
+{
+	Application.RemoveCommand( "CommandHelloWorld" ) ;
+	Application.RemoveCommand( "CommandSimple" ) ;
+	Application.RemoveCommand( "CommandSimpleObjectArg" ) ;	
+}
+// Implementation of CommandHelloWorld
+// The name of this function matches the string we provided as cmd.Handler
+function HelloWorld()
+{
+	LogMessage( "Hello World" ) ;
+}
+function Simple( in_a, in_b )
+{
+	return in_a + in_b ;
+}
+function SimpleObjectArg( in_obj )
+{
+	logmessage( "Name of the input object " + in_obj.Name ) ;	
+	// return a different object
+	return ActiveSceneRoot.AddGeometry("Grid", "MeshSurface") ;		
+}</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">// JScript Custom Command overview - Self-Installed Approach
+//
+// This example relies on a script on disk so you need to
+// follow an important step first before running this example:
+//
+// SAVE the following commented out code into commandexample.js 
+// inside your %XSI_USERHOME%\Application\Plugins directory.
+//
+// Once you have saved the file you can run the script
+/*
+// BEGINNING OF CODE TO SAVE IN FILE
+function XSILoadPlugin( in_reg )
+{
+	in_reg.Author = "Softimage SDK Team" ;
+	in_reg.Name = "SDK Example - Custom Commands" ;
+	in_reg.Major = 1 ;
+	in_reg.Minor = 1 ;
+	in_reg.RegisterCommand( "CommandHelloWorld", "CommandHelloWorld" );
+	in_reg.RegisterCommand( "CommandSimple", "CommandSimple" );
+	in_reg.RegisterCommand( "CommandSimpleObjectArg", "CommandSimpleObjectArg" );
+	return true ;
+}
+//
+// Define Command #1 : CommandHelloWorld
+//
+function CommandHelloWorld_Init(in_oCtxt)
+{
+	var cmd = in_oCtxt.Source ;
+	cmd.ReturnValue = false ;
+	// We don't need to set cmd.Language, cmd.Handler, cmd.Code
+	// or cmd.FileName because this is automatically determined.
+	// Application.AddCommand is not called
+	// This command takes no arguments
+}
+//
+// Define Command #2 : CommandSimple
+//
+function CommandSimple_Init(in_oCtxt)
+{
+	var cmd = in_oCtxt.Source ;
+	cmd.ReturnValue = true ;
+	// You must mention the arguments you want.
+	// The name is not important but must be unique
+	cmd.Arguments.Add("a")
+	cmd.Arguments.Add("b")	
+}
+//
+// Define Command #3 : CommandSimpleObjectArg
+//
+function CommandSimpleObjectArg_Init(in_oCtxt)
+{
+	var cmd = in_oCtxt.Source ;
+	cmd.ReturnValue = true ;
+	// You must mention the arguments you want.
+	// The name is not important but must be unique
+	cmd.Arguments.AddObjectArgument("obj");
+}
+// Implementation of CommandHelloWorld
+function CommandHelloWorld_Execute()
+{
+	LogMessage( "Hello World" ) ;
+}
+function CommandSimple_Execute( in_a, in_b )
+{
+	return in_a + in_b ;
+}
+function CommandSimpleObjectArg_Execute( in_obj )
+{
+	logmessage( "Name of the input object " + in_obj.Name ) ;	
+	// return a different object
+	return ActiveSceneRoot.AddGeometry("Grid", "MeshSurface") ;		
+}
+// END OF CODE TO SAVE IN FILE
+*/
+// This loads the newly created file, which will define the commands inside Softimage.
+// It is unnecessary if you restart Softimage or use the Plugin Manager view
+Application.LoadPlugin( Application.InstallationPath( siUserPath ) + 
+		"/Application/Plugins/commandexample.js" ) ;
+// Demonstrate the custom commands that are defined in the plug-in
+DemoCommands() ;
+function DemoCommands()
+{
+	// It is simple to execute a custom command, especially one
+	// like this with no return value or arguments.
+	// Will log "Hello World"
+	CommandHelloWorld() ;
+	// Will log "15"
+	logmessage( CommandSimple( 5, 10 ) );
+	// Will log "concat"
+	logmessage( CommandSimple( "con","cat" ) ) ;
+	newscene( null, false ) ;
+	var oSphere = ActiveSceneRoot.AddGeometry("Sphere", "NurbsSurface") ;
+	//Will log:
+	//INFO : "Name of the input object sphere"
+	//INFO : "grid"		
+	logmessage( CommandSimpleObjectArg( oSphere ) ) ;
+	//Softimage can also turn an string to an object:
+	//INFO : "Name of the input object grid"
+	//INFO : "grid1"
+	logmessage( CommandSimpleObjectArg( "grid" ) ) ;
+}</pre></td></tr>
+</table>
+</div><h4>3. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">// JScript Custom Command overview - v1.5 Approach
+//
+// This example relies on a script on disk so you need to
+// follow an important step first before running this example:
+//
+// SAVE the following commented out code as
+// %XSI_USERHOME%\Data\Scripts\commandexample.js
+//
+// Once you have saved the file you can run the script
+/*
+// BEGINNING OF CODE TO SAVE IN FILE
+// Implementation of CommandHelloWorld
+// The name of this function matches the string we provided as cmd.Handler
+function HelloWorld()
+{
+	LogMessage( "Hello World" ) ;
+}
+function Simple( in_a, in_b )
+{
+	return in_a + in_b ;
+}
+function SimpleObjectArg( in_obj )
+{
+	logmessage( "Name of the input object " + in_obj.Name ) ;	
+	// return a different object
+	return ActiveSceneRoot.AddGeometry("Grid", "MeshSurface") ;		
+}
+// END OF CODE TO SAVE IN FILE
+*/
+InstallCommands();
+DemoCommands() ;
+// Comment out this line if you want to experiment with the 
+// commands created in this example
+CleanupCommands();
+function InstallCommands()
+{
+	// Remove any existing copies of the demo commands
+	CleanupCommands() ;
+	// each command needs to be defined.
+	// (Softimage will not forget this information
+	// until they are removed with a call to CleanupCommands() ;
+	var fileNameWithPath = Application.InstallationPath( siUserPath ) + "/Data/Scripts/commandexample.js"
+	//
+	// Define Command #1 : CommandHelloWorld
+	//
+	var cmd = Application.CreateCommand( "CommandHelloWorld" )
+	cmd.ScriptingName = "CommandHelloWorld" ;
+	cmd.Language = "JScript" ;
+	cmd.ReturnValue = false ;
+	cmd.Handler = "HelloWorld" ; 
+	cmd.FileName = fileNameWithPath;
+	Application.AddCommand( cmd ) ;
+	//
+	// Define Command #2 : CommandSimple
+	//
+	cmd = Application.CreateCommand( "CommandSimple" )
+	cmd.ScriptingName = "CommandSimple" ;
+	cmd.Language = "JScript" ;
+	cmd.ReturnValue = true ;
+	cmd.Handler = "Simple" ; 
+	cmd.FileName = fileNameWithPath;
+	// You must mention the arguments you want.
+	// The name is not important but must be unique
+	cmd.Arguments.Add("a")
+	cmd.Arguments.Add("b")	
+	Application.AddCommand( cmd )
+	//
+	// Define Command #3 : CommandSimpleObjectArg
+	//
+	cmd = Application.CreateCommand( "CommandSimpleObjectArg" )
+	cmd.ScriptingName = "CommandSimpleObjectArg" ;
+	cmd.Language = "JScript" ;
+	cmd.ReturnValue = true ;
+	cmd.Handler = "SimpleObjectArg" ; 
+	cmd.FileName = fileNameWithPath;
+	cmd.Arguments.AddObjectArgument("obj");
+	Application.AddCommand( cmd )
+}
+function DemoCommands()
+{
+	// It is simple to execute a custom command, especially one
+	// like this with no return value or arguments.
+	// Will log "Hello World"
+	CommandHelloWorld() ;
+	// Will log "15"
+	logmessage( CommandSimple( 5, 10 ) );
+	// Will log "concat"
+	logmessage( CommandSimple( "con","cat" ) ) ;
+	newscene( null, false ) ;
+	var oSphere = ActiveSceneRoot.AddGeometry("Sphere", "NurbsSurface") ;
+	//Will log:
+	//INFO : "Name of the input object sphere"
+	//INFO : "grid"		
+	logmessage( CommandSimpleObjectArg( oSphere ) ) ;
+	//Softimage can also turn an string to an object:
+	//INFO : "Name of the input object grid"
+	//INFO : "grid1"
+	logmessage( CommandSimpleObjectArg( "grid" ) ) ;
+}
+function CleanupCommands()
+{
+	Application.RemoveCommand( "CommandHelloWorld" ) ;
+	Application.RemoveCommand( "CommandSimple" ) ;
+	Application.RemoveCommand( "CommandSimpleObjectArg" ) ;	
+}</pre></td></tr>
+</table>
+</div><h4>4. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' --------------------------------------------------------------
+'
+'	This VBScript example demonstrates how to find a built-in 
+' 	(or native) Softimage command using its scripting name.
+'
+' --------------------------------------------------------------
+' Loop through the Softimage command collection looking for a name match
+for each c in Application.Commands
+	if c.ScriptingName = "FreezeObj" then
+		' At this point, you could either... 
+		' ...get its name to use elsewhere ...
+		sScpName = c.Name
+		' ...use it to create a Command object...
+		set oCmd = c
+		' ...or perform whatever action you want on it, like demonstrating 
+		'    the difference between the Name and ScriptingName properties
+		Application.LogMessage "FreezeObj info......." &amp; vbLf _
+			&amp; vbTab &amp; "Name          = " &amp; c.Name &amp; vbLf _
+			&amp; vbTab &amp; "ScriptingName = " &amp; c.ScriptingName
+	end if
+next
+' With the new command pointer, we can access command information
+Application.LogMessage oCmd.Name &amp; ": Belongs to the " &amp; oCmd.Category &amp; " category/menu."
+' Now that we know the command's full name, we can access the command using 
+' the name as the key in the command collection
+set oCommand = Application.Commands( sScpName )
+Application.LogMessage oCommand.Name &amp; ": " &amp; oCommand.Description
+' --------------------------------------------------------------------------
+' Output of above script:
+'INFO : "FreezeObj info.......
+'	Name          = Freeze Operator Stack
+'	ScriptingName = FreezeObj"
+'INFO : "Freeze Operator Stack: Belongs to the Edit category/menu."
+'INFO : "Freeze Operator Stack: Freeze all the operators of the selected object(s)"</pre></td></tr>
+</table>
+</div><h4>5. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/* --------------------------------------------------------------
+	Hello World example, based on v1.5 workflow for defining a command
+	This JScript example creates and registers a custom
+	command and then demonstrates how you can find it in
+	the Softimage command collection using the Builtin property.
+----------------------------------------------------------- */
+// Start off with a clean slate
+Application.RemoveCommand("Howdy");
+// Get the factory (installation) path and use it to build the filename &amp; path
+var sFileName = InstallationPath( siUserPath ) + "\\Data\\Scripts\\HelloWorld.js";
+// Create a standard hello world script file
+var fso = new ActiveXObject( "Scripting.FileSystemObject" );
+var fHWFile = fso.CreateTextFile( sFileName  );
+fHWFile.WriteLine( "function SayHi()" );
+fHWFile.WriteLine( "{" );
+fHWFile.WriteLine( "\tApplication.LogMessage( \"Hello, World!\" );" );
+fHWFile.WriteLine( "}" );
+fHWFile.Close();
+// Add it to the command map in Softimage
+var oCmd = Application.CreateCommand( "Howdy", siExportCategory );
+oCmd.Description = "Display the traditional greeting";
+oCmd.ScriptingName = "Howdy";
+oCmd.Handler = "SayHi";
+oCmd.FileName = sFileName;
+oCmd.Language = "JScript";
+Application.AddCommand( oCmd );
+// Run it just to make sure it's working
+oCmd.Execute();
+// Now loop through the command collection and print the name and
+// scripting name of each custom command
+// (Tip: It is faster to use CommandCollection.Filter("Custom") to
+// find all custom commands)
+var eCmdList = new Enumerator( Application.Commands );
+eCmdList.moveFirst();
+var c;
+for (; !eCmdList.atEnd(); eCmdList.moveNext() )
+{
+	c = eCmdList.item();
+	if(!(c.Builtin))
+	{
+		LogMessage( c.Name + "(" + c.ScriptingName + ") is a custom command." );
+	}
+}
+// Restore everything back to normal
+Application.RemoveCommand("Howdy");
+fso.DeleteFile( sFileName, true );
+// --------------------------------------------------------------
+// Output of the above script is:
+//
+//INFO : "Hello, World!"
+//Howdy();
+//Followed by a list of all custom commands installed, including:
+//INFO : "Howdy is a custom command."</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/XSIApplication.CreateCommand.html">XSIApplication.CreateCommand</a> <a href="#!/url=./si_om/Application.ExecuteScript.html">Application.ExecuteScript</a> <a href="#!/url=./si_cmds/CreateScriptCommand.html">CreateScriptCommand</a> <a href="#!/url=./si_om/Argument.html">Argument</a> <a href="#!/url=./si_om/ArgumentHandler.html">ArgumentHandler</a> <a href="#!/url=./si_cmds/EditCommand.html">EditCommand</a> <a href="#!/url=./si_cmds/CreateAndEditCommand.html">CreateAndEditCommand</a> <a href="#!/url=./si_om/Menu.AddCommandItem.html">Menu.AddCommandItem</a> <a href="#!/url=./si_om/XSIApplication.GetCommandByScriptingName.html">XSIApplication.GetCommandByScriptingName</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></h3></h3></div>
+   </div></body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>MakeHand</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>MakeHand</h1>
+         </div>
+
+<h2 class="pagehead">MakeHand</h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Creates a one-bone hand and a set of finger bones using guide objects to position and orient 
+the bone joints. Two collections of guide objects are necessary to create a hand: a collection 
+of finger guide objects to position finger joints; and a collection of "blade" objects that control 
+the curl direction of the fingers. The finger chain is set up so that bone Z rotation is in the 
+plane of the blade. <br /><br />
+Optionally a shadow rig can be attached to the hand and fingers. A shadow object is created for each 
+chain element in the arm, and pose constrained to that element. Shadow rigs can be used to plot 
+animation off of a rig. 
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oHand = MakeHand( HandParent, FingerGuideCollection, BladeGuideCollection, HandGuideCollection, [Prefix], [FingerBoneType], [ShadowType], [ShadowParent], [NegativeScale] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns a <a href="#!/url=./files/CDKHand.htm">Hand</a> JScript object.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">HandParent		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The object to which the new hand will be parented.		</td>
+	</tr>
+	<tr>
+		<td class="name">FingerGuideCollection		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		A collection of guides objects for the start of each finger.  Given a guide object in the collection 
+		like "LRing1" make hand will search for "LRing2", "LRing3", etc. until it can't find more joints. 
+		At least one extra joint per root needs to be found in the scene for a bone to be drawn.
+			</td>
+	</tr>
+	<tr>
+		<td class="name">BladeGuideCollection		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		A collection of blade objects showing the orientation of the fingers being drawn. Needs to be 
+		in the same order as the Root Guides.
+			</td>
+	</tr>
+	<tr>
+		<td class="name">HandGuideCollection		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+A collection of two objects in the order: start of hand bone, end of hand bone.		</td>
+	</tr>
+	<tr>
+		<td class="name">Prefix		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The prefix used to name new objects when making the new hand.  For example, "L" and "R".		</td>
+	</tr>
+	<tr>
+		<td class="name">FingerBoneType		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+Option to construct finger bones from 2D or 3D chains.			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>Fingers are 2D chains and the preference angles orient with Finger blades.					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>Fingers are 3D chains and preference angles are the pose of the guide.					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ShadowType		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+The type of shadow rig to attach to the hand. Shadow rigs can be used to transfer or remap animation.			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>No shadow					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>SI|3D Skeleton shadow rig					</td>
+				</tr>
+				<tr>
+					<td class="name">2					</td>
+					<td>XSI Skeleton shadow rig					</td>
+				</tr>
+				<tr>
+					<td class="name">3					</td>
+					<td>Null shadow rig					</td>
+				</tr>
+				<tr>
+					<td class="name">4					</td>
+					<td>Box shadow rig					</td>
+				</tr>
+				<tr>
+					<td class="name">9					</td>
+					<td>SI|3D Skeleton hand shadow (no fingers)					</td>
+				</tr>
+				<tr>
+					<td class="name">10					</td>
+					<td>XSI Skeleton hand shadow (no fingers)					</td>
+				</tr>
+				<tr>
+					<td class="name">11					</td>
+					<td>Null hand shadow (no fingers)					</td>
+				</tr>
+				<tr>
+					<td class="name">12					</td>
+					<td>Box hand shadow (no fingers)					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ShadowParent		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Parent of the shadow rig hiearchy.  If empty, no shadow rig is generated.		</td>
+	</tr>
+	<tr>
+		<td class="name">NegativeScale		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+Negative scaling on the chain. Negative scaling is useful for manipulating the left and right hands or fingers symmetrically.			<p class="cell"><span class="hilite">Default Value: </span>
+False			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	Loads the Biped Guide then generates a left 
+	hand matched to the guide
+*/
+GetProportionalGuide("Biped_Guide", 0, 0);
+var Guide    = ActiveSceneRoot.FindChild("Biped_Guide" );
+var LFingers = new ActiveXObject("XSI.Collection");
+var LBlades  = new ActiveXObject("XSI.Collection");
+var handKeys = new Array("Pinky", "Ring", "Middle", "Index", "Thumb");
+for(i=0;i&lt;handKeys.length;i++){
+	var finger = Guide.FindChild("L" + handKeys[i] + 1);
+	var blade  = Guide.FindChild("L" + handKeys[i] + "_fingerBlade");
+	if(finger &amp;&amp; blade){
+		LFingers.add(finger);
+		LBlades.add(blade);
+	}
+}
+var LHBone = new ActiveXObject("XSI.Collection");
+LHBone.add(Guide + ".LHand");
+LHBone.add(Guide + ".LHandEnd");
+var LHand = makeHand(ActiveSceneRoot, LFingers, LBlades, LHBone, "L", 0, 0, null, 0);
+DumpHand(LHand);
+//Delete the guide
+DeleteObj("B:"+Guide);
+//Move hand to the origin 
+var xfo
+xfo = LHand.Root.Kinematics.Global.Transform;
+xfo.SetTranslationFromValues(0,0,0);
+LHand.Root.Kinematics.Global.Transform = xfo;
+function DumpHand(inHand)
+{
+		logmessage ("Data in the returned hand object:");
+		logmessage ("---------------------------------");
+		logmessage ("HandRoot  : " + inHand.Root);
+		logmessage ("HandEff   : " + inHand.Eff);
+		logmessage ("#FingRoots: " + inHand.FingerRoots.count);
+		for(var b=0;b&lt;inHand.FingerRoots.count;b++)
+		{logmessage (" FingerRoot" + b + ": " + inHand.FingerRoots(b));}
+		logmessage ("Hidden    : " + inHand.Hidden);
+		logmessage ("Envelope  : " + inHand.Envelope);
+		logmessage ("Shadows   : " + inHand.Shadows);
+}
+//results from running this script:
+//INFO : "Data in the returned hand object:"
+//INFO : "---------------------------------"
+//INFO : "HandRoot  : LHandRoot"
+//INFO : "HandEff   : LHandEffector"
+//INFO : "#FingRoots: 5"
+//INFO : " FingerRoot0: LPinkyRoot"
+//INFO : " FingerRoot1: LRingRoot"
+//INFO : " FingerRoot2: LMiddleRoot"
+//INFO : " FingerRoot3: LIndexRoot"
+//INFO : " FingerRoot4: LThumbRoot"
+//INFO : "Hidden    : LPinkyRoot,LPinkyEffector,LRingRoot,LRingEffector,LMiddleRoot,LMiddleEffector,LIndexRoot,LIndexEffector,LThumbRoot,LThumbEffector,LHandRoot,LHandEffector"
+//INFO : "Envelope  : LPinky1,LPinky2,LPinky3,LRing1,LRing2,LRing3,LMiddle1,LMiddle2,LMiddle3,LIndex1,LIndex2,LIndex3,LThumb1,LThumb2,LThumb3,LHand"
+//INFO : "Shadows   : undefined"</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/MakeArm.html">MakeArm</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

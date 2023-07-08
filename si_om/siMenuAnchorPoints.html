@@ -1,0 +1,1567 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>siMenuAnchorPoints</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>siMenuAnchorPoints</h1>
+         </div>
+
+<h2 class="pagehead">siMenuAnchorPoints</h2>
+
+<h3>Description</h3>
+<div><p>Identifies the location of a custom menu.</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>siMenuAnchorPoints.siMenuUndefinedID                                        // 0
+siMenuAnchorPoints.siMenuTbGetPrimitiveCurveID                              // 1
+siMenuAnchorPoints.siMenuTbGetPrimitivePolygonMeshBasicID                   // 2
+siMenuAnchorPoints.siMenuTbGetPrimitivePolygonMeshHedronID                  // 3
+siMenuAnchorPoints.siMenuTbGetPrimitivePolygonMeshID                        // 4
+siMenuAnchorPoints.siMenuTbGetPrimitiveSurfaceID                            // 5
+siMenuAnchorPoints.siMenuTbGetPrimitiveImplicitCurveID                      // 6
+siMenuAnchorPoints.siMenuTbGetPrimitiveImplicitID                           // 7
+siMenuAnchorPoints.siMenuTbGetPrimitiveControlObjectID                      // 8
+siMenuAnchorPoints.siMenuTbGetPrimitiveModelID                              // 9
+siMenuAnchorPoints.siMenuTbGetPrimitiveID                                   // 10
+siMenuAnchorPoints.siMenuTbGetCameraID                                      // 11
+siMenuAnchorPoints.siMenuTbGetLightID                                       // 12
+siMenuAnchorPoints.siMenuTbGetMaterialID                                    // 13
+siMenuAnchorPoints.siMenuTbGetMaterialBasicID                               // 14
+siMenuAnchorPoints.siMenuTbGetMaterialSimpleID                              // 15
+siMenuAnchorPoints.siMenuTbGetMaterialRealTimeID                            // 16
+siMenuAnchorPoints.siMenuTbGetPropertyID                                    // 17
+siMenuAnchorPoints.siMenuTbGetPropertyTextureProjectionID                   // 18
+siMenuAnchorPoints.siMenuTbGetPropertyTextureMapID                          // 19
+siMenuAnchorPoints.siMenuTbGetPropertyTextureID                             // 20
+siMenuAnchorPoints.siMenuTbGetPropertyUserDataMapID                         // 21
+siMenuAnchorPoints.siMenuTbGetPropertyMapPaintID                            // 22
+siMenuAnchorPoints.siMenuTbGetPropertyPSetID                                // 23
+siMenuAnchorPoints.siMenuTbDeformSpatialID                                  // 24
+siMenuAnchorPoints.siMenuTbDeformID                                         // 25
+siMenuAnchorPoints.siMenuTbCreateSkeletonID                                 // 26
+siMenuAnchorPoints.siMenuTbCreateSkeletonDrawID                             // 27
+siMenuAnchorPoints.siMenuTbCreateSkeletonInspectID                          // 28
+siMenuAnchorPoints.siMenuTbModelCreateCurveID                               // 100
+siMenuAnchorPoints.siMenuTbModelCreateSurfaceMeshID                         // 101
+siMenuAnchorPoints.siMenuTbModelCreatePolygonMeshID                         // 102
+siMenuAnchorPoints.siMenuTbModelCreateModelID                               // 103
+siMenuAnchorPoints.siMenuTbModelCreateTextID                                // 104
+siMenuAnchorPoints.siMenuTbModelModifyComponentID                           // 105
+siMenuAnchorPoints.siMenuTbModelModifyCurveID                               // 106
+siMenuAnchorPoints.siMenuTbModelModifySurfaceMeshID                         // 107
+siMenuAnchorPoints.siMenuTbModelModifyPolygonMeshID                         // 108
+siMenuAnchorPoints.siMenuTbModelModifyModelID                               // 109
+siMenuAnchorPoints.siMenuTbAnimateCreateParameterID                         // 200
+siMenuAnchorPoints.siMenuTbAnimateCreateParameterCustomPSetID               // 201
+siMenuAnchorPoints.siMenuTbAnimateCreateParameterCustomParamID              // 202
+siMenuAnchorPoints.siMenuTbAnimateCreateParameterExpressionID               // 203
+siMenuAnchorPoints.siMenuTbAnimateCreateParameterProxyID                    // 204
+siMenuAnchorPoints.siMenuTbAnimateCreateCurveID                             // 205
+siMenuAnchorPoints.siMenuTbAnimateCreatePathID                              // 206
+siMenuAnchorPoints.siMenuTbAnimateCreateCharacterID                         // 207
+siMenuAnchorPoints.siMenuTbAnimateDeformShapeID                             // 208
+siMenuAnchorPoints.siMenuTbAnimateDeformShapeKeyID                          // 209
+siMenuAnchorPoints.siMenuTbAnimateDeformEnvelopeID                          // 210
+siMenuAnchorPoints.siMenuTbAnimateActionsStoreID                            // 211
+siMenuAnchorPoints.siMenuTbAnimateActionsApplyID                            // 212
+siMenuAnchorPoints.siMenuTbAnimateActionsTemplatesID                        // 213
+siMenuAnchorPoints.siMenuTbAnimateToolsPlotID                               // 214
+siMenuAnchorPoints.siMenuTbAnimateToolsDevicesID                            // 215
+siMenuAnchorPoints.siMenuTbAnimateToolsImportID                             // 216
+siMenuAnchorPoints.siMenuTbAnimateToolsExportID                             // 217
+siMenuAnchorPoints.siMenuTbAnimateToolsMotorID                              // 218
+siMenuAnchorPoints.siMenuTbRenderRegionID                                   // 300
+siMenuAnchorPoints.siMenuTbRenderPreviewID                                  // 301
+siMenuAnchorPoints.siMenuTbRenderRenderID                                   // 302
+siMenuAnchorPoints.siMenuTbRenderExportMIID                                 // 303
+siMenuAnchorPoints.siMenuTbRenderPassEditID                                 // 304
+siMenuAnchorPoints.siMenuTbRenderPassEditNewPassID                          // 305
+siMenuAnchorPoints.siMenuTbRenderPassPartitionID                            // 306
+siMenuAnchorPoints.siMenuTbRenderExportID                                   // 307
+siMenuAnchorPoints.siMenuTbICEParticlesCreateID                             // 320
+siMenuAnchorPoints.siMenuTbICEParticlesOnEmissionID                         // 321
+siMenuAnchorPoints.siMenuTbICEParticlesAfterEmissionID                      // 322
+siMenuAnchorPoints.siMenuTbICEParticlesForceID                              // 323
+siMenuAnchorPoints.siMenuTbICEParticlesCollisionID                          // 324
+siMenuAnchorPoints.siMenuTbICEParticlesSimulationID                         // 325
+siMenuAnchorPoints.siMenuTbICEParticlesModelLibraryID                       // 326
+siMenuAnchorPoints.siMenuTbICEDeformCreateID                                // 340
+siMenuAnchorPoints.siMenuTbICEDeformSimulateID                              // 341
+siMenuAnchorPoints.siMenuTbICEKinematicsEffectsID                           // 360
+siMenuAnchorPoints.siMenuTbICEKinematicsConstrainID                         // 361
+siMenuAnchorPoints.siMenuTbICECrowdFXActorsID                               // 380
+siMenuAnchorPoints.siMenuTbICECrowdFXSimulationID                           // 381
+siMenuAnchorPoints.siMenuTbICECrowdFXCrowdID                                // 382
+siMenuAnchorPoints.siMenuTbGetForceID                                       // 400
+siMenuAnchorPoints.siMenuTbCreateParticlesID                                // 401
+siMenuAnchorPoints.siMenuTbCreateParticlesFluidID                           // 402
+siMenuAnchorPoints.siMenuTbCreateParticlesExplosionID                       // 403
+siMenuAnchorPoints.siMenuTbCreateParticlesNewPTypeID                        // 404
+siMenuAnchorPoints.siMenuTbCreateRigidBodyID                                // 405
+siMenuAnchorPoints.siMenuTbCreateRigidBodyConstraintID                      // 406
+siMenuAnchorPoints.siMenuTbCreateClothID                                    // 407
+siMenuAnchorPoints.siMenuTbModifyParticlesID                                // 408
+siMenuAnchorPoints.siMenuTbModifyRigidBodyID                                // 409
+siMenuAnchorPoints.siMenuTbModifyEnvironmentID                              // 410
+siMenuAnchorPoints.siMenuTbCreateSoftBodyID                                 // 411
+siMenuAnchorPoints.siMenuTbICECreateID                                      // 412
+siMenuAnchorPoints.siMenuTbICEEditID                                        // 413
+siMenuAnchorPoints.siMenuMainFileSceneID                                    // 1000
+siMenuAnchorPoints.siMenuMainFileProjectID                                  // 1001
+siMenuAnchorPoints.siMenuMainFileExportID                                   // 1002
+siMenuAnchorPoints.siMenuMainFileImportID                                   // 1003
+siMenuAnchorPoints.siMenuMainWindowID                                       // 1004
+siMenuAnchorPoints.siMenuMainHelpID                                         // 1005
+siMenuAnchorPoints.siMenuMainApplicationID                                  // 1006
+siMenuAnchorPoints.siMenuMainApplicationPropertySetsID                      // 1007
+siMenuAnchorPoints.siMenuMainApplicationLayoutsID                           // 1008
+siMenuAnchorPoints.siMenuMainApplicationViewsID                             // 1009
+siMenuAnchorPoints.siMenuMainApplicationToolbarsID                          // 1010
+siMenuAnchorPoints.siMenuMainApplicationCommandsID                          // 1011
+siMenuAnchorPoints.siMenuMainApplicationKeyMappingsID                       // 1012
+siMenuAnchorPoints.siMenuMainApplicationPreferencesID                       // 1013
+siMenuAnchorPoints.siMenuMainTopLevelID                                     // 1014
+siMenuAnchorPoints.siMenuMainFileCrosswalkID                                // 1015
+siMenuAnchorPoints.siMenuMCPSelectTopID                                     // 2000
+siMenuAnchorPoints.siMenuMCPSelectBottomID                                  // 2001
+siMenuAnchorPoints.siMenuMCPSelectExploreBtnID                              // 2002
+siMenuAnchorPoints.siMenuMCPSelectSelBtnContextID                           // 2003
+siMenuAnchorPoints.siMenuMCPTransformTopID                                  // 2004
+siMenuAnchorPoints.siMenuMCPTransformBottomID                               // 2005
+siMenuAnchorPoints.siMenuMCPSnapID                                          // 2006
+siMenuAnchorPoints.siMenuMCPConstrainID                                     // 2007
+siMenuAnchorPoints.siMenuMCPEditID                                          // 2008
+siMenuAnchorPoints.siMenuMCPAnimationID                                     // 2009
+siMenuAnchorPoints.siMenuMCPPlaybackID                                      // 2010
+siMenuAnchorPoints.siMenuVMViewTypeID                                       // 3000
+siMenuAnchorPoints.siMenuVMCameraID                                         // 3001
+siMenuAnchorPoints.siMenuVMVisibilityID                                     // 3002
+siMenuAnchorPoints.siMenuVMDisplayID                                        // 3003
+siMenuAnchorPoints.siMenu3DViewClusterContextID                             // 3100
+siMenuAnchorPoints.siMenu3DViewComponentContextID                           // 3101
+siMenuAnchorPoints.siMenu3DViewComponentEditContextID                       // 3102
+siMenuAnchorPoints.siMenu3DViewGeneralContextID                             // 3103
+siMenuAnchorPoints.siMenu3DViewObjectContextID                              // 3104
+siMenuAnchorPoints.siMenu3DViewObjectEditContextID                          // 3105
+siMenuAnchorPoints.siMenu3DViewObjectGroupContextID                         // 3106
+siMenuAnchorPoints.siMenu3DViewObjectMeshContextID                          // 3107
+siMenuAnchorPoints.siMenu3DViewObjectSelectContextID                        // 3108
+siMenuAnchorPoints.siMenuSEGeneralContextID                                 // 3200
+siMenuAnchorPoints.siMenuSELayersContextID                                  // 3201
+siMenuAnchorPoints.siMenuSEPassesContextID                                  // 3202
+siMenuAnchorPoints.siMenuSEPartitionsContextID                              // 3203
+siMenuAnchorPoints.siMenuSEObjectContextID                                  // 3204
+siMenuAnchorPoints.siMenuSEGroupContextID                                   // 3205
+siMenuAnchorPoints.siMenuSEAnimContextID                                    // 3206
+siMenuAnchorPoints.siMenuSEClusterContextID                                 // 3207
+siMenuAnchorPoints.siMenuSEOperatorContextID                                // 3208
+siMenuAnchorPoints.siMenuSEConstraintContextID                              // 3209
+siMenuAnchorPoints.siMenuSEPreferenceContextID                              // 3210
+siMenuAnchorPoints.siMenuSEMaterialContextID                                // 3211
+siMenuAnchorPoints.siMenuSEModelContextID                                   // 3212
+siMenuAnchorPoints.siMenuPluginMgrPluginFileID                              // 3300
+siMenuAnchorPoints.siMenuPluginMgrTreeFileID                                // 3301
+siMenuAnchorPoints.siMenuPluginMgrContextPluginID                           // 3302
+siMenuAnchorPoints.siMenuPluginMgrContextPluginLocationID                   // 3303
+siMenuAnchorPoints.siMenuPluginMgrContextUserRootID                         // 3304
+siMenuAnchorPoints.siMenuPluginMgrContextFactoryRootID                      // 3305
+siMenuAnchorPoints.siMenuPluginMgrContextWorkgroupRootID                    // 3306
+siMenuAnchorPoints.siMenuPluginMgrContextAddonID                            // 3307
+siMenuAnchorPoints.siMenuPluginMgrContextCustomLocationID                   // 3308
+siMenuAnchorPoints.siMenuPluginMgrSPDLFileID                                // 3309
+siMenuAnchorPoints.siMenuPluginMgrContextSPDLID                             // 3310
+siMenuAnchorPoints.siMenuPluginMgrContextSPDLLocationID                     // 3311
+siMenuAnchorPoints.siMenuPluginMgrContextPluginItemID                       // 3312
+siMenuAnchorPoints.siMenuPluginMgrContextViewLocationID                     // 3313
+siMenuAnchorPoints.siMenuPluginMgrContextViewID                             // 3314
+siMenuAnchorPoints.siMenuPluginMgrContextToolbarLocationID                  // 3315
+siMenuAnchorPoints.siMenuPluginMgrContextToolbarID                          // 3316
+siMenuAnchorPoints.siMenuWorkgroupMgrFileID                                 // 3350
+siMenuAnchorPoints.siMenuWorkgroupMgrContextID                              // 3351
+siMenuAnchorPoints.siMenuScriptEditContextID                                // 3400
+siMenuAnchorPoints.siMenuScriptHistoryContextID                             // 3401
+siMenuAnchorPoints.siMenuFCurveEditorTopLevelID                             // 3500
+siMenuAnchorPoints.siMenuFCurveEditorFileID                                 // 3501
+siMenuAnchorPoints.siMenuFCurveEditorEditID                                 // 3502
+siMenuAnchorPoints.siMenuFCurveEditorViewID                                 // 3503
+siMenuAnchorPoints.siMenuFCurveEditorKeysID                                 // 3504
+siMenuAnchorPoints.siMenuFCurveEditorCurvesID                               // 3505
+siMenuAnchorPoints.siMenuFCurveEditorSelectID                               // 3506
+siMenuAnchorPoints.siMenuPropertyPageContextID                              // 3600
+siMenuAnchorPoints.siMenuPropertyPageAnimContextID                          // 3601
+siMenuAnchorPoints.siMenuShapeManagerEditID                                 // 3700
+siMenuAnchorPoints.siMenuShapeManagerCreateContextSingleSelectionID         // 3701
+siMenuAnchorPoints.siMenuShapeManagerCreateContextMultiSelectionID          // 3702
+siMenuAnchorPoints.siMenuShapeManagerAnimateContextSingleSelectionID        // 3703
+siMenuAnchorPoints.siMenuShapeManagerAnimateContextMultiSelectionID         // 3704
+siMenuAnchorPoints.siMenuShapeManagerAnimateID                              // 3705
+siMenuAnchorPoints.siMenuRenderRegionContextID                              // 3800
+siMenuAnchorPoints.siMenuMaterialPanelMaterialID                            // 3900
+siMenuAnchorPoints.siMenuTextureEditorToolsID                               // 4000
+siMenuAnchorPoints.siMenuRenderTreeToolsID                                  // 4100
+siMenuAnchorPoints.siMenuICEViewToolsID                                     // 4101
+siMenuAnchorPoints.siMenuRTNodeContextID                                    // 4102
+siMenuAnchorPoints.siMenuICENodeContextID                                   // 4103
+siMenuAnchorPoints.siMenuICENodePortContextID                               // 4104
+siMenuAnchorPoints.siMenuRenderTreeTopLevelID                               // 4105
+siMenuAnchorPoints.siMenuICEViewTopLevelID                                  // 4106
+siMenuAnchorPoints.siMenuTextEditorWidgetEditID                             // 4200
+siMenuAnchorPoints.siMenuTextEditorContextID                                // 4201
+siMenuAnchorPoints.siMenuTextureSpaceProjectionID                           // 4300
+siMenuAnchorPoints.siMenuSchematicViewID                                    // 4400
+siMenuAnchorPoints.siMenuSchematicViewContextID                             // 4401
+siMenuAnchorPoints.siMenuSchematicNodeContextID                             // 4402
+siMenuAnchorPoints.siMenuSchematicViewTopLevelID                            // 4403
+siMenuAnchorPoints.siMenuSceneLayerManagerLayersID                          // 4500
+siMenuAnchorPoints.siMenuSceneLayerManagerContextID                         // 4501
+siMenuAnchorPoints.siMenuMaterialManagerTopLevelID                          // 4600
+siMenuAnchorPoints.siMenuAnimMixerEditID                                    // 4700
+siMenuAnchorPoints.siMenuAnimMixerViewID                                    // 4701
+siMenuAnchorPoints.siMenuAnimMixerTrackID                                   // 4702
+siMenuAnchorPoints.siMenuAnimMixerClipID                                    // 4703
+siMenuAnchorPoints.siMenuAnimMixerMixID                                     // 4704
+siMenuAnchorPoints.siMenuAnimMixerEffectID                                  // 4705
+siMenuAnchorPoints.siMenuShaderCodeEditContextID                            // 4800
+siMenuAnchorPoints.siMenuWeightEditorFileID                                 // 10000
+siMenuAnchorPoints.siMenuWeightEditorEditID                                 // 10001
+siMenuAnchorPoints.siMenuWeightEditorViewID                                 // 10002
+siMenuAnchorPoints.siMenuScriptedOpEditContextID                            // 10100</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<div><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th>Constant		</th>		<th>Value		</th>		<th>Description		</th>	</tr>
+	<tr>
+		<td class="name"><a name="siMenuUndefinedID"> </a>siMenuUndefinedID		</td>
+		<td class="example">0		</td>
+		<td>
+Undefined menu id.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetPrimitiveCurveID"> </a>siMenuTbGetPrimitiveCurveID		</td>
+		<td class="example">1		</td>
+		<td>
+Get > Primitive > Curve menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetPrimitivePolygonMeshBasicID"> </a>siMenuTbGetPrimitivePolygonMeshBasicID		</td>
+		<td class="example">2		</td>
+		<td>
+Basic section (Cone, Cube, ..., Torus) in the Get > Primitive > Polygon Mesh menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetPrimitivePolygonMeshHedronID"> </a>siMenuTbGetPrimitivePolygonMeshHedronID		</td>
+		<td class="example">3		</td>
+		<td>
+Hedron section (Dodecahedron, Icosahedron, ..., Rhombicosidodecahedron) in the Get > Primitive > Polygon Mesh menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetPrimitivePolygonMeshID"> </a>siMenuTbGetPrimitivePolygonMeshID		</td>
+		<td class="example">4		</td>
+		<td>
+Get > Primitive > Polygon Mesh menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetPrimitiveSurfaceID"> </a>siMenuTbGetPrimitiveSurfaceID		</td>
+		<td class="example">5		</td>
+		<td>
+Get > Primitive > Surface menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetPrimitiveImplicitCurveID"> </a>siMenuTbGetPrimitiveImplicitCurveID		</td>
+		<td class="example">6		</td>
+		<td>
+Curve section (Arc, Circle, ..., Square) in the Get > Primitive > Implicit menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetPrimitiveImplicitID"> </a>siMenuTbGetPrimitiveImplicitID		</td>
+		<td class="example">7		</td>
+		<td>
+Get > Primitive > Implicit menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetPrimitiveControlObjectID"> </a>siMenuTbGetPrimitiveControlObjectID		</td>
+		<td class="example">8		</td>
+		<td>
+Get > Primitive > Control Object menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetPrimitiveModelID"> </a>siMenuTbGetPrimitiveModelID		</td>
+		<td class="example">9		</td>
+		<td>
+Get > Primitive > Model menu .		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetPrimitiveID"> </a>siMenuTbGetPrimitiveID		</td>
+		<td class="example">10		</td>
+		<td>
+Get > Primitive menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetCameraID"> </a>siMenuTbGetCameraID		</td>
+		<td class="example">11		</td>
+		<td>
+Get > Primitive > Camera menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetLightID"> </a>siMenuTbGetLightID		</td>
+		<td class="example">12		</td>
+		<td>
+Get > Primitive > Light menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetMaterialID"> </a>siMenuTbGetMaterialID		</td>
+		<td class="example">13		</td>
+		<td>
+Get > Material menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetMaterialBasicID"> </a>siMenuTbGetMaterialBasicID		</td>
+		<td class="example">14		</td>
+		<td>
+Basic (Phong, Lambert, ..., Toon) section in the Get > Material menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetMaterialSimpleID"> </a>siMenuTbGetMaterialSimpleID		</td>
+		<td class="example">15		</td>
+		<td>
+Simple section in the Get > Material menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetMaterialRealTimeID"> </a>siMenuTbGetMaterialRealTimeID		</td>
+		<td class="example">16		</td>
+		<td>
+Realtime section (OGL Combined,...) in the Get > Material menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetPropertyID"> </a>siMenuTbGetPropertyID		</td>
+		<td class="example">17		</td>
+		<td>
+Get > Property menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetPropertyTextureProjectionID"> </a>siMenuTbGetPropertyTextureProjectionID		</td>
+		<td class="example">18		</td>
+		<td>
+Get > Property > Texture Projection menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetPropertyTextureMapID"> </a>siMenuTbGetPropertyTextureMapID		</td>
+		<td class="example">19		</td>
+		<td>
+Get > Property > Texture Map menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetPropertyTextureID"> </a>siMenuTbGetPropertyTextureID		</td>
+		<td class="example">20		</td>
+		<td>
+Texture section in the Get > Property menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetPropertyUserDataMapID"> </a>siMenuTbGetPropertyUserDataMapID		</td>
+		<td class="example">21		</td>
+		<td>
+Get > Property > User Data Map menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetPropertyMapPaintID"> </a>siMenuTbGetPropertyMapPaintID		</td>
+		<td class="example">22		</td>
+		<td>
+Get > Property > Map Paint Tools menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetPropertyPSetID"> </a>siMenuTbGetPropertyPSetID		</td>
+		<td class="example">23		</td>
+		<td>
+Property section (Ultimapper, TextProp, ..., Tangent) in the Get > Property menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbDeformSpatialID"> </a>siMenuTbDeformSpatialID		</td>
+		<td class="example">24		</td>
+		<td>
+Spatial section (Bend, Bulge, ..., Fold) in the Modify > Deform menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbDeformID"> </a>siMenuTbDeformID		</td>
+		<td class="example">25		</td>
+		<td>
+dify > Deform menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbCreateSkeletonID"> </a>siMenuTbCreateSkeletonID		</td>
+		<td class="example">26		</td>
+		<td>
+Create > Skeleton menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbCreateSkeletonDrawID"> </a>siMenuTbCreateSkeletonDrawID		</td>
+		<td class="example">27		</td>
+		<td>
+Draw section (2D Chain, 3D Chain) in the Create > Skeleton menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbCreateSkeletonInspectID"> </a>siMenuTbCreateSkeletonInspectID		</td>
+		<td class="example">28		</td>
+		<td>
+Inspect section (Inspect Chain Properties) in the Create > Skeleton menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbModelCreateCurveID"> </a>siMenuTbModelCreateCurveID		</td>
+		<td class="example">100		</td>
+		<td>
+Create > Curve menu (Model toolbar).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbModelCreateSurfaceMeshID"> </a>siMenuTbModelCreateSurfaceMeshID		</td>
+		<td class="example">101		</td>
+		<td>
+Create > Surf. Mesh menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbModelCreatePolygonMeshID"> </a>siMenuTbModelCreatePolygonMeshID		</td>
+		<td class="example">102		</td>
+		<td>
+Create > Poly. Mesh menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbModelCreateModelID"> </a>siMenuTbModelCreateModelID		</td>
+		<td class="example">103		</td>
+		<td>
+Create > Model menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbModelCreateTextID"> </a>siMenuTbModelCreateTextID		</td>
+		<td class="example">104		</td>
+		<td>
+Create > Text menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbModelModifyComponentID"> </a>siMenuTbModelModifyComponentID		</td>
+		<td class="example">105		</td>
+		<td>
+Modify > Component menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbModelModifyCurveID"> </a>siMenuTbModelModifyCurveID		</td>
+		<td class="example">106		</td>
+		<td>
+Modify > Curve menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbModelModifySurfaceMeshID"> </a>siMenuTbModelModifySurfaceMeshID		</td>
+		<td class="example">107		</td>
+		<td>
+Modify > Surf. Mesh menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbModelModifyPolygonMeshID"> </a>siMenuTbModelModifyPolygonMeshID		</td>
+		<td class="example">108		</td>
+		<td>
+Modify > Poly. Mesh menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbModelModifyModelID"> </a>siMenuTbModelModifyModelID		</td>
+		<td class="example">109		</td>
+		<td>
+Modify > Model menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbAnimateCreateParameterID"> </a>siMenuTbAnimateCreateParameterID		</td>
+		<td class="example">200		</td>
+		<td>
+Create > Parameter menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbAnimateCreateParameterCustomPSetID"> </a>siMenuTbAnimateCreateParameterCustomPSetID		</td>
+		<td class="example">201		</td>
+		<td>
+Custom Property Wizard section in the Create > Parameter menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbAnimateCreateParameterCustomParamID"> </a>siMenuTbAnimateCreateParameterCustomParamID		</td>
+		<td class="example">202		</td>
+		<td>
+Custom Parameter section in the Create > Parameter menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbAnimateCreateParameterExpressionID"> </a>siMenuTbAnimateCreateParameterExpressionID		</td>
+		<td class="example">203		</td>
+		<td>
+Expression section in the Create > Parameter menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbAnimateCreateParameterProxyID"> </a>siMenuTbAnimateCreateParameterProxyID		</td>
+		<td class="example">204		</td>
+		<td>
+Proxy Parameter section in the Create > Parameter menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbAnimateCreateCurveID"> </a>siMenuTbAnimateCreateCurveID		</td>
+		<td class="example">205		</td>
+		<td>
+Create > Curve menu (Animate toolbar).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbAnimateCreatePathID"> </a>siMenuTbAnimateCreatePathID		</td>
+		<td class="example">206		</td>
+		<td>
+Create > Path menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbAnimateCreateCharacterID"> </a>siMenuTbAnimateCreateCharacterID		</td>
+		<td class="example">207		</td>
+		<td>
+Create > Character menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbAnimateDeformShapeID"> </a>siMenuTbAnimateDeformShapeID		</td>
+		<td class="example">208		</td>
+		<td>
+Deform > Shape menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbAnimateDeformShapeKeyID"> </a>siMenuTbAnimateDeformShapeKeyID		</td>
+		<td class="example">209		</td>
+		<td>
+Shape Key section in the Deform > Shape menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbAnimateDeformEnvelopeID"> </a>siMenuTbAnimateDeformEnvelopeID		</td>
+		<td class="example">210		</td>
+		<td>
+Deform > Envelope menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbAnimateActionsStoreID"> </a>siMenuTbAnimateActionsStoreID		</td>
+		<td class="example">211		</td>
+		<td>
+Actions > Store menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbAnimateActionsApplyID"> </a>siMenuTbAnimateActionsApplyID		</td>
+		<td class="example">212		</td>
+		<td>
+Actions > Apply menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbAnimateActionsTemplatesID"> </a>siMenuTbAnimateActionsTemplatesID		</td>
+		<td class="example">213		</td>
+		<td>
+Actions > Templates menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbAnimateToolsPlotID"> </a>siMenuTbAnimateToolsPlotID		</td>
+		<td class="example">214		</td>
+		<td>
+Tools > Plot menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbAnimateToolsDevicesID"> </a>siMenuTbAnimateToolsDevicesID		</td>
+		<td class="example">215		</td>
+		<td>
+Tools > Devices menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbAnimateToolsImportID"> </a>siMenuTbAnimateToolsImportID		</td>
+		<td class="example">216		</td>
+		<td>
+Import section in the Tools > Import/Export menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbAnimateToolsExportID"> </a>siMenuTbAnimateToolsExportID		</td>
+		<td class="example">217		</td>
+		<td>
+Export section in the Tools > Import/Export menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbAnimateToolsMotorID"> </a>siMenuTbAnimateToolsMotorID		</td>
+		<td class="example">218		</td>
+		<td>
+MOTOR section in the Tools > Import/Export menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbRenderRegionID"> </a>siMenuTbRenderRegionID		</td>
+		<td class="example">300		</td>
+		<td>
+Render > Region menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbRenderPreviewID"> </a>siMenuTbRenderPreviewID		</td>
+		<td class="example">301		</td>
+		<td>
+Obsolete - menu no longer exists.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbRenderRenderID"> </a>siMenuTbRenderRenderID		</td>
+		<td class="example">302		</td>
+		<td>
+Render > Render menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbRenderExportMIID"> </a>siMenuTbRenderExportMIID		</td>
+		<td class="example">303		</td>
+		<td>
+Obsolete - renamed siMenuTbRenderExportID.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbRenderPassEditID"> </a>siMenuTbRenderPassEditID		</td>
+		<td class="example">304		</td>
+		<td>
+Render > Pass > Edit menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbRenderPassEditNewPassID"> </a>siMenuTbRenderPassEditNewPassID		</td>
+		<td class="example">305		</td>
+		<td>
+Render > Pass > Edit > New Pass menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbRenderPassPartitionID"> </a>siMenuTbRenderPassPartitionID		</td>
+		<td class="example">306		</td>
+		<td>
+Render > Pass > Partition menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbRenderExportID"> </a>siMenuTbRenderExportID		</td>
+		<td class="example">307		</td>
+		<td>
+Render > Export menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbICEParticlesCreateID"> </a>siMenuTbICEParticlesCreateID		</td>
+		<td class="example">320		</td>
+		<td>
+Menu the ICE module toolbar		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbICEParticlesOnEmissionID"> </a>siMenuTbICEParticlesOnEmissionID		</td>
+		<td class="example">321		</td>
+		<td>
+Menu the ICE module toolbar		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbICEParticlesAfterEmissionID"> </a>siMenuTbICEParticlesAfterEmissionID		</td>
+		<td class="example">322		</td>
+		<td>
+Menu the ICE module toolbar		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbICEParticlesForceID"> </a>siMenuTbICEParticlesForceID		</td>
+		<td class="example">323		</td>
+		<td>
+Menu the ICE module toolbar		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbICEParticlesCollisionID"> </a>siMenuTbICEParticlesCollisionID		</td>
+		<td class="example">324		</td>
+		<td>
+Menu the ICE module toolbar		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbICEParticlesSimulationID"> </a>siMenuTbICEParticlesSimulationID		</td>
+		<td class="example">325		</td>
+		<td>
+Menu the ICE module toolbar		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbICEParticlesModelLibraryID"> </a>siMenuTbICEParticlesModelLibraryID		</td>
+		<td class="example">326		</td>
+		<td>
+Menu the ICE module toolbar		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbICEDeformCreateID"> </a>siMenuTbICEDeformCreateID		</td>
+		<td class="example">340		</td>
+		<td>
+Menu the ICE module toolbar		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbICEDeformSimulateID"> </a>siMenuTbICEDeformSimulateID		</td>
+		<td class="example">341		</td>
+		<td>
+Menu the ICE module toolbar		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbICEKinematicsEffectsID"> </a>siMenuTbICEKinematicsEffectsID		</td>
+		<td class="example">360		</td>
+		<td>
+Menu the ICE module toolbar		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbICEKinematicsSkeletonID"> </a>siMenuTbICEKinematicsSkeletonID		</td>
+		<td class="example">361		</td>
+		<td>
+Menu the ICE module toolbar		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbICEKinematicsConstrainID"> </a>siMenuTbICEKinematicsConstrainID		</td>
+		<td class="example">362		</td>
+		<td>
+Menu the ICE module toolbar		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbICECrowdFXActorsID"> </a>siMenuTbICECrowdFXActorsID		</td>
+		<td class="example">380		</td>
+		<td>
+Menu the ICE module toolbar		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbICECrowdFXSimulationID"> </a>siMenuTbICECrowdFXSimulationID		</td>
+		<td class="example">381		</td>
+		<td>
+Menu the ICE module toolbar		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbICECrowdFXCrowdID"> </a>siMenuTbICECrowdFXCrowdID		</td>
+		<td class="example">382		</td>
+		<td>
+Menu the ICE module toolbar		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbGetForceID"> </a>siMenuTbGetForceID		</td>
+		<td class="example">400		</td>
+		<td>
+Get > Force menu (Simulate toolbar).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbCreateParticlesID"> </a>siMenuTbCreateParticlesID		</td>
+		<td class="example">401		</td>
+		<td>
+Create > Particles menu (Simulate toolbar).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbCreateParticlesFluidID"> </a>siMenuTbCreateParticlesFluidID		</td>
+		<td class="example">402		</td>
+		<td>
+Create > Particles > Fluid menu (Simulate toolbar).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbCreateParticlesExplosionID"> </a>siMenuTbCreateParticlesExplosionID		</td>
+		<td class="example">403		</td>
+		<td>
+Create > Particles > Explosion menu (Simulate toolbar).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbCreateParticlesNewPTypeID"> </a>siMenuTbCreateParticlesNewPTypeID		</td>
+		<td class="example">404		</td>
+		<td>
+Create > Particles > New Particle Type menu (Simulate toolbar).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbCreateRigidBodyID"> </a>siMenuTbCreateRigidBodyID		</td>
+		<td class="example">405		</td>
+		<td>
+Create > Rigid Body menu (Simulate toolbar).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbCreateRigidBodyConstraintID"> </a>siMenuTbCreateRigidBodyConstraintID		</td>
+		<td class="example">406		</td>
+		<td>
+Create > Rigid Body > Rigid Constraint menu (Simulate toolbar).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbCreateClothID"> </a>siMenuTbCreateClothID		</td>
+		<td class="example">407		</td>
+		<td>
+Create > Cloth menu (Simulate toolbar).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbModifyParticlesID"> </a>siMenuTbModifyParticlesID		</td>
+		<td class="example">408		</td>
+		<td>
+Modify > Particles menu (Simulate toolbar).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbModifyRigidBodyID"> </a>siMenuTbModifyRigidBodyID		</td>
+		<td class="example">409		</td>
+		<td>
+Modify > Rigid Body menu (Simulate toolbar).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbModifyEnvironmentID"> </a>siMenuTbModifyEnvironmentID		</td>
+		<td class="example">410		</td>
+		<td>
+Modify > Environment menu (Simulate toolbar).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbCreateSoftBodyID"> </a>siMenuTbCreateSoftBodyID		</td>
+		<td class="example">411		</td>
+		<td>
+Create > Soft Body menu (Simulate toolbar).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbICECreateID"> </a>siMenuTbICECreateID		</td>
+		<td class="example">412		</td>
+		<td>
+ICE > Particles > Create menu (ICE toolbar).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTbICEEditID"> </a>siMenuTbICEEditID		</td>
+		<td class="example">413		</td>
+		<td>
+ICE > Particles > Simulation menu (ICE toolbar).		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMainFileSceneID"> </a>siMenuMainFileSceneID		</td>
+		<td class="example">1000		</td>
+		<td>
+Scene section in the File menu on the main menu bar.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMainFileProjectID"> </a>siMenuMainFileProjectID		</td>
+		<td class="example">1001		</td>
+		<td>
+Project section in the File menu on the main menu bar.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMainFileExportID"> </a>siMenuMainFileExportID		</td>
+		<td class="example">1002		</td>
+		<td>
+File > Export menu on the main menu bar.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMainFileImportID"> </a>siMenuMainFileImportID		</td>
+		<td class="example">1003		</td>
+		<td>
+File > Import menu on the main menu bar.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMainWindowID"> </a>siMenuMainWindowID		</td>
+		<td class="example">1004		</td>
+		<td>
+Windows menu on the main menu bar.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMainHelpID"> </a>siMenuMainHelpID		</td>
+		<td class="example">1005		</td>
+		<td>
+Help menu on the main menu bar.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMainApplicationID"> </a>siMenuMainApplicationID		</td>
+		<td class="example">1006		</td>
+		<td>
+Do not use. The Application menu was removed in Softimage v5.0. Existing menus that use this anchor point are added to the View menu on the main menu bar.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMainApplicationPropertySetsID"> </a>siMenuMainApplicationPropertySetsID		</td>
+		<td class="example">1007		</td>
+		<td>
+Do not use. The Application menu was removed in Softimage v5.0. Existing menus that use this anchor point are added to the View menu on the main menu bar.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMainApplicationLayoutsID"> </a>siMenuMainApplicationLayoutsID		</td>
+		<td class="example">1008		</td>
+		<td>
+Do not use. The Application menu was removed in Softimage v5.0. Existing menus that use this anchor point are added to the View > Layouts menu on the main menu bar.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMainApplicationViewsID"> </a>siMenuMainApplicationViewsID		</td>
+		<td class="example">1009		</td>
+		<td>
+Do not use. The Application menu was removed in Softimage v5.0. Existing menus that use this anchor point are added to the View menu on the main menu bar.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMainApplicationToolbarsID"> </a>siMenuMainApplicationToolbarsID		</td>
+		<td class="example">1010		</td>
+		<td>
+Do not use. The Application menu was removed in Softimage v5.0. Existing menus that use this anchor point are added to the View menu on the main menu bar.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMainApplicationCommandsID"> </a>siMenuMainApplicationCommandsID		</td>
+		<td class="example">1011		</td>
+		<td>
+Do not use. The Application menu was removed in Softimage v5.0. Existing menus that use this anchor point are added to the View menu on the main menu bar.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMainApplicationKeyMappingsID"> </a>siMenuMainApplicationKeyMappingsID		</td>
+		<td class="example">1012		</td>
+		<td>
+Do not use. The Application menu was removed in Softimage v5.0. Existing menus that use this anchor point are added to the View menu on the main menu bar.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMainApplicationPreferencesID"> </a>siMenuMainApplicationPreferencesID		</td>
+		<td class="example">1013		</td>
+		<td>
+Do not use. The Application menu was removed in Softimage v5.0. Existing menus that use this anchor point are added to the Preferences section of the File menu on the main menu bar.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMainTopLevelID"> </a>siMenuMainTopLevelID		</td>
+		<td class="example">1014		</td>
+		<td>
+The main menu bar. Menus registered with this identifier are added to the Softimage main menu bar as top-level menus.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMainFileCrosswalkID"> </a>siMenuMainFileCrosswalkID		</td>
+		<td class="example">1015		</td>
+		<td>
+File > Crosswalk menu on the main menu bar.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMCPSelectTopID"> </a>siMenuMCPSelectTopID		</td>
+		<td class="example">2000		</td>
+		<td>
+Top of Select menu in the MCP.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMCPSelectBottomID"> </a>siMenuMCPSelectBottomID		</td>
+		<td class="example">2001		</td>
+		<td>
+Bottom of Select menu in the MCP.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMCPSelectExploreBtnID"> </a>siMenuMCPSelectExploreBtnID		</td>
+		<td class="example">2002		</td>
+		<td>
+Explore menu in the MCP.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMCPSelectSelBtnContextID"> </a>siMenuMCPSelectSelBtnContextID		</td>
+		<td class="example">2003		</td>
+		<td>
+Context menu displayed when a user right-clicks the Selection button in the MCP.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMCPTransformTopID"> </a>siMenuMCPTransformTopID		</td>
+		<td class="example">2004		</td>
+		<td>
+Top of Transform menu in the MCP.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMCPTransformBottomID"> </a>siMenuMCPTransformBottomID		</td>
+		<td class="example">2005		</td>
+		<td>
+Bottom of Transform menu in the MCP.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMCPSnapID"> </a>siMenuMCPSnapID		</td>
+		<td class="example">2006		</td>
+		<td>
+Snap menu in the MCP.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMCPConstrainID"> </a>siMenuMCPConstrainID		</td>
+		<td class="example">2007		</td>
+		<td>
+Constrain menu in the MCP.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMCPEditID"> </a>siMenuMCPEditID		</td>
+		<td class="example">2008		</td>
+		<td>
+Edit menu in the MCP.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMCPAnimationID"> </a>siMenuMCPAnimationID		</td>
+		<td class="example">2009		</td>
+		<td>
+Animation menu in the MCP.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMCPPlaybackID"> </a>siMenuMCPPlaybackID		</td>
+		<td class="example">2010		</td>
+		<td>
+Playback menu in the MCP.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuVMViewTypeID"> </a>siMenuVMViewTypeID		</td>
+		<td class="example">3000		</td>
+		<td>
+View type menu in the View Manager. See <a href="#!/url=./si_cmds/ViewManagerAttributes.html#">View Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuVMCameraID"> </a>siMenuVMCameraID		</td>
+		<td class="example">3001		</td>
+		<td>
+Camera menu in the View Manager. See <a href="#!/url=./si_cmds/ViewManagerAttributes.html#">View Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuVMVisibilityID"> </a>siMenuVMVisibilityID		</td>
+		<td class="example">3002		</td>
+		<td>
+Visibility menu in the View Manager. See <a href="#!/url=./si_cmds/ViewManagerAttributes.html#">View Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuVMDisplayID"> </a>siMenuVMDisplayID		</td>
+		<td class="example">3003		</td>
+		<td>
+Display menu in the View Manager. See <a href="#!/url=./si_cmds/ViewManagerAttributes.html#">View Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenu3DViewClusterContextID"> </a>siMenu3DViewClusterContextID		</td>
+		<td class="example">3100		</td>
+		<td>
+Context menu for a cluster in a 3D view.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenu3DViewComponentContextID"> </a>siMenu3DViewComponentContextID		</td>
+		<td class="example">3101		</td>
+		<td>
+Context menu for subcomponents (such as points, edges, and polygons) in a 3D view.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenu3DViewComponentEditContextID"> </a>siMenu3DViewComponentEditContextID		</td>
+		<td class="example">3102		</td>
+		<td>
+Edit section of the context menu for subcomponents in a 3D view.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenu3DViewGeneralContextID"> </a>siMenu3DViewGeneralContextID		</td>
+		<td class="example">3103		</td>
+		<td>
+Context menu displayed when a user right-clicks a blank area of a 3D view.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenu3DViewObjectContextID"> </a>siMenu3DViewObjectContextID		</td>
+		<td class="example">3104		</td>
+		<td>
+Context menu for an object in a 3D view.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenu3DViewObjectEditContextID"> </a>siMenu3DViewObjectEditContextID		</td>
+		<td class="example">3105		</td>
+		<td>
+Edit section of the context menu for an object in a 3D view.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenu3DViewObjectGroupContextID"> </a>siMenu3DViewObjectGroupContextID		</td>
+		<td class="example">3106		</td>
+		<td>
+Group section of the context menu for an object in a 3D view.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenu3DViewObjectMeshContextID"> </a>siMenu3DViewObjectMeshContextID		</td>
+		<td class="example">3107		</td>
+		<td>
+Mesh section of the context menu for an object in a 3D view.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenu3DViewObjectSelectContextID"> </a>siMenu3DViewObjectSelectContextID		</td>
+		<td class="example">3108		</td>
+		<td>
+Select section of the context menu for an object in a 3D view.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuSEGeneralContextID"> </a>siMenuSEGeneralContextID		</td>
+		<td class="example">3200		</td>
+		<td>
+Context menu displayed when a user right-clicks an object (such as a Property, Parameter, or Primtive) that does not have a specific context menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuSELayersContextID"> </a>siMenuSELayersContextID		</td>
+		<td class="example">3201		</td>
+		<td>
+Context menu displayed for Layer objects in the Scene Explorer.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuSEPassesContextID"> </a>siMenuSEPassesContextID		</td>
+		<td class="example">3202		</td>
+		<td>
+Context menu displayed for Pass objects in the Scene Explorer.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuSEPartitionsContextID"> </a>siMenuSEPartitionsContextID		</td>
+		<td class="example">3203		</td>
+		<td>
+Context menu displayed for Partition objects in the Scene Explorer.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuSEObjectContextID"> </a>siMenuSEObjectContextID		</td>
+		<td class="example">3204		</td>
+		<td>
+Context menu displayed for 3D objects in the Scene Explorer.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuSEGroupContextID"> </a>siMenuSEGroupContextID		</td>
+		<td class="example">3205		</td>
+		<td>
+Context menu displayed for Groups in the Scene Explorer.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuSEAnimContextID"> </a>siMenuSEAnimContextID		</td>
+		<td class="example">3206		</td>
+		<td>
+Context menu displayed for animated parameters in the Scene Explorer.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuSEClusterContextID"> </a>siMenuSEClusterContextID		</td>
+		<td class="example">3207		</td>
+		<td>
+Context menu displayed for clusters in the Scene Explorer.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuSEOperatorContextID"> </a>siMenuSEOperatorContextID		</td>
+		<td class="example">3208		</td>
+		<td>
+Context menu displayed for operators in the Scene Explorer.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuSEConstraintContextID"> </a>siMenuSEConstraintContextID		</td>
+		<td class="example">3209		</td>
+		<td>
+Context menu displayed for constraints in the Scene Explorer.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuSEPreferenceContextID"> </a>siMenuSEPreferenceContextID		</td>
+		<td class="example">3210		</td>
+		<td>
+Context menu displayed for preferences in the Scene Explorer.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuSEMaterialContextID"> </a>siMenuSEMaterialContextID		</td>
+		<td class="example">3211		</td>
+		<td>
+Context menu displayed for Materials in the Scene Explorer.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuSEModelContextID"> </a>siMenuSEModelContextID		</td>
+		<td class="example">3212		</td>
+		<td>
+Context menu displayed for Models in the Scene Explorer.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuPluginMgrPluginFileID"> </a>siMenuPluginMgrPluginFileID		</td>
+		<td class="example">3300		</td>
+		<td>
+File menu on the Plug-ins and Items tabs of the Plug-in Manager. See <a href="#!/url=./si_cmds/PluginManagerAttributes.html#">Plug-in Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuPluginMgrTreeFileID"> </a>siMenuPluginMgrTreeFileID		</td>
+		<td class="example">3301		</td>
+		<td>
+File menu on the Tree tab of the Plug-in Manager. See <a href="#!/url=./si_cmds/PluginManagerAttributes.html#">Plug-in Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuPluginMgrContextPluginID"> </a>siMenuPluginMgrContextPluginID		</td>
+		<td class="example">3302		</td>
+		<td>
+Context menu for plug-ins listed on the Tree and Plug-ins tabs of the Plugin Manager. See <a href="#!/url=./si_cmds/PluginManagerAttributes.html#">Plug-in Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuPluginMgrContextPluginLocationID"> </a>siMenuPluginMgrContextPluginLocationID		</td>
+		<td class="example">3303		</td>
+		<td>
+Context menu in the Plug-in Manager for an add-on or other location where plug-ins can be stored. See <a href="#!/url=./si_cmds/PluginManagerAttributes.html#">Plug-in Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuPluginMgrContextUserRootID"> </a>siMenuPluginMgrContextUserRootID		</td>
+		<td class="example">3304		</td>
+		<td>
+Context menu for the User Root node in the plug-in tree. See <a href="#!/url=./si_cmds/PluginManagerAttributes.html#">Plug-in Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuPluginMgrContextFactoryRootID"> </a>siMenuPluginMgrContextFactoryRootID		</td>
+		<td class="example">3305		</td>
+		<td>
+Context menu for the Factory Root node in the plug-in tree. See <a href="#!/url=./si_cmds/PluginManagerAttributes.html#">Plug-in Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuPluginMgrContextWorkgroupRootID"> </a>siMenuPluginMgrContextWorkgroupRootID		</td>
+		<td class="example">3306		</td>
+		<td>
+Context menu for the Workgroup Root node in the plug-in tree. See <a href="#!/url=./si_cmds/PluginManagerAttributes.html#">Plug-in Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuPluginMgrContextAddonID"> </a>siMenuPluginMgrContextAddonID		</td>
+		<td class="example">3307		</td>
+		<td>
+Context menu for the add-ons listed in the plug-in tree. See <a href="#!/url=./si_cmds/PluginManagerAttributes.html#">Plug-in Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuPluginMgrContextCustomLocationID"> </a>siMenuPluginMgrContextCustomLocationID		</td>
+		<td class="example">3308		</td>
+		<td>
+Context menu for the Root node of a custom folder in the plug-in tree. See <a href="#!/url=./si_cmds/PluginManagerAttributes.html#">Plug-in Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuPluginMgrSPDLFileID"> </a>siMenuPluginMgrSPDLFileID		</td>
+		<td class="example">3309		</td>
+		<td>
+File menu on the SPDLs tab of the Plug-in Manager. See <a href="#!/url=./si_cmds/PluginManagerAttributes.html#">Plug-in Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuPluginMgrContextSPDLID"> </a>siMenuPluginMgrContextSPDLID		</td>
+		<td class="example">3310		</td>
+		<td>
+Context menu for the plug-ins listed on the SPDLs tab of the Plugin Manager. See <a href="#!/url=./si_cmds/PluginManagerAttributes.html#">Plug-in Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuPluginMgrContextSPDLLocationID"> </a>siMenuPluginMgrContextSPDLLocationID		</td>
+		<td class="example">3311		</td>
+		<td>
+Context menu for the SPDLs Root node in the plug-in tree. See <a href="#!/url=./si_cmds/PluginManagerAttributes.html#">Plug-in Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuPluginMgrContextPluginItemID"> </a>siMenuPluginMgrContextPluginItemID		</td>
+		<td class="example">3312		</td>
+		<td>
+Context menu for the plug-ins listed on the Items tab of the Plugin Manager. See <a href="#!/url=./si_cmds/PluginManagerAttributes.html#">Plug-in Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuPluginMgrContextViewLocationID"> </a>siMenuPluginMgrContextViewLocationID		</td>
+		<td class="example">3313		</td>
+		<td>
+Context menu for the Views Root node in the plug-in tree. See <a href="#!/url=./si_cmds/PluginManagerAttributes.html#">Plug-in Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuPluginMgrContextViewID"> </a>siMenuPluginMgrContextViewID		</td>
+		<td class="example">3314		</td>
+		<td>
+Context menu for view plug-ins listed in the plug-in tree. See <a href="#!/url=./si_cmds/PluginManagerAttributes.html#">Plug-in Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuPluginMgrContextToolbarLocationID"> </a>siMenuPluginMgrContextToolbarLocationID		</td>
+		<td class="example">3315		</td>
+		<td>
+Context menu for the Toolbars Root node in the plug-in tree. See <a href="#!/url=./si_cmds/PluginManagerAttributes.html#">Plug-in Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuPluginMgrContextToolbarID"> </a>siMenuPluginMgrContextToolbarID		</td>
+		<td class="example">3316		</td>
+		<td>
+Context menu for the toolbar plug-ins listed in the plug-in tree. See <a href="#!/url=./si_cmds/PluginManagerAttributes.html#">Plug-in Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuWorkgroupMgrFileID"> </a>siMenuWorkgroupMgrFileID		</td>
+		<td class="example">3350		</td>
+		<td>
+File menu on the Workgroups tab of the Plug-in Manager. See <a href="#!/url=./si_cmds/PluginManagerAttributes.html#">Plug-in Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuWorkgroupMgrContextID"> </a>siMenuWorkgroupMgrContextID		</td>
+		<td class="example">3351		</td>
+		<td>
+Context menu for a selected workgroup. See <a href="#!/url=./si_cmds/PluginManagerAttributes.html#">Plug-in Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuScriptEditContextID"> </a>siMenuScriptEditContextID		</td>
+		<td class="example">3400		</td>
+		<td>
+Context menu for the editing pane of a script editor or a text editor. See <a href="#!/url=./si_cmds/ScriptEditorAttributes.html#">Script Editor Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuScriptHistoryContextID"> </a>siMenuScriptHistoryContextID		</td>
+		<td class="example">3401		</td>
+		<td>
+Context menu for the history pane of a script editor. See <a href="#!/url=./si_cmds/ScriptHistoryAttributes.html#">Script History Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuFCurveEditorTopLevelID"> </a>siMenuFCurveEditorTopLevelID		</td>
+		<td class="example">3500		</td>
+		<td>
+Menus registered with this identifier are added to the FCurve Editor toolbar as top-level menus. See <a href="#!/url=./si_cmds/FCurveEditorAttributes.html#">FCurve Editor Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuFCurveEditorFileID"> </a>siMenuFCurveEditorFileID		</td>
+		<td class="example">3501		</td>
+		<td>
+File menu in the FCurve Editor. See <a href="#!/url=./si_cmds/FCurveEditorAttributes.html#">FCurve Editor Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuFCurveEditorEditID"> </a>siMenuFCurveEditorEditID		</td>
+		<td class="example">3502		</td>
+		<td>
+Edit menu in the FCurve Editor. See <a href="#!/url=./si_cmds/FCurveEditorAttributes.html#">FCurve Editor Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuFCurveEditorViewID"> </a>siMenuFCurveEditorViewID		</td>
+		<td class="example">3503		</td>
+		<td>
+View menu in the FCurve Editor. See <a href="#!/url=./si_cmds/FCurveEditorAttributes.html#">FCurve Editor Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuFCurveEditorKeysID"> </a>siMenuFCurveEditorKeysID		</td>
+		<td class="example">3504		</td>
+		<td>
+Keys menu in the FCurve Editor. See <a href="#!/url=./si_cmds/FCurveEditorAttributes.html#">FCurve Editor Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuFCurveEditorCurvesID"> </a>siMenuFCurveEditorCurvesID		</td>
+		<td class="example">3505		</td>
+		<td>
+Curves menu in the FCurve Editor. See <a href="#!/url=./si_cmds/FCurveEditorAttributes.html#">FCurve Editor Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuFCurveEditorSelectID"> </a>siMenuFCurveEditorSelectID		</td>
+		<td class="example">3506		</td>
+		<td>
+Select menu in the FCurve Editor. See <a href="#!/url=./si_cmds/FCurveEditorAttributes.html#">FCurve Editor Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuPropertyPageContextID"> </a>siMenuPropertyPageContextID		</td>
+		<td class="example">3600		</td>
+		<td>
+Context menu for the top area of a Property Page.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuPropertyPageAnimContextID"> </a>siMenuPropertyPageAnimContextID		</td>
+		<td class="example">3601		</td>
+		<td>
+Context menu displayed for animatable parameters in a Property Page.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuShapeManagerEditID"> </a>siMenuShapeManagerEditID		</td>
+		<td class="example">3700		</td>
+		<td>
+Edit menu in the Shape Manager. See <a href="#!/url=./si_cmds/ShapeManagerAttributes.html#">Shape Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuShapeManagerCreateContextSingleSelectionID"> </a>siMenuShapeManagerCreateContextSingleSelectionID		</td>
+		<td class="example">3701		</td>
+		<td>
+Context menu for the Create tab of the Shape Manager when a single shape is selected. See <a href="#!/url=./si_cmds/ShapeManagerAttributes.html#">Shape Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuShapeManagerCreateContextMultiSelectionID"> </a>siMenuShapeManagerCreateContextMultiSelectionID		</td>
+		<td class="example">3702		</td>
+		<td>
+Context menu for the Create tab of the Shape Manager when multiple shapes are selected. See <a href="#!/url=./si_cmds/ShapeManagerAttributes.html#">Shape Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuShapeManagerAnimateContextSingleSelectionID"> </a>siMenuShapeManagerAnimateContextSingleSelectionID		</td>
+		<td class="example">3703		</td>
+		<td>
+Context menu for the Animate tab of the Shape Manager when only a single shape is selected. See <a href="#!/url=./si_cmds/ShapeManagerAttributes.html#">Shape Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuShapeManagerAnimateContextMultiSelectionID"> </a>siMenuShapeManagerAnimateContextMultiSelectionID		</td>
+		<td class="example">3704		</td>
+		<td>
+Context menu for the Animate tab of the Shape Manager when multiple shapes are selected. See <a href="#!/url=./si_cmds/ShapeManagerAttributes.html#">Shape Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuShapeManagerAnimateID"> </a>siMenuShapeManagerAnimateID		</td>
+		<td class="example">3705		</td>
+		<td>
+Animate menu in the Shape Manager. See <a href="#!/url=./si_cmds/ShapeManagerAttributes.html#">Shape Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuRenderRegionContextID"> </a>siMenuRenderRegionContextID		</td>
+		<td class="example">3800		</td>
+		<td>
+Context menu for the Render Region.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMaterialPanelMaterialID"> </a>siMenuMaterialPanelMaterialID		</td>
+		<td class="example">3900		</td>
+		<td>
+Material menu in the Material Panel.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTextureEditorToolsID"> </a>siMenuTextureEditorToolsID		</td>
+		<td class="example">4000		</td>
+		<td>
+Tools menu in the Texture Editor. See <a href="#!/url=./si_cmds/TextureEditorAttributes.html#">Texture Editor Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuRenderTreeToolsID"> </a>siMenuRenderTreeToolsID		</td>
+		<td class="example">4100		</td>
+		<td>
+Tools menu in the RenderTree.  See <a href="#!/url=./si_cmds/RenderTreeAttributes.html#">Render Tree Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuICEViewToolsID"> </a>siMenuICEViewToolsID		</td>
+		<td class="example">4101		</td>
+		<td>
+Tools menu in the ICE view. See <a href="#!/url=./si_cmds/RenderTreeAttributes.html#">ICE Tree Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuRTNodeContextID"> </a>siMenuRTNodeContextID		</td>
+		<td class="example">4102		</td>
+		<td>
+Context menu displayed for shader/materials in the RenderTree. See <a href="#!/url=./si_cmds/RenderTreeAttributes.html#">Render Tree Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuICENodeContextID"> </a>siMenuICENodeContextID		</td>
+		<td class="example">4103		</td>
+		<td>
+Context menu displayed for ICE Nodes in the ICE view. See <a href="#!/url=./si_cmds/RenderTreeAttributes.html#">ICE Tree Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuICENodePortContextID"> </a>siMenuICENodePortContextID		</td>
+		<td class="example">4104		</td>
+		<td>
+Context menu displayed for ICE Node Ports in the ICE view. See <a href="#!/url=./si_cmds/RenderTreeAttributes.html#">ICE Tree Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuRenderTreeTopLevelID"> </a>siMenuRenderTreeTopLevelID		</td>
+		<td class="example">4105		</td>
+		<td>
+The RenderTree main toolbar. Menus registered with this identifier are added to the RenderTree toolbar as top-level menus. See <a href="#!/url=./si_cmds/RenderTreeAttributes.html#">Render Tree Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuICEViewTopLevelID"> </a>siMenuICEViewTopLevelID		</td>
+		<td class="example">4106		</td>
+		<td>
+The ICE view main toolbar. Menus registered with this identifier are added to the ICE view toolbar as top-level menus. See <a href="#!/url=./si_cmds/RenderTreeAttributes.html#">ICE Tree Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTextEditorWidgetEditID"> </a>siMenuTextEditorWidgetEditID		</td>
+		<td class="example">4200		</td>
+		<td>
+Edit menu in the Text Editor Widget. See <a href="#!/url=./si_cmds/ScriptEditorAttributes.html#">Text Editor Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTextEditorContextID"> </a>siMenuTextEditorContextID		</td>
+		<td class="example">4201		</td>
+		<td>
+Context menu in the edit pane of a Text Editor Widget. See <a href="#!/url=./si_cmds/ScriptEditorAttributes.html#">Text Editor Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuTextureSpaceProjectionID"> </a>siMenuTextureSpaceProjectionID		</td>
+		<td class="example">4300		</td>
+		<td>
+Texture Space > New > Texture Projection menu.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuSchematicViewID"> </a>siMenuSchematicViewID		</td>
+		<td class="example">4400		</td>
+		<td>
+View menu in the Schematic.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuSchematicViewContextID"> </a>siMenuSchematicViewContextID		</td>
+		<td class="example">4401		</td>
+		<td>
+Context menu for the Schematic when clicking in the background.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuSchematicNodeContextID"> </a>siMenuSchematicNodeContextID		</td>
+		<td class="example">4402		</td>
+		<td>
+Context menu displayed for nodes in the Schematic.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuSchematicViewTopLevelID"> </a>siMenuSchematicViewTopLevelID		</td>
+		<td class="example">4403		</td>
+		<td>
+Menus registered with this identifier are added to the Schematic view toolbar as top-level menus.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuSceneLayerManagerLayersID"> </a>siMenuSceneLayerManagerLayersID		</td>
+		<td class="example">4500		</td>
+		<td>
+Layers menu in the Scene Layer Manager.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuSceneLayerManagerContextID"> </a>siMenuSceneLayerManagerContextID		</td>
+		<td class="example">4501		</td>
+		<td>
+Context menu displayed for layer rows in the Scene Layer Manager.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuMaterialManagerTopLevelID"> </a>siMenuMaterialManagerTopLevelID		</td>
+		<td class="example">4600		</td>
+		<td>
+Material Manager main toolbar. Menus registered with this identifier are added to the Material Manager toolbar as top-level menus. See <a href="#!/url=./si_cmds/MaterialManagerAttributes.html#">Material Manager Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuAnimMixerEditID"> </a>siMenuAnimMixerEditID		</td>
+		<td class="example">4700		</td>
+		<td>
+Edit menu in the Animation Mixer. See <a href="#!/url=./si_cmds/AnimationMixerAttributes.html#">Animation Mixer Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuAnimMixerViewID"> </a>siMenuAnimMixerViewID		</td>
+		<td class="example">4701		</td>
+		<td>
+View menu in the Animation Mixer. See <a href="#!/url=./si_cmds/AnimationMixerAttributes.html#">Animation Mixer Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuAnimMixerTrackID"> </a>siMenuAnimMixerTrackID		</td>
+		<td class="example">4702		</td>
+		<td>
+Track menu in the Animation Mixer. See <a href="#!/url=./si_cmds/AnimationMixerAttributes.html#">Animation Mixer Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuAnimMixerClipID"> </a>siMenuAnimMixerClipID		</td>
+		<td class="example">4703		</td>
+		<td>
+Clip menu in the Animation Mixer. See <a href="#!/url=./si_cmds/AnimationMixerAttributes.html#">Animation Mixer Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuAnimMixerMixID"> </a>siMenuAnimMixerMixID		</td>
+		<td class="example">4704		</td>
+		<td>
+Mix menu in the Animation Mixer. See <a href="#!/url=./si_cmds/AnimationMixerAttributes.html#">Animation Mixer Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuAnimMixerEffectID"> </a>siMenuAnimMixerEffectID		</td>
+		<td class="example">4705		</td>
+		<td>
+Effect menu in the Animation Mixer. See <a href="#!/url=./si_cmds/AnimationMixerAttributes.html#">Animation Mixer Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuShaderCodeEditContextID"> </a>siMenuShaderCodeEditContextID		</td>
+		<td class="example">4800		</td>
+		<td>
+Context menu displayed for the Shader Code Editor.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuWeightEditorFileID"> </a>siMenuWeightEditorFileID		</td>
+		<td class="example">10000		</td>
+		<td>
+File menu in the Weight Editor. See <a href="#!/url=./si_cmds/WeightEditorAttributes.html#">Weight Editor Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuWeightEditorEditID"> </a>siMenuWeightEditorEditID		</td>
+		<td class="example">10001		</td>
+		<td>
+Edit menu in the Weight Editor. See <a href="#!/url=./si_cmds/WeightEditorAttributes.html#">Weight Editor Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuWeightEditorViewID"> </a>siMenuWeightEditorViewID		</td>
+		<td class="example">10002		</td>
+		<td>
+View menu in the Weight Editor. See <a href="#!/url=./si_cmds/WeightEditorAttributes.html#">Weight Editor Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+	<tr>
+		<td class="name"><a name="siMenuScriptedOpEditContextID"> </a>siMenuScriptedOpEditContextID		</td>
+		<td class="example">10100		</td>
+		<td>
+Context menu displayed for both text editors in the Scripted Operator Editor. See <a href="#!/url=./si_cmds/ScriptedOpEditorAttributes.html#">Scripted Operator Editor Attributes</a> for a list of attributes you can use with this custom menu hook.		</td>
+	</tr>
+</table>
+</div>
+
+<h3>Applies To</h3>
+<div><p><a href="#!/url=./si_om/PluginRegistrar.RegisterMenu.html">PluginRegistrar.RegisterMenu</a> <a href="#!/url=./si_cpp/classXSI_1_1PluginRegistrar.html#RegisterMenu">PluginRegistrar::RegisterMenu</a></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/Menu.AddCommandItem.html">Menu.AddCommandItem</a> <a href="#!/url=./si_cpp/classXSI_1_1Menu.html#AddCommandItem">Menu::AddCommandItem</a> <a href="#!/url=./files/cus_menus_HowtoMakeYourOwnMenus.htm">How to Make Your Own Menus</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

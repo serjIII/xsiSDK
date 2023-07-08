@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-C2360024-6F13-4514-9862-9F5B892CCBC1" />
+      <meta name="indexterm" content="ICE nodes: multi-phase processing" />
+      <meta name="indexterm" content="troubleshooting: restrictions on ICE nodes" />
+      <meta name="indexterm" content="ICE nodes: restrictions" />
+      <meta name="indexterm" content="ICE nodes: troubleshooting" />
+      <meta name="topic-type" content="concept" />
+      <title>Multi-Phase Custom ICENode</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ reflinkdata.push(["XSI::siICENodeMultiEvaluationPhase", "si_cpp/namespaceXSI.html#a2e77132c412f0b988ff1e9b88ba0fe9aae9f32fd23b51a1afbf5c165ab277fa27", "C++ API Reference", "../"]); 
+reflinkdata.push(["points", "si_cpp/group__RenderMapDefine.html#ga7b51c5e95877ebaeb51314f8731f55f6", "C++ API Reference", "../"]); 
+</script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-C2360024-6F13-4514-9862-9F5B892CCBC1"></a></span><div class="head">
+            <h1>Multi-Phase Custom ICENode</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-55944B6A-3FC5-401C-8C73-22461B41DD69"></a></span> The multi-phase processing model allows custom nodes to process the input data in
+               single or multiple phases, where each phase can contain the input ports to process
+               grouped in similar contexts. One of the main goals of the multi-phase evaluation model
+               is to optimize the way input ports are evaluated. For instance, you could pull one
+               port in phase 0 and then decide which ports to pull in subsequent phases based on
+               the data read in phase 0. 
+            </p>
+            <p><span class="anchor_wrapper"><a name="GUID-CA3360C2-C312-4493-B603-214D3B085494"></a></span>The multi-phase evaluation model has the following characteristics: 
+            </p><span class="anchor_wrapper"><a name="UL_B122398963924D01862FFFBD5AFA4C74"></a></span><ul>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-9D07801B-5638-4C95-9F7D-E521A2A35A1C"></a></span>You can specify what port(s) to pull for a specific evaluation phase. 
+                  </p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-E6973F94-3ADB-49DA-8876-AF6C452A4388"></a></span>You have complete control on the port evaluation ordering. 
+                  </p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-799501C6-64E2-4DBE-96D4-A1C51CC06B26"></a></span>Specification of the input port data types is more flexible and doesn't impose any
+                     dependency constraints on the output port data types. 
+                  </p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-613A5CCA-146C-4ED2-9C92-A0F29BB8D3E3"></a></span>You have complete freedom for specifying input context types: no validation is performed
+                     by Softimage at load time. For instance, you could choose to connect the points of
+                     two objects with different topologies or two different data sets (for example, normals
+                     and points) from the same object. 
+                  </p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-B434E731-23FB-4203-BB9E-2CF2FDE06835"></a></span>All phases are executed in single-threading mode except for the final phase which
+                     is processed in multi-threading mode. 
+                  </p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-5D9E334B-01DE-4640-93A9-3B755A8B335A"></a></span>The data pulled for each port is cached by Softimage and available for the entire
+                     duration of the evaluation. 
+                  </p> 
+               </li>
+            </ul>
+            <div class="section"><span class="anchor_wrapper"><a name="WSB2B58C11414F714EB9B26CD8E647E1E1-002E"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-C5CAA397-4055-4C07-88B5-91DDFFDA7576"></a></span> Restrictions
+               </h2>    <span class="anchor_wrapper"><a name="UL_30EACC32F4124CE6BD2422C67690ED2E"></a></span><ul>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-4C2D7C43-9B0F-4B8C-B77C-390C5E8D776F"></a></span>Ports to pull must share the same context type, otherwise an error is raised. You
+                        can however mix singleton contexts with the phase context. 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-0C78C453-2358-4590-90A9-840F063B7943"></a></span>Ports to pull in the last phase must match the context type of the output port, otherwise
+                        an error is raised. 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-35774211-D3F6-4358-99B6-DD30CA11B247"></a></span>All phases but the last cannot be submitted without pulling ports. 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-71C5190E-82C3-4C86-B4C9-2A7E81F06D8E"></a></span>Ports must be pulled first in order to be accessible from the Evaluate callback. 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-519CEA6A-7365-4618-8B97-A9C4BEBBFC50"></a></span>The <a href="#!/url=./si_cmds/cb_ICENode_SubmitEvaluationPhaseInfo.html">SubmitEvaluationPhaseInfo</a> callback must be supplied. 
+                     </p> 
+                  </li>
+               </ul> 
+               <div><span class="anchor_wrapper"><a name="GUID-9C18E630-7126-44FA-8364-EBD1FCAFC351"></a></span><div class="note-warning"><span class="label">WARNING:</span> 
+                     <p><span class="anchor_wrapper"><a name="GUID-D0AB1F4B-CCBA-4A64-B74E-67D08E2AE2BC"></a></span>It is crucial to follow these rules. Otherwise, your custom node can become unstable.
+                        
+                     </p> 
+                  </div>
+               </div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSB2B58C11414F714EB9B26CD8E647E1E1-002F"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-6305EB7D-E709-4179-8CE1-64E54398F1A3"></a></span>How does it work?
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-D584BD1B-7E4F-4F30-B8F1-0F4E6B0F43CD"></a></span>The following workflow illustrates the implementation of a typical multi-phase custom
+                  ICENode. For more details, see the <a href="#!/url=./examples/Addons/CustomICENodes/netview_CustomICENodes.htm">RandomGridGenerator</a> example located in the Softimage SDK installation directory. 
+               </p> <span class="anchor_wrapper"><a name="GUID-2A368FE1-5F08-4550-A2EB-55491D45641A"></a></span><ol type="1" start="1">
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-7D8D5D79-C53E-46DB-8005-18815F8D28F3"></a></span> <span class="char_link"><a href="#!/url=./files/cus_icenodes_MultiPhaseCustomICENode.htm#WSB2B58C11414F714EB9B26CD8E647E1E1-0030">Register the node as multi-phase</a></span>. 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-DBD847B3-C96A-4DFF-AFCB-F865341F39F9"></a></span> <span class="char_link"><a href="#!/url=./files/cus_icenodes_MultiPhaseCustomICENode.htm#WSB2B58C11414F714EB9B26CD8E647E1E1-0031">Implement the SubmitEvaluationPhaseInfo callback.</a></span> 
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-278BCBCB-EBD6-49D8-B1BC-41E9509F6B4A"></a></span> <span class="char_link"><a href="#!/url=./files/cus_icenodes_MultiPhaseCustomICENode.htm#WSB2B58C11414F714EB9B26CD8E647E1E1-0032">Implement the Evaluate callback</a></span>. 
+                     </p> 
+                  </li>
+               </ol> 
+               <div><span class="anchor_wrapper"><a name="GUID-40300710-B57E-4989-A3E7-C0E836EE20A8"></a></span><div class="note-note"><span class="label">NOTE:</span> 
+                     <p><span class="anchor_wrapper"><a name="GUID-DECD85C1-99BF-476C-83CD-F3F85524CB50"></a></span>The <a href="#!/url=./si_cmds/callbacks.html">BeginEvaluate</a> and <a href="#!/url=./si_cmds/cb_ICENode_EndEvaluate.html">EndEvaluate</a> callbacks are still optional and are only called during the last evaluation phase.
+                        
+                     </p> 
+                  </div>
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WSB2B58C11414F714EB9B26CD8E647E1E1-0030"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-2A54B743-4E01-4D88-8DEC-9E6084F30EC8"></a></span>To register a multi-phase custom node
+                  </h3> 
+                  <p><span class="anchor_wrapper"><a name="GUID-1C2599FA-710F-4D28-BD37-67FC86369D95"></a></span>Use the ICE node definition to set the threading model to multi-phase (<a href="#!/url=./si_om/siICENodeThreadingModel.html">siICENodeMultiEvaluationPhase</a>): 
+                  </p> 
+                  <div class="codeBlock"><pre class="prettyprint">
+CStatus RegisterMultiPhaseSample( PluginRegistrar&amp; in_reg )
+{
+	ICENodeDef nodeDef;
+	nodeDef = Application().GetFactory().CreateICENodeDef(L"MultiPhaseSample",L"Multi Phase Sample");
+	
+	CStatus st;
+	st = nodeDef.PutThreadingModel(<a href="javascript:void(0)" data="XSI::siICENodeMultiEvaluationPhase" class="a_multireflink">XSI::siICENodeMultiEvaluationPhase</a>);
+	st.AssertSucceeded( ) ;
+	
+	// Add input ports and groups.
+	st = nodeDef.AddPortGroup(ID_G_100);
+	st.AssertSucceeded( ) ;
+	
+	st = nodeDef.AddPortGroup(ID_G_102);
+	st.AssertSucceeded( ) ;
+	
+	st = nodeDef.AddPortGroup(ID_G_103);
+	st.AssertSucceeded( ) ;
+	
+	st = nodeDef.AddPortGroup(ID_G_114);
+	st.AssertSucceeded( ) ;
+	
+	st = nodeDef.AddInputPort(ID_IN_condition,ID_G_100,siICENodeDataBool,siICENodeStructureSingle,siICENodeContextSingleton,L"condition",L"condition",true); 
+	st.AssertSucceeded( ) ;
+	st = nodeDef.AddInputPort(ID_IN_true,ID_G_102,siICENodeDataFloat,siICENodeStructureSingle,siICENodeContextSingleton,L"true",L"true",1.0f);
+	st.AssertSucceeded( ) ;
+	
+	st = nodeDef.AddInputPort(ID_IN_false,ID_G_103,siICENodeDataFloat,siICENodeStructureSingle,siICENodeContextSingleton,L"false",L"false",1.0f);
+	st.AssertSucceeded( ) ;
+	
+	st =nodeDef.AddInputPort(ID_IN_points,ID_G_114,siICENodeDataVector3,siICENodeStructureSingle,siICENodeContextComponent0D|siICENodeContextSingleton,L"<a href="javascript:void(0)" data="points" class="a_multireflink">points</a>",L"<a href="javascript:void(0)" data="points" class="a_multireflink">points</a>",MATH::CVector3f(1.0,1.0,1.0));
+	st.AssertSucceeded( ) ;
+	
+	// Add output ports.
+	st = nodeDef.AddOutputPort(ID_OUT_results,siICENodeDataVector3,siICENodeStructureSingle,siICENodeContextComponent0D|siICENodeContextSingleton,L"results",L"results");
+	st.AssertSucceeded( ) ;
+	
+	PluginItem nodeItem = in_reg.RegisterICENode(nodeDef);
+	nodeItem.PutCategories(L"Custom ICENode");
+	return CStatus::OK;
+}</pre></div> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WSB2B58C11414F714EB9B26CD8E647E1E1-0031"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-2307577B-5FE4-4614-897C-F4A344C9F7D7"></a></span>To implement the SubmitEvaluationPhaseInfo callback
+                  </h3> 
+                  <p><span class="anchor_wrapper"><a name="GUID-B09F8E18-E6F2-42FB-BC45-3E0C650EBD1E"></a></span>The <a href="#!/url=./si_cmds/callbacks.html">SubmitEvaluationPhaseInfo</a> callback is required for specifying the ports to pull for the current evaluation
+                     phase. The callback is called by Softimage indefinitely until you mark the current
+                     phase as the last phase with <a href="#!/url=./si_cpp/classXSI_1_1ICENodeContext.html#SetLastEvaluationPhase">ICENodeContext::SetLastEvaluationPhase</a>. 
+                  </p> 
+                  <div class="codeBlock"><pre class="prettyprint">
+XSIPLUGINCALLBACK CStatus MultiPhaseSample_SubmitEvaluationPhaseInfo( ICENodeContext&amp; in_ctxt )
+{
+	ULONG nPhase = in_ctxt.GetEvaluationPhaseIndex( );
+	switch( nPhase )
+	{
+		case 0:
+		{
+			in_ctxt.AddEvaluationPhaseInputPort( ID_IN_condition );
+		}
+		break;
+		
+		case 1:
+		{
+			bool bCondition = (bool)in_ctxt.GetUserData();
+			ULONG nPortToPull = bCondition ? ID_IN_true : ID_IN_false;
+			in_ctxt.PutUserData( nPortToPull );
+			in_ctxt.AddEvaluationPhaseInputPort( nPortToPull );
+			in_ctxt.AddEvaluationPhaseInputPort( ID_IN_points );
+			// This phase is the last one. All ports specified for phase 1 will be evaluated in multi-threaded batches.
+			in_ctxt.SetLastEvaluationPhase();
+		}
+		break;
+	}
+	return CStatus::OK;
+}</pre></div> 
+               </div> 
+               <div class="section"><span class="anchor_wrapper"><a name="WSB2B58C11414F714EB9B26CD8E647E1E1-0032"></a></span> 
+                  <h3><span class="anchor_wrapper"><a name="GUID-ACF5026F-FE0C-4564-931D-6A153A224622"></a></span>To implement the Evaluate callback
+                  </h3> 
+                  <p><span class="anchor_wrapper"><a name="GUID-463D80D0-4CB5-401F-A746-176A514FB302"></a></span>The <a href="#!/url=./si_cmds/cb_ICENode_Evaluate.html">Evaluate</a> callback is where you can process the intermediate phases in single-threading and
+                     the last phase in multi-threading. 
+                  </p> 
+                  <div class="codeBlock"><pre class="prettyprint">
+XSIPLUGINCALLBACK CStatus MultiPhaseSample_Evaluate( ICENodeContext&amp; in_ctxt )
+{
+	// Read the current phase. 
+	// Note: ULONG_MAX is returned if the last phase is being processed.
+	ULONG nPhase = in_ctxt.GetEvaluationPhaseIndex( );
+	
+	switch( nPhase )
+	{
+		case 0:
+		{
+			CDataArrayBool conditionData( in_ctxt, ID_IN_condition );
+			in_ctxt.PutUserData( conditionData[0] );
+			return CStatus::OK;
+		}
+		break;
+	};
+	
+	// Process the output port being evaluated in multi-threading.
+	ULONG out_portID = in_ctxt.GetEvaluatedOutputPortID( );
+	
+	switch( out_portID )
+	{
+		case ID_OUT_results:
+		{
+			ULONG nPortToPull = (ULONG)in_ctxt.GetUserData();
+			
+			CDataArrayFloat scaleValue( in_ctxt, nPortToPull );
+			float fScaleValue = scaleValue[0];
+			
+			CDataArrayVector3f resultsData( in_ctxt );
+			CDataArrayVector3f <a href="javascript:void(0)" data="points" class="a_multireflink">points</a>( in_ctxt, ID_IN_points );
+			
+			CIndexSet indexSet( in_ctxt );
+			for(CIndexSet::Iterator it = indexSet.Begin(); it.HasNext(); it.Next())
+			{
+				resultsData[it] = <a href="javascript:void(0)" data="points" class="a_multireflink">points</a>[it];
+				resultsData[it] *= fScaleValue;
+			}
+		}
+		break;
+	};
+	
+	return CStatus::OK;
+}</pre></div> 
+               </div> 
+            </div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

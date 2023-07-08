@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>FilterPSet</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>FilterPSet</h1>
+         </div>
+
+<h2 class="pagehead">FilterPSet</h2>
+
+<h3>Introduced</h3>
+<div><p>v1.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Filters a list of property sets to produce a list that includes or excludes 
+all the property sets complying with a specified parent-child relationship.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = FilterPSet( [InputObjs], [Relationship], [Include] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns an <a href="#!/url=./si_om/XSICollection.html">XSICollection</a> object that contains the filtered list.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">InputObjs		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/listexpr.htm">List</a> of property sets. 			<p class="cell"><span class="hilite">Default Value: </span>
+Current selection			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Relationship		</td>
+		<td><a href="#!/url=./si_om/siPSetRelationship.html">siPSetRelationship</a>		</td>
+		<td>
+ Relationship to filter on. 			<p class="cell"><span class="hilite">Default Value: </span>
+siContainedPSet			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Include		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ True to include (False to exclude) property sets that match the relationship. 			<p class="cell"><span class="hilite">Default Value: </span>
+True			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' create objects for example
+CreatePrim "Cone", "MeshSurface"
+' test the pset relationship of visibility, display and material properties
+set psets = FilterPSet( "Camera_Interest.visibility", siLocalPSet, True )
+if TypeName( psets ) &lt;&gt; "Nothing" then
+	LogMessage "Camera_Interest.visibility property is local."
+else
+	LogMessage "Camera_Interest.visibility property is shared."
+end if
+set psets = FilterPSet( "Camera_Interest.display", siSharedPSet, True )
+if TypeName( psets ) &lt;&gt; "Nothing" then
+	LogMessage "Camera_Interest.display property is shared."
+else
+	LogMessage "Camera_Interest.display property is local."
+end if
+set psets = FilterPSet( "cone.Scene_Material", siSharedPSet, True )
+if TypeName( psets ) &lt;&gt; "Nothing" then
+	LogMessage "cone.Scene_Material is inherited."
+else
+	LogMessage "cone.Scene_Material is local."
+end if 
+'INFO : "Camera_Interest.visibility property is local."
+'INFO : "Camera_Interest.display property is shared."
+'INFO : "cone.Scene_Material is inherited."</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' Is the camera interest display property a local property set of its parent?
+set l_PSets = FilterPSet( "Camera_Interest.display", siLocalPSet )
+if TypeName( l_PSets ) &lt;&gt; "Nothing" then
+LogMessage "Camera_Interest.display is a local property set."
+else
+LogMessage "Camera_Interest.display is an inherited property set."
+end if
+'--------------------------------------
+' The following message will be logged:
+'    'INFO : "Camera_Interest.display is an inherited property set."
+' Create a cone and select its material.
+set MyCone = CreatePrim( "Cone", "MeshSurface" )
+SelectObj MyCone.Material
+' Is the selected cone material an inherited property set?
+set l_PSets = FilterPSet( , siSharedPSet )
+if TypeName( l_PSets ) &lt;&gt; "Nothing" then
+LogMessage "The cone material is an inherited property set."
+else
+LogMessage "The cone material is a local property set."
+end if
+'--------------------------------------
+' The following message will be logged:
+'    'INFO : "The cone material is an inherited property set."
+' Create a grid.
+CreatePrim "Grid", "MeshSurface"
+' List all the inherited property sets of the grid.
+set l_PSets = FilterPSet( "grid.*", siSharedPset )
+if TypeName( l_PSets ) &lt;&gt; "Nothing" then
+	LogMessage "Inherited property sets of the grid:"
+	for each p in l_Psets
+		LogMessage "   " &amp; p.name
+	next
+else
+	LogMessage "No shared PSets"
+end if
+'--------------------------------------
+' The following message will be logged:
+'    'INFO : "Inherited property sets of the grid:"
+'    'INFO : "   Ambient Lighting"
+'    'INFO : "   Scene_Material"
+'    'INFO : "   Geometry Approximation"
+'    'INFO : "   Display"</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/MakeLocal.html">MakeLocal</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

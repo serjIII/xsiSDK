@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>ArgumentCollection.Add</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>ArgumentCollection.Add</h1>
+         </div>
+
+<h2 class="pagehead"><a href="#!/url=./si_om/ArgumentCollection.html">ArgumentCollection</a>.Add</h2>
+
+<h3>Description</h3>
+<div><p> Adds an argument to the <a href="#!/url=./si_om/Command.html">Command</a> definition. <br /><br />
+To add an argument that receives an object call, use <a href="#!/url=./si_om/ArgumentCollection.AddObjectArgument.html">ArgumentCollection.AddObjectArgument</a> instead.
+To use an <a href="#!/url=./si_om/ArgumentHandler.html">ArgumentHandler</a> use <a href="#!/url=./si_om/ArgumentCollection.AddWithHandler.html">ArgumentCollection.AddWithHandler</a> instead.
+This method is only available on custom commands. Normally this is called 
+during the definition of a command (before <a href="#!/url=./si_om/XSIApplication.AddCommand.html">XSIApplication.AddCommand</a> 
+is called). However it is also possible to add an argument and call 
+<a href="#!/url=./si_om/Command.Update.html">Command.Update</a> to change an existing command.
+</p></div>
+
+<h3>C# Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>Argument ArgumentCollection.Add( String Name, siArgumentFlags argflags, Object defval, siVariantType in_vtValType );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>ArgumentCollection.Add( Name, [Flags], [Value], [ArgType] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Name		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		A name for the argument. The particular name chosen is not particularly important 
+		as long as it is unique in the <a href="#!/url=./si_om/ArgumentCollection.html">ArgumentCollection</a>.  
+		However having a good Argument name helps users understand how to use the <a href="#!/url=./si_om/Command.html">Command</a>.
+		In the case of script-based custom commmands the names of the equivalent argument in the 
+		implementation does not need to match.
+			</td>
+	</tr>
+	<tr>
+		<td class="name">Flags		</td>
+		<td><a href="#!/url=./si_om/siArgumentFlags.html">siArgumentFlags</a>		</td>
+		<td>
+Currently siArgumentInput is the only supported value for custom commands			<p class="cell"><span class="hilite">Default Value: </span>
+siArgumentInput			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Value		</td>
+		<td><a href="#!/url=./files/Variant.htm">Variant</a>		</td>
+		<td>
+ 
+		The argument default value (defaults to empty). Specifying a default value
+		also serves the purpose of specifying the specific VARIANT type that is expected
+		(See <a href="#!/url=./si_om/siVariantType.html">siVariantType</a>).
+		For example if the default value is a double then Softimage will attempt 
+		to convert any input argument to double before invoking the command.  
+		When not specified the argument will be passed in directly without conversion. 
+			</td>
+	</tr>
+	<tr>
+		<td class="name">ArgType		</td>
+		<td><a href="#!/url=./si_om/siVariantType.html">siVariantType</a>		</td>
+		<td>
+
+		The argument value type, by default the argument is set to siEmpty. <br /><br />
+		This argument is optional for arguments which are normal Variant values, for 
+		example strings, ints, doubles and arrays.  However to specify that the argument
+		is a pointer to a Softimage object you must set this argument to siDispatch and 
+		the Value argument must be 0. (An easier approach is to use 
+		<a href="#!/url=./si_om/ArgumentCollection.AddObjectArgument.html">ArgumentCollection.AddObjectArgument</a> instead.)<br /><br />
+		If the argument is meant to receive a JScript object or JScript <a href="#!/url=./files/Array.htm">Array</a>
+		then siDispatch must be specified, as shown in the example below.
+				<p class="cell"><span class="hilite">Default Value: </span>
+siEmpty			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This is an advanced JScript example showing how to use the powerful jscript
+	class and array features in conjunction with Softimage Custom Commands.
+	When a jscript plugin becomes very large it can be necessary to split the 
+	code into multiple self-installed plugin script files and to organize the
+	code into classes.  This example shows how you can pass JScript objects and 
+	arrays back and forth between these files via Softimage Custom Commands.
+*/ 
+var strCmdName = "TestJScriptArgs"
+var oCmd = Application.CreateCommand( strCmdName  )
+oCmd.ScriptingName = strCmdName  ;
+// For demonstration purposes this is an embedded command.
+// 
+// We need to copy the implementation of JScriptClass as well as the implementation 
+// of the command so that JSCmdImpl can instantiate this class as the return value
+oCmd.Code = JSCmdImpl.toString() 
+		+ JScriptClass.toString()
+		+ JScriptClass_Foo.toString() ;
+oCmd.Handler = "JSCmdImpl" ;
+oCmd.Language = "JScript" ;
+// You cannot print out a jscript object or a jscript array.  This is ok because
+// printing out large arrays would slow down execution of your script.
+oCmd.SetFlag(siNoLogging) ; 
+// It is critical to specify siDispatch, otherwise Softimage will attempt
+// to convert the jscript object into a SAFEARRAY
+oCmd.Arguments.Add( "JSObjArg", siArgumentInput, 0, siDispatch ) ;	
+// For normal custom command development this is the way to specify an array 
+// argument.  But this means the array will be converted to a SAFEARRAY 
+// (also called vbarray). This is important if you want your custom command
+// to be available to all other scripting languages and C++ API
+oCmd.Arguments.Add( "JSArrayToVBArray", siArgumentInput ) ;	
+// If you only want your custom command to be available from other jscript 
+// code then you can get better speed by passing the JScript array 
+// untouched by specifying siDispatch
+oCmd.Arguments.Add( "JSArrayUnconverted", siArgumentInput, 0, siDispatch ) ;
+Application.AddCommand( oCmd ) ;
+// Create some data to pass to the command
+var oObj = new JScriptClass( 12 ) ;
+var jsarray = new Array( "A", 89, 2.5, "banana" ) ;
+// Invoke the command (which calls JSCmdImpl)		
+var oRetVal = TestJScriptArgs(oObj,jsarray,jsarray) ;
+// Demonstrate that calling the command actually changed
+// MemberVar from 12 to 13
+logmessage( "oObj.MemberVar = " + oObj.MemberVar ) ;
+// Demonstrate that the command returned a jscript object
+logmessage( "oRetVal.MemberVar = " + oRetVal.MemberVar ) ;
+Application.RemoveCommand( strCmdName  ) ;
+// Simple jscript class
+function JScriptClass( in_x )
+{
+	// Remember the constructor argument
+	// as a member variable
+	this.MemberVar = in_x ;
+	// function
+	this.Foo = 	JScriptClass_Foo ;
+}
+// Function used as a method of JScriptClass
+function JScriptClass_Foo()
+{
+	return "Foo called" ;
+}
+// Custom command Implementation
+function JSCmdImpl(in_jscriptObj, in_vbarg, in_jsarg)
+{	
+	logmessage( "JSCmdImpl called" ); 
+	// Demonstrate that we really have an instance of JScriptClass
+	logmessage( "in_jscriptObj.MemberVar = " + in_jscriptObj.MemberVar ) ;
+	logmessage( "in_jscriptObj.Foo function = " + in_jscriptObj.Foo() ) ;
+	// We can also change the content of the object passed to us
+	// and the caller will see the change.  This is an excellent
+	// way to share data between different script files	
+	in_jscriptObj.MemberVar = 13 ;
+	// For a safearray we need to convert it (back) to 
+	// a JScript array.  This is our only choice
+	// if we want the command to be called from vbscript
+	backAsJS = new VBArray( in_vbarg ).toArray(); 
+	logmessage( "in_vbarg[2] = " + backAsJS[2] ) ;
+	// Demonstrate that we really have a JScript array
+	logmessage( "in_jsarg[3] = " + in_jsarg[3] ) ;
+	// You can also return a JScript object
+	return new JScriptClass( 1000 ) ;
+}
+//Expected output:
+//INFO : JSCmdImpl called
+//INFO : in_jscriptObj.MemberVar = 12
+//INFO : in_jscriptObj.Foo function = Foo called
+//INFO : in_vbarg[2] = 2.5
+//INFO : in_jsarg[3] = banana
+//INFO : oObj.MemberVar = 13
+//INFO : oRetVal.MemberVar = 1000</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/XSIApplication.CreateCommand.html">XSIApplication.CreateCommand</a> <a href="#!/url=./si_om/Command.html">Command</a> <a href="#!/url=./si_om/ArgumentCollection.html">ArgumentCollection</a> <a href="#!/url=./si_om/ArgumentCollection.AddObjectArgument.html">ArgumentCollection.AddObjectArgument</a> <a href="#!/url=./si_om/ArgumentCollection.AddWithHandler.html">ArgumentCollection.AddWithHandler</a> <a href="#!/url=./si_om/Argument.html">Argument</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

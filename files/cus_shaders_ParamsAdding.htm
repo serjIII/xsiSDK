@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-ACE71042-17A9-4432-959E-74A1E4EBAF5F" />
+      <meta name="topic-type" content="concept" />
+      <title>Adding Parameter Definitions</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ reflinkdata.push(["color", "si_cpp/group__RenderMapDefine.html#ga9b982a36d73688fd43fe5f3539824d21", "C++ API Reference", "../"]); 
+reflinkdata.push(["data", "si_cpp/group__RenderMapDefine.html#gadd4f4d7b7bb549a29e5ea45fe633c5c3", "C++ API Reference", "../"]); 
+reflinkdata.push(["type", "si_cpp/group__RenderMapDefine.html#ga7117e14e60390664f1862525dd6acaf6", "C++ API Reference", "../"]); 
+reflinkdata.push(["name", "si_cpp/group__RenderMapDefine.html#ga882c17490314f92c7159d6d7d69696e7", "C++ API Reference", "../"]); 
+reflinkdata.push(["set", "si_cpp/group__RenderMapDefine.html#ga793ad1cfa149967fe4b97fc66251b831", "C++ API Reference", "../"]); 
+</script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-ACE71042-17A9-4432-959E-74A1E4EBAF5F"></a></span><div class="head">
+            <h1>Adding Parameter Definitions</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-CE0A6C27-716B-4F66-8788-9338F5CDEAE4"></a></span>Adding parameter definitions to a <a href="#!/url=./si_om/ShaderParamDefContainer.html">ShaderParamDefContainer</a> or <a href="#!/url=./si_cpp/classXSI_1_1ShaderParamDefContainer.html">ShaderParamDefContainer</a> is the similar for all parameter data types: for array parameters, you use the <a href="#!/url=./si_om/ShaderParamDefContainer.AddArrayParamDef.html">ShaderParamDefContainer.AddArrayParamDef</a> or ShaderParamDefContainer::AddArrayParamDefmethod, and for everything else you use
+               the <a href="#!/url=./si_om/ShaderParamDefContainer.AddParamDef.html">ShaderParamDefContainer.AddParamDef</a> or ShaderParamDefContainer::AddParamDef method.
+            </p>
+            <p><span class="anchor_wrapper"><a name="GUID-4C7990F8-C8D5-4B77-8DA2-9A012C04A0E5"></a></span>These methods allow you to specify the name and data type, and requires that you pass
+               in a special object that further defines the new parameter definition: <a href="#!/url=./si_om/ShaderParamDefOptions.html">ShaderParamDefOptions</a> or <a href="#!/url=./si_cpp/classXSI_1_1ShaderParamDefOptions.html">ShaderParamDefOptions</a>. This object allows you to specify the parameter definition's display name, its capabilities
+               (texturable, animatable, inspectable), what default value to use, the valid value
+               range, etc. To create an instance, you can call the <a href="#!/url=./si_om/XSIFactory.CreateShaderParamDefOptions.html">XSIFactory.CreateShaderParamDefOptions</a> or XSIFactory::CreateShaderParamDefOptions method and set any values on it before
+               you call the Add method for the parameter definition.
+            </p>
+            <p><span class="anchor_wrapper"><a name="GUID-6FC37A3D-E753-4FC5-BFD1-07BFB1E6BAE4"></a></span>You can reuse the same options over again, only changing what you need before you
+               call the Add methods, if necessary. For example, if you are creating only texturable
+               parameters and don't need to specify a display name, default values, or a value range,
+               you can use the same object in each call to the Add methods. You can also modify one
+               or more options and keep the rest of the options, or get a new instance of the object
+               to reset the values. The <a href="#!/url=./si_om/ShaderParamDefOptions.html">ShaderParamDefOptions</a> or <a href="#!/url=./si_cpp/classXSI_1_1ShaderParamDefOptions.html">ShaderParamDefOptions</a> is also instrumental in applying filters for reference and property look-up data
+               types, and for creating custom parameter.
+            </p>
+            <p><span class="anchor_wrapper"><a name="GUID-12B07C98-B2D6-4F10-B167-1112DB6667BE"></a></span>The principle behind adding the simple parameter definition data types applies to
+               the more complex types, such as structures, property look-ups, and references; however
+               there are also a few extra measures to take which are explained in the sections below:
+            </p>
+            <ul>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-3197C636-0349-43BA-830A-6A3665877A7B"></a></span> <span class="char_link"><a href="#!/url=./files/cus_shaders_ParamsAdding.htm#WSEE80B7B3C7C7E74A9E14EA8F7E4C08A5-003D">To add simple parameter definitions</a></span> 
+                  </p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-ABC26914-2E8C-4D17-864A-2D17D06858EB"></a></span> <span class="char_link"><a href="#!/url=./files/cus_shaders_ParamsAdding.htm#WSEE80B7B3C7C7E74A9E14EA8F7E4C08A5-003E">To add array parameter definitions</a></span> 
+                  </p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-9CC1C0DA-7164-45BD-A6C7-ADE56A826116"></a></span> <span class="char_link"><a href="#!/url=./files/cus_shaders_ParamsAdding.htm#WSEE80B7B3C7C7E74A9E14EA8F7E4C08A5-0040">To add a structure parameter definition</a></span> 
+                  </p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-EA5B1D3B-E998-4D7D-BC06-6B67A993CB90"></a></span> <span class="char_link"><a href="#!/url=./files/cus_shaders_ParamsAdding.htm#WSEE80B7B3C7C7E74A9E14EA8F7E4C08A5-0041">To add a property look-up parameter definition (CAV, texture map, normal, etc.)</a></span> 
+                  </p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-19DFCE60-8E1E-4E48-B833-2872291401D2"></a></span> <span class="char_link"><a href="#!/url=./files/cus_shaders_ParamsAdding.htm#WSEE80B7B3C7C7E74A9E14EA8F7E4C08A5-0042">To add a reference parameter definition</a></span> 
+                  </p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-76E952D3-D7AE-4497-9F71-5D0A431711B9"></a></span> <span class="char_link"><a href="#!/url=./files/cus_shaders_ParamsAdding.htm#WSEE80B7B3C7C7E74A9E14EA8F7E4C08A5-0043">Bonus: To add an output parameter definition for a lightmap (custom)</a></span> 
+                  </p> 
+               </li>
+            </ul>
+            <div class="section"><span class="anchor_wrapper"><a name="WSEE80B7B3C7C7E74A9E14EA8F7E4C08A5-003D"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-469A61FC-EFB1-49E6-9588-419217844C3D"></a></span>To add simple parameter definitions
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-11F96376-19AE-4960-A786-D579E9E0414E"></a></span>Before calling the <a href="#!/url=./si_om/ShaderParamDefContainer.AddParamDef.html">ShaderParamDefContainer.AddParamDef</a> or ShaderParamDefContainer::AddParamDef method, set up the shader parameter definition
+                  options. This example uses the <a href="#!/url=./si_om/ShaderParamDefOptions.SetLongName.html">ShaderParamDefOptions.SetLongName</a> or ShaderParamDefOptions::SetLongName method to set the name that appears in the
+                  UI, and the <a href="#!/url=./si_om/ShaderParamDefOptions.SetTexturable.html">ShaderParamDefOptions.SetTexturable</a> or ShaderParamDefOptions::SetTexturable method to allow this parameter to be connected
+                  in the render tree.
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+// Set up an RGBA <a href="javascript:void(0)" data="color" class="a_multireflink">color</a> <a href="javascript:void(0)" data="data" class="a_multireflink">data</a> <a href="javascript:void(0)" data="type" class="a_multireflink">type</a>
+var oPDefOptions = XSIFactory.CreateShaderParamDefOptions();
+oPDefOptions.SetLongName("sweet");		// this becomes the port <a href="javascript:void(0)" data="name" class="a_multireflink">name</a> in the UI
+oPDefOptions.SetTexturable(true);		// display as a node in render tree
+
+// You need to <a href="javascript:void(0)" data="set" class="a_multireflink">set</a> up the options before you can add the param def
+var oInputParamsContainer = oShaderDef.InputParamDefs;
+oInputParamsContainer.AddParamDef("simple", siShaderDataTypeColor4, oPDefOptions);
+
+// Change only the UI <a href="javascript:void(0)" data="name" class="a_multireflink">name</a>, and keep the rest of the settings
+oPDefOptions.SetLongName("salty");
+oInputParamsContainer.AddParamDef("simple2", siShaderDataTypeColor4, oPDefOptions)
+
+// A similar parameter, this time appearing only as a parameter on the PPGLayout
+oPDefOptions.SetTexturable(false);		// display in associated property page only
+oPDefOptions.SetInspectable(true);
+oInputParamsContainer.AddParamDef("torque", siShaderDataTypeScalar, oPDefOptions);
+
+# etc.</pre></div> 
+               <div><span class="anchor_wrapper"><a name="GUID-1D85C736-5BE1-465D-A841-5DDC7DB693AC"></a></span><div class="note-note"><span class="label">NOTE:</span> 
+                     <p><span class="anchor_wrapper"><a name="GUID-70559ED8-5958-4645-B606-89D5F76FEEE0"></a></span>For information on how to add more complex types, such as texture space ID or reference
+                        controls, see <span class="char_link"><a href="#!/url=./files/cus_shaders_ParamsControls.htm">Refining UI Controls for Parameter Definitions</a></span>.
+                     </p> 
+                  </div>
+               </div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSEE80B7B3C7C7E74A9E14EA8F7E4C08A5-003E"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-1754C174-DB1F-4001-814C-725012BFABC5"></a></span>To add array parameter definitions
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-5D97282C-D424-422D-A148-300FEA15F1A2"></a></span>Adding array parmeter definitions is just like adding the single version of the same
+                  data object. The <a href="#!/url=./si_om/ShaderParamDefContainer.AddArrayParamDef.html">ShaderParamDefContainer.AddArrayParamDef</a> or ShaderParamDefContainer::AddArrayParamDefmethod returns a <a href="#!/url=./si_om/ShaderArrayParamDef.html">ShaderArrayParamDef</a> or <a href="#!/url=./si_cpp/classXSI_1_1ShaderArrayParamDef.html">ShaderArrayParamDef</a> object.
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+// Add an array of gradients
+oParamDefOptions = XSIFactory.CreateShaderParamDefOptions();
+oParamDefOptions.SetTexturable(true);// connectable port
+oInputParams.AddArrayParamDef("train", siShaderDataTypeGradient, oParamDefOptions);</pre></div> 
+               <p><span class="anchor_wrapper"><a name="GUID-449E10E8-477F-4199-B63D-BF3AD23A56C7"></a></span>If you leave the code as is, your shader will initialize with an empty array, like
+                  this:
+               </p> <img src="../images/GUID-1969F469-E1DF-4282-96E8-F28806B78056-low.png" /> 
+               <p><span class="anchor_wrapper"><a name="GUID-94A04304-21DF-4542-9589-788BCB6C056B"></a></span>However you can refine your array parameter definition in several ways:
+               </p> 
+               <ul>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-16520CC7-2AF8-4A53-A254-96A328761DA0"></a></span>You can populate the array with a specific <a href="#!/url=./si_om/ShaderArrayParamDef.ItemInitialCount.html">ShaderArrayParamDef.ItemInitialCount</a> or ShaderArrayParamDef::PutItemInitialCountset to specific <a href="#!/url=./si_om/ShaderArrayParamDef.ItemInitialValues.html">ShaderArrayParamDef.ItemInitialValues</a> or ShaderArrayParamDef::GetItemInitialValues.
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-2AA06043-9AE7-4A18-BBCD-229FA76DADB6"></a></span>The name of each item is by default Item, but you can <a href="#!/url=./si_om/ShaderArrayParamDef.ItemName.html">ShaderArrayParamDef.ItemName</a> or ShaderArrayParamDef::PutItemName.
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-E50BB859-175A-4A69-9D35-5F913A42CD50"></a></span>You can get a reference to the <a href="#!/url=./si_om/ShaderArrayParamDef.ItemDef.html">ShaderArrayParamDef.ItemDef</a> or ShaderArrayParamDef::GetItemDef to refine it using specific members. For example,
+                        in the case of an array of structs, you need to add a number of sub-definitions to
+                        the struct, which you can do through the underlying <a href="#!/url=./si_om/ShaderStructParamDef.html">ShaderStructParamDef</a> or <a href="#!/url=./si_cpp/classXSI_1_1ShaderStructParamDef.html">ShaderStructParamDef</a> object.
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-F0B54F0A-88EF-40DF-9164-8F8E9A0F6990"></a></span>You can <a href="#!/url=./si_om/ShaderArrayParamDef.StaticArray.html">ShaderArrayParamDef.StaticArray</a> or ShaderArrayParamDef::PutStaticArray, which prevents users from adding or removing
+                        items. In the property page, the Add and Clear buttons are disabled.
+                     </p> 
+                  </li>
+               </ul> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSEE80B7B3C7C7E74A9E14EA8F7E4C08A5-0040"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-982F29E9-B112-4F52-AA0D-25D5E6DA7CEB"></a></span>To add a structure parameter definition
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-B6EC63EF-C90D-4D72-A8AE-23E2665E3B79"></a></span>When you call the Add method you need to grab the return value, which is a <a href="#!/url=./si_om/ShaderStructParamDef.html">ShaderStructParamDef</a> or <a href="#!/url=./si_cpp/classXSI_1_1ShaderStructParamDef.html">ShaderStructParamDef</a> object. This specialized parameter definition implements the <a href="#!/url=./si_om/ShaderStructParamDef.SubParamDefs.html">ShaderStructParamDef.SubParamDefs</a> or ShaderStructParamDef::GetSubParamDefs member which provides access to the <a href="#!/url=./si_om/ShaderParamDefContainer.html">ShaderParamDefContainer</a> or <a href="#!/url=./si_cpp/classXSI_1_1ShaderParamDefContainer.html">ShaderParamDefContainer</a>. From this container you can add sub-parmeter definitions using the Add methods.
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+// This example of a struct builds the "si_default" input structure for the 
+// Bionic Volume (Fast Volume Effects) shader implemented as a plug-in
+var oParamDefOpts = XSIFactory.CreateShaderParamDefOptions();
+oParamDefOpts.SetTexturable(false);
+
+// Add the structure <a href="javascript:void(0)" data="type" class="a_multireflink">type</a> parameter to the shader definition
+var oInParamDefs = oShaderDef.InputParamDefs;
+var oStructParamDef = oInParamDefs.AddParamDef("si_default", siShaderDataTypeStructure, oParamDefOpts);
+
+// Get the structure parameter container and start adding sub-parameter definitions
+var oSubParamDefs = oStructParamDef.SubParamDefs;
+oParamDefOpts = XSIFactory.CreateShaderParamDefOptions();
+
+// "start"
+oParamDefOpts.SetTexturable(false);
+oParamDefOpts.SetDefaultValue(5.0);
+oSubParamDefs.AddParamDef("start", siShaderDataTypeScalar, oParamDefOpts);
+
+// "stop"
+oParamDefOpts.SetDefaultValue(100.0);
+oSubParamDefs.AddParamDef("stop", siShaderDataTypeScalar, oParamDefOpts);
+
+// "rate"
+oParamDefOpts.SetDefaultValue(1.0);
+oSubParamDefs.AddParamDef("rate", siShaderDataTypeScalar, oParamDefOpts);
+
+// "transmit"
+oParamDefOpts.SetDefaultValue(0.5);
+oSubParamDefs.AddParamDef("transmit", siShaderDataTypeColor4, oParamDefOpts);
+
+// "lightrays"
+oParamDefOpts.SetDefaultValue(false);
+oSubParamDefs.AddParamDef("lightrays", siShaderDataTypeBoolean, oParamDefOpts);</pre></div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSEE80B7B3C7C7E74A9E14EA8F7E4C08A5-0041"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-C4B896E2-F6BD-4AE4-BC2F-1251667963DA"></a></span>To add a property look-up parameter definition (CAV, texture map, normal, etc.)
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-3DED87CF-F312-4BDF-8FFE-5C3AA25F87A0"></a></span>Property type parameter definitions provide a property look-up widget for weight maps,
+                  texture maps, normals, color-at-vertices, etc. You can apply a <a href="#!/url=./si_om/siShaderPropertyFilterType.html">filter</a> to get widgets for specific properties.
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+// Apply the Color-At-Vertices filter to the parameter definition options
+var oParamDefOptions = XSIFactory.CreateShaderParamDefOptions();
+oParamDefOptions.SetTexturable(false);								// PPGLayout only
+oParamDefOptions.SetAttribute(siPropertyFilterAttribute, siCAVPropertyFilter);
+
+// Add the "VertexColor" parameter definition to the input list as a property look-up <a href="javascript:void(0)" data="type" class="a_multireflink">type</a>
+var oInputParams = oShaderDef.InputParamDefs;
+oInputParams.AddParamDef("VertexColor", siShaderDataTypeProperty, oParamDefOptions);</pre></div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSEE80B7B3C7C7E74A9E14EA8F7E4C08A5-0042"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-DD716DFA-EBFE-4E1A-B9AD-A435E9F3E083"></a></span>To add a reference parameter definition
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-DE76DBF1-5AC9-4A9E-B5E0-F69BBE3E8FC7"></a></span>Reference type parameter definitions provide a widget for the user to pick an element
+                  in the scene. You can apply a <a href="#!/url=./si_om/siShaderReferenceFilterType.html">filter</a> to limit the kind of items the user can pick from.
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+// Apply the Cameras filter to the parameter definition options to make sure 
+// that the user can only pick cameras
+var oParamDefOptions = XSIFactory.CreateShaderParamDefOptions();
+oParamDefOptions.SetTexturable(false);									// PPGLayout only
+oParamDefOptions.SetInspectable(true);
+oParamDefOptions.SetAttribute(siReferenceFilterAttribute, siCameraReferenceFilter);
+
+// Add the reference parameter to the list of input parameter definitions
+var oInputParams = oShaderDef.InputParamDefs;
+oInputParams.AddParamDef("reference", siShaderDataTypeReference, oParamDefOptions);</pre></div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WSEE80B7B3C7C7E74A9E14EA8F7E4C08A5-0043"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-2269D209-D7E9-4ACE-AE23-04E77F62AF63"></a></span>Bonus: To add an output parameter definition for a lightmap (custom)
+               </h2> 
+               <p><span class="anchor_wrapper"><a name="GUID-BEB453DB-EEC0-4A18-80E5-0FCE28F1FF4E"></a></span>Shader definitions of the <span class="char_link"><a href="#!/url=./files/cus_shaders_FamiliesNative.htm#WSEE80B7B3C7C7E74A9E14EA8F7E4C08A5-0028">mental ray Lightmap Shader</a></span> family always define the output parameter as a custom type, and then set a special
+                  <a href="#!/url=./si_om/siShaderCustomDataType.html">attribute</a> on the parameter definition options to indicate that it is a lightmap:
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">
+// Set the custom attribute to mrLmap on the options before adding them
+var oParamDefOpts = XSIFactory.CreateShaderParamDefOptions();
+oParamDefOpts.SetAttribute(siCustomTypeNameAttribute, siMentalRayLightmapPortType);
+
+// Then add the new method to the output parameters container
+var oOutParamDefs = oShaderDef.OutputParamDefs;
+oOutParamDefs.AddParamDef("out", siShaderDataTypeCustom, oParamDefOpts);</pre></div> 
+            </div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

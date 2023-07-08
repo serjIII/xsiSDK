@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>StaticKinematicState</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>StaticKinematicState</h1>
+         </div>
+
+<h2 class="pagehead">StaticKinematicState</h2>
+
+<p><a href="#!/url=./si_om/_hier.html#oh_StaticKinematicState">Object Hierarchy</a> | Related C++ Class: <a href="#!/url=./si_cpp/classXSI_1_1StaticKinematicState.html">StaticKinematicState</a></p>
+
+<h3>Inheritance<h3>
+<p class="level1"><a href="#!/url=./si_om/SIObject.html">SIObject</a></p>
+<p class="level2"><a href="#!/url=./si_om/ProjectItem.html">ProjectItem</a></p>
+<p class="level3"><a href="#!/url=./si_om/Property.html">Property</a></p>
+<p class="level4">StaticKinematicState</p>
+
+<h3>Description</h3>
+<div><p> The StaticKinematicState object represents the base pose of an object. 
+Objects that have access to the StaticKinematicState object include: <a href="#!/url=./si_om/X3DObject.html">X3DObject</a> 
+and <a href="#!/url=./si_om/Cluster.html">Cluster</a>.<br /><br />
+The static kinematic state on objects is created when applying envelopes, deform by spine or deform by curve. 
+Currently an object can only have one static kinematic state. It represents a snapshot of the pose of the object 
+when the Envelope, DeformBySpine or DeformByCage operator was applied. It is also changed when doing Set Reference 
+Pose in the Animate|Deform|Envelope menu. If an object has all 3 operations applied on the same object 
+they will all share the same static kinematic state. When doing a cage deform on top of a 
+envelope for example the later operation will reset the static kinematic state. This means that 
+it's usually better to be in the reference pose when adding these deforms (reset actor).<br /><br />
+The static kinematic state on clusters is created when the cluster is translated, rotated or 
+scaled by the MoveComponent operator. The static kinematic state is the transformation applied 
+by the MoveComponent operator on the cluster. There is one or possibly two static kine 
+state per move component on a cluster.  Therefore you end-up with multiple static 
+kine states on a cluster if you transform the cluster many times. The second static kine 
+state on the cluster is created when moving clusters in relative mode.
+</p></div>
+
+<h3>Methods</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.AddCustomOp.html">AddCustomOp</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.AddICEAttribute.html">AddICEAttribute</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.AddScriptedOp.html">AddScriptedOp</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.AddScriptedOpFromFile.html">AddScriptedOpFromFile</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.AnimatedParameters2.html">AnimatedParameters2</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.BelongsTo.html">BelongsTo</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.EvaluateAt.html">EvaluateAt</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.GetICEAttributeFromName.html">GetICEAttributeFromName</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/StaticKinematicState.GetTransform2.html">GetTransform2</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.IsA.html">IsA</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.IsAnimated2.html">IsAnimated2</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.IsClassOf.html">IsClassOf</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.IsEqualTo.html">IsEqualTo</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.IsKindOf.html">IsKindOf</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.IsLocked.html">IsLocked</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.IsSelected.html">IsSelected</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.LockOwners.html">LockOwners</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.RemoveICEAttribute.html">RemoveICEAttribute</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.SetAsSelected.html">SetAsSelected</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.SetCapabilityFlag.html">SetCapabilityFlag</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.SetLock.html">SetLock</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.TaggedParameters.html">TaggedParameters</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.UnSetLock.html">UnSetLock</a>		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Properties</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Application.html">Application</a>		</td>		<td class="members"><a href="#!/url=./si_om/Property.Branch.html">Branch</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.BranchFlag.html">BranchFlag</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.Capabilities.html">Capabilities</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Categories.html">Categories</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.EvaluationID.html">EvaluationID</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.Families.html">Families</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.FullName.html">FullName</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Help.html">Help</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.HierarchicalEvaluationID.html">HierarchicalEvaluationID</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.ICEAttributes.html">ICEAttributes</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.LockLevel.html">LockLevel</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.LockMasters.html">LockMasters</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.LockType.html">LockType</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.Model.html">Model</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Name.html">Name</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.NestedObjects.html">NestedObjects</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.ObjectID.html">ObjectID</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Origin.html">Origin</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.OriginPath.html">OriginPath</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.Owners.html">Owners</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.PPGLayout.html">PPGLayout</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.Parameters.html">Parameters</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Parent.html">Parent</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.Parent3DObject.html">Parent3DObject</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.Selected.html">Selected</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/Property.Singleton.html">Singleton</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/StaticKinematicState.Transform.html">Transform</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Type.html">Type</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'=======================================================================================
+'	This script demonstrates how to get the StaticKinematicState object
+'	from a cluster. Notice that this object only exists after the cluster
+'	has been transformed.
+'=======================================================================================
+' Set up a cluster on a torus 
+set oRoot = ActiveSceneRoot
+set oTorus = oRoot.AddGeometry( "Torus","MeshSurface" )
+set oPimple = oTorus.ActivePrimitive.Geometry.AddCluster( _
+			siVertexCluster, _
+			"Pimple", _
+			Array( 0,2,8,10 ) _
+			)
+' Print out position information before moving the cluster
+getBasePositionInfo oPimple 
+' Translate the cluster in X and Z
+Translate oPimple, 0, 3.54998625973143, -0.354998625973143, siRelative, siView, siObj, siXYZ
+' Print out position information after applying envelope
+getBasePositionInfo oPimple
+function getBasePositionInfo( in_cluster )
+	' The cluster will only have it after a MoveComponent
+	' operator has been applied
+	if in_cluster.HasStaticKinematicState then
+		set oBasePose = in_cluster.GetStaticKinematicStates
+		for each oPose in oBasePose
+			' Create an SIVector3 math object to hold the translation
+			set oTranslation = XSIMath.CreateVector3 
+			' Print out the translation information from the base pose
+			oPose.Transform.GetTranslation oTranslation
+			logmessage "The StaticKinematicState property position is " _
+						&amp; "(as X, Y, Z): " &amp; oTranslation.X &amp; ", " _
+						&amp; oTranslation.Y &amp; ", " &amp; oTranslation.Z
+		next
+	else
+		' Default situation
+		logmessage "There's no StaticKinematicState property on this object."
+	end if
+end function
+'=======================================================================================
+' Output of above script is:
+'
+'INFO : "There's no StaticKinematicState property on this object."
+'INFO : "The StaticKinematicState property position is (as X, Y, Z): 0, 0, 0"
+'INFO : "The StaticKinematicState property position is (as X, Y, Z): 0, 3.54998625973143, -0.354998625973143"</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'=======================================================================================
+'	This script demonstrates how to get the StaticKinematicState object
+'	from an object. Notice that the StaticKinematicState only exists 
+'	after an envelope or deform operation has been performed on the object.
+'=======================================================================================
+' Set up a null to envelope 
+set oRoot = ActiveSceneRoot
+set oNull = oRoot.AddPrimitive( "Null","MyNull")
+oNull.Kinematics.Global.Parameters( "posy" ).Value = 6.0
+' Set up the object to use as an envelope
+set oCube = oRoot.AddGeometry( "Cube","MeshSurface" )
+' Print out position information before applying envelope
+getBasePositionInfo oCube 
+' Set up the envelope
+oCube.ApplyEnvelope oNull 
+' Print out position information after applying envelope
+getBasePositionInfo oCube 
+function getBasePositionInfo( in_object )
+	' The object will only have it after an envelope or deform
+	' operator has been applied
+	if in_object.HasStaticKinematicState then
+		set oTranslation = XSIMath.CreateVector3
+		in_object.GetStaticKinematicState.Transform.GetTranslation oTranslation
+		logmessage "The StaticKinematicState property position is (as X, Y, Z): " &amp; _
+				oTranslation.X &amp; ", " &amp; oTranslation.Y &amp; ", " &amp; oTranslation.Z
+	else
+		logmessage "There's no StaticKinematicState property on this object."
+	end if
+end function
+'=======================================================================================
+' Output of above script is:
+'
+'INFO : "There's no StaticKinematicState property on this object."
+'INFO : "The StaticKinematicState property position is (as X, Y, Z): 0, 0, 0"</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/Cluster.HasStaticKinematicState.html">Cluster.HasStaticKinematicState</a> <a href="#!/url=./si_om/Cluster.GetStaticKinematicStates.html">Cluster.GetStaticKinematicStates</a> <a href="#!/url=./si_om/KinematicState.html">KinematicState</a> <a href="#!/url=./si_om/X3DObject.HasStaticKinematicState.html">X3DObject.HasStaticKinematicState</a> <a href="#!/url=./si_om/X3DObject.GetStaticKinematicState.html">X3DObject.GetStaticKinematicState</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></h3></h3></div>
+   </div></body>
+</html>

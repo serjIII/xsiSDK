@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>MakeShadowChain</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>MakeShadowChain</h1>
+         </div>
+
+<h2 class="pagehead">MakeShadowChain</h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Traces a new shadow hierarchy (a chain or null hierarchy) on top of an existing chain. The shadow objects 
+will be pose-constrained to the original objects.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oShadow = MakeShadowChain( Chain, ShadowParent, [SI3DStyleChain], [IconScale], [ShadowType], [ShadowCharacterSetName] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns a <a href="#!/url=./files/CDKShadow.htm">Shadow</a> JScript object.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">Chain		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+A collection of chain objects to trace. Must be in the same order as order defined by the <a href="#!/url=./si_cmds/GetSkeleton.html">GetSkeleton</a> command.		</td>
+	</tr>
+	<tr>
+		<td class="name">ShadowParent		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The object to which the new shadow hierarchy will be parented.		</td>
+	</tr>
+	<tr>
+		<td class="name">SI3DStyleChain		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+True to draw a SI|3D chain; False to draw a standard Softimage one.			<p class="cell"><span class="hilite">Default Value: </span>
+False			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">IconScale		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+Icon scale of the skeleton.			<p class="cell"><span class="hilite">Default Value: </span>
+1.0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ShadowType		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+
+		The type of shadow tracing to be drawn. for convenience the numbers align with the UI options for the shadow type
+		on the default rig generators.  Box Shadows are not traced here, but are done as components because they need to make 
+		assumptions about the volume of each component.
+				<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>Skeleton shadow rig					</td>
+				</tr>
+				<tr>
+					<td class="name">1					</td>
+					<td>Null shadow rig					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ShadowCharacterSetName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+The name of the shadow character set that should be used for this chain; it gets stored in a 
+Custom PSet for use.			<p class="cell"><span class="hilite">Default Value: </span>
+""			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">/*
+	This script creates an arm, then creates two shadow 
+	chains over top of it. The first uses nulls the other
+	uses a chain.
+*/
+var guidecoll = new ActiveXObject("XSI.Collection");
+guidecoll.Add( GetPrim("Null", "ShoulderGuide") ); 
+guidecoll.Add( GetPrim("Null", "ElbowGuide") ); 
+guidecoll.Add( GetPrim("Null", "HandGuide") ); 
+var lXfm = guidecoll(0).Kinematics.Global.Transform
+var lPos = XSIMath.CreateVector3();
+/*
+	Right Arm
+*/
+lXfm.SetTranslationFromValues(0,0,0);
+guidecoll(0).Kinematics.Global.Transform = lXfm;
+lXfm.SetTranslationFromValues(4,0,-2);
+guidecoll(1).Kinematics.Global.Transform = lXfm;
+lXfm.SetTranslationFromValues(8,0,0);
+guidecoll(2).Kinematics.Global.Transform = lXfm;
+var RArm = MakeArm(ActiveSceneRoot, guidecoll, "R",null, 0,0,0,null ,null, 0);
+/*
+	Add a chain shadow
+*/
+//NULL shadow
+var shadow = MakeShadowChain( GetSkeleton(RArm.Root), ActiveSceneRoot,0,1.0,1);
+//BONE shadow
+shadow = MakeShadowChain( GetSkeleton(RArm.Root), ActiveSceneRoot,0,2.0,0);
+DumpShadow( shadow );
+function DumpShadow( inShadow )
+{
+logmessage ("Data in the returned shadow object:");
+logmessage ("-----------------------------------");
+	logmessage ("ShadowParent : " + inShadow.Root);
+logmessage ("SI3DStyle    : " + inShadow.Eff);
+logmessage ("#ShadowObject: " + inShadow.Shadows.count);
+	for(var b=0;b&lt;inShadow.Shadows.count;b++)
+	{logmessage (" ShadowObj" +  b + "  : " + inShadow.Shadows(b));}
+	logmessage ("#ShadowEnds  : " + inShadow.ShadowEnds.count);
+	for(var b=0;b&lt;inShadow.ShadowEnds.count;b++)
+	{logmessage (" ShadowEnd" + b + "  : " + inShadow.ShadowEnds(b));}
+	logmessage ("Scale        : " + inShadow.Scale);
+logmessage ("Hidden       : " + inShadow.Hidden);
+logmessage ("Envelope     : " + inShadow.Envelope);
+logmessage ("ShadowModel  : " + inShadow.ShadowModel);
+}
+//results from running this script:
+//INFO : "Data in the returned shadow object:"
+//INFO : "-----------------------------------"
+//INFO : "ShadowParent : RRoot1"
+//INFO : "SI3DStyle    : undefined"
+//INFO : "#ShadowObject: 4"
+//INFO : " ShadowObj0  : RRoot1"
+//INFO : " ShadowObj1  : RBicep1"
+//INFO : " ShadowObj2  : RForearm1"
+//INFO : " ShadowObj3  : eff"
+//INFO : "#ShadowEnds  : 1"
+//INFO : " ShadowEnd0  : RRoot1"
+//INFO : "Scale        : 1"
+//INFO : "Hidden       : RRoot1"
+//INFO : "Envelope     : RBicep1,RForearm1"
+//INFO : "ShadowModel  : Scene_Root"</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/MakeShadowSpine.html">MakeShadowSpine</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

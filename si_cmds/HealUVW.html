@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>HealUVW</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>HealUVW</h1>
+         </div>
+
+<h2 class="pagehead">HealUVW</h2>
+
+<h3>Description</h3>
+<div><p>Heals the given unshared UVWs.</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = HealUVW( TextureProjection, SubComp );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns the modified object.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">TextureProjection		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ The texture projection which sampled points we want to heal.		</td>
+	</tr>
+	<tr>
+		<td class="name">SubComp		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Cluster of sampled points or tagged sampled points to heal 		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'  This example demonstrates how to generate unique UVs for an object,
+'  how to edit those UVs and how to heal together two UV islands.
+NewScene , false
+CreatePrim "Sphere", "MeshSurface"
+MakeLocal "Sphere.Scene_Material", siDefaultPropagation
+' Connect an image shader to the diffuse port of the Phong
+SIApplyShaderToCnxPoint "Image", "Sources.Materials.DefaultLib.Material.Phong.diffuse"
+' generate unique UVs for the sphere
+GenerateUniqueUVs "sphere", "Texture_Projection"
+' place the UV islands we want to heal in a proper location.
+TranslateUVW "sphere.sample[23-29,53-59,83-89,113-119,143-149,173-179,203-209,233-LAST]", "sphere.polymsh.cls.Texture_Coordinates_AUTO.Texture_Projection", 0.176414061952535, 0.367955043859649, 0, siRelative, siUVW, False
+TranslateUVW "sphere.sample[157-172]", "sphere.polymsh.cls.Texture_Coordinates_AUTO.Texture_Projection", 0.437102357321886, 9.25822368421053E-02, 0, siRelative, siUVW, False
+RotateUVW "sphere.sample[157-172]", "sphere.polymsh.cls.Texture_Coordinates_AUTO.Texture_Projection", 0, 0, -17.775, siRelative, siUVW, 0
+' Alt + 7 to open the texture editor and take a look at the UVs.
+' Now heal the UV islands
+HealUVW "sphere.polymsh.cls.Texture_Coordinates_AUTO.Texture_Projection", "sphere.sample[23-29,53-59,83-89,113-119,143-149,157-179,203-209,233-LAST]"</pre></td></tr>
+</table>
+</div></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

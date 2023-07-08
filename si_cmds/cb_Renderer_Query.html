@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Query</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Query</h1>
+         </div>
+
+<h2 class="pagehead">Query</h2>
+
+<hr width="100%" />
+<h3>Description</h3>
+<div><p><a name="Description"> </a>	<p>
+				This optional callback is used by the Render Manager to query the rendering engine for information
+				based on the <a href="#!/url=./si_om/siRenderQueryType.html">siRenderQueryType</a> enumeration value given in the <span style="font-family: courier, monospace;">QueryType</span> 
+				attribute.
+			</p>
+</p></div>
+
+<hr width="100%" />
+<h3>Applies To</h3>
+<div><p><a name="AppliesTo"> </a><a href="#!/url=./files/cus_render.htm">Custom Renderers</a></p></div>
+
+<hr width="100%" />
+<h3>Syntax</h3>
+<div><p><a name="Syntax"> </a><div class="example"><table>
+<tr>
+<td class="example"><pre class="cplusplus">CStatus &lt;renderer_name&gt;_Query( CRef&amp; in_context )
+{
+	...
+}</pre></td></tr>
+</table>
+</div>	<p><span style="font-family: courier, monospace;">&lt;renderer_name&gt;</span> is the name specified in the call to
+				<a href="#!/url=./si_cpp/classXSI_1_1PluginRegistrar.html#RegisterRenderer">PluginRegistrar::RegisterRenderer</a>,
+				with any spaces converted to underscores.
+			</p>
+</p></div>
+
+<hr width="100%" />
+<h3>Parameters</h3>
+<div><p><a name="Parameters"> </a>	<table>		<tr>			<th>Parameter</th>
+			<th>Language</th>
+			<th>Type</th>
+			<th>Description</th>
+</tr>
+		<tr>			<td class="name">in_context</td>
+			<td class="name">C++</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1CRef.html">CRef</a>&
+					</td>
+			<td>
+						A reference to the <a href="#!/url=./si_cpp/classXSI_1_1RendererContext.html">RendererContext</a> object.
+						<a href="#!/url=./si_cpp/classXSI_1_1Context.html#GetSource">Context::GetSource</a>
+						returns the <a href="#!/url=./si_cpp/classXSI_1_1Renderer.html">Renderer</a>.
+					</td>
+</tr>
+</table>
+</p></div>
+
+<hr width="100%" />
+<h3>Context Attributes</h3>
+<div><p><a name="ContextAttributes"> </a>	<p>
+			    The context attributes for the query callback are different depending on the
+				query type. However, in all cases the <span style="font-family: courier, monospace;">QueryType</span> attribute
+				is set.
+			</p>
+	<table>		<tr>			<th>Attribute</th>
+			<th>Type</th>
+			<th>Description</th>
+</tr>
+		<tr>			<td>QueryType</td>
+			<td><a href="#!/url=./si_om/siRenderQueryType.html">siRenderQueryType</a></td>
+			<td>
+						The type of information being queried for. See table below for
+						context attributes specific for each query.</td>
+</tr>
+</table>
+	<table>		<tr>			<th>Query Type</th>
+			<th>Attribute</th>
+			<th>Type</th>
+			<th>Description</th>
+</tr>
+		<tr>			<td><a href="#!/url=./si_om/siRenderQueryType.html#siRenderQueryArchiveIsValid">siRenderQueryArchiveIsValid</a></td>
+			<td>Filename</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1CString.html">CString</a></td>
+			<td>
+						A file path to an object archive.
+					</td>
+</tr>
+		<tr>			<td></td>
+			<td>Valid</td>
+			<td>bool</td>
+			<td>
+						On return should be set to <span style="font-family: courier, monospace;">true</span> indicating that 
+						the object archive given in <span style="font-family: courier, monospace;">Filename</span> is a valid 
+						archive for this renderer, or <span style="font-family: courier, monospace;">false</span> if it isn't.
+					</td>
+</tr>
+		<tr>			<td></td>
+			<td>MultiFrame</td>
+			<td>bool</td>
+			<td>
+						On return should be set to <span style="font-family: courier, monospace;">true</span> indicating
+						whether the archive, if valid, is a multi-frame archive.
+					</td>
+</tr>
+		<tr>			<td><a href="#!/url=./si_om/siRenderQueryType.html#siRenderQueryArchiveProxies">siRenderQueryArchiveProxies</a></td>
+			<td>Filename</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1CString.html">CString</a></td>
+			<td>
+						A file path to an object archive.
+					</td>
+</tr>
+		<tr>			<td></td>
+			<td>Frame</td>
+			<td>int</td>
+			<td>
+						The frame number within the archive that the proxies should be
+						returned for. Only needed for multi-frame archives. For single-frame
+						archives, the <span style="font-family: courier, monospace;">Filename</span> attribute value is sufficient.
+					</td>
+</tr>
+		<tr>			<td></td>
+			<td>
+						ProxyXY<br /><br />ProxyXZ<br /><br />ProxyYZ
+					</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1CString.html">CString</a></td>
+			<td>
+						If display proxies were generated for the object archive
+						given in <span style="font-family: courier, monospace;">Filename</span>, these attribute values should
+						be set by the callback, as absolute paths to the display proxies for 
+						the XY, XZ and YZ planes.
+						The display proxies are drawn to fit the bounding box of the archive.
+						The display proxy images should be saved in a format that Softimage
+						recognises.
+					</td>
+</tr>
+		<tr>			<td><a href="#!/url=./si_om/siRenderQueryType.html#siRenderQueryArchiveBBox">siRenderQueryArchiveBBox</a></td>
+			<td>Filename</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1CString.html">CString</a></td>
+			<td>
+						A file path to an object archive.
+					</td>
+</tr>
+		<tr>			<td></td>
+			<td>Frame</td>
+			<td>int</td>
+			<td>
+						The frame number within the archive that the bounding box should be
+						returned for. Only needed for multi-frame archives. For single-frame
+						archives, the <span style="font-family: courier, monospace;">Filename</span> attribute value is sufficient.
+					</td>
+</tr>
+		<tr>			<td></td>
+			<td>
+						BBoxMin<br /><br />BBoxMax
+					</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1MATH_1_1CVector3.html">CVector3</a></td>
+			<td>
+						These attribute values should be set by the callback as the full
+						bounding box of the renderable geometry contained inside the
+						object archive. The minimum and maximum extents should be set as
+						<a href="#!/url=./si_cpp/classXSI_1_1MATH_1_1CVector3.html">CVector3</a> values for an axis-aligned
+						bounding box.
+					</td>
+</tr>
+		<tr>			<td><a href="#!/url=./si_om/siRenderQueryType.html#siRenderQueryArchiveFrameRange">siRenderQueryArchiveFrameRange</a></td>
+			<td>Filename</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1CString.html">CString</a></td>
+			<td>
+						A file path to an object archive.
+					</td>
+</tr>
+		<tr>			<td></td>
+			<td>
+						FrameStart<br /><br />FrameEnd
+					</td>
+			<td>int</td>
+			<td>
+						These attribute values should be set by the callback as the frame
+						range for the multi-frame object archive given by the 
+						<span style="font-family: courier, monospace;">Filename</span> attribute. This is only called if the
+						callback has identified the object archive as a multi-frame archive.
+						Both values are inclusive.
+					</td>
+</tr>
+		<tr>			<td><a href="#!/url=./si_om/siRenderQueryType.html#siRenderQueryDisplayBitDepths">siRenderQueryDisplayBitDepths</a></td>
+			<td>BitDepths</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1CLongArray.html">CLongArray</a></td>
+			<td>
+						This attribute should be set by the callback as an array of 
+						<a href="#!/url=./si_om/siImageBitDepth.html">siImageBitDepth</a> values, indicating which bit 
+						depths Softimage can ask the renderer to returns image fragments for (see
+						<a href="#!/url=./si_cpp/classXSI_1_1RendererImageFragment.html#GetScanlineRGBA">RendererImageFragment::GetScanlineRGBA</a>).
+						<br /><br />
+						Values currently understood by Softimage are: 
+									<ul>
+				<li><a href="#!/url=./si_om/siImageBitDepth.html#siImageBitDepthInteger8">siImageBitDepthInteger8</a></li>
+				<li><a href="#!/url=./si_om/siImageBitDepth.html#siImageBitDepthInteger16">siImageBitDepthInteger16</a></li>
+				<li><a href="#!/url=./si_om/siImageBitDepth.html#siImageBitDepthFloat16">siImageBitDepthFloat16</a></li>
+				<li><a href="#!/url=./si_om/siImageBitDepth.html#siImageBitDepthFloat32">siImageBitDepthFloat32</a></li>
+			</ul>
+</td>
+</tr>
+		<tr>			<td><a href="#!/url=./si_om/siRenderQueryType.html#siRenderQueryWantDirtyList">siRenderQueryWantDirtyList</a></td>
+			<td>WantDirtyList</td>
+			<td>bool</td>
+			<td>
+						This attribute should be set, prior to return, to indicate whether
+						the renderer requires a dirty list or not. If upon return this
+						value is true, a dirty list will be supplied to the render upon
+						each call to the <a href="#!/url=./si_cmds/cb_Renderer_Process.html">Process</a>
+						callback. If set to false, no dirty list will be supplied.
+						<br /><br />
+						By default a dirty list is supplied, whether this query code is
+						handled or not. This is mainly an optimization hint for renderers
+						that don't mirror the scene graph.
+					</td>
+</tr>
+		<tr>			<td><a href="#!/url=./si_om/siRenderQueryType.html#siRenderQueryVersionString">siRenderQueryVersionString</a></td>
+			<td>Version</td>
+			<td><a href="#!/url=./si_cpp/classXSI_1_1CString.html">CString</a></td>
+			<td>
+						This attribute should be set on return with the rendering
+						engine's version identifier. This version identifier can
+						be different from the plugin version, in case they carry
+						different version numbers. There is no restriction on the
+						formatting of the version identifier.
+					</td>
+</tr>
+</table>
+</p></div>
+
+<hr width="100%" />
+<h3>See Also</h3>
+<div><p><a name="SeeAlso"> </a><ul>
+	<li><a href="#!/url=./si_cmds/cb_Renderer_Init.html">Init (Renderer)</a></li>
+	<li><a href="#!/url=./si_cmds/cb_Renderer_Abort.html">Abort</a></li>
+	<li><a href="#!/url=./si_cmds/cb_Renderer_Process.html">Process</a></li>
+	<li><a href="#!/url=./si_cmds/cb_Renderer_Quality.html">Quality</a></li>
+	<li><a href="#!/url=./si_cmds/callbacks.html">Renderer Callbacks</a></li>
+</ul>
+</p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

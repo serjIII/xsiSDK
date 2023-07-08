@@ -1,0 +1,42 @@
+<style>
+<!--
+
+body {
+	margin-top : 0;
+	marginheight : 0;
+}
+
+.banner {
+	color : black;
+	font-size : 10pt;
+	font-weight: bolder;
+	font-family : Verdana, Arial, Helvetica, sans-serif, bold
+}
+
+.doctitle {
+	color : black;
+	font-size : 10pt;
+	font-weight: bolder;
+	font-family : Verdana, Arial, Helvetica, sans-serif, bold
+}
+
+.links {
+	color : #4d5963;
+	font-size : 8pt;
+	font-weight: bold;
+	font-family : Verdana, Arial, Helvetica, sans-serif, bold
+}
+
+
+table.doc {
+	margin-top: 4;
+}
+
+a { text-decoration: none; font-weight: bold }
+a:link { color: #006D9E }
+a:visited { color: #941F1F }
+a:active { color: #FFF09E }
+a:hover { background: #CCCCCC;  color: #0066b8}
+
+-->
+</style>

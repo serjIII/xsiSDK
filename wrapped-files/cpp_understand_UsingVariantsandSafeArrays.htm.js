@@ -1,0 +1,43 @@
+var topic = "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n\
+\n\
+<!-- saved from url=(0024)http://docs.autodesk.com -->\n\
+<html>\n\
+   <head>\n\
+<link href=\"../style/prettify.css\" type=\"text/css\" rel=\"stylesheet\" />\n\
+<script type=\"text/javascript\" src=\"../scripts/prettify.js\"></script><script src=\"../scripts/lib/jquery-1.9.1.min.js\" type=\"text/javascript\"></script>\n\
+      <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n\
+      <meta name=\"product\" content=\"SI\" />\n\
+      <meta name=\"release\" content=\"2015\" />\n\
+      <meta name=\"book\" content=\"Developer\" />\n\
+      <meta name=\"created\" content=\"2014-03-13\" />\n\
+      <meta name=\"topicid\" content=\"GUID-170FE6B7-4CFF-4BA5-BB7E-02DF805E89DA\" />\n\
+      <meta name=\"indexterm\" content=\"Using Variants and SafeArrays with the C++ API\" />\n\
+      <meta name=\"topic-type\" content=\"concept\" />\n\
+      <title>Using Variants and SafeArrays</title><script type=\"text/javascript\" src=\"../scripts/utils/adsk.redirect.js\"></script></head>\n\
+   <body height=\"100%\"><div class=\"body_content\" id=\"body-content\"><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/ac_common.js\"); });</script><script type=\"text/javascript\">var reflinkid = \"si_cpp\"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on(\'click\', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/multireflink.js\"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$(\"div#WidgetFloaterPanels,link[href*=\'microsofttranslator.com\'],script[src*=\'microsofttranslator.com\'],script[src*=\'bing.com\']\").remove();</script><script type=\'text/javascript\'>$(\"div#navigation,div#breadcrumbs,div#banner\").attr(\"translate\",\"no\"); var mtLocation = ((location && location.href && location.href.indexOf(\'https\') == 0)?\'https://ssl.microsofttranslator.com\':\'http://www.microsofttranslator.com\')+\'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages=\'; yepnope.injectJs(mtLocation, function() {}, { charset:\'utf-8\', type:\'text/javascript\' } );</script><script type=\"text/javascript\">\n\
+ </script><!-- begin MT -->\n\
+            \n\
+            <div id=\'MicrosoftTranslatorWidget\' class=\'Dark\' style=\'position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden\'></div><div id=\"reflinkdiv\" style=\"display:none; font-family: \'RobotoRegular\', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible\"></div>\n\
+      <div><span class=\"anchor_wrapper\"><a name=\"GUID-170FE6B7-4CFF-4BA5-BB7E-02DF805E89DA\"></a></span><div class=\"head\">\n\
+            <h1> Using Variants and SafeArrays</h1>\n\
+         </div>\n\
+         <div class=\"bodyProcess\">\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-9170A0CE-0E3A-4868-AF7A-54058E15FD7E\"></a></span>In C++ all variables are strictly typed. For example <span class=\"code\" translate=\"no\">x</span> may be declared as an int and <span class=\"code\" translate=\"no\">y</span> as a double. However, scripting languages that support ActiveX (Automation) may use\n\
+               loosely typed variables like <em class=\"mild\">Variants</em> and <em class=\"mild\">SafeArrays</em>, so a variable named <span class=\"code\" translate=\"no\">x</span> may contain a string or an integer or even a pointer to an object. The exact type\n\
+               of <span class=\"code\" translate=\"no\">x</span> is only determined when it is assigned a value, and the type of <span class=\"code\" translate=\"no\">x</span> can be changed at runtime by re-assigning its value.\n\
+            </p>\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-E4C060F3-9FCB-496E-A8F6-C8A6F49DE1DD\"></a></span>The <a href=\"#!/url=./si_cpp/classXSI_1_1CValue.html\">CValue</a> and <a href=\"#!/url=./si_cpp/classXSI_1_1CValueArray.html\">CValueArray</a> classes provide the convenience of a loosely typed variable or multi-dimensional\n\
+               array inside a strictly typed language like C++. CValue is very similar to the VARIANT\n\
+               structure used in Win32, as CValueArray is to the SAFEARRAY structure. Normally conversion\n\
+               is automatic, for example when using <a href=\"#!/url=./si_cpp/classXSI_1_1CComAPIHandler.html\">CComAPIHandler</a> or when a custom C++ command is called from scripting; however, it is also possible\n\
+               to convert between the two types using the functions <span class=\"code\" translate=\"no\">XSIVariantFromCValue</span> and <span class=\"code\" translate=\"no\">XSIVariantToCValue</span> (see the reference documentation for the sicppsdk__win32_8.h header file).\n\
+            </p>\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-0BEF83C8-894B-421A-9CA8-8DD4B2C2D2BF\"></a></span>As a result it is possible to use these classes without any knowledge of difficult\n\
+               ActiveX data types like BSTR and SAFEARRAY. Because CValue provides operator overloads\n\
+               and various constructors it is much easier to use than a VARIANT, and code using CValue\n\
+               will look very similar to the equivalent script code.\n\
+            </p>\n\
+         </div>\n\
+         <div class=\"footer-block\"><a href=\"../html/ac.cmtdialog.htm\" class=\"comments-anchor\" target=\"_blank\"><span class=\"comments-link\">Please send us your comment about this page</span></a></div><br /><p class=\"footer-license-block\"><a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\"><img alt=\"Creative Commons License\" style=\"border-width: 0;\" src=\"../images/ccLink.png\" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href=\"http://autodesk.com/creativecommons\" target=\"_blank\">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>\n\
+   </div></body>\n\
+</html>";

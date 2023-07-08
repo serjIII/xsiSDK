@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>UserDataMap</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_om/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_om/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>UserDataMap</h1>
+         </div>
+
+<h2 class="pagehead">UserDataMap</h2>
+
+<p><a href="#!/url=./si_om/_hier.html#oh_UserDataMap">Object Hierarchy</a> | Related C++ Class: <a href="#!/url=./si_cpp/classXSI_1_1UserDataMap.html">UserDataMap</a></p>
+
+<h3>Inheritance<h3>
+<p class="level1"><a href="#!/url=./si_om/SIObject.html">SIObject</a></p>
+<p class="level2"><a href="#!/url=./si_om/ProjectItem.html">ProjectItem</a></p>
+<p class="level3"><a href="#!/url=./si_om/Property.html">Property</a></p>
+<p class="level4">UserDataMap</p>
+
+<h3>Introduced</h3>
+<div><p>v3.0</p></div>
+
+<h3>Description</h3>
+<div><p> The UserDataMap is a <a href="#!/url=./si_om/Property.html">Property</a> that can be attached to any cluster.  It permits the 
+storage of variable length binary user data on the individual components of a geometry. The data is 
+stored as part of the scene file and can be accessed via plug-ins using the Object Model.
+<br /><br />
+Softimage plug-ins (both persistent and immediate effects) can use this property to save and retrieve data 
+that is associated with individual vertices, polygons, edges, or other components of an object. Example 
+data possibilities include custom game structures, raw simulation data, matrices, comments and images.  
+<br /><br />
+There are two ways that a UserDataMap can be used - for binary data or for templated data. With a Binary 
+UserDataMap, the structure of the user data is left completely up to the plug-in.  This is well suited 
+to C++ plug-ins.  However, as the examples below demonstrate, it is possible to access this data through 
+scripting by using strings.  The second type of UserDataMap uses a <a href="#!/url=./si_om/CustomProperty.html">CustomProperty</a> to 
+strictly define the structure of the user data (see <a href="#!/url=./si_om/UserDataMap.Template.html">UserDataMap.Template</a>). Templated 
+user data can be inspected in the UI (see <a href="#!/url=./si_cmds/InspectUserData.html">InspectUserData</a>) in addition to scripting 
+and C++ access.
+<br /><br />
+UserDataMaps are created with <a href="#!/url=./si_cmds/CreateUserDataMap.html">CreateUserDataMap</a> or <a href="#!/url=./si_om/SceneItem.AddProperty.html">SceneItem.AddProperty</a>.
+<br /><br />
+UserDataMap differs from the <a href="#!/url=./si_om/CustomProperty.html">CustomProperty</a> and <a href="#!/url=./si_om/UserDataBlob.html">UserDataBlob</a> objects 
+in that it stores separate data for each individual component of a cluster.  For example a cluster with 
+ten polygons will have ten different <a href="#!/url=./si_om/UserDataItem.html">UserDataItem</a> objects.  It is possible to enumerate 
+the UserDataItem objects in a UserDataMap using <a href="#!/url=./si_om/UserDataMap.Item.html">UserDataMap.Item</a>, or the VBScript "for each" 
+loop construct, or the JScript Enumerator object.  It is also possible to access the contents of a UserDataMap 
+directly with <a href="#!/url=./si_om/UserDataMap.ItemValue.html">UserDataMap.ItemValue</a>.
+<br /><br />
+The UserDataMap is similar to a <a href="#!/url=./si_om/ClusterProperty.html">ClusterProperty</a>, which also stores per-component data, but 
+the UserDataMap allows variable length data, whereas the ClusterProperty objects always store a fixed number 
+of Doubles at each component.
+<br /><br />
+The User Data Map provides similar functionality to that available from the SAAPHIRE SAA_subelement* UserData 
+functions.  For example, the Name of the property corresponds to the Tag argument to functions like 
+SAA_subelementSetUserData.
+<br /><br />
+It is possible to save a preset of a user data map and to reapply the user data on a different object. However, 
+for the best results, the number of components in both clusters should be the same.
+</p></div>
+
+<h3>Methods</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.AddCustomOp.html">AddCustomOp</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.AddICEAttribute.html">AddICEAttribute</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.AddScriptedOp.html">AddScriptedOp</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.AddScriptedOpFromFile.html">AddScriptedOpFromFile</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.AnimatedParameters2.html">AnimatedParameters2</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.BelongsTo.html">BelongsTo</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/UserDataMap.Clear.html">Clear</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/UserDataMap.ClearItem.html">ClearItem</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.EvaluateAt.html">EvaluateAt</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.GetICEAttributeFromName.html">GetICEAttributeFromName</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/UserDataMap.GetItem2.html">GetItem2</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/UserDataMap.GetItemSize2.html">GetItemSize2</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/UserDataMap.GetItemValue2.html">GetItemValue2</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.IsA.html">IsA</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.IsAnimated2.html">IsAnimated2</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.IsClassOf.html">IsClassOf</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.IsEqualTo.html">IsEqualTo</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.IsKindOf.html">IsKindOf</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.IsLocked.html">IsLocked</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.IsSelected.html">IsSelected</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.LockOwners.html">LockOwners</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.RemoveICEAttribute.html">RemoveICEAttribute</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.SetAsSelected.html">SetAsSelected</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.SetCapabilityFlag.html">SetCapabilityFlag</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.SetLock.html">SetLock</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.TaggedParameters.html">TaggedParameters</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.UnSetLock.html">UnSetLock</a>		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Properties</h3>
+<div><p><table>
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Application.html">Application</a>		</td>		<td class="members"><a href="#!/url=./si_om/Property.Branch.html">Branch</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.BranchFlag.html">BranchFlag</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.Capabilities.html">Capabilities</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Categories.html">Categories</a>		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/UserDataMap.Count.html">Count</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.EvaluationID.html">EvaluationID</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.Families.html">Families</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.FullName.html">FullName</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Help.html">Help</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.HierarchicalEvaluationID.html">HierarchicalEvaluationID</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.ICEAttributes.html">ICEAttributes</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/UserDataMap.IsEmpty.html">IsEmpty</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/UserDataMap.Item.html">Item</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/UserDataMap.ItemSize.html">ItemSize</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/UserDataMap.ItemValue.html">ItemValue</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/UserDataMap.LittleEndian.html">LittleEndian</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.LockLevel.html">LockLevel</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.LockMasters.html">LockMasters</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.LockType.html">LockType</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.Model.html">Model</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Name.html">Name</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.NestedObjects.html">NestedObjects</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.ObjectID.html">ObjectID</a>		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/SIObject.Origin.html">Origin</a>		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.OriginPath.html">OriginPath</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.Owners.html">Owners</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.PPGLayout.html">PPGLayout</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/ProjectItem.Parameters.html">Parameters</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Parent.html">Parent</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.Parent3DObject.html">Parent3DObject</a>		</td>		<td class="members"><a href="#!/url=./si_om/ProjectItem.Selected.html">Selected</a> <img src="images/operator.gif" alt="operator" />		</td>	</tr>
+
+	<tr>
+
+		<td class="members"><a href="#!/url=./si_om/Property.Singleton.html">Singleton</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members" style="background:#ffffc0;"><a href="#!/url=./si_om/UserDataMap.Template.html">Template</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members"><a href="#!/url=./si_om/SIObject.Type.html">Type</a> <img src="images/operator.gif" alt="operator" />		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+	<tr>
+
+		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>		<td class="members">&nbsp;		</td>	</tr>
+
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'example giving an overview of accessing per-component
+'user data on a cluster
+dim oObj, oCluster, oUDProp, i, oUserDataAtIndex2
+set oObj = CreatePrim( "Sphere", "MeshSurface" )
+SetValue oObj &amp; ".polymsh.geom.subdivu", 1
+SetValue oObj &amp; ".polymsh.geom.subdivv", 1
+'Create a cluster covering all edges on the geometry
+set oCluster = oObj.ActivePrimitive.Geometry.AddCluster( siEdgeCluster,"UserDataCls" )	
+set oUDProp = oCluster.AddProperty( "UserDataMap",,"UserDataExample" )	
+'UserDataMap
+logmessage oUDProp.Type
+'Assign user data to a particular index
+oUDProp.ItemValue(2) = "Some String Data"
+'Another way to do the same thing is to use a UserDataItem object
+oUDProp.Item(3).Value = "String data for index 3"
+'Erase the data we just placed at 3
+oUDProp.ClearItem(3)
+'Now look at all the user data in the property looking for non-empty content
+for i = 0 to oUDProp.Count
+	if ( not oUDProp.IsEmpty(i) ) then
+		logmessage "Found data with size " &amp; oUDProp.ItemSize(i) &amp; " at cluster index " &amp; i
+	end if
+next 
+'Output of this script is:
+'INFO : "UserDataMap"
+'INFO : "Found data with size 32 at cluster index 2"</pre></td></tr>
+</table>
+</div><h4>2. JScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="jscript">//example giving an overview of accessing per-component
+//user data on a cluster
+var oObj = CreatePrim( "Sphere", "MeshSurface" ) ;
+SetValue( oObj + ".polymsh.geom.subdivu", 1 ) ;
+SetValue( oObj + ".polymsh.geom.subdivv", 1 ) ;
+//Create a cluster covering all edges on the geometry
+var oCluster = oObj.ActivePrimitive.Geometry.AddCluster( siEdgeCluster, "UserDataCls" ) ;
+var oUDProp = oCluster.AddProperty( "UserDataMap",false,"UserDataExample" ) ;
+//UserDataMap
+logmessage( oUDProp.Type ) ;
+//Assign user data to a particular index
+oUDProp.ItemValue(2) = "Some String Data"
+//Or we can use a UserDataItem object as another way to set data
+oUDProp.Item(3).Value = "String data for index 3"
+//Erase the data we just placed at 3
+oUDProp.ClearItem(3)
+//Now look at all the user data in the property looking for non-empty content
+for( var i = 0 ; i &lt; oUDProp.Count ; i++ )
+{
+	if ( !oUDProp.IsEmpty(i) )
+	{
+		logmessage( "Found data with size " + oUDProp.ItemSize(i) + " at cluster index " +  i ) ;
+	}
+}
+//Output of this script is:
+//INFO : "UserDataMap"
+//INFO : "Found data with size 32 at cluster index 2"</pre></td></tr>
+</table>
+</div><h4>3. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'example demonstrating the how to display the entire contents
+'of a binary user data map in the command history window.
+'(For an example showing how to show the contents of a templated user data map
+'see the Info OM Netview page that is part of XSI Local\Tools)
+dim oObj, oCluster, oUDProp, i
+'First set up a little demo scenario
+set oObj = CreatePrim( "Arc", "NurbsCurve" )
+set oCluster = oObj.ActivePrimitive.Geometry.AddCluster( siVertexCluster,"PntCluster",Array(1,4,7,10,13,16) )	
+set oUDProp = oCluster.AddProperty( "UserDataMap",,"UserDataExample" )	
+'Fill in the user data with the string version of the index
+for i = 0 to oUDProp.Count - 1
+	oUDProp.Item( i ).Value = CStr( i )
+next
+SelectObj oUDProp
+'Then dump out all the content that was added
+TraceSelectedUserDataMap
+'Output of this script will look approximately like this:
+'INFO : "User Data Map: arc.crvlist.cls.PntCluster.UserDataExample"
+'INFO : "Size of User Data Map 6- Size of Cluster 6"
+'INFO : "Property was created on little-endian computer"
+'INFO : "Contents:"
+'INFO : "Item 0 pnt(1): 0 "
+'INFO : "Item 1 pnt(4): 1 "
+'INFO : "Item 2 pnt(7): 2 "
+'INFO : "Item 3 pnt(10): 3 "
+'INFO : "Item 4 pnt(13): 4 "
+'INFO : "Item 5 pnt(16): 5 "
+'The number of components with user data could get huge so this constant 
+'constrains the size of the output to reasonable proportions
+const g_MapItemsDisplay = 256
+const g_ShowEmptyItems = false
+sub TraceSelectedUserDataMap
+	'This example could easily to enhanced to loop through multiple selections
+	'but for the sake of simplicity it only looks at the first item
+	if ( selection.Count &gt; 0 ) then
+		if ( typename( selection( 0 ) ) = "UserDataMap" ) then
+			TraceUserDataMap( selection( 0 ) )
+		else
+			logmessage "Please select a user data map and try again"
+		end if
+	else
+		logmessage "Please select a user data map and try again"
+	end if
+end sub
+sub TraceUserDataMap( in_oUDM )
+	dim i, oItem, cntCluster, byteString, j, str, val
+	cntCluster = in_oUDM.Parent.Elements.Count
+	Logmessage "User Data Map: " &amp; in_oUDM.FullName
+	Logmessage "Size of User Data Map " &amp; in_oUDM.Count &amp; "- Size of Cluster " &amp; cntCluster
+	Logmessage "Contents:"
+	dim oCluster, oClusterElementsCollection, aElements
+	set oCluster = in_oUDM.Parent      
+	set oClusterElementsCollection = oCluster.Elements
+	aElements = oClusterElementsCollection.Array  
+	dim iElementInCluster, strItemDesc
+	dim cntItems
+	cntItems = in_oUDM.Count
+	dim cntDisplayedItems
+	cntDisplayedItems = 0
+	for i = 0 to ( cntItems - 1)
+		if ( i &lt; cntCluster ) then
+			iElementInCluster = aElements(i)  
+			strItemDesc = "Item " &amp; i &amp; " " &amp; oCluster.type &amp; "(" &amp; iElementInCluster &amp; "): "
+		else		
+			strItemDesc = "Item " &amp; i &amp; " " &amp; oCluster.type &amp; "(INVALID INDEX): "		
+		end if
+		set oItem = in_oUDM.Item( i )
+		if ( not oItem.IsEmpty ) then
+			'We convert the contents into a byte by byte description
+			'because we don't know if this is a safe to display unicode string
+			strItemDesc = strItemDesc &amp; GetUserDataContentsString( oItem )
+			logmessage strItemDesc
+			cntDisplayedItems = cntDisplayedItems + 1
+			if ( cntDisplayedItems = g_MapItemsDisplay ) then
+				exit for
+			end if
+		elseif ( g_ShowEmptyItems ) then
+			logmessage strItemDesc &amp; " is empty"
+		end if		
+	next
+end sub
+'Produces a string representation of the user data
+function GetUserDataContentsString( in_UserDataItem )
+	dim strValue
+	strValue = in_UserDataItem.Value
+	dim j
+	'Also attempt to produce a string representation
+	dim strAsString
+	for j = 1 to Len( strValue )
+		val = Asc( Mid( strValue, j, 1 ) )
+		'We only accept the basic ascii values - other content is
+		'not necessary safe to print.  For supporting non-English 
+		'characters, line breaks and tabs this logic would need 
+		'to be more sophisticated
+		if (( val &lt; 127 ) AND ( val &gt; 31 )) then
+			strAsString = strAsString &amp; Chr( val )
+		else
+			'we assume that there is binary content
+			strAsString = strAsString &amp; "."
+		end if
+	next 
+	GetUserDataContentsString = strAsString
+end function</pre></td></tr>
+</table>
+</div><h4>4. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'example of how to access a templated UserDataMap from from scripting.
+'In this example we create user data for an imaginary game on the vertices of 
+'a sphere.
+'
+'The user data template is designed to match an associated structure in the game engine,
+'and consists of 5 parameters ("ImagePath", "AttachmentPoint", "FixedPoint", "ZetaFactor",
+'and "Friction")
+'
+'This example creates the object and sets some example values on a few points.  (A user could also
+'add and edit these values from the user interface using the InspectUserData command)
+'
+'When you run this example this is the output in the log window:
+'
+'INFO : "User data on sphere.polymsh.cls.AllVertices.GameData"
+'INFO : "pnt[12]:  ZetaFactor:0.2 Friction:64 AttachmentPoint Image: image12.tif"
+'INFO : "pnt[31]:  ZetaFactor:0.9 Friction:12 AttachmentPoint FixedPoint Image: unknown"
+'INFO : "pnt[44]:  ZetaFactor:0.5 Friction:28 FixedPoint Image: image1.jpg"
+option explicit
+const g_ClusterName = "AllVertices"
+const g_UserDataMapName = "GameData"
+const g_TemplateName = "VertexInfoTemplate"
+newscene ,false
+dim oSphere, oUserDataMap
+set oSphere = ActiveSceneRoot.AddGeometry( "Sphere", "MeshSurface" )
+'Create templated user data map - currently it is has no user data
+set oUserDataMap = SetupObject( oSphere )
+'Set these user data values on vertex 44
+call AddUserData( oUserDataMap , 44, "image1.jpg", false, true, 0.5, 28 )
+'Set different values on points 12
+call AddUserData( oUserDataMap , 12, "background14.tif", true, false, 0.1, 39 )
+'Change our minds about point 12
+call AddUserData( oUserDataMap , 12, "image12.tif", true, false, 0.2, 64 )
+call AddUserData( oUserDataMap , 31, "unknown", true, true, 0.9, 12 )
+call LogUserData( oUserDataMap )
+'On the given object create a UserDataMap for the game data
+function SetupObject( in_oObj )
+	dim oCluster, oPSet, oUserDataMap
+	'Test if we have already setup this object
+	on error resume next
+	set oUserDataMap = in_oObj.ActivePrimitive.Geometry._
+						   Clusters( g_ClusterName ).Properties( g_UserDataMapName )
+	on error goto 0
+	if typename( oUserDataMap ) = "UserDataMap" then
+		'Our user data map already exists
+		set SetupObject = oUserDataMap
+		exit function
+	end if 
+	set oCluster = in_oObj.ActivePrimitive.Geometry.AddCluster( siVertexCluster, g_ClusterName ) 
+	set oPSet = CreateTemplate( oCluster )	
+	set oUserDataMap = oCluster.AddProperty( "UserDataMap",,g_UserDataMapName )
+	'Associate the template with our user data map
+	set oUserDataMap.Template = oPSet
+	'Return the newly created User Data Map
+	set SetupObject = oUserDataMap
+end function
+'This function creates the template that defines the format of the data inside our UserDataMap
+'The new template is returned.
+'Note: this function does not associate the template with any user data map, or set any values on
+'the user data map.
+function CreateTemplate( in_oParentObject )
+	dim oPSet
+	set oPSet = in_oParentObject.AddProperty( "Custom_parameter_list",, g_TemplateName )
+	oPSet.AddParameter "ImagePath", siString
+	oPSet.AddParameter "AttachmentPoint", siBool, , , ,, , false
+	oPSet.AddParameter "FixedPoint", siBool, , , ,, , false
+	oPSet.AddParameter "ZetaFactor", siDouble, , , , , , 0.0, 0.0, 1.0
+	oPSet.AddParameter "Friction", siUByte, , , , , , 64, 0, 128
+	set CreateTemplate = oPSet
+end function
+'Given specific game parameter values, this routine will save those values
+'on the specified vertex of the UserDataMap
+sub AddUserData( in_oUDM, in_CompIndex, in_ImagePath, in_AttachPoint, in_FixedPoint, in_ZetaFactor, in_Friction )
+	'Get access to the Template for this user data map
+	dim oTemplate
+	set oTemplate = in_oUDM.Template
+	'Fill in the parameters on the template
+	oTemplate.Parameters( "ImagePath" ).Value = in_ImagePath
+	oTemplate.Parameters( "AttachmentPoint" ).Value = in_AttachPoint
+	oTemplate.Parameters( "FixedPoint" ).Value = in_FixedPoint
+	oTemplate.Parameters( "ZetaFactor" ).Value = in_ZetaFactor
+	oTemplate.Parameters( "Friction" ).Value = in_Friction
+	'Now that the parameters are specified we need to associated
+	'these values with the specified vertex
+	in_oUDM.ItemValue(in_CompIndex) = oTemplate.BinaryData			
+end sub
+'This routine prints out the contents of our user data map
+sub LogUserData( in_oUDM )
+	dim oTemplate, i, strAttachPnt, strFixedPnt
+	Logmessage "User data on " &amp; in_oUDM
+	set oTemplate = in_oUDM.Template
+	for i = 0 to in_oUDM.count
+		'We can only print out non-empty user data items
+		if ( NOT in_oUDM.IsEmpty( i ) ) then
+			'Take the values from the user data and put them in the template
+			'so that we can read them				
+			oTemplate.BinaryData = in_oUDM.ItemValue( i )
+			'Look at the boolean values to convert into readable strings			
+			if ( oTemplate.Parameters("AttachmentPoint").Value ) then			
+				strAttachPnt = "AttachmentPoint "
+			else
+				strAttachPnt = ""
+			end if
+			if ( oTemplate.Parameters("FixedPoint").Value ) then			
+				strFixedPnt = "FixedPoint "
+			else
+				strFixedPnt = ""
+			end if		
+			'Print a 1 line representation of all the values on this particular point			
+			logmessage "pnt[" &amp; i &amp; "]: " &amp; _
+			           " ZetaFactor:" &amp; oTemplate.Parameters("ZetaFactor").Value &amp; _
+			           " Friction:" &amp; oTemplate.Parameters("Friction").Value &amp; _
+			           " " &amp; strAttachPnt &amp; strFixedPnt &amp; _
+						 "Image: " &amp; oTemplate.Parameters("ImagePath").Value 	
+		end if
+	next 
+end sub</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_om/UserDataItem.html">UserDataItem</a> <a href="#!/url=./si_om/UserDataBlob.html">UserDataBlob</a> <a href="#!/url=./si_om/CustomProperty.html">CustomProperty</a> <a href="#!/url=./si_om/Cluster.html">Cluster</a> <a href="#!/url=./si_om/ClusterProperty.html">ClusterProperty</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></h3></h3></div>
+   </div></body>
+</html>

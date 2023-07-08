@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>CopyStyle</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>CopyStyle</h1>
+         </div>
+
+<h2 class="pagehead">CopyStyle</h2>
+
+<h3>Introduced</h3>
+<div><p>v3.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Copies a hair style from one hair object to another.<br /><br />
+Note: The source and target may not be from the same emitter object and 
+the source and target hair may not have dynamics on (the copy style must 
+occur during style mode).<br /><br />
+You also need to line up the source and target objects, preferably both 
+at the origin. This avoids any backwards-compatibility problems copying
+a style between 3.5 and previous versions where there is a new pose 
+constraint on the 3.5 (which causes the positions to be slightly off if 
+they were not centered at the origin).
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>CopyStyle( [TargetHairObject], [ModelHairStyleObject] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">TargetHairObject		</td>
+		<td><a href="#!/url=./files/objectexpr.htm">Object</a> name		</td>
+		<td>
+Hair object to receive new style 			<p class="cell"><span class="hilite">Default Value: </span>
+Current selection			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ModelHairStyleObject		</td>
+		<td><a href="#!/url=./files/objectexpr.htm">Object</a> name		</td>
+		<td>
+Hair <a href="#!/url=./files/objectexpr.htm">object</a> to copy style from 			<p class="cell"><span class="hilite">Default Value: </span>
+Starts a pick session			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'Create two grids of different subdivision settings
+Set oGridSource = CreatePrim( "Grid", "MeshSurface", "EmitterSource" )
+Translate oGridSource, -5, 0, 0, siAbsolute, siParent, siObj, siX
+Set oGridTarget = CreatePrim( "Grid", "MeshSurface", "EmitterTarget" )
+SetValue oGridTarget &amp; ".polymsh.geom.subdivu", 4
+SetValue oGridTarget &amp; ".polymsh.geom.subdivv", 4
+Translate oGridTarget, 5, 0, 0, siAbsolute, siParent, siObj, siX
+'Apply hair to each grid.  The "source" hair will have a style we'll copy to the "target".
+Set oHairSource = ApplyHairOp( oGridSource )
+SetValue oHairSource &amp; ".Name", "HairSource"
+ApplyHairClumpOp oHairSource
+SetValue oHairSource &amp; ".ClumpOp.clump", 0.2
+ApplyHairRotateOp oHairSource
+SetValue oHairSource &amp; ".RotateOp.type", 1
+SetValue oHairSource &amp; ".RotateOp.angle", 20
+Set oHairTarget = ApplyHairOp( oGridTarget )
+SetValue oHairTarget &amp; ".Name", "HairTarget"
+'Now Transplant hair from Source to Target
+CopyStyle oHairTarget, oHairSource</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/ApplyHairOp.html">ApplyHairOp</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

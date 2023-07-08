@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>RemoveKey</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>RemoveKey</h1>
+         </div>
+
+<h2 class="pagehead">RemoveKey</h2>
+
+<h3>Description</h3>
+<div><p>
+Removes key frames from parameters at a given frame. This is the scripting
+equivalent of selecting Remove Key from the animation pop-up menu (or 
+pressing Shift+K with the default keyboard layout).<br /><br />
+Note: If any of the keys cannot be removed the command raises an siErrCancelled 
+error; see <a href="#!/url=./si_om/siErrorValueEnum.html">siErrorValueEnum</a> for details. To avoid an error wrap
+the call to RemoveKey with the 'On Error Resume Next...On Error Goto 0' statements
+in VBScript or the 'try()...catch(e)' construction in JScript.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>RemoveKey( [InputObjs], [Time], [Tolerance], [Layer] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">InputObjs		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/listexpr.htm">List</a> of animatable parameters (for example "cone*/kine.local.pos"). 			<p class="cell"><span class="hilite">Default Value: </span>
+Currently selected and marked parameters			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Time		</td>
+		<td>Number		</td>
+		<td>
+ Key frames are removed at this frame. 			<p class="cell"><span class="hilite">Default Value: </span>
+Current frame			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Tolerance		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Frame tolerance 			<p class="cell"><span class="hilite">Default Value: </span>
+Nearest 0.5 frame (-1)			</p>
+			<table cellpadding="5" cellspacing="5">
+				<tr>
+					<td>						<p class="cell"><span class="hilite">Possible Values: </span>						</p>					</td>
+					<td>						<p class="cell"><span class="hilite">Description: </span>						</p>					</td>
+				</tr>
+				<tr>
+					<td class="name">> 0					</td>
+					<td>Remove all keys between ( keyframe - tolerance and keyframe + tolerance )					</td>
+				</tr>
+				<tr>
+					<td class="name">0					</td>
+					<td>Key must be exactly at frame					</td>
+				</tr>
+				<tr>
+					<td class="name">-1					</td>
+					<td>Nearest 0.5 frame					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Layer		</td>
+		<td><a href="#!/url=./files/Integer.htm">Integer</a>		</td>
+		<td>
+ Animation layer to remove keys from 			<p class="cell"><span class="hilite">Default Value: </span>
+Current animation layer (-1)			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example sets up some animation on the X position of a sphere, moves to the next key frame,
+' prints out the key information for this parameter, removes the next key and prints out the 
+' key information again.
+'
+' Set up an object to animate
+set oGlobe = CreatePrim( "Sphere", "NurbsSurface", "MySphere" )
+' Set the maximum frame number to 40
+SetValue "PlayControl.Out", 40
+' Set some keys on XPos at various frames
+SaveKey oGlobe &amp; ".kine.local.posx", 1, -9.0
+SaveKey oGlobe &amp; ".kine.local.posx", 10, 3.0
+SaveKey oGlobe &amp; ".kine.local.posx", 30,-3.0
+SaveKey oGlobe &amp; ".kine.local.posx", 40, 9.0
+' Return to frame 1
+SetValue "PlayControl.Current", 1
+' Goto key at frame 10
+NextKey oGlobe &amp; "/kine.local.pos"
+' Print out key info for the globe's position in X before
+' removing the next key
+WhereAmI oGlobe
+' Remove key at frame 30 (next key)
+if RemoveNextKey( oGlobe &amp; "/kine.local.pos" ) then
+	LogMessage "Successfully removed the key."
+else
+	LogMessage "This is the last key."
+end if
+' Print out key info for the globe's position in X after
+' removing the next key
+WhereAmI oGlobe
+' Goto NextKey (at frame 40 now)
+NextKey ( oGlobe &amp; "/kine.local.pos" )
+' This function removes the next key (provided that there is a next key to remove)
+' and returns a boolean value indicating whether it could remove the key or not.
+function RemoveNextKey ( in_parameter )
+	' Check if there is another key (if there is no next key, NextKey returns "1.#INF")
+	if ( NextKey( in_parameter ) &lt;&gt; "1.#INF" ) then
+		RemoveKey in_parameter
+		RemoveNextKey = true
+		exit function
+	end if
+	RemoveNextKey = false
+end function 
+' This subroutine prints out the total number of keys on the object, and then prints
+' the frame number and value for each key in the collection.
+sub WhereAmI( in_object )
+	if TypeName( in_object ) &lt;&gt; "Nothing" then
+		' Get the fcurve object that is attached to the XPos parameter
+		set oAnimationFC = in_object.posx.Source
+		' From the fcurve object you can get the list of keys
+		set oFCKeys = oAnimationFC.Keys
+		' Make sure there are some keys on the parameter
+		if oFCKeys.Count &gt; 0 then
+			' Print the total number of keys now present on this parameter
+			LogMessage "Number of keys on the " &amp; in_object &amp; " object: " &amp; oFCKeys.Count
+			' Loop through the collection of keys, printing out the key index &amp; its frame number
+			for each k in oFCKeys
+				LogMessage "Key [" &amp; k.Index &amp; "] is set on Frame[" &amp; k.Time &amp; "] with a value of " &amp; k.Value 
+			next
+		end if
+	end if
+end sub
+
+' Output of above script:
+'...before key was removed
+'INFO : "Number of keys on the MySphere object: 4"
+'INFO : "Key [0] is set on Frame[1] with a value of -9"
+'INFO : "Key [1] is set on Frame[10] with a value of 3"
+'INFO : "Key [2] is set on Frame[30] with a value of -3"
+'INFO : "Key [3] is set on Frame[40] with a value of 9"
+'
+'INFO : "Successfully removed the key."
+'
+'...after key was removed
+'INFO : "Number of keys on the MySphere object: 3"
+'INFO : "Key [0] is set on Frame[1] with a value of -9"
+'INFO : "Key [1] is set on Frame[10] with a value of 3"
+'INFO : "Key [2] is set on Frame[40] with a value of 9"</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/RemoveKeyOnKeyable.html">RemoveKeyOnKeyable</a> <a href="#!/url=./si_cmds/RemoveKeyOnMarkedKeyable.html">RemoveKeyOnMarkedKeyable</a> <a href="#!/url=./si_cmds/AddFCurve.html">AddFCurve</a> <a href="#!/url=./si_cmds/RemoveAnimation.html">RemoveAnimation</a> <a href="#!/url=./si_cmds/RemoveAllAnimation.html">RemoveAllAnimation</a> <a href="#!/url=./si_cmds/SaveKey.html">SaveKey</a> <a href="#!/url=./si_cmds/PrevKey.html">PrevKey</a> <a href="#!/url=./si_cmds/NextKey.html">NextKey</a> <a href="#!/url=./si_cmds/FirstKey.html">FirstKey</a> <a href="#!/url=./si_cmds/LastKey.html">LastKey</a> <a href="#!/url=./si_om/FCurve.RemoveKey.html">FCurve.RemoveKey</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

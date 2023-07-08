@@ -1,0 +1,467 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="product" content="SI" />
+      <meta name="release" content="2015" />
+      <meta name="book" content="Developer" />
+      <meta name="created" content="2014-03-13" />
+      <meta name="topicid" content="GUID-68A607F2-94FE-47E9-AD5B-4DD6096B2D9B" />
+      <meta name="indexterm" content="JScript Example: Nesting SubMenus within SubMenus" />
+      <meta name="indexterm" content="JScript Example: Simulating Command Instances with Menu Callback Items" />
+      <meta name="topic-type" content="concept" />
+      <title>Custom Menu Examples</title><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script></head>
+   <body height="100%"><div class="body_content" id="body-content"><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ reflinkdata.push(["version", "si_cpp/group__RenderMapDefine.html#gad6034d1c8c050eba0cf6533a8e6f3785", "C++ API Reference", "../"]); 
+reflinkdata.push(["name", "si_cpp/group__RenderMapDefine.html#ga882c17490314f92c7159d6d7d69696e7", "C++ API Reference", "../"]); 
+reflinkdata.push(["type", "si_cpp/group__RenderMapDefine.html#ga7117e14e60390664f1862525dd6acaf6", "C++ API Reference", "../"]); 
+</script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div><span class="anchor_wrapper"><a name="GUID-68A607F2-94FE-47E9-AD5B-4DD6096B2D9B"></a></span><div class="head">
+            <h1>Custom Menu Examples</h1>
+         </div>
+         <div class="bodyProcess">
+            <p><span class="anchor_wrapper"><a name="GUID-61CEDC84-D747-4C9F-B4FC-4A2F6BA5C7D0"></a></span>The following custom menu examples are provided:
+            </p>
+            <ul>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-B846165D-1E3E-4F34-A0BF-A14D5747613C"></a></span> <span class="char_link"><a href="#!/url=./files/cus_menus_CustomMenuExamples.htm#WS209F6C4D71DA954DB0E0FF512CF0DEBA-0032">JScript Example: Nesting SubMenus within SubMenus</a></span> —demonstrates how to use the AddItem method to create submenus that cascade down
+                     through three or four levels.
+                  </p> 
+               </li>
+               <li> 
+                  <p><span class="anchor_wrapper"><a name="GUID-46285762-BC11-4EB8-A4D9-AE9E8DA6EC29"></a></span> <span class="char_link"><a href="#!/url=./files/cus_menus_CustomMenuExamples.htm#WS209F6C4D71DA954DB0E0FF512CF0DEBA-0033">JScript Example: Simulating Command Instances with Menu Callback Items</a></span> —demonstrates how you can define a number of callback menu items in a self-installing
+                     plug-in that implement different flavors (instances) of standard Softimage commands.
+                  </p> 
+               </li>
+            </ul>
+            <div><span class="anchor_wrapper"><a name="GUID-BA69B419-F59A-4835-844A-31AE925A46F1"></a></span><div class="note-tip"><span class="label">TIP:</span> 
+                  <p><span class="anchor_wrapper"><a name="GUID-389EC3A0-1717-42C0-AB80-68152545C764"></a></span>In addition, there is a Simple Menu plug-in example (versions written in VBScript,
+                     JScript and C++) included with the Softimage SDK installation: check the following
+                     location:
+                  </p> <span class="filePath" translate="no">%XSI_ROOT%/XSISDK/examples/menus</span> 
+               </div>
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS209F6C4D71DA954DB0E0FF512CF0DEBA-0032"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-72F0568F-42EE-44EC-9F57-299F9F4BAED5"></a></span> JScript Example: Nesting SubMenus within SubMenus
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-EDB8A935-A87F-42EB-B5A1-5FD8798C57D3"></a></span>This self-installing menu plug-in demonstrates how to nest submenus deeply. he entries
+                  used are just blank entries to demonstrate the mechanism.
+               </p> 
+               <div class="codeBlock"><pre class="prettyprint">/* ------------------------------------------------------------------
+
+		This self-installing menu plug-in demonstrates how to
+		nest submenus deeply. The entries used are just blank
+		entries to demonstrate the mechanism.
+
+*/
+
+/* ------------------------------------------------------------------
+
+	### REGISTRATION ###
+
+*/
+function XSILoadPlugin( in_reg )
+{
+	// Set up some basic information for the whole plug-in
+	in_reg.Name = "Nested Demo";
+	in_reg.Author = "Softimage SDK Education";
+	in_reg.Email = "editors@softimage.com";
+	in_reg.URL = "http://www.softimage.com/education";
+	in_reg.Major = 1;
+	in_reg.Minor = 0;
+
+	// Register a single Menu entry point on the Help menu
+	in_reg.RegisterMenu( siMenuMainHelpID, "NestedMenus" );
+
+	// Only the first level is flat; the submenus still cascade on
+	// the Window menu
+	in_reg.RegisterMenu( siMenuMainWindowID, "NestedMenus", false );
+
+	// This one will stick all submenus on the same level on the Layers
+	// contextual menu
+	in_reg.RegisterMenu( siMenuSELayersContextID, "FlatMenus" );
+
+	// You can also log a message about this plug-in's installation
+	Application.LogMessage( "The 'Nested Demo' plug-in has been "
+		+ "successfully installed." );
+
+	// Finish with success notification
+	return true;
+}
+
+
+/* ------------------------------------------------------------------
+
+	### DEFINITION ###
+
+	This menu definition creates a cascading menu effect
+	with several submenus nested inside the next one.
+
+*/
+function NestedMenus_Init( in_context )
+{
+	// Get the menu object from the Context input
+	var oTopMnu = in_context.Source;
+
+	// Add some regular menu items
+	oTopMnu.AddItem( "Regular Item1", siMenuItem );
+	oTopMnu.AddItem( "Regular Item2", siMenuItem );
+
+	// Add the submenu item
+	var oSubLevel1 = oTopMnu.AddItem( "SubMenu Demo Level1",
+		siMenuItemSubmenu )
+	oSubLevel1.AddItem( "SubLevel1 ItemA", siMenuItem );
+	oSubLevel1.AddItem( "SubLevel1 ItemB", siMenuItem );
+
+	// Nest another submenu item
+	var oSubLevel2 = oSubLevel1.AddItem( "SubMenu Demo Level2",
+		siMenuItemSubmenu )
+	oSubLevel2.AddItem( "SubLevel2 ItemA", siMenuItem );
+	oSubLevel2.AddItem( "SubLevel2 ItemB", siMenuItem );
+	oSubLevel2.AddItem( "SubLevel2 ItemC", siMenuItem );
+	oSubLevel2.AddItem( "SubLevel2 ItemD", siMenuItem );
+
+	// ...and another ...
+	var oSubLevel3 = oSubLevel2.AddItem( "SubMenu Demo Level3",
+		siMenuItemSubmenu )
+	oSubLevel3.AddItem( "SubLevel3 ItemA", siMenuItem );
+	oSubLevel3.AddItem( "SubLevel3 ItemB", siMenuItem );
+	oSubLevel2.AddItem( "SubLevel2 ItemC", siMenuItem );
+
+	// ,,, etc.
+
+	// Finish with success notification
+	return true;
+}
+
+
+/* ------------------------------------------------------------------
+
+	### DEFINITION ###
+
+	This menu definition creates a several submenus
+	appearing as siblings.
+
+*/
+function FlatMenus_Init( in_context )
+{
+	// Get the menu object from the Context input
+	var oTopMnu = in_context.Source;
+
+	// Add some regular menu items
+	oTopMnu.AddItem( "Regular Item1", siMenuItem );
+	oTopMnu.AddItem( "Regular Item2", siMenuItem );
+
+	// Add a submenu item
+	var oSubLevel1 = oTopMnu.AddItem( "SubMenu Demo Level1",
+		siMenuItemSubmenu )
+	oSubLevel1.AddItem( "SubLevel1 ItemA", siMenuItem );
+	oSubLevel1.AddItem( "SubLevel1 ItemB", siMenuItem );
+
+	// And another submenu item
+	var oSubLevel2 = oTopMnu.AddItem( "SubMenu Demo Level2",
+		siMenuItemSubmenu )
+	oSubLevel2.AddItem( "SubLevel2 ItemA", siMenuItem );
+	oSubLevel2.AddItem( "SubLevel2 ItemB", siMenuItem );
+	oSubLevel2.AddItem( "SubLevel2 ItemC", siMenuItem );
+	oSubLevel2.AddItem( "SubLevel2 ItemD", siMenuItem );
+
+	// ...and another ...
+	var oSubLevel3 = oTopMnu.AddItem( "SubMenu Demo Level3",
+		siMenuItemSubmenu )
+	oSubLevel3.AddItem( "SubLevel3 ItemA", siMenuItem );
+	oSubLevel3.AddItem( "SubLevel3 ItemB", siMenuItem );
+	oSubLevel2.AddItem( "SubLevel2 ItemC", siMenuItem );
+
+	// ,,, etc.
+
+	// Finish with success notification
+	return true;
+}</pre></div> 
+            </div>
+            <div class="section"><span class="anchor_wrapper"><a name="WS209F6C4D71DA954DB0E0FF512CF0DEBA-0033"></a></span> 
+               <h2><span class="anchor_wrapper"><a name="GUID-25849BB1-1E42-41D9-A0D1-3FE84FB476EB"></a></span> JScript Example: Simulating Command Instances with Menu Callback Items
+               </h2>  
+               <p><span class="anchor_wrapper"><a name="GUID-158920C2-7E12-466A-BECB-53DFD1097D42"></a></span>This example demonstrates how you can define a number of callback menu items in a
+                  self-installing plug-in that implement different flavors (instances) of standard Softimage
+                  commands:
+               </p> <span class="anchor_wrapper"><a name="GUID-8DF81D16-CAC6-42A5-BB51-1F108F6FB64C"></a></span><ol type="1" start="1">
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-EE80F609-AB6D-41A6-88AC-A9AE7BD2860D"></a></span>Create a script file in the <span class="filePath" translate="no">$user/Application/Plugins</span> folder and name it <em class="strong"> <span class="filePath" translate="no">OpMenuInstances.js</span> </em>. This will contain the JScript implementation of the new custom menu.
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-617E5585-CFE2-4E32-933B-A5A903446E76"></a></span>Set up the registration callback containing two custom menus to appear in the <span class="MenuCascade" id="GUID-9B220140-FF10-4EBE-8E80-677D5B274B44">Application</span> menu: one containing Deform operator instances and another containing Generator operator
+                        instances:
+                     </p> 
+                     <div class="codeBlock"><pre class="prettyprint">function XSILoadPlugin( in_reg )
+{
+	// Register the plug-in information
+	in_reg.Author = "Softimage Corp.";
+	in_reg.Name = "Submenu command example";
+
+	// Set the <a href="javascript:void(0)" data="version" class="a_multireflink">version</a> number of this plugin
+	in_reg.Major = 1;
+	in_reg.Minor = 0 ;
+
+	// Register the Deform menu in the Application menu
+	in_reg.RegisterMenu( siMenuMainApplicationID, "ApplyDeformOp_Menu" );
+
+	// Register the Generator menu in the Application menu
+	in_reg.RegisterMenu( siMenuMainApplicationID, "ApplyGenOp_Menu" );
+
+	LogMessage( in_reg.Name + " has been loaded." );
+
+	return true;
+}</pre></div> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-B2316A44-4A5B-4A89-A53A-C3CD33B6E1DA"></a></span>Define the <em class="mild">Apply Deform Operators</em> menu using the <span class="code" translate="no">Init</span> callback. This menu's items will always appear, regardless of what is currently selected.
+                        It contains three sections separated by menu separator bars:
+                     </p> 
+                     <div class="codeBlock"><pre class="prettyprint">function ApplyDeformOp_Menu_Init( in_ctxt )
+{
+	var menu = in_ctxt.source;
+
+	menu.Name = "Apply Deform Operators";
+	menu.AddCallbackItem( "Twist", "OnApplyDeformOp" );
+	menu.AddCallbackItem( "Bend", "OnApplyDeformOp" );
+	menu.AddCallbackItem( "Bulge", "OnApplyDeformOp" );
+	menu.AddCallbackItem( "Shear", "OnApplyDeformOp" );
+	menu.AddCallbackItem( "Taper", "OnApplyDeformOp" );
+
+	menu.AddSeparatorItem();
+
+	menu.AddCallbackItem( "Expand", "OnApplyDeformOp2" );
+	menu.AddCallbackItem( "Contract", "OnApplyDeformOp2" );
+
+	menu.AddSeparatorItem();
+
+	menu.AddCallbackItem( "Randomize", "OnApplyDeformOp2" );
+	menu.AddCallbackItem( "Relax", "OnApplyDeformOp2" );
+	menu.AddCallbackItem( "Smooth", "OnApplyDeformOp2" );
+	menu.AddCallbackItem( "QStretch", "OnApplyDeformOp2" );
+
+	return true;
+}</pre></div> 
+                     <p><span class="anchor_wrapper"><a name="GUID-1646287F-69D6-475A-8740-967663032927"></a></span>This menu uses two callbacks:
+                     </p> 
+                     <ul>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-1FA79AFF-1BC8-4AD5-A7A7-41137A3B8780"></a></span> <span class="code" translate="no">OnApplyDeformOp</span>—simple implementation that takes the name of the operator (used as the name of the
+                              menu item) and calls the <a href="#!/url=./si_cmds/ApplyOp.html">ApplyOp</a> command with all default values.
+                           </p> 
+                        </li>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-2A013162-2E0C-417E-B7B6-CCD2602C8A95"></a></span> <span class="code" translate="no">OnApplyDeformOp2</span>—more complex implementation that uses a <span class="MenuCascade" id="GUID-535BB47E-FEF2-4B3C-AC4A-03BD5EA541A9">switch</span> statement to test the name of the menu item. Based on the name, either <a href="#!/url=./si_cmds/ApplyOp.html">ApplyOp</a> or <a href="#!/url=./si_cmds/ApplyKinematicOp.html">ApplyKinematicOp</a> is called with specific parameter values and, in some cases, extra tasks are performed
+                              after the operator is applied.
+                           </p> 
+                        </li>
+                     </ul> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-D919D258-8A2F-44A2-AA01-D13BED30F464"></a></span>Write the simple implementation for the <span class="code" translate="no">OnApplyDeformOp</span> callback:
+                     </p> 
+                     <div class="codeBlock"><pre class="prettyprint">function OnApplyDeformOp( in_ctxt )
+{
+	// Get the menu item <a href="javascript:void(0)" data="name" class="a_multireflink">name</a>
+	var mnu_itm = in_ctxt.Source;
+
+	ApplyOp( mnu_itm.Name );
+	return true;
+}</pre></div> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-448A503B-0019-4988-8481-96554FCA983F"></a></span>Write the more complex implementation for the <span class="code" translate="no">OnApplyDeformOp2</span> callback:
+                     </p> 
+                     <div class="codeBlock"><pre class="prettyprint">function OnApplyDeformOp2( in_ctxt )
+{
+	// Get the menu item <a href="javascript:void(0)" data="name" class="a_multireflink">name</a>
+	var mnu_itm = in_ctxt.Source;
+
+	switch (mnu_itm.Name) {
+		case "Randomize" :
+			// You can specify extra arguments
+			ApplyOp( "Randomize", null, siBranch );
+			break;
+		case "Expand" :
+			// You could run extra commands to tweak the result...
+			var op = ApplyOp( "Push" )(0);
+			op.ampl.Value = 2;
+			break;
+		case "Contract" :
+			// ...and make slight changes
+			var op = ApplyOp( "Push" )(0);
+			op.ampl.Value = -2;
+			break;
+		case "QStretch" :
+			// You can call a different command
+			ApplyKinematicOp( "QStretch", null, siBranch );
+			break;
+		case "Punch Out Shape" :
+			ApplyOp( "QStretch", null, siBranch );
+			break;
+		default :
+			// This will catch "Relax" and "Smooth"
+			ApplyOp( mnu_itm.Name );
+	}
+	
+	return true;
+}</pre></div> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-4C8CF3FA-92E4-4C75-B680-164D9A7A115D"></a></span>Define the <em class="mild">Apply Generator Operators</em> menu using the <span class="code" translate="no">Init</span> callback. This menu's items appear only under certain circumstances related to what
+                        is currently selected:
+                     </p> 
+                     <ul>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-FA0095D2-89B3-48D9-8212-D71254372125"></a></span>When the selected items have different primitive types, no items are added to the
+                              menu.
+                           </p> 
+                        </li>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-0FAD6F35-AD55-426C-BE7C-E3EAD4A537C9"></a></span>When two or more surface meshes are selected, only the <em class="mild">Fit</em> and <em class="mild">Fillet Intersection</em> operators are added to the menu.
+                           </p> 
+                        </li>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-496AD906-0347-4F98-8559-C9B9CFA17D5B"></a></span>When only one polygon mesh is selected, only the <em class="mild">Subdivide</em> operator is added to the menu.
+                           </p> 
+                        </li>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-B36F936F-9FD0-41FE-8B1F-4ADA7CEA777B"></a></span>When two or more polygon meshes are selected, the three <em class="mild">Boolean</em>, <em class="mild">Blend</em> and <em class="mild">Subdivide</em> operators are added to the menu.
+                           </p> 
+                        </li>
+                     </ul> 
+                     <div><span class="anchor_wrapper"><a name="GUID-EDD93A96-B5A8-481B-8300-50A45A285131"></a></span><div class="note-important"><span class="label">IMPORTANT:</span> 
+                           <p><span class="anchor_wrapper"><a name="GUID-29EEC6D4-FD2F-483B-8F6C-06A853818CFD"></a></span>This conditional menu contruction only works when the menu is <em class="mild">dynamic</em> (that is, when the <a href="#!/url=./si_om/PluginRegistrar.RegisterMenu.html">RegisterMenu (PluginRegistrar)</a> method uses the default value, true, for the <em class="strong">Dynamic</em> argument—see <span class="char_link"><a href="#!/url=./files/cus_menus_WhatCanICustomizewithMenus.htm#WS209F6C4D71DA954DB0E0FF512CF0DEBA-0014">Are the Contents of My Menu Fixed?</a></span> for more information).
+                           </p> 
+                        </div>
+                     </div> 
+                     <div class="codeBlock"><pre class="prettyprint">function ApplyGenOp_Menu_Init( in_ctxt )
+{
+	var menu = in_ctxt.source;
+
+	menu.Name = "Apply Generator Operators";
+
+	// Make all selected objects are the same <a href="javascript:void(0)" data="type" class="a_multireflink">type</a> 
+	var primtype = "";
+	for ( var i=0; i&lt;Selection.Count; i++ ) {
+		if ( primtype == "" ) {
+			primtype = Selection(i).Type;
+		} else {
+			if ( primtype != Selection(i).Type ) {
+				return false;
+			}
+		}
+	}
+
+	// Build the menu items according to the primitive <a href="javascript:void(0)" data="type" class="a_multireflink">type</a> of the 
+	// selected objects
+	switch (primtype) {
+		case siSrfMeshPrimType :
+			// Only display operator types that can be applied to surfmeshes
+			if ( Selection.Count &gt; 1 ) {
+				// Make sure at least two items are selected 
+				menu.AddCallbackItem( "Fit to Shape", "OnApplyGenOp" );
+				menu.AddCallbackItem( "Fillet Intersection", "OnApplyGenOp" );
+			}
+			break;
+
+		case siPolyMeshType :
+			// Only display operator types that can be applied to polymeshes
+			if ( Selection.Count &gt; 1 ) {
+				// Make sure at least two items are selected for boolean operations
+				menu.AddCallbackItem( "Punch Out Shape (Difference)", 
+					"OnApplyGenOp" );
+				menu.AddCallbackItem( "Leave Remainder Shape (Intersection)", 
+					"OnApplyGenOp" );
+				menu.AddCallbackItem( "Bind Shapes Together (Union)", 
+					"OnApplyGenOp" );
+				menu.AddCallbackItem( "Blend Shapes (Mesh)", "OnApplyGenOp" );
+			}
+			
+			menu.AddCallbackItem( "Subdivide Selection", "OnApplyGenOp" );
+			break;
+	}
+
+	return true;
+}</pre></div> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-8717DF01-7FF9-4F0C-91C9-73FAFC9AD5D8"></a></span>Write the implementation for the <span class="code" translate="no">OnApplyGenOp</span> callback. Since the Init callback performed all the tests on the selection before
+                        enabling certain callbacks, this callback doesn't need to check that the selected
+                        types are appropriate for the input objects, since any commands that didn't fit the
+                        selection were filtered out:
+                     </p> 
+                     <div class="codeBlock"><pre class="prettyprint">function OnApplyGenOp( in_ctxt )
+{
+	// Get the menu item <a href="javascript:void(0)" data="name" class="a_multireflink">name</a>
+	var mnu_itm = in_ctxt.Source;
+
+	switch (mnu_itm.Name) {
+		case "Punch Out Shape (Difference)" :
+			ApplyGenOp( "BooleanGenDifference", "", "", null, 
+				siImmediateOperation, siDeleteGenOpInputs );
+			break;
+		case "Leave Remainder Shape (Intersection)" :
+			ApplyGenOp( "BooleanGenIntersection", "", "", null, 
+				siImmediateOperation, siDeleteGenOpInputs );
+			break;
+		case "Bind Shapes Together (Union)" :
+			ApplyGenOp( "BooleanGenUnion", "", "", null, 
+				siImmediateOperation, siDeleteGenOpInputs );
+			break;
+		case "Subdivide Selection" :
+			MeshSubdivideWithCenter( null, "", null, 
+				siImmediateOperation, siDeleteGenOpInputs );
+			break;
+		case "Fit to Shape" :
+			ApplyGenOp( "SrfFit", "", "", null, 
+				siImmediateOperation, siDeleteGenOpInputs );
+			break;
+		case "Fillet Intersection" :
+			ApplyGenOp( null, "", "", null, 
+				siImmediateOperation, siDeleteGenOpInputs );
+			break;
+		case "Blend Shapes (Mesh)" :
+			ApplyGenOp( "MeshBlend", "", "", null, 
+				siImmediateOperation, siDeleteGenOpInputs );
+			break;
+		default :
+	}
+
+	return true;
+}</pre></div> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-D66AE1ED-73FB-4B75-8728-139F4FF273E6"></a></span>Save the file and launch Softimage. If Softimage is already running, you can explicitly
+                        load this plug-in by opening the Plug-in Manager (select <span class="MenuCascade" id="GUID-6E476D57-A34F-4A1B-A272-9DB15B5BB201">Plug-ins</span><img src="../images/ac.menuaro.gif" /><span class="MenuCascade" id="GUID-CEFCD074-FB66-4555-BF73-0251B1B05F98">Manager</span> from the <span class="MenuCascade" id="GUID-34992919-34F3-451E-B443-63627D997510">File</span> menu) and clicking the <span class="MenuCascade" id="GUID-882AA1F1-5549-4B70-A8C4-4629C5327C6B">Update</span> button.
+                     </p> 
+                  </li>
+                  <li> 
+                     <p><span class="anchor_wrapper"><a name="GUID-9A8AC505-DC6B-4050-80C5-2FAED87709C9"></a></span>To test the menus, create and select some primitives and open the Application menu.
+                        At the bottom you will see the new menus:
+                     </p> 
+                     <ul>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-9033329A-487B-43C5-820B-6B338D2F5697"></a></span>Apply Deform Operators [u]
+                           </p> 
+                        </li>
+                        <li> 
+                           <p><span class="anchor_wrapper"><a name="GUID-C066DE76-1D9F-40CF-B32A-0A84E970C891"></a></span>Apply Generator Operators [u]
+                           </p> 
+                        </li>
+                     </ul> 
+                  </li>
+               </ol> 
+            </div>
+         </div>
+         <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /><p class="footer-license-block"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width: 0;" src="../images/ccLink.png" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href="http://autodesk.com/creativecommons" target="_blank">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>
+   </div></body>
+</html>

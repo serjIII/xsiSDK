@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>Translate</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>Translate</h1>
+         </div>
+
+<h2 class="pagehead">Translate</h2>
+
+<h3>Description</h3>
+<div><p>Translates elements to an absolute position or by a relative amount. Translation can be performed on all axes, or limited to a specific axis.  It can also snap to the 3D grid.</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>Translate( [InputObjs], [X], [Y], [Z], [Delta], [RefMode], [Center], [AxesFilter], [Snap], [SnapReference], [SnapFilter], [SplitLocalComponents], [PropTagOnly], [Pivot], [PivotX], [PivotY], [PivotZ], [ConstructionMode], [SlideComponents] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">InputObjs		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/listexpr.htm">List</a> of objects or components to translate. 			<p class="cell"><span class="hilite">Default Value: </span>
+Selected elements			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">X		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ X position 			<p class="cell"><span class="hilite">Default Value: </span>
+0.0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Y		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Y position 			<p class="cell"><span class="hilite">Default Value: </span>
+0.0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Z		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Z position 			<p class="cell"><span class="hilite">Default Value: </span>
+0.0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Delta		</td>
+		<td><a href="#!/url=./si_om/siDeltaMode.html">siDeltaMode</a>		</td>
+		<td>
+ Specifies whether the translation is relative or absolute 			<p class="cell"><span class="hilite">Default Value: </span>
+siRelative			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">RefMode		</td>
+		<td><a href="#!/url=./si_om/siRefMode.html">siRefMode</a>		</td>
+		<td>
+ The reference mode to translate within 			<p class="cell"><span class="hilite">Default Value: </span>
+siGlobal			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Center		</td>
+		<td><a href="#!/url=./si_om/siCenterMode.html">siCenterMode</a>		</td>
+		<td>
+Specifies whether to translate the object or its center. <br /><br />Note: If an object does not have a moveable center, then translating its center moves the object.			<p class="cell"><span class="hilite">Default Value: </span>
+siObj			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">AxesFilter		</td>
+		<td><a href="#!/url=./si_om/siAxesFilter.html">siAxesFilter</a>		</td>
+		<td>
+ Determines which of the x,y,z arguments are valid (used with Absolute mode only).			<p class="cell"><span class="hilite">Default Value: </span>
+siXYZ			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Snap		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ Specifies whether to snap the translation values to the nearest 3D grid increment 			<p class="cell"><span class="hilite">Default Value: </span>
+False			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">SnapReference		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/objectexpr.htm">Object Name</a> reference frame for snap filtering. 		</td>
+	</tr>
+	<tr>
+		<td class="name">SnapFilter		</td>
+		<td><a href="#!/url=./si_om/siAxesFilter.html">siAxesFilter</a>		</td>
+		<td>
+ Optional x,y,z absolute snap filter 			<p class="cell"><span class="hilite">Default Value: </span>
+siXYZ			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">SplitLocalComponents		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ Specifies whether to translate all components independently in Local mode 			<p class="cell"><span class="hilite">Default Value: </span>
+False			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">PropTagOnly		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ Specifies whether to restrict proportional to tagged components only 			<p class="cell"><span class="hilite">Default Value: </span>
+False			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Pivot		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ If true the specified global pivot point is used for snapping 			<p class="cell"><span class="hilite">Default Value: </span>
+False			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">PivotX		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ X position of the pivot point			<p class="cell"><span class="hilite">Default Value: </span>
+0.0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">PivotY		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Y position of the pivot point			<p class="cell"><span class="hilite">Default Value: </span>
+0.0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">PivotZ		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Z position of the pivot point			<p class="cell"><span class="hilite">Default Value: </span>
+0.0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ConstructionMode		</td>
+		<td><a href="#!/url=./si_om/siConstructionMode.html">siConstructionMode</a>		</td>
+		<td>
+ In which construction mode will the deformation be applied. This only applies when translating geometry components.			<p class="cell"><span class="hilite">Default Value: </span>
+Use the current construction mode			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">SlideComponents		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ Constrain components to surface during translation. Works like shrink wrap for points/polygons while edges are constrained along adjacent polygon edges. Currently only supported for mesh objects.			<p class="cell"><span class="hilite">Default Value: </span>
+False			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">' Create a Sphere
+CreatePrim "Sphere", "NurbsSurface", "MySphere"
+' Translate the Sphere by (6,6,6) using siRelative mode
+translate "MySphere", 2, 2, 2, siRelative
+translate "MySphere", 2, 2, 2, siRelative
+translate "MySphere", 2, 2, 2, siRelative
+' Translate the Sphere to (2,2,2) using Absolute mode
+translate "MySphere", 2, 2, 2, siAbsolute, , , siXYZ
+' Return to position (0,0,0)
+translate "MySphere", , , , siAbsolute</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/Scale.html">Scale</a> <a href="#!/url=./si_cmds/Rotate.html">Rotate</a> <a href="#!/url=./si_cmds/ResetTransform.html">ResetTransform</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

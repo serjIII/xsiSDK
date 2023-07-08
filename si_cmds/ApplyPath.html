@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>ApplyPath</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>ApplyPath</h1>
+         </div>
+
+<h2 class="pagehead">ApplyPath</h2>
+
+<h3>Introduced</h3>
+<div><p>v1.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Constrains an object so that it follows the path of a curve. This is the scripting equivalent of 
+choosing Animate > Create > Path >  Set Path for an object. A picking session is started if no 
+constraining curve is specified. <br /><br />
+You can also set the path percentage, which controls the location of the constrained object 
+over the length of the curve. At zero percent the object is at the beginning of the curve, and 
+at 100% it is at 100% of the length of the curve. By default the constrained object is animated 
+to travel the entire path between the given start and end frames.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>ApplyPath( [InputObjs], [Path], [StartFrame], [EndFrame], [NbKeys], [Linear], [Tangent] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">InputObjs		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/listexpr.htm">List</a> of objects to put on a path. 			<p class="cell"><span class="hilite">Default Value: </span>
+Selected objects			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Path		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+ Curve to use as the path 			<p class="cell"><span class="hilite">Default Value: </span>
+User is prompted to pick a curve			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">StartFrame		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Start frame for path animation 			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">EndFrame		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ End frame for path animation 			<p class="cell"><span class="hilite">Default Value: </span>
+0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">NbKeys		</td>
+		<td><a href="#!/url=./files/Long.htm">Long</a>		</td>
+		<td>
+ Number of keys to set on the timing curve 			<p class="cell"><span class="hilite">Default Value: </span>
+2			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Linear		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ True for a linear fcurve, False for a spline fcurve. 			<p class="cell"><span class="hilite">Default Value: </span>
+False			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Tangent		</td>
+		<td><a href="#!/url=./files/Boolean.htm">Boolean</a>		</td>
+		<td>
+ True to set a tangency constraint on the object. 			<p class="cell"><span class="hilite">Default Value: </span>
+False			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' Applies a circular path to two cubes. 
+' One cube travels tangent to the path the other does not.
+' The cubes travel in opposite directions.
+'
+dim oCircle,oCube1,oCube2
+'
+' Setup: create the circle and cubes
+'
+set oCircle = CreatePrim("Circle", "NurbsCurve")
+oCircle.radius = 3
+Rotate oCircle, -90, 0, 0, siRelative, siAdd, siObj, siXYZ
+set oCube1 = CreatePrim("Cube", "MeshSurface")
+set oCube2 = CreatePrim("Cube", "MeshSurface")
+oCube1.length = 1
+Scale oCube1, 2.5, 0.3, 0.3, siRelative, siLocal, siObj, siXYZ
+oCube2.length = 1
+Scale oCube2, 2.5, 0.3, 0.3, siRelative, siLocal, siObj, siXYZ
+'
+' Apply the paths to the cubes.
+' Make oCube2 travel tangent to the path.
+' By swapping the start and end frames, oCube2 will travel in the opposite direction.
+'
+ApplyPath oCube1, oCircle, 1, 100, 2, False, False
+ApplyPath oCube2, oCircle, 100, 1, 2, False, True
+'
+' Display the path constraint relation in the top 
+' view of viewport A
+'
+SetValue "Views.ViewA.TopCamera.camvis.*constraint*", True
+'
+' Play the animation
+'
+PlayForwardsFromStart</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/RemoveAllCns.html">RemoveAllCns</a> <a href="#!/url=./si_cmds/RemoveCns.html">RemoveCns</a> <a href="#!/url=./si_cmds/SIApplyCns.html">SIApplyCns</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

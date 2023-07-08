@@ -1,0 +1,74 @@
+var topic = "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n\
+\n\
+<!-- saved from url=(0024)http://docs.autodesk.com -->\n\
+<html>\n\
+   <head>\n\
+<link href=\"../style/prettify.css\" type=\"text/css\" rel=\"stylesheet\" />\n\
+<script type=\"text/javascript\" src=\"../scripts/prettify.js\"></script><script src=\"../scripts/lib/jquery-1.9.1.min.js\" type=\"text/javascript\"></script>\n\
+      <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n\
+      <meta name=\"product\" content=\"SI\" />\n\
+      <meta name=\"release\" content=\"2015\" />\n\
+      <meta name=\"book\" content=\"Developer\" />\n\
+      <meta name=\"created\" content=\"2014-03-13\" />\n\
+      <meta name=\"topicid\" content=\"GUID-A1DFBA5C-59B0-4386-8198-E832F5A6C8D0\" />\n\
+      <meta name=\"indexterm\" content=\"Cg support in Softimage\" />\n\
+      <meta name=\"topic-type\" content=\"concept\" />\n\
+      <title>About Controlling the Hardware Display in Softimage</title><script type=\"text/javascript\" src=\"../scripts/utils/adsk.redirect.js\"></script></head>\n\
+   <body height=\"100%\"><div class=\"body_content\" id=\"body-content\"><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/ac_common.js\"); });</script><script type=\"text/javascript\">var reflinkid = \"si_cpp\"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on(\'click\', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs(\"./scripts/multireflink.js\"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$(\"div#WidgetFloaterPanels,link[href*=\'microsofttranslator.com\'],script[src*=\'microsofttranslator.com\'],script[src*=\'bing.com\']\").remove();</script><script type=\'text/javascript\'>$(\"div#navigation,div#breadcrumbs,div#banner\").attr(\"translate\",\"no\"); var mtLocation = ((location && location.href && location.href.indexOf(\'https\') == 0)?\'https://ssl.microsofttranslator.com\':\'http://www.microsofttranslator.com\')+\'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages=\'; yepnope.injectJs(mtLocation, function() {}, { charset:\'utf-8\', type:\'text/javascript\' } );</script><script type=\"text/javascript\">\n\
+ </script><!-- begin MT -->\n\
+            \n\
+            <div id=\'MicrosoftTranslatorWidget\' class=\'Dark\' style=\'position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden\'></div><div id=\"reflinkdiv\" style=\"display:none; font-family: \'RobotoRegular\', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible\"></div>\n\
+      <div><span class=\"anchor_wrapper\"><a name=\"GUID-A1DFBA5C-59B0-4386-8198-E832F5A6C8D0\"></a></span><div class=\"head\">\n\
+            <h1>About Controlling the Hardware Display in Softimage</h1>\n\
+         </div>\n\
+         <div class=\"bodyProcess\">\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-28C0D272-D619-44D4-B663-01D0463F0273\"></a></span>The graphic sequencer gives you access to the Softimage display pipeline. Through\n\
+               the graphic sequencer, you can customize existing viewport modes with viewport callbacks,\n\
+               and add new viewport modes.\n\
+            </p>\n\
+            <p><span class=\"anchor_wrapper\"><a name=\"GUID-0987BEE0-B389-410D-9634-9BEBA2BE8F2D\"></a></span>Softimage comes with several realtime shading views. It is possible to switch from\n\
+               a view representing the mental ray shader properties to that of one representing OpenGl\n\
+               or Nvidia\'s Cg shading language, for example. You can develop your own customized\n\
+               hardware rendering display by using the same mechanism Softimage uses natively and\n\
+               provide an accurate representation within Softimage of the rendering pipeline you\n\
+               use within your own production environment. The graphic sequencer enables custom rendering\n\
+               passes in the OpenGL viewport via the C++ API which provides viewport modes and callbacks\n\
+               to control the rendering pipeline displayed in Softimage.\n\
+            </p>\n\
+            <div class=\"section\"><span class=\"anchor_wrapper\"><a name=\"WS193BA0962EC419438DAD0DE41EE6D043-0004\"></a></span> \n\
+               <h2><span class=\"anchor_wrapper\"><a name=\"GUID-183DEEE1-77EA-45A7-902E-F1F8893F4336\"></a></span>Custom Viewport Callbacks\n\
+               </h2> \n\
+               <p><span class=\"anchor_wrapper\"><a name=\"GUID-93E1E4F8-5E11-43D7-8A34-081EEB7BD335\"></a></span>Viewport callbacks can be inserted and any stage of the rendering loop. This allows\n\
+                  you, for example to set up a p-buffer in the pre-begin frame slot, clear the buffers\n\
+                  in the begin frame, render the scene to your p-buffer, etc.\n\
+               </p> \n\
+            </div>\n\
+            <div class=\"section\"><span class=\"anchor_wrapper\"><a name=\"WS193BA0962EC419438DAD0DE41EE6D043-0005\"></a></span> \n\
+               <h2><span class=\"anchor_wrapper\"><a name=\"GUID-E16F6977-C267-4335-AFE2-E08C411027E0\"></a></span>Custom Viewport Modes\n\
+               </h2> \n\
+               <p><span class=\"anchor_wrapper\"><a name=\"GUID-5ED892F1-9FE0-423E-9752-D116346B6576\"></a></span>Viewport modes are responsible for rendering the scene in a viewport. Using the Graphic\n\
+                  Sequencer, it is possible to create your own mode in order to have complete control\n\
+                  over the look of the scene in an OpenGL viewport. If you already have a rendering\n\
+                  engine, it is possible to convert it to a viewport mode—this is how the DirectX 9\n\
+                  realtime viewing mode in Softimage was implemented.\n\
+               </p> \n\
+            </div>\n\
+            <div class=\"section\"><span class=\"anchor_wrapper\"><a name=\"WS193BA0962EC419438DAD0DE41EE6D043-0006\"></a></span> \n\
+               <h2><span class=\"anchor_wrapper\"><a name=\"GUID-E40DB9B1-12E1-4DE6-82AE-D8D348278B91\"></a></span>A Bit About How Softimage\'s Cg Support Works\n\
+               </h2>  \n\
+               <p><span class=\"anchor_wrapper\"><a name=\"GUID-801E0CFB-EBD1-47C6-BCD9-0BEFDF745CF3\"></a></span>Softimage\'s Cg renderer support was implemented as a series of graphic sequencer viewport\n\
+                  callbacks and one viewport mode. Whenever the Cg render needs to refresh a viewport\n\
+                  set to display Cg shaders, it queries the render tree for each realtime shader attached\n\
+                  to the objects in the viewport, looks up the <a href=\"#!/url=./si_cpp/classXSI_1_1MetaShaderRendererDef.html\">associated renderer</a> defined on the shader\'s definition and reads the <a href=\"#!/url=./si_cpp/classXSI_1_1MetaShaderRendererDef.html#GetCodeText\">encapsulated Cg code</a> and automatically builds a Cg program. This chapter describes the graphic sequencer\'s\n\
+                  callbacks and passes. For more information about shader definitions, see <a href=\"#!/url=./files/cus_shaders.htm\">Custom Shaders</a>.\n\
+               </p> \n\
+               <div><span class=\"anchor_wrapper\"><a name=\"GUID-D05DD04E-FA0F-4DE4-BA43-3CD98913FB8A\"></a></span><div class=\"note-tip\"><span class=\"label\">TIP:</span> \n\
+                     <p><span class=\"anchor_wrapper\"><a name=\"GUID-58684255-CD71-49C6-928F-1698957DF6B3\"></a></span>You may also want to consider using the <a href=\"#!/url=./files/cus_displayhost.htm\">Custom Display Host</a> to display custom render output instead of viewport modes and callbacks.\n\
+                     </p> \n\
+                  </div>\n\
+               </div> \n\
+            </div>\n\
+         </div>\n\
+         <div class=\"footer-block\"><a href=\"../html/ac.cmtdialog.htm\" class=\"comments-anchor\" target=\"_blank\"><span class=\"comments-link\">Please send us your comment about this page</span></a></div><br /><p class=\"footer-license-block\"><a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\"><img alt=\"Creative Commons License\" style=\"border-width: 0;\" src=\"../images/ccLink.png\" /></a>&nbsp;<em>Except where otherwise noted, this work is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc-sa/3.0/\" target=\"_blank\">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Please see the <a href=\"http://autodesk.com/creativecommons\" target=\"_blank\">Autodesk Creative Commons FAQ</a> for more information.</em></p><br /></div>\n\
+   </div></body>\n\
+</html>";

@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>AddTextureLayerPorts</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>AddTextureLayerPorts</h1>
+         </div>
+
+<h2 class="pagehead">AddTextureLayerPorts</h2>
+
+<h3>Introduced</h3>
+<div><p>v4.0</p></div>
+
+<h3>Description</h3>
+<div><p> Adds texture layer ports (shader connections) to a texture layer. These indicate what shader ports are being
+driven by the layer. If the layer has ports added to it from containers it is currently not part of, it will be added to
+these containers (at the correct place in the stack, according to the order dependencies). </p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>oReturn = AddTextureLayerPorts( [InputObj], [InputObjs] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Return Value</h3>
+<div><p>Returns the newly-created ports as an <a href="#!/url=./si_om/XSICollection.html">XSICollection</a>.</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">InputObj		</td>
+		<td><a href="#!/url=./files/String.htm">String</a> or object		</td>
+		<td>
+ The <a href="#!/url=./files/objectexpr.htm">layer</a> to which to add new port connections. 		</td>
+	</tr>
+	<tr>
+		<td class="name">InputObjs		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/listexpr.htm">List</a> of targets (ports on shaders or materials) to which to add texture layer port connections (that is, to be driven by the given layer).  Note that if a target is specified on a (valid) container which currently does not nest the layer, the layer will be added to that container (see <a href="#!/url=./si_cmds/AddTextureLayer.html">AddTextureLayer</a> command). 			<p class="cell"><span class="hilite">Default Value: </span>
+Current selection.			</p>
+		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'
+' This example creates two shaders in a simple render tree, and applies
+' texture layers to one of them.  Then it adds port connections to that
+' layer, indicating what shader ports the layer should affect.
+' In particular, it builds the following stack of layers.
+'
+' Phong
+'   A
+'   B
+'
+option explicit
+dim oSph, oPhong, oMat, oLyr(1), oPorts, oPort
+' Build our shaders (a Phong and a Fractal), which will be the "texture
+' layer containers" that will each be able to hold a stack of layers.
+NewScene , False
+set oSph = CreatePrim( "Sphere", "MeshSurface" )
+set oPhong = SIApplyShader( "Phong", oSph )
+' Now create and add all the layers, as indicated above.
+' Add 'A' and 'B' to the Phong at the end.
+set oLyr(0) = AddTextureLayer( , oPhong, "A", True )
+set oLyr(1) = AddTextureLayer( , oPhong, "B", True )
+'
+' Now start adding port connections, indicating what these layers will
+' affect.
+' Start by making layer 'A' affect ambient and diffuse on the Phong.
+set oPorts = AddTextureLayerPorts( oLyr(0), oPhong &amp; ".ambient," &amp; oPhong &amp; ".diffuse" )
+for each oPort in oPorts
+	logmessage "Created port: " &amp; oPort
+next
+' Now let's add some ports on the 'B' layer, which affect the Phong's
+' diffuse and specular, but also affect the material's environment.  We
+' have not added the layer explicitly to the material texture layer
+' container, so it will be done implicitly by this command.
+set oMat = oPhong(0).parent
+set oPorts = AddTextureLayerPorts( oLyr(1), _
+			oPhong &amp; ".specular," &amp; _
+			oPhong &amp; ".diffuse," &amp; _
+			oMat &amp; ".environment" )
+for each oPort in oPorts
+	logmessage "Created port: " &amp; oPort
+next
+PrintTextureLayersAndPortsInContainer oPhong
+PrintTextureLayersAndPortsInContainer oMat
+sub PrintTextureLayersAndPortsInContainer( in_cont )
+	dim oLayerStack, oLayer, oPortList, oPort, oStr
+	oStr = "Texture Layers in Container: " &amp; in_cont &amp; vbCrLf
+	set oLayerStack = EnumElements( in_cont &amp; ".TextureLayers" )
+	for each oLayer in oLayerStack
+		oStr = oStr &amp; "    " &amp; oLayer.name &amp; " -- has ports:" &amp; vbCrLf
+		set oPortList = EnumElements( in_cont &amp; ".TextureLayers." &amp; oLayer.name &amp; ".ports" )
+		for each oPort in oPortList
+			oStr = oStr &amp; "      " &amp; oPort.name &amp; vbCrLf
+		next
+	next
+	logmessage oStr
+end sub
+'
+' The output from the example should look something like this:
+'
+'INFO : "Created port: sphere.Material.Phong.A.ports.ambient"
+'INFO : "Created port: sphere.Material.Phong.A.ports.diffuse"
+'INFO : "Created port: sphere.Material.Phong.B.ports.specular"
+'INFO : "Created port: sphere.Material.Phong.B.ports.diffuse"
+'INFO : "Created port: sphere.Material.Phong.B.ports.environment"
+'INFO : "Texture Layers in Container: sphere.Material.Phong
+'    A -- has ports:
+'      ambient
+'      diffuse
+'    B -- has ports:
+'      specular
+'      diffuse
+'      Environment
+'
+'INFO : "Texture Layers in Container: sphere.Material
+'    B -- has ports:
+'      specular
+'      diffuse
+'      Environment
+'</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/AddTextureLayer.html">AddTextureLayer</a> <a href="#!/url=./si_cmds/RemoveTextureLayers.html">RemoveTextureLayers</a> <a href="#!/url=./si_cmds/MoveTextureLayers.html">MoveTextureLayers</a> <a href="#!/url=./si_om/TextureLayer.AddTextureLayerPort.html">TextureLayer.AddTextureLayerPort</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>

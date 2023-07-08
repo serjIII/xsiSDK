@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0024)http://docs.autodesk.com -->
+<html>
+   <head>
+<link href="../style/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="../scripts/prettify.js"></script><script src="../scripts/lib/jquery-1.9.1.min.js" type="text/javascript"></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript" src="../scripts/utils/adsk.redirect.js"></script>
+      <title>SIAddCustomParameter</title>
+   
+</head>
+   <body height="100%"><div class="body_content" id="body-content"><style>
+/*  These settings override ones in the default stylesheets
+	used by the merged files that cause problems in combination
+	with the standard HTML help styles and page templates. */
+
+div, div.example, div.tip {
+	 margin:0;
+}
+
+td.example {
+	background: inherit;
+}
+
+/* This fixes a problem with nested pre blocks on an example page */
+pre pre {
+	display:block;
+	padding:0;
+	border-style:none;
+}
+</style><link rel="stylesheet" href="si_cmds/css/en.css" type="text/css" /><script>$(document).ready(function() { yepnope.injectJs("./si_cmds/lib/utils.js"); });</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/ac_common.js"); });</script><script type="text/javascript">var reflinkid = "si_cpp"; var reflinkdata = new Array(); function closeRefLinkDiv() { }; $(document).on('click', function() { closeRefLinkDiv(); } );</script><script>$(document).ready(function() { yepnope.injectJs("./scripts/multireflink.js"); });</script><script>$(document).ready(function () { prettyPrint(); } );</script><script>$("div#WidgetFloaterPanels,link[href*='microsofttranslator.com'],script[src*='microsofttranslator.com'],script[src*='bing.com']").remove();</script><script type='text/javascript'>$("div#navigation,div#breadcrumbs,div#banner").attr("translate","no"); var mtLocation = ((location && location.href && location.href.indexOf('https') == 0)?'https://ssl.microsofttranslator.com':'http://www.microsofttranslator.com')+'/ajax/v3/WidgetV3.ashx?siteData=y5CYlxTRD0znCzRLDwX0Wy7-g1EdC1XA4dSC-Y1LtaeScyli8_Ps5jPKqTr4xKxMI0OOUfkDplvX3uxN0JnPclebSYW8_J1HBzf4VLQEzQ8M4PsYXF_cMyp1Oumaetky&category=5297189e-446b-459e-ae1d-9d0360400781_tech&ctf=True&ui=true&settings=Manual&from=en&hidelanguages='; yepnope.injectJs(mtLocation, function() {}, { charset:'utf-8', type:'text/javascript' } );</script><script type="text/javascript">
+ </script><!-- begin MT -->
+            
+            <div id='MicrosoftTranslatorWidget' class='Dark' style='position:absolute;right:20px;top:5px;z-index:100;color:white;background-color:#555555;height:58px;overflow:hidden'></div><div id="reflinkdiv" style="display:none; font-family: 'RobotoRegular', Arial, Tahoma, sans-serif; visibility:hidden; position:absolute; z-index:40001; padding:5px; border-style:solid; border-width:1px; border-color:#666666; background-color:#dfdfdf; overflow:visible"></div>
+      <div>
+         <div class="head">
+            <h1>SIAddCustomParameter</h1>
+         </div>
+
+<h2 class="pagehead">SIAddCustomParameter</h2>
+
+<h3>Introduced</h3>
+<div><p>v1.0</p></div>
+
+<h3>Description</h3>
+<div><p>
+Adds a custom parameter to a custom parameter set.
+</p></div>
+
+<h3>Scripting Syntax</h3>
+<div><p><table>
+	<tr>
+		<td class="example"><pre>SIAddCustomParameter( [InputObj], [ScriptName], [VarType], DefaultValue, [MinValue], [MaxValue], [Classification], [Capabilities], [SuggMin], [SuggMax], [ParamName], [Description] );</pre>		</td>	</tr>
+</table>
+</p></div>
+
+<h3>Parameters</h3>
+<div><p><table cellpadding="5" cellspacing="5">
+	<tr>
+		<th title="Name of the parameter">Parameter		</th>
+		<th title="Data type">Type		</th>
+		<th title="Description of the parameter">Description		</th>
+	</tr>
+	<tr>
+		<td class="name">InputObj		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+<a href="#!/url=./files/listexpr.htm">List</a> of custom parameter sets 			<p class="cell"><span class="hilite">Default Value: </span>
+Current selection			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ScriptName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+
+		Script name of the custom parameter to be added.  This is normally a short name, like "rotx".  
+		A script name cannot have spaces in it.
+				<p class="cell"><span class="hilite">Default Value: </span>
+"ParamName"			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">VarType		</td>
+		<td><a href="#!/url=./si_om/siVariantType.html">siVariantType</a>		</td>
+		<td>
+ Type of the parameter 			<p class="cell"><span class="hilite">Default Value: </span>
+siDouble			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">DefaultValue		</td>
+		<td><a href="#!/url=./files/Variant.htm">Variant</a>		</td>
+		<td>
+ Default parameter value 		</td>
+	</tr>
+	<tr>
+		<td class="name">MinValue		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ minimum value of the parameter 			<p class="cell"><span class="hilite">Default Value: </span>
+0.0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">MaxValue		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ maximum value of the parameter 			<p class="cell"><span class="hilite">Default Value: </span>
+1.0			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Classification		</td>
+		<td><a href="#!/url=./si_om/siParamClassification.html">siParamClassification</a>		</td>
+		<td>
+
+		Determines the classification of the parameter (gives Softimage some hint about the purpose of 
+		the Parameter--see the <a href="#!/url=./si_om/siParamClassification.html">siParamClassification</a> enum for more details)
+				<p class="cell"><span class="hilite">Default Value: </span>
+siClassifUnknown			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">Capabilities		</td>
+		<td><a href="#!/url=./si_om/siCapabilities.html">siCapabilities</a>		</td>
+		<td>
+Determines the capabilities of the parameter (see the <a href="#!/url=./si_om/siCapabilities.html">siCapabilities</a> enum for more details)			<p class="cell"><span class="hilite">Default Value: </span>
+5 (siAnimatable + siPersistable)			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">SuggMin		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Suggested minimum value of the parameter (for UI controls) 			<p class="cell"><span class="hilite">Default Value: </span>
+MinValue			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">SuggMax		</td>
+		<td><a href="#!/url=./files/Double.htm">Double</a>		</td>
+		<td>
+ Suggested maximum value of the parameter (for UI controls) 			<p class="cell"><span class="hilite">Default Value: </span>
+MaxValue			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="name">ParamName		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+A name for the parameter that can be more descriptive than 
+			the script name.  For example "Rotation X"
+			instead of "rotx".
+			</td>
+	</tr>
+	<tr>
+		<td class="name">Description		</td>
+		<td><a href="#!/url=./files/String.htm">String</a>		</td>
+		<td>
+Description of the parameter		</td>
+	</tr>
+</table>
+</p></div>
+
+<h3>Examples</h3>
+<div><p><h4>1. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'Example showing you a custom pset can be used, in conjunction with the
+'InspectObj command to collect information from a user
+dim oCustomProperty
+dim nbJoints, useCns
+'Create a temporary custom property (it is not part of the scene)
+Set oPreset = CreatePreset( "CustomProperty", "Properties" )
+Set oCustomProperty = CreateObjectFromPreset(oPreset, "Chain_From_Curve" )
+'Add parameters to the custom property
+SIAddCustomParameter oCustomProperty , _
+	"nbJoints", siInt2, 10, 1, 1000, 8, 16, 1, 100, "Bones", "Number of Bones"
+SIAddCustomParameter oCustomProperty , _
+	"useCns", siBool, FALSE, , , 8, 16, , , "Constrain", "Constrain Chain to Curve"
+' Launch the ppg in modal mode, wait for Ok or Cancel to be pressed
+On Error Resume Next
+InspectObj  oCustomProperty ,,,4
+' If the user Clicked Ok, get the values entered in the ppg
+if Err.Number = 0 then
+	'Get the dialog values
+	nbJoints = GetValue( oCustomProperty &amp; ".nbJoints" )
+	useCns = GetValue( oCustomProperty &amp; ".useCns" )
+	'At this point you could launch a custom command
+	'using nbJoints and useCns as 
+else
+	' Put your cancel code here
+end if</pre></td></tr>
+</table>
+</div><h4>2. VBScript Example</h4><div class="example"><table>
+<tr>
+<td class="example"><pre class="vbscript">'Example demonstrating how the arguments to SIAddCustomParameter
+'are exposed in the Object Model
+dim oCustomProperties, oCustomProperty, oParam
+SIAddProp "Custom_parameter_list", ActiveSceneRoot , , "DemoProp", oCustomProperties
+'We only created a single custom property because we only 
+'passed a single object (ActiveSceneRoot) to SIAddProp
+set oCustomProperty = oCustomProperties.Item(0)
+SIAddCustomParameter oCustomProperty , _
+	"nbJoints", siInt4, 10, 1, 1000, 8, 16, 1, 100, "Bones"
+set oParam = oCustomProperty.Parameters( "nbJoints" )
+logmessage "Parameter Name: " &amp; oParam.Name
+logmessage "Parameter Script Name: " &amp; oParam.ScriptName
+logmessage "Parameter ValueType: " &amp; oParam.ValueType
+logmessage "Parameter Default: " &amp; oParam.Default
+logmessage "Parameter Min/Max: " &amp; oParam.Min &amp; "/" &amp; oParam.Max
+logmessage "Parameter UI Min/Max: " &amp; oParam.SuggestedMin &amp; "/" &amp; oParam.SuggestedMax
+'Output of running this script:
+'INFO : "Parameter Name: Bones"
+'INFO : "Parameter Script Name: nbJoints"
+'INFO : "Parameter ValueType: 3"
+'INFO : "Parameter Default: 10"
+'INFO : "Parameter Min/Max: 1/1000"
+'INFO : "Parameter UI Min/Max: 1/100"</pre></td></tr>
+</table>
+</div></p></div>
+
+<h3>See Also</h3>
+<div><p><a href="#!/url=./si_cmds/SIAddCustomParam.html">SIAddCustomParam</a> <a href="#!/url=./si_cmds/EditParameterDefinition.html">EditParameterDefinition</a> <a href="#!/url=./si_cmds/RemoveCustomParam.html">RemoveCustomParam</a> <a href="#!/url=./si_cmds/AddProxyParam.html">AddProxyParam</a> <a href="#!/url=./si_cmds/RemoveProxyParam.html">RemoveProxyParam</a> <a href="#!/url=./si_om/CustomProperty.AddParameter.html">CustomProperty.AddParameter</a> <a href="#!/url=./si_om/Parameter.html">Parameter</a></p></div>
+
+      <div class="footer-block"><a href="../html/ac.cmtdialog.htm" class="comments-anchor" target="_blank"><span class="comments-link">Please send us your comment about this page</span></a></div><br /></div>
+   </div></body>
+</html>
