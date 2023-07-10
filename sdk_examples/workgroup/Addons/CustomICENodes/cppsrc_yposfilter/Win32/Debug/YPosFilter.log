@@ -1,0 +1,17 @@
+﻿Build started 10/11/2022 20:33:07.
+     1>Project "C:\Program Files\Autodesk\Softimage 2015 SP2\XSISDK\examples\workgroup\Addons\CustomICENodes\cppsrc_yposfilter\YPosFilter.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Win32\Debug\YPosFilter.unsuccessfulbuild".
+       ClCompile:
+         All outputs are up-to-date.
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"../Application/Plugins/YPosFilter.dll" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\Autodesk\Softimage 2015 SP2\XSISDK\lib\nt-x86" sicppsdk.lib sicoresdk.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Win32\Debug\YPosFilter.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Program Files\Autodesk\Softimage 2015 SP2\XSISDK\examples\workgroup\Addons\CustomICENodes\Application\Plugins\YPosFilter.pdb" /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"..\Application\Plugins\YPosFilter.lib" /MACHINE:X86 /DLL Win32\Debug\YPosFilter.dll.embed.manifest.res
+         Win32\Debug\YPosFilter.obj
+     1>LINK : fatal error LNK1104: cannot open file 'sicppsdk.lib'
+     1>Done Building Project "C:\Program Files\Autodesk\Softimage 2015 SP2\XSISDK\examples\workgroup\Addons\CustomICENodes\cppsrc_yposfilter\YPosFilter.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.10

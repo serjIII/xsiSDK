@@ -1,0 +1,8 @@
+﻿Build started 10/11/2022 18:43:57.
+     1>Project "C:\Program Files\Autodesk\Softimage 2015 SP2\XSISDK\examples\workgroup\Addons\CustomICENodes\cppsrc_vector3_union\Vector3Union.vcxproj" on node 2 (build target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Platforms\x64\Microsoft.Cpp.x64.Targets(507,5): error MSB8008: Specified platform toolset (v110) is not installed or invalid. Please make sure that a supported PlatformToolset value is selected.
+     1>Done Building Project "C:\Program Files\Autodesk\Softimage 2015 SP2\XSISDK\examples\workgroup\Addons\CustomICENodes\cppsrc_vector3_union\Vector3Union.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.00

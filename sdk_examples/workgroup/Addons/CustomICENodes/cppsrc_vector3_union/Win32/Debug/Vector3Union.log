@@ -1,0 +1,18 @@
+﻿Build started 10/11/2022 18:47:26.
+     1>Project "C:\Program Files\Autodesk\Softimage 2015 SP2\XSISDK\examples\workgroup\Addons\CustomICENodes\cppsrc_vector3_union\Vector3Union.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Win32\Debug\Vector3Union.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Program Files\Autodesk\Softimage 2015 SP2\XSISDK\include" /Zi /nologo /W4 /WX- /Od /Oi /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _SECURE_SCL=0 /D _WIN32_WINNT=0x0500 /D _CRT_SECURE_NO_DEPRECATE /D _HAS_EXCEPTIONS=1 /D XSISDK_VERSION=13000 /D "XSISDK_VERSION_NAME=\"2015\"" /D _WINDLL /D _MBCS /Gm- /EHsc /RTCu /MDd /GS /fp:fast /Zc:wchar_t /Zc:forScope /GR- /Fo"Win32\Debug\\" /Fd"Win32\Debug\vc100.pdb" /Gd /TP /wd4100 /wd4201 /wd4505 /wd4514 /wd4710 /wd4711 /wd4996 /analyze- /errorReport:prompt Vector3UnionNode.cpp /we4293 /we4700 
+         Vector3UnionNode.cpp
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Win32\Debug\Vector3Union.32.dll.embed.manifest.res" Win32\Debug\Vector3Union.32_manifest.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"../Application/Plugins/Vector3Union.32.dll" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\Autodesk\Softimage 2015 SP2\XSISDK\lib\nt-x86" sicppsdk.lib sicoresdk.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Win32\Debug\Vector3Union.32.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Program Files\Autodesk\Softimage 2015 SP2\XSISDK\examples\workgroup\Addons\CustomICENodes\Application\Plugins\Vector3Union.32.pdb" /TLBID:1 /DYNAMICBASE:NO /IMPLIB:"..\Application\Plugins\Vector3Union.32.lib" /MACHINE:X86 /DLL Win32\Debug\Vector3Union.32.dll.embed.manifest.res
+         Win32\Debug\Vector3UnionNode.obj
+     1>LINK : fatal error LNK1104: cannot open file 'sicppsdk.lib'
+     1>Done Building Project "C:\Program Files\Autodesk\Softimage 2015 SP2\XSISDK\examples\workgroup\Addons\CustomICENodes\cppsrc_vector3_union\Vector3Union.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.52
